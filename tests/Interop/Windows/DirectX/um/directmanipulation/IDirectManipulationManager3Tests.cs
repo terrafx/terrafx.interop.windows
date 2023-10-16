@@ -21,32 +21,4 @@ public static unsafe partial class IDirectManipulationManager3Tests
     {
         Assert.That(typeof(IDirectManipulationManager3).GUID, Is.EqualTo(IID_IDirectManipulationManager3));
     }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationManager3" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDirectManipulationManager3>(), Is.EqualTo(sizeof(IDirectManipulationManager3)));
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationManager3" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDirectManipulationManager3).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationManager3" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDirectManipulationManager3), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDirectManipulationManager3), Is.EqualTo(4));
-        }
-    }
 }

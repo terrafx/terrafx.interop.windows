@@ -28,5 +28,5 @@ public unsafe partial struct SPWORDPRONUNCIATION
 
     /// <include file='SPWORDPRONUNCIATION.xml' path='doc/member[@name="SPWORDPRONUNCIATION.szPronunciation"]/*' />
     [NativeTypeName("SPPHONEID[1]")]
-    public fixed ushort szPronunciation[1];
+    public fixed char szPronunciation[1];
 }

@@ -58,7 +58,7 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    public static HRESULT SHLoadLibraryFromParsingName([NativeTypeName("PCWSTR")] ushort* pszParsingName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    public static HRESULT SHLoadLibraryFromParsingName([NativeTypeName("PCWSTR")] char* pszParsingName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
         *ppv = null;
         IShellItem* psiLibrary;
@@ -73,7 +73,7 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    public static HRESULT SHAddFolderPathToLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath)
+    public static HRESULT SHAddFolderPathToLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] char* pszFolderPath)
     {
         IShellItem* psiFolder;
         HRESULT hr = SHCreateItemFromParsingName(pszFolderPath, null, __uuidof<IShellItem>(), (void**)(&psiFolder));
@@ -87,7 +87,7 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    public static HRESULT SHRemoveFolderPathFromLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath)
+    public static HRESULT SHRemoveFolderPathFromLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] char* pszFolderPath)
     {
         ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
         HRESULT hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
@@ -109,7 +109,7 @@ public static unsafe partial class Windows
         return hr;
     }
 
-    public static HRESULT SHSaveLibraryInFolderPath(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("PCWSTR")] ushort* pszLibraryName, LIBRARYSAVEFLAGS lsf, [NativeTypeName("PWSTR *")] ushort** ppszSavedToPath)
+    public static HRESULT SHSaveLibraryInFolderPath(IShellLibrary* plib, [NativeTypeName("PCWSTR")] char* pszFolderPath, [NativeTypeName("PCWSTR")] char* pszLibraryName, LIBRARYSAVEFLAGS lsf, [NativeTypeName("PWSTR *")] char** ppszSavedToPath)
     {
         if ((ppszSavedToPath) != null)
         {
@@ -146,11 +146,11 @@ public static unsafe partial class Windows
         {
             if (hwndDelegate != (nint)(0))
             {
-                _ = SetPropW(hwndSource, (ushort*)(lpString), (HANDLE)(hwndDelegate));
+                _ = SetPropW(hwndSource, lpString, (HANDLE)(hwndDelegate));
             }
             else
             {
-                _ = RemovePropW(hwndSource, (ushort*)(lpString));
+                _ = RemovePropW(hwndSource, lpString);
             }
         }
     }

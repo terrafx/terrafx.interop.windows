@@ -71,7 +71,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AddConsoleAliasW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL AddConsoleAliasW([NativeTypeName("LPWSTR")] ushort* Source, [NativeTypeName("LPWSTR")] ushort* Target, [NativeTypeName("LPWSTR")] ushort* ExeName);
+    public static extern BOOL AddConsoleAliasW([NativeTypeName("LPWSTR")] char* Source, [NativeTypeName("LPWSTR")] char* Target, [NativeTypeName("LPWSTR")] char* ExeName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleAliasA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -83,7 +83,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetConsoleAliasW([NativeTypeName("LPWSTR")] ushort* Source, [NativeTypeName("LPWSTR")] ushort* TargetBuffer, [NativeTypeName("DWORD")] uint TargetBufferLength, [NativeTypeName("LPWSTR")] ushort* ExeName);
+    public static extern uint GetConsoleAliasW([NativeTypeName("LPWSTR")] char* Source, [NativeTypeName("LPWSTR")] char* TargetBuffer, [NativeTypeName("DWORD")] uint TargetBufferLength, [NativeTypeName("LPWSTR")] char* ExeName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleAliasesLengthA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -93,7 +93,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleAliasesLengthW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetConsoleAliasesLengthW([NativeTypeName("LPWSTR")] ushort* ExeName);
+    public static extern uint GetConsoleAliasesLengthW([NativeTypeName("LPWSTR")] char* ExeName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleAliasExesLengthA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -115,7 +115,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetConsoleAliasesW([NativeTypeName("LPWSTR")] ushort* AliasBuffer, [NativeTypeName("DWORD")] uint AliasBufferLength, [NativeTypeName("LPWSTR")] ushort* ExeName);
+    public static extern uint GetConsoleAliasesW([NativeTypeName("LPWSTR")] char* AliasBuffer, [NativeTypeName("DWORD")] uint AliasBufferLength, [NativeTypeName("LPWSTR")] char* ExeName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleAliasExesA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -127,7 +127,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetConsoleAliasExesW([NativeTypeName("LPWSTR")] ushort* ExeNameBuffer, [NativeTypeName("DWORD")] uint ExeNameBufferLength);
+    public static extern uint GetConsoleAliasExesW([NativeTypeName("LPWSTR")] char* ExeNameBuffer, [NativeTypeName("DWORD")] uint ExeNameBufferLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExpungeConsoleCommandHistoryA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -135,7 +135,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExpungeConsoleCommandHistoryW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    public static extern void ExpungeConsoleCommandHistoryW([NativeTypeName("LPWSTR")] ushort* ExeName);
+    public static extern void ExpungeConsoleCommandHistoryW([NativeTypeName("LPWSTR")] char* ExeName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleNumberOfCommandsA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -143,7 +143,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleNumberOfCommandsW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    public static extern BOOL SetConsoleNumberOfCommandsW([NativeTypeName("DWORD")] uint Number, [NativeTypeName("LPWSTR")] ushort* ExeName);
+    public static extern BOOL SetConsoleNumberOfCommandsW([NativeTypeName("DWORD")] uint Number, [NativeTypeName("LPWSTR")] char* ExeName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleCommandHistoryLengthA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -153,7 +153,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleCommandHistoryLengthW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetConsoleCommandHistoryLengthW([NativeTypeName("LPWSTR")] ushort* ExeName);
+    public static extern uint GetConsoleCommandHistoryLengthW([NativeTypeName("LPWSTR")] char* ExeName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleCommandHistoryA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -163,7 +163,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleCommandHistoryW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetConsoleCommandHistoryW([NativeTypeName("LPWSTR")] ushort* Commands, [NativeTypeName("DWORD")] uint CommandBufferLength, [NativeTypeName("LPWSTR")] ushort* ExeName);
+    public static extern uint GetConsoleCommandHistoryW([NativeTypeName("LPWSTR")] char* Commands, [NativeTypeName("DWORD")] uint CommandBufferLength, [NativeTypeName("LPWSTR")] char* ExeName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleProcessList"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -175,32 +175,32 @@ public static unsafe partial class Windows
     public const int HISTORY_NO_DUP_FLAG = 0x1;
 
     [NativeTypeName("#define AddConsoleAlias AddConsoleAliasW")]
-    public static delegate*<ushort*, ushort*, ushort*, BOOL> AddConsoleAlias => &AddConsoleAliasW;
+    public static delegate*<char*, char*, char*, BOOL> AddConsoleAlias => &AddConsoleAliasW;
 
     [NativeTypeName("#define GetConsoleAlias GetConsoleAliasW")]
-    public static delegate*<ushort*, ushort*, uint, ushort*, uint> GetConsoleAlias => &GetConsoleAliasW;
+    public static delegate*<char*, char*, uint, char*, uint> GetConsoleAlias => &GetConsoleAliasW;
 
     [NativeTypeName("#define GetConsoleAliasesLength GetConsoleAliasesLengthW")]
-    public static delegate*<ushort*, uint> GetConsoleAliasesLength => &GetConsoleAliasesLengthW;
+    public static delegate*<char*, uint> GetConsoleAliasesLength => &GetConsoleAliasesLengthW;
 
     [NativeTypeName("#define GetConsoleAliasExesLength GetConsoleAliasExesLengthW")]
     public static delegate*<uint> GetConsoleAliasExesLength => &GetConsoleAliasExesLengthW;
 
     [NativeTypeName("#define GetConsoleAliases GetConsoleAliasesW")]
-    public static delegate*<ushort*, uint, ushort*, uint> GetConsoleAliases => &GetConsoleAliasesW;
+    public static delegate*<char*, uint, char*, uint> GetConsoleAliases => &GetConsoleAliasesW;
 
     [NativeTypeName("#define GetConsoleAliasExes GetConsoleAliasExesW")]
-    public static delegate*<ushort*, uint, uint> GetConsoleAliasExes => &GetConsoleAliasExesW;
+    public static delegate*<char*, uint, uint> GetConsoleAliasExes => &GetConsoleAliasExesW;
 
     [NativeTypeName("#define ExpungeConsoleCommandHistory ExpungeConsoleCommandHistoryW")]
-    public static delegate*<ushort*, void> ExpungeConsoleCommandHistory => &ExpungeConsoleCommandHistoryW;
+    public static delegate*<char*, void> ExpungeConsoleCommandHistory => &ExpungeConsoleCommandHistoryW;
 
     [NativeTypeName("#define SetConsoleNumberOfCommands SetConsoleNumberOfCommandsW")]
-    public static delegate*<uint, ushort*, BOOL> SetConsoleNumberOfCommands => &SetConsoleNumberOfCommandsW;
+    public static delegate*<uint, char*, BOOL> SetConsoleNumberOfCommands => &SetConsoleNumberOfCommandsW;
 
     [NativeTypeName("#define GetConsoleCommandHistoryLength GetConsoleCommandHistoryLengthW")]
-    public static delegate*<ushort*, uint> GetConsoleCommandHistoryLength => &GetConsoleCommandHistoryLengthW;
+    public static delegate*<char*, uint> GetConsoleCommandHistoryLength => &GetConsoleCommandHistoryLengthW;
 
     [NativeTypeName("#define GetConsoleCommandHistory GetConsoleCommandHistoryW")]
-    public static delegate*<ushort*, uint, ushort*, uint> GetConsoleCommandHistory => &GetConsoleCommandHistoryW;
+    public static delegate*<char*, uint, char*, uint> GetConsoleCommandHistory => &GetConsoleCommandHistoryW;
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryp
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleAccess*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleAccess*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryp
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleAccess*, uint>)(lpVtbl[1]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleAccess*, uint>)(lpVtbl[1]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryp
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleAccess*, uint>)(lpVtbl[2]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleAccess*, uint>)(lpVtbl[2]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFContentDecryptionModuleAccess.xml' path='doc/member[@name="IMFContentDecryptionModuleAccess.CreateContentDecryptionModule"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryp
     [VtblIndex(3)]
     public HRESULT CreateContentDecryptionModule(IPropertyStore* contentDecryptionModuleProperties, IMFContentDecryptionModule** contentDecryptionModule)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleAccess*, IPropertyStore*, IMFContentDecryptionModule**, int>)(lpVtbl[3]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), contentDecryptionModuleProperties, contentDecryptionModule);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleAccess*, IPropertyStore*, IMFContentDecryptionModule**, int>)(lpVtbl[3]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), contentDecryptionModuleProperties, contentDecryptionModule);
     }
 
     /// <include file='IMFContentDecryptionModuleAccess.xml' path='doc/member[@name="IMFContentDecryptionModuleAccess.GetConfiguration"]/*' />
@@ -61,15 +61,15 @@ public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryp
     [VtblIndex(4)]
     public HRESULT GetConfiguration(IPropertyStore** configuration)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleAccess*, IPropertyStore**, int>)(lpVtbl[4]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), configuration);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleAccess*, IPropertyStore**, int>)(lpVtbl[4]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), configuration);
     }
 
     /// <include file='IMFContentDecryptionModuleAccess.xml' path='doc/member[@name="IMFContentDecryptionModuleAccess.GetKeySystem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] ushort** keySystem)
+    public HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] char** keySystem)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleAccess*, ushort**, int>)(lpVtbl[5]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), keySystem);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleAccess*, char**, int>)(lpVtbl[5]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), keySystem);
     }
 
     public interface Interface : IUnknown.Interface
@@ -81,28 +81,28 @@ public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryp
         HRESULT GetConfiguration(IPropertyStore** configuration);
 
         [VtblIndex(5)]
-        HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] ushort** keySystem);
+        HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] char** keySystem);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPropertyStore *, IMFContentDecryptionModule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyStore*, IMFContentDecryptionModule**, int> CreateContentDecryptionModule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyStore*, IMFContentDecryptionModule**, int> CreateContentDecryptionModule;
 
         [NativeTypeName("HRESULT (IPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyStore**, int> GetConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyStore**, int> GetConfiguration;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetKeySystem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetKeySystem;
     }
 }

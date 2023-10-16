@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WIM_PROVIDER_EXTERNAL_INFO" /> struct.</summary>
 public static unsafe partial class WIM_PROVIDER_EXTERNAL_INFOTests
 {
-    /// <summary>Validates that the <see cref="WIM_PROVIDER_EXTERNAL_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WIM_PROVIDER_EXTERNAL_INFO>(), Is.EqualTo(sizeof(WIM_PROVIDER_EXTERNAL_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="WIM_PROVIDER_EXTERNAL_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WIM_PROVIDER_EXTERNAL_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WIM_PROVIDER_EXTERNAL_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WIM_PROVIDER_EXTERNAL_INFO), Is.EqualTo(40));
-    }
 }

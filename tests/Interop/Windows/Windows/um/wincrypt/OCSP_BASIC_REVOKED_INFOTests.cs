@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="OCSP_BASIC_REVOKED_INFO" /> struct.</summary>
 public static unsafe partial class OCSP_BASIC_REVOKED_INFOTests
 {
-    /// <summary>Validates that the <see cref="OCSP_BASIC_REVOKED_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<OCSP_BASIC_REVOKED_INFO>(), Is.EqualTo(sizeof(OCSP_BASIC_REVOKED_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="OCSP_BASIC_REVOKED_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(OCSP_BASIC_REVOKED_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="OCSP_BASIC_REVOKED_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(OCSP_BASIC_REVOKED_INFO), Is.EqualTo(12));
-    }
 }

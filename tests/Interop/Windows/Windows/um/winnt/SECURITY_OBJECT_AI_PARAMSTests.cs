@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SECURITY_OBJECT_AI_PARAMS" /> struct.</summary>
 public static unsafe partial class SECURITY_OBJECT_AI_PARAMSTests
 {
-    /// <summary>Validates that the <see cref="SECURITY_OBJECT_AI_PARAMS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SECURITY_OBJECT_AI_PARAMS>(), Is.EqualTo(sizeof(SECURITY_OBJECT_AI_PARAMS)));
-    }
-
-    /// <summary>Validates that the <see cref="SECURITY_OBJECT_AI_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SECURITY_OBJECT_AI_PARAMS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SECURITY_OBJECT_AI_PARAMS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SECURITY_OBJECT_AI_PARAMS), Is.EqualTo(8));
-    }
 }

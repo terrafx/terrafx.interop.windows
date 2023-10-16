@@ -25,7 +25,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppPublisher*, Guid*, void**, int>)(lpVtbl[0]))((IAppPublisher*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppPublisher*, Guid*, void**, int>)(lpVtbl[0]))((IAppPublisher*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppPublisher*, uint>)(lpVtbl[1]))((IAppPublisher*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppPublisher*, uint>)(lpVtbl[1]))((IAppPublisher*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppPublisher*, uint>)(lpVtbl[2]))((IAppPublisher*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppPublisher*, uint>)(lpVtbl[2]))((IAppPublisher*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppPublisher.xml' path='doc/member[@name="IAppPublisher.GetNumberOfCategories"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetNumberOfCategories([NativeTypeName("DWORD *")] uint* pdwCat)
     {
-        return ((delegate* unmanaged<IAppPublisher*, uint*, int>)(lpVtbl[3]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwCat);
+        return ((delegate* unmanaged[MemberFunction]<IAppPublisher*, uint*, int>)(lpVtbl[3]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwCat);
     }
 
     /// <include file='IAppPublisher.xml' path='doc/member[@name="IAppPublisher.GetCategories"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetCategories(APPCATEGORYINFOLIST* pAppCategoryList)
     {
-        return ((delegate* unmanaged<IAppPublisher*, APPCATEGORYINFOLIST*, int>)(lpVtbl[4]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryList);
+        return ((delegate* unmanaged[MemberFunction]<IAppPublisher*, APPCATEGORYINFOLIST*, int>)(lpVtbl[4]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryList);
     }
 
     /// <include file='IAppPublisher.xml' path='doc/member[@name="IAppPublisher.GetNumberOfApps"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetNumberOfApps([NativeTypeName("DWORD *")] uint* pdwApps)
     {
-        return ((delegate* unmanaged<IAppPublisher*, uint*, int>)(lpVtbl[5]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwApps);
+        return ((delegate* unmanaged[MemberFunction]<IAppPublisher*, uint*, int>)(lpVtbl[5]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwApps);
     }
 
     /// <include file='IAppPublisher.xml' path='doc/member[@name="IAppPublisher.EnumApps"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa)
     {
-        return ((delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int>)(lpVtbl[6]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryId, ppepa);
+        return ((delegate* unmanaged[MemberFunction]<IAppPublisher*, Guid*, IEnumPublishedApps**, int>)(lpVtbl[6]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryId, ppepa);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetNumberOfCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetNumberOfCategories;
 
         [NativeTypeName("HRESULT (APPCATEGORYINFOLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPCATEGORYINFOLIST*, int> GetCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPCATEGORYINFOLIST*, int> GetCategories;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetNumberOfApps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetNumberOfApps;
 
         [NativeTypeName("HRESULT (GUID *, IEnumPublishedApps **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IEnumPublishedApps**, int> EnumApps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IEnumPublishedApps**, int> EnumApps;
     }
 }

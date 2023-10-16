@@ -12,7 +12,7 @@ public unsafe partial struct DXGI_OUTPUT_DESC1
 {
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.DeviceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort DeviceName[32];
+    public fixed char DeviceName[32];
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.DesktopCoordinates"]/*' />
     public RECT DesktopCoordinates;

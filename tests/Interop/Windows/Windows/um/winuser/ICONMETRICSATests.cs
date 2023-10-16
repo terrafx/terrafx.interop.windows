@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ICONMETRICSA" /> struct.</summary>
 public static unsafe partial class ICONMETRICSATests
 {
-    /// <summary>Validates that the <see cref="ICONMETRICSA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICONMETRICSA>(), Is.EqualTo(sizeof(ICONMETRICSA)));
-    }
-
-    /// <summary>Validates that the <see cref="ICONMETRICSA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICONMETRICSA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICONMETRICSA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ICONMETRICSA), Is.EqualTo(76));
-    }
 }

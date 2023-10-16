@@ -25,7 +25,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, uint>)(lpVtbl[1]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, uint>)(lpVtbl[1]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, uint>)(lpVtbl[2]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, uint>)(lpVtbl[2]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFClockStateSink.OnClockStart" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [VtblIndex(3)]
     public HRESULT OnClockStart([NativeTypeName("MFTIME")] long hnsSystemTime, [NativeTypeName("LONGLONG")] long llClockStartOffset)
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, long, long, int>)(lpVtbl[3]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), hnsSystemTime, llClockStartOffset);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, long, long, int>)(lpVtbl[3]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), hnsSystemTime, llClockStartOffset);
     }
 
     /// <inheritdoc cref="IMFClockStateSink.OnClockStop" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [VtblIndex(4)]
     public HRESULT OnClockStop([NativeTypeName("MFTIME")] long hnsSystemTime)
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, long, int>)(lpVtbl[4]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), hnsSystemTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, long, int>)(lpVtbl[4]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
     /// <inheritdoc cref="IMFClockStateSink.OnClockPause" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [VtblIndex(5)]
     public HRESULT OnClockPause([NativeTypeName("MFTIME")] long hnsSystemTime)
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, long, int>)(lpVtbl[5]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), hnsSystemTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, long, int>)(lpVtbl[5]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
     /// <inheritdoc cref="IMFClockStateSink.OnClockRestart" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [VtblIndex(6)]
     public HRESULT OnClockRestart([NativeTypeName("MFTIME")] long hnsSystemTime)
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, long, int>)(lpVtbl[6]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), hnsSystemTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, long, int>)(lpVtbl[6]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
     /// <inheritdoc cref="IMFClockStateSink.OnClockSetRate" />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [VtblIndex(7)]
     public HRESULT OnClockSetRate([NativeTypeName("MFTIME")] long hnsSystemTime, float flRate)
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, long, float, int>)(lpVtbl[7]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), hnsSystemTime, flRate);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, long, float, int>)(lpVtbl[7]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), hnsSystemTime, flRate);
     }
 
     /// <include file='IMFSampleGrabberSinkCallback.xml' path='doc/member[@name="IMFSampleGrabberSinkCallback.OnSetPresentationClock"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [VtblIndex(8)]
     public HRESULT OnSetPresentationClock(IMFPresentationClock* pPresentationClock)
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, IMFPresentationClock*, int>)(lpVtbl[8]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), pPresentationClock);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, IMFPresentationClock*, int>)(lpVtbl[8]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), pPresentationClock);
     }
 
     /// <include file='IMFSampleGrabberSinkCallback.xml' path='doc/member[@name="IMFSampleGrabberSinkCallback.OnProcessSample"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [VtblIndex(9)]
     public HRESULT OnProcessSample([NativeTypeName("const GUID &")] Guid* guidMajorMediaType, [NativeTypeName("DWORD")] uint dwSampleFlags, [NativeTypeName("LONGLONG")] long llSampleTime, [NativeTypeName("LONGLONG")] long llSampleDuration, [NativeTypeName("const BYTE *")] byte* pSampleBuffer, [NativeTypeName("DWORD")] uint dwSampleSize)
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, Guid*, uint, long, long, byte*, uint, int>)(lpVtbl[9]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), guidMajorMediaType, dwSampleFlags, llSampleTime, llSampleDuration, pSampleBuffer, dwSampleSize);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, Guid*, uint, long, long, byte*, uint, int>)(lpVtbl[9]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this), guidMajorMediaType, dwSampleFlags, llSampleTime, llSampleDuration, pSampleBuffer, dwSampleSize);
     }
 
     /// <include file='IMFSampleGrabberSinkCallback.xml' path='doc/member[@name="IMFSampleGrabberSinkCallback.OnShutdown"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
     [VtblIndex(10)]
     public HRESULT OnShutdown()
     {
-        return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, int>)(lpVtbl[10]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleGrabberSinkCallback*, int>)(lpVtbl[10]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IMFClockStateSink.Interface
@@ -126,36 +126,36 @@ public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSink
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFTIME, LONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, long, int> OnClockStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, long, int> OnClockStart;
 
         [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> OnClockStop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> OnClockStop;
 
         [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> OnClockPause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> OnClockPause;
 
         [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> OnClockRestart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> OnClockRestart;
 
         [NativeTypeName("HRESULT (MFTIME, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, float, int> OnClockSetRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, float, int> OnClockSetRate;
 
         [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationClock*, int> OnSetPresentationClock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationClock*, int> OnSetPresentationClock;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD, LONGLONG, LONGLONG, const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, long, long, byte*, uint, int> OnProcessSample;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, long, long, byte*, uint, int> OnProcessSample;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnShutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnShutdown;
     }
 }

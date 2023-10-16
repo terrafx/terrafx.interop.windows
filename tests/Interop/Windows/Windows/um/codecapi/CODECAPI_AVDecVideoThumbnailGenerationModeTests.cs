@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecVideoThumbnailGenerationModeTes
     {
         Assert.That(typeof(CODECAPI_AVDecVideoThumbnailGenerationMode).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoThumbnailGenerationMode));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoThumbnailGenerationMode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecVideoThumbnailGenerationMode>(), Is.EqualTo(sizeof(CODECAPI_AVDecVideoThumbnailGenerationMode)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoThumbnailGenerationMode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecVideoThumbnailGenerationMode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoThumbnailGenerationMode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecVideoThumbnailGenerationMode), Is.EqualTo(1));
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IControlInterface : IControlInterface.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IControlInterface*, Guid*, void**, int>)(lpVtbl[0]))((IControlInterface*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IControlInterface*, Guid*, void**, int>)(lpVtbl[0]))((IControlInterface*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IControlInterface : IControlInterface.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IControlInterface*, uint>)(lpVtbl[1]))((IControlInterface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IControlInterface*, uint>)(lpVtbl[1]))((IControlInterface*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IControlInterface : IControlInterface.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IControlInterface*, uint>)(lpVtbl[2]))((IControlInterface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IControlInterface*, uint>)(lpVtbl[2]))((IControlInterface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IControlInterface.xml' path='doc/member[@name="IControlInterface.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppwstrName)
     {
-        return ((delegate* unmanaged<IControlInterface*, ushort**, int>)(lpVtbl[3]))((IControlInterface*)Unsafe.AsPointer(ref this), ppwstrName);
+        return ((delegate* unmanaged[MemberFunction]<IControlInterface*, char**, int>)(lpVtbl[3]))((IControlInterface*)Unsafe.AsPointer(ref this), ppwstrName);
     }
 
     /// <include file='IControlInterface.xml' path='doc/member[@name="IControlInterface.GetIID"]/*' />
@@ -59,13 +59,13 @@ public unsafe partial struct IControlInterface : IControlInterface.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetIID(Guid* pIID)
     {
-        return ((delegate* unmanaged<IControlInterface*, Guid*, int>)(lpVtbl[4]))((IControlInterface*)Unsafe.AsPointer(ref this), pIID);
+        return ((delegate* unmanaged[MemberFunction]<IControlInterface*, Guid*, int>)(lpVtbl[4]))((IControlInterface*)Unsafe.AsPointer(ref this), pIID);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppwstrName);
 
         [VtblIndex(4)]
         HRESULT GetIID(Guid* pIID);
@@ -75,18 +75,18 @@ public unsafe partial struct IControlInterface : IControlInterface.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetIID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetIID;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPathElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPathElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISVGPathElement*, uint>)(lpVtbl[1]))((ISVGPathElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, uint>)(lpVtbl[1]))((ISVGPathElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISVGPathElement*, uint>)(lpVtbl[2]))((ISVGPathElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, uint>)(lpVtbl[2]))((ISVGPathElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, uint*, int>)(lpVtbl[3]))((ISVGPathElement*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, uint*, int>)(lpVtbl[3]))((ISVGPathElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPathElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPathElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPathElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPathElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPathElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPathElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.putref_pathLength"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(7)]
     public HRESULT putref_pathLength(ISVGAnimatedNumber* v)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, ISVGAnimatedNumber*, int>)(lpVtbl[7]))((ISVGPathElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, ISVGAnimatedNumber*, int>)(lpVtbl[7]))((ISVGPathElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.get_pathLength"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(8)]
     public HRESULT get_pathLength(ISVGAnimatedNumber** p)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, ISVGAnimatedNumber**, int>)(lpVtbl[8]))((ISVGPathElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, ISVGAnimatedNumber**, int>)(lpVtbl[8]))((ISVGPathElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.getTotalLength"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(9)]
     public HRESULT getTotalLength(float* pfltResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float*, int>)(lpVtbl[9]))((ISVGPathElement*)Unsafe.AsPointer(ref this), pfltResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float*, int>)(lpVtbl[9]))((ISVGPathElement*)Unsafe.AsPointer(ref this), pfltResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.getPointAtLength"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(10)]
     public HRESULT getPointAtLength(float fltdistance, ISVGPoint** ppPointResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, ISVGPoint**, int>)(lpVtbl[10]))((ISVGPathElement*)Unsafe.AsPointer(ref this), fltdistance, ppPointResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, ISVGPoint**, int>)(lpVtbl[10]))((ISVGPathElement*)Unsafe.AsPointer(ref this), fltdistance, ppPointResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.getPathSegAtLength"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(11)]
     public HRESULT getPathSegAtLength(float fltdistance, [NativeTypeName("long *")] int* plResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, int*, int>)(lpVtbl[11]))((ISVGPathElement*)Unsafe.AsPointer(ref this), fltdistance, plResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, int*, int>)(lpVtbl[11]))((ISVGPathElement*)Unsafe.AsPointer(ref this), fltdistance, plResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegClosePath"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(12)]
     public HRESULT createSVGPathSegClosePath(ISVGPathSegClosePath** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, ISVGPathSegClosePath**, int>)(lpVtbl[12]))((ISVGPathElement*)Unsafe.AsPointer(ref this), ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, ISVGPathSegClosePath**, int>)(lpVtbl[12]))((ISVGPathElement*)Unsafe.AsPointer(ref this), ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegMovetoAbs"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(13)]
     public HRESULT createSVGPathSegMovetoAbs(float x, float y, ISVGPathSegMovetoAbs** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegMovetoAbs**, int>)(lpVtbl[13]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, ISVGPathSegMovetoAbs**, int>)(lpVtbl[13]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegMovetoRel"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(14)]
     public HRESULT createSVGPathSegMovetoRel(float x, float y, ISVGPathSegMovetoRel** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegMovetoRel**, int>)(lpVtbl[14]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, ISVGPathSegMovetoRel**, int>)(lpVtbl[14]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoAbs"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(15)]
     public HRESULT createSVGPathSegLinetoAbs(float x, float y, ISVGPathSegLinetoAbs** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegLinetoAbs**, int>)(lpVtbl[15]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, ISVGPathSegLinetoAbs**, int>)(lpVtbl[15]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoRel"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(16)]
     public HRESULT createSVGPathSegLinetoRel(float x, float y, ISVGPathSegLinetoRel** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegLinetoRel**, int>)(lpVtbl[16]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, ISVGPathSegLinetoRel**, int>)(lpVtbl[16]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoCubicAbs"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(17)]
     public HRESULT createSVGPathSegCurvetoCubicAbs(float x, float y, float x1, float y1, float x2, float y2, ISVGPathSegCurvetoCubicAbs** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicAbs**, int>)(lpVtbl[17]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, x2, y2, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicAbs**, int>)(lpVtbl[17]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, x2, y2, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoCubicRel"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(18)]
     public HRESULT createSVGPathSegCurvetoCubicRel(float x, float y, float x1, float y1, float x2, float y2, ISVGPathSegCurvetoCubicRel** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicRel**, int>)(lpVtbl[18]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, x2, y2, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicRel**, int>)(lpVtbl[18]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, x2, y2, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoQuadraticAbs"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(19)]
     public HRESULT createSVGPathSegCurvetoQuadraticAbs(float x, float y, float x1, float y1, ISVGPathSegCurvetoQuadraticAbs** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoQuadraticAbs**, int>)(lpVtbl[19]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoQuadraticAbs**, int>)(lpVtbl[19]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoQuadraticRel"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(20)]
     public HRESULT createSVGPathSegCurvetoQuadraticRel(float x, float y, float x1, float y1, ISVGPathSegCurvetoQuadraticRel** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoQuadraticRel**, int>)(lpVtbl[20]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoQuadraticRel**, int>)(lpVtbl[20]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegArcAbs"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(21)]
     public HRESULT createSVGPathSegArcAbs(float x, float y, float r1, float r2, float angle, [NativeTypeName("VARIANT_BOOL")] short largeArcFlag, [NativeTypeName("VARIANT_BOOL")] short sweepFlag, ISVGPathSegArcAbs** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, short, short, ISVGPathSegArcAbs**, int>)(lpVtbl[21]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, r1, r2, angle, largeArcFlag, sweepFlag, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, float, float, float, short, short, ISVGPathSegArcAbs**, int>)(lpVtbl[21]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, r1, r2, angle, largeArcFlag, sweepFlag, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegArcRel"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(22)]
     public HRESULT createSVGPathSegArcRel(float x, float y, float r1, float r2, float angle, [NativeTypeName("VARIANT_BOOL")] short largeArcFlag, [NativeTypeName("VARIANT_BOOL")] short sweepFlag, ISVGPathSegArcRel** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, short, short, ISVGPathSegArcRel**, int>)(lpVtbl[22]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, r1, r2, angle, largeArcFlag, sweepFlag, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, float, float, float, short, short, ISVGPathSegArcRel**, int>)(lpVtbl[22]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, r1, r2, angle, largeArcFlag, sweepFlag, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoHorizontalAbs"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(23)]
     public HRESULT createSVGPathSegLinetoHorizontalAbs(float x, ISVGPathSegLinetoHorizontalAbs** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoHorizontalAbs**, int>)(lpVtbl[23]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, ISVGPathSegLinetoHorizontalAbs**, int>)(lpVtbl[23]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoHorizontalRel"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(24)]
     public HRESULT createSVGPathSegLinetoHorizontalRel(float x, ISVGPathSegLinetoHorizontalRel** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoHorizontalRel**, int>)(lpVtbl[24]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, ISVGPathSegLinetoHorizontalRel**, int>)(lpVtbl[24]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoVerticalAbs"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(25)]
     public HRESULT createSVGPathSegLinetoVerticalAbs(float y, ISVGPathSegLinetoVerticalAbs** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoVerticalAbs**, int>)(lpVtbl[25]))((ISVGPathElement*)Unsafe.AsPointer(ref this), y, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, ISVGPathSegLinetoVerticalAbs**, int>)(lpVtbl[25]))((ISVGPathElement*)Unsafe.AsPointer(ref this), y, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoVerticalRel"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(26)]
     public HRESULT createSVGPathSegLinetoVerticalRel(float y, ISVGPathSegLinetoVerticalRel** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoVerticalRel**, int>)(lpVtbl[26]))((ISVGPathElement*)Unsafe.AsPointer(ref this), y, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, ISVGPathSegLinetoVerticalRel**, int>)(lpVtbl[26]))((ISVGPathElement*)Unsafe.AsPointer(ref this), y, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoCubicSmoothAbs"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(27)]
     public HRESULT createSVGPathSegCurvetoCubicSmoothAbs(float x, float y, float x2, float y2, ISVGPathSegCurvetoCubicSmoothAbs** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothAbs**, int>)(lpVtbl[27]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x2, y2, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothAbs**, int>)(lpVtbl[27]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x2, y2, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoCubicSmoothRel"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(28)]
     public HRESULT createSVGPathSegCurvetoCubicSmoothRel(float x, float y, float x2, float y2, ISVGPathSegCurvetoCubicSmoothRel** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothRel**, int>)(lpVtbl[28]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x2, y2, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothRel**, int>)(lpVtbl[28]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x2, y2, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoQuadraticSmoothAbs"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(29)]
     public HRESULT createSVGPathSegCurvetoQuadraticSmoothAbs(float x, float y, ISVGPathSegCurvetoQuadraticSmoothAbs** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegCurvetoQuadraticSmoothAbs**, int>)(lpVtbl[29]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, ISVGPathSegCurvetoQuadraticSmoothAbs**, int>)(lpVtbl[29]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
     /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoQuadraticSmoothRel"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
     [VtblIndex(30)]
     public HRESULT createSVGPathSegCurvetoQuadraticSmoothRel(float x, float y, ISVGPathSegCurvetoQuadraticSmoothRel** ppResult)
     {
-        return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegCurvetoQuadraticSmoothRel**, int>)(lpVtbl[30]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathElement*, float, float, ISVGPathSegCurvetoQuadraticSmoothRel**, int>)(lpVtbl[30]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
     public interface Interface : IDispatch.Interface
@@ -349,96 +349,96 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGAnimatedNumber *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedNumber*, int> putref_pathLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedNumber*, int> putref_pathLength;
 
         [NativeTypeName("HRESULT (ISVGAnimatedNumber **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedNumber**, int> get_pathLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedNumber**, int> get_pathLength;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> getTotalLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> getTotalLength;
 
         [NativeTypeName("HRESULT (float, ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, ISVGPoint**, int> getPointAtLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, ISVGPoint**, int> getPointAtLength;
 
         [NativeTypeName("HRESULT (float, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int*, int> getPathSegAtLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int*, int> getPathSegAtLength;
 
         [NativeTypeName("HRESULT (ISVGPathSegClosePath **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGPathSegClosePath**, int> createSVGPathSegClosePath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGPathSegClosePath**, int> createSVGPathSegClosePath;
 
         [NativeTypeName("HRESULT (float, float, ISVGPathSegMovetoAbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, ISVGPathSegMovetoAbs**, int> createSVGPathSegMovetoAbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, ISVGPathSegMovetoAbs**, int> createSVGPathSegMovetoAbs;
 
         [NativeTypeName("HRESULT (float, float, ISVGPathSegMovetoRel **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, ISVGPathSegMovetoRel**, int> createSVGPathSegMovetoRel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, ISVGPathSegMovetoRel**, int> createSVGPathSegMovetoRel;
 
         [NativeTypeName("HRESULT (float, float, ISVGPathSegLinetoAbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, ISVGPathSegLinetoAbs**, int> createSVGPathSegLinetoAbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, ISVGPathSegLinetoAbs**, int> createSVGPathSegLinetoAbs;
 
         [NativeTypeName("HRESULT (float, float, ISVGPathSegLinetoRel **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, ISVGPathSegLinetoRel**, int> createSVGPathSegLinetoRel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, ISVGPathSegLinetoRel**, int> createSVGPathSegLinetoRel;
 
         [NativeTypeName("HRESULT (float, float, float, float, float, float, ISVGPathSegCurvetoCubicAbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicAbs**, int> createSVGPathSegCurvetoCubicAbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicAbs**, int> createSVGPathSegCurvetoCubicAbs;
 
         [NativeTypeName("HRESULT (float, float, float, float, float, float, ISVGPathSegCurvetoCubicRel **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicRel**, int> createSVGPathSegCurvetoCubicRel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicRel**, int> createSVGPathSegCurvetoCubicRel;
 
         [NativeTypeName("HRESULT (float, float, float, float, ISVGPathSegCurvetoQuadraticAbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, ISVGPathSegCurvetoQuadraticAbs**, int> createSVGPathSegCurvetoQuadraticAbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, ISVGPathSegCurvetoQuadraticAbs**, int> createSVGPathSegCurvetoQuadraticAbs;
 
         [NativeTypeName("HRESULT (float, float, float, float, ISVGPathSegCurvetoQuadraticRel **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, ISVGPathSegCurvetoQuadraticRel**, int> createSVGPathSegCurvetoQuadraticRel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, ISVGPathSegCurvetoQuadraticRel**, int> createSVGPathSegCurvetoQuadraticRel;
 
         [NativeTypeName("HRESULT (float, float, float, float, float, VARIANT_BOOL, VARIANT_BOOL, ISVGPathSegArcAbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, float, short, short, ISVGPathSegArcAbs**, int> createSVGPathSegArcAbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, float, short, short, ISVGPathSegArcAbs**, int> createSVGPathSegArcAbs;
 
         [NativeTypeName("HRESULT (float, float, float, float, float, VARIANT_BOOL, VARIANT_BOOL, ISVGPathSegArcRel **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, float, short, short, ISVGPathSegArcRel**, int> createSVGPathSegArcRel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, float, short, short, ISVGPathSegArcRel**, int> createSVGPathSegArcRel;
 
         [NativeTypeName("HRESULT (float, ISVGPathSegLinetoHorizontalAbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, ISVGPathSegLinetoHorizontalAbs**, int> createSVGPathSegLinetoHorizontalAbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, ISVGPathSegLinetoHorizontalAbs**, int> createSVGPathSegLinetoHorizontalAbs;
 
         [NativeTypeName("HRESULT (float, ISVGPathSegLinetoHorizontalRel **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, ISVGPathSegLinetoHorizontalRel**, int> createSVGPathSegLinetoHorizontalRel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, ISVGPathSegLinetoHorizontalRel**, int> createSVGPathSegLinetoHorizontalRel;
 
         [NativeTypeName("HRESULT (float, ISVGPathSegLinetoVerticalAbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, ISVGPathSegLinetoVerticalAbs**, int> createSVGPathSegLinetoVerticalAbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, ISVGPathSegLinetoVerticalAbs**, int> createSVGPathSegLinetoVerticalAbs;
 
         [NativeTypeName("HRESULT (float, ISVGPathSegLinetoVerticalRel **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, ISVGPathSegLinetoVerticalRel**, int> createSVGPathSegLinetoVerticalRel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, ISVGPathSegLinetoVerticalRel**, int> createSVGPathSegLinetoVerticalRel;
 
         [NativeTypeName("HRESULT (float, float, float, float, ISVGPathSegCurvetoCubicSmoothAbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothAbs**, int> createSVGPathSegCurvetoCubicSmoothAbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothAbs**, int> createSVGPathSegCurvetoCubicSmoothAbs;
 
         [NativeTypeName("HRESULT (float, float, float, float, ISVGPathSegCurvetoCubicSmoothRel **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothRel**, int> createSVGPathSegCurvetoCubicSmoothRel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothRel**, int> createSVGPathSegCurvetoCubicSmoothRel;
 
         [NativeTypeName("HRESULT (float, float, ISVGPathSegCurvetoQuadraticSmoothAbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, ISVGPathSegCurvetoQuadraticSmoothAbs**, int> createSVGPathSegCurvetoQuadraticSmoothAbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, ISVGPathSegCurvetoQuadraticSmoothAbs**, int> createSVGPathSegCurvetoQuadraticSmoothAbs;
 
         [NativeTypeName("HRESULT (float, float, ISVGPathSegCurvetoQuadraticSmoothRel **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, ISVGPathSegCurvetoQuadraticSmoothRel**, int> createSVGPathSegCurvetoQuadraticSmoothRel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, ISVGPathSegCurvetoQuadraticSmoothRel**, int> createSVGPathSegCurvetoQuadraticSmoothRel;
     }
 }

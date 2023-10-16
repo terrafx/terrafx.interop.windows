@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DLGTEMPLATE" /> struct.</summary>
 public static unsafe partial class DLGTEMPLATETests
 {
-    /// <summary>Validates that the <see cref="DLGTEMPLATE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DLGTEMPLATE>(), Is.EqualTo(sizeof(DLGTEMPLATE)));
-    }
-
-    /// <summary>Validates that the <see cref="DLGTEMPLATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DLGTEMPLATE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DLGTEMPLATE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DLGTEMPLATE), Is.EqualTo(18));
-    }
 }

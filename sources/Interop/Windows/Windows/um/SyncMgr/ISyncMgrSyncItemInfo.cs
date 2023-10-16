@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemInfo*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, uint>)(lpVtbl[1]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemInfo*, uint>)(lpVtbl[1]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,23 +43,23 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, uint>)(lpVtbl[2]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemInfo*, uint>)(lpVtbl[2]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.GetTypeLabel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] ushort** ppszTypeLabel)
+    public HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] char** ppszTypeLabel)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, ushort**, int>)(lpVtbl[3]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), ppszTypeLabel);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemInfo*, char**, int>)(lpVtbl[3]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), ppszTypeLabel);
     }
 
     /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.GetComment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetComment([NativeTypeName("LPWSTR *")] ushort** ppszComment)
+    public HRESULT GetComment([NativeTypeName("LPWSTR *")] char** ppszComment)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, ushort**, int>)(lpVtbl[4]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), ppszComment);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemInfo*, char**, int>)(lpVtbl[4]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), ppszComment);
     }
 
     /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.GetLastSyncTime"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
     [VtblIndex(5)]
     public HRESULT GetLastSyncTime(FILETIME* pftLastSync)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, FILETIME*, int>)(lpVtbl[5]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), pftLastSync);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemInfo*, FILETIME*, int>)(lpVtbl[5]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), pftLastSync);
     }
 
     /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.IsEnabled"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
     [VtblIndex(6)]
     public HRESULT IsEnabled()
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, int>)(lpVtbl[6]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemInfo*, int>)(lpVtbl[6]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.IsConnected"]/*' />
@@ -83,16 +83,16 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
     [VtblIndex(7)]
     public HRESULT IsConnected()
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, int>)(lpVtbl[7]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemInfo*, int>)(lpVtbl[7]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] ushort** ppszTypeLabel);
+        HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] char** ppszTypeLabel);
 
         [VtblIndex(4)]
-        HRESULT GetComment([NativeTypeName("LPWSTR *")] ushort** ppszComment);
+        HRESULT GetComment([NativeTypeName("LPWSTR *")] char** ppszComment);
 
         [VtblIndex(5)]
         HRESULT GetLastSyncTime(FILETIME* pftLastSync);
@@ -108,27 +108,27 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTypeLabel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetTypeLabel;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetComment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetComment;
 
         [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FILETIME*, int> GetLastSyncTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FILETIME*, int> GetLastSyncTime;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsEnabled;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsConnected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsConnected;
     }
 }

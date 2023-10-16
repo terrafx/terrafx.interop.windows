@@ -19,25 +19,4 @@ public static unsafe partial class SharedBitmapTests
     {
         Assert.That(typeof(SharedBitmap).GUID, Is.EqualTo(IID_SharedBitmap));
     }
-
-    /// <summary>Validates that the <see cref="SharedBitmap" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SharedBitmap>(), Is.EqualTo(sizeof(SharedBitmap)));
-    }
-
-    /// <summary>Validates that the <see cref="SharedBitmap" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SharedBitmap).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SharedBitmap" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SharedBitmap), Is.EqualTo(1));
-    }
 }

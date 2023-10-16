@@ -19,32 +19,4 @@ public static unsafe partial class IAMCopyCaptureFileProgressTests
     {
         Assert.That(typeof(IAMCopyCaptureFileProgress).GUID, Is.EqualTo(IID_IAMCopyCaptureFileProgress));
     }
-
-    /// <summary>Validates that the <see cref="IAMCopyCaptureFileProgress" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMCopyCaptureFileProgress>(), Is.EqualTo(sizeof(IAMCopyCaptureFileProgress)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMCopyCaptureFileProgress" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMCopyCaptureFileProgress).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMCopyCaptureFileProgress" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMCopyCaptureFileProgress), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMCopyCaptureFileProgress), Is.EqualTo(4));
-        }
-    }
 }

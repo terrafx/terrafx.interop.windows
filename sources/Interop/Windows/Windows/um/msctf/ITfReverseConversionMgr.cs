@@ -25,7 +25,7 @@ public unsafe partial struct ITfReverseConversionMgr : ITfReverseConversionMgr.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfReverseConversionMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfReverseConversionMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfReverseConversionMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfReverseConversionMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfReverseConversionMgr : ITfReverseConversionMgr.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfReverseConversionMgr*, uint>)(lpVtbl[1]))((ITfReverseConversionMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfReverseConversionMgr*, uint>)(lpVtbl[1]))((ITfReverseConversionMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfReverseConversionMgr : ITfReverseConversionMgr.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfReverseConversionMgr*, uint>)(lpVtbl[2]))((ITfReverseConversionMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfReverseConversionMgr*, uint>)(lpVtbl[2]))((ITfReverseConversionMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfReverseConversionMgr.xml' path='doc/member[@name="ITfReverseConversionMgr.GetReverseConversion"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfReverseConversionMgr : ITfReverseConversionMgr.I
     [VtblIndex(3)]
     public HRESULT GetReverseConversion([NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwflag, ITfReverseConversion** ppReverseConversion)
     {
-        return ((delegate* unmanaged<ITfReverseConversionMgr*, ushort, Guid*, uint, ITfReverseConversion**, int>)(lpVtbl[3]))((ITfReverseConversionMgr*)Unsafe.AsPointer(ref this), langid, guidProfile, dwflag, ppReverseConversion);
+        return ((delegate* unmanaged[MemberFunction]<ITfReverseConversionMgr*, ushort, Guid*, uint, ITfReverseConversion**, int>)(lpVtbl[3]))((ITfReverseConversionMgr*)Unsafe.AsPointer(ref this), langid, guidProfile, dwflag, ppReverseConversion);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfReverseConversionMgr : ITfReverseConversionMgr.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LANGID, const GUID &, DWORD, ITfReverseConversion **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, Guid*, uint, ITfReverseConversion**, int> GetReverseConversion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, Guid*, uint, ITfReverseConversion**, int> GetReverseConversion;
     }
 }

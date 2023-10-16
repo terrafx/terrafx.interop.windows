@@ -21,32 +21,4 @@ public static unsafe partial class ID3D12GraphicsCommandList2Tests
     {
         Assert.That(typeof(ID3D12GraphicsCommandList2).GUID, Is.EqualTo(IID_ID3D12GraphicsCommandList2));
     }
-
-    /// <summary>Validates that the <see cref="ID3D12GraphicsCommandList2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID3D12GraphicsCommandList2>(), Is.EqualTo(sizeof(ID3D12GraphicsCommandList2)));
-    }
-
-    /// <summary>Validates that the <see cref="ID3D12GraphicsCommandList2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID3D12GraphicsCommandList2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID3D12GraphicsCommandList2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID3D12GraphicsCommandList2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID3D12GraphicsCommandList2), Is.EqualTo(4));
-        }
-    }
 }

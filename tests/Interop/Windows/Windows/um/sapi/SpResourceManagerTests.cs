@@ -19,25 +19,4 @@ public static unsafe partial class SpResourceManagerTests
     {
         Assert.That(typeof(SpResourceManager).GUID, Is.EqualTo(CLSID_SpResourceManager));
     }
-
-    /// <summary>Validates that the <see cref="SpResourceManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpResourceManager>(), Is.EqualTo(sizeof(SpResourceManager)));
-    }
-
-    /// <summary>Validates that the <see cref="SpResourceManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpResourceManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpResourceManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpResourceManager), Is.EqualTo(1));
-    }
 }

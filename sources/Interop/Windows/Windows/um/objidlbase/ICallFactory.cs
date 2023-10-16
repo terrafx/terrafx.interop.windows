@@ -25,7 +25,7 @@ public unsafe partial struct ICallFactory : ICallFactory.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICallFactory*, Guid*, void**, int>)(lpVtbl[0]))((ICallFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICallFactory*, Guid*, void**, int>)(lpVtbl[0]))((ICallFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICallFactory : ICallFactory.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICallFactory*, uint>)(lpVtbl[1]))((ICallFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICallFactory*, uint>)(lpVtbl[1]))((ICallFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICallFactory : ICallFactory.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICallFactory*, uint>)(lpVtbl[2]))((ICallFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICallFactory*, uint>)(lpVtbl[2]))((ICallFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICallFactory.xml' path='doc/member[@name="ICallFactory.CreateCall"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICallFactory : ICallFactory.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT CreateCall([NativeTypeName("const IID &")] Guid* riid, IUnknown* pCtrlUnk, [NativeTypeName("const IID &")] Guid* riid2, IUnknown** ppv)
     {
-        return ((delegate* unmanaged<ICallFactory*, Guid*, IUnknown*, Guid*, IUnknown**, int>)(lpVtbl[3]))((ICallFactory*)Unsafe.AsPointer(ref this), riid, pCtrlUnk, riid2, ppv);
+        return ((delegate* unmanaged[MemberFunction]<ICallFactory*, Guid*, IUnknown*, Guid*, IUnknown**, int>)(lpVtbl[3]))((ICallFactory*)Unsafe.AsPointer(ref this), riid, pCtrlUnk, riid2, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ICallFactory : ICallFactory.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, Guid*, IUnknown**, int> CreateCall;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, Guid*, IUnknown**, int> CreateCall;
     }
 }

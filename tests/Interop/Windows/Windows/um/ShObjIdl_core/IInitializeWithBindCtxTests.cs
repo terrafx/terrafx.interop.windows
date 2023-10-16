@@ -19,32 +19,4 @@ public static unsafe partial class IInitializeWithBindCtxTests
     {
         Assert.That(typeof(IInitializeWithBindCtx).GUID, Is.EqualTo(IID_IInitializeWithBindCtx));
     }
-
-    /// <summary>Validates that the <see cref="IInitializeWithBindCtx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInitializeWithBindCtx>(), Is.EqualTo(sizeof(IInitializeWithBindCtx)));
-    }
-
-    /// <summary>Validates that the <see cref="IInitializeWithBindCtx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInitializeWithBindCtx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInitializeWithBindCtx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInitializeWithBindCtx), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInitializeWithBindCtx), Is.EqualTo(4));
-        }
-    }
 }

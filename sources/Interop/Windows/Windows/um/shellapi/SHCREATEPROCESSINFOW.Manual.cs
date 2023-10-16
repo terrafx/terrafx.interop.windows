@@ -88,7 +88,7 @@ public unsafe partial struct SHCREATEPROCESSINFOW
 
     [NativeTypeName("LPCWSTR")]
     [UnscopedRef]
-    public ref ushort* pszFile
+    public ref char* pszFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -106,7 +106,7 @@ public unsafe partial struct SHCREATEPROCESSINFOW
 
     [NativeTypeName("LPCWSTR")]
     [UnscopedRef]
-    public ref ushort* pszParameters
+    public ref char* pszParameters
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -124,7 +124,7 @@ public unsafe partial struct SHCREATEPROCESSINFOW
 
     [NativeTypeName("LPCWSTR")]
     [UnscopedRef]
-    public ref ushort* pszCurrentDirectory
+    public ref char* pszCurrentDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

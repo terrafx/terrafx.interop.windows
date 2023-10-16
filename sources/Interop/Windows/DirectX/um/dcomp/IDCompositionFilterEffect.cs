@@ -28,7 +28,7 @@ public unsafe partial struct IDCompositionFilterEffect : IDCompositionFilterEffe
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionFilterEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionFilterEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDCompositionFilterEffect : IDCompositionFilterEffe
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionFilterEffect*, uint>)(lpVtbl[1]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionFilterEffect*, uint>)(lpVtbl[1]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDCompositionFilterEffect : IDCompositionFilterEffe
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionFilterEffect*, uint>)(lpVtbl[2]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionFilterEffect*, uint>)(lpVtbl[2]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionFilterEffect.xml' path='doc/member[@name="IDCompositionFilterEffect.SetInput"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDCompositionFilterEffect : IDCompositionFilterEffe
     [VtblIndex(3)]
     public HRESULT SetInput(uint index, IUnknown* input, uint flags)
     {
-        return ((delegate* unmanaged<IDCompositionFilterEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionFilterEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this), index, input, flags);
     }
 
     public interface Interface : IDCompositionEffect.Interface
@@ -67,15 +67,15 @@ public unsafe partial struct IDCompositionFilterEffect : IDCompositionFilterEffe
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, uint, int> SetInput;
     }
 }

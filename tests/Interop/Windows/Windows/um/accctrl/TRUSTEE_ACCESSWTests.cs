@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TRUSTEE_ACCESSW" /> struct.</summary>
 public static unsafe partial class TRUSTEE_ACCESSWTests
 {
-    /// <summary>Validates that the <see cref="TRUSTEE_ACCESSW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TRUSTEE_ACCESSW>(), Is.EqualTo(sizeof(TRUSTEE_ACCESSW)));
-    }
-
-    /// <summary>Validates that the <see cref="TRUSTEE_ACCESSW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TRUSTEE_ACCESSW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TRUSTEE_ACCESSW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(TRUSTEE_ACCESSW), Is.EqualTo(24));
-        }
-        else
-        {
-            Assert.That(sizeof(TRUSTEE_ACCESSW), Is.EqualTo(16));
-        }
-    }
 }

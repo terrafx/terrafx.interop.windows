@@ -18,19 +18,19 @@ public unsafe partial struct GROUP_POLICY_OBJECTW
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.lpDSPath"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpDSPath;
+    public char* lpDSPath;
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.lpFileSysPath"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpFileSysPath;
+    public char* lpFileSysPath;
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.lpDisplayName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpDisplayName;
+    public char* lpDisplayName;
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.szGPOName"]/*' />
     [NativeTypeName("WCHAR[50]")]
-    public fixed ushort szGPOName[50];
+    public fixed char szGPOName[50];
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.GPOLink"]/*' />
     public GPO_LINK GPOLink;
@@ -48,12 +48,12 @@ public unsafe partial struct GROUP_POLICY_OBJECTW
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.lpExtensions"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpExtensions;
+    public char* lpExtensions;
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.lParam2"]/*' />
     public LPARAM lParam2;
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.lpLink"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpLink;
+    public char* lpLink;
 }

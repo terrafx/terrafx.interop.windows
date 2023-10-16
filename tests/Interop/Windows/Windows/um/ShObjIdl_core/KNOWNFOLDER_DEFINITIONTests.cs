@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KNOWNFOLDER_DEFINITION" /> struct.</summary>
 public static unsafe partial class KNOWNFOLDER_DEFINITIONTests
 {
-    /// <summary>Validates that the <see cref="KNOWNFOLDER_DEFINITION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KNOWNFOLDER_DEFINITION>(), Is.EqualTo(sizeof(KNOWNFOLDER_DEFINITION)));
-    }
-
-    /// <summary>Validates that the <see cref="KNOWNFOLDER_DEFINITION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KNOWNFOLDER_DEFINITION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KNOWNFOLDER_DEFINITION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(KNOWNFOLDER_DEFINITION), Is.EqualTo(112));
-        }
-        else
-        {
-            Assert.That(sizeof(KNOWNFOLDER_DEFINITION), Is.EqualTo(76));
-        }
-    }
 }

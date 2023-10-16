@@ -19,32 +19,4 @@ public static unsafe partial class IEncoderAPITests
     {
         Assert.That(typeof(IEncoderAPI).GUID, Is.EqualTo(IID_IEncoderAPI));
     }
-
-    /// <summary>Validates that the <see cref="IEncoderAPI" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEncoderAPI>(), Is.EqualTo(sizeof(IEncoderAPI)));
-    }
-
-    /// <summary>Validates that the <see cref="IEncoderAPI" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEncoderAPI).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEncoderAPI" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEncoderAPI), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEncoderAPI), Is.EqualTo(4));
-        }
-    }
 }

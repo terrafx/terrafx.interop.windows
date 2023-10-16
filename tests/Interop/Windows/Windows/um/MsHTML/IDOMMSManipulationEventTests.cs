@@ -19,32 +19,4 @@ public static unsafe partial class IDOMMSManipulationEventTests
     {
         Assert.That(typeof(IDOMMSManipulationEvent).GUID, Is.EqualTo(IID_IDOMMSManipulationEvent));
     }
-
-    /// <summary>Validates that the <see cref="IDOMMSManipulationEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDOMMSManipulationEvent>(), Is.EqualTo(sizeof(IDOMMSManipulationEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="IDOMMSManipulationEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDOMMSManipulationEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDOMMSManipulationEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDOMMSManipulationEvent), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDOMMSManipulationEvent), Is.EqualTo(4));
-        }
-    }
 }

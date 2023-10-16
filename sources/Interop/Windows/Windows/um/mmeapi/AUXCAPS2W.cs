@@ -26,7 +26,7 @@ public unsafe partial struct AUXCAPS2W
 
     /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.szPname"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort szPname[32];
+    public fixed char szPname[32];
 
     /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.wTechnology"]/*' />
     [NativeTypeName("WORD")]

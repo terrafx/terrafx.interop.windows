@@ -28,7 +28,7 @@ public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessSt
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRandomAccessStreamFileAccessMode*, Guid*, void**, int>)(lpVtbl[0]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRandomAccessStreamFileAccessMode*, Guid*, void**, int>)(lpVtbl[0]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessSt
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint>)(lpVtbl[1]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRandomAccessStreamFileAccessMode*, uint>)(lpVtbl[1]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessSt
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint>)(lpVtbl[2]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRandomAccessStreamFileAccessMode*, uint>)(lpVtbl[2]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRandomAccessStreamFileAccessMode.xml' path='doc/member[@name="IRandomAccessStreamFileAccessMode.GetMode"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessSt
     [VtblIndex(3)]
     public HRESULT GetMode([NativeTypeName("DWORD *")] uint* fileAccessMode)
     {
-        return ((delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint*, int>)(lpVtbl[3]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this), fileAccessMode);
+        return ((delegate* unmanaged[MemberFunction]<IRandomAccessStreamFileAccessMode*, uint*, int>)(lpVtbl[3]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this), fileAccessMode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -67,15 +67,15 @@ public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessSt
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMode;
     }
 }

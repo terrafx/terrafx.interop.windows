@@ -18,7 +18,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
     [VtblIndex(0)]
     public BOOL IsValid()
     {
-        return ((delegate* unmanaged<ID3D10EffectPass*, int>)(lpVtbl[0]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10EffectPass*, int>)(lpVtbl[0]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetDesc"]/*' />
@@ -26,7 +26,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
     [VtblIndex(1)]
     public HRESULT GetDesc(D3D10_PASS_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_DESC*, int>)(lpVtbl[1]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10EffectPass*, D3D10_PASS_DESC*, int>)(lpVtbl[1]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetVertexShaderDesc"]/*' />
@@ -34,7 +34,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
     [VtblIndex(2)]
     public HRESULT GetVertexShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[2]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[2]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetGeometryShaderDesc"]/*' />
@@ -42,7 +42,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
     [VtblIndex(3)]
     public HRESULT GetGeometryShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[3]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[3]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetPixelShaderDesc"]/*' />
@@ -50,7 +50,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
     [VtblIndex(4)]
     public HRESULT GetPixelShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[4]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[4]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetAnnotationByIndex"]/*' />
@@ -58,7 +58,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
     [VtblIndex(5)]
     public ID3D10EffectVariable* GetAnnotationByIndex(uint Index)
     {
-        return ((delegate* unmanaged<ID3D10EffectPass*, uint, ID3D10EffectVariable*>)(lpVtbl[5]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10EffectPass*, uint, ID3D10EffectVariable*>)(lpVtbl[5]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetAnnotationByName"]/*' />
@@ -66,7 +66,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
     [VtblIndex(6)]
     public ID3D10EffectVariable* GetAnnotationByName([NativeTypeName("LPCSTR")] sbyte* Name)
     {
-        return ((delegate* unmanaged<ID3D10EffectPass*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[6]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10EffectPass*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[6]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.Apply"]/*' />
@@ -74,7 +74,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
     [VtblIndex(7)]
     public HRESULT Apply(uint Flags)
     {
-        return ((delegate* unmanaged<ID3D10EffectPass*, uint, int>)(lpVtbl[7]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Flags);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10EffectPass*, uint, int>)(lpVtbl[7]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Flags);
     }
 
     /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.ComputeStateBlockMask"]/*' />
@@ -82,7 +82,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
     [VtblIndex(8)]
     public HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask)
     {
-        return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_STATE_BLOCK_MASK*, int>)(lpVtbl[8]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pStateBlockMask);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10EffectPass*, D3D10_STATE_BLOCK_MASK*, int>)(lpVtbl[8]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pStateBlockMask);
     }
 
     public interface Interface
@@ -119,30 +119,30 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsValid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsValid;
 
         [NativeTypeName("HRESULT (D3D10_PASS_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D10_PASS_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D10_PASS_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (D3D10_PASS_SHADER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D10_PASS_SHADER_DESC*, int> GetVertexShaderDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D10_PASS_SHADER_DESC*, int> GetVertexShaderDesc;
 
         [NativeTypeName("HRESULT (D3D10_PASS_SHADER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D10_PASS_SHADER_DESC*, int> GetGeometryShaderDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D10_PASS_SHADER_DESC*, int> GetGeometryShaderDesc;
 
         [NativeTypeName("HRESULT (D3D10_PASS_SHADER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D10_PASS_SHADER_DESC*, int> GetPixelShaderDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D10_PASS_SHADER_DESC*, int> GetPixelShaderDesc;
 
         [NativeTypeName("ID3D10EffectVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID3D10EffectVariable*> GetAnnotationByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID3D10EffectVariable*> GetAnnotationByIndex;
 
         [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, ID3D10EffectVariable*> GetAnnotationByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, ID3D10EffectVariable*> GetAnnotationByName;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Apply;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Apply;
 
         [NativeTypeName("HRESULT (D3D10_STATE_BLOCK_MASK *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D10_STATE_BLOCK_MASK*, int> ComputeStateBlockMask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D10_STATE_BLOCK_MASK*, int> ComputeStateBlockMask;
     }
 }

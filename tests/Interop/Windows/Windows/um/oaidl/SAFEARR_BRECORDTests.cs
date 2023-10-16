@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SAFEARR_BRECORD" /> struct.</summary>
 public static unsafe partial class SAFEARR_BRECORDTests
 {
-    /// <summary>Validates that the <see cref="SAFEARR_BRECORD" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SAFEARR_BRECORD>(), Is.EqualTo(sizeof(SAFEARR_BRECORD)));
-    }
-
-    /// <summary>Validates that the <see cref="SAFEARR_BRECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SAFEARR_BRECORD).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SAFEARR_BRECORD" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(SAFEARR_BRECORD), Is.EqualTo(16));
-        }
-        else
-        {
-            Assert.That(sizeof(SAFEARR_BRECORD), Is.EqualTo(8));
-        }
-    }
 }

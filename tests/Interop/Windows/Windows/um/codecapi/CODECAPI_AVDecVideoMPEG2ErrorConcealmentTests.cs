@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecVideoMPEG2ErrorConcealmentTests
     {
         Assert.That(typeof(CODECAPI_AVDecVideoMPEG2ErrorConcealment).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoMPEG2ErrorConcealment));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoMPEG2ErrorConcealment" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecVideoMPEG2ErrorConcealment>(), Is.EqualTo(sizeof(CODECAPI_AVDecVideoMPEG2ErrorConcealment)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoMPEG2ErrorConcealment" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecVideoMPEG2ErrorConcealment).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoMPEG2ErrorConcealment" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecVideoMPEG2ErrorConcealment), Is.EqualTo(1));
-    }
 }

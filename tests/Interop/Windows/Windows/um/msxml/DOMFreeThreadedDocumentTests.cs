@@ -19,25 +19,4 @@ public static unsafe partial class DOMFreeThreadedDocumentTests
     {
         Assert.That(typeof(DOMFreeThreadedDocument).GUID, Is.EqualTo(CLSID_DOMFreeThreadedDocument));
     }
-
-    /// <summary>Validates that the <see cref="DOMFreeThreadedDocument" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMFreeThreadedDocument>(), Is.EqualTo(sizeof(DOMFreeThreadedDocument)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMFreeThreadedDocument" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMFreeThreadedDocument).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMFreeThreadedDocument" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMFreeThreadedDocument), Is.EqualTo(1));
-    }
 }

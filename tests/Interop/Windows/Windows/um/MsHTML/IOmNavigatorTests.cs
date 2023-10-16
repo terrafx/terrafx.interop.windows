@@ -19,32 +19,4 @@ public static unsafe partial class IOmNavigatorTests
     {
         Assert.That(typeof(IOmNavigator).GUID, Is.EqualTo(IID_IOmNavigator));
     }
-
-    /// <summary>Validates that the <see cref="IOmNavigator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IOmNavigator>(), Is.EqualTo(sizeof(IOmNavigator)));
-    }
-
-    /// <summary>Validates that the <see cref="IOmNavigator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IOmNavigator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IOmNavigator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IOmNavigator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IOmNavigator), Is.EqualTo(4));
-        }
-    }
 }

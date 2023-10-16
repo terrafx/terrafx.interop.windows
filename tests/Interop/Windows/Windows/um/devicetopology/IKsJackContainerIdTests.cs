@@ -19,32 +19,4 @@ public static unsafe partial class IKsJackContainerIdTests
     {
         Assert.That(typeof(IKsJackContainerId).GUID, Is.EqualTo(IID_IKsJackContainerId));
     }
-
-    /// <summary>Validates that the <see cref="IKsJackContainerId" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IKsJackContainerId>(), Is.EqualTo(sizeof(IKsJackContainerId)));
-    }
-
-    /// <summary>Validates that the <see cref="IKsJackContainerId" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IKsJackContainerId).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IKsJackContainerId" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IKsJackContainerId), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IKsJackContainerId), Is.EqualTo(4));
-        }
-    }
 }

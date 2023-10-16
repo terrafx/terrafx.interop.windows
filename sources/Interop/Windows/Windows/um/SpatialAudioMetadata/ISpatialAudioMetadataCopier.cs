@@ -27,7 +27,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataCopier*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataCopier*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataCopier*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpatialAudioMetadataCopier.xml' path='doc/member[@name="ISpatialAudioMetadataCopier.Open"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
     [VtblIndex(3)]
     public HRESULT Open(ISpatialAudioMetadataItems* metadataItems)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, ISpatialAudioMetadataItems*, int>)(lpVtbl[3]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), metadataItems);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataCopier*, ISpatialAudioMetadataItems*, int>)(lpVtbl[3]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), metadataItems);
     }
 
     /// <include file='ISpatialAudioMetadataCopier.xml' path='doc/member[@name="ISpatialAudioMetadataCopier.CopyMetadataForFrames"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
     [VtblIndex(4)]
     public HRESULT CopyMetadataForFrames([NativeTypeName("UINT16")] ushort copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ISpatialAudioMetadataItems* dstMetadataItems, [NativeTypeName("UINT16 *")] ushort* itemsCopied)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, ushort, SpatialAudioMetadataCopyMode, ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[4]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), copyFrameCount, copyMode, dstMetadataItems, itemsCopied);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataCopier*, ushort, SpatialAudioMetadataCopyMode, ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[4]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), copyFrameCount, copyMode, dstMetadataItems, itemsCopied);
     }
 
     /// <include file='ISpatialAudioMetadataCopier.xml' path='doc/member[@name="ISpatialAudioMetadataCopier.Close"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
     [VtblIndex(5)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, int>)(lpVtbl[5]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataCopier*, int>)(lpVtbl[5]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpatialAudioMetadataItems *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpatialAudioMetadataItems*, int> Open;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpatialAudioMetadataItems*, int> Open;
 
         [NativeTypeName("HRESULT (UINT16, SpatialAudioMetadataCopyMode, ISpatialAudioMetadataItems *, UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, SpatialAudioMetadataCopyMode, ISpatialAudioMetadataItems*, ushort*, int> CopyMetadataForFrames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, SpatialAudioMetadataCopyMode, ISpatialAudioMetadataItems*, ushort*, int> CopyMetadataForFrames;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
     }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PHYSICAL_ELEMENT_STATUS_REQUEST" /> struct.</summary>
 public static unsafe partial class PHYSICAL_ELEMENT_STATUS_REQUESTTests
 {
-    /// <summary>Validates that the <see cref="PHYSICAL_ELEMENT_STATUS_REQUEST" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PHYSICAL_ELEMENT_STATUS_REQUEST>(), Is.EqualTo(sizeof(PHYSICAL_ELEMENT_STATUS_REQUEST)));
-    }
-
-    /// <summary>Validates that the <see cref="PHYSICAL_ELEMENT_STATUS_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PHYSICAL_ELEMENT_STATUS_REQUEST).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PHYSICAL_ELEMENT_STATUS_REQUEST" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PHYSICAL_ELEMENT_STATUS_REQUEST), Is.EqualTo(16));
-    }
 }

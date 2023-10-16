@@ -19,32 +19,4 @@ public static unsafe partial class IPerChannelDbLevelTests
     {
         Assert.That(typeof(IPerChannelDbLevel).GUID, Is.EqualTo(IID_IPerChannelDbLevel));
     }
-
-    /// <summary>Validates that the <see cref="IPerChannelDbLevel" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPerChannelDbLevel>(), Is.EqualTo(sizeof(IPerChannelDbLevel)));
-    }
-
-    /// <summary>Validates that the <see cref="IPerChannelDbLevel" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPerChannelDbLevel).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPerChannelDbLevel" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPerChannelDbLevel), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPerChannelDbLevel), Is.EqualTo(4));
-        }
-    }
 }

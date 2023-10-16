@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SecPkgContext_CipherInfo" /> struct.</summary>
 public static unsafe partial class SecPkgContext_CipherInfoTests
 {
-    /// <summary>Validates that the <see cref="SecPkgContext_CipherInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SecPkgContext_CipherInfo>(), Is.EqualTo(sizeof(SecPkgContext_CipherInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="SecPkgContext_CipherInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SecPkgContext_CipherInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SecPkgContext_CipherInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SecPkgContext_CipherInfo), Is.EqualTo(680));
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class HTMLProgressElementTests
     {
         Assert.That(typeof(HTMLProgressElement).GUID, Is.EqualTo(IID_HTMLProgressElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLProgressElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLProgressElement>(), Is.EqualTo(sizeof(HTMLProgressElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLProgressElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLProgressElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLProgressElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLProgressElement), Is.EqualTo(1));
-    }
 }

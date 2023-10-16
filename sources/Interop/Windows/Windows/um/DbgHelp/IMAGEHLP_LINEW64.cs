@@ -22,7 +22,7 @@ public unsafe partial struct IMAGEHLP_LINEW64
 
     /// <include file='IMAGEHLP_LINEW64.xml' path='doc/member[@name="IMAGEHLP_LINEW64.FileName"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* FileName;
+    public char* FileName;
 
     /// <include file='IMAGEHLP_LINEW64.xml' path='doc/member[@name="IMAGEHLP_LINEW64.Address"]/*' />
     [NativeTypeName("DWORD64")]

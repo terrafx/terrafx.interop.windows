@@ -27,7 +27,7 @@ public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBundleFactory*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleFactory*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBundleFactory*, uint>)(lpVtbl[1]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleFactory*, uint>)(lpVtbl[1]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBundleFactory*, uint>)(lpVtbl[2]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleFactory*, uint>)(lpVtbl[2]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBundleFactory.xml' path='doc/member[@name="IAppxBundleFactory.CreateBundleWriter"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface, 
     [VtblIndex(3)]
     public HRESULT CreateBundleWriter(IStream* outputStream, [NativeTypeName("UINT64")] ulong bundleVersion, IAppxBundleWriter** bundleWriter)
     {
-        return ((delegate* unmanaged<IAppxBundleFactory*, IStream*, ulong, IAppxBundleWriter**, int>)(lpVtbl[3]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this), outputStream, bundleVersion, bundleWriter);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleFactory*, IStream*, ulong, IAppxBundleWriter**, int>)(lpVtbl[3]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this), outputStream, bundleVersion, bundleWriter);
     }
 
     /// <include file='IAppxBundleFactory.xml' path='doc/member[@name="IAppxBundleFactory.CreateBundleReader"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface, 
     [VtblIndex(4)]
     public HRESULT CreateBundleReader(IStream* inputStream, IAppxBundleReader** bundleReader)
     {
-        return ((delegate* unmanaged<IAppxBundleFactory*, IStream*, IAppxBundleReader**, int>)(lpVtbl[4]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this), inputStream, bundleReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleFactory*, IStream*, IAppxBundleReader**, int>)(lpVtbl[4]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this), inputStream, bundleReader);
     }
 
     /// <include file='IAppxBundleFactory.xml' path='doc/member[@name="IAppxBundleFactory.CreateBundleManifestReader"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface, 
     [VtblIndex(5)]
     public HRESULT CreateBundleManifestReader(IStream* inputStream, IAppxBundleManifestReader** manifestReader)
     {
-        return ((delegate* unmanaged<IAppxBundleFactory*, IStream*, IAppxBundleManifestReader**, int>)(lpVtbl[5]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this), inputStream, manifestReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleFactory*, IStream*, IAppxBundleManifestReader**, int>)(lpVtbl[5]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this), inputStream, manifestReader);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, UINT64, IAppxBundleWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, ulong, IAppxBundleWriter**, int> CreateBundleWriter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, ulong, IAppxBundleWriter**, int> CreateBundleWriter;
 
         [NativeTypeName("HRESULT (IStream *, IAppxBundleReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IAppxBundleReader**, int> CreateBundleReader;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IAppxBundleReader**, int> CreateBundleReader;
 
         [NativeTypeName("HRESULT (IStream *, IAppxBundleManifestReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IAppxBundleManifestReader**, int> CreateBundleManifestReader;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IAppxBundleManifestReader**, int> CreateBundleManifestReader;
     }
 }

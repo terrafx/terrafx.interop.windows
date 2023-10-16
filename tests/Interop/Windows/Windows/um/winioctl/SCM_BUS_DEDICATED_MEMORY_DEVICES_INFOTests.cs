@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO" /> struct.</summary>
 public static unsafe partial class SCM_BUS_DEDICATED_MEMORY_DEVICES_INFOTests
 {
-    /// <summary>Validates that the <see cref="SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO>(), Is.EqualTo(sizeof(SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO), Is.EqualTo(48));
-    }
 }

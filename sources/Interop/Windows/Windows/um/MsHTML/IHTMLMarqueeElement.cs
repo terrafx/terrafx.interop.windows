@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, uint>)(lpVtbl[1]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, uint>)(lpVtbl[1]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, uint>)(lpVtbl[2]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, uint>)(lpVtbl[2]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, uint*, int>)(lpVtbl[3]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, uint*, int>)(lpVtbl[3]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_bgColor"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(7)]
     public HRESULT put_bgColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[7]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[7]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_bgColor"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(8)]
     public HRESULT get_bgColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[8]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[8]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_scrollDelay"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(9)]
     public HRESULT put_scrollDelay([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int, int>)(lpVtbl[9]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int, int>)(lpVtbl[9]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_scrollDelay"]/*' />
@@ -107,39 +107,39 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(10)]
     public HRESULT get_scrollDelay([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int*, int>)(lpVtbl[10]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int*, int>)(lpVtbl[10]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_direction([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_direction([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort*, int>)(lpVtbl[11]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, char*, int>)(lpVtbl[11]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_direction([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort**, int>)(lpVtbl[12]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, char**, int>)(lpVtbl[12]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_behavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_behavior([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort*, int>)(lpVtbl[13]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, char*, int>)(lpVtbl[13]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_behavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_behavior([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort**, int>)(lpVtbl[14]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, char**, int>)(lpVtbl[14]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_scrollAmount"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(15)]
     public HRESULT put_scrollAmount([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int, int>)(lpVtbl[15]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int, int>)(lpVtbl[15]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_scrollAmount"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(16)]
     public HRESULT get_scrollAmount([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int*, int>)(lpVtbl[16]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int*, int>)(lpVtbl[16]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_loop"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(17)]
     public HRESULT put_loop([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int, int>)(lpVtbl[17]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int, int>)(lpVtbl[17]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_loop"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(18)]
     public HRESULT get_loop([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int*, int>)(lpVtbl[18]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int*, int>)(lpVtbl[18]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_vspace"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(19)]
     public HRESULT put_vspace([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int, int>)(lpVtbl[19]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int, int>)(lpVtbl[19]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_vspace"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(20)]
     public HRESULT get_vspace([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int*, int>)(lpVtbl[20]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int*, int>)(lpVtbl[20]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_hspace"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(21)]
     public HRESULT put_hspace([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int, int>)(lpVtbl[21]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int, int>)(lpVtbl[21]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_hspace"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(22)]
     public HRESULT get_hspace([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int*, int>)(lpVtbl[22]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int*, int>)(lpVtbl[22]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_onfinish"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(23)]
     public HRESULT put_onfinish(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[23]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[23]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_onfinish"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(24)]
     public HRESULT get_onfinish(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[24]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[24]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_onstart"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(25)]
     public HRESULT put_onstart(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[25]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[25]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_onstart"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(26)]
     public HRESULT get_onstart(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[26]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[26]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_onbounce"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(27)]
     public HRESULT put_onbounce(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[27]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[27]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_onbounce"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(28)]
     public HRESULT get_onbounce(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[28]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[28]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_width"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(29)]
     public HRESULT put_width(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[29]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[29]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_width"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(30)]
     public HRESULT get_width(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[30]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[30]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_height"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(31)]
     public HRESULT put_height(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[31]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT, int>)(lpVtbl[31]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_height"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(32)]
     public HRESULT get_height(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[32]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, VARIANT*, int>)(lpVtbl[32]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_trueSpeed"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(33)]
     public HRESULT put_trueSpeed([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, short, int>)(lpVtbl[33]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, short, int>)(lpVtbl[33]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_trueSpeed"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(34)]
     public HRESULT get_trueSpeed([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, short*, int>)(lpVtbl[34]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, short*, int>)(lpVtbl[34]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.start"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(35)]
     public HRESULT start()
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int>)(lpVtbl[35]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int>)(lpVtbl[35]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.stop"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     [VtblIndex(36)]
     public HRESULT stop()
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, int>)(lpVtbl[36]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLMarqueeElement*, int>)(lpVtbl[36]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDispatch.Interface
@@ -333,16 +333,16 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         HRESULT get_scrollDelay([NativeTypeName("long *")] int* p);
 
         [VtblIndex(11)]
-        HRESULT put_direction([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_direction([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_direction([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
-        HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_behavior([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(14)]
-        HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_behavior([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(15)]
         HRESULT put_scrollAmount([NativeTypeName("long")] int v);
@@ -415,114 +415,114 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_bgColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_bgColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_bgColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_bgColor;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_scrollDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_scrollDelay;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_scrollDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_scrollDelay;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_direction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_direction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_direction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_direction;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_behavior;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_behavior;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_behavior;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_behavior;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_scrollAmount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_scrollAmount;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_scrollAmount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_scrollAmount;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_loop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_loop;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_loop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_loop;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_vspace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_vspace;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_vspace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_vspace;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_hspace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_hspace;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_hspace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_hspace;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onfinish;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onfinish;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onfinish;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onfinish;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onstart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onstart;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onstart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onstart;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onbounce;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onbounce;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onbounce;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onbounce;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_width;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_width;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_width;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_width;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_height;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_height;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_height;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_height;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_trueSpeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_trueSpeed;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_trueSpeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_trueSpeed;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> start;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> start;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> stop;
     }
 }

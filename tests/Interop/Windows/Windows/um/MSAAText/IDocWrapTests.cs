@@ -19,32 +19,4 @@ public static unsafe partial class IDocWrapTests
     {
         Assert.That(typeof(IDocWrap).GUID, Is.EqualTo(IID_IDocWrap));
     }
-
-    /// <summary>Validates that the <see cref="IDocWrap" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDocWrap>(), Is.EqualTo(sizeof(IDocWrap)));
-    }
-
-    /// <summary>Validates that the <see cref="IDocWrap" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDocWrap).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDocWrap" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDocWrap), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDocWrap), Is.EqualTo(4));
-        }
-    }
 }

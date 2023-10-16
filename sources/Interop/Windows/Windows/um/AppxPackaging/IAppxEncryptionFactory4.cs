@@ -27,7 +27,7 @@ public unsafe partial struct IAppxEncryptionFactory4 : IAppxEncryptionFactory4.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory4*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptionFactory4*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxEncryptionFactory4 : IAppxEncryptionFactory4.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory4*, uint>)(lpVtbl[1]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptionFactory4*, uint>)(lpVtbl[1]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxEncryptionFactory4 : IAppxEncryptionFactory4.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory4*, uint>)(lpVtbl[2]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptionFactory4*, uint>)(lpVtbl[2]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxEncryptionFactory4.xml' path='doc/member[@name="IAppxEncryptionFactory4.EncryptPackage"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxEncryptionFactory4 : IAppxEncryptionFactory4.I
     [VtblIndex(3)]
     public HRESULT EncryptPackage(IStream* inputStream, IStream* outputStream, [NativeTypeName("const APPX_ENCRYPTED_PACKAGE_SETTINGS2 *")] APPX_ENCRYPTED_PACKAGE_SETTINGS2* settings, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("const APPX_ENCRYPTED_EXEMPTIONS *")] APPX_ENCRYPTED_EXEMPTIONS* exemptedFiles, [NativeTypeName("UINT64")] ulong memoryLimit)
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory4*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, ulong, int>)(lpVtbl[3]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this), inputStream, outputStream, settings, keyInfo, exemptedFiles, memoryLimit);
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptionFactory4*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, ulong, int>)(lpVtbl[3]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this), inputStream, outputStream, settings, keyInfo, exemptedFiles, memoryLimit);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IAppxEncryptionFactory4 : IAppxEncryptionFactory4.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, const APPX_ENCRYPTED_PACKAGE_SETTINGS2 *, const APPX_KEY_INFO *, const APPX_ENCRYPTED_EXEMPTIONS *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, ulong, int> EncryptPackage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, ulong, int> EncryptPackage;
     }
 }

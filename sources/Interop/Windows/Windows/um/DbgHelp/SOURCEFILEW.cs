@@ -14,5 +14,5 @@ public unsafe partial struct SOURCEFILEW
 
     /// <include file='SOURCEFILEW.xml' path='doc/member[@name="SOURCEFILEW.FileName"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* FileName;
+    public char* FileName;
 }

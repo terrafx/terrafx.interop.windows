@@ -14,7 +14,7 @@ public unsafe partial struct CRYPT_CSP_PROVIDER
 
     /// <include file='CRYPT_CSP_PROVIDER.xml' path='doc/member[@name="CRYPT_CSP_PROVIDER.pwszProviderName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszProviderName;
+    public char* pwszProviderName;
 
     /// <include file='CRYPT_CSP_PROVIDER.xml' path='doc/member[@name="CRYPT_CSP_PROVIDER.Signature"]/*' />
     public CRYPT_BIT_BLOB Signature;

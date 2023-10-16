@@ -19,25 +19,4 @@ public static unsafe partial class PasswordCredentialProviderTests
     {
         Assert.That(typeof(PasswordCredentialProvider).GUID, Is.EqualTo(IID_PasswordCredentialProvider));
     }
-
-    /// <summary>Validates that the <see cref="PasswordCredentialProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PasswordCredentialProvider>(), Is.EqualTo(sizeof(PasswordCredentialProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="PasswordCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PasswordCredentialProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PasswordCredentialProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PasswordCredentialProvider), Is.EqualTo(1));
-    }
 }

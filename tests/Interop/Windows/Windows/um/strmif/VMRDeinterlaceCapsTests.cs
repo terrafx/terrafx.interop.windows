@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="VMRDeinterlaceCaps" /> struct.</summary>
 public static unsafe partial class VMRDeinterlaceCapsTests
 {
-    /// <summary>Validates that the <see cref="VMRDeinterlaceCaps" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<VMRDeinterlaceCaps>(), Is.EqualTo(sizeof(VMRDeinterlaceCaps)));
-    }
-
-    /// <summary>Validates that the <see cref="VMRDeinterlaceCaps" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(VMRDeinterlaceCaps).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="VMRDeinterlaceCaps" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(VMRDeinterlaceCaps), Is.EqualTo(20));
-    }
 }

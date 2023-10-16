@@ -19,32 +19,4 @@ public static unsafe partial class ISVGZoomAndPanTests
     {
         Assert.That(typeof(ISVGZoomAndPan).GUID, Is.EqualTo(IID_ISVGZoomAndPan));
     }
-
-    /// <summary>Validates that the <see cref="ISVGZoomAndPan" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISVGZoomAndPan>(), Is.EqualTo(sizeof(ISVGZoomAndPan)));
-    }
-
-    /// <summary>Validates that the <see cref="ISVGZoomAndPan" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISVGZoomAndPan).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISVGZoomAndPan" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISVGZoomAndPan), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISVGZoomAndPan), Is.EqualTo(4));
-        }
-    }
 }

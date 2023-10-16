@@ -11,13 +11,13 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct CABINET_INFO32_W
 {
     [NativeTypeName("PCWSTR")]
-    public ushort* CabinetPath;
+    public char* CabinetPath;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* CabinetFile;
+    public char* CabinetFile;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* DiskName;
+    public char* DiskName;
 
     [NativeTypeName("USHORT")]
     public ushort SetId;

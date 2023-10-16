@@ -19,32 +19,4 @@ public static unsafe partial class IMFTopologyNodeTests
     {
         Assert.That(typeof(IMFTopologyNode).GUID, Is.EqualTo(IID_IMFTopologyNode));
     }
-
-    /// <summary>Validates that the <see cref="IMFTopologyNode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTopologyNode>(), Is.EqualTo(sizeof(IMFTopologyNode)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTopologyNode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTopologyNode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTopologyNode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTopologyNode), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTopologyNode), Is.EqualTo(4));
-        }
-    }
 }

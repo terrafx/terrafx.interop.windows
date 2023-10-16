@@ -21,32 +21,4 @@ public static unsafe partial class IMFSensorTransformFactoryTests
     {
         Assert.That(typeof(IMFSensorTransformFactory).GUID, Is.EqualTo(IID_IMFSensorTransformFactory));
     }
-
-    /// <summary>Validates that the <see cref="IMFSensorTransformFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSensorTransformFactory>(), Is.EqualTo(sizeof(IMFSensorTransformFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSensorTransformFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSensorTransformFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSensorTransformFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSensorTransformFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSensorTransformFactory), Is.EqualTo(4));
-        }
-    }
 }

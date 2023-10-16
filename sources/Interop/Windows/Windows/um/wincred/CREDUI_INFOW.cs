@@ -17,11 +17,11 @@ public unsafe partial struct CREDUI_INFOW
 
     /// <include file='CREDUI_INFOW.xml' path='doc/member[@name="CREDUI_INFOW.pszMessageText"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszMessageText;
+    public char* pszMessageText;
 
     /// <include file='CREDUI_INFOW.xml' path='doc/member[@name="CREDUI_INFOW.pszCaptionText"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszCaptionText;
+    public char* pszCaptionText;
 
     /// <include file='CREDUI_INFOW.xml' path='doc/member[@name="CREDUI_INFOW.hbmBanner"]/*' />
     public HBITMAP hbmBanner;

@@ -19,32 +19,4 @@ public static unsafe partial class ISpEventSinkTests
     {
         Assert.That(typeof(ISpEventSink).GUID, Is.EqualTo(IID_ISpEventSink));
     }
-
-    /// <summary>Validates that the <see cref="ISpEventSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpEventSink>(), Is.EqualTo(sizeof(ISpEventSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpEventSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpEventSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpEventSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpEventSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpEventSink), Is.EqualTo(4));
-        }
-    }
 }

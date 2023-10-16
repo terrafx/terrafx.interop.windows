@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MSIFILEHASHINFO" /> struct.</summary>
 public static unsafe partial class MSIFILEHASHINFOTests
 {
-    /// <summary>Validates that the <see cref="MSIFILEHASHINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MSIFILEHASHINFO>(), Is.EqualTo(sizeof(MSIFILEHASHINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="MSIFILEHASHINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MSIFILEHASHINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MSIFILEHASHINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MSIFILEHASHINFO), Is.EqualTo(20));
-    }
 }

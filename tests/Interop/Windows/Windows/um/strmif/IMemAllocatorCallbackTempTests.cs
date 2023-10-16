@@ -19,32 +19,4 @@ public static unsafe partial class IMemAllocatorCallbackTempTests
     {
         Assert.That(typeof(IMemAllocatorCallbackTemp).GUID, Is.EqualTo(IID_IMemAllocatorCallbackTemp));
     }
-
-    /// <summary>Validates that the <see cref="IMemAllocatorCallbackTemp" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMemAllocatorCallbackTemp>(), Is.EqualTo(sizeof(IMemAllocatorCallbackTemp)));
-    }
-
-    /// <summary>Validates that the <see cref="IMemAllocatorCallbackTemp" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMemAllocatorCallbackTemp).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMemAllocatorCallbackTemp" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMemAllocatorCallbackTemp), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMemAllocatorCallbackTemp), Is.EqualTo(4));
-        }
-    }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IDesktopWindowXamlSourceNative2Tests
     {
         Assert.That(typeof(IDesktopWindowXamlSourceNative2).GUID, Is.EqualTo(IID_IDesktopWindowXamlSourceNative2));
     }
-
-    /// <summary>Validates that the <see cref="IDesktopWindowXamlSourceNative2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDesktopWindowXamlSourceNative2>(), Is.EqualTo(sizeof(IDesktopWindowXamlSourceNative2)));
-    }
-
-    /// <summary>Validates that the <see cref="IDesktopWindowXamlSourceNative2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDesktopWindowXamlSourceNative2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDesktopWindowXamlSourceNative2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDesktopWindowXamlSourceNative2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDesktopWindowXamlSourceNative2), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMessageFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMessageFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMessageFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMessageFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMessageFilter*, uint>)(lpVtbl[1]))((IMessageFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMessageFilter*, uint>)(lpVtbl[1]))((IMessageFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMessageFilter*, uint>)(lpVtbl[2]))((IMessageFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMessageFilter*, uint>)(lpVtbl[2]))((IMessageFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMessageFilter.xml' path='doc/member[@name="IMessageFilter.HandleInComingCall"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface, INativeG
     [return: NativeTypeName("DWORD")]
     public uint HandleInComingCall([NativeTypeName("DWORD")] uint dwCallType, HTASK htaskCaller, [NativeTypeName("DWORD")] uint dwTickCount, [NativeTypeName("LPINTERFACEINFO")] INTERFACEINFO* lpInterfaceInfo)
     {
-        return ((delegate* unmanaged<IMessageFilter*, uint, HTASK, uint, INTERFACEINFO*, uint>)(lpVtbl[3]))((IMessageFilter*)Unsafe.AsPointer(ref this), dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
+        return ((delegate* unmanaged[MemberFunction]<IMessageFilter*, uint, HTASK, uint, INTERFACEINFO*, uint>)(lpVtbl[3]))((IMessageFilter*)Unsafe.AsPointer(ref this), dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
     }
 
     /// <include file='IMessageFilter.xml' path='doc/member[@name="IMessageFilter.RetryRejectedCall"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface, INativeG
     [return: NativeTypeName("DWORD")]
     public uint RetryRejectedCall(HTASK htaskCallee, [NativeTypeName("DWORD")] uint dwTickCount, [NativeTypeName("DWORD")] uint dwRejectType)
     {
-        return ((delegate* unmanaged<IMessageFilter*, HTASK, uint, uint, uint>)(lpVtbl[4]))((IMessageFilter*)Unsafe.AsPointer(ref this), htaskCallee, dwTickCount, dwRejectType);
+        return ((delegate* unmanaged[MemberFunction]<IMessageFilter*, HTASK, uint, uint, uint>)(lpVtbl[4]))((IMessageFilter*)Unsafe.AsPointer(ref this), htaskCallee, dwTickCount, dwRejectType);
     }
 
     /// <include file='IMessageFilter.xml' path='doc/member[@name="IMessageFilter.MessagePending"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface, INativeG
     [return: NativeTypeName("DWORD")]
     public uint MessagePending(HTASK htaskCallee, [NativeTypeName("DWORD")] uint dwTickCount, [NativeTypeName("DWORD")] uint dwPendingType)
     {
-        return ((delegate* unmanaged<IMessageFilter*, HTASK, uint, uint, uint>)(lpVtbl[5]))((IMessageFilter*)Unsafe.AsPointer(ref this), htaskCallee, dwTickCount, dwPendingType);
+        return ((delegate* unmanaged[MemberFunction]<IMessageFilter*, HTASK, uint, uint, uint>)(lpVtbl[5]))((IMessageFilter*)Unsafe.AsPointer(ref this), htaskCallee, dwTickCount, dwPendingType);
     }
 
     public interface Interface : IUnknown.Interface
@@ -92,21 +92,21 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD (DWORD, HTASK, DWORD, LPINTERFACEINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, HTASK, uint, INTERFACEINFO*, uint> HandleInComingCall;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, HTASK, uint, INTERFACEINFO*, uint> HandleInComingCall;
 
         [NativeTypeName("DWORD (HTASK, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HTASK, uint, uint, uint> RetryRejectedCall;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HTASK, uint, uint, uint> RetryRejectedCall;
 
         [NativeTypeName("DWORD (HTASK, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HTASK, uint, uint, uint> MessagePending;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HTASK, uint, uint, uint> MessagePending;
     }
 }

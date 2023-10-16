@@ -8,7 +8,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FILE_IN_CABINET_INFO64_W
 {
     [NativeTypeName("PCWSTR")]
-    public ushort* NameInCabinet;
+    public char* NameInCabinet;
 
     [NativeTypeName("DWORD")]
     public uint FileSize;

@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaTypeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTypeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaTypeHandler*, uint>)(lpVtbl[1]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTypeHandler*, uint>)(lpVtbl[1]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaTypeHandler*, uint>)(lpVtbl[2]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTypeHandler*, uint>)(lpVtbl[2]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaTypeHandler.xml' path='doc/member[@name="IMFMediaTypeHandler.IsMediaTypeSupported"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
     [VtblIndex(3)]
     public HRESULT IsMediaTypeSupported(IMFMediaType* pMediaType, IMFMediaType** ppMediaType)
     {
-        return ((delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType*, IMFMediaType**, int>)(lpVtbl[3]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pMediaType, ppMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTypeHandler*, IMFMediaType*, IMFMediaType**, int>)(lpVtbl[3]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pMediaType, ppMediaType);
     }
 
     /// <include file='IMFMediaTypeHandler.xml' path='doc/member[@name="IMFMediaTypeHandler.GetMediaTypeCount"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
     [VtblIndex(4)]
     public HRESULT GetMediaTypeCount([NativeTypeName("DWORD *")] uint* pdwTypeCount)
     {
-        return ((delegate* unmanaged<IMFMediaTypeHandler*, uint*, int>)(lpVtbl[4]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pdwTypeCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTypeHandler*, uint*, int>)(lpVtbl[4]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pdwTypeCount);
     }
 
     /// <include file='IMFMediaTypeHandler.xml' path='doc/member[@name="IMFMediaTypeHandler.GetMediaTypeByIndex"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
     [VtblIndex(5)]
     public HRESULT GetMediaTypeByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFMediaType** ppType)
     {
-        return ((delegate* unmanaged<IMFMediaTypeHandler*, uint, IMFMediaType**, int>)(lpVtbl[5]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), dwIndex, ppType);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTypeHandler*, uint, IMFMediaType**, int>)(lpVtbl[5]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), dwIndex, ppType);
     }
 
     /// <include file='IMFMediaTypeHandler.xml' path='doc/member[@name="IMFMediaTypeHandler.SetCurrentMediaType"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
     [VtblIndex(6)]
     public HRESULT SetCurrentMediaType(IMFMediaType* pMediaType)
     {
-        return ((delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType*, int>)(lpVtbl[6]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTypeHandler*, IMFMediaType*, int>)(lpVtbl[6]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pMediaType);
     }
 
     /// <include file='IMFMediaTypeHandler.xml' path='doc/member[@name="IMFMediaTypeHandler.GetCurrentMediaType"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
     [VtblIndex(7)]
     public HRESULT GetCurrentMediaType(IMFMediaType** ppMediaType)
     {
-        return ((delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType**, int>)(lpVtbl[7]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), ppMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTypeHandler*, IMFMediaType**, int>)(lpVtbl[7]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), ppMediaType);
     }
 
     /// <include file='IMFMediaTypeHandler.xml' path='doc/member[@name="IMFMediaTypeHandler.GetMajorType"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
     [VtblIndex(8)]
     public HRESULT GetMajorType(Guid* pguidMajorType)
     {
-        return ((delegate* unmanaged<IMFMediaTypeHandler*, Guid*, int>)(lpVtbl[8]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pguidMajorType);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTypeHandler*, Guid*, int>)(lpVtbl[8]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pguidMajorType);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFMediaType *, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaType*, IMFMediaType**, int> IsMediaTypeSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaType*, IMFMediaType**, int> IsMediaTypeSupported;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMediaTypeCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMediaTypeCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetMediaTypeByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType**, int> GetMediaTypeByIndex;
 
         [NativeTypeName("HRESULT (IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaType*, int> SetCurrentMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaType*, int> SetCurrentMediaType;
 
         [NativeTypeName("HRESULT (IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaType**, int> GetCurrentMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaType**, int> GetCurrentMediaType;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetMajorType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetMajorType;
     }
 }

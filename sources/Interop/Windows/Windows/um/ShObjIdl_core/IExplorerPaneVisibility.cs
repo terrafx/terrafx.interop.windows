@@ -25,7 +25,7 @@ public unsafe partial struct IExplorerPaneVisibility : IExplorerPaneVisibility.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IExplorerPaneVisibility*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerPaneVisibility*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IExplorerPaneVisibility*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerPaneVisibility*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IExplorerPaneVisibility : IExplorerPaneVisibility.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IExplorerPaneVisibility*, uint>)(lpVtbl[1]))((IExplorerPaneVisibility*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExplorerPaneVisibility*, uint>)(lpVtbl[1]))((IExplorerPaneVisibility*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IExplorerPaneVisibility : IExplorerPaneVisibility.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IExplorerPaneVisibility*, uint>)(lpVtbl[2]))((IExplorerPaneVisibility*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExplorerPaneVisibility*, uint>)(lpVtbl[2]))((IExplorerPaneVisibility*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IExplorerPaneVisibility.xml' path='doc/member[@name="IExplorerPaneVisibility.GetPaneState"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IExplorerPaneVisibility : IExplorerPaneVisibility.I
     [VtblIndex(3)]
     public HRESULT GetPaneState([NativeTypeName("const EXPLORERPANE &")] Guid* ep, [NativeTypeName("EXPLORERPANESTATE *")] uint* peps)
     {
-        return ((delegate* unmanaged<IExplorerPaneVisibility*, Guid*, uint*, int>)(lpVtbl[3]))((IExplorerPaneVisibility*)Unsafe.AsPointer(ref this), ep, peps);
+        return ((delegate* unmanaged[MemberFunction]<IExplorerPaneVisibility*, Guid*, uint*, int>)(lpVtbl[3]))((IExplorerPaneVisibility*)Unsafe.AsPointer(ref this), ep, peps);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IExplorerPaneVisibility : IExplorerPaneVisibility.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const EXPLORERPANE &, EXPLORERPANESTATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetPaneState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, int> GetPaneState;
     }
 }

@@ -32,7 +32,7 @@ public unsafe partial struct IMEMENUITEMINFOW
 
     /// <include file='IMEMENUITEMINFOW.xml' path='doc/member[@name="IMEMENUITEMINFOW.szString"]/*' />
     [NativeTypeName("WCHAR[80]")]
-    public fixed ushort szString[80];
+    public fixed char szString[80];
 
     /// <include file='IMEMENUITEMINFOW.xml' path='doc/member[@name="IMEMENUITEMINFOW.hbmpItem"]/*' />
     public HBITMAP hbmpItem;

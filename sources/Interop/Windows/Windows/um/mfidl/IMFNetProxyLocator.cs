@@ -25,7 +25,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFNetProxyLocator*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetProxyLocator*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFNetProxyLocator*, uint>)(lpVtbl[1]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetProxyLocator*, uint>)(lpVtbl[1]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFNetProxyLocator*, uint>)(lpVtbl[2]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetProxyLocator*, uint>)(lpVtbl[2]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.FindFirstProxy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT FindFirstProxy([NativeTypeName("LPCWSTR")] ushort* pszHost, [NativeTypeName("LPCWSTR")] ushort* pszUrl, BOOL fReserved)
+    public HRESULT FindFirstProxy([NativeTypeName("LPCWSTR")] char* pszHost, [NativeTypeName("LPCWSTR")] char* pszUrl, BOOL fReserved)
     {
-        return ((delegate* unmanaged<IMFNetProxyLocator*, ushort*, ushort*, BOOL, int>)(lpVtbl[3]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszHost, pszUrl, fReserved);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetProxyLocator*, char*, char*, BOOL, int>)(lpVtbl[3]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszHost, pszUrl, fReserved);
     }
 
     /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.FindNextProxy"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
     [VtblIndex(4)]
     public HRESULT FindNextProxy()
     {
-        return ((delegate* unmanaged<IMFNetProxyLocator*, int>)(lpVtbl[4]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetProxyLocator*, int>)(lpVtbl[4]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.RegisterProxyResult"]/*' />
@@ -67,15 +67,15 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
     [VtblIndex(5)]
     public HRESULT RegisterProxyResult(HRESULT hrOp)
     {
-        return ((delegate* unmanaged<IMFNetProxyLocator*, HRESULT, int>)(lpVtbl[5]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), hrOp);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetProxyLocator*, HRESULT, int>)(lpVtbl[5]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), hrOp);
     }
 
     /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.GetCurrentProxy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCurrentProxy([NativeTypeName("LPWSTR")] ushort* pszStr, [NativeTypeName("DWORD *")] uint* pcchStr)
+    public HRESULT GetCurrentProxy([NativeTypeName("LPWSTR")] char* pszStr, [NativeTypeName("DWORD *")] uint* pcchStr)
     {
-        return ((delegate* unmanaged<IMFNetProxyLocator*, ushort*, uint*, int>)(lpVtbl[6]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszStr, pcchStr);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetProxyLocator*, char*, uint*, int>)(lpVtbl[6]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszStr, pcchStr);
     }
 
     /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.Clone"]/*' />
@@ -83,13 +83,13 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
     [VtblIndex(7)]
     public HRESULT Clone(IMFNetProxyLocator** ppProxyLocator)
     {
-        return ((delegate* unmanaged<IMFNetProxyLocator*, IMFNetProxyLocator**, int>)(lpVtbl[7]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), ppProxyLocator);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetProxyLocator*, IMFNetProxyLocator**, int>)(lpVtbl[7]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), ppProxyLocator);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT FindFirstProxy([NativeTypeName("LPCWSTR")] ushort* pszHost, [NativeTypeName("LPCWSTR")] ushort* pszUrl, BOOL fReserved);
+        HRESULT FindFirstProxy([NativeTypeName("LPCWSTR")] char* pszHost, [NativeTypeName("LPCWSTR")] char* pszUrl, BOOL fReserved);
 
         [VtblIndex(4)]
         HRESULT FindNextProxy();
@@ -98,7 +98,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
         HRESULT RegisterProxyResult(HRESULT hrOp);
 
         [VtblIndex(6)]
-        HRESULT GetCurrentProxy([NativeTypeName("LPWSTR")] ushort* pszStr, [NativeTypeName("DWORD *")] uint* pcchStr);
+        HRESULT GetCurrentProxy([NativeTypeName("LPWSTR")] char* pszStr, [NativeTypeName("DWORD *")] uint* pcchStr);
 
         [VtblIndex(7)]
         HRESULT Clone(IMFNetProxyLocator** ppProxyLocator);
@@ -108,27 +108,27 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, BOOL, int> FindFirstProxy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, BOOL, int> FindFirstProxy;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> FindNextProxy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> FindNextProxy;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, int> RegisterProxyResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, int> RegisterProxyResult;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, int> GetCurrentProxy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, int> GetCurrentProxy;
 
         [NativeTypeName("HRESULT (IMFNetProxyLocator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFNetProxyLocator**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFNetProxyLocator**, int> Clone;
     }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct IMLOperatorTypeInferrer : IMLOperatorTypeInferrer.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMLOperatorTypeInferrer*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorTypeInferrer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferrer*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorTypeInferrer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IMLOperatorTypeInferrer : IMLOperatorTypeInferrer.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMLOperatorTypeInferrer*, uint>)(lpVtbl[1]))((IMLOperatorTypeInferrer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferrer*, uint>)(lpVtbl[1]))((IMLOperatorTypeInferrer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IMLOperatorTypeInferrer : IMLOperatorTypeInferrer.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMLOperatorTypeInferrer*, uint>)(lpVtbl[2]))((IMLOperatorTypeInferrer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferrer*, uint>)(lpVtbl[2]))((IMLOperatorTypeInferrer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorTypeInferrer.xml' path='doc/member[@name="IMLOperatorTypeInferrer.InferOutputTypes"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IMLOperatorTypeInferrer : IMLOperatorTypeInferrer.I
     [VtblIndex(3)]
     public HRESULT InferOutputTypes(IMLOperatorTypeInferenceContext* context)
     {
-        return ((delegate* unmanaged<IMLOperatorTypeInferrer*, IMLOperatorTypeInferenceContext*, int>)(lpVtbl[3]))((IMLOperatorTypeInferrer*)Unsafe.AsPointer(ref this), context);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferrer*, IMLOperatorTypeInferenceContext*, int>)(lpVtbl[3]))((IMLOperatorTypeInferrer*)Unsafe.AsPointer(ref this), context);
     }
 
     public interface Interface : IUnknown.Interface
@@ -65,15 +65,15 @@ public unsafe partial struct IMLOperatorTypeInferrer : IMLOperatorTypeInferrer.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMLOperatorTypeInferenceContext *) noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMLOperatorTypeInferenceContext*, int> InferOutputTypes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMLOperatorTypeInferenceContext*, int> InferOutputTypes;
     }
 }

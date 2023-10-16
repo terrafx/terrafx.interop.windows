@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class STORAGE_HW_FIRMWARE_DOWNLOADTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_HW_FIRMWARE_DOWNLOAD" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_HW_FIRMWARE_DOWNLOAD>(), Is.EqualTo(sizeof(STORAGE_HW_FIRMWARE_DOWNLOAD)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_HW_FIRMWARE_DOWNLOAD" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_HW_FIRMWARE_DOWNLOAD).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_HW_FIRMWARE_DOWNLOAD" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_HW_FIRMWARE_DOWNLOAD), Is.EqualTo(40));
-    }
 }

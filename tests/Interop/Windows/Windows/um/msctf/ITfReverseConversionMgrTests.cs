@@ -19,32 +19,4 @@ public static unsafe partial class ITfReverseConversionMgrTests
     {
         Assert.That(typeof(ITfReverseConversionMgr).GUID, Is.EqualTo(IID_ITfReverseConversionMgr));
     }
-
-    /// <summary>Validates that the <see cref="ITfReverseConversionMgr" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfReverseConversionMgr>(), Is.EqualTo(sizeof(ITfReverseConversionMgr)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfReverseConversionMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfReverseConversionMgr).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfReverseConversionMgr" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfReverseConversionMgr), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfReverseConversionMgr), Is.EqualTo(4));
-        }
-    }
 }

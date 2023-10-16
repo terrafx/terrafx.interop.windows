@@ -26,11 +26,11 @@ public unsafe partial struct DIDEVICEINSTANCE
 
     /// <include file='DIDEVICEINSTANCE.xml' path='doc/member[@name="DIDEVICEINSTANCE.tszInstanceName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort tszInstanceName[260];
+    public fixed char tszInstanceName[260];
 
     /// <include file='DIDEVICEINSTANCE.xml' path='doc/member[@name="DIDEVICEINSTANCE.tszProductName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort tszProductName[260];
+    public fixed char tszProductName[260];
 
     /// <include file='DIDEVICEINSTANCE.xml' path='doc/member[@name="DIDEVICEINSTANCE.guidFFDriver"]/*' />
     public Guid guidFFDriver;

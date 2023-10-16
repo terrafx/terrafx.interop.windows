@@ -19,25 +19,4 @@ public static unsafe partial class HTMLDOMAttributeTests
     {
         Assert.That(typeof(HTMLDOMAttribute).GUID, Is.EqualTo(IID_HTMLDOMAttribute));
     }
-
-    /// <summary>Validates that the <see cref="HTMLDOMAttribute" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLDOMAttribute>(), Is.EqualTo(sizeof(HTMLDOMAttribute)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLDOMAttribute" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLDOMAttribute).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLDOMAttribute" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLDOMAttribute), Is.EqualTo(1));
-    }
 }

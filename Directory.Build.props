@@ -20,7 +20,7 @@
   <!-- Default settings that explicitly differ from the Sdk.props defaults  -->
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AnalysisLevel>preview</AnalysisLevel>
+    <AnalysisLevel>preview-all</AnalysisLevel>
     <BaseIntermediateOutputPath>$(BaseArtifactsPath)obj/$(BaseArtifactsPathSuffix)/</BaseIntermediateOutputPath>
     <DebugType>embedded</DebugType>
     <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
@@ -42,11 +42,13 @@
     <BaseOutputPath>$(BaseArtifactsPath)bin/$(BaseArtifactsPathSuffix)/</BaseOutputPath>
     <Company>TerraFX</Company>
     <ContinuousIntegrationBuild Condition="'$(GITHUB_RUN_ID)' != ''">true</ContinuousIntegrationBuild>
+    <IsAotCompatible>true</IsAotCompatible>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/</PackageOutputPath>
     <Product>TerraFX.Interop.Windows</Product>
     <RootNamespace>TerraFX.Interop</RootNamespace>
-    <VersionPrefix>10.0.22621.2</VersionPrefix>
-    <VersionSuffix Condition="'$(EXCLUDE_SUFFIX_FROM_VERSION)' != 'true'">rc3</VersionSuffix>
+    <VersionPrefix>10.0.22621.3</VersionPrefix>
+    <VersionSuffix Condition="'$(EXCLUDE_SUFFIX_FROM_VERSION)' != 'true'">rc1</VersionSuffix>
     <VersionSuffix Condition="'$(GITHUB_EVENT_NAME)' == 'pull_request'">pr</VersionSuffix>
   </PropertyGroup>
 
@@ -59,7 +61,7 @@
     <Features>strict</Features>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <HighEntropyVA>true</HighEntropyVA>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>preview</LangVersion>
     <MinClientVersion>4.3</MinClientVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
     <OverwriteReadOnlyFiles>true</OverwriteReadOnlyFiles>

@@ -28,7 +28,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, Guid*, void**, int>)(lpVtbl[0]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, Guid*, void**, int>)(lpVtbl[0]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, uint>)(lpVtbl[1]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, uint>)(lpVtbl[1]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, uint>)(lpVtbl[2]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, uint>)(lpVtbl[2]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetDispatcher"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetDispatcher(IInspectable** ppDispatcher)
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[3]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppDispatcher);
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[3]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppDispatcher);
     }
 
     /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetUiLayer"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetUiLayer(IInspectable** ppLayer)
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[4]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppLayer);
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[4]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppLayer);
     }
 
     /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetApplication"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetApplication(IInspectable** ppApplication)
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[5]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppApplication);
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[5]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppApplication);
     }
 
     /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetIInspectableFromHandle"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetIInspectableFromHandle(InstanceHandle instanceHandle, IInspectable** ppInstance)
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, InstanceHandle, IInspectable**, int>)(lpVtbl[6]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), instanceHandle, ppInstance);
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, InstanceHandle, IInspectable**, int>)(lpVtbl[6]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), instanceHandle, ppInstance);
     }
 
     /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetHandleFromIInspectable"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     [VtblIndex(7)]
     public HRESULT GetHandleFromIInspectable(IInspectable* pInstance, InstanceHandle* pHandle)
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[7]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pHandle);
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[7]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pHandle);
     }
 
     /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.HitTest"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     [VtblIndex(8)]
     public HRESULT HitTest(RECT rect, [NativeTypeName("unsigned int *")] uint* pCount, InstanceHandle** ppInstanceHandles)
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, RECT, uint*, InstanceHandle**, int>)(lpVtbl[8]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), rect, pCount, ppInstanceHandles);
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, RECT, uint*, InstanceHandle**, int>)(lpVtbl[8]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), rect, pCount, ppInstanceHandles);
     }
 
     /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.RegisterInstance"]/*' />
@@ -102,15 +102,15 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     [VtblIndex(9)]
     public HRESULT RegisterInstance(IInspectable* pInstance, InstanceHandle* pInstanceHandle)
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[9]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pInstanceHandle);
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[9]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pInstanceHandle);
     }
 
     /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetInitializationData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData)
+    public HRESULT GetInitializationData([NativeTypeName("BSTR *")] char** pInitializationData)
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, ushort**, int>)(lpVtbl[10]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInitializationData);
+        return ((delegate* unmanaged[MemberFunction]<IXamlDiagnostics*, char**, int>)(lpVtbl[10]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInitializationData);
     }
 
     public interface Interface : IUnknown.Interface
@@ -137,43 +137,43 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
         HRESULT RegisterInstance(IInspectable* pInstance, InstanceHandle* pInstanceHandle);
 
         [VtblIndex(10)]
-        HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData);
+        HRESULT GetInitializationData([NativeTypeName("BSTR *")] char** pInitializationData);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IInspectable**, int> GetDispatcher;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable**, int> GetDispatcher;
 
         [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IInspectable**, int> GetUiLayer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable**, int> GetUiLayer;
 
         [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IInspectable**, int> GetApplication;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable**, int> GetApplication;
 
         [NativeTypeName("HRESULT (InstanceHandle, IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, IInspectable**, int> GetIInspectableFromHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InstanceHandle, IInspectable**, int> GetIInspectableFromHandle;
 
         [NativeTypeName("HRESULT (IInspectable *, InstanceHandle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IInspectable*, InstanceHandle*, int> GetHandleFromIInspectable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable*, InstanceHandle*, int> GetHandleFromIInspectable;
 
         [NativeTypeName("HRESULT (RECT, unsigned int *, InstanceHandle **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT, uint*, InstanceHandle**, int> HitTest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT, uint*, InstanceHandle**, int> HitTest;
 
         [NativeTypeName("HRESULT (IInspectable *, InstanceHandle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IInspectable*, InstanceHandle*, int> RegisterInstance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable*, InstanceHandle*, int> RegisterInstance;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetInitializationData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetInitializationData;
     }
 }

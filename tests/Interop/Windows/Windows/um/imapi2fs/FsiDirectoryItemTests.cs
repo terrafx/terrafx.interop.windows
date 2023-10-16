@@ -19,25 +19,4 @@ public static unsafe partial class FsiDirectoryItemTests
     {
         Assert.That(typeof(FsiDirectoryItem).GUID, Is.EqualTo(CLSID_FsiDirectoryItem));
     }
-
-    /// <summary>Validates that the <see cref="FsiDirectoryItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FsiDirectoryItem>(), Is.EqualTo(sizeof(FsiDirectoryItem)));
-    }
-
-    /// <summary>Validates that the <see cref="FsiDirectoryItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FsiDirectoryItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FsiDirectoryItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FsiDirectoryItem), Is.EqualTo(1));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PPM_IDLE_STATE_BUCKET_EX" /> struct.</summary>
 public static unsafe partial class PPM_IDLE_STATE_BUCKET_EXTests
 {
-    /// <summary>Validates that the <see cref="PPM_IDLE_STATE_BUCKET_EX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PPM_IDLE_STATE_BUCKET_EX>(), Is.EqualTo(sizeof(PPM_IDLE_STATE_BUCKET_EX)));
-    }
-
-    /// <summary>Validates that the <see cref="PPM_IDLE_STATE_BUCKET_EX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PPM_IDLE_STATE_BUCKET_EX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PPM_IDLE_STATE_BUCKET_EX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PPM_IDLE_STATE_BUCKET_EX), Is.EqualTo(24));
-    }
 }

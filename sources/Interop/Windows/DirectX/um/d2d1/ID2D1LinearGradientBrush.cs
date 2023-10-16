@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1LinearGradientBrush*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1LinearGradientBrush*, uint>)(lpVtbl[1]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, uint>)(lpVtbl[1]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1LinearGradientBrush*, uint>)(lpVtbl[2]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, uint>)(lpVtbl[2]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged<ID2D1LinearGradientBrush*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), factory);
     }
 
     /// <inheritdoc cref="ID2D1Brush.SetOpacity" />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [VtblIndex(4)]
     public void SetOpacity(float opacity)
     {
-        ((delegate* unmanaged<ID2D1LinearGradientBrush*, float, void>)(lpVtbl[4]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), opacity);
+        ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, float, void>)(lpVtbl[4]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), opacity);
     }
 
     /// <inheritdoc cref="ID2D1Brush.SetTransform" />
@@ -68,7 +68,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [VtblIndex(5)]
     public void SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[5]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[5]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), transform);
     }
 
     /// <inheritdoc cref="ID2D1Brush.GetOpacity" />
@@ -76,7 +76,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [VtblIndex(6)]
     public float GetOpacity()
     {
-        return ((delegate* unmanaged<ID2D1LinearGradientBrush*, float>)(lpVtbl[6]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, float>)(lpVtbl[6]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Brush.GetTransform" />
@@ -84,7 +84,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [VtblIndex(7)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), transform);
     }
 
     /// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush.SetStartPoint"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [VtblIndex(8)]
     public void SetStartPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint)
     {
-        ((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F, void>)(lpVtbl[8]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), startPoint);
+        ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, D2D_POINT_2F, void>)(lpVtbl[8]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), startPoint);
     }
 
     /// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush.SetEndPoint"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [VtblIndex(9)]
     public void SetEndPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F endPoint)
     {
-        ((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F, void>)(lpVtbl[9]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), endPoint);
+        ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, D2D_POINT_2F, void>)(lpVtbl[9]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), endPoint);
     }
 
     /// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush.GetStartPoint"]/*' />
@@ -109,8 +109,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [return: NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F GetStartPoint()
     {
-        D2D_POINT_2F result;
-        return *((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[10]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), &result);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, D2D_POINT_2F>)(lpVtbl[10]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush.GetEndPoint"]/*' />
@@ -119,8 +118,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [return: NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F GetEndPoint()
     {
-        D2D_POINT_2F result;
-        return *((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[11]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), &result);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, D2D_POINT_2F>)(lpVtbl[11]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush.GetGradientStopCollection"]/*' />
@@ -128,7 +126,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [VtblIndex(12)]
     public void GetGradientStopCollection(ID2D1GradientStopCollection** gradientStopCollection)
     {
-        ((delegate* unmanaged<ID2D1LinearGradientBrush*, ID2D1GradientStopCollection**, void>)(lpVtbl[12]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), gradientStopCollection);
+        ((delegate* unmanaged[MemberFunction]<ID2D1LinearGradientBrush*, ID2D1GradientStopCollection**, void>)(lpVtbl[12]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), gradientStopCollection);
     }
 
     public interface Interface : ID2D1Brush.Interface
@@ -155,42 +153,42 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("void (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, void> SetOpacity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, void> SetOpacity;
 
         [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> SetTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_MATRIX_3X2_F*, void> SetTransform;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetOpacity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetOpacity;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> GetTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_MATRIX_3X2_F*, void> GetTransform;
 
         [NativeTypeName("void (D2D1_POINT_2F) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2F, void> SetStartPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2F, void> SetStartPoint;
 
         [NativeTypeName("void (D2D1_POINT_2F) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2F, void> SetEndPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2F, void> SetEndPoint;
 
         [NativeTypeName("D2D1_POINT_2F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2F*, D2D_POINT_2F*> GetStartPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2F> GetStartPoint;
 
         [NativeTypeName("D2D1_POINT_2F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2F*, D2D_POINT_2F*> GetEndPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2F> GetEndPoint;
 
         [NativeTypeName("void (ID2D1GradientStopCollection **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1GradientStopCollection**, void> GetGradientStopCollection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1GradientStopCollection**, void> GetGradientStopCollection;
     }
 }

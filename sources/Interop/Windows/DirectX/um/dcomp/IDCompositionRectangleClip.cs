@@ -28,7 +28,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, uint>)(lpVtbl[1]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, uint>)(lpVtbl[1]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, uint>)(lpVtbl[2]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, uint>)(lpVtbl[2]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetLeft"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(3)]
     public HRESULT SetLeft(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetLeft"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(4)]
     public HRESULT SetLeft(float left)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[4]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), left);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[4]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), left);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTop"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(5)]
     public HRESULT SetTop(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTop"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(6)]
     public HRESULT SetTop(float top)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[6]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), top);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[6]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), top);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetRight"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(7)]
     public HRESULT SetRight(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[7]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[7]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetRight"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(8)]
     public HRESULT SetRight(float right)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[8]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), right);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[8]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), right);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottom"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(9)]
     public HRESULT SetBottom(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottom"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(10)]
     public HRESULT SetBottom(float bottom)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[10]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), bottom);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[10]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), bottom);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopLeftRadiusX"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(11)]
     public HRESULT SetTopLeftRadiusX(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[11]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[11]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopLeftRadiusX"]/*' />
@@ -126,7 +126,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(12)]
     public HRESULT SetTopLeftRadiusX(float radius)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[12]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[12]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopLeftRadiusY"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(13)]
     public HRESULT SetTopLeftRadiusY(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[13]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[13]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopLeftRadiusY"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(14)]
     public HRESULT SetTopLeftRadiusY(float radius)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[14]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[14]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopRightRadiusX"]/*' />
@@ -150,7 +150,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(15)]
     public HRESULT SetTopRightRadiusX(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[15]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[15]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopRightRadiusX"]/*' />
@@ -158,7 +158,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(16)]
     public HRESULT SetTopRightRadiusX(float radius)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[16]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[16]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopRightRadiusY"]/*' />
@@ -166,7 +166,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(17)]
     public HRESULT SetTopRightRadiusY(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[17]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[17]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopRightRadiusY"]/*' />
@@ -174,7 +174,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(18)]
     public HRESULT SetTopRightRadiusY(float radius)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[18]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[18]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomLeftRadiusX"]/*' />
@@ -182,7 +182,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(19)]
     public HRESULT SetBottomLeftRadiusX(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[19]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[19]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomLeftRadiusX"]/*' />
@@ -190,7 +190,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(20)]
     public HRESULT SetBottomLeftRadiusX(float radius)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[20]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[20]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomLeftRadiusY"]/*' />
@@ -198,7 +198,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(21)]
     public HRESULT SetBottomLeftRadiusY(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[21]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[21]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomLeftRadiusY"]/*' />
@@ -206,7 +206,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(22)]
     public HRESULT SetBottomLeftRadiusY(float radius)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[22]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[22]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomRightRadiusX"]/*' />
@@ -214,7 +214,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(23)]
     public HRESULT SetBottomRightRadiusX(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[23]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[23]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomRightRadiusX"]/*' />
@@ -222,7 +222,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(24)]
     public HRESULT SetBottomRightRadiusX(float radius)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[24]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[24]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomRightRadiusY"]/*' />
@@ -230,7 +230,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(25)]
     public HRESULT SetBottomRightRadiusY(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[25]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[25]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomRightRadiusY"]/*' />
@@ -238,7 +238,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
     [VtblIndex(26)]
     public HRESULT SetBottomRightRadiusY(float radius)
     {
-        return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[26]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRectangleClip*, float, int>)(lpVtbl[26]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
     public interface Interface : IDCompositionClip.Interface
@@ -320,84 +320,84 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetLeft;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetLeft;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetLeft1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetLeft1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetTop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetTop;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetTop1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetTop1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetRight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetRight;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetRight1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetRight1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBottom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetBottom;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetBottom1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetBottom1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetTopLeftRadiusX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetTopLeftRadiusX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetTopLeftRadiusX1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetTopLeftRadiusX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetTopLeftRadiusY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetTopLeftRadiusY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetTopLeftRadiusY1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetTopLeftRadiusY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetTopRightRadiusX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetTopRightRadiusX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetTopRightRadiusX1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetTopRightRadiusX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetTopRightRadiusY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetTopRightRadiusY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetTopRightRadiusY1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetTopRightRadiusY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBottomLeftRadiusX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetBottomLeftRadiusX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetBottomLeftRadiusX1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetBottomLeftRadiusX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBottomLeftRadiusY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetBottomLeftRadiusY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetBottomLeftRadiusY1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetBottomLeftRadiusY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBottomRightRadiusX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetBottomRightRadiusX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetBottomRightRadiusX1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetBottomRightRadiusX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBottomRightRadiusY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetBottomRightRadiusY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetBottomRightRadiusY1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetBottomRightRadiusY1;
     }
 }

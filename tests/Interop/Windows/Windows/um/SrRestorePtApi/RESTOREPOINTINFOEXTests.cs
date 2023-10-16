@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RESTOREPOINTINFOEX" /> struct.</summary>
 public static unsafe partial class RESTOREPOINTINFOEXTests
 {
-    /// <summary>Validates that the <see cref="RESTOREPOINTINFOEX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RESTOREPOINTINFOEX>(), Is.EqualTo(sizeof(RESTOREPOINTINFOEX)));
-    }
-
-    /// <summary>Validates that the <see cref="RESTOREPOINTINFOEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RESTOREPOINTINFOEX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RESTOREPOINTINFOEX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RESTOREPOINTINFOEX), Is.EqualTo(532));
-    }
 }

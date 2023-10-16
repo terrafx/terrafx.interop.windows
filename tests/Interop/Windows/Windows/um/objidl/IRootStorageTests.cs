@@ -19,32 +19,4 @@ public static unsafe partial class IRootStorageTests
     {
         Assert.That(typeof(IRootStorage).GUID, Is.EqualTo(IID_IRootStorage));
     }
-
-    /// <summary>Validates that the <see cref="IRootStorage" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRootStorage>(), Is.EqualTo(sizeof(IRootStorage)));
-    }
-
-    /// <summary>Validates that the <see cref="IRootStorage" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRootStorage).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRootStorage" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRootStorage), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRootStorage), Is.EqualTo(4));
-        }
-    }
 }

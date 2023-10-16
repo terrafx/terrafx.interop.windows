@@ -19,7 +19,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
     public uint Usage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }
@@ -36,7 +36,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
     public uint RGB_Range
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 1) & 0x1u;
         }
@@ -53,7 +53,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
     public uint YCbCr_Matrix
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 2) & 0x1u;
         }
@@ -70,7 +70,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
     public uint YCbCr_xvYCC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 3) & 0x1u;
         }
@@ -87,7 +87,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
     public uint Nominal_Range
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 4) & 0x3u;
         }
@@ -104,7 +104,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 6) & 0x3FFFFFFu;
         }

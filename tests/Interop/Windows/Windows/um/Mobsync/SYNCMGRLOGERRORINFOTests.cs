@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SYNCMGRLOGERRORINFO" /> struct.</summary>
 public static unsafe partial class SYNCMGRLOGERRORINFOTests
 {
-    /// <summary>Validates that the <see cref="SYNCMGRLOGERRORINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SYNCMGRLOGERRORINFO>(), Is.EqualTo(sizeof(SYNCMGRLOGERRORINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="SYNCMGRLOGERRORINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SYNCMGRLOGERRORINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SYNCMGRLOGERRORINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SYNCMGRLOGERRORINFO), Is.EqualTo(44));
-    }
 }

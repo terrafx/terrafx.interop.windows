@@ -26,7 +26,7 @@ public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaus
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionGaussianBlurEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionGaussianBlurEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaus
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionGaussianBlurEffect*, uint>)(lpVtbl[1]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionGaussianBlurEffect*, uint>)(lpVtbl[1]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaus
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionGaussianBlurEffect*, uint>)(lpVtbl[2]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionGaussianBlurEffect*, uint>)(lpVtbl[2]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDCompositionFilterEffect.SetInput" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaus
     [VtblIndex(3)]
     public HRESULT SetInput(uint index, IUnknown* input, uint flags)
     {
-        return ((delegate* unmanaged<IDCompositionGaussianBlurEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionGaussianBlurEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), index, input, flags);
     }
 
     /// <include file='IDCompositionGaussianBlurEffect.xml' path='doc/member[@name="IDCompositionGaussianBlurEffect.SetStandardDeviation"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaus
     [VtblIndex(4)]
     public HRESULT SetStandardDeviation(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionGaussianBlurEffect*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionGaussianBlurEffect*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionGaussianBlurEffect.xml' path='doc/member[@name="IDCompositionGaussianBlurEffect.SetStandardDeviation"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaus
     [VtblIndex(5)]
     public HRESULT SetStandardDeviation(float amount)
     {
-        return ((delegate* unmanaged<IDCompositionGaussianBlurEffect*, float, int>)(lpVtbl[5]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), amount);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionGaussianBlurEffect*, float, int>)(lpVtbl[5]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), amount);
     }
 
     /// <include file='IDCompositionGaussianBlurEffect.xml' path='doc/member[@name="IDCompositionGaussianBlurEffect.SetBorderMode"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaus
     [VtblIndex(6)]
     public HRESULT SetBorderMode(D2D1_BORDER_MODE mode)
     {
-        return ((delegate* unmanaged<IDCompositionGaussianBlurEffect*, D2D1_BORDER_MODE, int>)(lpVtbl[6]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), mode);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionGaussianBlurEffect*, D2D1_BORDER_MODE, int>)(lpVtbl[6]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), mode);
     }
 
     public interface Interface : IDCompositionFilterEffect.Interface
@@ -95,24 +95,24 @@ public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaus
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetStandardDeviation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetStandardDeviation;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetStandardDeviation1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetStandardDeviation1;
 
         [NativeTypeName("HRESULT (D2D1_BORDER_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_BORDER_MODE, int> SetBorderMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_BORDER_MODE, int> SetBorderMode;
     }
 }

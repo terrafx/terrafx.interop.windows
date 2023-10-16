@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLBGsoundTests
     {
         Assert.That(typeof(IHTMLBGsound).GUID, Is.EqualTo(IID_IHTMLBGsound));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLBGsound" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLBGsound>(), Is.EqualTo(sizeof(IHTMLBGsound)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLBGsound" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLBGsound).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLBGsound" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLBGsound), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLBGsound), Is.EqualTo(4));
-        }
-    }
 }

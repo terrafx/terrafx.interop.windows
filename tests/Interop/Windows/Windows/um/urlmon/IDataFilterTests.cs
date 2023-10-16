@@ -19,32 +19,4 @@ public static unsafe partial class IDataFilterTests
     {
         Assert.That(typeof(IDataFilter).GUID, Is.EqualTo(IID_IDataFilter));
     }
-
-    /// <summary>Validates that the <see cref="IDataFilter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDataFilter>(), Is.EqualTo(sizeof(IDataFilter)));
-    }
-
-    /// <summary>Validates that the <see cref="IDataFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDataFilter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDataFilter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDataFilter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDataFilter), Is.EqualTo(4));
-        }
-    }
 }

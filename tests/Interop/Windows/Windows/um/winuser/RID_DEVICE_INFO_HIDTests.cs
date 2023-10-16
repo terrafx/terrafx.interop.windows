@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RID_DEVICE_INFO_HID" /> struct.</summary>
 public static unsafe partial class RID_DEVICE_INFO_HIDTests
 {
-    /// <summary>Validates that the <see cref="RID_DEVICE_INFO_HID" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RID_DEVICE_INFO_HID>(), Is.EqualTo(sizeof(RID_DEVICE_INFO_HID)));
-    }
-
-    /// <summary>Validates that the <see cref="RID_DEVICE_INFO_HID" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RID_DEVICE_INFO_HID).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RID_DEVICE_INFO_HID" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RID_DEVICE_INFO_HID), Is.EqualTo(16));
-    }
 }

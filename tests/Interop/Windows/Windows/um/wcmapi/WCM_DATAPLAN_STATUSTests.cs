@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class WCM_DATAPLAN_STATUSTests
 {
-    /// <summary>Validates that the <see cref="WCM_DATAPLAN_STATUS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WCM_DATAPLAN_STATUS>(), Is.EqualTo(sizeof(WCM_DATAPLAN_STATUS)));
-    }
-
-    /// <summary>Validates that the <see cref="WCM_DATAPLAN_STATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WCM_DATAPLAN_STATUS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WCM_DATAPLAN_STATUS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WCM_DATAPLAN_STATUS), Is.EqualTo(60));
-    }
 }

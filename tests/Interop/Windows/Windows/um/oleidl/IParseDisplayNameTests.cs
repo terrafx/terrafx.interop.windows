@@ -19,32 +19,4 @@ public static unsafe partial class IParseDisplayNameTests
     {
         Assert.That(typeof(IParseDisplayName).GUID, Is.EqualTo(IID_IParseDisplayName));
     }
-
-    /// <summary>Validates that the <see cref="IParseDisplayName" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IParseDisplayName>(), Is.EqualTo(sizeof(IParseDisplayName)));
-    }
-
-    /// <summary>Validates that the <see cref="IParseDisplayName" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IParseDisplayName).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IParseDisplayName" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IParseDisplayName), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IParseDisplayName), Is.EqualTo(4));
-        }
-    }
 }

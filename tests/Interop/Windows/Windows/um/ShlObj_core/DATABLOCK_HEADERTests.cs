@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DATABLOCK_HEADER" /> struct.</summary>
 public static unsafe partial class DATABLOCK_HEADERTests
 {
-    /// <summary>Validates that the <see cref="DATABLOCK_HEADER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DATABLOCK_HEADER>(), Is.EqualTo(sizeof(DATABLOCK_HEADER)));
-    }
-
-    /// <summary>Validates that the <see cref="DATABLOCK_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DATABLOCK_HEADER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DATABLOCK_HEADER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DATABLOCK_HEADER), Is.EqualTo(8));
-    }
 }

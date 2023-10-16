@@ -14,7 +14,7 @@ public unsafe partial struct OLEVERB
 
     /// <include file='OLEVERB.xml' path='doc/member[@name="OLEVERB.lpszVerbName"]/*' />
     [NativeTypeName("LPOLESTR")]
-    public ushort* lpszVerbName;
+    public char* lpszVerbName;
 
     /// <include file='OLEVERB.xml' path='doc/member[@name="OLEVERB.fuFlags"]/*' />
     [NativeTypeName("DWORD")]

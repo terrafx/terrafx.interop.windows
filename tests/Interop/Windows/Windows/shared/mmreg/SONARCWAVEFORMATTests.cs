@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SONARCWAVEFORMAT" /> struct.</summary>
 public static unsafe partial class SONARCWAVEFORMATTests
 {
-    /// <summary>Validates that the <see cref="SONARCWAVEFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SONARCWAVEFORMAT>(), Is.EqualTo(sizeof(SONARCWAVEFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="SONARCWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SONARCWAVEFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SONARCWAVEFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SONARCWAVEFORMAT), Is.EqualTo(20));
-    }
 }

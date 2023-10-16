@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LSA_FOREST_TRUST_COLLISION_RECORD" /> struct.</summary>
 public static unsafe partial class LSA_FOREST_TRUST_COLLISION_RECORDTests
 {
-    /// <summary>Validates that the <see cref="LSA_FOREST_TRUST_COLLISION_RECORD" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LSA_FOREST_TRUST_COLLISION_RECORD>(), Is.EqualTo(sizeof(LSA_FOREST_TRUST_COLLISION_RECORD)));
-    }
-
-    /// <summary>Validates that the <see cref="LSA_FOREST_TRUST_COLLISION_RECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LSA_FOREST_TRUST_COLLISION_RECORD).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LSA_FOREST_TRUST_COLLISION_RECORD" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(LSA_FOREST_TRUST_COLLISION_RECORD), Is.EqualTo(32));
-        }
-        else
-        {
-            Assert.That(sizeof(LSA_FOREST_TRUST_COLLISION_RECORD), Is.EqualTo(20));
-        }
-    }
 }

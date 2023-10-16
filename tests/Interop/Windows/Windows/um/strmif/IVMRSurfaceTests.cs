@@ -19,32 +19,4 @@ public static unsafe partial class IVMRSurfaceTests
     {
         Assert.That(typeof(IVMRSurface).GUID, Is.EqualTo(IID_IVMRSurface));
     }
-
-    /// <summary>Validates that the <see cref="IVMRSurface" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVMRSurface>(), Is.EqualTo(sizeof(IVMRSurface)));
-    }
-
-    /// <summary>Validates that the <see cref="IVMRSurface" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVMRSurface).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVMRSurface" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVMRSurface), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVMRSurface), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManife
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManife
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo3*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo3*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManife
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo3*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo3*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBundleManifestPackageInfo3.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo3.GetTargetDeviceFamilies"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManife
     [VtblIndex(3)]
     public HRESULT GetTargetDeviceFamilies(IAppxManifestTargetDeviceFamiliesEnumerator** targetDeviceFamilies)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo3*, IAppxManifestTargetDeviceFamiliesEnumerator**, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this), targetDeviceFamilies);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo3*, IAppxManifestTargetDeviceFamiliesEnumerator**, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this), targetDeviceFamilies);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManife
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestTargetDeviceFamiliesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestTargetDeviceFamiliesEnumerator**, int> GetTargetDeviceFamilies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestTargetDeviceFamiliesEnumerator**, int> GetTargetDeviceFamilies;
     }
 }

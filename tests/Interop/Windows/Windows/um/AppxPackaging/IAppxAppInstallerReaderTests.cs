@@ -19,32 +19,4 @@ public static unsafe partial class IAppxAppInstallerReaderTests
     {
         Assert.That(typeof(IAppxAppInstallerReader).GUID, Is.EqualTo(IID_IAppxAppInstallerReader));
     }
-
-    /// <summary>Validates that the <see cref="IAppxAppInstallerReader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxAppInstallerReader>(), Is.EqualTo(sizeof(IAppxAppInstallerReader)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxAppInstallerReader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxAppInstallerReader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxAppInstallerReader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxAppInstallerReader), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxAppInstallerReader), Is.EqualTo(4));
-        }
-    }
 }

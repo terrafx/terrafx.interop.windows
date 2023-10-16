@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationInterpolator*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationInterpolator*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationInterpolator*, uint>)(lpVtbl[1]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationInterpolator*, uint>)(lpVtbl[1]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationInterpolator*, uint>)(lpVtbl[2]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationInterpolator*, uint>)(lpVtbl[2]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationInterpolator.xml' path='doc/member[@name="IUIAnimationInterpolator.SetInitialValueAndVelocity"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
     [VtblIndex(3)]
     public HRESULT SetInitialValueAndVelocity(double initialValue, double initialVelocity)
     {
-        return ((delegate* unmanaged<IUIAnimationInterpolator*, double, double, int>)(lpVtbl[3]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), initialValue, initialVelocity);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationInterpolator*, double, double, int>)(lpVtbl[3]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), initialValue, initialVelocity);
     }
 
     /// <include file='IUIAnimationInterpolator.xml' path='doc/member[@name="IUIAnimationInterpolator.SetDuration"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
     [VtblIndex(4)]
     public HRESULT SetDuration([NativeTypeName("UI_ANIMATION_SECONDS")] double duration)
     {
-        return ((delegate* unmanaged<IUIAnimationInterpolator*, double, int>)(lpVtbl[4]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), duration);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationInterpolator*, double, int>)(lpVtbl[4]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), duration);
     }
 
     /// <include file='IUIAnimationInterpolator.xml' path='doc/member[@name="IUIAnimationInterpolator.GetDuration"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
     [VtblIndex(5)]
     public HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration)
     {
-        return ((delegate* unmanaged<IUIAnimationInterpolator*, double*, int>)(lpVtbl[5]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), duration);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationInterpolator*, double*, int>)(lpVtbl[5]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), duration);
     }
 
     /// <include file='IUIAnimationInterpolator.xml' path='doc/member[@name="IUIAnimationInterpolator.GetFinalValue"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
     [VtblIndex(6)]
     public HRESULT GetFinalValue(double* value)
     {
-        return ((delegate* unmanaged<IUIAnimationInterpolator*, double*, int>)(lpVtbl[6]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationInterpolator*, double*, int>)(lpVtbl[6]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IUIAnimationInterpolator.xml' path='doc/member[@name="IUIAnimationInterpolator.InterpolateValue"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
     [VtblIndex(7)]
     public HRESULT InterpolateValue([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* value)
     {
-        return ((delegate* unmanaged<IUIAnimationInterpolator*, double, double*, int>)(lpVtbl[7]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), offset, value);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationInterpolator*, double, double*, int>)(lpVtbl[7]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), offset, value);
     }
 
     /// <include file='IUIAnimationInterpolator.xml' path='doc/member[@name="IUIAnimationInterpolator.InterpolateVelocity"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
     [VtblIndex(8)]
     public HRESULT InterpolateVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* velocity)
     {
-        return ((delegate* unmanaged<IUIAnimationInterpolator*, double, double*, int>)(lpVtbl[8]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), offset, velocity);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationInterpolator*, double, double*, int>)(lpVtbl[8]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), offset, velocity);
     }
 
     /// <include file='IUIAnimationInterpolator.xml' path='doc/member[@name="IUIAnimationInterpolator.GetDependencies"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
     [VtblIndex(9)]
     public HRESULT GetDependencies(UI_ANIMATION_DEPENDENCIES* initialValueDependencies, UI_ANIMATION_DEPENDENCIES* initialVelocityDependencies, UI_ANIMATION_DEPENDENCIES* durationDependencies)
     {
-        return ((delegate* unmanaged<IUIAnimationInterpolator*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int>)(lpVtbl[9]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), initialValueDependencies, initialVelocityDependencies, durationDependencies);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationInterpolator*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int>)(lpVtbl[9]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), initialValueDependencies, initialVelocityDependencies, durationDependencies);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DOUBLE, DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, int> SetInitialValueAndVelocity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, int> SetInitialValueAndVelocity;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetDuration;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetDuration;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetFinalValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetFinalValue;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double*, int> InterpolateValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double*, int> InterpolateValue;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double*, int> InterpolateVelocity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double*, int> InterpolateVelocity;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_DEPENDENCIES *, UI_ANIMATION_DEPENDENCIES *, UI_ANIMATION_DEPENDENCIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int> GetDependencies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int> GetDependencies;
     }
 }

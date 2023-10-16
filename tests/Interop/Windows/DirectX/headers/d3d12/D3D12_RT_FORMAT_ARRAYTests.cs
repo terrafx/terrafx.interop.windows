@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D3D12_RT_FORMAT_ARRAY" /> struct.</summary>
 public static unsafe partial class D3D12_RT_FORMAT_ARRAYTests
 {
-    /// <summary>Validates that the <see cref="D3D12_RT_FORMAT_ARRAY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D12_RT_FORMAT_ARRAY>(), Is.EqualTo(sizeof(D3D12_RT_FORMAT_ARRAY)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_RT_FORMAT_ARRAY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D12_RT_FORMAT_ARRAY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_RT_FORMAT_ARRAY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D12_RT_FORMAT_ARRAY), Is.EqualTo(36));
-    }
 }

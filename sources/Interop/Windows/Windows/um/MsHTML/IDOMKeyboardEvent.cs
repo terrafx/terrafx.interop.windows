@@ -25,7 +25,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, Guid*, void**, int>)(lpVtbl[0]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, Guid*, void**, int>)(lpVtbl[0]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, uint>)(lpVtbl[1]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, uint>)(lpVtbl[1]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, uint>)(lpVtbl[2]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, uint>)(lpVtbl[2]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, uint*, int>)(lpVtbl[3]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, uint*, int>)(lpVtbl[3]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,15 +75,15 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_key"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_key([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_key([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, ushort**, int>)(lpVtbl[7]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, char**, int>)(lpVtbl[7]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_location"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(8)]
     public HRESULT get_location([NativeTypeName("ULONG *")] uint* p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, uint*, int>)(lpVtbl[8]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, uint*, int>)(lpVtbl[8]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_ctrlKey"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(9)]
     public HRESULT get_ctrlKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, short*, int>)(lpVtbl[9]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, short*, int>)(lpVtbl[9]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_shiftKey"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(10)]
     public HRESULT get_shiftKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, short*, int>)(lpVtbl[10]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, short*, int>)(lpVtbl[10]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_altKey"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(11)]
     public HRESULT get_altKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, short*, int>)(lpVtbl[11]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, short*, int>)(lpVtbl[11]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_metaKey"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(12)]
     public HRESULT get_metaKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, short*, int>)(lpVtbl[12]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, short*, int>)(lpVtbl[12]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_repeat"]/*' />
@@ -131,23 +131,23 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(13)]
     public HRESULT get_repeat([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, short*, int>)(lpVtbl[13]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, short*, int>)(lpVtbl[13]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.getModifierState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT getModifierState([NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* state)
+    public HRESULT getModifierState([NativeTypeName("BSTR")] char* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* state)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, ushort*, short*, int>)(lpVtbl[14]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), keyArg, state);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, char*, short*, int>)(lpVtbl[14]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), keyArg, state);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.initKeyboardEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT initKeyboardEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("ULONG")] uint locationArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("VARIANT_BOOL")] short repeat, [NativeTypeName("BSTR")] ushort* locale)
+    public HRESULT initKeyboardEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] char* keyArg, [NativeTypeName("ULONG")] uint locationArg, [NativeTypeName("BSTR")] char* modifiersListArg, [NativeTypeName("VARIANT_BOOL")] short repeat, [NativeTypeName("BSTR")] char* locale)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, ushort*, short, short, IHTMLWindow2*, ushort*, uint, ushort*, short, ushort*, int>)(lpVtbl[15]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, keyArg, locationArg, modifiersListArg, repeat, locale);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, char*, short, short, IHTMLWindow2*, char*, uint, char*, short, char*, int>)(lpVtbl[15]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, keyArg, locationArg, modifiersListArg, repeat, locale);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_keyCode"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(16)]
     public HRESULT get_keyCode([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, int*, int>)(lpVtbl[16]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, int*, int>)(lpVtbl[16]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_charCode"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(17)]
     public HRESULT get_charCode([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, int*, int>)(lpVtbl[17]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, int*, int>)(lpVtbl[17]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_which"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(18)]
     public HRESULT get_which([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, int*, int>)(lpVtbl[18]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, int*, int>)(lpVtbl[18]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_ie9_char"]/*' />
@@ -179,21 +179,21 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
     [VtblIndex(19)]
     public HRESULT get_ie9_char(VARIANT* p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, VARIANT*, int>)(lpVtbl[19]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, VARIANT*, int>)(lpVtbl[19]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.get_locale"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_locale([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMKeyboardEvent*, ushort**, int>)(lpVtbl[20]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMKeyboardEvent*, char**, int>)(lpVtbl[20]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_key([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_key([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
         HRESULT get_location([NativeTypeName("ULONG *")] uint* p);
@@ -214,10 +214,10 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
         HRESULT get_repeat([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(14)]
-        HRESULT getModifierState([NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* state);
+        HRESULT getModifierState([NativeTypeName("BSTR")] char* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* state);
 
         [VtblIndex(15)]
-        HRESULT initKeyboardEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("ULONG")] uint locationArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("VARIANT_BOOL")] short repeat, [NativeTypeName("BSTR")] ushort* locale);
+        HRESULT initKeyboardEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] char* keyArg, [NativeTypeName("ULONG")] uint locationArg, [NativeTypeName("BSTR")] char* modifiersListArg, [NativeTypeName("VARIANT_BOOL")] short repeat, [NativeTypeName("BSTR")] char* locale);
 
         [VtblIndex(16)]
         HRESULT get_keyCode([NativeTypeName("long *")] int* p);
@@ -232,73 +232,73 @@ public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, IN
         HRESULT get_ie9_char(VARIANT* p);
 
         [VtblIndex(20)]
-        HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_locale([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_key;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_key;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_location;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_location;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_ctrlKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_ctrlKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_shiftKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_shiftKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_altKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_altKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_metaKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_metaKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_repeat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_repeat;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> getModifierState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short*, int> getModifierState;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, BSTR, ULONG, BSTR, VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, ushort*, uint, ushort*, short, ushort*, int> initKeyboardEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short, short, IHTMLWindow2*, char*, uint, char*, short, char*, int> initKeyboardEvent;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_keyCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_keyCode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_charCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_charCode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_which;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_which;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_ie9_char;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_ie9_char;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_locale;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_locale;
     }
 }

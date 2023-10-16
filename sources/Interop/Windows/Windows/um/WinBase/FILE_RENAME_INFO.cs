@@ -25,7 +25,7 @@ public unsafe partial struct FILE_RENAME_INFO
 
     /// <include file='FILE_RENAME_INFO.xml' path='doc/member[@name="FILE_RENAME_INFO.FileName"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort FileName[1];
+    public fixed char FileName[1];
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ReplaceIfExists"]/*' />
     [UnscopedRef]

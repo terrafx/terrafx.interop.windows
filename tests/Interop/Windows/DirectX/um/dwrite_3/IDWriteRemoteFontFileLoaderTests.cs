@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteRemoteFontFileLoaderTests
     {
         Assert.That(typeof(IDWriteRemoteFontFileLoader).GUID, Is.EqualTo(IID_IDWriteRemoteFontFileLoader));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteRemoteFontFileLoader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteRemoteFontFileLoader>(), Is.EqualTo(sizeof(IDWriteRemoteFontFileLoader)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteRemoteFontFileLoader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteRemoteFontFileLoader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteRemoteFontFileLoader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteRemoteFontFileLoader), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteRemoteFontFileLoader), Is.EqualTo(4));
-        }
-    }
 }

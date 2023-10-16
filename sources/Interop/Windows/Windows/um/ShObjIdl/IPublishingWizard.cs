@@ -25,7 +25,7 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPublishingWizard*, Guid*, void**, int>)(lpVtbl[0]))((IPublishingWizard*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPublishingWizard*, Guid*, void**, int>)(lpVtbl[0]))((IPublishingWizard*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPublishingWizard*, uint>)(lpVtbl[1]))((IPublishingWizard*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPublishingWizard*, uint>)(lpVtbl[1]))((IPublishingWizard*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPublishingWizard*, uint>)(lpVtbl[2]))((IPublishingWizard*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPublishingWizard*, uint>)(lpVtbl[2]))((IPublishingWizard*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IWizardExtension.AddPages" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
     [VtblIndex(3)]
     public HRESULT AddPages(HPROPSHEETPAGE* aPages, uint cPages, uint* pnPagesAdded)
     {
-        return ((delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, uint, uint*, int>)(lpVtbl[3]))((IPublishingWizard*)Unsafe.AsPointer(ref this), aPages, cPages, pnPagesAdded);
+        return ((delegate* unmanaged[MemberFunction]<IPublishingWizard*, HPROPSHEETPAGE*, uint, uint*, int>)(lpVtbl[3]))((IPublishingWizard*)Unsafe.AsPointer(ref this), aPages, cPages, pnPagesAdded);
     }
 
     /// <inheritdoc cref="IWizardExtension.GetFirstPage" />
@@ -59,7 +59,7 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetFirstPage(HPROPSHEETPAGE* phpage)
     {
-        return ((delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phpage);
+        return ((delegate* unmanaged[MemberFunction]<IPublishingWizard*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phpage);
     }
 
     /// <inheritdoc cref="IWizardExtension.GetLastPage" />
@@ -67,15 +67,15 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetLastPage(HPROPSHEETPAGE* phpage)
     {
-        return ((delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phpage);
+        return ((delegate* unmanaged[MemberFunction]<IPublishingWizard*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phpage);
     }
 
     /// <include file='IPublishingWizard.xml' path='doc/member[@name="IPublishingWizard.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* pszServiceScope)
+    public HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] char* pszServiceScope)
     {
-        return ((delegate* unmanaged<IPublishingWizard*, IDataObject*, uint, ushort*, int>)(lpVtbl[6]))((IPublishingWizard*)Unsafe.AsPointer(ref this), pdo, dwOptions, pszServiceScope);
+        return ((delegate* unmanaged[MemberFunction]<IPublishingWizard*, IDataObject*, uint, char*, int>)(lpVtbl[6]))((IPublishingWizard*)Unsafe.AsPointer(ref this), pdo, dwOptions, pszServiceScope);
     }
 
     /// <include file='IPublishingWizard.xml' path='doc/member[@name="IPublishingWizard.GetTransferManifest"]/*' />
@@ -83,13 +83,13 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
     [VtblIndex(7)]
     public HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest)
     {
-        return ((delegate* unmanaged<IPublishingWizard*, HRESULT*, IXMLDOMDocument**, int>)(lpVtbl[7]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phrFromTransfer, pdocManifest);
+        return ((delegate* unmanaged[MemberFunction]<IPublishingWizard*, HRESULT*, IXMLDOMDocument**, int>)(lpVtbl[7]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phrFromTransfer, pdocManifest);
     }
 
     public interface Interface : IWizardExtension.Interface
     {
         [VtblIndex(6)]
-        HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* pszServiceScope);
+        HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] char* pszServiceScope);
 
         [VtblIndex(7)]
         HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest);
@@ -99,27 +99,27 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetFirstPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HPROPSHEETPAGE*, int> GetFirstPage;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetLastPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HPROPSHEETPAGE*, int> GetLastPage;
 
         [NativeTypeName("HRESULT (IDataObject *, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDataObject*, uint, ushort*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDataObject*, uint, char*, int> Initialize;
 
         [NativeTypeName("HRESULT (HRESULT *, IXMLDOMDocument **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT*, IXMLDOMDocument**, int> GetTransferManifest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT*, IXMLDOMDocument**, int> GetTransferManifest;
     }
 }

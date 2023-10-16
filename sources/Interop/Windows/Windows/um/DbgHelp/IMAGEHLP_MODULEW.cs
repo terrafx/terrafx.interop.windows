@@ -37,13 +37,13 @@ public unsafe partial struct IMAGEHLP_MODULEW
 
     /// <include file='IMAGEHLP_MODULEW.xml' path='doc/member[@name="IMAGEHLP_MODULEW.ModuleName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort ModuleName[32];
+    public fixed char ModuleName[32];
 
     /// <include file='IMAGEHLP_MODULEW.xml' path='doc/member[@name="IMAGEHLP_MODULEW.ImageName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort ImageName[256];
+    public fixed char ImageName[256];
 
     /// <include file='IMAGEHLP_MODULEW.xml' path='doc/member[@name="IMAGEHLP_MODULEW.LoadedImageName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort LoadedImageName[256];
+    public fixed char LoadedImageName[256];
 }

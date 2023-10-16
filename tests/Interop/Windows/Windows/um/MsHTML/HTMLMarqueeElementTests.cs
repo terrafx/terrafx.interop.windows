@@ -19,25 +19,4 @@ public static unsafe partial class HTMLMarqueeElementTests
     {
         Assert.That(typeof(HTMLMarqueeElement).GUID, Is.EqualTo(IID_HTMLMarqueeElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLMarqueeElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLMarqueeElement>(), Is.EqualTo(sizeof(HTMLMarqueeElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMarqueeElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLMarqueeElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMarqueeElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLMarqueeElement), Is.EqualTo(1));
-    }
 }

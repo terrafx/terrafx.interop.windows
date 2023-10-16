@@ -19,25 +19,4 @@ public static unsafe partial class ScheduledTasksTests
     {
         Assert.That(typeof(ScheduledTasks).GUID, Is.EqualTo(IID_ScheduledTasks));
     }
-
-    /// <summary>Validates that the <see cref="ScheduledTasks" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ScheduledTasks>(), Is.EqualTo(sizeof(ScheduledTasks)));
-    }
-
-    /// <summary>Validates that the <see cref="ScheduledTasks" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ScheduledTasks).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ScheduledTasks" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ScheduledTasks), Is.EqualTo(1));
-    }
 }

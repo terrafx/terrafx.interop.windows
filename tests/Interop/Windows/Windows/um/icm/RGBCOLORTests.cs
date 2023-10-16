@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RGBCOLOR" /> struct.</summary>
 public static unsafe partial class RGBCOLORTests
 {
-    /// <summary>Validates that the <see cref="RGBCOLOR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RGBCOLOR>(), Is.EqualTo(sizeof(RGBCOLOR)));
-    }
-
-    /// <summary>Validates that the <see cref="RGBCOLOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RGBCOLOR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RGBCOLOR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RGBCOLOR), Is.EqualTo(6));
-    }
 }

@@ -13,7 +13,7 @@ public partial struct SYSTEM_EVENT_DATA
 
     /// <include file='SYSTEM_EVENT_DATA.xml' path='doc/member[@name="SYSTEM_EVENT_DATA.wKey"]/*' />
     [NativeTypeName("WCHAR")]
-    public ushort wKey;
+    public char wKey;
 
     /// <include file='SYSTEM_EVENT_DATA.xml' path='doc/member[@name="SYSTEM_EVENT_DATA.xPos"]/*' />
     [NativeTypeName("LONG")]

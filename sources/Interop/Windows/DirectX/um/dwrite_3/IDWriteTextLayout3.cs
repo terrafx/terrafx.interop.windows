@@ -28,7 +28,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint>)(lpVtbl[1]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint>)(lpVtbl[1]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint>)(lpVtbl[2]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint>)(lpVtbl[2]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.SetTextAlignment" />
@@ -54,7 +54,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(3)]
     public HRESULT SetTextAlignment(DWRITE_TEXT_ALIGNMENT textAlignment)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_TEXT_ALIGNMENT, int>)(lpVtbl[3]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), textAlignment);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_TEXT_ALIGNMENT, int>)(lpVtbl[3]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), textAlignment);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.SetParagraphAlignment" />
@@ -62,7 +62,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(4)]
     public HRESULT SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_PARAGRAPH_ALIGNMENT, int>)(lpVtbl[4]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), paragraphAlignment);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_PARAGRAPH_ALIGNMENT, int>)(lpVtbl[4]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), paragraphAlignment);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.SetWordWrapping" />
@@ -70,7 +70,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(5)]
     public HRESULT SetWordWrapping(DWRITE_WORD_WRAPPING wordWrapping)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_WORD_WRAPPING, int>)(lpVtbl[5]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), wordWrapping);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_WORD_WRAPPING, int>)(lpVtbl[5]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), wordWrapping);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.SetReadingDirection" />
@@ -78,7 +78,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(6)]
     public HRESULT SetReadingDirection(DWRITE_READING_DIRECTION readingDirection)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_READING_DIRECTION, int>)(lpVtbl[6]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), readingDirection);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_READING_DIRECTION, int>)(lpVtbl[6]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), readingDirection);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.SetFlowDirection" />
@@ -86,7 +86,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(7)]
     public HRESULT SetFlowDirection(DWRITE_FLOW_DIRECTION flowDirection)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_FLOW_DIRECTION, int>)(lpVtbl[7]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), flowDirection);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_FLOW_DIRECTION, int>)(lpVtbl[7]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), flowDirection);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.SetIncrementalTabStop" />
@@ -94,7 +94,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(8)]
     public HRESULT SetIncrementalTabStop(float incrementalTabStop)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float, int>)(lpVtbl[8]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), incrementalTabStop);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float, int>)(lpVtbl[8]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), incrementalTabStop);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.SetTrimming" />
@@ -102,7 +102,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(9)]
     public HRESULT SetTrimming([NativeTypeName("const DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject* trimmingSign)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_TRIMMING*, IDWriteInlineObject*, int>)(lpVtbl[9]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_TRIMMING*, IDWriteInlineObject*, int>)(lpVtbl[9]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.SetLineSpacing" />
@@ -110,7 +110,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(10)]
     public HRESULT SetLineSpacing(DWRITE_LINE_SPACING_METHOD lineSpacingMethod, float lineSpacing, float baseline)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_LINE_SPACING_METHOD, float, float, int>)(lpVtbl[10]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_LINE_SPACING_METHOD, float, float, int>)(lpVtbl[10]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetTextAlignment" />
@@ -118,7 +118,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(11)]
     public DWRITE_TEXT_ALIGNMENT GetTextAlignment()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_TEXT_ALIGNMENT>)(lpVtbl[11]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_TEXT_ALIGNMENT>)(lpVtbl[11]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetParagraphAlignment" />
@@ -126,7 +126,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(12)]
     public DWRITE_PARAGRAPH_ALIGNMENT GetParagraphAlignment()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_PARAGRAPH_ALIGNMENT>)(lpVtbl[12]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_PARAGRAPH_ALIGNMENT>)(lpVtbl[12]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetWordWrapping" />
@@ -134,7 +134,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(13)]
     public DWRITE_WORD_WRAPPING GetWordWrapping()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_WORD_WRAPPING>)(lpVtbl[13]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_WORD_WRAPPING>)(lpVtbl[13]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetReadingDirection" />
@@ -142,7 +142,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(14)]
     public DWRITE_READING_DIRECTION GetReadingDirection()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_READING_DIRECTION>)(lpVtbl[14]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_READING_DIRECTION>)(lpVtbl[14]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetFlowDirection" />
@@ -150,7 +150,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(15)]
     public DWRITE_FLOW_DIRECTION GetFlowDirection()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_FLOW_DIRECTION>)(lpVtbl[15]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_FLOW_DIRECTION>)(lpVtbl[15]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetIncrementalTabStop" />
@@ -158,7 +158,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(16)]
     public float GetIncrementalTabStop()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float>)(lpVtbl[16]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float>)(lpVtbl[16]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetTrimming" />
@@ -166,7 +166,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(17)]
     public HRESULT GetTrimming(DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject** trimmingSign)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_TRIMMING*, IDWriteInlineObject**, int>)(lpVtbl[17]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_TRIMMING*, IDWriteInlineObject**, int>)(lpVtbl[17]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetLineSpacing" />
@@ -174,7 +174,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(18)]
     public HRESULT GetLineSpacing(DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, float* lineSpacing, float* baseline)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int>)(lpVtbl[18]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int>)(lpVtbl[18]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetFontCollection" />
@@ -182,7 +182,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(19)]
     public HRESULT GetFontCollection(IDWriteFontCollection** fontCollection)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, IDWriteFontCollection**, int>)(lpVtbl[19]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontCollection);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, IDWriteFontCollection**, int>)(lpVtbl[19]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontCollection);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetFontFamilyNameLength" />
@@ -191,15 +191,15 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [return: NativeTypeName("UINT32")]
     public uint GetFontFamilyNameLength()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint>)(lpVtbl[20]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint>)(lpVtbl[20]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetFontFamilyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT GetFontFamilyName([NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
+    public HRESULT GetFontFamilyName([NativeTypeName("WCHAR *")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, ushort*, uint, int>)(lpVtbl[21]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, char*, uint, int>)(lpVtbl[21]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetFontWeight" />
@@ -207,7 +207,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(22)]
     public DWRITE_FONT_WEIGHT GetFontWeight()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_FONT_WEIGHT>)(lpVtbl[22]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_FONT_WEIGHT>)(lpVtbl[22]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetFontStyle" />
@@ -215,7 +215,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(23)]
     public DWRITE_FONT_STYLE GetFontStyle()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_FONT_STYLE>)(lpVtbl[23]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_FONT_STYLE>)(lpVtbl[23]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetFontStretch" />
@@ -223,7 +223,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(24)]
     public DWRITE_FONT_STRETCH GetFontStretch()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_FONT_STRETCH>)(lpVtbl[24]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_FONT_STRETCH>)(lpVtbl[24]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetFontSize" />
@@ -231,7 +231,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(25)]
     public float GetFontSize()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float>)(lpVtbl[25]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float>)(lpVtbl[25]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetLocaleNameLength" />
@@ -240,15 +240,15 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [return: NativeTypeName("UINT32")]
     public uint GetLocaleNameLength()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint>)(lpVtbl[26]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint>)(lpVtbl[26]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetLocaleName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT GetLocaleName([NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
+    public HRESULT GetLocaleName([NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint nameSize)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, ushort*, uint, int>)(lpVtbl[27]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), localeName, nameSize);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, char*, uint, int>)(lpVtbl[27]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), localeName, nameSize);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetMaxWidth" />
@@ -256,7 +256,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(28)]
     public HRESULT SetMaxWidth(float maxWidth)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float, int>)(lpVtbl[28]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), maxWidth);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float, int>)(lpVtbl[28]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), maxWidth);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetMaxHeight" />
@@ -264,7 +264,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(29)]
     public HRESULT SetMaxHeight(float maxHeight)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float, int>)(lpVtbl[29]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), maxHeight);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float, int>)(lpVtbl[29]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), maxHeight);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetFontCollection" />
@@ -272,15 +272,15 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(30)]
     public HRESULT SetFontCollection(IDWriteFontCollection* fontCollection, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, IDWriteFontCollection*, DWRITE_TEXT_RANGE, int>)(lpVtbl[30]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontCollection, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, IDWriteFontCollection*, DWRITE_TEXT_RANGE, int>)(lpVtbl[30]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontCollection, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetFontFamilyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT SetFontFamilyName([NativeTypeName("const WCHAR *")] ushort* fontFamilyName, DWRITE_TEXT_RANGE textRange)
+    public HRESULT SetFontFamilyName([NativeTypeName("const WCHAR *")] char* fontFamilyName, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, ushort*, DWRITE_TEXT_RANGE, int>)(lpVtbl[31]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontFamilyName, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, char*, DWRITE_TEXT_RANGE, int>)(lpVtbl[31]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontFamilyName, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetFontWeight" />
@@ -288,7 +288,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(32)]
     public HRESULT SetFontWeight(DWRITE_FONT_WEIGHT fontWeight, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_FONT_WEIGHT, DWRITE_TEXT_RANGE, int>)(lpVtbl[32]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontWeight, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_FONT_WEIGHT, DWRITE_TEXT_RANGE, int>)(lpVtbl[32]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontWeight, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetFontStyle" />
@@ -296,7 +296,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(33)]
     public HRESULT SetFontStyle(DWRITE_FONT_STYLE fontStyle, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_FONT_STYLE, DWRITE_TEXT_RANGE, int>)(lpVtbl[33]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontStyle, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_FONT_STYLE, DWRITE_TEXT_RANGE, int>)(lpVtbl[33]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontStyle, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetFontStretch" />
@@ -304,7 +304,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(34)]
     public HRESULT SetFontStretch(DWRITE_FONT_STRETCH fontStretch, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_FONT_STRETCH, DWRITE_TEXT_RANGE, int>)(lpVtbl[34]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontStretch, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_FONT_STRETCH, DWRITE_TEXT_RANGE, int>)(lpVtbl[34]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontStretch, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetFontSize" />
@@ -312,7 +312,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(35)]
     public HRESULT SetFontSize(float fontSize, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float, DWRITE_TEXT_RANGE, int>)(lpVtbl[35]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontSize, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float, DWRITE_TEXT_RANGE, int>)(lpVtbl[35]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontSize, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetUnderline" />
@@ -320,7 +320,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(36)]
     public HRESULT SetUnderline(BOOL hasUnderline, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, BOOL, DWRITE_TEXT_RANGE, int>)(lpVtbl[36]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), hasUnderline, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, BOOL, DWRITE_TEXT_RANGE, int>)(lpVtbl[36]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), hasUnderline, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetStrikethrough" />
@@ -328,7 +328,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(37)]
     public HRESULT SetStrikethrough(BOOL hasStrikethrough, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, BOOL, DWRITE_TEXT_RANGE, int>)(lpVtbl[37]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), hasStrikethrough, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, BOOL, DWRITE_TEXT_RANGE, int>)(lpVtbl[37]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), hasStrikethrough, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetDrawingEffect" />
@@ -336,7 +336,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(38)]
     public HRESULT SetDrawingEffect(IUnknown* drawingEffect, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, IUnknown*, DWRITE_TEXT_RANGE, int>)(lpVtbl[38]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), drawingEffect, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, IUnknown*, DWRITE_TEXT_RANGE, int>)(lpVtbl[38]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), drawingEffect, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetInlineObject" />
@@ -344,7 +344,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(39)]
     public HRESULT SetInlineObject(IDWriteInlineObject* inlineObject, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, IDWriteInlineObject*, DWRITE_TEXT_RANGE, int>)(lpVtbl[39]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), inlineObject, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, IDWriteInlineObject*, DWRITE_TEXT_RANGE, int>)(lpVtbl[39]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), inlineObject, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetTypography" />
@@ -352,15 +352,15 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(40)]
     public HRESULT SetTypography(IDWriteTypography* typography, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, IDWriteTypography*, DWRITE_TEXT_RANGE, int>)(lpVtbl[40]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), typography, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, IDWriteTypography*, DWRITE_TEXT_RANGE, int>)(lpVtbl[40]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), typography, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetLocaleName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
-    public HRESULT SetLocaleName([NativeTypeName("const WCHAR *")] ushort* localeName, DWRITE_TEXT_RANGE textRange)
+    public HRESULT SetLocaleName([NativeTypeName("const WCHAR *")] char* localeName, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, ushort*, DWRITE_TEXT_RANGE, int>)(lpVtbl[41]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), localeName, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, char*, DWRITE_TEXT_RANGE, int>)(lpVtbl[41]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), localeName, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetMaxWidth" />
@@ -368,7 +368,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(42)]
     public float GetMaxWidth()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float>)(lpVtbl[42]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float>)(lpVtbl[42]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetMaxHeight" />
@@ -376,7 +376,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(43)]
     public float GetMaxHeight()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float>)(lpVtbl[43]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float>)(lpVtbl[43]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetFontCollection" />
@@ -384,7 +384,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(44)]
     public HRESULT GetFontCollection([NativeTypeName("UINT32")] uint currentPosition, IDWriteFontCollection** fontCollection, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, IDWriteFontCollection**, DWRITE_TEXT_RANGE*, int>)(lpVtbl[44]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontCollection, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, IDWriteFontCollection**, DWRITE_TEXT_RANGE*, int>)(lpVtbl[44]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontCollection, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetFontFamilyNameLength" />
@@ -392,15 +392,15 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(45)]
     public HRESULT GetFontFamilyNameLength([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("UINT32 *")] uint* nameLength, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, uint*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[45]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, nameLength, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, uint*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[45]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, nameLength, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetFontFamilyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
-    public HRESULT GetFontFamilyName([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
+    public HRESULT GetFontFamilyName([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, ushort*, uint, DWRITE_TEXT_RANGE*, int>)(lpVtbl[46]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontFamilyName, nameSize, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, char*, uint, DWRITE_TEXT_RANGE*, int>)(lpVtbl[46]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontFamilyName, nameSize, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetFontWeight" />
@@ -408,7 +408,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(47)]
     public HRESULT GetFontWeight([NativeTypeName("UINT32")] uint currentPosition, DWRITE_FONT_WEIGHT* fontWeight, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, DWRITE_FONT_WEIGHT*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[47]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontWeight, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, DWRITE_FONT_WEIGHT*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[47]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontWeight, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetFontStyle" />
@@ -416,7 +416,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(48)]
     public HRESULT GetFontStyle([NativeTypeName("UINT32")] uint currentPosition, DWRITE_FONT_STYLE* fontStyle, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, DWRITE_FONT_STYLE*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[48]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontStyle, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, DWRITE_FONT_STYLE*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[48]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontStyle, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetFontStretch" />
@@ -424,7 +424,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(49)]
     public HRESULT GetFontStretch([NativeTypeName("UINT32")] uint currentPosition, DWRITE_FONT_STRETCH* fontStretch, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, DWRITE_FONT_STRETCH*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[49]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontStretch, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, DWRITE_FONT_STRETCH*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[49]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontStretch, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetFontSize" />
@@ -432,7 +432,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(50)]
     public HRESULT GetFontSize([NativeTypeName("UINT32")] uint currentPosition, float* fontSize, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, float*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[50]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontSize, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, float*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[50]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, fontSize, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetUnderline" />
@@ -440,7 +440,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(51)]
     public HRESULT GetUnderline([NativeTypeName("UINT32")] uint currentPosition, BOOL* hasUnderline, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, BOOL*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[51]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, hasUnderline, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, BOOL*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[51]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, hasUnderline, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetStrikethrough" />
@@ -448,7 +448,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(52)]
     public HRESULT GetStrikethrough([NativeTypeName("UINT32")] uint currentPosition, BOOL* hasStrikethrough, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, BOOL*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[52]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, hasStrikethrough, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, BOOL*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[52]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, hasStrikethrough, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetDrawingEffect" />
@@ -456,7 +456,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(53)]
     public HRESULT GetDrawingEffect([NativeTypeName("UINT32")] uint currentPosition, IUnknown** drawingEffect, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, IUnknown**, DWRITE_TEXT_RANGE*, int>)(lpVtbl[53]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, drawingEffect, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, IUnknown**, DWRITE_TEXT_RANGE*, int>)(lpVtbl[53]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, drawingEffect, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetInlineObject" />
@@ -464,7 +464,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(54)]
     public HRESULT GetInlineObject([NativeTypeName("UINT32")] uint currentPosition, IDWriteInlineObject** inlineObject, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, IDWriteInlineObject**, DWRITE_TEXT_RANGE*, int>)(lpVtbl[54]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, inlineObject, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, IDWriteInlineObject**, DWRITE_TEXT_RANGE*, int>)(lpVtbl[54]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, inlineObject, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetTypography" />
@@ -472,7 +472,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(55)]
     public HRESULT GetTypography([NativeTypeName("UINT32")] uint currentPosition, IDWriteTypography** typography, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, IDWriteTypography**, DWRITE_TEXT_RANGE*, int>)(lpVtbl[55]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, typography, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, IDWriteTypography**, DWRITE_TEXT_RANGE*, int>)(lpVtbl[55]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, typography, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetLocaleNameLength" />
@@ -480,15 +480,15 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(56)]
     public HRESULT GetLocaleNameLength([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("UINT32 *")] uint* nameLength, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, uint*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[56]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, nameLength, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, uint*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[56]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, nameLength, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetLocaleName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
-    public HRESULT GetLocaleName([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
+    public HRESULT GetLocaleName([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, ushort*, uint, DWRITE_TEXT_RANGE*, int>)(lpVtbl[57]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, localeName, nameSize, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, char*, uint, DWRITE_TEXT_RANGE*, int>)(lpVtbl[57]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, localeName, nameSize, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.Draw" />
@@ -496,7 +496,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(58)]
     public HRESULT Draw(void* clientDrawingContext, IDWriteTextRenderer* renderer, float originX, float originY)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, void*, IDWriteTextRenderer*, float, float, int>)(lpVtbl[58]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), clientDrawingContext, renderer, originX, originY);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, void*, IDWriteTextRenderer*, float, float, int>)(lpVtbl[58]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), clientDrawingContext, renderer, originX, originY);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetLineMetrics" />
@@ -504,7 +504,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(59)]
     public HRESULT GetLineMetrics(DWRITE_LINE_METRICS* lineMetrics, [NativeTypeName("UINT32")] uint maxLineCount, [NativeTypeName("UINT32 *")] uint* actualLineCount)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_LINE_METRICS*, uint, uint*, int>)(lpVtbl[59]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineMetrics, maxLineCount, actualLineCount);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_LINE_METRICS*, uint, uint*, int>)(lpVtbl[59]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineMetrics, maxLineCount, actualLineCount);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetMetrics" />
@@ -512,7 +512,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(60)]
     public HRESULT GetMetrics(DWRITE_TEXT_METRICS* textMetrics)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_TEXT_METRICS*, int>)(lpVtbl[60]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), textMetrics);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_TEXT_METRICS*, int>)(lpVtbl[60]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), textMetrics);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetOverhangMetrics" />
@@ -520,7 +520,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(61)]
     public HRESULT GetOverhangMetrics(DWRITE_OVERHANG_METRICS* overhangs)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_OVERHANG_METRICS*, int>)(lpVtbl[61]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), overhangs);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_OVERHANG_METRICS*, int>)(lpVtbl[61]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), overhangs);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetClusterMetrics" />
@@ -528,7 +528,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(62)]
     public HRESULT GetClusterMetrics(DWRITE_CLUSTER_METRICS* clusterMetrics, [NativeTypeName("UINT32")] uint maxClusterCount, [NativeTypeName("UINT32 *")] uint* actualClusterCount)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_CLUSTER_METRICS*, uint, uint*, int>)(lpVtbl[62]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), clusterMetrics, maxClusterCount, actualClusterCount);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_CLUSTER_METRICS*, uint, uint*, int>)(lpVtbl[62]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), clusterMetrics, maxClusterCount, actualClusterCount);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.DetermineMinWidth" />
@@ -536,7 +536,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(63)]
     public HRESULT DetermineMinWidth(float* minWidth)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float*, int>)(lpVtbl[63]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), minWidth);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float*, int>)(lpVtbl[63]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), minWidth);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.HitTestPoint" />
@@ -544,7 +544,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(64)]
     public HRESULT HitTestPoint(float pointX, float pointY, BOOL* isTrailingHit, BOOL* isInside, DWRITE_HIT_TEST_METRICS* hitTestMetrics)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float, float, BOOL*, BOOL*, DWRITE_HIT_TEST_METRICS*, int>)(lpVtbl[64]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), pointX, pointY, isTrailingHit, isInside, hitTestMetrics);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float, float, BOOL*, BOOL*, DWRITE_HIT_TEST_METRICS*, int>)(lpVtbl[64]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), pointX, pointY, isTrailingHit, isInside, hitTestMetrics);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.HitTestTextPosition" />
@@ -552,7 +552,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(65)]
     public HRESULT HitTestTextPosition([NativeTypeName("UINT32")] uint textPosition, BOOL isTrailingHit, float* pointX, float* pointY, DWRITE_HIT_TEST_METRICS* hitTestMetrics)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, BOOL, float*, float*, DWRITE_HIT_TEST_METRICS*, int>)(lpVtbl[65]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), textPosition, isTrailingHit, pointX, pointY, hitTestMetrics);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, BOOL, float*, float*, DWRITE_HIT_TEST_METRICS*, int>)(lpVtbl[65]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), textPosition, isTrailingHit, pointX, pointY, hitTestMetrics);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.HitTestTextRange" />
@@ -560,7 +560,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(66)]
     public HRESULT HitTestTextRange([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, float originX, float originY, DWRITE_HIT_TEST_METRICS* hitTestMetrics, [NativeTypeName("UINT32")] uint maxHitTestMetricsCount, [NativeTypeName("UINT32 *")] uint* actualHitTestMetricsCount)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, uint, float, float, DWRITE_HIT_TEST_METRICS*, uint, uint*, int>)(lpVtbl[66]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), textPosition, textLength, originX, originY, hitTestMetrics, maxHitTestMetricsCount, actualHitTestMetricsCount);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, uint, float, float, DWRITE_HIT_TEST_METRICS*, uint, uint*, int>)(lpVtbl[66]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), textPosition, textLength, originX, originY, hitTestMetrics, maxHitTestMetricsCount, actualHitTestMetricsCount);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout1.SetPairKerning" />
@@ -568,7 +568,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(67)]
     public HRESULT SetPairKerning(BOOL isPairKerningEnabled, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, BOOL, DWRITE_TEXT_RANGE, int>)(lpVtbl[67]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), isPairKerningEnabled, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, BOOL, DWRITE_TEXT_RANGE, int>)(lpVtbl[67]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), isPairKerningEnabled, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout1.GetPairKerning" />
@@ -576,7 +576,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(68)]
     public HRESULT GetPairKerning([NativeTypeName("UINT32")] uint currentPosition, BOOL* isPairKerningEnabled, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, BOOL*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[68]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, isPairKerningEnabled, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, BOOL*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[68]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, isPairKerningEnabled, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout1.SetCharacterSpacing" />
@@ -584,7 +584,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(69)]
     public HRESULT SetCharacterSpacing(float leadingSpacing, float trailingSpacing, float minimumAdvanceWidth, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, float, float, float, DWRITE_TEXT_RANGE, int>)(lpVtbl[69]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, float, float, float, DWRITE_TEXT_RANGE, int>)(lpVtbl[69]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout1.GetCharacterSpacing" />
@@ -592,7 +592,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(70)]
     public HRESULT GetCharacterSpacing([NativeTypeName("UINT32")] uint currentPosition, float* leadingSpacing, float* trailingSpacing, float* minimumAdvanceWidth, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, uint, float*, float*, float*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[70]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, uint, float*, float*, float*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[70]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout2.GetMetrics" />
@@ -600,7 +600,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(71)]
     public HRESULT GetMetrics(DWRITE_TEXT_METRICS1* textMetrics)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_TEXT_METRICS1*, int>)(lpVtbl[71]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), textMetrics);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_TEXT_METRICS1*, int>)(lpVtbl[71]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), textMetrics);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout2.SetVerticalGlyphOrientation" />
@@ -608,7 +608,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(72)]
     public HRESULT SetVerticalGlyphOrientation(DWRITE_VERTICAL_GLYPH_ORIENTATION glyphOrientation)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_VERTICAL_GLYPH_ORIENTATION, int>)(lpVtbl[72]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), glyphOrientation);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_VERTICAL_GLYPH_ORIENTATION, int>)(lpVtbl[72]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), glyphOrientation);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout2.GetVerticalGlyphOrientation" />
@@ -616,7 +616,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(73)]
     public DWRITE_VERTICAL_GLYPH_ORIENTATION GetVerticalGlyphOrientation()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_VERTICAL_GLYPH_ORIENTATION>)(lpVtbl[73]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_VERTICAL_GLYPH_ORIENTATION>)(lpVtbl[73]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextLayout2.SetLastLineWrapping" />
@@ -624,7 +624,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(74)]
     public HRESULT SetLastLineWrapping(BOOL isLastLineWrappingEnabled)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, BOOL, int>)(lpVtbl[74]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), isLastLineWrappingEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, BOOL, int>)(lpVtbl[74]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), isLastLineWrappingEnabled);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout2.GetLastLineWrapping" />
@@ -632,7 +632,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(75)]
     public BOOL GetLastLineWrapping()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, int>)(lpVtbl[75]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, int>)(lpVtbl[75]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextLayout2.SetOpticalAlignment" />
@@ -640,7 +640,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(76)]
     public HRESULT SetOpticalAlignment(DWRITE_OPTICAL_ALIGNMENT opticalAlignment)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_OPTICAL_ALIGNMENT, int>)(lpVtbl[76]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), opticalAlignment);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_OPTICAL_ALIGNMENT, int>)(lpVtbl[76]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), opticalAlignment);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout2.GetOpticalAlignment" />
@@ -648,7 +648,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(77)]
     public DWRITE_OPTICAL_ALIGNMENT GetOpticalAlignment()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_OPTICAL_ALIGNMENT>)(lpVtbl[77]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_OPTICAL_ALIGNMENT>)(lpVtbl[77]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteTextLayout2.SetFontFallback" />
@@ -656,7 +656,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(78)]
     public HRESULT SetFontFallback(IDWriteFontFallback* fontFallback)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, IDWriteFontFallback*, int>)(lpVtbl[78]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontFallback);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, IDWriteFontFallback*, int>)(lpVtbl[78]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontFallback);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout2.GetFontFallback" />
@@ -664,7 +664,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(79)]
     public HRESULT GetFontFallback(IDWriteFontFallback** fontFallback)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, IDWriteFontFallback**, int>)(lpVtbl[79]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontFallback);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, IDWriteFontFallback**, int>)(lpVtbl[79]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), fontFallback);
     }
 
     /// <include file='IDWriteTextLayout3.xml' path='doc/member[@name="IDWriteTextLayout3.InvalidateLayout"]/*' />
@@ -672,7 +672,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(80)]
     public HRESULT InvalidateLayout()
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, int>)(lpVtbl[80]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, int>)(lpVtbl[80]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextLayout3.xml' path='doc/member[@name="IDWriteTextLayout3.SetLineSpacing"]/*' />
@@ -680,7 +680,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(81)]
     public HRESULT SetLineSpacing([NativeTypeName("const DWRITE_LINE_SPACING *")] DWRITE_LINE_SPACING* lineSpacingOptions)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_LINE_SPACING*, int>)(lpVtbl[81]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineSpacingOptions);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_LINE_SPACING*, int>)(lpVtbl[81]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineSpacingOptions);
     }
 
     /// <include file='IDWriteTextLayout3.xml' path='doc/member[@name="IDWriteTextLayout3.GetLineSpacing"]/*' />
@@ -688,7 +688,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(82)]
     public HRESULT GetLineSpacing(DWRITE_LINE_SPACING* lineSpacingOptions)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_LINE_SPACING*, int>)(lpVtbl[82]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineSpacingOptions);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_LINE_SPACING*, int>)(lpVtbl[82]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineSpacingOptions);
     }
 
     /// <include file='IDWriteTextLayout3.xml' path='doc/member[@name="IDWriteTextLayout3.GetLineMetrics"]/*' />
@@ -696,7 +696,7 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
     [VtblIndex(83)]
     public HRESULT GetLineMetrics(DWRITE_LINE_METRICS1* lineMetrics, [NativeTypeName("UINT32")] uint maxLineCount, [NativeTypeName("UINT32 *")] uint* actualLineCount)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_LINE_METRICS1*, uint, uint*, int>)(lpVtbl[83]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineMetrics, maxLineCount, actualLineCount);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextLayout3*, DWRITE_LINE_METRICS1*, uint, uint*, int>)(lpVtbl[83]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineMetrics, maxLineCount, actualLineCount);
     }
 
     public interface Interface : IDWriteTextLayout2.Interface
@@ -718,255 +718,255 @@ public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWRITE_TEXT_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TEXT_ALIGNMENT, int> SetTextAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TEXT_ALIGNMENT, int> SetTextAlignment;
 
         [NativeTypeName("HRESULT (DWRITE_PARAGRAPH_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_PARAGRAPH_ALIGNMENT, int> SetParagraphAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_PARAGRAPH_ALIGNMENT, int> SetParagraphAlignment;
 
         [NativeTypeName("HRESULT (DWRITE_WORD_WRAPPING) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_WORD_WRAPPING, int> SetWordWrapping;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_WORD_WRAPPING, int> SetWordWrapping;
 
         [NativeTypeName("HRESULT (DWRITE_READING_DIRECTION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_READING_DIRECTION, int> SetReadingDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_READING_DIRECTION, int> SetReadingDirection;
 
         [NativeTypeName("HRESULT (DWRITE_FLOW_DIRECTION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FLOW_DIRECTION, int> SetFlowDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FLOW_DIRECTION, int> SetFlowDirection;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetIncrementalTabStop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetIncrementalTabStop;
 
         [NativeTypeName("HRESULT (const DWRITE_TRIMMING *, IDWriteInlineObject *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TRIMMING*, IDWriteInlineObject*, int> SetTrimming;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TRIMMING*, IDWriteInlineObject*, int> SetTrimming;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD, FLOAT, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_LINE_SPACING_METHOD, float, float, int> SetLineSpacing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_LINE_SPACING_METHOD, float, float, int> SetLineSpacing;
 
         [NativeTypeName("DWRITE_TEXT_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TEXT_ALIGNMENT> GetTextAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TEXT_ALIGNMENT> GetTextAlignment;
 
         [NativeTypeName("DWRITE_PARAGRAPH_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_PARAGRAPH_ALIGNMENT> GetParagraphAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_PARAGRAPH_ALIGNMENT> GetParagraphAlignment;
 
         [NativeTypeName("DWRITE_WORD_WRAPPING () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_WORD_WRAPPING> GetWordWrapping;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_WORD_WRAPPING> GetWordWrapping;
 
         [NativeTypeName("DWRITE_READING_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_READING_DIRECTION> GetReadingDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_READING_DIRECTION> GetReadingDirection;
 
         [NativeTypeName("DWRITE_FLOW_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FLOW_DIRECTION> GetFlowDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FLOW_DIRECTION> GetFlowDirection;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetIncrementalTabStop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetIncrementalTabStop;
 
         [NativeTypeName("HRESULT (DWRITE_TRIMMING *, IDWriteInlineObject **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TRIMMING*, IDWriteInlineObject**, int> GetTrimming;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TRIMMING*, IDWriteInlineObject**, int> GetTrimming;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD *, FLOAT *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int> GetLineSpacing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int> GetLineSpacing;
 
         [NativeTypeName("HRESULT (IDWriteFontCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontCollection**, int> GetFontCollection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontCollection**, int> GetFontCollection;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetFontFamilyNameLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetFontFamilyNameLength;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetFontFamilyName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> GetFontFamilyName;
 
         [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_WEIGHT> GetFontWeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_WEIGHT> GetFontWeight;
 
         [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_STYLE> GetFontStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_STYLE> GetFontStyle;
 
         [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_STRETCH> GetFontStretch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_STRETCH> GetFontStretch;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetFontSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetFontSize;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetLocaleNameLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetLocaleNameLength;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetLocaleName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> GetLocaleName;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetMaxWidth;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetMaxWidth;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetMaxHeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetMaxHeight;
 
         [NativeTypeName("HRESULT (IDWriteFontCollection *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontCollection*, DWRITE_TEXT_RANGE, int> SetFontCollection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontCollection*, DWRITE_TEXT_RANGE, int> SetFontCollection;
 
         [NativeTypeName("HRESULT (const WCHAR *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DWRITE_TEXT_RANGE, int> SetFontFamilyName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, DWRITE_TEXT_RANGE, int> SetFontFamilyName;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_WEIGHT, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_WEIGHT, DWRITE_TEXT_RANGE, int> SetFontWeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_WEIGHT, DWRITE_TEXT_RANGE, int> SetFontWeight;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_STYLE, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_STYLE, DWRITE_TEXT_RANGE, int> SetFontStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_STYLE, DWRITE_TEXT_RANGE, int> SetFontStyle;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_STRETCH, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_STRETCH, DWRITE_TEXT_RANGE, int> SetFontStretch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_STRETCH, DWRITE_TEXT_RANGE, int> SetFontStretch;
 
         [NativeTypeName("HRESULT (FLOAT, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, DWRITE_TEXT_RANGE, int> SetFontSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, DWRITE_TEXT_RANGE, int> SetFontSize;
 
         [NativeTypeName("HRESULT (BOOL, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, DWRITE_TEXT_RANGE, int> SetUnderline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, DWRITE_TEXT_RANGE, int> SetUnderline;
 
         [NativeTypeName("HRESULT (BOOL, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, DWRITE_TEXT_RANGE, int> SetStrikethrough;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, DWRITE_TEXT_RANGE, int> SetStrikethrough;
 
         [NativeTypeName("HRESULT (IUnknown *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, DWRITE_TEXT_RANGE, int> SetDrawingEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, DWRITE_TEXT_RANGE, int> SetDrawingEffect;
 
         [NativeTypeName("HRESULT (IDWriteInlineObject *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteInlineObject*, DWRITE_TEXT_RANGE, int> SetInlineObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteInlineObject*, DWRITE_TEXT_RANGE, int> SetInlineObject;
 
         [NativeTypeName("HRESULT (IDWriteTypography *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteTypography*, DWRITE_TEXT_RANGE, int> SetTypography;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteTypography*, DWRITE_TEXT_RANGE, int> SetTypography;
 
         [NativeTypeName("HRESULT (const WCHAR *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DWRITE_TEXT_RANGE, int> SetLocaleName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, DWRITE_TEXT_RANGE, int> SetLocaleName;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetMaxWidth;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetMaxWidth;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetMaxHeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetMaxHeight;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontCollection **, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDWriteFontCollection**, DWRITE_TEXT_RANGE*, int> GetFontCollection1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDWriteFontCollection**, DWRITE_TEXT_RANGE*, int> GetFontCollection1;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, DWRITE_TEXT_RANGE*, int> GetFontFamilyNameLength1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, DWRITE_TEXT_RANGE*, int> GetFontFamilyNameLength1;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, DWRITE_TEXT_RANGE*, int> GetFontFamilyName1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, uint, DWRITE_TEXT_RANGE*, int> GetFontFamilyName1;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_WEIGHT *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_WEIGHT*, DWRITE_TEXT_RANGE*, int> GetFontWeight1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DWRITE_FONT_WEIGHT*, DWRITE_TEXT_RANGE*, int> GetFontWeight1;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_STYLE *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_STYLE*, DWRITE_TEXT_RANGE*, int> GetFontStyle1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DWRITE_FONT_STYLE*, DWRITE_TEXT_RANGE*, int> GetFontStyle1;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_STRETCH *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_STRETCH*, DWRITE_TEXT_RANGE*, int> GetFontStretch1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DWRITE_FONT_STRETCH*, DWRITE_TEXT_RANGE*, int> GetFontStretch1;
 
         [NativeTypeName("HRESULT (UINT32, FLOAT *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, DWRITE_TEXT_RANGE*, int> GetFontSize1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, DWRITE_TEXT_RANGE*, int> GetFontSize1;
 
         [NativeTypeName("HRESULT (UINT32, BOOL *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL*, DWRITE_TEXT_RANGE*, int> GetUnderline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL*, DWRITE_TEXT_RANGE*, int> GetUnderline;
 
         [NativeTypeName("HRESULT (UINT32, BOOL *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL*, DWRITE_TEXT_RANGE*, int> GetStrikethrough;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL*, DWRITE_TEXT_RANGE*, int> GetStrikethrough;
 
         [NativeTypeName("HRESULT (UINT32, IUnknown **, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown**, DWRITE_TEXT_RANGE*, int> GetDrawingEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown**, DWRITE_TEXT_RANGE*, int> GetDrawingEffect;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteInlineObject **, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDWriteInlineObject**, DWRITE_TEXT_RANGE*, int> GetInlineObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDWriteInlineObject**, DWRITE_TEXT_RANGE*, int> GetInlineObject;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteTypography **, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDWriteTypography**, DWRITE_TEXT_RANGE*, int> GetTypography;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDWriteTypography**, DWRITE_TEXT_RANGE*, int> GetTypography;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, DWRITE_TEXT_RANGE*, int> GetLocaleNameLength1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, DWRITE_TEXT_RANGE*, int> GetLocaleNameLength1;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, DWRITE_TEXT_RANGE*, int> GetLocaleName1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, uint, DWRITE_TEXT_RANGE*, int> GetLocaleName1;
 
         [NativeTypeName("HRESULT (void *, IDWriteTextRenderer *, FLOAT, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, IDWriteTextRenderer*, float, float, int> Draw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, IDWriteTextRenderer*, float, float, int> Draw;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_METRICS *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_LINE_METRICS*, uint, uint*, int> GetLineMetrics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_LINE_METRICS*, uint, uint*, int> GetLineMetrics;
 
         [NativeTypeName("HRESULT (DWRITE_TEXT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TEXT_METRICS*, int> GetMetrics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TEXT_METRICS*, int> GetMetrics;
 
         [NativeTypeName("HRESULT (DWRITE_OVERHANG_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_OVERHANG_METRICS*, int> GetOverhangMetrics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_OVERHANG_METRICS*, int> GetOverhangMetrics;
 
         [NativeTypeName("HRESULT (DWRITE_CLUSTER_METRICS *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_CLUSTER_METRICS*, uint, uint*, int> GetClusterMetrics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_CLUSTER_METRICS*, uint, uint*, int> GetClusterMetrics;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> DetermineMinWidth;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> DetermineMinWidth;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT, BOOL *, BOOL *, DWRITE_HIT_TEST_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, BOOL*, BOOL*, DWRITE_HIT_TEST_METRICS*, int> HitTestPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, BOOL*, BOOL*, DWRITE_HIT_TEST_METRICS*, int> HitTestPoint;
 
         [NativeTypeName("HRESULT (UINT32, BOOL, FLOAT *, FLOAT *, DWRITE_HIT_TEST_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL, float*, float*, DWRITE_HIT_TEST_METRICS*, int> HitTestTextPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL, float*, float*, DWRITE_HIT_TEST_METRICS*, int> HitTestTextPosition;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, FLOAT, FLOAT, DWRITE_HIT_TEST_METRICS *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, float, float, DWRITE_HIT_TEST_METRICS*, uint, uint*, int> HitTestTextRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, float, float, DWRITE_HIT_TEST_METRICS*, uint, uint*, int> HitTestTextRange;
 
         [NativeTypeName("HRESULT (BOOL, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, DWRITE_TEXT_RANGE, int> SetPairKerning;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, DWRITE_TEXT_RANGE, int> SetPairKerning;
 
         [NativeTypeName("HRESULT (UINT32, BOOL *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL*, DWRITE_TEXT_RANGE*, int> GetPairKerning;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL*, DWRITE_TEXT_RANGE*, int> GetPairKerning;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, DWRITE_TEXT_RANGE, int> SetCharacterSpacing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, DWRITE_TEXT_RANGE, int> SetCharacterSpacing;
 
         [NativeTypeName("HRESULT (UINT32, FLOAT *, FLOAT *, FLOAT *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, float*, float*, DWRITE_TEXT_RANGE*, int> GetCharacterSpacing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, float*, float*, DWRITE_TEXT_RANGE*, int> GetCharacterSpacing;
 
         [NativeTypeName("HRESULT (DWRITE_TEXT_METRICS1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TEXT_METRICS1*, int> GetMetrics1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TEXT_METRICS1*, int> GetMetrics1;
 
         [NativeTypeName("HRESULT (DWRITE_VERTICAL_GLYPH_ORIENTATION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_VERTICAL_GLYPH_ORIENTATION, int> SetVerticalGlyphOrientation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_VERTICAL_GLYPH_ORIENTATION, int> SetVerticalGlyphOrientation;
 
         [NativeTypeName("DWRITE_VERTICAL_GLYPH_ORIENTATION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_VERTICAL_GLYPH_ORIENTATION> GetVerticalGlyphOrientation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_VERTICAL_GLYPH_ORIENTATION> GetVerticalGlyphOrientation;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetLastLineWrapping;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetLastLineWrapping;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetLastLineWrapping;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetLastLineWrapping;
 
         [NativeTypeName("HRESULT (DWRITE_OPTICAL_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_OPTICAL_ALIGNMENT, int> SetOpticalAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_OPTICAL_ALIGNMENT, int> SetOpticalAlignment;
 
         [NativeTypeName("DWRITE_OPTICAL_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_OPTICAL_ALIGNMENT> GetOpticalAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_OPTICAL_ALIGNMENT> GetOpticalAlignment;
 
         [NativeTypeName("HRESULT (IDWriteFontFallback *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontFallback*, int> SetFontFallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontFallback*, int> SetFontFallback;
 
         [NativeTypeName("HRESULT (IDWriteFontFallback **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontFallback**, int> GetFontFallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontFallback**, int> GetFontFallback;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> InvalidateLayout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> InvalidateLayout;
 
         [NativeTypeName("HRESULT (const DWRITE_LINE_SPACING *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_LINE_SPACING*, int> SetLineSpacing1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_LINE_SPACING*, int> SetLineSpacing1;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_SPACING *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_LINE_SPACING*, int> GetLineSpacing1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_LINE_SPACING*, int> GetLineSpacing1;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_METRICS1 *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_LINE_METRICS1*, uint, uint*, int> GetLineMetrics1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_LINE_METRICS1*, uint, uint*, int> GetLineMetrics1;
     }
 }

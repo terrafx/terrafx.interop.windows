@@ -14,7 +14,7 @@ public static unsafe partial class Windows
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LPWSTR *")]
-    public static extern ushort** CommandLineToArgvW([NativeTypeName("LPCWSTR")] ushort* lpCmdLine, int* pNumArgs);
+    public static extern char** CommandLineToArgvW([NativeTypeName("LPCWSTR")] char* lpCmdLine, int* pNumArgs);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DragQueryFileA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -22,7 +22,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DragQueryFileW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern uint DragQueryFileW(HDROP hDrop, uint iFile, [NativeTypeName("LPWSTR")] ushort* lpszFile, uint cch);
+    public static extern uint DragQueryFileW(HDROP hDrop, uint iFile, [NativeTypeName("LPWSTR")] char* lpszFile, uint cch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DragQueryPoint"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -44,7 +44,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellExecuteW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HINSTANCE ShellExecuteW(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* lpOperation, [NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("LPCWSTR")] ushort* lpParameters, [NativeTypeName("LPCWSTR")] ushort* lpDirectory, int nShowCmd);
+    public static extern HINSTANCE ShellExecuteW(HWND hwnd, [NativeTypeName("LPCWSTR")] char* lpOperation, [NativeTypeName("LPCWSTR")] char* lpFile, [NativeTypeName("LPCWSTR")] char* lpParameters, [NativeTypeName("LPCWSTR")] char* lpDirectory, int nShowCmd);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FindExecutableA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -52,7 +52,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FindExecutableW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HINSTANCE FindExecutableW([NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("LPCWSTR")] ushort* lpDirectory, [NativeTypeName("LPWSTR")] ushort* lpResult);
+    public static extern HINSTANCE FindExecutableW([NativeTypeName("LPCWSTR")] char* lpFile, [NativeTypeName("LPCWSTR")] char* lpDirectory, [NativeTypeName("LPWSTR")] char* lpResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellAboutA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -60,7 +60,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellAboutW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern int ShellAboutW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* szApp, [NativeTypeName("LPCWSTR")] ushort* szOtherStuff, HICON hIcon);
+    public static extern int ShellAboutW(HWND hWnd, [NativeTypeName("LPCWSTR")] char* szApp, [NativeTypeName("LPCWSTR")] char* szOtherStuff, HICON hIcon);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DuplicateIcon"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -72,7 +72,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractAssociatedIconW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HICON ExtractAssociatedIconW(HINSTANCE hInst, [NativeTypeName("LPWSTR")] ushort* pszIconPath, [NativeTypeName("WORD *")] ushort* piIcon);
+    public static extern HICON ExtractAssociatedIconW(HINSTANCE hInst, [NativeTypeName("LPWSTR")] char* pszIconPath, [NativeTypeName("WORD *")] ushort* piIcon);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractAssociatedIconExA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -80,7 +80,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractAssociatedIconExW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HICON ExtractAssociatedIconExW(HINSTANCE hInst, [NativeTypeName("LPWSTR")] ushort* pszIconPath, [NativeTypeName("WORD *")] ushort* piIconIndex, [NativeTypeName("WORD *")] ushort* piIconId);
+    public static extern HICON ExtractAssociatedIconExW(HINSTANCE hInst, [NativeTypeName("LPWSTR")] char* pszIconPath, [NativeTypeName("WORD *")] ushort* piIconIndex, [NativeTypeName("WORD *")] ushort* piIconId);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractIconA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -88,7 +88,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractIconW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HICON ExtractIconW(HINSTANCE hInst, [NativeTypeName("LPCWSTR")] ushort* pszExeFileName, uint nIconIndex);
+    public static extern HICON ExtractIconW(HINSTANCE hInst, [NativeTypeName("LPCWSTR")] char* pszExeFileName, uint nIconIndex);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAppBarMessage"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -103,7 +103,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DoEnvironmentSubstW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint DoEnvironmentSubstW([NativeTypeName("LPWSTR")] ushort* pszSrc, uint cchSrc);
+    public static extern uint DoEnvironmentSubstW([NativeTypeName("LPWSTR")] char* pszSrc, uint cchSrc);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractIconExA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -111,7 +111,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtractIconExW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern uint ExtractIconExW([NativeTypeName("LPCWSTR")] ushort* lpszFile, int nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIcons);
+    public static extern uint ExtractIconExW([NativeTypeName("LPCWSTR")] char* lpszFile, int nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIcons);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFileOperationA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -144,7 +144,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEvaluateSystemCommandTemplate"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHEvaluateSystemCommandTemplate([NativeTypeName("PCWSTR")] ushort* pszCmdTemplate, [NativeTypeName("PWSTR *")] ushort** ppszApplication, [NativeTypeName("PWSTR *")] ushort** ppszCommandLine, [NativeTypeName("PWSTR *")] ushort** ppszParameters);
+    public static extern HRESULT SHEvaluateSystemCommandTemplate([NativeTypeName("PCWSTR")] char* pszCmdTemplate, [NativeTypeName("PWSTR *")] char** ppszApplication, [NativeTypeName("PWSTR *")] char** ppszCommandLine, [NativeTypeName("PWSTR *")] char** ppszParameters);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocCreateForClasses"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -156,7 +156,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHQueryRecycleBinW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHQueryRecycleBinW([NativeTypeName("LPCWSTR")] ushort* pszRootPath, [NativeTypeName("LPSHQUERYRBINFO")] void* pSHQueryRBInfo);
+    public static extern HRESULT SHQueryRecycleBinW([NativeTypeName("LPCWSTR")] char* pszRootPath, [NativeTypeName("LPSHQUERYRBINFO")] void* pSHQueryRBInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEmptyRecycleBinA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -164,7 +164,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEmptyRecycleBinW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHEmptyRecycleBinW(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszRootPath, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT SHEmptyRecycleBinW(HWND hwnd, [NativeTypeName("LPCWSTR")] char* pszRootPath, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHQueryUserNotificationState"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -194,7 +194,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetFileInfoW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD_PTR")]
-    public static extern nuint SHGetFileInfoW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("SHFILEINFOW*")] void* psfi, uint cbFileInfo, uint uFlags);
+    public static extern nuint SHGetFileInfoW([NativeTypeName("LPCWSTR")] char* pszPath, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("SHFILEINFOW*")] void* psfi, uint cbFileInfo, uint uFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetStockIconInfo"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -206,7 +206,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetDiskFreeSpaceExW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern BOOL SHGetDiskFreeSpaceExW([NativeTypeName("LPCWSTR")] ushort* pszDirectoryName, ULARGE_INTEGER* pulFreeBytesAvailableToCaller, ULARGE_INTEGER* pulTotalNumberOfBytes, ULARGE_INTEGER* pulTotalNumberOfFreeBytes);
+    public static extern BOOL SHGetDiskFreeSpaceExW([NativeTypeName("LPCWSTR")] char* pszDirectoryName, ULARGE_INTEGER* pulFreeBytesAvailableToCaller, ULARGE_INTEGER* pulTotalNumberOfBytes, ULARGE_INTEGER* pulTotalNumberOfFreeBytes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetNewLinkInfoA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -214,7 +214,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetNewLinkInfoW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern BOOL SHGetNewLinkInfoW([NativeTypeName("LPCWSTR")] ushort* pszLinkTo, [NativeTypeName("LPCWSTR")] ushort* pszDir, [NativeTypeName("LPWSTR")] ushort* pszName, BOOL* pfMustCopy, uint uFlags);
+    public static extern BOOL SHGetNewLinkInfoW([NativeTypeName("LPCWSTR")] char* pszLinkTo, [NativeTypeName("LPCWSTR")] char* pszDir, [NativeTypeName("LPWSTR")] char* pszName, BOOL* pfMustCopy, uint uFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHInvokePrinterCommandA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -222,7 +222,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHInvokePrinterCommandW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern BOOL SHInvokePrinterCommandW(HWND hwnd, uint uAction, [NativeTypeName("LPCWSTR")] ushort* lpBuf1, [NativeTypeName("LPCWSTR")] ushort* lpBuf2, BOOL fModal);
+    public static extern BOOL SHInvokePrinterCommandW(HWND hwnd, uint uAction, [NativeTypeName("LPCWSTR")] char* lpBuf1, [NativeTypeName("LPCWSTR")] char* lpBuf2, BOOL fModal);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHLoadNonloadedIconOverlayIdentifiers"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -230,29 +230,19 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHIsFileAvailableOffline"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHIsFileAvailableOffline([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD *")] uint* pdwStatus);
+    public static extern HRESULT SHIsFileAvailableOffline([NativeTypeName("PCWSTR")] char* pwszPath, [NativeTypeName("DWORD *")] uint* pdwStatus);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSetLocalizedName"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHSetLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR")] ushort* pszResModule, int idsRes);
+    public static extern HRESULT SHSetLocalizedName([NativeTypeName("PCWSTR")] char* pszPath, [NativeTypeName("PCWSTR")] char* pszResModule, int idsRes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRemoveLocalizedName"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHRemoveLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath);
+    public static extern HRESULT SHRemoveLocalizedName([NativeTypeName("PCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetLocalizedName"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHGetLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PWSTR")] ushort* pszResModule, uint cch, int* pidsRes);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellMessageBoxA"]/*' />
-    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [SetsLastSystemError]
-    public static extern int ShellMessageBoxA(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpcText, [NativeTypeName("LPCSTR")] sbyte* lpcTitle, uint fuStyle, __arglist);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellMessageBoxW"]/*' />
-    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [SetsLastSystemError]
-    public static extern int ShellMessageBoxW(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpcText, [NativeTypeName("LPCWSTR")] ushort* lpcTitle, uint fuStyle, __arglist);
+    public static extern HRESULT SHGetLocalizedName([NativeTypeName("PCWSTR")] char* pszPath, [NativeTypeName("PWSTR")] char* pszResModule, uint cch, int* pidsRes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsLFNDriveA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -260,19 +250,19 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsLFNDriveW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern BOOL IsLFNDriveW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL IsLFNDriveW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEnumerateUnreadMailAccountsW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHEnumerateUnreadMailAccountsW(HKEY hKeyUser, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pszMailAddress, int cchMailAddress);
+    public static extern HRESULT SHEnumerateUnreadMailAccountsW(HKEY hKeyUser, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* pszMailAddress, int cchMailAddress);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetUnreadMailCountW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHGetUnreadMailCountW(HKEY hKeyUser, [NativeTypeName("LPCWSTR")] ushort* pszMailAddress, [NativeTypeName("DWORD *")] uint* pdwCount, FILETIME* pFileTime, [NativeTypeName("LPWSTR")] ushort* pszShellExecuteCommand, int cchShellExecuteCommand);
+    public static extern HRESULT SHGetUnreadMailCountW(HKEY hKeyUser, [NativeTypeName("LPCWSTR")] char* pszMailAddress, [NativeTypeName("DWORD *")] uint* pdwCount, FILETIME* pFileTime, [NativeTypeName("LPWSTR")] char* pszShellExecuteCommand, int cchShellExecuteCommand);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSetUnreadMailCountW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHSetUnreadMailCountW([NativeTypeName("LPCWSTR")] ushort* pszMailAddress, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("LPCWSTR")] ushort* pszShellExecuteCommand);
+    public static extern HRESULT SHSetUnreadMailCountW([NativeTypeName("LPCWSTR")] char* pszMailAddress, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("LPCWSTR")] char* pszShellExecuteCommand);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHTestTokenMembership"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -288,28 +278,28 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetDriveMedia"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHGetDriveMedia([NativeTypeName("PCWSTR")] ushort* pszDrive, [NativeTypeName("DWORD *")] uint* pdwMediaContent);
+    public static extern HRESULT SHGetDriveMedia([NativeTypeName("PCWSTR")] char* pszDrive, [NativeTypeName("DWORD *")] uint* pdwMediaContent);
 
     [NativeTypeName("#define DragQueryFile DragQueryFileW")]
-    public static delegate*<HDROP, uint, ushort*, uint, uint> DragQueryFile => &DragQueryFileW;
+    public static delegate*<HDROP, uint, char*, uint, uint> DragQueryFile => &DragQueryFileW;
 
     [NativeTypeName("#define ShellExecute ShellExecuteW")]
-    public static delegate*<HWND, ushort*, ushort*, ushort*, ushort*, int, HINSTANCE> ShellExecute => &ShellExecuteW;
+    public static delegate*<HWND, char*, char*, char*, char*, int, HINSTANCE> ShellExecute => &ShellExecuteW;
 
     [NativeTypeName("#define FindExecutable FindExecutableW")]
-    public static delegate*<ushort*, ushort*, ushort*, HINSTANCE> FindExecutable => &FindExecutableW;
+    public static delegate*<char*, char*, char*, HINSTANCE> FindExecutable => &FindExecutableW;
 
     [NativeTypeName("#define ShellAbout ShellAboutW")]
-    public static delegate*<HWND, ushort*, ushort*, HICON, int> ShellAbout => &ShellAboutW;
+    public static delegate*<HWND, char*, char*, HICON, int> ShellAbout => &ShellAboutW;
 
     [NativeTypeName("#define ExtractAssociatedIcon ExtractAssociatedIconW")]
-    public static delegate*<HINSTANCE, ushort*, ushort*, HICON> ExtractAssociatedIcon => &ExtractAssociatedIconW;
+    public static delegate*<HINSTANCE, char*, ushort*, HICON> ExtractAssociatedIcon => &ExtractAssociatedIconW;
 
     [NativeTypeName("#define ExtractAssociatedIconEx ExtractAssociatedIconExW")]
-    public static delegate*<HINSTANCE, ushort*, ushort*, ushort*, HICON> ExtractAssociatedIconEx => &ExtractAssociatedIconExW;
+    public static delegate*<HINSTANCE, char*, ushort*, ushort*, HICON> ExtractAssociatedIconEx => &ExtractAssociatedIconExW;
 
     [NativeTypeName("#define ExtractIcon ExtractIconW")]
-    public static delegate*<HINSTANCE, ushort*, uint, HICON> ExtractIcon => &ExtractIconW;
+    public static delegate*<HINSTANCE, char*, uint, HICON> ExtractIcon => &ExtractIconW;
 
     [NativeTypeName("#define ABN_STATECHANGE 0x0000000")]
     public const int ABN_STATECHANGE = 0x0000000;
@@ -342,10 +332,10 @@ public static unsafe partial class Windows
     public const int ABE_BOTTOM = 3;
 
     [NativeTypeName("#define DoEnvironmentSubst DoEnvironmentSubstW")]
-    public static delegate*<ushort*, uint, uint> DoEnvironmentSubst => &DoEnvironmentSubstW;
+    public static delegate*<char*, uint, uint> DoEnvironmentSubst => &DoEnvironmentSubstW;
 
     [NativeTypeName("#define ExtractIconEx ExtractIconExW")]
-    public static delegate*<ushort*, int, HICON*, HICON*, uint, uint> ExtractIconEx => &ExtractIconExW;
+    public static delegate*<char*, int, HICON*, HICON*, uint, uint> ExtractIconEx => &ExtractIconExW;
 
     [NativeTypeName("#define FO_MOVE 0x0001")]
     public const int FO_MOVE = 0x0001;
@@ -387,10 +377,10 @@ public static unsafe partial class Windows
     public const int SHERB_NOSOUND = 0x00000004;
 
     [NativeTypeName("#define SHQueryRecycleBin SHQueryRecycleBinW")]
-    public static delegate*<ushort*, void*, HRESULT> SHQueryRecycleBin => &SHQueryRecycleBinW;
+    public static delegate*<char*, void*, HRESULT> SHQueryRecycleBin => &SHQueryRecycleBinW;
 
     [NativeTypeName("#define SHEmptyRecycleBin SHEmptyRecycleBinW")]
-    public static delegate*<HWND, ushort*, uint, HRESULT> SHEmptyRecycleBin => &SHEmptyRecycleBinW;
+    public static delegate*<HWND, char*, uint, HRESULT> SHEmptyRecycleBin => &SHEmptyRecycleBinW;
 
     [NativeTypeName("#define NIN_SELECT (WM_USER + 0)")]
     public const int NIN_SELECT = (0x0400 + 0);
@@ -474,19 +464,19 @@ public static unsafe partial class Windows
     public static delegate*<uint, void*, BOOL> Shell_NotifyIcon => &Shell_NotifyIconW;
 
     [NativeTypeName("#define SHGetFileInfo SHGetFileInfoW")]
-    public static delegate*<ushort*, uint, void*, uint, uint, nuint> SHGetFileInfo => &SHGetFileInfoW;
+    public static delegate*<char*, uint, void*, uint, uint, nuint> SHGetFileInfo => &SHGetFileInfoW;
 
     [NativeTypeName("#define SIID_INVALID ((SHSTOCKICONID)-1)")]
     public const SHSTOCKICONID SIID_INVALID = ((SHSTOCKICONID)(-1));
 
     [NativeTypeName("#define SHGetDiskFreeSpace SHGetDiskFreeSpaceEx")]
-    public static delegate*<ushort*, ULARGE_INTEGER*, ULARGE_INTEGER*, ULARGE_INTEGER*, BOOL> SHGetDiskFreeSpace => &SHGetDiskFreeSpaceExW;
+    public static delegate*<char*, ULARGE_INTEGER*, ULARGE_INTEGER*, ULARGE_INTEGER*, BOOL> SHGetDiskFreeSpace => &SHGetDiskFreeSpaceExW;
 
     [NativeTypeName("#define SHGetDiskFreeSpaceEx SHGetDiskFreeSpaceExW")]
-    public static delegate*<ushort*, ULARGE_INTEGER*, ULARGE_INTEGER*, ULARGE_INTEGER*, BOOL> SHGetDiskFreeSpaceEx => &SHGetDiskFreeSpaceExW;
+    public static delegate*<char*, ULARGE_INTEGER*, ULARGE_INTEGER*, ULARGE_INTEGER*, BOOL> SHGetDiskFreeSpaceEx => &SHGetDiskFreeSpaceExW;
 
     [NativeTypeName("#define SHGetNewLinkInfo SHGetNewLinkInfoW")]
-    public static delegate*<ushort*, ushort*, ushort*, BOOL*, uint, BOOL> SHGetNewLinkInfo => &SHGetNewLinkInfoW;
+    public static delegate*<char*, char*, char*, BOOL*, uint, BOOL> SHGetNewLinkInfo => &SHGetNewLinkInfoW;
 
     [NativeTypeName("#define SHGNLI_PIDL 0x000000001")]
     public const int SHGNLI_PIDL = 0x000000001;
@@ -531,7 +521,7 @@ public static unsafe partial class Windows
     public const int PRINTACTION_SERVERPROPERTIES = 7;
 
     [NativeTypeName("#define SHInvokePrinterCommand SHInvokePrinterCommandW")]
-    public static delegate*<HWND, uint, ushort*, ushort*, BOOL, BOOL> SHInvokePrinterCommand => &SHInvokePrinterCommandW;
+    public static delegate*<HWND, uint, char*, char*, BOOL, BOOL> SHInvokePrinterCommand => &SHInvokePrinterCommandW;
 
     [NativeTypeName("#define PRINT_PROP_FORCE_NAME 0x01")]
     public const int PRINT_PROP_FORCE_NAME = 0x01;
@@ -546,16 +536,16 @@ public static unsafe partial class Windows
     public const int OFFLINE_STATUS_INCOMPLETE = 0x0004;
 
     [NativeTypeName("#define IsLFNDrive IsLFNDriveW")]
-    public static delegate*<ushort*, BOOL> IsLFNDrive => &IsLFNDriveW;
+    public static delegate*<char*, BOOL> IsLFNDrive => &IsLFNDriveW;
 
     [NativeTypeName("#define SHEnumerateUnreadMailAccounts SHEnumerateUnreadMailAccountsW")]
-    public static delegate*<HKEY, uint, ushort*, int, HRESULT> SHEnumerateUnreadMailAccounts => &SHEnumerateUnreadMailAccountsW;
+    public static delegate*<HKEY, uint, char*, int, HRESULT> SHEnumerateUnreadMailAccounts => &SHEnumerateUnreadMailAccountsW;
 
     [NativeTypeName("#define SHGetUnreadMailCount SHGetUnreadMailCountW")]
-    public static delegate*<HKEY, ushort*, uint*, FILETIME*, ushort*, int, HRESULT> SHGetUnreadMailCount => &SHGetUnreadMailCountW;
+    public static delegate*<HKEY, char*, uint*, FILETIME*, char*, int, HRESULT> SHGetUnreadMailCount => &SHGetUnreadMailCountW;
 
     [NativeTypeName("#define SHSetUnreadMailCount SHSetUnreadMailCountW")]
-    public static delegate*<ushort*, uint, ushort*, HRESULT> SHSetUnreadMailCount => &SHSetUnreadMailCountW;
+    public static delegate*<char*, uint, char*, HRESULT> SHSetUnreadMailCount => &SHSetUnreadMailCountW;
 
     [NativeTypeName("#define SHIL_LARGE 0")]
     public const int SHIL_LARGE = 0;

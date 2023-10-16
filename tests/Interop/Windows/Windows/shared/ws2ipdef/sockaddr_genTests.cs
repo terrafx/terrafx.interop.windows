@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="sockaddr_gen" /> struct.</summary>
 public static unsafe partial class sockaddr_genTests
 {
-    /// <summary>Validates that the <see cref="sockaddr_gen" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<sockaddr_gen>(), Is.EqualTo(sizeof(sockaddr_gen)));
-    }
-
-    /// <summary>Validates that the <see cref="sockaddr_gen" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutExplicitTest()
-    {
-        Assert.That(typeof(sockaddr_gen).IsExplicitLayout, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="sockaddr_gen" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(sockaddr_gen), Is.EqualTo(24));
-    }
 }

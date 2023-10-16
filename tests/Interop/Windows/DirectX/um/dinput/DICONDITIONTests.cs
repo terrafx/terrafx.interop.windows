@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DICONDITION" /> struct.</summary>
 public static unsafe partial class DICONDITIONTests
 {
-    /// <summary>Validates that the <see cref="DICONDITION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DICONDITION>(), Is.EqualTo(sizeof(DICONDITION)));
-    }
-
-    /// <summary>Validates that the <see cref="DICONDITION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DICONDITION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DICONDITION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DICONDITION), Is.EqualTo(24));
-    }
 }

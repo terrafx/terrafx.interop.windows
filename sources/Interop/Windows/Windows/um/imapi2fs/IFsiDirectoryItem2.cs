@@ -25,7 +25,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, Guid*, void**, int>)(lpVtbl[0]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, Guid*, void**, int>)(lpVtbl[0]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, uint>)(lpVtbl[1]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, uint>)(lpVtbl[1]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, uint>)(lpVtbl[2]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, uint>)(lpVtbl[2]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, uint*, int>)(lpVtbl[3]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, uint*, int>)(lpVtbl[3]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,23 +75,23 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="IFsiItem.get_Name" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_Name([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort**, int>)(lpVtbl[7]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, char**, int>)(lpVtbl[7]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFsiItem.get_FullPath" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_FullPath([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_FullPath([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort**, int>)(lpVtbl[8]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, char**, int>)(lpVtbl[8]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFsiItem.get_CreationTime" />
@@ -99,7 +99,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(9)]
     public HRESULT get_CreationTime([NativeTypeName("DATE *")] double* pVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, double*, int>)(lpVtbl[9]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, double*, int>)(lpVtbl[9]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFsiItem.put_CreationTime" />
@@ -107,7 +107,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(10)]
     public HRESULT put_CreationTime([NativeTypeName("DATE")] double newVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, double, int>)(lpVtbl[10]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, double, int>)(lpVtbl[10]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFsiItem.get_LastAccessedTime" />
@@ -115,7 +115,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(11)]
     public HRESULT get_LastAccessedTime([NativeTypeName("DATE *")] double* pVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, double*, int>)(lpVtbl[11]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, double*, int>)(lpVtbl[11]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFsiItem.put_LastAccessedTime" />
@@ -123,7 +123,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(12)]
     public HRESULT put_LastAccessedTime([NativeTypeName("DATE")] double newVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, double, int>)(lpVtbl[12]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, double, int>)(lpVtbl[12]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFsiItem.get_LastModifiedTime" />
@@ -131,7 +131,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(13)]
     public HRESULT get_LastModifiedTime([NativeTypeName("DATE *")] double* pVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, double*, int>)(lpVtbl[13]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, double*, int>)(lpVtbl[13]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFsiItem.put_LastModifiedTime" />
@@ -139,7 +139,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(14)]
     public HRESULT put_LastModifiedTime([NativeTypeName("DATE")] double newVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, double, int>)(lpVtbl[14]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, double, int>)(lpVtbl[14]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFsiItem.get_IsHidden" />
@@ -147,7 +147,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(15)]
     public HRESULT get_IsHidden([NativeTypeName("VARIANT_BOOL *")] short* pVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, short*, int>)(lpVtbl[15]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, short*, int>)(lpVtbl[15]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFsiItem.put_IsHidden" />
@@ -155,23 +155,23 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(16)]
     public HRESULT put_IsHidden([NativeTypeName("VARIANT_BOOL")] short newVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, short, int>)(lpVtbl[16]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, short, int>)(lpVtbl[16]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFsiItem.FileSystemName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, FsiFileSystems, ushort**, int>)(lpVtbl[17]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), fileSystem, pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, FsiFileSystems, char**, int>)(lpVtbl[17]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), fileSystem, pVal);
     }
 
     /// <inheritdoc cref="IFsiItem.FileSystemPath" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, FsiFileSystems, ushort**, int>)(lpVtbl[18]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), fileSystem, pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, FsiFileSystems, char**, int>)(lpVtbl[18]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), fileSystem, pVal);
     }
 
     /// <inheritdoc cref="IFsiDirectoryItem.get__NewEnum" />
@@ -179,15 +179,15 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(19)]
     public HRESULT get__NewEnum(IEnumVARIANT** NewEnum)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, IEnumVARIANT**, int>)(lpVtbl[19]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), NewEnum);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, IEnumVARIANT**, int>)(lpVtbl[19]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), NewEnum);
     }
 
     /// <inheritdoc cref="IFsiDirectoryItem.get_Item" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_Item([NativeTypeName("BSTR")] ushort* path, IFsiItem** item)
+    public HRESULT get_Item([NativeTypeName("BSTR")] char* path, IFsiItem** item)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort*, IFsiItem**, int>)(lpVtbl[20]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path, item);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, char*, IFsiItem**, int>)(lpVtbl[20]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path, item);
     }
 
     /// <inheritdoc cref="IFsiDirectoryItem.get_Count" />
@@ -195,7 +195,7 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(21)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* Count)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, int*, int>)(lpVtbl[21]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), Count);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, int*, int>)(lpVtbl[21]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), Count);
     }
 
     /// <inheritdoc cref="IFsiDirectoryItem.get_EnumFsiItems" />
@@ -203,31 +203,31 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(22)]
     public HRESULT get_EnumFsiItems(IEnumFsiItems** NewEnum)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, IEnumFsiItems**, int>)(lpVtbl[22]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), NewEnum);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, IEnumFsiItems**, int>)(lpVtbl[22]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), NewEnum);
     }
 
     /// <inheritdoc cref="IFsiDirectoryItem.AddDirectory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT AddDirectory([NativeTypeName("BSTR")] ushort* path)
+    public HRESULT AddDirectory([NativeTypeName("BSTR")] char* path)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort*, int>)(lpVtbl[23]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, char*, int>)(lpVtbl[23]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path);
     }
 
     /// <inheritdoc cref="IFsiDirectoryItem.AddFile" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT AddFile([NativeTypeName("BSTR")] ushort* path, IStream* fileData)
+    public HRESULT AddFile([NativeTypeName("BSTR")] char* path, IStream* fileData)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort*, IStream*, int>)(lpVtbl[24]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path, fileData);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, char*, IStream*, int>)(lpVtbl[24]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path, fileData);
     }
 
     /// <inheritdoc cref="IFsiDirectoryItem.AddTree" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT AddTree([NativeTypeName("BSTR")] ushort* sourceDirectory, [NativeTypeName("VARIANT_BOOL")] short includeBaseDirectory)
+    public HRESULT AddTree([NativeTypeName("BSTR")] char* sourceDirectory, [NativeTypeName("VARIANT_BOOL")] short includeBaseDirectory)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort*, short, int>)(lpVtbl[25]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), sourceDirectory, includeBaseDirectory);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, char*, short, int>)(lpVtbl[25]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), sourceDirectory, includeBaseDirectory);
     }
 
     /// <inheritdoc cref="IFsiDirectoryItem.Add" />
@@ -235,130 +235,130 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, 
     [VtblIndex(26)]
     public HRESULT Add(IFsiItem* item)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, IFsiItem*, int>)(lpVtbl[26]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), item);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, IFsiItem*, int>)(lpVtbl[26]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), item);
     }
 
     /// <inheritdoc cref="IFsiDirectoryItem.Remove" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT Remove([NativeTypeName("BSTR")] ushort* path)
+    public HRESULT Remove([NativeTypeName("BSTR")] char* path)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort*, int>)(lpVtbl[27]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, char*, int>)(lpVtbl[27]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path);
     }
 
     /// <inheritdoc cref="IFsiDirectoryItem.RemoveTree" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT RemoveTree([NativeTypeName("BSTR")] ushort* path)
+    public HRESULT RemoveTree([NativeTypeName("BSTR")] char* path)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort*, int>)(lpVtbl[28]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, char*, int>)(lpVtbl[28]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path);
     }
 
     /// <include file='IFsiDirectoryItem2.xml' path='doc/member[@name="IFsiDirectoryItem2.AddTreeWithNamedStreams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT AddTreeWithNamedStreams([NativeTypeName("BSTR")] ushort* sourceDirectory, [NativeTypeName("VARIANT_BOOL")] short includeBaseDirectory)
+    public HRESULT AddTreeWithNamedStreams([NativeTypeName("BSTR")] char* sourceDirectory, [NativeTypeName("VARIANT_BOOL")] short includeBaseDirectory)
     {
-        return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort*, short, int>)(lpVtbl[29]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), sourceDirectory, includeBaseDirectory);
+        return ((delegate* unmanaged[MemberFunction]<IFsiDirectoryItem2*, char*, short, int>)(lpVtbl[29]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), sourceDirectory, includeBaseDirectory);
     }
 
     public interface Interface : IFsiDirectoryItem.Interface
     {
         [VtblIndex(29)]
-        HRESULT AddTreeWithNamedStreams([NativeTypeName("BSTR")] ushort* sourceDirectory, [NativeTypeName("VARIANT_BOOL")] short includeBaseDirectory);
+        HRESULT AddTreeWithNamedStreams([NativeTypeName("BSTR")] char* sourceDirectory, [NativeTypeName("VARIANT_BOOL")] short includeBaseDirectory);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_FullPath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_FullPath;
 
         [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_CreationTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_CreationTime;
 
         [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_CreationTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_CreationTime;
 
         [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_LastAccessedTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_LastAccessedTime;
 
         [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_LastAccessedTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_LastAccessedTime;
 
         [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_LastModifiedTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_LastModifiedTime;
 
         [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_LastModifiedTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_LastModifiedTime;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_IsHidden;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_IsHidden;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_IsHidden;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_IsHidden;
 
         [NativeTypeName("HRESULT (FsiFileSystems, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems, ushort**, int> FileSystemName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FsiFileSystems, char**, int> FileSystemName;
 
         [NativeTypeName("HRESULT (FsiFileSystems, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems, ushort**, int> FileSystemPath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FsiFileSystems, char**, int> FileSystemPath;
 
         [NativeTypeName("HRESULT (IEnumVARIANT **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumVARIANT**, int> get__NewEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumVARIANT**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (BSTR, IFsiItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IFsiItem**, int> get_Item;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IFsiItem**, int> get_Item;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Count;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (IEnumFsiItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumFsiItems**, int> get_EnumFsiItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumFsiItems**, int> get_EnumFsiItems;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> AddDirectory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> AddDirectory;
 
         [NativeTypeName("HRESULT (BSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, int> AddFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IStream*, int> AddFile;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, int> AddTree;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short, int> AddTree;
 
         [NativeTypeName("HRESULT (IFsiItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IFsiItem*, int> Add;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IFsiItem*, int> Add;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> Remove;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> Remove;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RemoveTree;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> RemoveTree;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, int> AddTreeWithNamedStreams;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short, int> AddTreeWithNamedStreams;
     }
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IAppxManifestReader5 : IAppxManifestReader5.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestReader5*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader5*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxManifestReader5 : IAppxManifestReader5.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestReader5*, uint>)(lpVtbl[1]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader5*, uint>)(lpVtbl[1]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxManifestReader5 : IAppxManifestReader5.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestReader5*, uint>)(lpVtbl[2]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader5*, uint>)(lpVtbl[2]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxManifestReader5.xml' path='doc/member[@name="IAppxManifestReader5.GetMainPackageDependencies"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxManifestReader5 : IAppxManifestReader5.Interfa
     [VtblIndex(3)]
     public HRESULT GetMainPackageDependencies(IAppxManifestMainPackageDependenciesEnumerator** mainPackageDependencies)
     {
-        return ((delegate* unmanaged<IAppxManifestReader5*, IAppxManifestMainPackageDependenciesEnumerator**, int>)(lpVtbl[3]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this), mainPackageDependencies);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader5*, IAppxManifestMainPackageDependenciesEnumerator**, int>)(lpVtbl[3]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this), mainPackageDependencies);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IAppxManifestReader5 : IAppxManifestReader5.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestMainPackageDependenciesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestMainPackageDependenciesEnumerator**, int> GetMainPackageDependencies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestMainPackageDependenciesEnumerator**, int> GetMainPackageDependencies;
     }
 }

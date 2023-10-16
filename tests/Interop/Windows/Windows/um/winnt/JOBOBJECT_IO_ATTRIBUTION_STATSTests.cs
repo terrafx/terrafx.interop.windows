@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="JOBOBJECT_IO_ATTRIBUTION_STATS" /> struct.</summary>
 public static unsafe partial class JOBOBJECT_IO_ATTRIBUTION_STATSTests
 {
-    /// <summary>Validates that the <see cref="JOBOBJECT_IO_ATTRIBUTION_STATS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<JOBOBJECT_IO_ATTRIBUTION_STATS>(), Is.EqualTo(sizeof(JOBOBJECT_IO_ATTRIBUTION_STATS)));
-    }
-
-    /// <summary>Validates that the <see cref="JOBOBJECT_IO_ATTRIBUTION_STATS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(JOBOBJECT_IO_ATTRIBUTION_STATS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="JOBOBJECT_IO_ATTRIBUTION_STATS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(JOBOBJECT_IO_ATTRIBUTION_STATS), Is.EqualTo(32));
-    }
 }

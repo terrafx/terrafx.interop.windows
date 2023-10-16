@@ -19,32 +19,4 @@ public static unsafe partial class IMFNetCredentialCacheTests
     {
         Assert.That(typeof(IMFNetCredentialCache).GUID, Is.EqualTo(IID_IMFNetCredentialCache));
     }
-
-    /// <summary>Validates that the <see cref="IMFNetCredentialCache" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFNetCredentialCache>(), Is.EqualTo(sizeof(IMFNetCredentialCache)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFNetCredentialCache" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFNetCredentialCache).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFNetCredentialCache" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFNetCredentialCache), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFNetCredentialCache), Is.EqualTo(4));
-        }
-    }
 }

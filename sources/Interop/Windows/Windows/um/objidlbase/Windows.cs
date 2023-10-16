@@ -8,7 +8,7 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class Windows
 {
     [NativeTypeName("#define COLE_DEFAULT_PRINCIPAL ( ( OLECHAR * )( INT_PTR  )-1 )")]
-    public static ushort* COLE_DEFAULT_PRINCIPAL => unchecked((ushort*)((nint)(-1)));
+    public static char* COLE_DEFAULT_PRINCIPAL => unchecked((char*)((nint)(-1)));
 
     [NativeTypeName("#define COLE_DEFAULT_AUTHINFO ( ( void * )( INT_PTR  )-1 )")]
     public static void* COLE_DEFAULT_AUTHINFO => unchecked((void*)((nint)(-1)));

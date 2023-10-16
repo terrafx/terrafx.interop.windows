@@ -22,5 +22,5 @@ public unsafe partial struct PARTITION_INFORMATION_GPT
 
     /// <include file='PARTITION_INFORMATION_GPT.xml' path='doc/member[@name="PARTITION_INFORMATION_GPT.Name"]/*' />
     [NativeTypeName("WCHAR[36]")]
-    public fixed ushort Name[36];
+    public fixed char Name[36];
 }

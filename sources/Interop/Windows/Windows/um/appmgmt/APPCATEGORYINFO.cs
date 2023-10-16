@@ -16,7 +16,7 @@ public unsafe partial struct APPCATEGORYINFO
 
     /// <include file='APPCATEGORYINFO.xml' path='doc/member[@name="APPCATEGORYINFO.pszDescription"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszDescription;
+    public char* pszDescription;
 
     /// <include file='APPCATEGORYINFO.xml' path='doc/member[@name="APPCATEGORYINFO.AppCategoryId"]/*' />
     public Guid AppCategoryId;

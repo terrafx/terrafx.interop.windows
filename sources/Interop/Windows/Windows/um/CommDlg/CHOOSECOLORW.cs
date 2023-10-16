@@ -37,5 +37,5 @@ public unsafe partial struct CHOOSECOLORW
 
     /// <include file='CHOOSECOLORW.xml' path='doc/member[@name="CHOOSECOLORW.lpTemplateName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpTemplateName;
+    public char* lpTemplateName;
 }

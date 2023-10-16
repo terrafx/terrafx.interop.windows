@@ -19,32 +19,4 @@ public static unsafe partial class HTMLMapEventsTests
     {
         Assert.That(typeof(HTMLMapEvents).GUID, Is.EqualTo(IID_HTMLMapEvents));
     }
-
-    /// <summary>Validates that the <see cref="HTMLMapEvents" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLMapEvents>(), Is.EqualTo(sizeof(HTMLMapEvents)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMapEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLMapEvents).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMapEvents" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(HTMLMapEvents), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(HTMLMapEvents), Is.EqualTo(4));
-        }
-    }
 }

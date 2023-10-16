@@ -19,11 +19,11 @@ public unsafe partial struct VisualElement
 
     /// <include file='VisualElement.xml' path='doc/member[@name="VisualElement.Type"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* Type;
+    public char* Type;
 
     /// <include file='VisualElement.xml' path='doc/member[@name="VisualElement.Name"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* Name;
+    public char* Name;
 
     /// <include file='VisualElement.xml' path='doc/member[@name="VisualElement.NumChildren"]/*' />
     [NativeTypeName("unsigned int")]

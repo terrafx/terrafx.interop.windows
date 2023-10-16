@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="IXAudio2VoiceCallback" /> struct.</summary>
 public static unsafe partial class IXAudio2VoiceCallbackTests
 {
-    /// <summary>Validates that the <see cref="IXAudio2VoiceCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IXAudio2VoiceCallback>(), Is.EqualTo(sizeof(IXAudio2VoiceCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IXAudio2VoiceCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IXAudio2VoiceCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IXAudio2VoiceCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IXAudio2VoiceCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IXAudio2VoiceCallback), Is.EqualTo(4));
-        }
-    }
 }

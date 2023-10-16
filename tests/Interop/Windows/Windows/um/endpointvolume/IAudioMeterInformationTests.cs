@@ -19,32 +19,4 @@ public static unsafe partial class IAudioMeterInformationTests
     {
         Assert.That(typeof(IAudioMeterInformation).GUID, Is.EqualTo(IID_IAudioMeterInformation));
     }
-
-    /// <summary>Validates that the <see cref="IAudioMeterInformation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioMeterInformation>(), Is.EqualTo(sizeof(IAudioMeterInformation)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioMeterInformation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioMeterInformation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioMeterInformation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioMeterInformation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioMeterInformation), Is.EqualTo(4));
-        }
-    }
 }

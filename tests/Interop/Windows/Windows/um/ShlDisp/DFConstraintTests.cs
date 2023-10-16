@@ -19,32 +19,4 @@ public static unsafe partial class DFConstraintTests
     {
         Assert.That(typeof(DFConstraint).GUID, Is.EqualTo(IID_DFConstraint));
     }
-
-    /// <summary>Validates that the <see cref="DFConstraint" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DFConstraint>(), Is.EqualTo(sizeof(DFConstraint)));
-    }
-
-    /// <summary>Validates that the <see cref="DFConstraint" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DFConstraint).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DFConstraint" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DFConstraint), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DFConstraint), Is.EqualTo(4));
-        }
-    }
 }

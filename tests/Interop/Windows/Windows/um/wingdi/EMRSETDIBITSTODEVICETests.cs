@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EMRSETDIBITSTODEVICE" /> struct.</summary>
 public static unsafe partial class EMRSETDIBITSTODEVICETests
 {
-    /// <summary>Validates that the <see cref="EMRSETDIBITSTODEVICE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EMRSETDIBITSTODEVICE>(), Is.EqualTo(sizeof(EMRSETDIBITSTODEVICE)));
-    }
-
-    /// <summary>Validates that the <see cref="EMRSETDIBITSTODEVICE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EMRSETDIBITSTODEVICE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EMRSETDIBITSTODEVICE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EMRSETDIBITSTODEVICE), Is.EqualTo(76));
-    }
 }

@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGEHLP_CBA_EVENTW" /> struct.</summary>
 public static unsafe partial class IMAGEHLP_CBA_EVENTWTests
 {
-    /// <summary>Validates that the <see cref="IMAGEHLP_CBA_EVENTW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGEHLP_CBA_EVENTW>(), Is.EqualTo(sizeof(IMAGEHLP_CBA_EVENTW)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGEHLP_CBA_EVENTW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGEHLP_CBA_EVENTW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGEHLP_CBA_EVENTW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMAGEHLP_CBA_EVENTW), Is.EqualTo(24));
-        }
-        else
-        {
-            Assert.That(sizeof(IMAGEHLP_CBA_EVENTW), Is.EqualTo(16));
-        }
-    }
 }

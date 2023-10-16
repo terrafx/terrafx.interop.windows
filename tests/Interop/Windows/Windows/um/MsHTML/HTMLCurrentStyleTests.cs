@@ -19,25 +19,4 @@ public static unsafe partial class HTMLCurrentStyleTests
     {
         Assert.That(typeof(HTMLCurrentStyle).GUID, Is.EqualTo(IID_HTMLCurrentStyle));
     }
-
-    /// <summary>Validates that the <see cref="HTMLCurrentStyle" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLCurrentStyle>(), Is.EqualTo(sizeof(HTMLCurrentStyle)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLCurrentStyle" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLCurrentStyle).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLCurrentStyle" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLCurrentStyle), Is.EqualTo(1));
-    }
 }

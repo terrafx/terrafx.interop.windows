@@ -30,7 +30,7 @@ public unsafe partial struct OSVERSIONINFOEXW
 
     /// <include file='OSVERSIONINFOEXW.xml' path='doc/member[@name="OSVERSIONINFOEXW.szCSDVersion"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort szCSDVersion[128];
+    public fixed char szCSDVersion[128];
 
     /// <include file='OSVERSIONINFOEXW.xml' path='doc/member[@name="OSVERSIONINFOEXW.wServicePackMajor"]/*' />
     [NativeTypeName("WORD")]

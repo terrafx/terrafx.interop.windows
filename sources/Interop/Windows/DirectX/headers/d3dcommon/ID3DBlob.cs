@@ -26,7 +26,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3DBlob*, Guid*, void**, int>)(lpVtbl[0]))((ID3DBlob*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3DBlob*, Guid*, void**, int>)(lpVtbl[0]))((ID3DBlob*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3DBlob*, uint>)(lpVtbl[1]))((ID3DBlob*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3DBlob*, uint>)(lpVtbl[1]))((ID3DBlob*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3DBlob*, uint>)(lpVtbl[2]))((ID3DBlob*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3DBlob*, uint>)(lpVtbl[2]))((ID3DBlob*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3DBlob.xml' path='doc/member[@name="ID3DBlob.GetBufferPointer"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
     [return: NativeTypeName("LPVOID")]
     public void* GetBufferPointer()
     {
-        return ((delegate* unmanaged<ID3DBlob*, void*>)(lpVtbl[3]))((ID3DBlob*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3DBlob*, void*>)(lpVtbl[3]))((ID3DBlob*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3DBlob.xml' path='doc/member[@name="ID3DBlob.GetBufferSize"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
     [return: NativeTypeName("SIZE_T")]
     public nuint GetBufferSize()
     {
-        return ((delegate* unmanaged<ID3DBlob*, nuint>)(lpVtbl[4]))((ID3DBlob*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3DBlob*, nuint>)(lpVtbl[4]))((ID3DBlob*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -80,18 +80,18 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("LPVOID () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> GetBufferPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> GetBufferPointer;
 
         [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint> GetBufferSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint> GetBufferSize;
     }
 }

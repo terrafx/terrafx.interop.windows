@@ -27,7 +27,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, Guid*, void**, int>)(lpVtbl[0]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, Guid*, void**, int>)(lpVtbl[0]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, uint>)(lpVtbl[1]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, uint>)(lpVtbl[1]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, uint>)(lpVtbl[2]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, uint>)(lpVtbl[2]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.Activate"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT Activate([NativeTypeName("TfClientId *")] uint* ptid)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, uint*, int>)(lpVtbl[3]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ptid);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, uint*, int>)(lpVtbl[3]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ptid);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.Deactivate"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT Deactivate()
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, int>)(lpVtbl[4]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, int>)(lpVtbl[4]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.CreateDocumentMgr"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT CreateDocumentMgr(ITfDocumentMgr** ppdim)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, ITfDocumentMgr**, int>)(lpVtbl[5]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppdim);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, ITfDocumentMgr**, int>)(lpVtbl[5]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppdim);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.EnumDocumentMgrs"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT EnumDocumentMgrs(IEnumTfDocumentMgrs** ppEnum)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, IEnumTfDocumentMgrs**, int>)(lpVtbl[6]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, IEnumTfDocumentMgrs**, int>)(lpVtbl[6]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.GetFocus"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT GetFocus(ITfDocumentMgr** ppdimFocus)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, ITfDocumentMgr**, int>)(lpVtbl[7]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppdimFocus);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, ITfDocumentMgr**, int>)(lpVtbl[7]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppdimFocus);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.SetFocus"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT SetFocus(ITfDocumentMgr* pdimFocus)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, ITfDocumentMgr*, int>)(lpVtbl[8]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), pdimFocus);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, ITfDocumentMgr*, int>)(lpVtbl[8]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), pdimFocus);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.IsThreadFocus"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT IsThreadFocus(BOOL* pfThreadFocus)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, BOOL*, int>)(lpVtbl[9]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), pfThreadFocus);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, BOOL*, int>)(lpVtbl[9]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), pfThreadFocus);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.GetFunctionProvider"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT GetFunctionProvider([NativeTypeName("const IID &")] Guid* clsid, ITfFunctionProvider** ppFuncProv)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, Guid*, ITfFunctionProvider**, int>)(lpVtbl[10]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), clsid, ppFuncProv);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, Guid*, ITfFunctionProvider**, int>)(lpVtbl[10]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), clsid, ppFuncProv);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.EnumFunctionProviders"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT EnumFunctionProviders(IEnumTfFunctionProviders** ppEnum)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, IEnumTfFunctionProviders**, int>)(lpVtbl[11]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, IEnumTfFunctionProviders**, int>)(lpVtbl[11]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.GetGlobalCompartment"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT GetGlobalCompartment(ITfCompartmentMgr** ppCompMgr)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, ITfCompartmentMgr**, int>)(lpVtbl[12]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppCompMgr);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, ITfCompartmentMgr**, int>)(lpVtbl[12]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ppCompMgr);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.ActivateEx"]/*' />
@@ -133,7 +133,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT ActivateEx([NativeTypeName("TfClientId *")] uint* ptid, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, uint*, uint, int>)(lpVtbl[13]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ptid, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, uint*, uint, int>)(lpVtbl[13]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), ptid, dwFlags);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.GetActiveFlags"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT GetActiveFlags([NativeTypeName("DWORD *")] uint* lpdwFlags)
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, uint*, int>)(lpVtbl[14]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), lpdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, uint*, int>)(lpVtbl[14]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this), lpdwFlags);
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.SuspendKeystrokeHandling"]/*' />
@@ -149,7 +149,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT SuspendKeystrokeHandling()
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, int>)(lpVtbl[15]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, int>)(lpVtbl[15]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfThreadMgr2.xml' path='doc/member[@name="ITfThreadMgr2.ResumeKeystrokeHandling"]/*' />
@@ -157,7 +157,7 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT ResumeKeystrokeHandling()
     {
-        return ((delegate* unmanaged<ITfThreadMgr2*, int>)(lpVtbl[16]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgr2*, int>)(lpVtbl[16]))((ITfThreadMgr2*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -209,54 +209,54 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> Activate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> Activate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Deactivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Deactivate;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> CreateDocumentMgr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfDocumentMgr**, int> CreateDocumentMgr;
 
         [NativeTypeName("HRESULT (IEnumTfDocumentMgrs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfDocumentMgrs**, int> EnumDocumentMgrs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfDocumentMgrs**, int> EnumDocumentMgrs;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> GetFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfDocumentMgr**, int> GetFocus;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfDocumentMgr*, int> SetFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfDocumentMgr*, int> SetFocus;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsThreadFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsThreadFocus;
 
         [NativeTypeName("HRESULT (const IID &, ITfFunctionProvider **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ITfFunctionProvider**, int> GetFunctionProvider;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, ITfFunctionProvider**, int> GetFunctionProvider;
 
         [NativeTypeName("HRESULT (IEnumTfFunctionProviders **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfFunctionProviders**, int> EnumFunctionProviders;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfFunctionProviders**, int> EnumFunctionProviders;
 
         [NativeTypeName("HRESULT (ITfCompartmentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfCompartmentMgr**, int> GetGlobalCompartment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfCompartmentMgr**, int> GetGlobalCompartment;
 
         [NativeTypeName("HRESULT (TfClientId *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint, int> ActivateEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint, int> ActivateEx;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetActiveFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetActiveFlags;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SuspendKeystrokeHandling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SuspendKeystrokeHandling;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResumeKeystrokeHandling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResumeKeystrokeHandling;
     }
 }

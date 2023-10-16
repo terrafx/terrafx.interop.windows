@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MCHITTESTINFO" /> struct.</summary>
 public static unsafe partial class MCHITTESTINFOTests
 {
-    /// <summary>Validates that the <see cref="MCHITTESTINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MCHITTESTINFO>(), Is.EqualTo(sizeof(MCHITTESTINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="MCHITTESTINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MCHITTESTINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MCHITTESTINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MCHITTESTINFO), Is.EqualTo(60));
-    }
 }

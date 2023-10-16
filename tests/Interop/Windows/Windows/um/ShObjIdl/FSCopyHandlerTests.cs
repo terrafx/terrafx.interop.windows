@@ -19,25 +19,4 @@ public static unsafe partial class FSCopyHandlerTests
     {
         Assert.That(typeof(FSCopyHandler).GUID, Is.EqualTo(IID_FSCopyHandler));
     }
-
-    /// <summary>Validates that the <see cref="FSCopyHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FSCopyHandler>(), Is.EqualTo(sizeof(FSCopyHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="FSCopyHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FSCopyHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FSCopyHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FSCopyHandler), Is.EqualTo(1));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SCM_LOGICAL_DEVICES" /> struct.</summary>
 public static unsafe partial class SCM_LOGICAL_DEVICESTests
 {
-    /// <summary>Validates that the <see cref="SCM_LOGICAL_DEVICES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SCM_LOGICAL_DEVICES>(), Is.EqualTo(sizeof(SCM_LOGICAL_DEVICES)));
-    }
-
-    /// <summary>Validates that the <see cref="SCM_LOGICAL_DEVICES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SCM_LOGICAL_DEVICES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SCM_LOGICAL_DEVICES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SCM_LOGICAL_DEVICES), Is.EqualTo(548));
-    }
 }

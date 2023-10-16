@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PPM_PERFSTATE_EVENT" /> struct.</summary>
 public static unsafe partial class PPM_PERFSTATE_EVENTTests
 {
-    /// <summary>Validates that the <see cref="PPM_PERFSTATE_EVENT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PPM_PERFSTATE_EVENT>(), Is.EqualTo(sizeof(PPM_PERFSTATE_EVENT)));
-    }
-
-    /// <summary>Validates that the <see cref="PPM_PERFSTATE_EVENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PPM_PERFSTATE_EVENT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PPM_PERFSTATE_EVENT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PPM_PERFSTATE_EVENT), Is.EqualTo(20));
-    }
 }

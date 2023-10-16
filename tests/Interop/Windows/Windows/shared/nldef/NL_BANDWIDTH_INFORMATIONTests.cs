@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class NL_BANDWIDTH_INFORMATIONTests
 {
-    /// <summary>Validates that the <see cref="NL_BANDWIDTH_INFORMATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NL_BANDWIDTH_INFORMATION>(), Is.EqualTo(sizeof(NL_BANDWIDTH_INFORMATION)));
-    }
-
-    /// <summary>Validates that the <see cref="NL_BANDWIDTH_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NL_BANDWIDTH_INFORMATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NL_BANDWIDTH_INFORMATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NL_BANDWIDTH_INFORMATION), Is.EqualTo(24));
-    }
 }

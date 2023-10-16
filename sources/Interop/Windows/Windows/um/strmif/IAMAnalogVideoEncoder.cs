@@ -25,7 +25,7 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMAnalogVideoEncoder*, Guid*, void**, int>)(lpVtbl[0]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMAnalogVideoEncoder*, Guid*, void**, int>)(lpVtbl[0]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMAnalogVideoEncoder*, uint>)(lpVtbl[1]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMAnalogVideoEncoder*, uint>)(lpVtbl[1]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMAnalogVideoEncoder*, uint>)(lpVtbl[2]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMAnalogVideoEncoder*, uint>)(lpVtbl[2]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMAnalogVideoEncoder.xml' path='doc/member[@name="IAMAnalogVideoEncoder.get_AvailableTVFormats"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
     [VtblIndex(3)]
     public HRESULT get_AvailableTVFormats([NativeTypeName("long *")] int* lAnalogVideoStandard)
     {
-        return ((delegate* unmanaged<IAMAnalogVideoEncoder*, int*, int>)(lpVtbl[3]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lAnalogVideoStandard);
+        return ((delegate* unmanaged[MemberFunction]<IAMAnalogVideoEncoder*, int*, int>)(lpVtbl[3]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lAnalogVideoStandard);
     }
 
     /// <include file='IAMAnalogVideoEncoder.xml' path='doc/member[@name="IAMAnalogVideoEncoder.put_TVFormat"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
     [VtblIndex(4)]
     public HRESULT put_TVFormat([NativeTypeName("long")] int lAnalogVideoStandard)
     {
-        return ((delegate* unmanaged<IAMAnalogVideoEncoder*, int, int>)(lpVtbl[4]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lAnalogVideoStandard);
+        return ((delegate* unmanaged[MemberFunction]<IAMAnalogVideoEncoder*, int, int>)(lpVtbl[4]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lAnalogVideoStandard);
     }
 
     /// <include file='IAMAnalogVideoEncoder.xml' path='doc/member[@name="IAMAnalogVideoEncoder.get_TVFormat"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
     [VtblIndex(5)]
     public HRESULT get_TVFormat([NativeTypeName("long *")] int* plAnalogVideoStandard)
     {
-        return ((delegate* unmanaged<IAMAnalogVideoEncoder*, int*, int>)(lpVtbl[5]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), plAnalogVideoStandard);
+        return ((delegate* unmanaged[MemberFunction]<IAMAnalogVideoEncoder*, int*, int>)(lpVtbl[5]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), plAnalogVideoStandard);
     }
 
     /// <include file='IAMAnalogVideoEncoder.xml' path='doc/member[@name="IAMAnalogVideoEncoder.put_CopyProtection"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
     [VtblIndex(6)]
     public HRESULT put_CopyProtection([NativeTypeName("long")] int lVideoCopyProtection)
     {
-        return ((delegate* unmanaged<IAMAnalogVideoEncoder*, int, int>)(lpVtbl[6]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lVideoCopyProtection);
+        return ((delegate* unmanaged[MemberFunction]<IAMAnalogVideoEncoder*, int, int>)(lpVtbl[6]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lVideoCopyProtection);
     }
 
     /// <include file='IAMAnalogVideoEncoder.xml' path='doc/member[@name="IAMAnalogVideoEncoder.get_CopyProtection"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
     [VtblIndex(7)]
     public HRESULT get_CopyProtection([NativeTypeName("long *")] int* lVideoCopyProtection)
     {
-        return ((delegate* unmanaged<IAMAnalogVideoEncoder*, int*, int>)(lpVtbl[7]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lVideoCopyProtection);
+        return ((delegate* unmanaged[MemberFunction]<IAMAnalogVideoEncoder*, int*, int>)(lpVtbl[7]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lVideoCopyProtection);
     }
 
     /// <include file='IAMAnalogVideoEncoder.xml' path='doc/member[@name="IAMAnalogVideoEncoder.put_CCEnable"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
     [VtblIndex(8)]
     public HRESULT put_CCEnable([NativeTypeName("long")] int lCCEnable)
     {
-        return ((delegate* unmanaged<IAMAnalogVideoEncoder*, int, int>)(lpVtbl[8]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lCCEnable);
+        return ((delegate* unmanaged[MemberFunction]<IAMAnalogVideoEncoder*, int, int>)(lpVtbl[8]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lCCEnable);
     }
 
     /// <include file='IAMAnalogVideoEncoder.xml' path='doc/member[@name="IAMAnalogVideoEncoder.get_CCEnable"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
     [VtblIndex(9)]
     public HRESULT get_CCEnable([NativeTypeName("long *")] int* lCCEnable)
     {
-        return ((delegate* unmanaged<IAMAnalogVideoEncoder*, int*, int>)(lpVtbl[9]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lCCEnable);
+        return ((delegate* unmanaged[MemberFunction]<IAMAnalogVideoEncoder*, int*, int>)(lpVtbl[9]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lCCEnable);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_AvailableTVFormats;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_AvailableTVFormats;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_TVFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_TVFormat;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_TVFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_TVFormat;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_CopyProtection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_CopyProtection;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_CopyProtection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_CopyProtection;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_CCEnable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_CCEnable;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_CCEnable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_CCEnable;
     }
 }

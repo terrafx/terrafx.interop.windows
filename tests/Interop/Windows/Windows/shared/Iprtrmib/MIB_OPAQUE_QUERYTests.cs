@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIB_OPAQUE_QUERY" /> struct.</summary>
 public static unsafe partial class MIB_OPAQUE_QUERYTests
 {
-    /// <summary>Validates that the <see cref="MIB_OPAQUE_QUERY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIB_OPAQUE_QUERY>(), Is.EqualTo(sizeof(MIB_OPAQUE_QUERY)));
-    }
-
-    /// <summary>Validates that the <see cref="MIB_OPAQUE_QUERY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIB_OPAQUE_QUERY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIB_OPAQUE_QUERY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIB_OPAQUE_QUERY), Is.EqualTo(8));
-    }
 }

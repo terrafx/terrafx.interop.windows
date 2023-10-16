@@ -19,32 +19,4 @@ public static unsafe partial class IAccessibilityDockingServiceCallbackTests
     {
         Assert.That(typeof(IAccessibilityDockingServiceCallback).GUID, Is.EqualTo(IID_IAccessibilityDockingServiceCallback));
     }
-
-    /// <summary>Validates that the <see cref="IAccessibilityDockingServiceCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAccessibilityDockingServiceCallback>(), Is.EqualTo(sizeof(IAccessibilityDockingServiceCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IAccessibilityDockingServiceCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAccessibilityDockingServiceCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAccessibilityDockingServiceCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAccessibilityDockingServiceCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAccessibilityDockingServiceCallback), Is.EqualTo(4));
-        }
-    }
 }

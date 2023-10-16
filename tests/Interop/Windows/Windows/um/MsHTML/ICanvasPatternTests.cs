@@ -19,32 +19,4 @@ public static unsafe partial class ICanvasPatternTests
     {
         Assert.That(typeof(ICanvasPattern).GUID, Is.EqualTo(IID_ICanvasPattern));
     }
-
-    /// <summary>Validates that the <see cref="ICanvasPattern" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICanvasPattern>(), Is.EqualTo(sizeof(ICanvasPattern)));
-    }
-
-    /// <summary>Validates that the <see cref="ICanvasPattern" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICanvasPattern).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICanvasPattern" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICanvasPattern), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICanvasPattern), Is.EqualTo(4));
-        }
-    }
 }

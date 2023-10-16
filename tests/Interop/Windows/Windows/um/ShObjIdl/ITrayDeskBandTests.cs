@@ -19,32 +19,4 @@ public static unsafe partial class ITrayDeskBandTests
     {
         Assert.That(typeof(ITrayDeskBand).GUID, Is.EqualTo(IID_ITrayDeskBand));
     }
-
-    /// <summary>Validates that the <see cref="ITrayDeskBand" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITrayDeskBand>(), Is.EqualTo(sizeof(ITrayDeskBand)));
-    }
-
-    /// <summary>Validates that the <see cref="ITrayDeskBand" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITrayDeskBand).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITrayDeskBand" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITrayDeskBand), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITrayDeskBand), Is.EqualTo(4));
-        }
-    }
 }

@@ -16,15 +16,15 @@ public unsafe partial struct SW_DEVICE_CREATE_INFO
 
     /// <include file='SW_DEVICE_CREATE_INFO.xml' path='doc/member[@name="SW_DEVICE_CREATE_INFO.pszInstanceId"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszInstanceId;
+    public char* pszInstanceId;
 
     /// <include file='SW_DEVICE_CREATE_INFO.xml' path='doc/member[@name="SW_DEVICE_CREATE_INFO.pszzHardwareIds"]/*' />
     [NativeTypeName("PCZZWSTR")]
-    public ushort* pszzHardwareIds;
+    public char* pszzHardwareIds;
 
     /// <include file='SW_DEVICE_CREATE_INFO.xml' path='doc/member[@name="SW_DEVICE_CREATE_INFO.pszzCompatibleIds"]/*' />
     [NativeTypeName("PCZZWSTR")]
-    public ushort* pszzCompatibleIds;
+    public char* pszzCompatibleIds;
 
     /// <include file='SW_DEVICE_CREATE_INFO.xml' path='doc/member[@name="SW_DEVICE_CREATE_INFO.pContainerId"]/*' />
     [NativeTypeName("const GUID *")]
@@ -36,11 +36,11 @@ public unsafe partial struct SW_DEVICE_CREATE_INFO
 
     /// <include file='SW_DEVICE_CREATE_INFO.xml' path='doc/member[@name="SW_DEVICE_CREATE_INFO.pszDeviceDescription"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszDeviceDescription;
+    public char* pszDeviceDescription;
 
     /// <include file='SW_DEVICE_CREATE_INFO.xml' path='doc/member[@name="SW_DEVICE_CREATE_INFO.pszDeviceLocation"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszDeviceLocation;
+    public char* pszDeviceLocation;
 
     /// <include file='SW_DEVICE_CREATE_INFO.xml' path='doc/member[@name="SW_DEVICE_CREATE_INFO.pSecurityDescriptor"]/*' />
     [NativeTypeName("const SECURITY_DESCRIPTOR *")]

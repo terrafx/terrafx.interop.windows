@@ -25,7 +25,7 @@ public unsafe partial struct IRpcProxyBuffer : IRpcProxyBuffer.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRpcProxyBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRpcProxyBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRpcProxyBuffer : IRpcProxyBuffer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRpcProxyBuffer*, uint>)(lpVtbl[1]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcProxyBuffer*, uint>)(lpVtbl[1]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRpcProxyBuffer : IRpcProxyBuffer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRpcProxyBuffer*, uint>)(lpVtbl[2]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcProxyBuffer*, uint>)(lpVtbl[2]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRpcProxyBuffer.xml' path='doc/member[@name="IRpcProxyBuffer.Connect"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRpcProxyBuffer : IRpcProxyBuffer.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Connect(IRpcChannelBuffer* pRpcChannelBuffer)
     {
-        return ((delegate* unmanaged<IRpcProxyBuffer*, IRpcChannelBuffer*, int>)(lpVtbl[3]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this), pRpcChannelBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IRpcProxyBuffer*, IRpcChannelBuffer*, int>)(lpVtbl[3]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this), pRpcChannelBuffer);
     }
 
     /// <include file='IRpcProxyBuffer.xml' path='doc/member[@name="IRpcProxyBuffer.Disconnect"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRpcProxyBuffer : IRpcProxyBuffer.Interface, INativ
     [VtblIndex(4)]
     public void Disconnect()
     {
-        ((delegate* unmanaged<IRpcProxyBuffer*, void>)(lpVtbl[4]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IRpcProxyBuffer*, void>)(lpVtbl[4]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IRpcProxyBuffer : IRpcProxyBuffer.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IRpcChannelBuffer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IRpcChannelBuffer*, int> Connect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRpcChannelBuffer*, int> Connect;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Disconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Disconnect;
     }
 }

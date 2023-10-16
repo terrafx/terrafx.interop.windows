@@ -27,7 +27,7 @@ public unsafe partial struct IMFRelativePanelReport : IMFRelativePanelReport.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFRelativePanelReport*, Guid*, void**, int>)(lpVtbl[0]))((IMFRelativePanelReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelReport*, Guid*, void**, int>)(lpVtbl[0]))((IMFRelativePanelReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFRelativePanelReport : IMFRelativePanelReport.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFRelativePanelReport*, uint>)(lpVtbl[1]))((IMFRelativePanelReport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelReport*, uint>)(lpVtbl[1]))((IMFRelativePanelReport*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFRelativePanelReport : IMFRelativePanelReport.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFRelativePanelReport*, uint>)(lpVtbl[2]))((IMFRelativePanelReport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelReport*, uint>)(lpVtbl[2]))((IMFRelativePanelReport*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFRelativePanelReport.xml' path='doc/member[@name="IMFRelativePanelReport.GetRelativePanel"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFRelativePanelReport : IMFRelativePanelReport.Int
     [VtblIndex(3)]
     public HRESULT GetRelativePanel([NativeTypeName("ULONG *")] uint* panel)
     {
-        return ((delegate* unmanaged<IMFRelativePanelReport*, uint*, int>)(lpVtbl[3]))((IMFRelativePanelReport*)Unsafe.AsPointer(ref this), panel);
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelReport*, uint*, int>)(lpVtbl[3]))((IMFRelativePanelReport*)Unsafe.AsPointer(ref this), panel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IMFRelativePanelReport : IMFRelativePanelReport.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetRelativePanel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetRelativePanel;
     }
 }

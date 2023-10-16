@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PRINTDLGA" /> struct.</summary>
 public static unsafe partial class PRINTDLGATests
 {
-    /// <summary>Validates that the <see cref="PRINTDLGA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PRINTDLGA>(), Is.EqualTo(sizeof(PRINTDLGA)));
-    }
-
-    /// <summary>Validates that the <see cref="PRINTDLGA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PRINTDLGA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PRINTDLGA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(PRINTDLGA), Is.EqualTo(120));
-        }
-        else
-        {
-            Assert.That(sizeof(PRINTDLGA), Is.EqualTo(68));
-        }
-    }
 }

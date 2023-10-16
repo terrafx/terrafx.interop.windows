@@ -14,7 +14,7 @@ public unsafe partial struct URL_COMPONENTS
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.lpszScheme"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszScheme;
+    public char* lpszScheme;
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.dwSchemeLength"]/*' />
     [NativeTypeName("DWORD")]
@@ -26,7 +26,7 @@ public unsafe partial struct URL_COMPONENTS
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.lpszHostName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszHostName;
+    public char* lpszHostName;
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.dwHostNameLength"]/*' />
     [NativeTypeName("DWORD")]
@@ -38,7 +38,7 @@ public unsafe partial struct URL_COMPONENTS
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.lpszUserName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszUserName;
+    public char* lpszUserName;
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.dwUserNameLength"]/*' />
     [NativeTypeName("DWORD")]
@@ -46,7 +46,7 @@ public unsafe partial struct URL_COMPONENTS
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.lpszPassword"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszPassword;
+    public char* lpszPassword;
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.dwPasswordLength"]/*' />
     [NativeTypeName("DWORD")]
@@ -54,7 +54,7 @@ public unsafe partial struct URL_COMPONENTS
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.lpszUrlPath"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszUrlPath;
+    public char* lpszUrlPath;
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.dwUrlPathLength"]/*' />
     [NativeTypeName("DWORD")]
@@ -62,7 +62,7 @@ public unsafe partial struct URL_COMPONENTS
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.lpszExtraInfo"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszExtraInfo;
+    public char* lpszExtraInfo;
 
     /// <include file='URL_COMPONENTS.xml' path='doc/member[@name="URL_COMPONENTS.dwExtraInfoLength"]/*' />
     [NativeTypeName("DWORD")]

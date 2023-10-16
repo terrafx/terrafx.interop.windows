@@ -19,32 +19,4 @@ public static unsafe partial class IAMFilterMiscFlagsTests
     {
         Assert.That(typeof(IAMFilterMiscFlags).GUID, Is.EqualTo(IID_IAMFilterMiscFlags));
     }
-
-    /// <summary>Validates that the <see cref="IAMFilterMiscFlags" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMFilterMiscFlags>(), Is.EqualTo(sizeof(IAMFilterMiscFlags)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMFilterMiscFlags" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMFilterMiscFlags).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMFilterMiscFlags" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMFilterMiscFlags), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMFilterMiscFlags), Is.EqualTo(4));
-        }
-    }
 }

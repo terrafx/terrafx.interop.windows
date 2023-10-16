@@ -25,7 +25,7 @@ public unsafe partial struct IUpdateIDList : IUpdateIDList.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUpdateIDList*, Guid*, void**, int>)(lpVtbl[0]))((IUpdateIDList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUpdateIDList*, Guid*, void**, int>)(lpVtbl[0]))((IUpdateIDList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUpdateIDList : IUpdateIDList.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUpdateIDList*, uint>)(lpVtbl[1]))((IUpdateIDList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUpdateIDList*, uint>)(lpVtbl[1]))((IUpdateIDList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUpdateIDList : IUpdateIDList.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUpdateIDList*, uint>)(lpVtbl[2]))((IUpdateIDList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUpdateIDList*, uint>)(lpVtbl[2]))((IUpdateIDList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUpdateIDList.xml' path='doc/member[@name="IUpdateIDList.Update"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUpdateIDList : IUpdateIDList.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT Update(IBindCtx* pbc, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlIn, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
     {
-        return ((delegate* unmanaged<IUpdateIDList*, IBindCtx*, ITEMIDLIST*, ITEMIDLIST**, int>)(lpVtbl[3]))((IUpdateIDList*)Unsafe.AsPointer(ref this), pbc, pidlIn, ppidlOut);
+        return ((delegate* unmanaged[MemberFunction]<IUpdateIDList*, IBindCtx*, ITEMIDLIST*, ITEMIDLIST**, int>)(lpVtbl[3]))((IUpdateIDList*)Unsafe.AsPointer(ref this), pbc, pidlIn, ppidlOut);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IUpdateIDList : IUpdateIDList.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPCITEMIDLIST, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, ITEMIDLIST*, ITEMIDLIST**, int> Update;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBindCtx*, ITEMIDLIST*, ITEMIDLIST**, int> Update;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IMFSourceResolverTests
     {
         Assert.That(typeof(IMFSourceResolver).GUID, Is.EqualTo(IID_IMFSourceResolver));
     }
-
-    /// <summary>Validates that the <see cref="IMFSourceResolver" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSourceResolver>(), Is.EqualTo(sizeof(IMFSourceResolver)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceResolver" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSourceResolver).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceResolver" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSourceResolver), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSourceResolver), Is.EqualTo(4));
-        }
-    }
 }

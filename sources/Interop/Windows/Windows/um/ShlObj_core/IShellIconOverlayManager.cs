@@ -25,7 +25,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellIconOverlayManager*, Guid*, void**, int>)(lpVtbl[0]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayManager*, Guid*, void**, int>)(lpVtbl[0]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellIconOverlayManager*, uint>)(lpVtbl[1]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayManager*, uint>)(lpVtbl[1]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,23 +43,23 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellIconOverlayManager*, uint>)(lpVtbl[2]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayManager*, uint>)(lpVtbl[2]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.GetFileOverlayInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetFileOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags)
+    public HRESULT GetFileOverlayInfo([NativeTypeName("PCWSTR")] char* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags)
     {
-        return ((delegate* unmanaged<IShellIconOverlayManager*, ushort*, uint, int*, uint, int>)(lpVtbl[3]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), pwszPath, dwAttrib, pIndex, dwflags);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayManager*, char*, uint, int*, uint, int>)(lpVtbl[3]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), pwszPath, dwAttrib, pIndex, dwflags);
     }
 
     /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.GetReservedOverlayInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetReservedOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags, int iReservedID)
+    public HRESULT GetReservedOverlayInfo([NativeTypeName("PCWSTR")] char* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags, int iReservedID)
     {
-        return ((delegate* unmanaged<IShellIconOverlayManager*, ushort*, uint, int*, uint, int, int>)(lpVtbl[4]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), pwszPath, dwAttrib, pIndex, dwflags, iReservedID);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayManager*, char*, uint, int*, uint, int, int>)(lpVtbl[4]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), pwszPath, dwAttrib, pIndex, dwflags, iReservedID);
     }
 
     /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.RefreshOverlayImages"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
     [VtblIndex(5)]
     public HRESULT RefreshOverlayImages([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IShellIconOverlayManager*, uint, int>)(lpVtbl[5]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayManager*, uint, int>)(lpVtbl[5]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.LoadNonloadedOverlayIdentifiers"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
     [VtblIndex(6)]
     public HRESULT LoadNonloadedOverlayIdentifiers()
     {
-        return ((delegate* unmanaged<IShellIconOverlayManager*, int>)(lpVtbl[6]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayManager*, int>)(lpVtbl[6]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.OverlayIndexFromImageIndex"]/*' />
@@ -83,16 +83,16 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
     [VtblIndex(7)]
     public HRESULT OverlayIndexFromImageIndex(int iImage, int* piIndex, BOOL fAdd)
     {
-        return ((delegate* unmanaged<IShellIconOverlayManager*, int, int*, BOOL, int>)(lpVtbl[7]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), iImage, piIndex, fAdd);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayManager*, int, int*, BOOL, int>)(lpVtbl[7]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), iImage, piIndex, fAdd);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetFileOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags);
+        HRESULT GetFileOverlayInfo([NativeTypeName("PCWSTR")] char* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags);
 
         [VtblIndex(4)]
-        HRESULT GetReservedOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags, int iReservedID);
+        HRESULT GetReservedOverlayInfo([NativeTypeName("PCWSTR")] char* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags, int iReservedID);
 
         [VtblIndex(5)]
         HRESULT RefreshOverlayImages([NativeTypeName("DWORD")] uint dwFlags);
@@ -108,27 +108,27 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PCWSTR, DWORD, int *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int*, uint, int> GetFileOverlayInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int*, uint, int> GetFileOverlayInfo;
 
         [NativeTypeName("HRESULT (PCWSTR, DWORD, int *, DWORD, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int*, uint, int, int> GetReservedOverlayInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int*, uint, int, int> GetReservedOverlayInfo;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RefreshOverlayImages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RefreshOverlayImages;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> LoadNonloadedOverlayIdentifiers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> LoadNonloadedOverlayIdentifiers;
 
         [NativeTypeName("HRESULT (int, int *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, BOOL, int> OverlayIndexFromImageIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, BOOL, int> OverlayIndexFromImageIndex;
     }
 }

@@ -25,11 +25,11 @@ public unsafe partial struct SIP_SUBJECTINFO
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.pwsFileName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwsFileName;
+    public char* pwsFileName;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.pwsDisplayName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwsDisplayName;
+    public char* pwsDisplayName;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.dwReserved1"]/*' />
     [NativeTypeName("DWORD")]

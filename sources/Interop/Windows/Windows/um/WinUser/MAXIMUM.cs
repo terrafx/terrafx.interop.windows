@@ -8,5 +8,5 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class MAXIMUM
 {
     [NativeTypeName("#define MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(16 /*inclusive*/)")]
-    public static ushort* MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID => ((ushort*)((nuint)((ushort)(16))));
+    public static char* MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID => ((char*)((nuint)((ushort)(16))));
 }

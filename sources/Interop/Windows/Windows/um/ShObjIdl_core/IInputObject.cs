@@ -25,7 +25,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInputObject*, Guid*, void**, int>)(lpVtbl[0]))((IInputObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInputObject*, Guid*, void**, int>)(lpVtbl[0]))((IInputObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInputObject*, uint>)(lpVtbl[1]))((IInputObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInputObject*, uint>)(lpVtbl[1]))((IInputObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInputObject*, uint>)(lpVtbl[2]))((IInputObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInputObject*, uint>)(lpVtbl[2]))((IInputObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInputObject.xml' path='doc/member[@name="IInputObject.UIActivateIO"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT UIActivateIO(BOOL fActivate, MSG* pMsg)
     {
-        return ((delegate* unmanaged<IInputObject*, BOOL, MSG*, int>)(lpVtbl[3]))((IInputObject*)Unsafe.AsPointer(ref this), fActivate, pMsg);
+        return ((delegate* unmanaged[MemberFunction]<IInputObject*, BOOL, MSG*, int>)(lpVtbl[3]))((IInputObject*)Unsafe.AsPointer(ref this), fActivate, pMsg);
     }
 
     /// <include file='IInputObject.xml' path='doc/member[@name="IInputObject.HasFocusIO"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT HasFocusIO()
     {
-        return ((delegate* unmanaged<IInputObject*, int>)(lpVtbl[4]))((IInputObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInputObject*, int>)(lpVtbl[4]))((IInputObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInputObject.xml' path='doc/member[@name="IInputObject.TranslateAcceleratorIO"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT TranslateAcceleratorIO(MSG* pMsg)
     {
-        return ((delegate* unmanaged<IInputObject*, MSG*, int>)(lpVtbl[5]))((IInputObject*)Unsafe.AsPointer(ref this), pMsg);
+        return ((delegate* unmanaged[MemberFunction]<IInputObject*, MSG*, int>)(lpVtbl[5]))((IInputObject*)Unsafe.AsPointer(ref this), pMsg);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IInputObject : IInputObject.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, MSG*, int> UIActivateIO;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, MSG*, int> UIActivateIO;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> HasFocusIO;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> HasFocusIO;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAcceleratorIO;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, int> TranslateAcceleratorIO;
     }
 }

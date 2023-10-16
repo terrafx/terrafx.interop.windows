@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TOUCHPREDICTIONPARAMETERS" /> struct.</summary>
 public static unsafe partial class TOUCHPREDICTIONPARAMETERSTests
 {
-    /// <summary>Validates that the <see cref="TOUCHPREDICTIONPARAMETERS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TOUCHPREDICTIONPARAMETERS>(), Is.EqualTo(sizeof(TOUCHPREDICTIONPARAMETERS)));
-    }
-
-    /// <summary>Validates that the <see cref="TOUCHPREDICTIONPARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TOUCHPREDICTIONPARAMETERS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TOUCHPREDICTIONPARAMETERS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TOUCHPREDICTIONPARAMETERS), Is.EqualTo(16));
-    }
 }

@@ -37,7 +37,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetExpandedNameW"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
-    public static extern int GetExpandedNameW([NativeTypeName("LPWSTR")] ushort* lpszSource, [NativeTypeName("LPWSTR")] ushort* lpszBuffer);
+    public static extern int GetExpandedNameW([NativeTypeName("LPWSTR")] char* lpszSource, [NativeTypeName("LPWSTR")] char* lpszBuffer);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LZOpenFileA"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
@@ -45,7 +45,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LZOpenFileW"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
-    public static extern int LZOpenFileW([NativeTypeName("LPWSTR")] ushort* lpFileName, [NativeTypeName("LPOFSTRUCT")] OFSTRUCT* lpReOpenBuf, [NativeTypeName("WORD")] ushort wStyle);
+    public static extern int LZOpenFileW([NativeTypeName("LPWSTR")] char* lpFileName, [NativeTypeName("LPOFSTRUCT")] OFSTRUCT* lpReOpenBuf, [NativeTypeName("WORD")] ushort wStyle);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LZSeek"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
@@ -85,8 +85,8 @@ public static unsafe partial class Windows
     public const int LZERROR_UNKNOWNALG = (-8);
 
     [NativeTypeName("#define GetExpandedName GetExpandedNameW")]
-    public static delegate*<ushort*, ushort*, int> GetExpandedName => &GetExpandedNameW;
+    public static delegate*<char*, char*, int> GetExpandedName => &GetExpandedNameW;
 
     [NativeTypeName("#define LZOpenFile LZOpenFileW")]
-    public static delegate*<ushort*, OFSTRUCT*, ushort, int> LZOpenFile => &LZOpenFileW;
+    public static delegate*<char*, OFSTRUCT*, ushort, int> LZOpenFile => &LZOpenFileW;
 }

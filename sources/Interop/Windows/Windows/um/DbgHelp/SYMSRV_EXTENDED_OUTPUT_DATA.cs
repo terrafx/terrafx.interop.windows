@@ -18,5 +18,5 @@ public unsafe partial struct SYMSRV_EXTENDED_OUTPUT_DATA
 
     /// <include file='SYMSRV_EXTENDED_OUTPUT_DATA.xml' path='doc/member[@name="SYMSRV_EXTENDED_OUTPUT_DATA.filePtrMsg"]/*' />
     [NativeTypeName("WCHAR[261]")]
-    public fixed ushort filePtrMsg[261];
+    public fixed char filePtrMsg[261];
 }

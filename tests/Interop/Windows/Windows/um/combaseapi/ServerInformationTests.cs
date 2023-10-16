@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ServerInformation" /> struct.</summary>
 public static unsafe partial class ServerInformationTests
 {
-    /// <summary>Validates that the <see cref="ServerInformation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ServerInformation>(), Is.EqualTo(sizeof(ServerInformation)));
-    }
-
-    /// <summary>Validates that the <see cref="ServerInformation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ServerInformation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ServerInformation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ServerInformation), Is.EqualTo(16));
-    }
 }

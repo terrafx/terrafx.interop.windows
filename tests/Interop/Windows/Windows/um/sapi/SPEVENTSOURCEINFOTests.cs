@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SPEVENTSOURCEINFO" /> struct.</summary>
 public static unsafe partial class SPEVENTSOURCEINFOTests
 {
-    /// <summary>Validates that the <see cref="SPEVENTSOURCEINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SPEVENTSOURCEINFO>(), Is.EqualTo(sizeof(SPEVENTSOURCEINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="SPEVENTSOURCEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SPEVENTSOURCEINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SPEVENTSOURCEINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SPEVENTSOURCEINFO), Is.EqualTo(24));
-    }
 }

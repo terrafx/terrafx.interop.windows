@@ -14,18 +14,18 @@ public unsafe partial struct PROPPAGEINFO
 
     /// <include file='PROPPAGEINFO.xml' path='doc/member[@name="PROPPAGEINFO.pszTitle"]/*' />
     [NativeTypeName("LPOLESTR")]
-    public ushort* pszTitle;
+    public char* pszTitle;
 
     /// <include file='PROPPAGEINFO.xml' path='doc/member[@name="PROPPAGEINFO.size"]/*' />
     public SIZE size;
 
     /// <include file='PROPPAGEINFO.xml' path='doc/member[@name="PROPPAGEINFO.pszDocString"]/*' />
     [NativeTypeName("LPOLESTR")]
-    public ushort* pszDocString;
+    public char* pszDocString;
 
     /// <include file='PROPPAGEINFO.xml' path='doc/member[@name="PROPPAGEINFO.pszHelpFile"]/*' />
     [NativeTypeName("LPOLESTR")]
-    public ushort* pszHelpFile;
+    public char* pszHelpFile;
 
     /// <include file='PROPPAGEINFO.xml' path='doc/member[@name="PROPPAGEINFO.dwHelpContext"]/*' />
     [NativeTypeName("DWORD")]

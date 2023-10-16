@@ -17,7 +17,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SslEmptyCacheW"]/*' />
     [DllImport("schannel", ExactSpelling = true)]
-    public static extern BOOL SslEmptyCacheW([NativeTypeName("LPWSTR")] ushort* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL SslEmptyCacheW([NativeTypeName("LPWSTR")] char* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SslCrackCertificate"]/*' />
     [DllImport("schannel", ExactSpelling = true)]
@@ -115,5 +115,5 @@ public static unsafe partial class Windows
     public const int KERN_CONTEXT_CERT_INFO_V1 = 0x00000000;
 
     [NativeTypeName("#define SslEmptyCache SslEmptyCacheW")]
-    public static delegate*<ushort*, uint, BOOL> SslEmptyCache => &SslEmptyCacheW;
+    public static delegate*<char*, uint, BOOL> SslEmptyCache => &SslEmptyCacheW;
 }

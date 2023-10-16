@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecVideoMaxCodedHeightTests
     {
         Assert.That(typeof(CODECAPI_AVDecVideoMaxCodedHeight).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoMaxCodedHeight));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoMaxCodedHeight" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecVideoMaxCodedHeight>(), Is.EqualTo(sizeof(CODECAPI_AVDecVideoMaxCodedHeight)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoMaxCodedHeight" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecVideoMaxCodedHeight).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoMaxCodedHeight" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecVideoMaxCodedHeight), Is.EqualTo(1));
-    }
 }

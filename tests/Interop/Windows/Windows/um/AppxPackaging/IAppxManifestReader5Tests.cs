@@ -21,32 +21,4 @@ public static unsafe partial class IAppxManifestReader5Tests
     {
         Assert.That(typeof(IAppxManifestReader5).GUID, Is.EqualTo(IID_IAppxManifestReader5));
     }
-
-    /// <summary>Validates that the <see cref="IAppxManifestReader5" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxManifestReader5>(), Is.EqualTo(sizeof(IAppxManifestReader5)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestReader5" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxManifestReader5).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestReader5" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxManifestReader5), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxManifestReader5), Is.EqualTo(4));
-        }
-    }
 }

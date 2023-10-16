@@ -19,32 +19,4 @@ public static unsafe partial class IEnumWbemClassObjectTests
     {
         Assert.That(typeof(IEnumWbemClassObject).GUID, Is.EqualTo(IID_IEnumWbemClassObject));
     }
-
-    /// <summary>Validates that the <see cref="IEnumWbemClassObject" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEnumWbemClassObject>(), Is.EqualTo(sizeof(IEnumWbemClassObject)));
-    }
-
-    /// <summary>Validates that the <see cref="IEnumWbemClassObject" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEnumWbemClassObject).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEnumWbemClassObject" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEnumWbemClassObject), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEnumWbemClassObject), Is.EqualTo(4));
-        }
-    }
 }

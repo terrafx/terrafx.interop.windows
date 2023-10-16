@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="POWER_USER_PRESENCE" /> struct.</summary>
 public static unsafe partial class POWER_USER_PRESENCETests
 {
-    /// <summary>Validates that the <see cref="POWER_USER_PRESENCE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<POWER_USER_PRESENCE>(), Is.EqualTo(sizeof(POWER_USER_PRESENCE)));
-    }
-
-    /// <summary>Validates that the <see cref="POWER_USER_PRESENCE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(POWER_USER_PRESENCE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="POWER_USER_PRESENCE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(POWER_USER_PRESENCE), Is.EqualTo(4));
-    }
 }

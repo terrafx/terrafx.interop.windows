@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DIDATAFORMAT" /> struct.</summary>
 public static unsafe partial class DIDATAFORMATTests
 {
-    /// <summary>Validates that the <see cref="DIDATAFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DIDATAFORMAT>(), Is.EqualTo(sizeof(DIDATAFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="DIDATAFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DIDATAFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DIDATAFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DIDATAFORMAT), Is.EqualTo(32));
-        }
-        else
-        {
-            Assert.That(sizeof(DIDATAFORMAT), Is.EqualTo(24));
-        }
-    }
 }

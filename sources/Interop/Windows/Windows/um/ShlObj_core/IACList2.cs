@@ -25,7 +25,7 @@ public unsafe partial struct IACList2 : IACList2.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IACList2*, Guid*, void**, int>)(lpVtbl[0]))((IACList2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IACList2*, Guid*, void**, int>)(lpVtbl[0]))((IACList2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IACList2 : IACList2.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IACList2*, uint>)(lpVtbl[1]))((IACList2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IACList2*, uint>)(lpVtbl[1]))((IACList2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IACList2 : IACList2.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IACList2*, uint>)(lpVtbl[2]))((IACList2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IACList2*, uint>)(lpVtbl[2]))((IACList2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IACList.Expand" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Expand([NativeTypeName("PCWSTR")] ushort* pszExpand)
+    public HRESULT Expand([NativeTypeName("PCWSTR")] char* pszExpand)
     {
-        return ((delegate* unmanaged<IACList2*, ushort*, int>)(lpVtbl[3]))((IACList2*)Unsafe.AsPointer(ref this), pszExpand);
+        return ((delegate* unmanaged[MemberFunction]<IACList2*, char*, int>)(lpVtbl[3]))((IACList2*)Unsafe.AsPointer(ref this), pszExpand);
     }
 
     /// <include file='IACList2.xml' path='doc/member[@name="IACList2.SetOptions"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IACList2 : IACList2.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetOptions([NativeTypeName("DWORD")] uint dwFlag)
     {
-        return ((delegate* unmanaged<IACList2*, uint, int>)(lpVtbl[4]))((IACList2*)Unsafe.AsPointer(ref this), dwFlag);
+        return ((delegate* unmanaged[MemberFunction]<IACList2*, uint, int>)(lpVtbl[4]))((IACList2*)Unsafe.AsPointer(ref this), dwFlag);
     }
 
     /// <include file='IACList2.xml' path='doc/member[@name="IACList2.GetOptions"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IACList2 : IACList2.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetOptions([NativeTypeName("DWORD *")] uint* pdwFlag)
     {
-        return ((delegate* unmanaged<IACList2*, uint*, int>)(lpVtbl[5]))((IACList2*)Unsafe.AsPointer(ref this), pdwFlag);
+        return ((delegate* unmanaged[MemberFunction]<IACList2*, uint*, int>)(lpVtbl[5]))((IACList2*)Unsafe.AsPointer(ref this), pdwFlag);
     }
 
     public interface Interface : IACList.Interface
@@ -83,21 +83,21 @@ public unsafe partial struct IACList2 : IACList2.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> Expand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> Expand;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetOptions;
     }
 }

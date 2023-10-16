@@ -14,7 +14,7 @@ public unsafe partial struct DEVMODEW
 {
     /// <include file='DEVMODEW.xml' path='doc/member[@name="DEVMODEW.dmDeviceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort dmDeviceName[32];
+    public fixed char dmDeviceName[32];
 
     /// <include file='DEVMODEW.xml' path='doc/member[@name="DEVMODEW.dmSpecVersion"]/*' />
     [NativeTypeName("WORD")]
@@ -57,7 +57,7 @@ public unsafe partial struct DEVMODEW
 
     /// <include file='DEVMODEW.xml' path='doc/member[@name="DEVMODEW.dmFormName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort dmFormName[32];
+    public fixed char dmFormName[32];
 
     /// <include file='DEVMODEW.xml' path='doc/member[@name="DEVMODEW.dmLogPixels"]/*' />
     [NativeTypeName("WORD")]

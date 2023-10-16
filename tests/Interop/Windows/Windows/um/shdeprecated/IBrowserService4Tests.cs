@@ -19,32 +19,4 @@ public static unsafe partial class IBrowserService4Tests
     {
         Assert.That(typeof(IBrowserService4).GUID, Is.EqualTo(IID_IBrowserService4));
     }
-
-    /// <summary>Validates that the <see cref="IBrowserService4" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBrowserService4>(), Is.EqualTo(sizeof(IBrowserService4)));
-    }
-
-    /// <summary>Validates that the <see cref="IBrowserService4" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBrowserService4).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBrowserService4" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBrowserService4), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBrowserService4), Is.EqualTo(4));
-        }
-    }
 }

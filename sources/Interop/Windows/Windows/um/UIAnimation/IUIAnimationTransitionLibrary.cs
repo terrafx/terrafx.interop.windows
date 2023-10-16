@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, uint>)(lpVtbl[1]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, uint>)(lpVtbl[1]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, uint>)(lpVtbl[2]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, uint>)(lpVtbl[2]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateInstantaneousTransition"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(3)]
     public HRESULT CreateInstantaneousTransition(double finalValue, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int>)(lpVtbl[3]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), finalValue, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int>)(lpVtbl[3]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), finalValue, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateConstantTransition"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(4)]
     public HRESULT CreateConstantTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int>)(lpVtbl[4]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int>)(lpVtbl[4]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateDiscreteTransition"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(5)]
     public HRESULT CreateDiscreteTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double delay, double finalValue, [NativeTypeName("UI_ANIMATION_SECONDS")] double hold, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[5]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), delay, finalValue, hold, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[5]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), delay, finalValue, hold, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateLinearTransition"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(6)]
     public HRESULT CreateLinearTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, double finalValue, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[6]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, finalValue, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[6]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, finalValue, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateLinearTransitionFromSpeed"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(7)]
     public HRESULT CreateLinearTransitionFromSpeed(double speed, double finalValue, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[7]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), speed, finalValue, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[7]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), speed, finalValue, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateSinusoidalTransitionFromVelocity"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(8)]
     public HRESULT CreateSinusoidalTransitionFromVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("UI_ANIMATION_SECONDS")] double period, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[8]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, period, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[8]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, period, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateSinusoidalTransitionFromRange"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(9)]
     public HRESULT CreateSinusoidalTransitionFromRange([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, double minimumValue, double maximumValue, [NativeTypeName("UI_ANIMATION_SECONDS")] double period, UI_ANIMATION_SLOPE slope, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, double, UI_ANIMATION_SLOPE, IUIAnimationTransition**, int>)(lpVtbl[9]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, minimumValue, maximumValue, period, slope, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, double, double, double, UI_ANIMATION_SLOPE, IUIAnimationTransition**, int>)(lpVtbl[9]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, minimumValue, maximumValue, period, slope, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateAccelerateDecelerateTransition"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(10)]
     public HRESULT CreateAccelerateDecelerateTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, double finalValue, double accelerationRatio, double decelerationRatio, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[10]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, finalValue, accelerationRatio, decelerationRatio, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[10]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, finalValue, accelerationRatio, decelerationRatio, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateReversalTransition"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(11)]
     public HRESULT CreateReversalTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int>)(lpVtbl[11]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int>)(lpVtbl[11]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateCubicTransition"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(12)]
     public HRESULT CreateCubicTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, double finalValue, double finalVelocity, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[12]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, finalValue, finalVelocity, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[12]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, finalValue, finalVelocity, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateSmoothStopTransition"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(13)]
     public HRESULT CreateSmoothStopTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double maximumDuration, double finalValue, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[13]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), maximumDuration, finalValue, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[13]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), maximumDuration, finalValue, transition);
     }
 
     /// <include file='IUIAnimationTransitionLibrary.xml' path='doc/member[@name="IUIAnimationTransitionLibrary.CreateParabolicTransitionFromAcceleration"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
     [VtblIndex(14)]
     public HRESULT CreateParabolicTransitionFromAcceleration(double finalValue, double finalVelocity, double acceleration, IUIAnimationTransition** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[14]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), finalValue, finalVelocity, acceleration, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[14]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), finalValue, finalVelocity, acceleration, transition);
     }
 
     public interface Interface : IUnknown.Interface
@@ -185,48 +185,48 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, IUIAnimationTransition**, int> CreateInstantaneousTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, IUIAnimationTransition**, int> CreateInstantaneousTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, IUIAnimationTransition**, int> CreateConstantTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, IUIAnimationTransition**, int> CreateConstantTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, UI_ANIMATION_SECONDS, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, double, IUIAnimationTransition**, int> CreateDiscreteTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, double, IUIAnimationTransition**, int> CreateDiscreteTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, IUIAnimationTransition**, int> CreateLinearTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, IUIAnimationTransition**, int> CreateLinearTransition;
 
         [NativeTypeName("HRESULT (DOUBLE, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, IUIAnimationTransition**, int> CreateLinearTransitionFromSpeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, IUIAnimationTransition**, int> CreateLinearTransitionFromSpeed;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, UI_ANIMATION_SECONDS, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, IUIAnimationTransition**, int> CreateSinusoidalTransitionFromVelocity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, IUIAnimationTransition**, int> CreateSinusoidalTransitionFromVelocity;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, DOUBLE, UI_ANIMATION_SECONDS, UI_ANIMATION_SLOPE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, double, double, UI_ANIMATION_SLOPE, IUIAnimationTransition**, int> CreateSinusoidalTransitionFromRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, double, double, UI_ANIMATION_SLOPE, IUIAnimationTransition**, int> CreateSinusoidalTransitionFromRange;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, DOUBLE, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, double, double, IUIAnimationTransition**, int> CreateAccelerateDecelerateTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, double, double, IUIAnimationTransition**, int> CreateAccelerateDecelerateTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, IUIAnimationTransition**, int> CreateReversalTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, IUIAnimationTransition**, int> CreateReversalTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, double, IUIAnimationTransition**, int> CreateCubicTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, double, IUIAnimationTransition**, int> CreateCubicTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, IUIAnimationTransition**, int> CreateSmoothStopTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, IUIAnimationTransition**, int> CreateSmoothStopTransition;
 
         [NativeTypeName("HRESULT (DOUBLE, DOUBLE, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, double, IUIAnimationTransition**, int> CreateParabolicTransitionFromAcceleration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, double, IUIAnimationTransition**, int> CreateParabolicTransitionFromAcceleration;
     }
 }

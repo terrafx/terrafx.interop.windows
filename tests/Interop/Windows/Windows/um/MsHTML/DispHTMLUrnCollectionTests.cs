@@ -19,32 +19,4 @@ public static unsafe partial class DispHTMLUrnCollectionTests
     {
         Assert.That(typeof(DispHTMLUrnCollection).GUID, Is.EqualTo(IID_DispHTMLUrnCollection));
     }
-
-    /// <summary>Validates that the <see cref="DispHTMLUrnCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispHTMLUrnCollection>(), Is.EqualTo(sizeof(DispHTMLUrnCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLUrnCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispHTMLUrnCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLUrnCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispHTMLUrnCollection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispHTMLUrnCollection), Is.EqualTo(4));
-        }
-    }
 }

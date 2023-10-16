@@ -25,7 +25,7 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellItemArray*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemArray*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellItemArray*, uint>)(lpVtbl[1]))((IShellItemArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellItemArray*, uint>)(lpVtbl[1]))((IShellItemArray*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellItemArray*, uint>)(lpVtbl[2]))((IShellItemArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellItemArray*, uint>)(lpVtbl[2]))((IShellItemArray*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellItemArray.xml' path='doc/member[@name="IShellItemArray.BindToHandler"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
     [VtblIndex(3)]
     public HRESULT BindToHandler(IBindCtx* pbc, [NativeTypeName("const GUID &")] Guid* bhid, [NativeTypeName("const IID &")] Guid* riid, void** ppvOut)
     {
-        return ((delegate* unmanaged<IShellItemArray*, IBindCtx*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IShellItemArray*)Unsafe.AsPointer(ref this), pbc, bhid, riid, ppvOut);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemArray*, IBindCtx*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IShellItemArray*)Unsafe.AsPointer(ref this), pbc, bhid, riid, ppvOut);
     }
 
     /// <include file='IShellItemArray.xml' path='doc/member[@name="IShellItemArray.GetPropertyStore"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellItemArray*, GETPROPERTYSTOREFLAGS, Guid*, void**, int>)(lpVtbl[4]))((IShellItemArray*)Unsafe.AsPointer(ref this), flags, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemArray*, GETPROPERTYSTOREFLAGS, Guid*, void**, int>)(lpVtbl[4]))((IShellItemArray*)Unsafe.AsPointer(ref this), flags, riid, ppv);
     }
 
     /// <include file='IShellItemArray.xml' path='doc/member[@name="IShellItemArray.GetPropertyDescriptionList"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetPropertyDescriptionList([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* keyType, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellItemArray*, PROPERTYKEY*, Guid*, void**, int>)(lpVtbl[5]))((IShellItemArray*)Unsafe.AsPointer(ref this), keyType, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemArray*, PROPERTYKEY*, Guid*, void**, int>)(lpVtbl[5]))((IShellItemArray*)Unsafe.AsPointer(ref this), keyType, riid, ppv);
     }
 
     /// <include file='IShellItemArray.xml' path='doc/member[@name="IShellItemArray.GetAttributes"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetAttributes(SIATTRIBFLAGS AttribFlags, [NativeTypeName("SFGAOF")] uint sfgaoMask, [NativeTypeName("SFGAOF *")] uint* psfgaoAttribs)
     {
-        return ((delegate* unmanaged<IShellItemArray*, SIATTRIBFLAGS, uint, uint*, int>)(lpVtbl[6]))((IShellItemArray*)Unsafe.AsPointer(ref this), AttribFlags, sfgaoMask, psfgaoAttribs);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemArray*, SIATTRIBFLAGS, uint, uint*, int>)(lpVtbl[6]))((IShellItemArray*)Unsafe.AsPointer(ref this), AttribFlags, sfgaoMask, psfgaoAttribs);
     }
 
     /// <include file='IShellItemArray.xml' path='doc/member[@name="IShellItemArray.GetCount"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
     [VtblIndex(7)]
     public HRESULT GetCount([NativeTypeName("DWORD *")] uint* pdwNumItems)
     {
-        return ((delegate* unmanaged<IShellItemArray*, uint*, int>)(lpVtbl[7]))((IShellItemArray*)Unsafe.AsPointer(ref this), pdwNumItems);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemArray*, uint*, int>)(lpVtbl[7]))((IShellItemArray*)Unsafe.AsPointer(ref this), pdwNumItems);
     }
 
     /// <include file='IShellItemArray.xml' path='doc/member[@name="IShellItemArray.GetItemAt"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
     [VtblIndex(8)]
     public HRESULT GetItemAt([NativeTypeName("DWORD")] uint dwIndex, IShellItem** ppsi)
     {
-        return ((delegate* unmanaged<IShellItemArray*, uint, IShellItem**, int>)(lpVtbl[8]))((IShellItemArray*)Unsafe.AsPointer(ref this), dwIndex, ppsi);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemArray*, uint, IShellItem**, int>)(lpVtbl[8]))((IShellItemArray*)Unsafe.AsPointer(ref this), dwIndex, ppsi);
     }
 
     /// <include file='IShellItemArray.xml' path='doc/member[@name="IShellItemArray.EnumItems"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
     [VtblIndex(9)]
     public HRESULT EnumItems(IEnumShellItems** ppenumShellItems)
     {
-        return ((delegate* unmanaged<IShellItemArray*, IEnumShellItems**, int>)(lpVtbl[9]))((IShellItemArray*)Unsafe.AsPointer(ref this), ppenumShellItems);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemArray*, IEnumShellItems**, int>)(lpVtbl[9]))((IShellItemArray*)Unsafe.AsPointer(ref this), ppenumShellItems);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, Guid*, Guid*, void**, int> BindToHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBindCtx*, Guid*, Guid*, void**, int> BindToHandler;
 
         [NativeTypeName("HRESULT (GETPROPERTYSTOREFLAGS, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, GETPROPERTYSTOREFLAGS, Guid*, void**, int> GetPropertyStore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, GETPROPERTYSTOREFLAGS, Guid*, void**, int> GetPropertyStore;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, Guid*, void**, int> GetPropertyDescriptionList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, Guid*, void**, int> GetPropertyDescriptionList;
 
         [NativeTypeName("HRESULT (SIATTRIBFLAGS, SFGAOF, SFGAOF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIATTRIBFLAGS, uint, uint*, int> GetAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIATTRIBFLAGS, uint, uint*, int> GetAttributes;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IShellItem**, int> GetItemAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IShellItem**, int> GetItemAt;
 
         [NativeTypeName("HRESULT (IEnumShellItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumShellItems**, int> EnumItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumShellItems**, int> EnumItems;
     }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class WebWizardHostTests
     {
         Assert.That(typeof(WebWizardHost).GUID, Is.EqualTo(IID_WebWizardHost));
     }
-
-    /// <summary>Validates that the <see cref="WebWizardHost" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WebWizardHost>(), Is.EqualTo(sizeof(WebWizardHost)));
-    }
-
-    /// <summary>Validates that the <see cref="WebWizardHost" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WebWizardHost).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WebWizardHost" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WebWizardHost), Is.EqualTo(1));
-    }
 }

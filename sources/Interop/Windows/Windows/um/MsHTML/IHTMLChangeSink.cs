@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLChangeSink : IHTMLChangeSink.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLChangeSink*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLChangeSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLChangeSink*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLChangeSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLChangeSink : IHTMLChangeSink.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLChangeSink*, uint>)(lpVtbl[1]))((IHTMLChangeSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLChangeSink*, uint>)(lpVtbl[1]))((IHTMLChangeSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLChangeSink : IHTMLChangeSink.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLChangeSink*, uint>)(lpVtbl[2]))((IHTMLChangeSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLChangeSink*, uint>)(lpVtbl[2]))((IHTMLChangeSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLChangeSink.xml' path='doc/member[@name="IHTMLChangeSink.Notify"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLChangeSink : IHTMLChangeSink.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Notify()
     {
-        return ((delegate* unmanaged<IHTMLChangeSink*, int>)(lpVtbl[3]))((IHTMLChangeSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLChangeSink*, int>)(lpVtbl[3]))((IHTMLChangeSink*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IHTMLChangeSink : IHTMLChangeSink.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Notify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Notify;
     }
 }

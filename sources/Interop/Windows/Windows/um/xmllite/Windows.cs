@@ -16,11 +16,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateXmlReaderInputWithEncodingCodePage"]/*' />
     [DllImport("xmllite", ExactSpelling = true)]
-    public static extern HRESULT CreateXmlReaderInputWithEncodingCodePage(IUnknown* pInputStream, IMalloc* pMalloc, uint nEncodingCodePage, BOOL fEncodingHint, [NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
+    public static extern HRESULT CreateXmlReaderInputWithEncodingCodePage(IUnknown* pInputStream, IMalloc* pMalloc, uint nEncodingCodePage, BOOL fEncodingHint, [NativeTypeName("LPCWSTR")] char* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateXmlReaderInputWithEncodingName"]/*' />
     [DllImport("xmllite", ExactSpelling = true)]
-    public static extern HRESULT CreateXmlReaderInputWithEncodingName(IUnknown* pInputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] ushort* pwszEncodingName, BOOL fEncodingHint, [NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
+    public static extern HRESULT CreateXmlReaderInputWithEncodingName(IUnknown* pInputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] char* pwszEncodingName, BOOL fEncodingHint, [NativeTypeName("LPCWSTR")] char* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateXmlWriter"]/*' />
     [DllImport("xmllite", ExactSpelling = true)]
@@ -32,5 +32,5 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateXmlWriterOutputWithEncodingName"]/*' />
     [DllImport("xmllite", ExactSpelling = true)]
-    public static extern HRESULT CreateXmlWriterOutputWithEncodingName(IUnknown* pOutputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] ushort* pwszEncodingName, [NativeTypeName("IXmlWriterOutput **")] IUnknown** ppOutput);
+    public static extern HRESULT CreateXmlWriterOutputWithEncodingName(IUnknown* pOutputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] char* pwszEncodingName, [NativeTypeName("IXmlWriterOutput **")] IUnknown** ppOutput);
 }

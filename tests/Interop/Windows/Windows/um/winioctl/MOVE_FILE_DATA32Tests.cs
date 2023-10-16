@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MOVE_FILE_DATA32" /> struct.</summary>
 public static unsafe partial class MOVE_FILE_DATA32Tests
 {
-    /// <summary>Validates that the <see cref="MOVE_FILE_DATA32" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MOVE_FILE_DATA32>(), Is.EqualTo(sizeof(MOVE_FILE_DATA32)));
-    }
-
-    /// <summary>Validates that the <see cref="MOVE_FILE_DATA32" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MOVE_FILE_DATA32).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MOVE_FILE_DATA32" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MOVE_FILE_DATA32), Is.EqualTo(32));
-    }
 }

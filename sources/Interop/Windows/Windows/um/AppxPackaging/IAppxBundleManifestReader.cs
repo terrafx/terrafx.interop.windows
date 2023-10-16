@@ -27,7 +27,7 @@ public unsafe partial struct IAppxBundleManifestReader : IAppxBundleManifestRead
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxBundleManifestReader : IAppxBundleManifestRead
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestReader*, uint>)(lpVtbl[1]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestReader*, uint>)(lpVtbl[1]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxBundleManifestReader : IAppxBundleManifestRead
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestReader*, uint>)(lpVtbl[2]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestReader*, uint>)(lpVtbl[2]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBundleManifestReader.xml' path='doc/member[@name="IAppxBundleManifestReader.GetPackageId"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxBundleManifestReader : IAppxBundleManifestRead
     [VtblIndex(3)]
     public HRESULT GetPackageId(IAppxManifestPackageId** packageId)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestReader*, IAppxManifestPackageId**, int>)(lpVtbl[3]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this), packageId);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestReader*, IAppxManifestPackageId**, int>)(lpVtbl[3]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this), packageId);
     }
 
     /// <include file='IAppxBundleManifestReader.xml' path='doc/member[@name="IAppxBundleManifestReader.GetPackageInfoItems"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxBundleManifestReader : IAppxBundleManifestRead
     [VtblIndex(4)]
     public HRESULT GetPackageInfoItems(IAppxBundleManifestPackageInfoEnumerator** packageInfoItems)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestReader*, IAppxBundleManifestPackageInfoEnumerator**, int>)(lpVtbl[4]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this), packageInfoItems);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestReader*, IAppxBundleManifestPackageInfoEnumerator**, int>)(lpVtbl[4]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this), packageInfoItems);
     }
 
     /// <include file='IAppxBundleManifestReader.xml' path='doc/member[@name="IAppxBundleManifestReader.GetStream"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxBundleManifestReader : IAppxBundleManifestRead
     [VtblIndex(5)]
     public HRESULT GetStream(IStream** manifestStream)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestReader*, IStream**, int>)(lpVtbl[5]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this), manifestStream);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestReader*, IStream**, int>)(lpVtbl[5]))((IAppxBundleManifestReader*)Unsafe.AsPointer(ref this), manifestStream);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxBundleManifestReader : IAppxBundleManifestRead
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestPackageId **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
 
         [NativeTypeName("HRESULT (IAppxBundleManifestPackageInfoEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxBundleManifestPackageInfoEnumerator**, int> GetPackageInfoItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxBundleManifestPackageInfoEnumerator**, int> GetPackageInfoItems;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream**, int> GetStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream**, int> GetStream;
     }
 }

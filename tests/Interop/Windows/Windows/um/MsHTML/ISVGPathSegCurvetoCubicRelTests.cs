@@ -19,32 +19,4 @@ public static unsafe partial class ISVGPathSegCurvetoCubicRelTests
     {
         Assert.That(typeof(ISVGPathSegCurvetoCubicRel).GUID, Is.EqualTo(IID_ISVGPathSegCurvetoCubicRel));
     }
-
-    /// <summary>Validates that the <see cref="ISVGPathSegCurvetoCubicRel" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISVGPathSegCurvetoCubicRel>(), Is.EqualTo(sizeof(ISVGPathSegCurvetoCubicRel)));
-    }
-
-    /// <summary>Validates that the <see cref="ISVGPathSegCurvetoCubicRel" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISVGPathSegCurvetoCubicRel).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISVGPathSegCurvetoCubicRel" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISVGPathSegCurvetoCubicRel), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISVGPathSegCurvetoCubicRel), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiscMaster*, Guid*, void**, int>)(lpVtbl[0]))((IDiscMaster*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, Guid*, void**, int>)(lpVtbl[0]))((IDiscMaster*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiscMaster*, uint>)(lpVtbl[1]))((IDiscMaster*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, uint>)(lpVtbl[1]))((IDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiscMaster*, uint>)(lpVtbl[2]))((IDiscMaster*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, uint>)(lpVtbl[2]))((IDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.Open"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Open()
     {
-        return ((delegate* unmanaged<IDiscMaster*, int>)(lpVtbl[3]))((IDiscMaster*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, int>)(lpVtbl[3]))((IDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.EnumDiscMasterFormats"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT EnumDiscMasterFormats(IEnumDiscMasterFormats** ppEnum)
     {
-        return ((delegate* unmanaged<IDiscMaster*, IEnumDiscMasterFormats**, int>)(lpVtbl[4]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, IEnumDiscMasterFormats**, int>)(lpVtbl[4]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.GetActiveDiscMasterFormat"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetActiveDiscMasterFormat([NativeTypeName("LPIID")] Guid* lpiid)
     {
-        return ((delegate* unmanaged<IDiscMaster*, Guid*, int>)(lpVtbl[5]))((IDiscMaster*)Unsafe.AsPointer(ref this), lpiid);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, Guid*, int>)(lpVtbl[5]))((IDiscMaster*)Unsafe.AsPointer(ref this), lpiid);
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.SetActiveDiscMasterFormat"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT SetActiveDiscMasterFormat([NativeTypeName("const IID &")] Guid* riid, void** ppUnk)
     {
-        return ((delegate* unmanaged<IDiscMaster*, Guid*, void**, int>)(lpVtbl[6]))((IDiscMaster*)Unsafe.AsPointer(ref this), riid, ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, Guid*, void**, int>)(lpVtbl[6]))((IDiscMaster*)Unsafe.AsPointer(ref this), riid, ppUnk);
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.EnumDiscRecorders"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT EnumDiscRecorders(IEnumDiscRecorders** ppEnum)
     {
-        return ((delegate* unmanaged<IDiscMaster*, IEnumDiscRecorders**, int>)(lpVtbl[7]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, IEnumDiscRecorders**, int>)(lpVtbl[7]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.GetActiveDiscRecorder"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetActiveDiscRecorder(IDiscRecorder** ppRecorder)
     {
-        return ((delegate* unmanaged<IDiscMaster*, IDiscRecorder**, int>)(lpVtbl[8]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppRecorder);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, IDiscRecorder**, int>)(lpVtbl[8]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppRecorder);
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.SetActiveDiscRecorder"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT SetActiveDiscRecorder(IDiscRecorder* pRecorder)
     {
-        return ((delegate* unmanaged<IDiscMaster*, IDiscRecorder*, int>)(lpVtbl[9]))((IDiscMaster*)Unsafe.AsPointer(ref this), pRecorder);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, IDiscRecorder*, int>)(lpVtbl[9]))((IDiscMaster*)Unsafe.AsPointer(ref this), pRecorder);
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.ClearFormatContent"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT ClearFormatContent()
     {
-        return ((delegate* unmanaged<IDiscMaster*, int>)(lpVtbl[10]))((IDiscMaster*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, int>)(lpVtbl[10]))((IDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.ProgressAdvise"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT ProgressAdvise(IDiscMasterProgressEvents* pEvents, [NativeTypeName("UINT_PTR *")] nuint* pvCookie)
     {
-        return ((delegate* unmanaged<IDiscMaster*, IDiscMasterProgressEvents*, nuint*, int>)(lpVtbl[11]))((IDiscMaster*)Unsafe.AsPointer(ref this), pEvents, pvCookie);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, IDiscMasterProgressEvents*, nuint*, int>)(lpVtbl[11]))((IDiscMaster*)Unsafe.AsPointer(ref this), pEvents, pvCookie);
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.ProgressUnadvise"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT ProgressUnadvise([NativeTypeName("UINT_PTR")] nuint vCookie)
     {
-        return ((delegate* unmanaged<IDiscMaster*, nuint, int>)(lpVtbl[12]))((IDiscMaster*)Unsafe.AsPointer(ref this), vCookie);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, nuint, int>)(lpVtbl[12]))((IDiscMaster*)Unsafe.AsPointer(ref this), vCookie);
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.RecordDisc"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT RecordDisc([NativeTypeName("boolean")] byte bSimulate, [NativeTypeName("boolean")] byte bEjectAfterBurn)
     {
-        return ((delegate* unmanaged<IDiscMaster*, byte, byte, int>)(lpVtbl[13]))((IDiscMaster*)Unsafe.AsPointer(ref this), bSimulate, bEjectAfterBurn);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, byte, byte, int>)(lpVtbl[13]))((IDiscMaster*)Unsafe.AsPointer(ref this), bSimulate, bEjectAfterBurn);
     }
 
     /// <include file='IDiscMaster.xml' path='doc/member[@name="IDiscMaster.Close"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<IDiscMaster*, int>)(lpVtbl[14]))((IDiscMaster*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscMaster*, int>)(lpVtbl[14]))((IDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -185,48 +185,48 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Open;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Open;
 
         [NativeTypeName("HRESULT (IEnumDiscMasterFormats **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumDiscMasterFormats**, int> EnumDiscMasterFormats;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumDiscMasterFormats**, int> EnumDiscMasterFormats;
 
         [NativeTypeName("HRESULT (LPIID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetActiveDiscMasterFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetActiveDiscMasterFormat;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> SetActiveDiscMasterFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> SetActiveDiscMasterFormat;
 
         [NativeTypeName("HRESULT (IEnumDiscRecorders **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumDiscRecorders**, int> EnumDiscRecorders;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumDiscRecorders**, int> EnumDiscRecorders;
 
         [NativeTypeName("HRESULT (IDiscRecorder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder**, int> GetActiveDiscRecorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder**, int> GetActiveDiscRecorder;
 
         [NativeTypeName("HRESULT (IDiscRecorder *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder*, int> SetActiveDiscRecorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder*, int> SetActiveDiscRecorder;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ClearFormatContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearFormatContent;
 
         [NativeTypeName("HRESULT (IDiscMasterProgressEvents *, UINT_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscMasterProgressEvents*, nuint*, int> ProgressAdvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscMasterProgressEvents*, nuint*, int> ProgressAdvise;
 
         [NativeTypeName("HRESULT (UINT_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, int> ProgressUnadvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, int> ProgressUnadvise;
 
         [NativeTypeName("HRESULT (boolean, boolean) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte, byte, int> RecordDisc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte, byte, int> RecordDisc;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
     }
 }

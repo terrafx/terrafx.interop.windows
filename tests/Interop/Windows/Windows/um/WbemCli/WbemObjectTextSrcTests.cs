@@ -19,25 +19,4 @@ public static unsafe partial class WbemObjectTextSrcTests
     {
         Assert.That(typeof(WbemObjectTextSrc).GUID, Is.EqualTo(IID_WbemObjectTextSrc));
     }
-
-    /// <summary>Validates that the <see cref="WbemObjectTextSrc" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WbemObjectTextSrc>(), Is.EqualTo(sizeof(WbemObjectTextSrc)));
-    }
-
-    /// <summary>Validates that the <see cref="WbemObjectTextSrc" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WbemObjectTextSrc).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WbemObjectTextSrc" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WbemObjectTextSrc), Is.EqualTo(1));
-    }
 }

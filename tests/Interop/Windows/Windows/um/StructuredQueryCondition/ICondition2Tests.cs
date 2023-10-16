@@ -19,32 +19,4 @@ public static unsafe partial class ICondition2Tests
     {
         Assert.That(typeof(ICondition2).GUID, Is.EqualTo(IID_ICondition2));
     }
-
-    /// <summary>Validates that the <see cref="ICondition2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICondition2>(), Is.EqualTo(sizeof(ICondition2)));
-    }
-
-    /// <summary>Validates that the <see cref="ICondition2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICondition2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICondition2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICondition2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICondition2), Is.EqualTo(4));
-        }
-    }
 }

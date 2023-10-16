@@ -32,7 +32,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFileTitleW"]/*' />
     [DllImport("comdlg32", ExactSpelling = true)]
-    public static extern short GetFileTitleW([NativeTypeName("LPCWSTR")] ushort* param0, [NativeTypeName("LPWSTR")] ushort* Buf, [NativeTypeName("WORD")] ushort cchSize);
+    public static extern short GetFileTitleW([NativeTypeName("LPCWSTR")] char* param0, [NativeTypeName("LPWSTR")] char* Buf, [NativeTypeName("WORD")] ushort cchSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ChooseColorA"]/*' />
     [DllImport("comdlg32", ExactSpelling = true)]
@@ -102,7 +102,7 @@ public static unsafe partial class Windows
     public static delegate*<OPENFILENAMEW*, BOOL> GetSaveFileName => &GetSaveFileNameW;
 
     [NativeTypeName("#define GetFileTitle GetFileTitleW")]
-    public static delegate*<ushort*, ushort*, ushort, short> GetFileTitle => &GetFileTitleW;
+    public static delegate*<char*, char*, ushort, short> GetFileTitle => &GetFileTitleW;
 
     [NativeTypeName("#define ChooseColor ChooseColorW")]
     public static delegate*<CHOOSECOLORW*, BOOL> ChooseColor => &ChooseColorW;

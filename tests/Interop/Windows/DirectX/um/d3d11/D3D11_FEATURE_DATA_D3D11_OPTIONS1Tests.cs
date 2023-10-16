@@ -13,24 +13,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class D3D11_FEATURE_DATA_D3D11_OPTIONS1Tests
 {
-    /// <summary>Validates that the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D11_FEATURE_DATA_D3D11_OPTIONS1>(), Is.EqualTo(sizeof(D3D11_FEATURE_DATA_D3D11_OPTIONS1)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D11_FEATURE_DATA_D3D11_OPTIONS1).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D11_FEATURE_DATA_D3D11_OPTIONS1), Is.EqualTo(16));
-    }
 }

@@ -23,7 +23,7 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
     public uint isSpecializationEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.isSpecializationEnabled;
         }
@@ -39,7 +39,7 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
     public uint isSpecializationAvailableForMonitor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.isSpecializationAvailableForMonitor;
         }
@@ -55,7 +55,7 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
     public uint isSpecializationAvailableForSystem
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.isSpecializationAvailableForSystem;
         }
@@ -71,7 +71,7 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -118,7 +118,7 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
             public uint isSpecializationEnabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -135,7 +135,7 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
             public uint isSpecializationAvailableForMonitor
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -152,7 +152,7 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
             public uint isSpecializationAvailableForSystem
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -169,7 +169,7 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1FFFFFFFu;
                 }

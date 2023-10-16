@@ -26,7 +26,7 @@ public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectDrawPalette*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawPalette*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectDrawPalette*, uint>)(lpVtbl[1]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawPalette*, uint>)(lpVtbl[1]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectDrawPalette*, uint>)(lpVtbl[2]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawPalette*, uint>)(lpVtbl[2]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectDrawPalette.xml' path='doc/member[@name="IDirectDrawPalette.GetCaps"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface, 
     [VtblIndex(3)]
     public HRESULT GetCaps([NativeTypeName("LPDWORD")] uint* param0)
     {
-        return ((delegate* unmanaged<IDirectDrawPalette*, uint*, int>)(lpVtbl[3]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawPalette*, uint*, int>)(lpVtbl[3]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawPalette.xml' path='doc/member[@name="IDirectDrawPalette.GetEntries"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface, 
     [VtblIndex(4)]
     public HRESULT GetEntries([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* param3)
     {
-        return ((delegate* unmanaged<IDirectDrawPalette*, uint, uint, uint, PALETTEENTRY*, int>)(lpVtbl[4]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawPalette*, uint, uint, uint, PALETTEENTRY*, int>)(lpVtbl[4]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
     }
 
     /// <include file='IDirectDrawPalette.xml' path='doc/member[@name="IDirectDrawPalette.Initialize"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface, 
     [VtblIndex(5)]
     public HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* param2)
     {
-        return ((delegate* unmanaged<IDirectDrawPalette*, IDirectDraw*, uint, PALETTEENTRY*, int>)(lpVtbl[5]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), param0, param1, param2);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawPalette*, IDirectDraw*, uint, PALETTEENTRY*, int>)(lpVtbl[5]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
     /// <include file='IDirectDrawPalette.xml' path='doc/member[@name="IDirectDrawPalette.SetEntries"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface, 
     [VtblIndex(6)]
     public HRESULT SetEntries([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* param3)
     {
-        return ((delegate* unmanaged<IDirectDrawPalette*, uint, uint, uint, PALETTEENTRY*, int>)(lpVtbl[6]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawPalette*, uint, uint, uint, PALETTEENTRY*, int>)(lpVtbl[6]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,24 +98,24 @@ public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCaps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCaps;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, LPPALETTEENTRY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, PALETTEENTRY*, int> GetEntries;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, PALETTEENTRY*, int> GetEntries;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW, DWORD, LPPALETTEENTRY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDraw*, uint, PALETTEENTRY*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDraw*, uint, PALETTEENTRY*, int> Initialize;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, LPPALETTEENTRY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, PALETTEENTRY*, int> SetEntries;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, PALETTEENTRY*, int> SetEntries;
     }
 }

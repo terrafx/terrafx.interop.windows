@@ -19,32 +19,4 @@ public static unsafe partial class ICreateProcessInputsTests
     {
         Assert.That(typeof(ICreateProcessInputs).GUID, Is.EqualTo(IID_ICreateProcessInputs));
     }
-
-    /// <summary>Validates that the <see cref="ICreateProcessInputs" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICreateProcessInputs>(), Is.EqualTo(sizeof(ICreateProcessInputs)));
-    }
-
-    /// <summary>Validates that the <see cref="ICreateProcessInputs" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICreateProcessInputs).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICreateProcessInputs" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICreateProcessInputs), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICreateProcessInputs), Is.EqualTo(4));
-        }
-    }
 }

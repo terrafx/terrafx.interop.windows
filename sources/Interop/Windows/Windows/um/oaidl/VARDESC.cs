@@ -18,7 +18,7 @@ public unsafe partial struct VARDESC
 
     /// <include file='VARDESC.xml' path='doc/member[@name="VARDESC.lpstrSchema"]/*' />
     [NativeTypeName("LPOLESTR")]
-    public ushort* lpstrSchema;
+    public char* lpstrSchema;
 
     /// <include file='VARDESC.xml' path='doc/member[@name="VARDESC.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_oaidl_L880_C36")]

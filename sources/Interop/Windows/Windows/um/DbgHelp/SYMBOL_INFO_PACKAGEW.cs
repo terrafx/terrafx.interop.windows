@@ -13,5 +13,5 @@ public unsafe partial struct SYMBOL_INFO_PACKAGEW
 
     /// <include file='SYMBOL_INFO_PACKAGEW.xml' path='doc/member[@name="SYMBOL_INFO_PACKAGEW.name"]/*' />
     [NativeTypeName("WCHAR[2001]")]
-    public fixed ushort name[2001];
+    public fixed char name[2001];
 }

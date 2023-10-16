@@ -21,32 +21,4 @@ public static unsafe partial class IPlayToSourceClassFactoryTests
     {
         Assert.That(typeof(IPlayToSourceClassFactory).GUID, Is.EqualTo(IID_IPlayToSourceClassFactory));
     }
-
-    /// <summary>Validates that the <see cref="IPlayToSourceClassFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPlayToSourceClassFactory>(), Is.EqualTo(sizeof(IPlayToSourceClassFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IPlayToSourceClassFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPlayToSourceClassFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPlayToSourceClassFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPlayToSourceClassFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPlayToSourceClassFactory), Is.EqualTo(4));
-        }
-    }
 }

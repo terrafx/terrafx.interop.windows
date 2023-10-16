@@ -25,7 +25,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICategoryProvider*, Guid*, void**, int>)(lpVtbl[0]))((ICategoryProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICategoryProvider*, Guid*, void**, int>)(lpVtbl[0]))((ICategoryProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICategoryProvider*, uint>)(lpVtbl[1]))((ICategoryProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICategoryProvider*, uint>)(lpVtbl[1]))((ICategoryProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICategoryProvider*, uint>)(lpVtbl[2]))((ICategoryProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICategoryProvider*, uint>)(lpVtbl[2]))((ICategoryProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.CanCategorizeOnSCID"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
     [VtblIndex(3)]
     public HRESULT CanCategorizeOnSCID([NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid)
     {
-        return ((delegate* unmanaged<ICategoryProvider*, PROPERTYKEY*, int>)(lpVtbl[3]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pscid);
+        return ((delegate* unmanaged[MemberFunction]<ICategoryProvider*, PROPERTYKEY*, int>)(lpVtbl[3]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pscid);
     }
 
     /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.GetDefaultCategory"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetDefaultCategory(Guid* pguid, [NativeTypeName("SHCOLUMNID *")] PROPERTYKEY* pscid)
     {
-        return ((delegate* unmanaged<ICategoryProvider*, Guid*, PROPERTYKEY*, int>)(lpVtbl[4]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, pscid);
+        return ((delegate* unmanaged[MemberFunction]<ICategoryProvider*, Guid*, PROPERTYKEY*, int>)(lpVtbl[4]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, pscid);
     }
 
     /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.GetCategoryForSCID"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetCategoryForSCID([NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid, Guid* pguid)
     {
-        return ((delegate* unmanaged<ICategoryProvider*, PROPERTYKEY*, Guid*, int>)(lpVtbl[5]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pscid, pguid);
+        return ((delegate* unmanaged[MemberFunction]<ICategoryProvider*, PROPERTYKEY*, Guid*, int>)(lpVtbl[5]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pscid, pguid);
     }
 
     /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.EnumCategories"]/*' />
@@ -75,15 +75,15 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
     [VtblIndex(6)]
     public HRESULT EnumCategories(IEnumGUID** penum)
     {
-        return ((delegate* unmanaged<ICategoryProvider*, IEnumGUID**, int>)(lpVtbl[6]))((ICategoryProvider*)Unsafe.AsPointer(ref this), penum);
+        return ((delegate* unmanaged[MemberFunction]<ICategoryProvider*, IEnumGUID**, int>)(lpVtbl[6]))((ICategoryProvider*)Unsafe.AsPointer(ref this), penum);
     }
 
     /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.GetCategoryName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] ushort* pszName, uint cch)
+    public HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] char* pszName, uint cch)
     {
-        return ((delegate* unmanaged<ICategoryProvider*, Guid*, ushort*, uint, int>)(lpVtbl[7]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, pszName, cch);
+        return ((delegate* unmanaged[MemberFunction]<ICategoryProvider*, Guid*, char*, uint, int>)(lpVtbl[7]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, pszName, cch);
     }
 
     /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.CreateCategory"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
     [VtblIndex(8)]
     public HRESULT CreateCategory([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<ICategoryProvider*, Guid*, Guid*, void**, int>)(lpVtbl[8]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<ICategoryProvider*, Guid*, Guid*, void**, int>)(lpVtbl[8]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -109,7 +109,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
         HRESULT EnumCategories(IEnumGUID** penum);
 
         [VtblIndex(7)]
-        HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] ushort* pszName, uint cch);
+        HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] char* pszName, uint cch);
 
         [VtblIndex(8)]
         HRESULT CreateCategory([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
@@ -119,30 +119,30 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const SHCOLUMNID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> CanCategorizeOnSCID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, int> CanCategorizeOnSCID;
 
         [NativeTypeName("HRESULT (GUID *, SHCOLUMNID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, PROPERTYKEY*, int> GetDefaultCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, PROPERTYKEY*, int> GetDefaultCategory;
 
         [NativeTypeName("HRESULT (const SHCOLUMNID *, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, Guid*, int> GetCategoryForSCID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, Guid*, int> GetCategoryForSCID;
 
         [NativeTypeName("HRESULT (IEnumGUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumGUID**, int> EnumCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumGUID**, int> EnumCategories;
 
         [NativeTypeName("HRESULT (const GUID *, LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, uint, int> GetCategoryName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char*, uint, int> GetCategoryName;
 
         [NativeTypeName("HRESULT (const GUID *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> CreateCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, void**, int> CreateCategory;
     }
 }

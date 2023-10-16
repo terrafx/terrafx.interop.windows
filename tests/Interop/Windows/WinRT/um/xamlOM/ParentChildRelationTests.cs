@@ -13,24 +13,4 @@ namespace TerraFX.Interop.WinRT.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class ParentChildRelationTests
 {
-    /// <summary>Validates that the <see cref="ParentChildRelation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ParentChildRelation>(), Is.EqualTo(sizeof(ParentChildRelation)));
-    }
-
-    /// <summary>Validates that the <see cref="ParentChildRelation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ParentChildRelation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ParentChildRelation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ParentChildRelation), Is.EqualTo(24));
-    }
 }

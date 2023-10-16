@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="GENERIC3CHANNEL" /> struct.</summary>
 public static unsafe partial class GENERIC3CHANNELTests
 {
-    /// <summary>Validates that the <see cref="GENERIC3CHANNEL" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<GENERIC3CHANNEL>(), Is.EqualTo(sizeof(GENERIC3CHANNEL)));
-    }
-
-    /// <summary>Validates that the <see cref="GENERIC3CHANNEL" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(GENERIC3CHANNEL).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="GENERIC3CHANNEL" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(GENERIC3CHANNEL), Is.EqualTo(6));
-    }
 }

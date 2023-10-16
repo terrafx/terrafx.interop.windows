@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class PSS_AUXILIARY_PAGES_INFORMATIONTests
 {
-    /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGES_INFORMATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PSS_AUXILIARY_PAGES_INFORMATION>(), Is.EqualTo(sizeof(PSS_AUXILIARY_PAGES_INFORMATION)));
-    }
-
-    /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGES_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PSS_AUXILIARY_PAGES_INFORMATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGES_INFORMATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PSS_AUXILIARY_PAGES_INFORMATION), Is.EqualTo(4));
-    }
 }

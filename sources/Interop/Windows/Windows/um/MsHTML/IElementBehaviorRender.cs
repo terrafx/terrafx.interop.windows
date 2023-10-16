@@ -25,7 +25,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IElementBehaviorRender*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorRender*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IElementBehaviorRender*, uint>)(lpVtbl[1]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorRender*, uint>)(lpVtbl[1]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IElementBehaviorRender*, uint>)(lpVtbl[2]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorRender*, uint>)(lpVtbl[2]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IElementBehaviorRender.xml' path='doc/member[@name="IElementBehaviorRender.Draw"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
     [VtblIndex(3)]
     public HRESULT Draw(HDC hdc, [NativeTypeName("LONG")] int lLayer, RECT* pRect, IUnknown* pReserved)
     {
-        return ((delegate* unmanaged<IElementBehaviorRender*, HDC, int, RECT*, IUnknown*, int>)(lpVtbl[3]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), hdc, lLayer, pRect, pReserved);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorRender*, HDC, int, RECT*, IUnknown*, int>)(lpVtbl[3]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), hdc, lLayer, pRect, pReserved);
     }
 
     /// <include file='IElementBehaviorRender.xml' path='doc/member[@name="IElementBehaviorRender.GetRenderInfo"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
     [VtblIndex(4)]
     public HRESULT GetRenderInfo([NativeTypeName("LONG *")] int* plRenderInfo)
     {
-        return ((delegate* unmanaged<IElementBehaviorRender*, int*, int>)(lpVtbl[4]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), plRenderInfo);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorRender*, int*, int>)(lpVtbl[4]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), plRenderInfo);
     }
 
     /// <include file='IElementBehaviorRender.xml' path='doc/member[@name="IElementBehaviorRender.HitTestPoint"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
     [VtblIndex(5)]
     public HRESULT HitTestPoint(POINT* pPoint, IUnknown* pReserved, BOOL* pbHit)
     {
-        return ((delegate* unmanaged<IElementBehaviorRender*, POINT*, IUnknown*, BOOL*, int>)(lpVtbl[5]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), pPoint, pReserved, pbHit);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorRender*, POINT*, IUnknown*, BOOL*, int>)(lpVtbl[5]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), pPoint, pReserved, pbHit);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HDC, LONG, RECT *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, int, RECT*, IUnknown*, int> Draw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, int, RECT*, IUnknown*, int> Draw;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetRenderInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetRenderInfo;
 
         [NativeTypeName("HRESULT (POINT *, IUnknown *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT*, IUnknown*, BOOL*, int> HitTestPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT*, IUnknown*, BOOL*, int> HitTestPoint;
     }
 }

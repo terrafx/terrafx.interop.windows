@@ -16,7 +16,7 @@ public unsafe partial struct NMTOOLBAR64W
     public int cchText;
 
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     public RECT rcButton;
 }

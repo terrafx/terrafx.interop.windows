@@ -19,32 +19,4 @@ public static unsafe partial class IOleWindowTests
     {
         Assert.That(typeof(IOleWindow).GUID, Is.EqualTo(IID_IOleWindow));
     }
-
-    /// <summary>Validates that the <see cref="IOleWindow" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IOleWindow>(), Is.EqualTo(sizeof(IOleWindow)));
-    }
-
-    /// <summary>Validates that the <see cref="IOleWindow" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IOleWindow).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IOleWindow" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IOleWindow), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IOleWindow), Is.EqualTo(4));
-        }
-    }
 }

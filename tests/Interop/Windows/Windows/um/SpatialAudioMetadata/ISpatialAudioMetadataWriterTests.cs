@@ -21,32 +21,4 @@ public static unsafe partial class ISpatialAudioMetadataWriterTests
     {
         Assert.That(typeof(ISpatialAudioMetadataWriter).GUID, Is.EqualTo(IID_ISpatialAudioMetadataWriter));
     }
-
-    /// <summary>Validates that the <see cref="ISpatialAudioMetadataWriter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpatialAudioMetadataWriter>(), Is.EqualTo(sizeof(ISpatialAudioMetadataWriter)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpatialAudioMetadataWriter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpatialAudioMetadataWriter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpatialAudioMetadataWriter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpatialAudioMetadataWriter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpatialAudioMetadataWriter), Is.EqualTo(4));
-        }
-    }
 }

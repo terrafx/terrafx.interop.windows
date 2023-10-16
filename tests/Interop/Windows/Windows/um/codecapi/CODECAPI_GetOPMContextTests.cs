@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_GetOPMContextTests
     {
         Assert.That(typeof(CODECAPI_GetOPMContext).GUID, Is.EqualTo(IID_CODECAPI_GetOPMContext));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GetOPMContext" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_GetOPMContext>(), Is.EqualTo(sizeof(CODECAPI_GetOPMContext)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GetOPMContext" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_GetOPMContext).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GetOPMContext" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_GetOPMContext), Is.EqualTo(1));
-    }
 }

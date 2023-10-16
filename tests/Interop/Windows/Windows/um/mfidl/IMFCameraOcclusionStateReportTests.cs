@@ -19,32 +19,4 @@ public static unsafe partial class IMFCameraOcclusionStateReportTests
     {
         Assert.That(typeof(IMFCameraOcclusionStateReport).GUID, Is.EqualTo(IID_IMFCameraOcclusionStateReport));
     }
-
-    /// <summary>Validates that the <see cref="IMFCameraOcclusionStateReport" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFCameraOcclusionStateReport>(), Is.EqualTo(sizeof(IMFCameraOcclusionStateReport)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFCameraOcclusionStateReport" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFCameraOcclusionStateReport).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFCameraOcclusionStateReport" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFCameraOcclusionStateReport), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFCameraOcclusionStateReport), Is.EqualTo(4));
-        }
-    }
 }

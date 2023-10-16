@@ -19,32 +19,4 @@ public static unsafe partial class IDiaReadExeAtRVACallbackTests
     {
         Assert.That(typeof(IDiaReadExeAtRVACallback).GUID, Is.EqualTo(IID_IDiaReadExeAtRVACallback));
     }
-
-    /// <summary>Validates that the <see cref="IDiaReadExeAtRVACallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaReadExeAtRVACallback>(), Is.EqualTo(sizeof(IDiaReadExeAtRVACallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaReadExeAtRVACallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaReadExeAtRVACallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaReadExeAtRVACallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaReadExeAtRVACallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaReadExeAtRVACallback), Is.EqualTo(4));
-        }
-    }
 }

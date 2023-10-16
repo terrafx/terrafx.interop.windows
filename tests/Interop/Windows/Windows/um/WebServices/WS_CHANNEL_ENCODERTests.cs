@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WS_CHANNEL_ENCODER" /> struct.</summary>
 public static unsafe partial class WS_CHANNEL_ENCODERTests
 {
-    /// <summary>Validates that the <see cref="WS_CHANNEL_ENCODER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WS_CHANNEL_ENCODER>(), Is.EqualTo(sizeof(WS_CHANNEL_ENCODER)));
-    }
-
-    /// <summary>Validates that the <see cref="WS_CHANNEL_ENCODER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WS_CHANNEL_ENCODER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WS_CHANNEL_ENCODER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(WS_CHANNEL_ENCODER), Is.EqualTo(56));
-        }
-        else
-        {
-            Assert.That(sizeof(WS_CHANNEL_ENCODER), Is.EqualTo(28));
-        }
-    }
 }

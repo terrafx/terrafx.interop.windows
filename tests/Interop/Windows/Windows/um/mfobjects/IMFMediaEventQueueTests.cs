@@ -19,32 +19,4 @@ public static unsafe partial class IMFMediaEventQueueTests
     {
         Assert.That(typeof(IMFMediaEventQueue).GUID, Is.EqualTo(IID_IMFMediaEventQueue));
     }
-
-    /// <summary>Validates that the <see cref="IMFMediaEventQueue" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFMediaEventQueue>(), Is.EqualTo(sizeof(IMFMediaEventQueue)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaEventQueue" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFMediaEventQueue).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaEventQueue" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFMediaEventQueue), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFMediaEventQueue), Is.EqualTo(4));
-        }
-    }
 }

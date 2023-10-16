@@ -17,5 +17,5 @@ public unsafe partial struct APPX_ENCRYPTED_EXEMPTIONS
 
     /// <include file='APPX_ENCRYPTED_EXEMPTIONS.xml' path='doc/member[@name="APPX_ENCRYPTED_EXEMPTIONS.plainTextFiles"]/*' />
     [NativeTypeName("LPCWSTR *")]
-    public ushort** plainTextFiles;
+    public char** plainTextFiles;
 }

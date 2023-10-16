@@ -25,7 +25,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertyPage*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyPage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyPage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertyPage*, uint>)(lpVtbl[1]))((IPropertyPage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, uint>)(lpVtbl[1]))((IPropertyPage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertyPage*, uint>)(lpVtbl[2]))((IPropertyPage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, uint>)(lpVtbl[2]))((IPropertyPage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.SetPageSite"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT SetPageSite(IPropertyPageSite* pPageSite)
     {
-        return ((delegate* unmanaged<IPropertyPage*, IPropertyPageSite*, int>)(lpVtbl[3]))((IPropertyPage*)Unsafe.AsPointer(ref this), pPageSite);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, IPropertyPageSite*, int>)(lpVtbl[3]))((IPropertyPage*)Unsafe.AsPointer(ref this), pPageSite);
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.Activate"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT Activate(HWND hWndParent, [NativeTypeName("LPCRECT")] RECT* pRect, BOOL bModal)
     {
-        return ((delegate* unmanaged<IPropertyPage*, HWND, RECT*, BOOL, int>)(lpVtbl[4]))((IPropertyPage*)Unsafe.AsPointer(ref this), hWndParent, pRect, bModal);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, HWND, RECT*, BOOL, int>)(lpVtbl[4]))((IPropertyPage*)Unsafe.AsPointer(ref this), hWndParent, pRect, bModal);
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.Deactivate"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT Deactivate()
     {
-        return ((delegate* unmanaged<IPropertyPage*, int>)(lpVtbl[5]))((IPropertyPage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, int>)(lpVtbl[5]))((IPropertyPage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.GetPageInfo"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetPageInfo(PROPPAGEINFO* pPageInfo)
     {
-        return ((delegate* unmanaged<IPropertyPage*, PROPPAGEINFO*, int>)(lpVtbl[6]))((IPropertyPage*)Unsafe.AsPointer(ref this), pPageInfo);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, PROPPAGEINFO*, int>)(lpVtbl[6]))((IPropertyPage*)Unsafe.AsPointer(ref this), pPageInfo);
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.SetObjects"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT SetObjects([NativeTypeName("ULONG")] uint cObjects, IUnknown** ppUnk)
     {
-        return ((delegate* unmanaged<IPropertyPage*, uint, IUnknown**, int>)(lpVtbl[7]))((IPropertyPage*)Unsafe.AsPointer(ref this), cObjects, ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, uint, IUnknown**, int>)(lpVtbl[7]))((IPropertyPage*)Unsafe.AsPointer(ref this), cObjects, ppUnk);
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.Show"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT Show(uint nCmdShow)
     {
-        return ((delegate* unmanaged<IPropertyPage*, uint, int>)(lpVtbl[8]))((IPropertyPage*)Unsafe.AsPointer(ref this), nCmdShow);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, uint, int>)(lpVtbl[8]))((IPropertyPage*)Unsafe.AsPointer(ref this), nCmdShow);
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.Move"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT Move([NativeTypeName("LPCRECT")] RECT* pRect)
     {
-        return ((delegate* unmanaged<IPropertyPage*, RECT*, int>)(lpVtbl[9]))((IPropertyPage*)Unsafe.AsPointer(ref this), pRect);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, RECT*, int>)(lpVtbl[9]))((IPropertyPage*)Unsafe.AsPointer(ref this), pRect);
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.IsPageDirty"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT IsPageDirty()
     {
-        return ((delegate* unmanaged<IPropertyPage*, int>)(lpVtbl[10]))((IPropertyPage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, int>)(lpVtbl[10]))((IPropertyPage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.Apply"]/*' />
@@ -115,15 +115,15 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT Apply()
     {
-        return ((delegate* unmanaged<IPropertyPage*, int>)(lpVtbl[11]))((IPropertyPage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, int>)(lpVtbl[11]))((IPropertyPage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.Help"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT Help([NativeTypeName("LPCOLESTR")] ushort* pszHelpDir)
+    public HRESULT Help([NativeTypeName("LPCOLESTR")] char* pszHelpDir)
     {
-        return ((delegate* unmanaged<IPropertyPage*, ushort*, int>)(lpVtbl[12]))((IPropertyPage*)Unsafe.AsPointer(ref this), pszHelpDir);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, char*, int>)(lpVtbl[12]))((IPropertyPage*)Unsafe.AsPointer(ref this), pszHelpDir);
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.TranslateAccelerator"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT TranslateAccelerator(MSG* pMsg)
     {
-        return ((delegate* unmanaged<IPropertyPage*, MSG*, int>)(lpVtbl[13]))((IPropertyPage*)Unsafe.AsPointer(ref this), pMsg);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyPage*, MSG*, int>)(lpVtbl[13]))((IPropertyPage*)Unsafe.AsPointer(ref this), pMsg);
     }
 
     public interface Interface : IUnknown.Interface
@@ -164,7 +164,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
         HRESULT Apply();
 
         [VtblIndex(12)]
-        HRESULT Help([NativeTypeName("LPCOLESTR")] ushort* pszHelpDir);
+        HRESULT Help([NativeTypeName("LPCOLESTR")] char* pszHelpDir);
 
         [VtblIndex(13)]
         HRESULT TranslateAccelerator(MSG* pMsg);
@@ -174,45 +174,45 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPropertyPageSite *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyPageSite*, int> SetPageSite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyPageSite*, int> SetPageSite;
 
         [NativeTypeName("HRESULT (HWND, LPCRECT, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, RECT*, BOOL, int> Activate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, RECT*, BOOL, int> Activate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Deactivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Deactivate;
 
         [NativeTypeName("HRESULT (PROPPAGEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPPAGEINFO*, int> GetPageInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPPAGEINFO*, int> GetPageInfo;
 
         [NativeTypeName("HRESULT (ULONG, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown**, int> SetObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown**, int> SetObjects;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Show;
 
         [NativeTypeName("HRESULT (LPCRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> Move;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> Move;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsPageDirty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsPageDirty;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Apply;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Apply;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> Help;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> Help;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAccelerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, int> TranslateAccelerator;
     }
 }

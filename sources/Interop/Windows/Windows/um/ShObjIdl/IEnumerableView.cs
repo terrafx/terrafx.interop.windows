@@ -25,7 +25,7 @@ public unsafe partial struct IEnumerableView : IEnumerableView.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumerableView*, Guid*, void**, int>)(lpVtbl[0]))((IEnumerableView*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumerableView*, Guid*, void**, int>)(lpVtbl[0]))((IEnumerableView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumerableView : IEnumerableView.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumerableView*, uint>)(lpVtbl[1]))((IEnumerableView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumerableView*, uint>)(lpVtbl[1]))((IEnumerableView*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumerableView : IEnumerableView.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumerableView*, uint>)(lpVtbl[2]))((IEnumerableView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumerableView*, uint>)(lpVtbl[2]))((IEnumerableView*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumerableView.xml' path='doc/member[@name="IEnumerableView.SetEnumReadyCallback"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumerableView : IEnumerableView.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetEnumReadyCallback(IEnumReadyCallback* percb)
     {
-        return ((delegate* unmanaged<IEnumerableView*, IEnumReadyCallback*, int>)(lpVtbl[3]))((IEnumerableView*)Unsafe.AsPointer(ref this), percb);
+        return ((delegate* unmanaged[MemberFunction]<IEnumerableView*, IEnumReadyCallback*, int>)(lpVtbl[3]))((IEnumerableView*)Unsafe.AsPointer(ref this), percb);
     }
 
     /// <include file='IEnumerableView.xml' path='doc/member[@name="IEnumerableView.CreateEnumIDListFromContents"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumerableView : IEnumerableView.Interface, INativ
     [VtblIndex(4)]
     public HRESULT CreateEnumIDListFromContents([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("DWORD")] uint dwEnumFlags, IEnumIDList** ppEnumIDList)
     {
-        return ((delegate* unmanaged<IEnumerableView*, ITEMIDLIST*, uint, IEnumIDList**, int>)(lpVtbl[4]))((IEnumerableView*)Unsafe.AsPointer(ref this), pidlFolder, dwEnumFlags, ppEnumIDList);
+        return ((delegate* unmanaged[MemberFunction]<IEnumerableView*, ITEMIDLIST*, uint, IEnumIDList**, int>)(lpVtbl[4]))((IEnumerableView*)Unsafe.AsPointer(ref this), pidlFolder, dwEnumFlags, ppEnumIDList);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IEnumerableView : IEnumerableView.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumReadyCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumReadyCallback*, int> SetEnumReadyCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumReadyCallback*, int> SetEnumReadyCallback;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, DWORD, IEnumIDList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, IEnumIDList**, int> CreateEnumIDListFromContents;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, uint, IEnumIDList**, int> CreateEnumIDListFromContents;
     }
 }

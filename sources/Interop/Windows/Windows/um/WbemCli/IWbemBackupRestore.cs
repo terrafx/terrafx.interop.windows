@@ -25,7 +25,7 @@ public unsafe partial struct IWbemBackupRestore : IWbemBackupRestore.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWbemBackupRestore*, Guid*, void**, int>)(lpVtbl[0]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWbemBackupRestore*, Guid*, void**, int>)(lpVtbl[0]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWbemBackupRestore : IWbemBackupRestore.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWbemBackupRestore*, uint>)(lpVtbl[1]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemBackupRestore*, uint>)(lpVtbl[1]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,50 +43,50 @@ public unsafe partial struct IWbemBackupRestore : IWbemBackupRestore.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWbemBackupRestore*, uint>)(lpVtbl[2]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemBackupRestore*, uint>)(lpVtbl[2]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWbemBackupRestore.xml' path='doc/member[@name="IWbemBackupRestore.Backup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Backup([NativeTypeName("LPCWSTR")] ushort* strBackupToFile, [NativeTypeName("long")] int lFlags)
+    public HRESULT Backup([NativeTypeName("LPCWSTR")] char* strBackupToFile, [NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemBackupRestore*, ushort*, int, int>)(lpVtbl[3]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this), strBackupToFile, lFlags);
+        return ((delegate* unmanaged[MemberFunction]<IWbemBackupRestore*, char*, int, int>)(lpVtbl[3]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this), strBackupToFile, lFlags);
     }
 
     /// <include file='IWbemBackupRestore.xml' path='doc/member[@name="IWbemBackupRestore.Restore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Restore([NativeTypeName("LPCWSTR")] ushort* strRestoreFromFile, [NativeTypeName("long")] int lFlags)
+    public HRESULT Restore([NativeTypeName("LPCWSTR")] char* strRestoreFromFile, [NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemBackupRestore*, ushort*, int, int>)(lpVtbl[4]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this), strRestoreFromFile, lFlags);
+        return ((delegate* unmanaged[MemberFunction]<IWbemBackupRestore*, char*, int, int>)(lpVtbl[4]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this), strRestoreFromFile, lFlags);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Backup([NativeTypeName("LPCWSTR")] ushort* strBackupToFile, [NativeTypeName("long")] int lFlags);
+        HRESULT Backup([NativeTypeName("LPCWSTR")] char* strBackupToFile, [NativeTypeName("long")] int lFlags);
 
         [VtblIndex(4)]
-        HRESULT Restore([NativeTypeName("LPCWSTR")] ushort* strRestoreFromFile, [NativeTypeName("long")] int lFlags);
+        HRESULT Restore([NativeTypeName("LPCWSTR")] char* strRestoreFromFile, [NativeTypeName("long")] int lFlags);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> Backup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> Backup;
 
         [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> Restore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> Restore;
     }
 }

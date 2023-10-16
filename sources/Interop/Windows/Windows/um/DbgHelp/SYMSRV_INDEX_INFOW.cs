@@ -16,7 +16,7 @@ public unsafe partial struct SYMSRV_INDEX_INFOW
 
     /// <include file='SYMSRV_INDEX_INFOW.xml' path='doc/member[@name="SYMSRV_INDEX_INFOW.file"]/*' />
     [NativeTypeName("WCHAR[261]")]
-    public fixed ushort file[261];
+    public fixed char file[261];
 
     /// <include file='SYMSRV_INDEX_INFOW.xml' path='doc/member[@name="SYMSRV_INDEX_INFOW.stripped"]/*' />
     public BOOL stripped;
@@ -31,11 +31,11 @@ public unsafe partial struct SYMSRV_INDEX_INFOW
 
     /// <include file='SYMSRV_INDEX_INFOW.xml' path='doc/member[@name="SYMSRV_INDEX_INFOW.dbgfile"]/*' />
     [NativeTypeName("WCHAR[261]")]
-    public fixed ushort dbgfile[261];
+    public fixed char dbgfile[261];
 
     /// <include file='SYMSRV_INDEX_INFOW.xml' path='doc/member[@name="SYMSRV_INDEX_INFOW.pdbfile"]/*' />
     [NativeTypeName("WCHAR[261]")]
-    public fixed ushort pdbfile[261];
+    public fixed char pdbfile[261];
 
     /// <include file='SYMSRV_INDEX_INFOW.xml' path='doc/member[@name="SYMSRV_INDEX_INFOW.guid"]/*' />
     public Guid guid;

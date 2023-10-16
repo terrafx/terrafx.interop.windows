@@ -25,7 +25,7 @@ public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISortColumnArray*, Guid*, void**, int>)(lpVtbl[0]))((ISortColumnArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISortColumnArray*, Guid*, void**, int>)(lpVtbl[0]))((ISortColumnArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISortColumnArray*, uint>)(lpVtbl[1]))((ISortColumnArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISortColumnArray*, uint>)(lpVtbl[1]))((ISortColumnArray*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISortColumnArray*, uint>)(lpVtbl[2]))((ISortColumnArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISortColumnArray*, uint>)(lpVtbl[2]))((ISortColumnArray*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISortColumnArray.xml' path='doc/member[@name="ISortColumnArray.GetCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetCount(uint* columnCount)
     {
-        return ((delegate* unmanaged<ISortColumnArray*, uint*, int>)(lpVtbl[3]))((ISortColumnArray*)Unsafe.AsPointer(ref this), columnCount);
+        return ((delegate* unmanaged[MemberFunction]<ISortColumnArray*, uint*, int>)(lpVtbl[3]))((ISortColumnArray*)Unsafe.AsPointer(ref this), columnCount);
     }
 
     /// <include file='ISortColumnArray.xml' path='doc/member[@name="ISortColumnArray.GetAt"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetAt(uint index, SORTCOLUMN* sortcolumn)
     {
-        return ((delegate* unmanaged<ISortColumnArray*, uint, SORTCOLUMN*, int>)(lpVtbl[4]))((ISortColumnArray*)Unsafe.AsPointer(ref this), index, sortcolumn);
+        return ((delegate* unmanaged[MemberFunction]<ISortColumnArray*, uint, SORTCOLUMN*, int>)(lpVtbl[4]))((ISortColumnArray*)Unsafe.AsPointer(ref this), index, sortcolumn);
     }
 
     /// <include file='ISortColumnArray.xml' path='doc/member[@name="ISortColumnArray.GetSortType"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetSortType([NativeTypeName("enum SORT_ORDER_TYPE *")] SORT_ORDER_TYPE* type)
     {
-        return ((delegate* unmanaged<ISortColumnArray*, SORT_ORDER_TYPE*, int>)(lpVtbl[5]))((ISortColumnArray*)Unsafe.AsPointer(ref this), type);
+        return ((delegate* unmanaged[MemberFunction]<ISortColumnArray*, SORT_ORDER_TYPE*, int>)(lpVtbl[5]))((ISortColumnArray*)Unsafe.AsPointer(ref this), type);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, SORTCOLUMN *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, SORTCOLUMN*, int> GetAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, SORTCOLUMN*, int> GetAt;
 
         [NativeTypeName("HRESULT (enum SORT_ORDER_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SORT_ORDER_TYPE*, int> GetSortType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SORT_ORDER_TYPE*, int> GetSortType;
     }
 }

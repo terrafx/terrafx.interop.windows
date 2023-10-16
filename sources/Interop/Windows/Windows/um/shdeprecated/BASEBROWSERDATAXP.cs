@@ -39,7 +39,7 @@ public unsafe partial struct BASEBROWSERDATAXP
     public uint _fCreatingViewWindow
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }
@@ -76,7 +76,7 @@ public unsafe partial struct BASEBROWSERDATAXP
 
     /// <include file='BASEBROWSERDATAXP.xml' path='doc/member[@name="BASEBROWSERDATAXP._pszTitleCur"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* _pszTitleCur;
+    public char* _pszTitleCur;
 
     /// <include file='BASEBROWSERDATAXP.xml' path='doc/member[@name="BASEBROWSERDATAXP._pidlPending"]/*' />
     [NativeTypeName("LPITEMIDLIST")]
@@ -93,7 +93,7 @@ public unsafe partial struct BASEBROWSERDATAXP
 
     /// <include file='BASEBROWSERDATAXP.xml' path='doc/member[@name="BASEBROWSERDATAXP._pszTitlePending"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* _pszTitlePending;
+    public char* _pszTitlePending;
 
     /// <include file='BASEBROWSERDATAXP.xml' path='doc/member[@name="BASEBROWSERDATAXP._fIsViewMSHTML"]/*' />
     public BOOL _fIsViewMSHTML;

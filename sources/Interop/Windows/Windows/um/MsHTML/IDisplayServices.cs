@@ -25,7 +25,7 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDisplayServices*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayServices*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDisplayServices*, uint>)(lpVtbl[1]))((IDisplayServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDisplayServices*, uint>)(lpVtbl[1]))((IDisplayServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDisplayServices*, uint>)(lpVtbl[2]))((IDisplayServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDisplayServices*, uint>)(lpVtbl[2]))((IDisplayServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDisplayServices.xml' path='doc/member[@name="IDisplayServices.CreateDisplayPointer"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
     [VtblIndex(3)]
     public HRESULT CreateDisplayPointer(IDisplayPointer** ppDispPointer)
     {
-        return ((delegate* unmanaged<IDisplayServices*, IDisplayPointer**, int>)(lpVtbl[3]))((IDisplayServices*)Unsafe.AsPointer(ref this), ppDispPointer);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayServices*, IDisplayPointer**, int>)(lpVtbl[3]))((IDisplayServices*)Unsafe.AsPointer(ref this), ppDispPointer);
     }
 
     /// <include file='IDisplayServices.xml' path='doc/member[@name="IDisplayServices.TransformRect"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
     [VtblIndex(4)]
     public HRESULT TransformRect(RECT* pRect, COORD_SYSTEM eSource, COORD_SYSTEM eDestination, IHTMLElement* pIElement)
     {
-        return ((delegate* unmanaged<IDisplayServices*, RECT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int>)(lpVtbl[4]))((IDisplayServices*)Unsafe.AsPointer(ref this), pRect, eSource, eDestination, pIElement);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayServices*, RECT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int>)(lpVtbl[4]))((IDisplayServices*)Unsafe.AsPointer(ref this), pRect, eSource, eDestination, pIElement);
     }
 
     /// <include file='IDisplayServices.xml' path='doc/member[@name="IDisplayServices.TransformPoint"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
     [VtblIndex(5)]
     public HRESULT TransformPoint(POINT* pPoint, COORD_SYSTEM eSource, COORD_SYSTEM eDestination, IHTMLElement* pIElement)
     {
-        return ((delegate* unmanaged<IDisplayServices*, POINT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int>)(lpVtbl[5]))((IDisplayServices*)Unsafe.AsPointer(ref this), pPoint, eSource, eDestination, pIElement);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayServices*, POINT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int>)(lpVtbl[5]))((IDisplayServices*)Unsafe.AsPointer(ref this), pPoint, eSource, eDestination, pIElement);
     }
 
     /// <include file='IDisplayServices.xml' path='doc/member[@name="IDisplayServices.GetCaret"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetCaret(IHTMLCaret** ppCaret)
     {
-        return ((delegate* unmanaged<IDisplayServices*, IHTMLCaret**, int>)(lpVtbl[6]))((IDisplayServices*)Unsafe.AsPointer(ref this), ppCaret);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayServices*, IHTMLCaret**, int>)(lpVtbl[6]))((IDisplayServices*)Unsafe.AsPointer(ref this), ppCaret);
     }
 
     /// <include file='IDisplayServices.xml' path='doc/member[@name="IDisplayServices.GetComputedStyle"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
     [VtblIndex(7)]
     public HRESULT GetComputedStyle(IMarkupPointer* pPointer, IHTMLComputedStyle** ppComputedStyle)
     {
-        return ((delegate* unmanaged<IDisplayServices*, IMarkupPointer*, IHTMLComputedStyle**, int>)(lpVtbl[7]))((IDisplayServices*)Unsafe.AsPointer(ref this), pPointer, ppComputedStyle);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayServices*, IMarkupPointer*, IHTMLComputedStyle**, int>)(lpVtbl[7]))((IDisplayServices*)Unsafe.AsPointer(ref this), pPointer, ppComputedStyle);
     }
 
     /// <include file='IDisplayServices.xml' path='doc/member[@name="IDisplayServices.ScrollRectIntoView"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
     [VtblIndex(8)]
     public HRESULT ScrollRectIntoView(IHTMLElement* pIElement, RECT rect)
     {
-        return ((delegate* unmanaged<IDisplayServices*, IHTMLElement*, RECT, int>)(lpVtbl[8]))((IDisplayServices*)Unsafe.AsPointer(ref this), pIElement, rect);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayServices*, IHTMLElement*, RECT, int>)(lpVtbl[8]))((IDisplayServices*)Unsafe.AsPointer(ref this), pIElement, rect);
     }
 
     /// <include file='IDisplayServices.xml' path='doc/member[@name="IDisplayServices.HasFlowLayout"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
     [VtblIndex(9)]
     public HRESULT HasFlowLayout(IHTMLElement* pIElement, BOOL* pfHasFlowLayout)
     {
-        return ((delegate* unmanaged<IDisplayServices*, IHTMLElement*, BOOL*, int>)(lpVtbl[9]))((IDisplayServices*)Unsafe.AsPointer(ref this), pIElement, pfHasFlowLayout);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayServices*, IHTMLElement*, BOOL*, int>)(lpVtbl[9]))((IDisplayServices*)Unsafe.AsPointer(ref this), pIElement, pfHasFlowLayout);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDisplayPointer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDisplayPointer**, int> CreateDisplayPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDisplayPointer**, int> CreateDisplayPointer;
 
         [NativeTypeName("HRESULT (RECT *, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int> TransformRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int> TransformRect;
 
         [NativeTypeName("HRESULT (POINT *, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int> TransformPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int> TransformPoint;
 
         [NativeTypeName("HRESULT (IHTMLCaret **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLCaret**, int> GetCaret;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLCaret**, int> GetCaret;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IHTMLComputedStyle **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMarkupPointer*, IHTMLComputedStyle**, int> GetComputedStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMarkupPointer*, IHTMLComputedStyle**, int> GetComputedStyle;
 
         [NativeTypeName("HRESULT (IHTMLElement *, RECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement*, RECT, int> ScrollRectIntoView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement*, RECT, int> ScrollRectIntoView;
 
         [NativeTypeName("HRESULT (IHTMLElement *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement*, BOOL*, int> HasFlowLayout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement*, BOOL*, int> HasFlowLayout;
     }
 }

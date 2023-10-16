@@ -21,32 +21,4 @@ public static unsafe partial class IDXGIDecodeSwapChainTests
     {
         Assert.That(typeof(IDXGIDecodeSwapChain).GUID, Is.EqualTo(IID_IDXGIDecodeSwapChain));
     }
-
-    /// <summary>Validates that the <see cref="IDXGIDecodeSwapChain" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDXGIDecodeSwapChain>(), Is.EqualTo(sizeof(IDXGIDecodeSwapChain)));
-    }
-
-    /// <summary>Validates that the <see cref="IDXGIDecodeSwapChain" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDXGIDecodeSwapChain).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDXGIDecodeSwapChain" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDXGIDecodeSwapChain), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDXGIDecodeSwapChain), Is.EqualTo(4));
-        }
-    }
 }

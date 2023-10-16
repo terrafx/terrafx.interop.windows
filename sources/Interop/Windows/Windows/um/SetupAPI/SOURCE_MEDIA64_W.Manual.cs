@@ -8,19 +8,19 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct SOURCE_MEDIA64_W
 {
     [NativeTypeName("PCWSTR")]
-    public ushort* Reserved;
+    public char* Reserved;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* Tagfile;
+    public char* Tagfile;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* Description;
+    public char* Description;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* SourcePath;
+    public char* SourcePath;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* SourceFile;
+    public char* SourceFile;
 
     [NativeTypeName("DWORD")]
     public uint Flags;

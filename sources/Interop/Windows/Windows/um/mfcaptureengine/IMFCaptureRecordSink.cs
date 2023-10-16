@@ -27,7 +27,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, uint>)(lpVtbl[1]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, uint>)(lpVtbl[1]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, uint>)(lpVtbl[2]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, uint>)(lpVtbl[2]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFCaptureSink.GetOutputMediaType" />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(3)]
     public HRESULT GetOutputMediaType([NativeTypeName("DWORD")] uint dwSinkStreamIndex, IMFMediaType** ppMediaType)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, uint, IMFMediaType**, int>)(lpVtbl[3]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwSinkStreamIndex, ppMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, uint, IMFMediaType**, int>)(lpVtbl[3]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwSinkStreamIndex, ppMediaType);
     }
 
     /// <inheritdoc cref="IMFCaptureSink.GetService" />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(4)]
     public HRESULT GetService([NativeTypeName("DWORD")] uint dwSinkStreamIndex, [NativeTypeName("const GUID &")] Guid* rguidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppUnknown)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, uint, Guid*, Guid*, IUnknown**, int>)(lpVtbl[4]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwSinkStreamIndex, rguidService, riid, ppUnknown);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, uint, Guid*, Guid*, IUnknown**, int>)(lpVtbl[4]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwSinkStreamIndex, rguidService, riid, ppUnknown);
     }
 
     /// <inheritdoc cref="IMFCaptureSink.AddStream" />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(5)]
     public HRESULT AddStream([NativeTypeName("DWORD")] uint dwSourceStreamIndex, IMFMediaType* pMediaType, IMFAttributes* pAttributes, [NativeTypeName("DWORD *")] uint* pdwSinkStreamIndex)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, uint, IMFMediaType*, IMFAttributes*, uint*, int>)(lpVtbl[5]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwSourceStreamIndex, pMediaType, pAttributes, pdwSinkStreamIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, uint, IMFMediaType*, IMFAttributes*, uint*, int>)(lpVtbl[5]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwSourceStreamIndex, pMediaType, pAttributes, pdwSinkStreamIndex);
     }
 
     /// <inheritdoc cref="IMFCaptureSink.Prepare" />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(6)]
     public HRESULT Prepare()
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, int>)(lpVtbl[6]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, int>)(lpVtbl[6]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFCaptureSink.RemoveAllStreams" />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(7)]
     public HRESULT RemoveAllStreams()
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, int>)(lpVtbl[7]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, int>)(lpVtbl[7]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCaptureRecordSink.xml' path='doc/member[@name="IMFCaptureRecordSink.SetOutputByteStream"]/*' />
@@ -93,15 +93,15 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(8)]
     public HRESULT SetOutputByteStream(IMFByteStream* pByteStream, [NativeTypeName("const GUID &")] Guid* guidContainerType)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, IMFByteStream*, Guid*, int>)(lpVtbl[8]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), pByteStream, guidContainerType);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, IMFByteStream*, Guid*, int>)(lpVtbl[8]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), pByteStream, guidContainerType);
     }
 
     /// <include file='IMFCaptureRecordSink.xml' path='doc/member[@name="IMFCaptureRecordSink.SetOutputFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] ushort* fileName)
+    public HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] char* fileName)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, ushort*, int>)(lpVtbl[9]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), fileName);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, char*, int>)(lpVtbl[9]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), fileName);
     }
 
     /// <include file='IMFCaptureRecordSink.xml' path='doc/member[@name="IMFCaptureRecordSink.SetSampleCallback"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(10)]
     public HRESULT SetSampleCallback([NativeTypeName("DWORD")] uint dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, uint, IMFCaptureEngineOnSampleCallback*, int>)(lpVtbl[10]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwStreamSinkIndex, pCallback);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, uint, IMFCaptureEngineOnSampleCallback*, int>)(lpVtbl[10]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwStreamSinkIndex, pCallback);
     }
 
     /// <include file='IMFCaptureRecordSink.xml' path='doc/member[@name="IMFCaptureRecordSink.SetCustomSink"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(11)]
     public HRESULT SetCustomSink(IMFMediaSink* pMediaSink)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, IMFMediaSink*, int>)(lpVtbl[11]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), pMediaSink);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, IMFMediaSink*, int>)(lpVtbl[11]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), pMediaSink);
     }
 
     /// <include file='IMFCaptureRecordSink.xml' path='doc/member[@name="IMFCaptureRecordSink.GetRotation"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(12)]
     public HRESULT GetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRotationValue)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, uint, uint*, int>)(lpVtbl[12]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwStreamIndex, pdwRotationValue);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, uint, uint*, int>)(lpVtbl[12]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwStreamIndex, pdwRotationValue);
     }
 
     /// <include file='IMFCaptureRecordSink.xml' path='doc/member[@name="IMFCaptureRecordSink.SetRotation"]/*' />
@@ -133,7 +133,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     [VtblIndex(13)]
     public HRESULT SetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwRotationValue)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, uint, uint, int>)(lpVtbl[13]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwStreamIndex, dwRotationValue);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureRecordSink*, uint, uint, int>)(lpVtbl[13]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwStreamIndex, dwRotationValue);
     }
 
     public interface Interface : IMFCaptureSink.Interface
@@ -142,7 +142,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
         HRESULT SetOutputByteStream(IMFByteStream* pByteStream, [NativeTypeName("const GUID &")] Guid* guidContainerType);
 
         [VtblIndex(9)]
-        HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] ushort* fileName);
+        HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] char* fileName);
 
         [VtblIndex(10)]
         HRESULT SetSampleCallback([NativeTypeName("DWORD")] uint dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback);
@@ -161,45 +161,45 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetOutputMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType**, int> GetOutputMediaType;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, IUnknown**, int> GetService;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, Guid*, IUnknown**, int> GetService;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, IMFAttributes*, uint*, int> AddStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType*, IMFAttributes*, uint*, int> AddStream;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Prepare;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Prepare;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RemoveAllStreams;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RemoveAllStreams;
 
         [NativeTypeName("HRESULT (IMFByteStream *, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFByteStream*, Guid*, int> SetOutputByteStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFByteStream*, Guid*, int> SetOutputByteStream;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetOutputFileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetOutputFileName;
 
         [NativeTypeName("HRESULT (DWORD, IMFCaptureEngineOnSampleCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFCaptureEngineOnSampleCallback*, int> SetSampleCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFCaptureEngineOnSampleCallback*, int> SetSampleCallback;
 
         [NativeTypeName("HRESULT (IMFMediaSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaSink*, int> SetCustomSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaSink*, int> SetCustomSink;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetRotation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetRotation;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> SetRotation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> SetRotation;
     }
 }

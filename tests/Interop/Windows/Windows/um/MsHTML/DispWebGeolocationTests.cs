@@ -19,32 +19,4 @@ public static unsafe partial class DispWebGeolocationTests
     {
         Assert.That(typeof(DispWebGeolocation).GUID, Is.EqualTo(IID_DispWebGeolocation));
     }
-
-    /// <summary>Validates that the <see cref="DispWebGeolocation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispWebGeolocation>(), Is.EqualTo(sizeof(DispWebGeolocation)));
-    }
-
-    /// <summary>Validates that the <see cref="DispWebGeolocation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispWebGeolocation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispWebGeolocation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispWebGeolocation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispWebGeolocation), Is.EqualTo(4));
-        }
-    }
 }

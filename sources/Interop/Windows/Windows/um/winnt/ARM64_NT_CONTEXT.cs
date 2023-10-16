@@ -557,53 +557,9 @@ public unsafe partial struct ARM64_NT_CONTEXT
     }
 
     /// <include file='_V_e__FixedBuffer.xml' path='doc/member[@name="_V_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
     public partial struct _V_e__FixedBuffer
     {
         public ARM64_NT_NEON128 e0;
-        public ARM64_NT_NEON128 e1;
-        public ARM64_NT_NEON128 e2;
-        public ARM64_NT_NEON128 e3;
-        public ARM64_NT_NEON128 e4;
-        public ARM64_NT_NEON128 e5;
-        public ARM64_NT_NEON128 e6;
-        public ARM64_NT_NEON128 e7;
-        public ARM64_NT_NEON128 e8;
-        public ARM64_NT_NEON128 e9;
-        public ARM64_NT_NEON128 e10;
-        public ARM64_NT_NEON128 e11;
-        public ARM64_NT_NEON128 e12;
-        public ARM64_NT_NEON128 e13;
-        public ARM64_NT_NEON128 e14;
-        public ARM64_NT_NEON128 e15;
-        public ARM64_NT_NEON128 e16;
-        public ARM64_NT_NEON128 e17;
-        public ARM64_NT_NEON128 e18;
-        public ARM64_NT_NEON128 e19;
-        public ARM64_NT_NEON128 e20;
-        public ARM64_NT_NEON128 e21;
-        public ARM64_NT_NEON128 e22;
-        public ARM64_NT_NEON128 e23;
-        public ARM64_NT_NEON128 e24;
-        public ARM64_NT_NEON128 e25;
-        public ARM64_NT_NEON128 e26;
-        public ARM64_NT_NEON128 e27;
-        public ARM64_NT_NEON128 e28;
-        public ARM64_NT_NEON128 e29;
-        public ARM64_NT_NEON128 e30;
-        public ARM64_NT_NEON128 e31;
-
-        [UnscopedRef]
-        public ref ARM64_NT_NEON128 this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<ARM64_NT_NEON128> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
     }
 }

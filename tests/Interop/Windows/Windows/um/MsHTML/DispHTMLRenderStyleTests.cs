@@ -19,32 +19,4 @@ public static unsafe partial class DispHTMLRenderStyleTests
     {
         Assert.That(typeof(DispHTMLRenderStyle).GUID, Is.EqualTo(IID_DispHTMLRenderStyle));
     }
-
-    /// <summary>Validates that the <see cref="DispHTMLRenderStyle" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispHTMLRenderStyle>(), Is.EqualTo(sizeof(DispHTMLRenderStyle)));
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLRenderStyle" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispHTMLRenderStyle).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLRenderStyle" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispHTMLRenderStyle), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispHTMLRenderStyle), Is.EqualTo(4));
-        }
-    }
 }

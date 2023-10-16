@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, uint>)(lpVtbl[1]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, uint>)(lpVtbl[1]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, uint>)(lpVtbl[2]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, uint>)(lpVtbl[2]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, uint*, int>)(lpVtbl[3]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, uint*, int>)(lpVtbl[3]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISpeechLexiconPronunciation.xml' path='doc/member[@name="ISpeechLexiconPronunciation.get_Type"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
     [VtblIndex(7)]
     public HRESULT get_Type(SpeechLexiconType* LexiconType)
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, SpeechLexiconType*, int>)(lpVtbl[7]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), LexiconType);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, SpeechLexiconType*, int>)(lpVtbl[7]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), LexiconType);
     }
 
     /// <include file='ISpeechLexiconPronunciation.xml' path='doc/member[@name="ISpeechLexiconPronunciation.get_LangId"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
     [VtblIndex(8)]
     public HRESULT get_LangId([NativeTypeName("SpeechLanguageId *")] int* LangId)
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, int*, int>)(lpVtbl[8]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), LangId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, int*, int>)(lpVtbl[8]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), LangId);
     }
 
     /// <include file='ISpeechLexiconPronunciation.xml' path='doc/member[@name="ISpeechLexiconPronunciation.get_PartOfSpeech"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
     [VtblIndex(9)]
     public HRESULT get_PartOfSpeech(SpeechPartOfSpeech* PartOfSpeech)
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, SpeechPartOfSpeech*, int>)(lpVtbl[9]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), PartOfSpeech);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, SpeechPartOfSpeech*, int>)(lpVtbl[9]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), PartOfSpeech);
     }
 
     /// <include file='ISpeechLexiconPronunciation.xml' path='doc/member[@name="ISpeechLexiconPronunciation.get_PhoneIds"]/*' />
@@ -107,15 +107,15 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
     [VtblIndex(10)]
     public HRESULT get_PhoneIds(VARIANT* PhoneIds)
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, VARIANT*, int>)(lpVtbl[10]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), PhoneIds);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, VARIANT*, int>)(lpVtbl[10]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), PhoneIds);
     }
 
     /// <include file='ISpeechLexiconPronunciation.xml' path='doc/member[@name="ISpeechLexiconPronunciation.get_Symbolic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_Symbolic([NativeTypeName("BSTR *")] ushort** Symbolic)
+    public HRESULT get_Symbolic([NativeTypeName("BSTR *")] char** Symbolic)
     {
-        return ((delegate* unmanaged<ISpeechLexiconPronunciation*, ushort**, int>)(lpVtbl[11]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), Symbolic);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechLexiconPronunciation*, char**, int>)(lpVtbl[11]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), Symbolic);
     }
 
     public interface Interface : IDispatch.Interface
@@ -133,46 +133,46 @@ public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunc
         HRESULT get_PhoneIds(VARIANT* PhoneIds);
 
         [VtblIndex(11)]
-        HRESULT get_Symbolic([NativeTypeName("BSTR *")] ushort** Symbolic);
+        HRESULT get_Symbolic([NativeTypeName("BSTR *")] char** Symbolic);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (SpeechLexiconType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechLexiconType*, int> get_Type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechLexiconType*, int> get_Type;
 
         [NativeTypeName("HRESULT (SpeechLanguageId *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_LangId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_LangId;
 
         [NativeTypeName("HRESULT (SpeechPartOfSpeech *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechPartOfSpeech*, int> get_PartOfSpeech;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechPartOfSpeech*, int> get_PartOfSpeech;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_PhoneIds;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_PhoneIds;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Symbolic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Symbolic;
     }
 }

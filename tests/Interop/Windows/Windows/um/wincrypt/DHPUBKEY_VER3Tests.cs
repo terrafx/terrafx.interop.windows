@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DHPUBKEY_VER3" /> struct.</summary>
 public static unsafe partial class DHPUBKEY_VER3Tests
 {
-    /// <summary>Validates that the <see cref="DHPUBKEY_VER3" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DHPUBKEY_VER3>(), Is.EqualTo(sizeof(DHPUBKEY_VER3)));
-    }
-
-    /// <summary>Validates that the <see cref="DHPUBKEY_VER3" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DHPUBKEY_VER3).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DHPUBKEY_VER3" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DHPUBKEY_VER3), Is.EqualTo(40));
-    }
 }

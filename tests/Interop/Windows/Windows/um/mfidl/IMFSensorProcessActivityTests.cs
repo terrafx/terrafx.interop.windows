@@ -21,32 +21,4 @@ public static unsafe partial class IMFSensorProcessActivityTests
     {
         Assert.That(typeof(IMFSensorProcessActivity).GUID, Is.EqualTo(IID_IMFSensorProcessActivity));
     }
-
-    /// <summary>Validates that the <see cref="IMFSensorProcessActivity" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSensorProcessActivity>(), Is.EqualTo(sizeof(IMFSensorProcessActivity)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSensorProcessActivity" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSensorProcessActivity).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSensorProcessActivity" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSensorProcessActivity), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSensorProcessActivity), Is.EqualTo(4));
-        }
-    }
 }

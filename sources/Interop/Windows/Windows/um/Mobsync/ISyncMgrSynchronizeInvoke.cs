@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSynchronizeInvoke*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint>)(lpVtbl[1]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSynchronizeInvoke*, uint>)(lpVtbl[1]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint>)(lpVtbl[2]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSynchronizeInvoke*, uint>)(lpVtbl[2]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrSynchronizeInvoke.xml' path='doc/member[@name="ISyncMgrSynchronizeInvoke.UpdateItems"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
     [VtblIndex(3)]
     public HRESULT UpdateItems([NativeTypeName("DWORD")] uint dwInvokeFlags, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("DWORD")] uint cbCookie, [NativeTypeName("const BYTE *")] byte* pCookie)
     {
-        return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint, Guid*, uint, byte*, int>)(lpVtbl[3]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this), dwInvokeFlags, clsid, cbCookie, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSynchronizeInvoke*, uint, Guid*, uint, byte*, int>)(lpVtbl[3]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this), dwInvokeFlags, clsid, cbCookie, pCookie);
     }
 
     /// <include file='ISyncMgrSynchronizeInvoke.xml' path='doc/member[@name="ISyncMgrSynchronizeInvoke.UpdateAll"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
     [VtblIndex(4)]
     public HRESULT UpdateAll()
     {
-        return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, int>)(lpVtbl[4]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSynchronizeInvoke*, int>)(lpVtbl[4]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const IID &, DWORD, const BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, uint, byte*, int> UpdateItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, uint, byte*, int> UpdateItems;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UpdateAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UpdateAll;
     }
 }

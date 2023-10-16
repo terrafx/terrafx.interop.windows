@@ -26,7 +26,7 @@ public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICorrelationVectorSource*, Guid*, void**, int>)(lpVtbl[0]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorSource*, Guid*, void**, int>)(lpVtbl[0]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICorrelationVectorSource*, uint>)(lpVtbl[1]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorSource*, uint>)(lpVtbl[1]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICorrelationVectorSource*, uint>)(lpVtbl[2]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorSource*, uint>)(lpVtbl[2]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICorrelationVectorSource.xml' path='doc/member[@name="ICorrelationVectorSource.get_CorrelationVector"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource
     [VtblIndex(3)]
     public HRESULT get_CorrelationVector(HSTRING* cv)
     {
-        return ((delegate* unmanaged<ICorrelationVectorSource*, HSTRING*, int>)(lpVtbl[3]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this), cv);
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorSource*, HSTRING*, int>)(lpVtbl[3]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this), cv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -65,15 +65,15 @@ public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> get_CorrelationVector;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_CorrelationVector;
     }
 }

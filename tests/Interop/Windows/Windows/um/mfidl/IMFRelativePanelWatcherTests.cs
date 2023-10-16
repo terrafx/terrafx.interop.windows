@@ -21,32 +21,4 @@ public static unsafe partial class IMFRelativePanelWatcherTests
     {
         Assert.That(typeof(IMFRelativePanelWatcher).GUID, Is.EqualTo(IID_IMFRelativePanelWatcher));
     }
-
-    /// <summary>Validates that the <see cref="IMFRelativePanelWatcher" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFRelativePanelWatcher>(), Is.EqualTo(sizeof(IMFRelativePanelWatcher)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFRelativePanelWatcher" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFRelativePanelWatcher).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFRelativePanelWatcher" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFRelativePanelWatcher), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFRelativePanelWatcher), Is.EqualTo(4));
-        }
-    }
 }

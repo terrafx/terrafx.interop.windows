@@ -20,11 +20,11 @@ public unsafe partial struct OPENFILENAME_NT4W
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.lpstrFilter"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpstrFilter;
+    public char* lpstrFilter;
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.lpstrCustomFilter"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpstrCustomFilter;
+    public char* lpstrCustomFilter;
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.nMaxCustFilter"]/*' />
     [NativeTypeName("DWORD")]
@@ -36,7 +36,7 @@ public unsafe partial struct OPENFILENAME_NT4W
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.lpstrFile"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpstrFile;
+    public char* lpstrFile;
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.nMaxFile"]/*' />
     [NativeTypeName("DWORD")]
@@ -44,7 +44,7 @@ public unsafe partial struct OPENFILENAME_NT4W
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.lpstrFileTitle"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpstrFileTitle;
+    public char* lpstrFileTitle;
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.nMaxFileTitle"]/*' />
     [NativeTypeName("DWORD")]
@@ -52,11 +52,11 @@ public unsafe partial struct OPENFILENAME_NT4W
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.lpstrInitialDir"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpstrInitialDir;
+    public char* lpstrInitialDir;
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.lpstrTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpstrTitle;
+    public char* lpstrTitle;
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.Flags"]/*' />
     [NativeTypeName("DWORD")]
@@ -72,7 +72,7 @@ public unsafe partial struct OPENFILENAME_NT4W
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.lpstrDefExt"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpstrDefExt;
+    public char* lpstrDefExt;
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.lCustData"]/*' />
     public LPARAM lCustData;
@@ -83,5 +83,5 @@ public unsafe partial struct OPENFILENAME_NT4W
 
     /// <include file='OPENFILENAME_NT4W.xml' path='doc/member[@name="OPENFILENAME_NT4W.lpTemplateName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpTemplateName;
+    public char* lpTemplateName;
 }

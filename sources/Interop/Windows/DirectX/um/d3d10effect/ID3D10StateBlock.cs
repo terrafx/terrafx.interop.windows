@@ -26,7 +26,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D10StateBlock*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10StateBlock*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D10StateBlock*, uint>)(lpVtbl[1]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10StateBlock*, uint>)(lpVtbl[1]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D10StateBlock*, uint>)(lpVtbl[2]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10StateBlock*, uint>)(lpVtbl[2]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10StateBlock.xml' path='doc/member[@name="ID3D10StateBlock.Capture"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface, INat
     [VtblIndex(3)]
     public HRESULT Capture()
     {
-        return ((delegate* unmanaged<ID3D10StateBlock*, int>)(lpVtbl[3]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10StateBlock*, int>)(lpVtbl[3]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10StateBlock.xml' path='doc/member[@name="ID3D10StateBlock.Apply"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface, INat
     [VtblIndex(4)]
     public HRESULT Apply()
     {
-        return ((delegate* unmanaged<ID3D10StateBlock*, int>)(lpVtbl[4]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10StateBlock*, int>)(lpVtbl[4]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10StateBlock.xml' path='doc/member[@name="ID3D10StateBlock.ReleaseAllDeviceObjects"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface, INat
     [VtblIndex(5)]
     public HRESULT ReleaseAllDeviceObjects()
     {
-        return ((delegate* unmanaged<ID3D10StateBlock*, int>)(lpVtbl[5]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10StateBlock*, int>)(lpVtbl[5]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10StateBlock.xml' path='doc/member[@name="ID3D10StateBlock.GetDevice"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetDevice(ID3D10Device** ppDevice)
     {
-        return ((delegate* unmanaged<ID3D10StateBlock*, ID3D10Device**, int>)(lpVtbl[6]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this), ppDevice);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10StateBlock*, ID3D10Device**, int>)(lpVtbl[6]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,24 +98,24 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Capture;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Capture;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Apply;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Apply;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ReleaseAllDeviceObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ReleaseAllDeviceObjects;
 
         [NativeTypeName("HRESULT (ID3D10Device **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D10Device**, int> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D10Device**, int> GetDevice;
     }
 }

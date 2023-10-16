@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SpatialAudioHrtfDirectivityUnion" /> struct.</summary>
 public static unsafe partial class SpatialAudioHrtfDirectivityUnionTests
 {
-    /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityUnion" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpatialAudioHrtfDirectivityUnion>(), Is.EqualTo(sizeof(SpatialAudioHrtfDirectivityUnion)));
-    }
-
-    /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityUnion" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutExplicitTest()
-    {
-        Assert.That(typeof(SpatialAudioHrtfDirectivityUnion).IsExplicitLayout, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityUnion" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpatialAudioHrtfDirectivityUnion), Is.EqualTo(16));
-    }
 }

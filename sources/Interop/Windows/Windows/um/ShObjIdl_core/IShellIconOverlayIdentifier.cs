@@ -25,7 +25,7 @@ public unsafe partial struct IShellIconOverlayIdentifier : IShellIconOverlayIden
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellIconOverlayIdentifier*, Guid*, void**, int>)(lpVtbl[0]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayIdentifier*, Guid*, void**, int>)(lpVtbl[0]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellIconOverlayIdentifier : IShellIconOverlayIden
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellIconOverlayIdentifier*, uint>)(lpVtbl[1]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayIdentifier*, uint>)(lpVtbl[1]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,23 +43,23 @@ public unsafe partial struct IShellIconOverlayIdentifier : IShellIconOverlayIden
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellIconOverlayIdentifier*, uint>)(lpVtbl[2]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayIdentifier*, uint>)(lpVtbl[2]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellIconOverlayIdentifier.xml' path='doc/member[@name="IShellIconOverlayIdentifier.IsMemberOf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT IsMemberOf([NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib)
+    public HRESULT IsMemberOf([NativeTypeName("LPCWSTR")] char* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib)
     {
-        return ((delegate* unmanaged<IShellIconOverlayIdentifier*, ushort*, uint, int>)(lpVtbl[3]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this), pwszPath, dwAttrib);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayIdentifier*, char*, uint, int>)(lpVtbl[3]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this), pwszPath, dwAttrib);
     }
 
     /// <include file='IShellIconOverlayIdentifier.xml' path='doc/member[@name="IShellIconOverlayIdentifier.GetOverlayInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetOverlayInfo([NativeTypeName("LPWSTR")] ushort* pwszIconFile, int cchMax, int* pIndex, [NativeTypeName("DWORD *")] uint* pdwFlags)
+    public HRESULT GetOverlayInfo([NativeTypeName("LPWSTR")] char* pwszIconFile, int cchMax, int* pIndex, [NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IShellIconOverlayIdentifier*, ushort*, int, int*, uint*, int>)(lpVtbl[4]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this), pwszIconFile, cchMax, pIndex, pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayIdentifier*, char*, int, int*, uint*, int>)(lpVtbl[4]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this), pwszIconFile, cchMax, pIndex, pdwFlags);
     }
 
     /// <include file='IShellIconOverlayIdentifier.xml' path='doc/member[@name="IShellIconOverlayIdentifier.GetPriority"]/*' />
@@ -67,16 +67,16 @@ public unsafe partial struct IShellIconOverlayIdentifier : IShellIconOverlayIden
     [VtblIndex(5)]
     public HRESULT GetPriority(int* pPriority)
     {
-        return ((delegate* unmanaged<IShellIconOverlayIdentifier*, int*, int>)(lpVtbl[5]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this), pPriority);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlayIdentifier*, int*, int>)(lpVtbl[5]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this), pPriority);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT IsMemberOf([NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib);
+        HRESULT IsMemberOf([NativeTypeName("LPCWSTR")] char* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib);
 
         [VtblIndex(4)]
-        HRESULT GetOverlayInfo([NativeTypeName("LPWSTR")] ushort* pwszIconFile, int cchMax, int* pIndex, [NativeTypeName("DWORD *")] uint* pdwFlags);
+        HRESULT GetOverlayInfo([NativeTypeName("LPWSTR")] char* pwszIconFile, int cchMax, int* pIndex, [NativeTypeName("DWORD *")] uint* pdwFlags);
 
         [VtblIndex(5)]
         HRESULT GetPriority(int* pPriority);
@@ -86,21 +86,21 @@ public unsafe partial struct IShellIconOverlayIdentifier : IShellIconOverlayIden
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> IsMemberOf;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> IsMemberOf;
 
         [NativeTypeName("HRESULT (LPWSTR, int, int *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, uint*, int> GetOverlayInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int*, uint*, int> GetOverlayInfo;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetPriority;
     }
 }

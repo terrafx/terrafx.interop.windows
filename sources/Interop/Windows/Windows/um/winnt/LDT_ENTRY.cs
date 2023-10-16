@@ -63,7 +63,7 @@ public partial struct LDT_ENTRY
             public uint BaseMid
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0xFFu;
                 }
@@ -80,7 +80,7 @@ public partial struct LDT_ENTRY
             public uint Type
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 8) & 0x1Fu;
                 }
@@ -97,7 +97,7 @@ public partial struct LDT_ENTRY
             public uint Dpl
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 13) & 0x3u;
                 }
@@ -114,7 +114,7 @@ public partial struct LDT_ENTRY
             public uint Pres
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 15) & 0x1u;
                 }
@@ -131,7 +131,7 @@ public partial struct LDT_ENTRY
             public uint LimitHi
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0xFu;
                 }
@@ -148,7 +148,7 @@ public partial struct LDT_ENTRY
             public uint Sys
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 20) & 0x1u;
                 }
@@ -165,7 +165,7 @@ public partial struct LDT_ENTRY
             public uint Reserved_0
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 21) & 0x1u;
                 }
@@ -182,7 +182,7 @@ public partial struct LDT_ENTRY
             public uint Default_Big
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 22) & 0x1u;
                 }
@@ -199,7 +199,7 @@ public partial struct LDT_ENTRY
             public uint Granularity
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 23) & 0x1u;
                 }
@@ -216,7 +216,7 @@ public partial struct LDT_ENTRY
             public uint BaseHi
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 24) & 0xFFu;
                 }

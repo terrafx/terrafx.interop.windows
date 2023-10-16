@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MFARGB" /> struct.</summary>
 public static unsafe partial class MFARGBTests
 {
-    /// <summary>Validates that the <see cref="MFARGB" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MFARGB>(), Is.EqualTo(sizeof(MFARGB)));
-    }
-
-    /// <summary>Validates that the <see cref="MFARGB" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MFARGB).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MFARGB" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MFARGB), Is.EqualTo(4));
-    }
 }

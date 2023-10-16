@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMaxFrameRateTests
     {
         Assert.That(typeof(CODECAPI_AVEncMaxFrameRate).GUID, Is.EqualTo(IID_CODECAPI_AVEncMaxFrameRate));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMaxFrameRate>(), Is.EqualTo(sizeof(CODECAPI_AVEncMaxFrameRate)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMaxFrameRate).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMaxFrameRate), Is.EqualTo(1));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IWbemUnsecuredApartmentTests
     {
         Assert.That(typeof(IWbemUnsecuredApartment).GUID, Is.EqualTo(IID_IWbemUnsecuredApartment));
     }
-
-    /// <summary>Validates that the <see cref="IWbemUnsecuredApartment" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWbemUnsecuredApartment>(), Is.EqualTo(sizeof(IWbemUnsecuredApartment)));
-    }
-
-    /// <summary>Validates that the <see cref="IWbemUnsecuredApartment" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWbemUnsecuredApartment).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWbemUnsecuredApartment" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWbemUnsecuredApartment), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWbemUnsecuredApartment), Is.EqualTo(4));
-        }
-    }
 }

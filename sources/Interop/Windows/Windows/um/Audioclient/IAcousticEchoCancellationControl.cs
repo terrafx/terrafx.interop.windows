@@ -25,7 +25,7 @@ public unsafe partial struct IAcousticEchoCancellationControl : IAcousticEchoCan
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAcousticEchoCancellationControl*, Guid*, void**, int>)(lpVtbl[0]))((IAcousticEchoCancellationControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAcousticEchoCancellationControl*, Guid*, void**, int>)(lpVtbl[0]))((IAcousticEchoCancellationControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAcousticEchoCancellationControl : IAcousticEchoCan
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAcousticEchoCancellationControl*, uint>)(lpVtbl[1]))((IAcousticEchoCancellationControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAcousticEchoCancellationControl*, uint>)(lpVtbl[1]))((IAcousticEchoCancellationControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct IAcousticEchoCancellationControl : IAcousticEchoCan
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAcousticEchoCancellationControl*, uint>)(lpVtbl[2]))((IAcousticEchoCancellationControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAcousticEchoCancellationControl*, uint>)(lpVtbl[2]))((IAcousticEchoCancellationControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAcousticEchoCancellationControl.xml' path='doc/member[@name="IAcousticEchoCancellationControl.SetEchoCancellationRenderEndpoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetEchoCancellationRenderEndpoint([NativeTypeName("LPCWSTR")] ushort* endpointId)
+    public HRESULT SetEchoCancellationRenderEndpoint([NativeTypeName("LPCWSTR")] char* endpointId)
     {
-        return ((delegate* unmanaged<IAcousticEchoCancellationControl*, ushort*, int>)(lpVtbl[3]))((IAcousticEchoCancellationControl*)Unsafe.AsPointer(ref this), endpointId);
+        return ((delegate* unmanaged[MemberFunction]<IAcousticEchoCancellationControl*, char*, int>)(lpVtbl[3]))((IAcousticEchoCancellationControl*)Unsafe.AsPointer(ref this), endpointId);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetEchoCancellationRenderEndpoint([NativeTypeName("LPCWSTR")] ushort* endpointId);
+        HRESULT SetEchoCancellationRenderEndpoint([NativeTypeName("LPCWSTR")] char* endpointId);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetEchoCancellationRenderEndpoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetEchoCancellationRenderEndpoint;
     }
 }

@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class SecPkgContext_KeyingMaterialInfoTests
 {
-    /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterialInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SecPkgContext_KeyingMaterialInfo>(), Is.EqualTo(sizeof(SecPkgContext_KeyingMaterialInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterialInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SecPkgContext_KeyingMaterialInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterialInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(SecPkgContext_KeyingMaterialInfo), Is.EqualTo(40));
-        }
-        else
-        {
-            Assert.That(sizeof(SecPkgContext_KeyingMaterialInfo), Is.EqualTo(20));
-        }
-    }
 }

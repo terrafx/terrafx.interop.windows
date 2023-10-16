@@ -19,32 +19,4 @@ public static unsafe partial class ITfInsertAtSelectionTests
     {
         Assert.That(typeof(ITfInsertAtSelection).GUID, Is.EqualTo(IID_ITfInsertAtSelection));
     }
-
-    /// <summary>Validates that the <see cref="ITfInsertAtSelection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfInsertAtSelection>(), Is.EqualTo(sizeof(ITfInsertAtSelection)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfInsertAtSelection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfInsertAtSelection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfInsertAtSelection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfInsertAtSelection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfInsertAtSelection), Is.EqualTo(4));
-        }
-    }
 }

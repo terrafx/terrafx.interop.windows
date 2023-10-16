@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="JPEGINFOHEADER" /> struct.</summary>
 public static unsafe partial class JPEGINFOHEADERTests
 {
-    /// <summary>Validates that the <see cref="JPEGINFOHEADER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<JPEGINFOHEADER>(), Is.EqualTo(sizeof(JPEGINFOHEADER)));
-    }
-
-    /// <summary>Validates that the <see cref="JPEGINFOHEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(JPEGINFOHEADER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="JPEGINFOHEADER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(JPEGINFOHEADER), Is.EqualTo(24));
-    }
 }

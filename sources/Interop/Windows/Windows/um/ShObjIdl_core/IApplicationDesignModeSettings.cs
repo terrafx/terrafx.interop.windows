@@ -25,7 +25,7 @@ public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesign
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IApplicationDesignModeSettings*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDesignModeSettings*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesign
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IApplicationDesignModeSettings*, uint>)(lpVtbl[1]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDesignModeSettings*, uint>)(lpVtbl[1]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesign
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IApplicationDesignModeSettings*, uint>)(lpVtbl[2]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDesignModeSettings*, uint>)(lpVtbl[2]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IApplicationDesignModeSettings.xml' path='doc/member[@name="IApplicationDesignModeSettings.SetNativeDisplaySize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesign
     [VtblIndex(3)]
     public HRESULT SetNativeDisplaySize(SIZE nativeDisplaySizePixels)
     {
-        return ((delegate* unmanaged<IApplicationDesignModeSettings*, SIZE, int>)(lpVtbl[3]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), nativeDisplaySizePixels);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDesignModeSettings*, SIZE, int>)(lpVtbl[3]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), nativeDisplaySizePixels);
     }
 
     /// <include file='IApplicationDesignModeSettings.xml' path='doc/member[@name="IApplicationDesignModeSettings.SetScaleFactor"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesign
     [VtblIndex(4)]
     public HRESULT SetScaleFactor(DEVICE_SCALE_FACTOR scaleFactor)
     {
-        return ((delegate* unmanaged<IApplicationDesignModeSettings*, DEVICE_SCALE_FACTOR, int>)(lpVtbl[4]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), scaleFactor);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDesignModeSettings*, DEVICE_SCALE_FACTOR, int>)(lpVtbl[4]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), scaleFactor);
     }
 
     /// <include file='IApplicationDesignModeSettings.xml' path='doc/member[@name="IApplicationDesignModeSettings.SetApplicationViewState"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesign
     [VtblIndex(5)]
     public HRESULT SetApplicationViewState(APPLICATION_VIEW_STATE viewState)
     {
-        return ((delegate* unmanaged<IApplicationDesignModeSettings*, APPLICATION_VIEW_STATE, int>)(lpVtbl[5]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), viewState);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDesignModeSettings*, APPLICATION_VIEW_STATE, int>)(lpVtbl[5]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), viewState);
     }
 
     /// <include file='IApplicationDesignModeSettings.xml' path='doc/member[@name="IApplicationDesignModeSettings.ComputeApplicationSize"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesign
     [VtblIndex(6)]
     public HRESULT ComputeApplicationSize(SIZE* applicationSizePixels)
     {
-        return ((delegate* unmanaged<IApplicationDesignModeSettings*, SIZE*, int>)(lpVtbl[6]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), applicationSizePixels);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDesignModeSettings*, SIZE*, int>)(lpVtbl[6]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), applicationSizePixels);
     }
 
     /// <include file='IApplicationDesignModeSettings.xml' path='doc/member[@name="IApplicationDesignModeSettings.IsApplicationViewStateSupported"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesign
     [VtblIndex(7)]
     public HRESULT IsApplicationViewStateSupported(APPLICATION_VIEW_STATE viewState, SIZE nativeDisplaySizePixels, DEVICE_SCALE_FACTOR scaleFactor, BOOL* supported)
     {
-        return ((delegate* unmanaged<IApplicationDesignModeSettings*, APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL*, int>)(lpVtbl[7]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), viewState, nativeDisplaySizePixels, scaleFactor, supported);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDesignModeSettings*, APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL*, int>)(lpVtbl[7]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), viewState, nativeDisplaySizePixels, scaleFactor, supported);
     }
 
     /// <include file='IApplicationDesignModeSettings.xml' path='doc/member[@name="IApplicationDesignModeSettings.TriggerEdgeGesture"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesign
     [VtblIndex(8)]
     public HRESULT TriggerEdgeGesture(EDGE_GESTURE_KIND edgeGestureKind)
     {
-        return ((delegate* unmanaged<IApplicationDesignModeSettings*, EDGE_GESTURE_KIND, int>)(lpVtbl[8]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), edgeGestureKind);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDesignModeSettings*, EDGE_GESTURE_KIND, int>)(lpVtbl[8]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), edgeGestureKind);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesign
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE, int> SetNativeDisplaySize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE, int> SetNativeDisplaySize;
 
         [NativeTypeName("HRESULT (DEVICE_SCALE_FACTOR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEVICE_SCALE_FACTOR, int> SetScaleFactor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEVICE_SCALE_FACTOR, int> SetScaleFactor;
 
         [NativeTypeName("HRESULT (APPLICATION_VIEW_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPLICATION_VIEW_STATE, int> SetApplicationViewState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPLICATION_VIEW_STATE, int> SetApplicationViewState;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, int> ComputeApplicationSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, int> ComputeApplicationSize;
 
         [NativeTypeName("HRESULT (APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL*, int> IsApplicationViewStateSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL*, int> IsApplicationViewStateSupported;
 
         [NativeTypeName("HRESULT (EDGE_GESTURE_KIND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, EDGE_GESTURE_KIND, int> TriggerEdgeGesture;
+        public delegate* unmanaged[MemberFunction]<TSelf*, EDGE_GESTURE_KIND, int> TriggerEdgeGesture;
     }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct IDCompositionSaturationEffect : IDCompositionSatura
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionSaturationEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSaturationEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDCompositionSaturationEffect : IDCompositionSatura
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionSaturationEffect*, uint>)(lpVtbl[1]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSaturationEffect*, uint>)(lpVtbl[1]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDCompositionSaturationEffect : IDCompositionSatura
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionSaturationEffect*, uint>)(lpVtbl[2]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSaturationEffect*, uint>)(lpVtbl[2]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDCompositionFilterEffect.SetInput" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDCompositionSaturationEffect : IDCompositionSatura
     [VtblIndex(3)]
     public HRESULT SetInput(uint index, IUnknown* input, uint flags)
     {
-        return ((delegate* unmanaged<IDCompositionSaturationEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSaturationEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), index, input, flags);
     }
 
     /// <include file='IDCompositionSaturationEffect.xml' path='doc/member[@name="IDCompositionSaturationEffect.SetSaturation"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDCompositionSaturationEffect : IDCompositionSatura
     [VtblIndex(4)]
     public HRESULT SetSaturation(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionSaturationEffect*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSaturationEffect*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionSaturationEffect.xml' path='doc/member[@name="IDCompositionSaturationEffect.SetSaturation"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDCompositionSaturationEffect : IDCompositionSatura
     [VtblIndex(5)]
     public HRESULT SetSaturation(float ratio)
     {
-        return ((delegate* unmanaged<IDCompositionSaturationEffect*, float, int>)(lpVtbl[5]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), ratio);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSaturationEffect*, float, int>)(lpVtbl[5]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), ratio);
     }
 
     public interface Interface : IDCompositionFilterEffect.Interface
@@ -84,21 +84,21 @@ public unsafe partial struct IDCompositionSaturationEffect : IDCompositionSatura
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetSaturation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetSaturation;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetSaturation1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetSaturation1;
     }
 }

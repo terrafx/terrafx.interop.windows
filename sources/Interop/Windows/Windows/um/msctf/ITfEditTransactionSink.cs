@@ -25,7 +25,7 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfEditTransactionSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfEditTransactionSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfEditTransactionSink*, uint>)(lpVtbl[1]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfEditTransactionSink*, uint>)(lpVtbl[1]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfEditTransactionSink*, uint>)(lpVtbl[2]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfEditTransactionSink*, uint>)(lpVtbl[2]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfEditTransactionSink.xml' path='doc/member[@name="ITfEditTransactionSink.OnStartEditTransaction"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
     [VtblIndex(3)]
     public HRESULT OnStartEditTransaction(ITfContext* pic)
     {
-        return ((delegate* unmanaged<ITfEditTransactionSink*, ITfContext*, int>)(lpVtbl[3]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this), pic);
+        return ((delegate* unmanaged[MemberFunction]<ITfEditTransactionSink*, ITfContext*, int>)(lpVtbl[3]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this), pic);
     }
 
     /// <include file='ITfEditTransactionSink.xml' path='doc/member[@name="ITfEditTransactionSink.OnEndEditTransaction"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
     [VtblIndex(4)]
     public HRESULT OnEndEditTransaction(ITfContext* pic)
     {
-        return ((delegate* unmanaged<ITfEditTransactionSink*, ITfContext*, int>)(lpVtbl[4]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this), pic);
+        return ((delegate* unmanaged[MemberFunction]<ITfEditTransactionSink*, ITfContext*, int>)(lpVtbl[4]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this), pic);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, int> OnStartEditTransaction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, int> OnStartEditTransaction;
 
         [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, int> OnEndEditTransaction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, int> OnEndEditTransaction;
     }
 }

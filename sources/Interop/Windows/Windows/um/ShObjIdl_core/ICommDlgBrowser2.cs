@@ -25,7 +25,7 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICommDlgBrowser2*, Guid*, void**, int>)(lpVtbl[0]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICommDlgBrowser2*, Guid*, void**, int>)(lpVtbl[0]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICommDlgBrowser2*, uint>)(lpVtbl[1]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICommDlgBrowser2*, uint>)(lpVtbl[1]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICommDlgBrowser2*, uint>)(lpVtbl[2]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICommDlgBrowser2*, uint>)(lpVtbl[2]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ICommDlgBrowser.OnDefaultCommand" />
@@ -51,7 +51,7 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
     [VtblIndex(3)]
     public HRESULT OnDefaultCommand(IShellView* ppshv)
     {
-        return ((delegate* unmanaged<ICommDlgBrowser2*, IShellView*, int>)(lpVtbl[3]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv);
+        return ((delegate* unmanaged[MemberFunction]<ICommDlgBrowser2*, IShellView*, int>)(lpVtbl[3]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv);
     }
 
     /// <inheritdoc cref="ICommDlgBrowser.OnStateChange" />
@@ -59,7 +59,7 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
     [VtblIndex(4)]
     public HRESULT OnStateChange(IShellView* ppshv, [NativeTypeName("ULONG")] uint uChange)
     {
-        return ((delegate* unmanaged<ICommDlgBrowser2*, IShellView*, uint, int>)(lpVtbl[4]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv, uChange);
+        return ((delegate* unmanaged[MemberFunction]<ICommDlgBrowser2*, IShellView*, uint, int>)(lpVtbl[4]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv, uChange);
     }
 
     /// <inheritdoc cref="ICommDlgBrowser.IncludeObject" />
@@ -67,7 +67,7 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
     [VtblIndex(5)]
     public HRESULT IncludeObject(IShellView* ppshv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
     {
-        return ((delegate* unmanaged<ICommDlgBrowser2*, IShellView*, ITEMIDLIST*, int>)(lpVtbl[5]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv, pidl);
+        return ((delegate* unmanaged[MemberFunction]<ICommDlgBrowser2*, IShellView*, ITEMIDLIST*, int>)(lpVtbl[5]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv, pidl);
     }
 
     /// <include file='ICommDlgBrowser2.xml' path='doc/member[@name="ICommDlgBrowser2.Notify"]/*' />
@@ -75,15 +75,15 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
     [VtblIndex(6)]
     public HRESULT Notify(IShellView* ppshv, [NativeTypeName("DWORD")] uint dwNotifyType)
     {
-        return ((delegate* unmanaged<ICommDlgBrowser2*, IShellView*, uint, int>)(lpVtbl[6]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv, dwNotifyType);
+        return ((delegate* unmanaged[MemberFunction]<ICommDlgBrowser2*, IShellView*, uint, int>)(lpVtbl[6]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv, dwNotifyType);
     }
 
     /// <include file='ICommDlgBrowser2.xml' path='doc/member[@name="ICommDlgBrowser2.GetDefaultMenuText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] ushort* pszText, int cchMax)
+    public HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] char* pszText, int cchMax)
     {
-        return ((delegate* unmanaged<ICommDlgBrowser2*, IShellView*, ushort*, int, int>)(lpVtbl[7]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv, pszText, cchMax);
+        return ((delegate* unmanaged[MemberFunction]<ICommDlgBrowser2*, IShellView*, char*, int, int>)(lpVtbl[7]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv, pszText, cchMax);
     }
 
     /// <include file='ICommDlgBrowser2.xml' path='doc/member[@name="ICommDlgBrowser2.GetViewFlags"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
     [VtblIndex(8)]
     public HRESULT GetViewFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<ICommDlgBrowser2*, uint*, int>)(lpVtbl[8]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ICommDlgBrowser2*, uint*, int>)(lpVtbl[8]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
     public interface Interface : ICommDlgBrowser.Interface
@@ -100,7 +100,7 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
         HRESULT Notify(IShellView* ppshv, [NativeTypeName("DWORD")] uint dwNotifyType);
 
         [VtblIndex(7)]
-        HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] ushort* pszText, int cchMax);
+        HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] char* pszText, int cchMax);
 
         [VtblIndex(8)]
         HRESULT GetViewFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
@@ -110,30 +110,30 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, int> OnDefaultCommand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellView*, int> OnDefaultCommand;
 
         [NativeTypeName("HRESULT (IShellView *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, uint, int> OnStateChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellView*, uint, int> OnStateChange;
 
         [NativeTypeName("HRESULT (IShellView *, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, ITEMIDLIST*, int> IncludeObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellView*, ITEMIDLIST*, int> IncludeObject;
 
         [NativeTypeName("HRESULT (IShellView *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, uint, int> Notify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellView*, uint, int> Notify;
 
         [NativeTypeName("HRESULT (IShellView *, LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, ushort*, int, int> GetDefaultMenuText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellView*, char*, int, int> GetDefaultMenuText;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetViewFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetViewFlags;
     }
 }

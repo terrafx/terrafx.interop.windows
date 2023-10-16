@@ -19,32 +19,4 @@ public static unsafe partial class ICurrentWorkingDirectoryTests
     {
         Assert.That(typeof(ICurrentWorkingDirectory).GUID, Is.EqualTo(IID_ICurrentWorkingDirectory));
     }
-
-    /// <summary>Validates that the <see cref="ICurrentWorkingDirectory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICurrentWorkingDirectory>(), Is.EqualTo(sizeof(ICurrentWorkingDirectory)));
-    }
-
-    /// <summary>Validates that the <see cref="ICurrentWorkingDirectory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICurrentWorkingDirectory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICurrentWorkingDirectory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICurrentWorkingDirectory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICurrentWorkingDirectory), Is.EqualTo(4));
-        }
-    }
 }

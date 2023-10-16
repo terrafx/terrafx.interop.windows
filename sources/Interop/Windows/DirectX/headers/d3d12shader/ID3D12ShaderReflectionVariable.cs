@@ -24,7 +24,7 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D12_SHADER_VARIABLE_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionVariable*, D3D12_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionVariable*, D3D12_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D12ShaderReflectionVariable.xml' path='doc/member[@name="ID3D12ShaderReflectionVariable.GetType"]/*' />
@@ -32,7 +32,7 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
     [VtblIndex(1)]
     public new ID3D12ShaderReflectionType* GetType()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionVariable*, ID3D12ShaderReflectionType*>)(lpVtbl[1]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionVariable*, ID3D12ShaderReflectionType*>)(lpVtbl[1]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12ShaderReflectionVariable.xml' path='doc/member[@name="ID3D12ShaderReflectionVariable.GetBuffer"]/*' />
@@ -40,7 +40,7 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
     [VtblIndex(2)]
     public ID3D12ShaderReflectionConstantBuffer* GetBuffer()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionVariable*, ID3D12ShaderReflectionConstantBuffer*>)(lpVtbl[2]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionVariable*, ID3D12ShaderReflectionConstantBuffer*>)(lpVtbl[2]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12ShaderReflectionVariable.xml' path='doc/member[@name="ID3D12ShaderReflectionVariable.GetInterfaceSlot"]/*' />
@@ -48,7 +48,7 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
     [VtblIndex(3)]
     public uint GetInterfaceSlot(uint uArrayIndex)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionVariable*, uint, uint>)(lpVtbl[3]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this), uArrayIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionVariable*, uint, uint>)(lpVtbl[3]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this), uArrayIndex);
     }
 
     public interface Interface
@@ -70,15 +70,15 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D12_SHADER_VARIABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_SHADER_VARIABLE_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_SHADER_VARIABLE_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D12ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, ID3D12ShaderReflectionType*> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, ID3D12ShaderReflectionType*> GetType;
 
         [NativeTypeName("ID3D12ShaderReflectionConstantBuffer *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12ShaderReflectionConstantBuffer*> GetBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12ShaderReflectionConstantBuffer*> GetBuffer;
 
         [NativeTypeName("UINT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint> GetInterfaceSlot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint> GetInterfaceSlot;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVideoWindow*, Guid*, void**, int>)(lpVtbl[0]))((IVideoWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, Guid*, void**, int>)(lpVtbl[0]))((IVideoWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVideoWindow*, uint>)(lpVtbl[1]))((IVideoWindow*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, uint>)(lpVtbl[1]))((IVideoWindow*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVideoWindow*, uint>)(lpVtbl[2]))((IVideoWindow*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, uint>)(lpVtbl[2]))((IVideoWindow*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IVideoWindow*, uint*, int>)(lpVtbl[3]))((IVideoWindow*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, uint*, int>)(lpVtbl[3]))((IVideoWindow*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IVideoWindow*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IVideoWindow*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IVideoWindow*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IVideoWindow*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IVideoWindow*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IVideoWindow*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,23 +75,23 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IVideoWindow*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IVideoWindow*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Caption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_Caption([NativeTypeName("BSTR")] ushort* strCaption)
+    public HRESULT put_Caption([NativeTypeName("BSTR")] char* strCaption)
     {
-        return ((delegate* unmanaged<IVideoWindow*, ushort*, int>)(lpVtbl[7]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, char*, int>)(lpVtbl[7]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Caption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Caption([NativeTypeName("BSTR *")] ushort** strCaption)
+    public HRESULT get_Caption([NativeTypeName("BSTR *")] char** strCaption)
     {
-        return ((delegate* unmanaged<IVideoWindow*, ushort**, int>)(lpVtbl[8]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, char**, int>)(lpVtbl[8]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_WindowStyle"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT put_WindowStyle([NativeTypeName("long")] int WindowStyle)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[9]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyle);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[9]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyle);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_WindowStyle"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT get_WindowStyle([NativeTypeName("long *")] int* WindowStyle)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[10]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyle);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[10]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyle);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_WindowStyleEx"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT put_WindowStyleEx([NativeTypeName("long")] int WindowStyleEx)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[11]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyleEx);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[11]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyleEx);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_WindowStyleEx"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT get_WindowStyleEx([NativeTypeName("long *")] int* WindowStyleEx)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[12]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyleEx);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[12]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyleEx);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_AutoShow"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT put_AutoShow([NativeTypeName("long")] int AutoShow)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[13]))((IVideoWindow*)Unsafe.AsPointer(ref this), AutoShow);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[13]))((IVideoWindow*)Unsafe.AsPointer(ref this), AutoShow);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_AutoShow"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT get_AutoShow([NativeTypeName("long *")] int* AutoShow)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[14]))((IVideoWindow*)Unsafe.AsPointer(ref this), AutoShow);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[14]))((IVideoWindow*)Unsafe.AsPointer(ref this), AutoShow);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_WindowState"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT put_WindowState([NativeTypeName("long")] int WindowState)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[15]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowState);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[15]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowState);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_WindowState"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT get_WindowState([NativeTypeName("long *")] int* WindowState)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[16]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowState);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[16]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowState);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_BackgroundPalette"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT put_BackgroundPalette([NativeTypeName("long")] int BackgroundPalette)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[17]))((IVideoWindow*)Unsafe.AsPointer(ref this), BackgroundPalette);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[17]))((IVideoWindow*)Unsafe.AsPointer(ref this), BackgroundPalette);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_BackgroundPalette"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT get_BackgroundPalette([NativeTypeName("long *")] int* pBackgroundPalette)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[18]))((IVideoWindow*)Unsafe.AsPointer(ref this), pBackgroundPalette);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[18]))((IVideoWindow*)Unsafe.AsPointer(ref this), pBackgroundPalette);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Visible"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT put_Visible([NativeTypeName("long")] int Visible)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[19]))((IVideoWindow*)Unsafe.AsPointer(ref this), Visible);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[19]))((IVideoWindow*)Unsafe.AsPointer(ref this), Visible);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Visible"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT get_Visible([NativeTypeName("long *")] int* pVisible)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[20]))((IVideoWindow*)Unsafe.AsPointer(ref this), pVisible);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[20]))((IVideoWindow*)Unsafe.AsPointer(ref this), pVisible);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Left"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT put_Left([NativeTypeName("long")] int Left)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[21]))((IVideoWindow*)Unsafe.AsPointer(ref this), Left);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[21]))((IVideoWindow*)Unsafe.AsPointer(ref this), Left);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Left"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT get_Left([NativeTypeName("long *")] int* pLeft)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[22]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[22]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Width"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT put_Width([NativeTypeName("long")] int Width)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[23]))((IVideoWindow*)Unsafe.AsPointer(ref this), Width);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[23]))((IVideoWindow*)Unsafe.AsPointer(ref this), Width);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Width"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT get_Width([NativeTypeName("long *")] int* pWidth)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[24]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[24]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Top"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT put_Top([NativeTypeName("long")] int Top)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[25]))((IVideoWindow*)Unsafe.AsPointer(ref this), Top);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[25]))((IVideoWindow*)Unsafe.AsPointer(ref this), Top);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Top"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT get_Top([NativeTypeName("long *")] int* pTop)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[26]))((IVideoWindow*)Unsafe.AsPointer(ref this), pTop);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[26]))((IVideoWindow*)Unsafe.AsPointer(ref this), pTop);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Height"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(27)]
     public HRESULT put_Height([NativeTypeName("long")] int Height)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[27]))((IVideoWindow*)Unsafe.AsPointer(ref this), Height);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[27]))((IVideoWindow*)Unsafe.AsPointer(ref this), Height);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Height"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(28)]
     public HRESULT get_Height([NativeTypeName("long *")] int* pHeight)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[28]))((IVideoWindow*)Unsafe.AsPointer(ref this), pHeight);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[28]))((IVideoWindow*)Unsafe.AsPointer(ref this), pHeight);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Owner"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(29)]
     public HRESULT put_Owner(OAHWND Owner)
     {
-        return ((delegate* unmanaged<IVideoWindow*, OAHWND, int>)(lpVtbl[29]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, OAHWND, int>)(lpVtbl[29]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Owner"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(30)]
     public HRESULT get_Owner(OAHWND* Owner)
     {
-        return ((delegate* unmanaged<IVideoWindow*, OAHWND*, int>)(lpVtbl[30]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, OAHWND*, int>)(lpVtbl[30]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_MessageDrain"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(31)]
     public HRESULT put_MessageDrain(OAHWND Drain)
     {
-        return ((delegate* unmanaged<IVideoWindow*, OAHWND, int>)(lpVtbl[31]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, OAHWND, int>)(lpVtbl[31]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_MessageDrain"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(32)]
     public HRESULT get_MessageDrain(OAHWND* Drain)
     {
-        return ((delegate* unmanaged<IVideoWindow*, OAHWND*, int>)(lpVtbl[32]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, OAHWND*, int>)(lpVtbl[32]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_BorderColor"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(33)]
     public HRESULT get_BorderColor([NativeTypeName("long *")] int* Color)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[33]))((IVideoWindow*)Unsafe.AsPointer(ref this), Color);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[33]))((IVideoWindow*)Unsafe.AsPointer(ref this), Color);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_BorderColor"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(34)]
     public HRESULT put_BorderColor([NativeTypeName("long")] int Color)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[34]))((IVideoWindow*)Unsafe.AsPointer(ref this), Color);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[34]))((IVideoWindow*)Unsafe.AsPointer(ref this), Color);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_FullScreenMode"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(35)]
     public HRESULT get_FullScreenMode([NativeTypeName("long *")] int* FullScreenMode)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[35]))((IVideoWindow*)Unsafe.AsPointer(ref this), FullScreenMode);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[35]))((IVideoWindow*)Unsafe.AsPointer(ref this), FullScreenMode);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_FullScreenMode"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(36)]
     public HRESULT put_FullScreenMode([NativeTypeName("long")] int FullScreenMode)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[36]))((IVideoWindow*)Unsafe.AsPointer(ref this), FullScreenMode);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[36]))((IVideoWindow*)Unsafe.AsPointer(ref this), FullScreenMode);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.SetWindowForeground"]/*' />
@@ -323,7 +323,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(37)]
     public HRESULT SetWindowForeground([NativeTypeName("long")] int Focus)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[37]))((IVideoWindow*)Unsafe.AsPointer(ref this), Focus);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[37]))((IVideoWindow*)Unsafe.AsPointer(ref this), Focus);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.NotifyOwnerMessage"]/*' />
@@ -331,7 +331,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(38)]
     public HRESULT NotifyOwnerMessage(OAHWND hwnd, [NativeTypeName("long")] int uMsg, [NativeTypeName("LONG_PTR")] nint wParam, [NativeTypeName("LONG_PTR")] nint lParam)
     {
-        return ((delegate* unmanaged<IVideoWindow*, OAHWND, int, nint, nint, int>)(lpVtbl[38]))((IVideoWindow*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, OAHWND, int, nint, nint, int>)(lpVtbl[38]))((IVideoWindow*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.SetWindowPosition"]/*' />
@@ -339,7 +339,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(39)]
     public HRESULT SetWindowPosition([NativeTypeName("long")] int Left, [NativeTypeName("long")] int Top, [NativeTypeName("long")] int Width, [NativeTypeName("long")] int Height)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int, int, int, int>)(lpVtbl[39]))((IVideoWindow*)Unsafe.AsPointer(ref this), Left, Top, Width, Height);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int, int, int, int>)(lpVtbl[39]))((IVideoWindow*)Unsafe.AsPointer(ref this), Left, Top, Width, Height);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.GetWindowPosition"]/*' />
@@ -347,7 +347,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(40)]
     public HRESULT GetWindowPosition([NativeTypeName("long *")] int* pLeft, [NativeTypeName("long *")] int* pTop, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int*, int*, int*, int>)(lpVtbl[40]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft, pTop, pWidth, pHeight);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int*, int*, int*, int>)(lpVtbl[40]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft, pTop, pWidth, pHeight);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.GetMinIdealImageSize"]/*' />
@@ -355,7 +355,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(41)]
     public HRESULT GetMinIdealImageSize([NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int*, int>)(lpVtbl[41]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth, pHeight);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int*, int>)(lpVtbl[41]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth, pHeight);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.GetMaxIdealImageSize"]/*' />
@@ -363,7 +363,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(42)]
     public HRESULT GetMaxIdealImageSize([NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int*, int>)(lpVtbl[42]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth, pHeight);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int*, int>)(lpVtbl[42]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth, pHeight);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.GetRestorePosition"]/*' />
@@ -371,7 +371,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(43)]
     public HRESULT GetRestorePosition([NativeTypeName("long *")] int* pLeft, [NativeTypeName("long *")] int* pTop, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int*, int*, int*, int>)(lpVtbl[43]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft, pTop, pWidth, pHeight);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int*, int*, int*, int>)(lpVtbl[43]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft, pTop, pWidth, pHeight);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.HideCursor"]/*' />
@@ -379,7 +379,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(44)]
     public HRESULT HideCursor([NativeTypeName("long")] int HideCursor)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[44]))((IVideoWindow*)Unsafe.AsPointer(ref this), HideCursor);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int, int>)(lpVtbl[44]))((IVideoWindow*)Unsafe.AsPointer(ref this), HideCursor);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.IsCursorHidden"]/*' />
@@ -387,16 +387,16 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     [VtblIndex(45)]
     public HRESULT IsCursorHidden([NativeTypeName("long *")] int* CursorHidden)
     {
-        return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[45]))((IVideoWindow*)Unsafe.AsPointer(ref this), CursorHidden);
+        return ((delegate* unmanaged[MemberFunction]<IVideoWindow*, int*, int>)(lpVtbl[45]))((IVideoWindow*)Unsafe.AsPointer(ref this), CursorHidden);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_Caption([NativeTypeName("BSTR")] ushort* strCaption);
+        HRESULT put_Caption([NativeTypeName("BSTR")] char* strCaption);
 
         [VtblIndex(8)]
-        HRESULT get_Caption([NativeTypeName("BSTR *")] ushort** strCaption);
+        HRESULT get_Caption([NativeTypeName("BSTR *")] char** strCaption);
 
         [VtblIndex(9)]
         HRESULT put_WindowStyle([NativeTypeName("long")] int WindowStyle);
@@ -514,141 +514,141 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Caption;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_Caption;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Caption;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Caption;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_WindowStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_WindowStyle;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_WindowStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_WindowStyle;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_WindowStyleEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_WindowStyleEx;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_WindowStyleEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_WindowStyleEx;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_AutoShow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_AutoShow;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_AutoShow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_AutoShow;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_WindowState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_WindowState;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_WindowState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_WindowState;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_BackgroundPalette;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_BackgroundPalette;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_BackgroundPalette;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_BackgroundPalette;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_Visible;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_Visible;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Visible;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Visible;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_Left;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_Left;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Left;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Left;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_Width;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_Width;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Width;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Width;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_Top;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_Top;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Top;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Top;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_Height;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_Height;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Height;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Height;
 
         [NativeTypeName("HRESULT (OAHWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, OAHWND, int> put_Owner;
+        public delegate* unmanaged[MemberFunction]<TSelf*, OAHWND, int> put_Owner;
 
         [NativeTypeName("HRESULT (OAHWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, OAHWND*, int> get_Owner;
+        public delegate* unmanaged[MemberFunction]<TSelf*, OAHWND*, int> get_Owner;
 
         [NativeTypeName("HRESULT (OAHWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, OAHWND, int> put_MessageDrain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, OAHWND, int> put_MessageDrain;
 
         [NativeTypeName("HRESULT (OAHWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, OAHWND*, int> get_MessageDrain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, OAHWND*, int> get_MessageDrain;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_BorderColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_BorderColor;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_BorderColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_BorderColor;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_FullScreenMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_FullScreenMode;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_FullScreenMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_FullScreenMode;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetWindowForeground;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetWindowForeground;
 
         [NativeTypeName("HRESULT (OAHWND, long, LONG_PTR, LONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, OAHWND, int, nint, nint, int> NotifyOwnerMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, OAHWND, int, nint, nint, int> NotifyOwnerMessage;
 
         [NativeTypeName("HRESULT (long, long, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int, int, int> SetWindowPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int, int, int> SetWindowPosition;
 
         [NativeTypeName("HRESULT (long *, long *, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int*, int*, int> GetWindowPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int*, int*, int> GetWindowPosition;
 
         [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> GetMinIdealImageSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> GetMinIdealImageSize;
 
         [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> GetMaxIdealImageSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> GetMaxIdealImageSize;
 
         [NativeTypeName("HRESULT (long *, long *, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int*, int*, int> GetRestorePosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int*, int*, int> GetRestorePosition;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> HideCursor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> HideCursor;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> IsCursorHidden;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> IsCursorHidden;
     }
 }

@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class TPM_DEVICE_INFOTests
 {
-    /// <summary>Validates that the <see cref="TPM_DEVICE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TPM_DEVICE_INFO>(), Is.EqualTo(sizeof(TPM_DEVICE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="TPM_DEVICE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TPM_DEVICE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TPM_DEVICE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TPM_DEVICE_INFO), Is.EqualTo(16));
-    }
 }

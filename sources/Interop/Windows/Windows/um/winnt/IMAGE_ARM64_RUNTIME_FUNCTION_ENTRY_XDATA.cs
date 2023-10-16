@@ -26,7 +26,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     public uint FunctionLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.FunctionLength;
         }
@@ -42,7 +42,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     public uint Version
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Version;
         }
@@ -58,7 +58,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     public uint ExceptionDataPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.ExceptionDataPresent;
         }
@@ -74,7 +74,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     public uint EpilogInHeader
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.EpilogInHeader;
         }
@@ -90,7 +90,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     public uint EpilogCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.EpilogCount;
         }
@@ -106,7 +106,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     public uint CodeWords
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.CodeWords;
         }
@@ -128,7 +128,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         public uint FunctionLength
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x3FFFFu;
             }
@@ -145,7 +145,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         public uint Version
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 18) & 0x3u;
             }
@@ -162,7 +162,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         public uint ExceptionDataPresent
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 20) & 0x1u;
             }
@@ -179,7 +179,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         public uint EpilogInHeader
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 21) & 0x1u;
             }
@@ -196,7 +196,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         public uint EpilogCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 22) & 0x1Fu;
             }
@@ -213,7 +213,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
         public uint CodeWords
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 27) & 0x1Fu;
             }

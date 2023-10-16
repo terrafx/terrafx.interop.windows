@@ -26,7 +26,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRImageCompositor*, Guid*, void**, int>)(lpVtbl[0]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImageCompositor*, Guid*, void**, int>)(lpVtbl[0]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRImageCompositor*, uint>)(lpVtbl[1]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRImageCompositor*, uint>)(lpVtbl[1]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRImageCompositor*, uint>)(lpVtbl[2]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRImageCompositor*, uint>)(lpVtbl[2]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRImageCompositor.xml' path='doc/member[@name="IVMRImageCompositor.InitCompositionTarget"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
     [VtblIndex(3)]
     public HRESULT InitCompositionTarget(IUnknown* pD3DDevice, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* pddsRenderTarget)
     {
-        return ((delegate* unmanaged<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, int>)(lpVtbl[3]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), pD3DDevice, pddsRenderTarget);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, int>)(lpVtbl[3]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), pD3DDevice, pddsRenderTarget);
     }
 
     /// <include file='IVMRImageCompositor.xml' path='doc/member[@name="IVMRImageCompositor.TermCompositionTarget"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
     [VtblIndex(4)]
     public HRESULT TermCompositionTarget(IUnknown* pD3DDevice, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* pddsRenderTarget)
     {
-        return ((delegate* unmanaged<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, int>)(lpVtbl[4]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), pD3DDevice, pddsRenderTarget);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, int>)(lpVtbl[4]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), pD3DDevice, pddsRenderTarget);
     }
 
     /// <include file='IVMRImageCompositor.xml' path='doc/member[@name="IVMRImageCompositor.SetStreamMediaType"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
     [VtblIndex(5)]
     public HRESULT SetStreamMediaType([NativeTypeName("DWORD")] uint dwStrmID, AM_MEDIA_TYPE* pmt, BOOL fTexture)
     {
-        return ((delegate* unmanaged<IVMRImageCompositor*, uint, AM_MEDIA_TYPE*, BOOL, int>)(lpVtbl[5]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), dwStrmID, pmt, fTexture);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImageCompositor*, uint, AM_MEDIA_TYPE*, BOOL, int>)(lpVtbl[5]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), dwStrmID, pmt, fTexture);
     }
 
     /// <include file='IVMRImageCompositor.xml' path='doc/member[@name="IVMRImageCompositor.CompositeImage"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
     [VtblIndex(6)]
     public HRESULT CompositeImage(IUnknown* pD3DDevice, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* pddsRenderTarget, AM_MEDIA_TYPE* pmtRenderTarget, [NativeTypeName("REFERENCE_TIME")] long rtStart, [NativeTypeName("REFERENCE_TIME")] long rtEnd, [NativeTypeName("DWORD")] uint dwClrBkGnd, VMRVIDEOSTREAMINFO* pVideoStreamInfo, uint cStreams)
     {
-        return ((delegate* unmanaged<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, AM_MEDIA_TYPE*, long, long, uint, VMRVIDEOSTREAMINFO*, uint, int>)(lpVtbl[6]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), pD3DDevice, pddsRenderTarget, pmtRenderTarget, rtStart, rtEnd, dwClrBkGnd, pVideoStreamInfo, cStreams);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, AM_MEDIA_TYPE*, long, long, uint, VMRVIDEOSTREAMINFO*, uint, int>)(lpVtbl[6]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), pD3DDevice, pddsRenderTarget, pmtRenderTarget, rtStart, rtEnd, dwClrBkGnd, pVideoStreamInfo, cStreams);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,24 +98,24 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, LPDIRECTDRAWSURFACE7) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IDirectDrawSurface7*, int> InitCompositionTarget;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IDirectDrawSurface7*, int> InitCompositionTarget;
 
         [NativeTypeName("HRESULT (IUnknown *, LPDIRECTDRAWSURFACE7) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IDirectDrawSurface7*, int> TermCompositionTarget;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IDirectDrawSurface7*, int> TermCompositionTarget;
 
         [NativeTypeName("HRESULT (DWORD, AM_MEDIA_TYPE *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, AM_MEDIA_TYPE*, BOOL, int> SetStreamMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, AM_MEDIA_TYPE*, BOOL, int> SetStreamMediaType;
 
         [NativeTypeName("HRESULT (IUnknown *, LPDIRECTDRAWSURFACE7, AM_MEDIA_TYPE *, REFERENCE_TIME, REFERENCE_TIME, DWORD, VMRVIDEOSTREAMINFO *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IDirectDrawSurface7*, AM_MEDIA_TYPE*, long, long, uint, VMRVIDEOSTREAMINFO*, uint, int> CompositeImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IDirectDrawSurface7*, AM_MEDIA_TYPE*, long, long, uint, VMRVIDEOSTREAMINFO*, uint, int> CompositeImage;
     }
 }

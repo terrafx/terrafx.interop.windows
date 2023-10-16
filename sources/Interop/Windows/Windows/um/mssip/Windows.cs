@@ -44,12 +44,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPRetrieveSubjectGuid"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptSIPRetrieveSubjectGuid([NativeTypeName("LPCWSTR")] ushort* FileName, HANDLE hFileIn, Guid* pgSubject);
+    public static extern BOOL CryptSIPRetrieveSubjectGuid([NativeTypeName("LPCWSTR")] char* FileName, HANDLE hFileIn, Guid* pgSubject);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPRetrieveSubjectGuidForCatalogFile"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptSIPRetrieveSubjectGuidForCatalogFile([NativeTypeName("LPCWSTR")] ushort* FileName, HANDLE hFileIn, Guid* pgSubject);
+    public static extern BOOL CryptSIPRetrieveSubjectGuidForCatalogFile([NativeTypeName("LPCWSTR")] char* FileName, HANDLE hFileIn, Guid* pgSubject);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPAddProvider"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]

@@ -19,32 +19,4 @@ public static unsafe partial class IFrameworkInputPaneTests
     {
         Assert.That(typeof(IFrameworkInputPane).GUID, Is.EqualTo(IID_IFrameworkInputPane));
     }
-
-    /// <summary>Validates that the <see cref="IFrameworkInputPane" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFrameworkInputPane>(), Is.EqualTo(sizeof(IFrameworkInputPane)));
-    }
-
-    /// <summary>Validates that the <see cref="IFrameworkInputPane" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFrameworkInputPane).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFrameworkInputPane" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFrameworkInputPane), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFrameworkInputPane), Is.EqualTo(4));
-        }
-    }
 }

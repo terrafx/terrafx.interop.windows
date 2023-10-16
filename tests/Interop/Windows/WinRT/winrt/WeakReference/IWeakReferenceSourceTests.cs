@@ -19,32 +19,4 @@ public static unsafe partial class IWeakReferenceSourceTests
     {
         Assert.That(typeof(IWeakReferenceSource).GUID, Is.EqualTo(IID_IWeakReferenceSource));
     }
-
-    /// <summary>Validates that the <see cref="IWeakReferenceSource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWeakReferenceSource>(), Is.EqualTo(sizeof(IWeakReferenceSource)));
-    }
-
-    /// <summary>Validates that the <see cref="IWeakReferenceSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWeakReferenceSource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWeakReferenceSource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWeakReferenceSource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWeakReferenceSource), Is.EqualTo(4));
-        }
-    }
 }

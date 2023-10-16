@@ -25,7 +25,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumMediaTypes*, Guid*, void**, int>)(lpVtbl[0]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumMediaTypes*, Guid*, void**, int>)(lpVtbl[0]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumMediaTypes*, uint>)(lpVtbl[1]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumMediaTypes*, uint>)(lpVtbl[1]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumMediaTypes*, uint>)(lpVtbl[2]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumMediaTypes*, uint>)(lpVtbl[2]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumMediaTypes.xml' path='doc/member[@name="IEnumMediaTypes.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint cMediaTypes, AM_MEDIA_TYPE** ppMediaTypes, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumMediaTypes*, uint, AM_MEDIA_TYPE**, uint*, int>)(lpVtbl[3]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), cMediaTypes, ppMediaTypes, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumMediaTypes*, uint, AM_MEDIA_TYPE**, uint*, int>)(lpVtbl[3]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), cMediaTypes, ppMediaTypes, pcFetched);
     }
 
     /// <include file='IEnumMediaTypes.xml' path='doc/member[@name="IEnumMediaTypes.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface, INativ
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint cMediaTypes)
     {
-        return ((delegate* unmanaged<IEnumMediaTypes*, uint, int>)(lpVtbl[4]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), cMediaTypes);
+        return ((delegate* unmanaged[MemberFunction]<IEnumMediaTypes*, uint, int>)(lpVtbl[4]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), cMediaTypes);
     }
 
     /// <include file='IEnumMediaTypes.xml' path='doc/member[@name="IEnumMediaTypes.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface, INativ
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumMediaTypes*, int>)(lpVtbl[5]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumMediaTypes*, int>)(lpVtbl[5]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumMediaTypes.xml' path='doc/member[@name="IEnumMediaTypes.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface, INativ
     [VtblIndex(6)]
     public HRESULT Clone(IEnumMediaTypes** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumMediaTypes*, IEnumMediaTypes**, int>)(lpVtbl[6]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumMediaTypes*, IEnumMediaTypes**, int>)(lpVtbl[6]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, AM_MEDIA_TYPE **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, AM_MEDIA_TYPE**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, AM_MEDIA_TYPE**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumMediaTypes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumMediaTypes**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumMediaTypes**, int> Clone;
     }
 }

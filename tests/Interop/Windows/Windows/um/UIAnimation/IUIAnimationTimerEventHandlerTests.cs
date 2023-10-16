@@ -19,32 +19,4 @@ public static unsafe partial class IUIAnimationTimerEventHandlerTests
     {
         Assert.That(typeof(IUIAnimationTimerEventHandler).GUID, Is.EqualTo(IID_IUIAnimationTimerEventHandler));
     }
-
-    /// <summary>Validates that the <see cref="IUIAnimationTimerEventHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUIAnimationTimerEventHandler>(), Is.EqualTo(sizeof(IUIAnimationTimerEventHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationTimerEventHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUIAnimationTimerEventHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationTimerEventHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUIAnimationTimerEventHandler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUIAnimationTimerEventHandler), Is.EqualTo(4));
-        }
-    }
 }

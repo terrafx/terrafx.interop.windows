@@ -26,7 +26,7 @@ public unsafe partial struct MIDIOUTCAPS2W
 
     /// <include file='MIDIOUTCAPS2W.xml' path='doc/member[@name="MIDIOUTCAPS2W.szPname"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort szPname[32];
+    public fixed char szPname[32];
 
     /// <include file='MIDIOUTCAPS2W.xml' path='doc/member[@name="MIDIOUTCAPS2W.wTechnology"]/*' />
     [NativeTypeName("WORD")]

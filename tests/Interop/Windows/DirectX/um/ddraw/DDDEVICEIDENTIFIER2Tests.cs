@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DDDEVICEIDENTIFIER2" /> struct.</summary>
 public static unsafe partial class DDDEVICEIDENTIFIER2Tests
 {
-    /// <summary>Validates that the <see cref="DDDEVICEIDENTIFIER2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DDDEVICEIDENTIFIER2>(), Is.EqualTo(sizeof(DDDEVICEIDENTIFIER2)));
-    }
-
-    /// <summary>Validates that the <see cref="DDDEVICEIDENTIFIER2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DDDEVICEIDENTIFIER2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DDDEVICEIDENTIFIER2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DDDEVICEIDENTIFIER2), Is.EqualTo(1072));
-    }
 }

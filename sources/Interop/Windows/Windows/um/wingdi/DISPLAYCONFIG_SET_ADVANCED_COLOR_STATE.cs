@@ -23,7 +23,7 @@ public partial struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
     public uint enableAdvancedColor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.enableAdvancedColor;
         }
@@ -39,7 +39,7 @@ public partial struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -86,7 +86,7 @@ public partial struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
             public uint enableAdvancedColor
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -103,7 +103,7 @@ public partial struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

@@ -19,32 +19,4 @@ public static unsafe partial class IInitializeWithFileTests
     {
         Assert.That(typeof(IInitializeWithFile).GUID, Is.EqualTo(IID_IInitializeWithFile));
     }
-
-    /// <summary>Validates that the <see cref="IInitializeWithFile" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInitializeWithFile>(), Is.EqualTo(sizeof(IInitializeWithFile)));
-    }
-
-    /// <summary>Validates that the <see cref="IInitializeWithFile" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInitializeWithFile).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInitializeWithFile" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInitializeWithFile), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInitializeWithFile), Is.EqualTo(4));
-        }
-    }
 }

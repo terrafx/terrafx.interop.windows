@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoNoOfFieldsToSkipTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoNoOfFieldsToSkip).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoNoOfFieldsToSkip));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoNoOfFieldsToSkip" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoNoOfFieldsToSkip>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoNoOfFieldsToSkip)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoNoOfFieldsToSkip" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoNoOfFieldsToSkip).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoNoOfFieldsToSkip" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoNoOfFieldsToSkip), Is.EqualTo(1));
-    }
 }

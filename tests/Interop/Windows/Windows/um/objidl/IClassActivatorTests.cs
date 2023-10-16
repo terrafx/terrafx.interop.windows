@@ -19,32 +19,4 @@ public static unsafe partial class IClassActivatorTests
     {
         Assert.That(typeof(IClassActivator).GUID, Is.EqualTo(IID_IClassActivator));
     }
-
-    /// <summary>Validates that the <see cref="IClassActivator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IClassActivator>(), Is.EqualTo(sizeof(IClassActivator)));
-    }
-
-    /// <summary>Validates that the <see cref="IClassActivator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IClassActivator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IClassActivator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IClassActivator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IClassActivator), Is.EqualTo(4));
-        }
-    }
 }

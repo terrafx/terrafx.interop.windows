@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WINHTTP_PROXY_NETWORKING_KEY" /> struct.</summary>
 public static unsafe partial class WINHTTP_PROXY_NETWORKING_KEYTests
 {
-    /// <summary>Validates that the <see cref="WINHTTP_PROXY_NETWORKING_KEY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WINHTTP_PROXY_NETWORKING_KEY>(), Is.EqualTo(sizeof(WINHTTP_PROXY_NETWORKING_KEY)));
-    }
-
-    /// <summary>Validates that the <see cref="WINHTTP_PROXY_NETWORKING_KEY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WINHTTP_PROXY_NETWORKING_KEY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WINHTTP_PROXY_NETWORKING_KEY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WINHTTP_PROXY_NETWORKING_KEY), Is.EqualTo(128));
-    }
 }

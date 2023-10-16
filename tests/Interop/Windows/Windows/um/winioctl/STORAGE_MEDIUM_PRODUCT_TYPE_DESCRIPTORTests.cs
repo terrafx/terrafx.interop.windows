@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTORTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR>(), Is.EqualTo(sizeof(STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR), Is.EqualTo(12));
-    }
 }

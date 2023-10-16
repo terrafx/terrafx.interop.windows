@@ -25,7 +25,7 @@ public unsafe partial struct IAppxBundleFactory2 : IAppxBundleFactory2.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBundleFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppxBundleFactory2 : IAppxBundleFactory2.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBundleFactory2*, uint>)(lpVtbl[1]))((IAppxBundleFactory2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleFactory2*, uint>)(lpVtbl[1]))((IAppxBundleFactory2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct IAppxBundleFactory2 : IAppxBundleFactory2.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBundleFactory2*, uint>)(lpVtbl[2]))((IAppxBundleFactory2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleFactory2*, uint>)(lpVtbl[2]))((IAppxBundleFactory2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBundleFactory2.xml' path='doc/member[@name="IAppxBundleFactory2.CreateBundleReader2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateBundleReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxBundleReader** bundleReader)
+    public HRESULT CreateBundleReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxBundleReader** bundleReader)
     {
-        return ((delegate* unmanaged<IAppxBundleFactory2*, IStream*, ushort*, IAppxBundleReader**, int>)(lpVtbl[3]))((IAppxBundleFactory2*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, bundleReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleFactory2*, IStream*, char*, IAppxBundleReader**, int>)(lpVtbl[3]))((IAppxBundleFactory2*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, bundleReader);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateBundleReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxBundleReader** bundleReader);
+        HRESULT CreateBundleReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxBundleReader** bundleReader);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxBundleReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, ushort*, IAppxBundleReader**, int> CreateBundleReader2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, char*, IAppxBundleReader**, int> CreateBundleReader2;
     }
 }

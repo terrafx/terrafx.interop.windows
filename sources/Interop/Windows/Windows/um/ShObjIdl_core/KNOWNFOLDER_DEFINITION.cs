@@ -15,11 +15,11 @@ public unsafe partial struct KNOWNFOLDER_DEFINITION
 
     /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION.pszName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszName;
+    public char* pszName;
 
     /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION.pszDescription"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszDescription;
+    public char* pszDescription;
 
     /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION.fidParent"]/*' />
     [NativeTypeName("KNOWNFOLDERID")]
@@ -27,27 +27,27 @@ public unsafe partial struct KNOWNFOLDER_DEFINITION
 
     /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION.pszRelativePath"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszRelativePath;
+    public char* pszRelativePath;
 
     /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION.pszParsingName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszParsingName;
+    public char* pszParsingName;
 
     /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION.pszTooltip"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszTooltip;
+    public char* pszTooltip;
 
     /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION.pszLocalizedName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszLocalizedName;
+    public char* pszLocalizedName;
 
     /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION.pszIcon"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszIcon;
+    public char* pszIcon;
 
     /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION.pszSecurity"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszSecurity;
+    public char* pszSecurity;
 
     /// <include file='KNOWNFOLDER_DEFINITION.xml' path='doc/member[@name="KNOWNFOLDER_DEFINITION.dwAttributes"]/*' />
     [NativeTypeName("DWORD")]

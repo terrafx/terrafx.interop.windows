@@ -25,7 +25,7 @@ public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumTfPropertyValue*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfPropertyValue*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumTfPropertyValue*, uint>)(lpVtbl[1]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfPropertyValue*, uint>)(lpVtbl[1]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumTfPropertyValue*, uint>)(lpVtbl[2]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfPropertyValue*, uint>)(lpVtbl[2]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfPropertyValue.xml' path='doc/member[@name="IEnumTfPropertyValue.Clone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interfa
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfPropertyValue** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumTfPropertyValue*, IEnumTfPropertyValue**, int>)(lpVtbl[3]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfPropertyValue*, IEnumTfPropertyValue**, int>)(lpVtbl[3]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IEnumTfPropertyValue.xml' path='doc/member[@name="IEnumTfPropertyValue.Next"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interfa
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_PROPERTYVAL* rgValues, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumTfPropertyValue*, uint, TF_PROPERTYVAL*, uint*, int>)(lpVtbl[4]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ulCount, rgValues, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfPropertyValue*, uint, TF_PROPERTYVAL*, uint*, int>)(lpVtbl[4]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ulCount, rgValues, pcFetched);
     }
 
     /// <include file='IEnumTfPropertyValue.xml' path='doc/member[@name="IEnumTfPropertyValue.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interfa
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumTfPropertyValue*, int>)(lpVtbl[5]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfPropertyValue*, int>)(lpVtbl[5]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfPropertyValue.xml' path='doc/member[@name="IEnumTfPropertyValue.Skip"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interfa
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
     {
-        return ((delegate* unmanaged<IEnumTfPropertyValue*, uint, int>)(lpVtbl[6]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ulCount);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfPropertyValue*, uint, int>)(lpVtbl[6]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ulCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfPropertyValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfPropertyValue**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfPropertyValue**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, TF_PROPERTYVAL *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, TF_PROPERTYVAL*, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, TF_PROPERTYVAL*, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
     }
 }

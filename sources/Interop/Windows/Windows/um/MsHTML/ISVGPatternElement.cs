@@ -25,7 +25,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, uint>)(lpVtbl[1]))((ISVGPatternElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, uint>)(lpVtbl[1]))((ISVGPatternElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, uint>)(lpVtbl[2]))((ISVGPatternElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, uint>)(lpVtbl[2]))((ISVGPatternElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, uint*, int>)(lpVtbl[3]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, uint*, int>)(lpVtbl[3]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_patternUnits"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(7)]
     public HRESULT putref_patternUnits(ISVGAnimatedEnumeration* v)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[7]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[7]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_patternUnits"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(8)]
     public HRESULT get_patternUnits(ISVGAnimatedEnumeration** p)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[8]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[8]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_patternContentUnits"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(9)]
     public HRESULT putref_patternContentUnits(ISVGAnimatedEnumeration* v)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[9]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[9]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_patternContentUnits"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(10)]
     public HRESULT get_patternContentUnits(ISVGAnimatedEnumeration** p)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[10]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[10]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_patternTransform"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(11)]
     public HRESULT putref_patternTransform(ISVGAnimatedTransformList* v)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList*, int>)(lpVtbl[11]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedTransformList*, int>)(lpVtbl[11]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_patternTransform"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(12)]
     public HRESULT get_patternTransform(ISVGAnimatedTransformList** p)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList**, int>)(lpVtbl[12]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedTransformList**, int>)(lpVtbl[12]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_x"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(13)]
     public HRESULT putref_x(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_x"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(14)]
     public HRESULT get_x(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_y"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(15)]
     public HRESULT putref_y(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[15]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[15]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_y"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(16)]
     public HRESULT get_y(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[16]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[16]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_width"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(17)]
     public HRESULT putref_width(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[17]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[17]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_width"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(18)]
     public HRESULT get_width(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[18]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[18]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_height"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(19)]
     public HRESULT putref_height(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[19]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[19]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_height"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
     [VtblIndex(20)]
     public HRESULT get_height(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[20]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[20]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -239,66 +239,66 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration*, int> putref_patternUnits;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedEnumeration*, int> putref_patternUnits;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration**, int> get_patternUnits;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedEnumeration**, int> get_patternUnits;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration*, int> putref_patternContentUnits;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedEnumeration*, int> putref_patternContentUnits;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration**, int> get_patternContentUnits;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedEnumeration**, int> get_patternContentUnits;
 
         [NativeTypeName("HRESULT (ISVGAnimatedTransformList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedTransformList*, int> putref_patternTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedTransformList*, int> putref_patternTransform;
 
         [NativeTypeName("HRESULT (ISVGAnimatedTransformList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedTransformList**, int> get_patternTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedTransformList**, int> get_patternTransform;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_x;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_x;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_x;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_x;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_y;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_y;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_y;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_y;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_width;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_width;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_width;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_width;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_height;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_height;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_height;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_height;
     }
 }

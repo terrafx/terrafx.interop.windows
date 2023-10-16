@@ -19,32 +19,4 @@ public static unsafe partial class IDistributorNotifyTests
     {
         Assert.That(typeof(IDistributorNotify).GUID, Is.EqualTo(IID_IDistributorNotify));
     }
-
-    /// <summary>Validates that the <see cref="IDistributorNotify" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDistributorNotify>(), Is.EqualTo(sizeof(IDistributorNotify)));
-    }
-
-    /// <summary>Validates that the <see cref="IDistributorNotify" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDistributorNotify).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDistributorNotify" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDistributorNotify), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDistributorNotify), Is.EqualTo(4));
-        }
-    }
 }

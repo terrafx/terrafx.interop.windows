@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, uint>)(lpVtbl[1]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, uint>)(lpVtbl[1]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,23 +43,23 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, uint>)(lpVtbl[2]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, uint>)(lpVtbl[2]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetItemID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetItemID([NativeTypeName("LPWSTR *")] ushort** ppszItemID)
+    public HRESULT GetItemID([NativeTypeName("LPWSTR *")] char** ppszItemID)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, ushort**, int>)(lpVtbl[3]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppszItemID);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, char**, int>)(lpVtbl[3]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppszItemID);
     }
 
     /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppszName)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, ushort**, int>)(lpVtbl[4]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppszName);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, char**, int>)(lpVtbl[4]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppszName);
     }
 
     /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetItemInfo"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetItemInfo(ISyncMgrSyncItemInfo** ppItemInfo)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, ISyncMgrSyncItemInfo**, int>)(lpVtbl[5]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppItemInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, ISyncMgrSyncItemInfo**, int>)(lpVtbl[5]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppItemInfo);
     }
 
     /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetObjectW"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetObjectW([NativeTypeName("const GUID &")] Guid* rguidObjectID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, Guid*, Guid*, void**, int>)(lpVtbl[6]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), rguidObjectID, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, Guid*, Guid*, void**, int>)(lpVtbl[6]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), rguidObjectID, riid, ppv);
     }
 
     /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetCapabilities"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INat
     [VtblIndex(7)]
     public HRESULT GetCapabilities(SYNCMGR_ITEM_CAPABILITIES* pmCapabilities)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, SYNCMGR_ITEM_CAPABILITIES*, int>)(lpVtbl[7]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), pmCapabilities);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, SYNCMGR_ITEM_CAPABILITIES*, int>)(lpVtbl[7]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), pmCapabilities);
     }
 
     /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.GetPolicies"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INat
     [VtblIndex(8)]
     public HRESULT GetPolicies(SYNCMGR_ITEM_POLICIES* pmPolicies)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, SYNCMGR_ITEM_POLICIES*, int>)(lpVtbl[8]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), pmPolicies);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, SYNCMGR_ITEM_POLICIES*, int>)(lpVtbl[8]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), pmPolicies);
     }
 
     /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.Enable"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INat
     [VtblIndex(9)]
     public HRESULT Enable(BOOL fEnable)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, BOOL, int>)(lpVtbl[9]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), fEnable);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, BOOL, int>)(lpVtbl[9]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), fEnable);
     }
 
     /// <include file='ISyncMgrSyncItem.xml' path='doc/member[@name="ISyncMgrSyncItem.Delete"]/*' />
@@ -107,16 +107,16 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INat
     [VtblIndex(10)]
     public HRESULT Delete()
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItem*, int>)(lpVtbl[10]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItem*, int>)(lpVtbl[10]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetItemID([NativeTypeName("LPWSTR *")] ushort** ppszItemID);
+        HRESULT GetItemID([NativeTypeName("LPWSTR *")] char** ppszItemID);
 
         [VtblIndex(4)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppszName);
 
         [VtblIndex(5)]
         HRESULT GetItemInfo(ISyncMgrSyncItemInfo** ppItemInfo);
@@ -141,36 +141,36 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetItemID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetItemID;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (ISyncMgrSyncItemInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISyncMgrSyncItemInfo**, int> GetItemInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISyncMgrSyncItemInfo**, int> GetItemInfo;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetObjectW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, void**, int> GetObjectW;
 
         [NativeTypeName("HRESULT (SYNCMGR_ITEM_CAPABILITIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SYNCMGR_ITEM_CAPABILITIES*, int> GetCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SYNCMGR_ITEM_CAPABILITIES*, int> GetCapabilities;
 
         [NativeTypeName("HRESULT (SYNCMGR_ITEM_POLICIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SYNCMGR_ITEM_POLICIES*, int> GetPolicies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SYNCMGR_ITEM_POLICIES*, int> GetPolicies;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Enable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Enable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Delete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Delete;
     }
 }

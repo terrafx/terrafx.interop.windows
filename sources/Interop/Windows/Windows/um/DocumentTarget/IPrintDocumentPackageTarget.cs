@@ -27,7 +27,7 @@ public unsafe partial struct IPrintDocumentPackageTarget : IPrintDocumentPackage
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTarget*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPackageTarget*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IPrintDocumentPackageTarget : IPrintDocumentPackage
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTarget*, uint>)(lpVtbl[1]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPackageTarget*, uint>)(lpVtbl[1]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IPrintDocumentPackageTarget : IPrintDocumentPackage
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTarget*, uint>)(lpVtbl[2]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPackageTarget*, uint>)(lpVtbl[2]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrintDocumentPackageTarget.xml' path='doc/member[@name="IPrintDocumentPackageTarget.GetPackageTargetTypes"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IPrintDocumentPackageTarget : IPrintDocumentPackage
     [VtblIndex(3)]
     public HRESULT GetPackageTargetTypes([NativeTypeName("UINT32 *")] uint* targetCount, Guid** targetTypes)
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTarget*, uint*, Guid**, int>)(lpVtbl[3]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this), targetCount, targetTypes);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPackageTarget*, uint*, Guid**, int>)(lpVtbl[3]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this), targetCount, targetTypes);
     }
 
     /// <include file='IPrintDocumentPackageTarget.xml' path='doc/member[@name="IPrintDocumentPackageTarget.GetPackageTarget"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IPrintDocumentPackageTarget : IPrintDocumentPackage
     [VtblIndex(4)]
     public HRESULT GetPackageTarget([NativeTypeName("const GUID &")] Guid* guidTargetType, [NativeTypeName("const IID &")] Guid* riid, void** ppvTarget)
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTarget*, Guid*, Guid*, void**, int>)(lpVtbl[4]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this), guidTargetType, riid, ppvTarget);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPackageTarget*, Guid*, Guid*, void**, int>)(lpVtbl[4]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this), guidTargetType, riid, ppvTarget);
     }
 
     /// <include file='IPrintDocumentPackageTarget.xml' path='doc/member[@name="IPrintDocumentPackageTarget.Cancel"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IPrintDocumentPackageTarget : IPrintDocumentPackage
     [VtblIndex(5)]
     public HRESULT Cancel()
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTarget*, int>)(lpVtbl[5]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPackageTarget*, int>)(lpVtbl[5]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IPrintDocumentPackageTarget : IPrintDocumentPackage
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32 *, GUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetPackageTargetTypes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetPackageTargetTypes;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetPackageTarget;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, void**, int> GetPackageTarget;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Cancel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Cancel;
     }
 }

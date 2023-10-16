@@ -25,7 +25,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioVolumeLevel*, Guid*, void**, int>)(lpVtbl[0]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioVolumeLevel*, Guid*, void**, int>)(lpVtbl[0]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioVolumeLevel*, uint>)(lpVtbl[1]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioVolumeLevel*, uint>)(lpVtbl[1]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioVolumeLevel*, uint>)(lpVtbl[2]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioVolumeLevel*, uint>)(lpVtbl[2]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPerChannelDbLevel.GetChannelCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetChannelCount(uint* pcChannels)
     {
-        return ((delegate* unmanaged<IAudioVolumeLevel*, uint*, int>)(lpVtbl[3]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), pcChannels);
+        return ((delegate* unmanaged[MemberFunction]<IAudioVolumeLevel*, uint*, int>)(lpVtbl[3]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), pcChannels);
     }
 
     /// <inheritdoc cref="IPerChannelDbLevel.GetLevelRange" />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetLevelRange(uint nChannel, float* pfMinLevelDB, float* pfMaxLevelDB, float* pfStepping)
     {
-        return ((delegate* unmanaged<IAudioVolumeLevel*, uint, float*, float*, float*, int>)(lpVtbl[4]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), nChannel, pfMinLevelDB, pfMaxLevelDB, pfStepping);
+        return ((delegate* unmanaged[MemberFunction]<IAudioVolumeLevel*, uint, float*, float*, float*, int>)(lpVtbl[4]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), nChannel, pfMinLevelDB, pfMaxLevelDB, pfStepping);
     }
 
     /// <inheritdoc cref="IPerChannelDbLevel.GetLevel" />
@@ -67,7 +67,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetLevel(uint nChannel, float* pfLevelDB)
     {
-        return ((delegate* unmanaged<IAudioVolumeLevel*, uint, float*, int>)(lpVtbl[5]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), nChannel, pfLevelDB);
+        return ((delegate* unmanaged[MemberFunction]<IAudioVolumeLevel*, uint, float*, int>)(lpVtbl[5]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), nChannel, pfLevelDB);
     }
 
     /// <inheritdoc cref="IPerChannelDbLevel.SetLevel" />
@@ -75,7 +75,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IN
     [VtblIndex(6)]
     public HRESULT SetLevel(uint nChannel, float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
     {
-        return ((delegate* unmanaged<IAudioVolumeLevel*, uint, float, Guid*, int>)(lpVtbl[6]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), nChannel, fLevelDB, pguidEventContext);
+        return ((delegate* unmanaged[MemberFunction]<IAudioVolumeLevel*, uint, float, Guid*, int>)(lpVtbl[6]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), nChannel, fLevelDB, pguidEventContext);
     }
 
     /// <inheritdoc cref="IPerChannelDbLevel.SetLevelUniform" />
@@ -83,7 +83,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IN
     [VtblIndex(7)]
     public HRESULT SetLevelUniform(float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
     {
-        return ((delegate* unmanaged<IAudioVolumeLevel*, float, Guid*, int>)(lpVtbl[7]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), fLevelDB, pguidEventContext);
+        return ((delegate* unmanaged[MemberFunction]<IAudioVolumeLevel*, float, Guid*, int>)(lpVtbl[7]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), fLevelDB, pguidEventContext);
     }
 
     /// <inheritdoc cref="IPerChannelDbLevel.SetLevelAllChannels" />
@@ -91,7 +91,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IN
     [VtblIndex(8)]
     public HRESULT SetLevelAllChannels([NativeTypeName("float[]")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
     {
-        return ((delegate* unmanaged<IAudioVolumeLevel*, float*, uint, Guid*, int>)(lpVtbl[8]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), aLevelsDB, cChannels, pguidEventContext);
+        return ((delegate* unmanaged[MemberFunction]<IAudioVolumeLevel*, float*, uint, Guid*, int>)(lpVtbl[8]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), aLevelsDB, cChannels, pguidEventContext);
     }
 
     public interface Interface : IPerChannelDbLevel.Interface
@@ -102,30 +102,30 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetChannelCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetChannelCount;
 
         [NativeTypeName("HRESULT (UINT, float *, float *, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, float*, float*, int> GetLevelRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, float*, float*, int> GetLevelRange;
 
         [NativeTypeName("HRESULT (UINT, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, int> GetLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, int> GetLevel;
 
         [NativeTypeName("HRESULT (UINT, float, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, Guid*, int> SetLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, Guid*, int> SetLevel;
 
         [NativeTypeName("HRESULT (float, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, Guid*, int> SetLevelUniform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, Guid*, int> SetLevelUniform;
 
         [NativeTypeName("HRESULT (float *, ULONG, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, Guid*, int> SetLevelAllChannels;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, Guid*, int> SetLevelAllChannels;
     }
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, uint>)(lpVtbl[1]))((IMFSensorDevice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, uint>)(lpVtbl[1]))((IMFSensorDevice*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, uint>)(lpVtbl[2]))((IMFSensorDevice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, uint>)(lpVtbl[2]))((IMFSensorDevice*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetDeviceId"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetDeviceId([NativeTypeName("ULONGLONG *")] ulong* pDeviceId)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, ulong*, int>)(lpVtbl[3]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), pDeviceId);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, ulong*, int>)(lpVtbl[3]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), pDeviceId);
     }
 
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetDeviceType"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetDeviceType(MFSensorDeviceType* pType)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceType*, int>)(lpVtbl[4]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), pType);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, MFSensorDeviceType*, int>)(lpVtbl[4]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), pType);
     }
 
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetFlags"]/*' />
@@ -69,15 +69,15 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetFlags([NativeTypeName("ULONGLONG *")] ulong* pFlags)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, ulong*, int>)(lpVtbl[5]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), pFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, ulong*, int>)(lpVtbl[5]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), pFlags);
     }
 
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetSymbolicLink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten)
+    public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] char* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, ushort*, int, int*, int>)(lpVtbl[6]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, char*, int, int*, int>)(lpVtbl[6]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
     }
 
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetDeviceAttributes"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [VtblIndex(7)]
     public HRESULT GetDeviceAttributes(IMFAttributes** ppAttributes)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, IMFAttributes**, int>)(lpVtbl[7]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), ppAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, IMFAttributes**, int>)(lpVtbl[7]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), ppAttributes);
     }
 
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetStreamAttributesCount"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [VtblIndex(8)]
     public HRESULT GetStreamAttributesCount(MFSensorStreamType eType, [NativeTypeName("DWORD *")] uint* pdwCount)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, MFSensorStreamType, uint*, int>)(lpVtbl[8]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), eType, pdwCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, MFSensorStreamType, uint*, int>)(lpVtbl[8]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), eType, pdwCount);
     }
 
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetStreamAttributes"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [VtblIndex(9)]
     public HRESULT GetStreamAttributes(MFSensorStreamType eType, [NativeTypeName("DWORD")] uint dwIndex, IMFAttributes** ppAttributes)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, MFSensorStreamType, uint, IMFAttributes**, int>)(lpVtbl[9]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), eType, dwIndex, ppAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, MFSensorStreamType, uint, IMFAttributes**, int>)(lpVtbl[9]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), eType, dwIndex, ppAttributes);
     }
 
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.SetSensorDeviceMode"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [VtblIndex(10)]
     public HRESULT SetSensorDeviceMode(MFSensorDeviceMode eMode)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceMode, int>)(lpVtbl[10]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), eMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, MFSensorDeviceMode, int>)(lpVtbl[10]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), eMode);
     }
 
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetSensorDeviceMode"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     [VtblIndex(11)]
     public HRESULT GetSensorDeviceMode(MFSensorDeviceMode* peMode)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceMode*, int>)(lpVtbl[11]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), peMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorDevice*, MFSensorDeviceMode*, int>)(lpVtbl[11]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), peMode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -132,7 +132,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
         HRESULT GetFlags([NativeTypeName("ULONGLONG *")] ulong* pFlags);
 
         [VtblIndex(6)]
-        HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten);
+        HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] char* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten);
 
         [VtblIndex(7)]
         HRESULT GetDeviceAttributes(IMFAttributes** ppAttributes);
@@ -154,39 +154,39 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetDeviceId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetDeviceId;
 
         [NativeTypeName("HRESULT (MFSensorDeviceType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFSensorDeviceType*, int> GetDeviceType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFSensorDeviceType*, int> GetDeviceType;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetFlags;
 
         [NativeTypeName("HRESULT (LPWSTR, LONG, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> GetSymbolicLink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int*, int> GetSymbolicLink;
 
         [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAttributes**, int> GetDeviceAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAttributes**, int> GetDeviceAttributes;
 
         [NativeTypeName("HRESULT (MFSensorStreamType, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFSensorStreamType, uint*, int> GetStreamAttributesCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFSensorStreamType, uint*, int> GetStreamAttributesCount;
 
         [NativeTypeName("HRESULT (MFSensorStreamType, DWORD, IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFSensorStreamType, uint, IMFAttributes**, int> GetStreamAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFSensorStreamType, uint, IMFAttributes**, int> GetStreamAttributes;
 
         [NativeTypeName("HRESULT (MFSensorDeviceMode) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFSensorDeviceMode, int> SetSensorDeviceMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFSensorDeviceMode, int> SetSensorDeviceMode;
 
         [NativeTypeName("HRESULT (MFSensorDeviceMode *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFSensorDeviceMode*, int> GetSensorDeviceMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFSensorDeviceMode*, int> GetSensorDeviceMode;
     }
 }

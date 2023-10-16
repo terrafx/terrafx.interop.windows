@@ -19,32 +19,4 @@ public static unsafe partial class ISVGRadialGradientElementTests
     {
         Assert.That(typeof(ISVGRadialGradientElement).GUID, Is.EqualTo(IID_ISVGRadialGradientElement));
     }
-
-    /// <summary>Validates that the <see cref="ISVGRadialGradientElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISVGRadialGradientElement>(), Is.EqualTo(sizeof(ISVGRadialGradientElement)));
-    }
-
-    /// <summary>Validates that the <see cref="ISVGRadialGradientElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISVGRadialGradientElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISVGRadialGradientElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISVGRadialGradientElement), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISVGRadialGradientElement), Is.EqualTo(4));
-        }
-    }
 }

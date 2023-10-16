@@ -19,7 +19,7 @@ public partial struct IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION
     public ushort PageRelativeOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)(_bitfield & 0xFFFu);
         }
@@ -36,7 +36,7 @@ public partial struct IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION
     public ushort RegisterNumber
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 12) & 0xFu);
         }

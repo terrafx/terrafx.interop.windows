@@ -28,7 +28,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, uint>)(lpVtbl[1]))((IDCompositionVisual*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, uint>)(lpVtbl[1]))((IDCompositionVisual*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, uint>)(lpVtbl[2]))((IDCompositionVisual*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, uint>)(lpVtbl[2]))((IDCompositionVisual*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetOffsetX"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(3)]
     public HRESULT SetOffsetX(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetOffsetX"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(4)]
     public HRESULT SetOffsetX(float offsetX)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, float, int>)(lpVtbl[4]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), offsetX);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, float, int>)(lpVtbl[4]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), offsetX);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetOffsetY"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(5)]
     public HRESULT SetOffsetY(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetOffsetY"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(6)]
     public HRESULT SetOffsetY(float offsetY)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, float, int>)(lpVtbl[6]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), offsetY);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, float, int>)(lpVtbl[6]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), offsetY);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetTransform"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(7)]
     public HRESULT SetTransform(IDCompositionTransform* transform)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, IDCompositionTransform*, int>)(lpVtbl[7]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), transform);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, IDCompositionTransform*, int>)(lpVtbl[7]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), transform);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetTransform"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(8)]
     public HRESULT SetTransform([NativeTypeName("const D2D_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* matrix)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[8]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), matrix);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[8]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), matrix);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetTransformParent"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(9)]
     public HRESULT SetTransformParent(IDCompositionVisual* visual)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, IDCompositionVisual*, int>)(lpVtbl[9]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), visual);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, IDCompositionVisual*, int>)(lpVtbl[9]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), visual);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetEffect"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(10)]
     public HRESULT SetEffect(IDCompositionEffect* effect)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, IDCompositionEffect*, int>)(lpVtbl[10]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), effect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, IDCompositionEffect*, int>)(lpVtbl[10]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), effect);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetBitmapInterpolationMode"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(11)]
     public HRESULT SetBitmapInterpolationMode(DCOMPOSITION_BITMAP_INTERPOLATION_MODE interpolationMode)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, DCOMPOSITION_BITMAP_INTERPOLATION_MODE, int>)(lpVtbl[11]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), interpolationMode);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, DCOMPOSITION_BITMAP_INTERPOLATION_MODE, int>)(lpVtbl[11]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), interpolationMode);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetBorderMode"]/*' />
@@ -126,7 +126,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(12)]
     public HRESULT SetBorderMode(DCOMPOSITION_BORDER_MODE borderMode)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, DCOMPOSITION_BORDER_MODE, int>)(lpVtbl[12]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), borderMode);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, DCOMPOSITION_BORDER_MODE, int>)(lpVtbl[12]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), borderMode);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetClip"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(13)]
     public HRESULT SetClip(IDCompositionClip* clip)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, IDCompositionClip*, int>)(lpVtbl[13]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), clip);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, IDCompositionClip*, int>)(lpVtbl[13]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), clip);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetClip"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(14)]
     public HRESULT SetClip([NativeTypeName("const D2D_RECT_F &")] D2D_RECT_F* rect)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, D2D_RECT_F*, int>)(lpVtbl[14]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), rect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, D2D_RECT_F*, int>)(lpVtbl[14]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), rect);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetContent"]/*' />
@@ -150,7 +150,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(15)]
     public HRESULT SetContent(IUnknown* content)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, IUnknown*, int>)(lpVtbl[15]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), content);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, IUnknown*, int>)(lpVtbl[15]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), content);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.AddVisual"]/*' />
@@ -158,7 +158,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(16)]
     public HRESULT AddVisual(IDCompositionVisual* visual, BOOL insertAbove, IDCompositionVisual* referenceVisual)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, IDCompositionVisual*, BOOL, IDCompositionVisual*, int>)(lpVtbl[16]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), visual, insertAbove, referenceVisual);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, IDCompositionVisual*, BOOL, IDCompositionVisual*, int>)(lpVtbl[16]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), visual, insertAbove, referenceVisual);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.RemoveVisual"]/*' />
@@ -166,7 +166,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(17)]
     public HRESULT RemoveVisual(IDCompositionVisual* visual)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, IDCompositionVisual*, int>)(lpVtbl[17]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), visual);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, IDCompositionVisual*, int>)(lpVtbl[17]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), visual);
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.RemoveAllVisuals"]/*' />
@@ -174,7 +174,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(18)]
     public HRESULT RemoveAllVisuals()
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, int>)(lpVtbl[18]))((IDCompositionVisual*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, int>)(lpVtbl[18]))((IDCompositionVisual*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionVisual.xml' path='doc/member[@name="IDCompositionVisual.SetCompositeMode"]/*' />
@@ -182,7 +182,7 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     [VtblIndex(19)]
     public HRESULT SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE compositeMode)
     {
-        return ((delegate* unmanaged<IDCompositionVisual*, DCOMPOSITION_COMPOSITE_MODE, int>)(lpVtbl[19]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), compositeMode);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionVisual*, DCOMPOSITION_COMPOSITE_MODE, int>)(lpVtbl[19]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), compositeMode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -243,63 +243,63 @@ public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetOffsetX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetOffsetX1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetOffsetX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetOffsetY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetOffsetY1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetOffsetY1;
 
         [NativeTypeName("HRESULT (IDCompositionTransform *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionTransform*, int> SetTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionTransform*, int> SetTransform;
 
         [NativeTypeName("HRESULT (const D2D_MATRIX_3X2_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, int> SetTransform1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_MATRIX_3X2_F*, int> SetTransform1;
 
         [NativeTypeName("HRESULT (IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionVisual*, int> SetTransformParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionVisual*, int> SetTransformParent;
 
         [NativeTypeName("HRESULT (IDCompositionEffect *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionEffect*, int> SetEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionEffect*, int> SetEffect;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_BITMAP_INTERPOLATION_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DCOMPOSITION_BITMAP_INTERPOLATION_MODE, int> SetBitmapInterpolationMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DCOMPOSITION_BITMAP_INTERPOLATION_MODE, int> SetBitmapInterpolationMode;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_BORDER_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DCOMPOSITION_BORDER_MODE, int> SetBorderMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DCOMPOSITION_BORDER_MODE, int> SetBorderMode;
 
         [NativeTypeName("HRESULT (IDCompositionClip *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionClip*, int> SetClip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionClip*, int> SetClip;
 
         [NativeTypeName("HRESULT (const D2D_RECT_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_RECT_F*, int> SetClip1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_RECT_F*, int> SetClip1;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetContent;
 
         [NativeTypeName("HRESULT (IDCompositionVisual *, BOOL, IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionVisual*, BOOL, IDCompositionVisual*, int> AddVisual;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionVisual*, BOOL, IDCompositionVisual*, int> AddVisual;
 
         [NativeTypeName("HRESULT (IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionVisual*, int> RemoveVisual;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionVisual*, int> RemoveVisual;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RemoveAllVisuals;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RemoveAllVisuals;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_COMPOSITE_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DCOMPOSITION_COMPOSITE_MODE, int> SetCompositeMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DCOMPOSITION_COMPOSITE_MODE, int> SetCompositeMode;
     }
 }

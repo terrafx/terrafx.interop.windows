@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EMRFILLPATH" /> struct.</summary>
 public static unsafe partial class EMRFILLPATHTests
 {
-    /// <summary>Validates that the <see cref="EMRFILLPATH" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EMRFILLPATH>(), Is.EqualTo(sizeof(EMRFILLPATH)));
-    }
-
-    /// <summary>Validates that the <see cref="EMRFILLPATH" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EMRFILLPATH).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EMRFILLPATH" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EMRFILLPATH), Is.EqualTo(24));
-    }
 }

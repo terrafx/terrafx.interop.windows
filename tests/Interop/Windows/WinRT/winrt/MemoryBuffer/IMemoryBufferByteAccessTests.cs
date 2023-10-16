@@ -19,32 +19,4 @@ public static unsafe partial class IMemoryBufferByteAccessTests
     {
         Assert.That(typeof(IMemoryBufferByteAccess).GUID, Is.EqualTo(IID_IMemoryBufferByteAccess));
     }
-
-    /// <summary>Validates that the <see cref="IMemoryBufferByteAccess" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMemoryBufferByteAccess>(), Is.EqualTo(sizeof(IMemoryBufferByteAccess)));
-    }
-
-    /// <summary>Validates that the <see cref="IMemoryBufferByteAccess" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMemoryBufferByteAccess).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMemoryBufferByteAccess" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMemoryBufferByteAccess), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMemoryBufferByteAccess), Is.EqualTo(4));
-        }
-    }
 }

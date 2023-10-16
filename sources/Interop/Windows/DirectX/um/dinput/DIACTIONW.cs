@@ -42,7 +42,7 @@ public unsafe partial struct DIACTIONW
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lptszActionName"]/*' />
     [UnscopedRef]
-    public ref ushort* lptszActionName
+    public ref char* lptszActionName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -69,7 +69,7 @@ public unsafe partial struct DIACTIONW
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lptszActionName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* lptszActionName;
+        public char* lptszActionName;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uResIdString"]/*' />
         [FieldOffset(0)]

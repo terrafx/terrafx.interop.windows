@@ -17,11 +17,11 @@ public unsafe partial struct CollectionElementValue
 
     /// <include file='CollectionElementValue.xml' path='doc/member[@name="CollectionElementValue.ValueType"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* ValueType;
+    public char* ValueType;
 
     /// <include file='CollectionElementValue.xml' path='doc/member[@name="CollectionElementValue.Value"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* Value;
+    public char* Value;
 
     /// <include file='CollectionElementValue.xml' path='doc/member[@name="CollectionElementValue.MetadataBits"]/*' />
     [NativeTypeName("long long")]

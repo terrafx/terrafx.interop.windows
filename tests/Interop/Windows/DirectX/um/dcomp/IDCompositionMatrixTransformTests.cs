@@ -21,32 +21,4 @@ public static unsafe partial class IDCompositionMatrixTransformTests
     {
         Assert.That(typeof(IDCompositionMatrixTransform).GUID, Is.EqualTo(IID_IDCompositionMatrixTransform));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionMatrixTransform" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionMatrixTransform>(), Is.EqualTo(sizeof(IDCompositionMatrixTransform)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionMatrixTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionMatrixTransform).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionMatrixTransform" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionMatrixTransform), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionMatrixTransform), Is.EqualTo(4));
-        }
-    }
 }

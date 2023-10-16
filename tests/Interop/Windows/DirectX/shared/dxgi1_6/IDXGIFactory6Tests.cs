@@ -21,32 +21,4 @@ public static unsafe partial class IDXGIFactory6Tests
     {
         Assert.That(typeof(IDXGIFactory6).GUID, Is.EqualTo(IID_IDXGIFactory6));
     }
-
-    /// <summary>Validates that the <see cref="IDXGIFactory6" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDXGIFactory6>(), Is.EqualTo(sizeof(IDXGIFactory6)));
-    }
-
-    /// <summary>Validates that the <see cref="IDXGIFactory6" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDXGIFactory6).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDXGIFactory6" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDXGIFactory6), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDXGIFactory6), Is.EqualTo(4));
-        }
-    }
 }

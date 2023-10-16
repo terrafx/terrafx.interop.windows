@@ -20,5 +20,5 @@ public unsafe partial struct CATEGORYINFO
 
     /// <include file='CATEGORYINFO.xml' path='doc/member[@name="CATEGORYINFO.szDescription"]/*' />
     [NativeTypeName("OLECHAR[128]")]
-    public fixed ushort szDescription[128];
+    public fixed char szDescription[128];
 }

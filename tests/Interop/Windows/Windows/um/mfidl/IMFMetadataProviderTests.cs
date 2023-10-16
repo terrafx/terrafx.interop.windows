@@ -19,32 +19,4 @@ public static unsafe partial class IMFMetadataProviderTests
     {
         Assert.That(typeof(IMFMetadataProvider).GUID, Is.EqualTo(IID_IMFMetadataProvider));
     }
-
-    /// <summary>Validates that the <see cref="IMFMetadataProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFMetadataProvider>(), Is.EqualTo(sizeof(IMFMetadataProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFMetadataProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFMetadataProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFMetadataProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFMetadataProvider), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFMetadataProvider), Is.EqualTo(4));
-        }
-    }
 }

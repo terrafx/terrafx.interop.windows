@@ -19,32 +19,4 @@ public static unsafe partial class IApplicationActivationManagerTests
     {
         Assert.That(typeof(IApplicationActivationManager).GUID, Is.EqualTo(IID_IApplicationActivationManager));
     }
-
-    /// <summary>Validates that the <see cref="IApplicationActivationManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IApplicationActivationManager>(), Is.EqualTo(sizeof(IApplicationActivationManager)));
-    }
-
-    /// <summary>Validates that the <see cref="IApplicationActivationManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IApplicationActivationManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IApplicationActivationManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IApplicationActivationManager), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IApplicationActivationManager), Is.EqualTo(4));
-        }
-    }
 }

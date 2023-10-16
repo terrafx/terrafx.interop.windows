@@ -25,7 +25,7 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMTVAudio*, Guid*, void**, int>)(lpVtbl[0]))((IAMTVAudio*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVAudio*, Guid*, void**, int>)(lpVtbl[0]))((IAMTVAudio*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMTVAudio*, uint>)(lpVtbl[1]))((IAMTVAudio*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTVAudio*, uint>)(lpVtbl[1]))((IAMTVAudio*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMTVAudio*, uint>)(lpVtbl[2]))((IAMTVAudio*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTVAudio*, uint>)(lpVtbl[2]))((IAMTVAudio*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMTVAudio.xml' path='doc/member[@name="IAMTVAudio.GetHardwareSupportedTVAudioModes"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetHardwareSupportedTVAudioModes([NativeTypeName("long *")] int* plModes)
     {
-        return ((delegate* unmanaged<IAMTVAudio*, int*, int>)(lpVtbl[3]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plModes);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVAudio*, int*, int>)(lpVtbl[3]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plModes);
     }
 
     /// <include file='IAMTVAudio.xml' path='doc/member[@name="IAMTVAudio.GetAvailableTVAudioModes"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetAvailableTVAudioModes([NativeTypeName("long *")] int* plModes)
     {
-        return ((delegate* unmanaged<IAMTVAudio*, int*, int>)(lpVtbl[4]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plModes);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVAudio*, int*, int>)(lpVtbl[4]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plModes);
     }
 
     /// <include file='IAMTVAudio.xml' path='doc/member[@name="IAMTVAudio.get_TVAudioMode"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT get_TVAudioMode([NativeTypeName("long *")] int* plMode)
     {
-        return ((delegate* unmanaged<IAMTVAudio*, int*, int>)(lpVtbl[5]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plMode);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVAudio*, int*, int>)(lpVtbl[5]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plMode);
     }
 
     /// <include file='IAMTVAudio.xml' path='doc/member[@name="IAMTVAudio.put_TVAudioMode"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT put_TVAudioMode([NativeTypeName("long")] int lMode)
     {
-        return ((delegate* unmanaged<IAMTVAudio*, int, int>)(lpVtbl[6]))((IAMTVAudio*)Unsafe.AsPointer(ref this), lMode);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVAudio*, int, int>)(lpVtbl[6]))((IAMTVAudio*)Unsafe.AsPointer(ref this), lMode);
     }
 
     /// <include file='IAMTVAudio.xml' path='doc/member[@name="IAMTVAudio.RegisterNotificationCallBack"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT RegisterNotificationCallBack(IAMTunerNotification* pNotify, [NativeTypeName("long")] int lEvents)
     {
-        return ((delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int, int>)(lpVtbl[7]))((IAMTVAudio*)Unsafe.AsPointer(ref this), pNotify, lEvents);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVAudio*, IAMTunerNotification*, int, int>)(lpVtbl[7]))((IAMTVAudio*)Unsafe.AsPointer(ref this), pNotify, lEvents);
     }
 
     /// <include file='IAMTVAudio.xml' path='doc/member[@name="IAMTVAudio.UnRegisterNotificationCallBack"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify)
     {
-        return ((delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int>)(lpVtbl[8]))((IAMTVAudio*)Unsafe.AsPointer(ref this), pNotify);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVAudio*, IAMTunerNotification*, int>)(lpVtbl[8]))((IAMTVAudio*)Unsafe.AsPointer(ref this), pNotify);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetHardwareSupportedTVAudioModes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetHardwareSupportedTVAudioModes;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetAvailableTVAudioModes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetAvailableTVAudioModes;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_TVAudioMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_TVAudioMode;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_TVAudioMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_TVAudioMode;
 
         [NativeTypeName("HRESULT (IAMTunerNotification *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
 
         [NativeTypeName("HRESULT (IAMTunerNotification *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
     }
 }

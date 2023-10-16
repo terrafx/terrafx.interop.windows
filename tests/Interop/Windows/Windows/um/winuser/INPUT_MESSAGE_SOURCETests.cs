@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class INPUT_MESSAGE_SOURCETests
 {
-    /// <summary>Validates that the <see cref="INPUT_MESSAGE_SOURCE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<INPUT_MESSAGE_SOURCE>(), Is.EqualTo(sizeof(INPUT_MESSAGE_SOURCE)));
-    }
-
-    /// <summary>Validates that the <see cref="INPUT_MESSAGE_SOURCE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(INPUT_MESSAGE_SOURCE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="INPUT_MESSAGE_SOURCE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(INPUT_MESSAGE_SOURCE), Is.EqualTo(8));
-    }
 }

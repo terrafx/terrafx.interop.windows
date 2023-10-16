@@ -19,32 +19,4 @@ public static unsafe partial class IKsJackDescription2Tests
     {
         Assert.That(typeof(IKsJackDescription2).GUID, Is.EqualTo(IID_IKsJackDescription2));
     }
-
-    /// <summary>Validates that the <see cref="IKsJackDescription2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IKsJackDescription2>(), Is.EqualTo(sizeof(IKsJackDescription2)));
-    }
-
-    /// <summary>Validates that the <see cref="IKsJackDescription2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IKsJackDescription2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IKsJackDescription2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IKsJackDescription2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IKsJackDescription2), Is.EqualTo(4));
-        }
-    }
 }

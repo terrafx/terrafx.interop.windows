@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D2D_MATRIX_4X3_F" /> struct.</summary>
 public static unsafe partial class D2D_MATRIX_4X3_FTests
 {
-    /// <summary>Validates that the <see cref="D2D_MATRIX_4X3_F" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D2D_MATRIX_4X3_F>(), Is.EqualTo(sizeof(D2D_MATRIX_4X3_F)));
-    }
-
-    /// <summary>Validates that the <see cref="D2D_MATRIX_4X3_F" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D2D_MATRIX_4X3_F).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D2D_MATRIX_4X3_F" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D2D_MATRIX_4X3_F), Is.EqualTo(48));
-    }
 }

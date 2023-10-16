@@ -19,32 +19,4 @@ public static unsafe partial class IIsolatedAppLauncherTests
     {
         Assert.That(typeof(IIsolatedAppLauncher).GUID, Is.EqualTo(IID_IIsolatedAppLauncher));
     }
-
-    /// <summary>Validates that the <see cref="IIsolatedAppLauncher" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IIsolatedAppLauncher>(), Is.EqualTo(sizeof(IIsolatedAppLauncher)));
-    }
-
-    /// <summary>Validates that the <see cref="IIsolatedAppLauncher" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IIsolatedAppLauncher).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IIsolatedAppLauncher" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IIsolatedAppLauncher), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IIsolatedAppLauncher), Is.EqualTo(4));
-        }
-    }
 }

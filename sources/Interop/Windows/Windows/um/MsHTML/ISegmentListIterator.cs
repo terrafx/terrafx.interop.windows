@@ -25,7 +25,7 @@ public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISegmentListIterator*, Guid*, void**, int>)(lpVtbl[0]))((ISegmentListIterator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISegmentListIterator*, Guid*, void**, int>)(lpVtbl[0]))((ISegmentListIterator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISegmentListIterator*, uint>)(lpVtbl[1]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISegmentListIterator*, uint>)(lpVtbl[1]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISegmentListIterator*, uint>)(lpVtbl[2]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISegmentListIterator*, uint>)(lpVtbl[2]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISegmentListIterator.xml' path='doc/member[@name="ISegmentListIterator.Current"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interfa
     [VtblIndex(3)]
     public HRESULT Current(ISegment** ppISegment)
     {
-        return ((delegate* unmanaged<ISegmentListIterator*, ISegment**, int>)(lpVtbl[3]))((ISegmentListIterator*)Unsafe.AsPointer(ref this), ppISegment);
+        return ((delegate* unmanaged[MemberFunction]<ISegmentListIterator*, ISegment**, int>)(lpVtbl[3]))((ISegmentListIterator*)Unsafe.AsPointer(ref this), ppISegment);
     }
 
     /// <include file='ISegmentListIterator.xml' path='doc/member[@name="ISegmentListIterator.First"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interfa
     [VtblIndex(4)]
     public HRESULT First()
     {
-        return ((delegate* unmanaged<ISegmentListIterator*, int>)(lpVtbl[4]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISegmentListIterator*, int>)(lpVtbl[4]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISegmentListIterator.xml' path='doc/member[@name="ISegmentListIterator.IsDone"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interfa
     [VtblIndex(5)]
     public HRESULT IsDone()
     {
-        return ((delegate* unmanaged<ISegmentListIterator*, int>)(lpVtbl[5]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISegmentListIterator*, int>)(lpVtbl[5]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISegmentListIterator.xml' path='doc/member[@name="ISegmentListIterator.Advance"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interfa
     [VtblIndex(6)]
     public HRESULT Advance()
     {
-        return ((delegate* unmanaged<ISegmentListIterator*, int>)(lpVtbl[6]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISegmentListIterator*, int>)(lpVtbl[6]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISegment **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISegment**, int> Current;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISegment**, int> Current;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> First;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> First;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsDone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsDone;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Advance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Advance;
     }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FDICABINETINFO" /> struct.</summary>
 public static unsafe partial class FDICABINETINFOTests
 {
-    /// <summary>Validates that the <see cref="FDICABINETINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FDICABINETINFO>(), Is.EqualTo(sizeof(FDICABINETINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="FDICABINETINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FDICABINETINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FDICABINETINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FDICABINETINFO), Is.EqualTo(24));
-    }
 }

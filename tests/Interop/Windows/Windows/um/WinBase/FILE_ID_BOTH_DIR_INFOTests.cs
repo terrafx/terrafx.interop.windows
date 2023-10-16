@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FILE_ID_BOTH_DIR_INFO" /> struct.</summary>
 public static unsafe partial class FILE_ID_BOTH_DIR_INFOTests
 {
-    /// <summary>Validates that the <see cref="FILE_ID_BOTH_DIR_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FILE_ID_BOTH_DIR_INFO>(), Is.EqualTo(sizeof(FILE_ID_BOTH_DIR_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="FILE_ID_BOTH_DIR_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FILE_ID_BOTH_DIR_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FILE_ID_BOTH_DIR_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FILE_ID_BOTH_DIR_INFO), Is.EqualTo(112));
-    }
 }

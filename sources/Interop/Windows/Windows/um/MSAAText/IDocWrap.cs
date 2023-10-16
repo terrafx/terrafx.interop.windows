@@ -25,7 +25,7 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDocWrap*, Guid*, void**, int>)(lpVtbl[0]))((IDocWrap*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDocWrap*, Guid*, void**, int>)(lpVtbl[0]))((IDocWrap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDocWrap*, uint>)(lpVtbl[1]))((IDocWrap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDocWrap*, uint>)(lpVtbl[1]))((IDocWrap*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDocWrap*, uint>)(lpVtbl[2]))((IDocWrap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDocWrap*, uint>)(lpVtbl[2]))((IDocWrap*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDocWrap.xml' path='doc/member[@name="IDocWrap.SetDoc"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetDoc([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
     {
-        return ((delegate* unmanaged<IDocWrap*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IDocWrap*)Unsafe.AsPointer(ref this), riid, punk);
+        return ((delegate* unmanaged[MemberFunction]<IDocWrap*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IDocWrap*)Unsafe.AsPointer(ref this), riid, punk);
     }
 
     /// <include file='IDocWrap.xml' path='doc/member[@name="IDocWrap.GetWrappedDoc"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetWrappedDoc([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<IDocWrap*, Guid*, IUnknown**, int>)(lpVtbl[4]))((IDocWrap*)Unsafe.AsPointer(ref this), riid, ppunk);
+        return ((delegate* unmanaged[MemberFunction]<IDocWrap*, Guid*, IUnknown**, int>)(lpVtbl[4]))((IDocWrap*)Unsafe.AsPointer(ref this), riid, ppunk);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetDoc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetDoc;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown**, int> GetWrappedDoc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown**, int> GetWrappedDoc;
     }
 }

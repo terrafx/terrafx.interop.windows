@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="COLORMAP" /> struct.</summary>
 public static unsafe partial class COLORMAPTests
 {
-    /// <summary>Validates that the <see cref="COLORMAP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<COLORMAP>(), Is.EqualTo(sizeof(COLORMAP)));
-    }
-
-    /// <summary>Validates that the <see cref="COLORMAP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(COLORMAP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="COLORMAP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(COLORMAP), Is.EqualTo(8));
-    }
 }

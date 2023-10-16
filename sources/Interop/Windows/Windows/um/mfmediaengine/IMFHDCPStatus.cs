@@ -25,7 +25,7 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFHDCPStatus*, Guid*, void**, int>)(lpVtbl[0]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFHDCPStatus*, Guid*, void**, int>)(lpVtbl[0]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFHDCPStatus*, uint>)(lpVtbl[1]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFHDCPStatus*, uint>)(lpVtbl[1]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFHDCPStatus*, uint>)(lpVtbl[2]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFHDCPStatus*, uint>)(lpVtbl[2]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFHDCPStatus.xml' path='doc/member[@name="IMFHDCPStatus.Query"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT Query(MF_HDCP_STATUS* pStatus, BOOL* pfStatus)
     {
-        return ((delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS*, BOOL*, int>)(lpVtbl[3]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), pStatus, pfStatus);
+        return ((delegate* unmanaged[MemberFunction]<IMFHDCPStatus*, MF_HDCP_STATUS*, BOOL*, int>)(lpVtbl[3]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), pStatus, pfStatus);
     }
 
     /// <include file='IMFHDCPStatus.xml' path='doc/member[@name="IMFHDCPStatus.Set"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT Set(MF_HDCP_STATUS status)
     {
-        return ((delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS, int>)(lpVtbl[4]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), status);
+        return ((delegate* unmanaged[MemberFunction]<IMFHDCPStatus*, MF_HDCP_STATUS, int>)(lpVtbl[4]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), status);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_HDCP_STATUS *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_HDCP_STATUS*, BOOL*, int> Query;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_HDCP_STATUS*, BOOL*, int> Query;
 
         [NativeTypeName("HRESULT (MF_HDCP_STATUS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_HDCP_STATUS, int> Set;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_HDCP_STATUS, int> Set;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ITfFnGetSAPIObjectTests
     {
         Assert.That(typeof(ITfFnGetSAPIObject).GUID, Is.EqualTo(IID_ITfFnGetSAPIObject));
     }
-
-    /// <summary>Validates that the <see cref="ITfFnGetSAPIObject" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfFnGetSAPIObject>(), Is.EqualTo(sizeof(ITfFnGetSAPIObject)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnGetSAPIObject" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfFnGetSAPIObject).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnGetSAPIObject" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfFnGetSAPIObject), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfFnGetSAPIObject), Is.EqualTo(4));
-        }
-    }
 }

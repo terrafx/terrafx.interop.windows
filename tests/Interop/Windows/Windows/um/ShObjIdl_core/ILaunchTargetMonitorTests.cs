@@ -19,32 +19,4 @@ public static unsafe partial class ILaunchTargetMonitorTests
     {
         Assert.That(typeof(ILaunchTargetMonitor).GUID, Is.EqualTo(IID_ILaunchTargetMonitor));
     }
-
-    /// <summary>Validates that the <see cref="ILaunchTargetMonitor" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ILaunchTargetMonitor>(), Is.EqualTo(sizeof(ILaunchTargetMonitor)));
-    }
-
-    /// <summary>Validates that the <see cref="ILaunchTargetMonitor" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ILaunchTargetMonitor).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ILaunchTargetMonitor" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ILaunchTargetMonitor), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ILaunchTargetMonitor), Is.EqualTo(4));
-        }
-    }
 }

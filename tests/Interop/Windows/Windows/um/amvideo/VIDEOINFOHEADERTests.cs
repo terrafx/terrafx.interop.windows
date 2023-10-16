@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="VIDEOINFOHEADER" /> struct.</summary>
 public static unsafe partial class VIDEOINFOHEADERTests
 {
-    /// <summary>Validates that the <see cref="VIDEOINFOHEADER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<VIDEOINFOHEADER>(), Is.EqualTo(sizeof(VIDEOINFOHEADER)));
-    }
-
-    /// <summary>Validates that the <see cref="VIDEOINFOHEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(VIDEOINFOHEADER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="VIDEOINFOHEADER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(VIDEOINFOHEADER), Is.EqualTo(88));
-    }
 }

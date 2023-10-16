@@ -19,32 +19,4 @@ public static unsafe partial class IActionProgressDialogTests
     {
         Assert.That(typeof(IActionProgressDialog).GUID, Is.EqualTo(IID_IActionProgressDialog));
     }
-
-    /// <summary>Validates that the <see cref="IActionProgressDialog" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IActionProgressDialog>(), Is.EqualTo(sizeof(IActionProgressDialog)));
-    }
-
-    /// <summary>Validates that the <see cref="IActionProgressDialog" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IActionProgressDialog).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IActionProgressDialog" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IActionProgressDialog), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IActionProgressDialog), Is.EqualTo(4));
-        }
-    }
 }

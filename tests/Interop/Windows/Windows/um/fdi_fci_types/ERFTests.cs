@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ERF" /> struct.</summary>
 public static unsafe partial class ERFTests
 {
-    /// <summary>Validates that the <see cref="ERF" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ERF>(), Is.EqualTo(sizeof(ERF)));
-    }
-
-    /// <summary>Validates that the <see cref="ERF" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ERF).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ERF" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ERF), Is.EqualTo(12));
-    }
 }

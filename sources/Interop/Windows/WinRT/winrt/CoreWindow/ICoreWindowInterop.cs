@@ -26,7 +26,7 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICoreWindowInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICoreWindowInterop*, uint>)(lpVtbl[1]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowInterop*, uint>)(lpVtbl[1]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICoreWindowInterop*, uint>)(lpVtbl[2]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowInterop*, uint>)(lpVtbl[2]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICoreWindowInterop.xml' path='doc/member[@name="ICoreWindowInterop.get_WindowHandle"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface, 
     [VtblIndex(3)]
     public HRESULT get_WindowHandle(HWND* hwnd)
     {
-        return ((delegate* unmanaged<ICoreWindowInterop*, HWND*, int>)(lpVtbl[3]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowInterop*, HWND*, int>)(lpVtbl[3]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <include file='ICoreWindowInterop.xml' path='doc/member[@name="ICoreWindowInterop.put_MessageHandled"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface, 
     [VtblIndex(4)]
     public HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value)
     {
-        return ((delegate* unmanaged<ICoreWindowInterop*, byte, int>)(lpVtbl[4]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowInterop*, byte, int>)(lpVtbl[4]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> get_WindowHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> get_WindowHandle;
 
         [NativeTypeName("HRESULT (boolean) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte, int> put_MessageHandled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> put_MessageHandled;
     }
 }

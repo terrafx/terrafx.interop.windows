@@ -27,7 +27,7 @@ public unsafe partial struct IMFContentDecryptorContext : IMFContentDecryptorCon
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFContentDecryptorContext*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptorContext*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFContentDecryptorContext : IMFContentDecryptorCon
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFContentDecryptorContext*, uint>)(lpVtbl[1]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptorContext*, uint>)(lpVtbl[1]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFContentDecryptorContext : IMFContentDecryptorCon
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFContentDecryptorContext*, uint>)(lpVtbl[2]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptorContext*, uint>)(lpVtbl[2]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFContentDecryptorContext.xml' path='doc/member[@name="IMFContentDecryptorContext.InitializeHardwareKey"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFContentDecryptorContext : IMFContentDecryptorCon
     [VtblIndex(3)]
     public HRESULT InitializeHardwareKey(uint InputPrivateDataByteCount, [NativeTypeName("const void *")] void* InputPrivateData, [NativeTypeName("UINT64 *")] ulong* OutputPrivateData)
     {
-        return ((delegate* unmanaged<IMFContentDecryptorContext*, uint, void*, ulong*, int>)(lpVtbl[3]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this), InputPrivateDataByteCount, InputPrivateData, OutputPrivateData);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptorContext*, uint, void*, ulong*, int>)(lpVtbl[3]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this), InputPrivateDataByteCount, InputPrivateData, OutputPrivateData);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IMFContentDecryptorContext : IMFContentDecryptorCon
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, const void *, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, ulong*, int> InitializeHardwareKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, ulong*, int> InitializeHardwareKey;
     }
 }

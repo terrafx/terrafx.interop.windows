@@ -27,7 +27,7 @@ public unsafe partial struct INotificationActivationCallback : INotificationActi
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INotificationActivationCallback*, Guid*, void**, int>)(lpVtbl[0]))((INotificationActivationCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INotificationActivationCallback*, Guid*, void**, int>)(lpVtbl[0]))((INotificationActivationCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct INotificationActivationCallback : INotificationActi
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INotificationActivationCallback*, uint>)(lpVtbl[1]))((INotificationActivationCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INotificationActivationCallback*, uint>)(lpVtbl[1]))((INotificationActivationCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,39 +45,39 @@ public unsafe partial struct INotificationActivationCallback : INotificationActi
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INotificationActivationCallback*, uint>)(lpVtbl[2]))((INotificationActivationCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INotificationActivationCallback*, uint>)(lpVtbl[2]))((INotificationActivationCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INotificationActivationCallback.xml' path='doc/member[@name="INotificationActivationCallback.Activate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [SupportedOSPlatform("windows10.0")]
-    public HRESULT Activate([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* invokedArgs, [NativeTypeName("const NOTIFICATION_USER_INPUT_DATA *")] NOTIFICATION_USER_INPUT_DATA* data, [NativeTypeName("ULONG")] uint count)
+    public HRESULT Activate([NativeTypeName("LPCWSTR")] char* appUserModelId, [NativeTypeName("LPCWSTR")] char* invokedArgs, [NativeTypeName("const NOTIFICATION_USER_INPUT_DATA *")] NOTIFICATION_USER_INPUT_DATA* data, [NativeTypeName("ULONG")] uint count)
     {
-        return ((delegate* unmanaged<INotificationActivationCallback*, ushort*, ushort*, NOTIFICATION_USER_INPUT_DATA*, uint, int>)(lpVtbl[3]))((INotificationActivationCallback*)Unsafe.AsPointer(ref this), appUserModelId, invokedArgs, data, count);
+        return ((delegate* unmanaged[MemberFunction]<INotificationActivationCallback*, char*, char*, NOTIFICATION_USER_INPUT_DATA*, uint, int>)(lpVtbl[3]))((INotificationActivationCallback*)Unsafe.AsPointer(ref this), appUserModelId, invokedArgs, data, count);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
         [SupportedOSPlatform("windows10.0")]
-        HRESULT Activate([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* invokedArgs, [NativeTypeName("const NOTIFICATION_USER_INPUT_DATA *")] NOTIFICATION_USER_INPUT_DATA* data, [NativeTypeName("ULONG")] uint count);
+        HRESULT Activate([NativeTypeName("LPCWSTR")] char* appUserModelId, [NativeTypeName("LPCWSTR")] char* invokedArgs, [NativeTypeName("const NOTIFICATION_USER_INPUT_DATA *")] NOTIFICATION_USER_INPUT_DATA* data, [NativeTypeName("ULONG")] uint count);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, const NOTIFICATION_USER_INPUT_DATA *, ULONG) __attribute__((stdcall))")]
         [SupportedOSPlatform("windows10.0")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, NOTIFICATION_USER_INPUT_DATA*, uint, int> Activate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, NOTIFICATION_USER_INPUT_DATA*, uint, int> Activate;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IExecuteCommand*, Guid*, void**, int>)(lpVtbl[0]))((IExecuteCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommand*, Guid*, void**, int>)(lpVtbl[0]))((IExecuteCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IExecuteCommand*, uint>)(lpVtbl[1]))((IExecuteCommand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommand*, uint>)(lpVtbl[1]))((IExecuteCommand*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IExecuteCommand*, uint>)(lpVtbl[2]))((IExecuteCommand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommand*, uint>)(lpVtbl[2]))((IExecuteCommand*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetKeyState"]/*' />
@@ -51,15 +51,15 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetKeyState([NativeTypeName("DWORD")] uint grfKeyState)
     {
-        return ((delegate* unmanaged<IExecuteCommand*, uint, int>)(lpVtbl[3]))((IExecuteCommand*)Unsafe.AsPointer(ref this), grfKeyState);
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommand*, uint, int>)(lpVtbl[3]))((IExecuteCommand*)Unsafe.AsPointer(ref this), grfKeyState);
     }
 
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetParameters([NativeTypeName("LPCWSTR")] ushort* pszParameters)
+    public HRESULT SetParameters([NativeTypeName("LPCWSTR")] char* pszParameters)
     {
-        return ((delegate* unmanaged<IExecuteCommand*, ushort*, int>)(lpVtbl[4]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszParameters);
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommand*, char*, int>)(lpVtbl[4]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszParameters);
     }
 
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetPosition"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
     [VtblIndex(5)]
     public HRESULT SetPosition(POINT pt)
     {
-        return ((delegate* unmanaged<IExecuteCommand*, POINT, int>)(lpVtbl[5]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pt);
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommand*, POINT, int>)(lpVtbl[5]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pt);
     }
 
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetShowWindow"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
     [VtblIndex(6)]
     public HRESULT SetShowWindow(int nShow)
     {
-        return ((delegate* unmanaged<IExecuteCommand*, int, int>)(lpVtbl[6]))((IExecuteCommand*)Unsafe.AsPointer(ref this), nShow);
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommand*, int, int>)(lpVtbl[6]))((IExecuteCommand*)Unsafe.AsPointer(ref this), nShow);
     }
 
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetNoShowUI"]/*' />
@@ -83,15 +83,15 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
     [VtblIndex(7)]
     public HRESULT SetNoShowUI(BOOL fNoShowUI)
     {
-        return ((delegate* unmanaged<IExecuteCommand*, BOOL, int>)(lpVtbl[7]))((IExecuteCommand*)Unsafe.AsPointer(ref this), fNoShowUI);
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommand*, BOOL, int>)(lpVtbl[7]))((IExecuteCommand*)Unsafe.AsPointer(ref this), fNoShowUI);
     }
 
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetDirectory([NativeTypeName("LPCWSTR")] ushort* pszDirectory)
+    public HRESULT SetDirectory([NativeTypeName("LPCWSTR")] char* pszDirectory)
     {
-        return ((delegate* unmanaged<IExecuteCommand*, ushort*, int>)(lpVtbl[8]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszDirectory);
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommand*, char*, int>)(lpVtbl[8]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszDirectory);
     }
 
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.Execute"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
     [VtblIndex(9)]
     public HRESULT Execute()
     {
-        return ((delegate* unmanaged<IExecuteCommand*, int>)(lpVtbl[9]))((IExecuteCommand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommand*, int>)(lpVtbl[9]))((IExecuteCommand*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,7 +108,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
         HRESULT SetKeyState([NativeTypeName("DWORD")] uint grfKeyState);
 
         [VtblIndex(4)]
-        HRESULT SetParameters([NativeTypeName("LPCWSTR")] ushort* pszParameters);
+        HRESULT SetParameters([NativeTypeName("LPCWSTR")] char* pszParameters);
 
         [VtblIndex(5)]
         HRESULT SetPosition(POINT pt);
@@ -120,7 +120,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
         HRESULT SetNoShowUI(BOOL fNoShowUI);
 
         [VtblIndex(8)]
-        HRESULT SetDirectory([NativeTypeName("LPCWSTR")] ushort* pszDirectory);
+        HRESULT SetDirectory([NativeTypeName("LPCWSTR")] char* pszDirectory);
 
         [VtblIndex(9)]
         HRESULT Execute();
@@ -130,33 +130,33 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetKeyState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetKeyState;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetParameters;
 
         [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT, int> SetPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT, int> SetPosition;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetShowWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetShowWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetNoShowUI;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetNoShowUI;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDirectory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetDirectory;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Execute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Execute;
     }
 }

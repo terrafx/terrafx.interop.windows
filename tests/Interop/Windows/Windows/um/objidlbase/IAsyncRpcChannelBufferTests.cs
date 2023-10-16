@@ -19,32 +19,4 @@ public static unsafe partial class IAsyncRpcChannelBufferTests
     {
         Assert.That(typeof(IAsyncRpcChannelBuffer).GUID, Is.EqualTo(IID_IAsyncRpcChannelBuffer));
     }
-
-    /// <summary>Validates that the <see cref="IAsyncRpcChannelBuffer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAsyncRpcChannelBuffer>(), Is.EqualTo(sizeof(IAsyncRpcChannelBuffer)));
-    }
-
-    /// <summary>Validates that the <see cref="IAsyncRpcChannelBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAsyncRpcChannelBuffer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAsyncRpcChannelBuffer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAsyncRpcChannelBuffer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAsyncRpcChannelBuffer), Is.EqualTo(4));
-        }
-    }
 }

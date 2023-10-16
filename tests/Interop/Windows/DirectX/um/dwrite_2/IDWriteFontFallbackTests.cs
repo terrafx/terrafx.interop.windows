@@ -21,32 +21,4 @@ public static unsafe partial class IDWriteFontFallbackTests
     {
         Assert.That(typeof(IDWriteFontFallback).GUID, Is.EqualTo(IID_IDWriteFontFallback));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteFontFallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteFontFallback>(), Is.EqualTo(sizeof(IDWriteFontFallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteFontFallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteFontFallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteFontFallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteFontFallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteFontFallback), Is.EqualTo(4));
-        }
-    }
 }

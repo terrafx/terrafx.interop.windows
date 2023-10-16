@@ -33,7 +33,7 @@ public partial struct PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY
     public uint DisableExtensionPoints
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.DisableExtensionPoints;
         }
@@ -49,7 +49,7 @@ public partial struct PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -85,7 +85,7 @@ public partial struct PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY
             public uint DisableExtensionPoints
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -102,7 +102,7 @@ public partial struct PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

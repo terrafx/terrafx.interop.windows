@@ -19,32 +19,4 @@ public static unsafe partial class ID3D10StateBlockTests
     {
         Assert.That(typeof(ID3D10StateBlock).GUID, Is.EqualTo(IID_ID3D10StateBlock));
     }
-
-    /// <summary>Validates that the <see cref="ID3D10StateBlock" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID3D10StateBlock>(), Is.EqualTo(sizeof(ID3D10StateBlock)));
-    }
-
-    /// <summary>Validates that the <see cref="ID3D10StateBlock" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID3D10StateBlock).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID3D10StateBlock" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID3D10StateBlock), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID3D10StateBlock), Is.EqualTo(4));
-        }
-    }
 }

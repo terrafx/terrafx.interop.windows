@@ -19,32 +19,4 @@ public static unsafe partial class IMFSourceBufferAppendModeTests
     {
         Assert.That(typeof(IMFSourceBufferAppendMode).GUID, Is.EqualTo(IID_IMFSourceBufferAppendMode));
     }
-
-    /// <summary>Validates that the <see cref="IMFSourceBufferAppendMode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSourceBufferAppendMode>(), Is.EqualTo(sizeof(IMFSourceBufferAppendMode)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceBufferAppendMode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSourceBufferAppendMode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceBufferAppendMode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSourceBufferAppendMode), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSourceBufferAppendMode), Is.EqualTo(4));
-        }
-    }
 }

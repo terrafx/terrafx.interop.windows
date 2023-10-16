@@ -25,7 +25,7 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPersistMoniker*, Guid*, void**, int>)(lpVtbl[0]))((IPersistMoniker*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMoniker*, Guid*, void**, int>)(lpVtbl[0]))((IPersistMoniker*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPersistMoniker*, uint>)(lpVtbl[1]))((IPersistMoniker*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistMoniker*, uint>)(lpVtbl[1]))((IPersistMoniker*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPersistMoniker*, uint>)(lpVtbl[2]))((IPersistMoniker*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistMoniker*, uint>)(lpVtbl[2]))((IPersistMoniker*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPersistMoniker.xml' path='doc/member[@name="IPersistMoniker.GetClassID"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
     {
-        return ((delegate* unmanaged<IPersistMoniker*, Guid*, int>)(lpVtbl[3]))((IPersistMoniker*)Unsafe.AsPointer(ref this), pClassID);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMoniker*, Guid*, int>)(lpVtbl[3]))((IPersistMoniker*)Unsafe.AsPointer(ref this), pClassID);
     }
 
     /// <include file='IPersistMoniker.xml' path='doc/member[@name="IPersistMoniker.IsDirty"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface, INativ
     [VtblIndex(4)]
     public HRESULT IsDirty()
     {
-        return ((delegate* unmanaged<IPersistMoniker*, int>)(lpVtbl[4]))((IPersistMoniker*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistMoniker*, int>)(lpVtbl[4]))((IPersistMoniker*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPersistMoniker.xml' path='doc/member[@name="IPersistMoniker.Load"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface, INativ
     [VtblIndex(5)]
     public HRESULT Load(BOOL fFullyAvailable, IMoniker* pimkName, [NativeTypeName("LPBC")] IBindCtx* pibc, [NativeTypeName("DWORD")] uint grfMode)
     {
-        return ((delegate* unmanaged<IPersistMoniker*, BOOL, IMoniker*, IBindCtx*, uint, int>)(lpVtbl[5]))((IPersistMoniker*)Unsafe.AsPointer(ref this), fFullyAvailable, pimkName, pibc, grfMode);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMoniker*, BOOL, IMoniker*, IBindCtx*, uint, int>)(lpVtbl[5]))((IPersistMoniker*)Unsafe.AsPointer(ref this), fFullyAvailable, pimkName, pibc, grfMode);
     }
 
     /// <include file='IPersistMoniker.xml' path='doc/member[@name="IPersistMoniker.Save"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface, INativ
     [VtblIndex(6)]
     public HRESULT Save(IMoniker* pimkName, [NativeTypeName("LPBC")] IBindCtx* pbc, BOOL fRemember)
     {
-        return ((delegate* unmanaged<IPersistMoniker*, IMoniker*, IBindCtx*, BOOL, int>)(lpVtbl[6]))((IPersistMoniker*)Unsafe.AsPointer(ref this), pimkName, pbc, fRemember);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMoniker*, IMoniker*, IBindCtx*, BOOL, int>)(lpVtbl[6]))((IPersistMoniker*)Unsafe.AsPointer(ref this), pimkName, pbc, fRemember);
     }
 
     /// <include file='IPersistMoniker.xml' path='doc/member[@name="IPersistMoniker.SaveCompleted"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface, INativ
     [VtblIndex(7)]
     public HRESULT SaveCompleted(IMoniker* pimkName, [NativeTypeName("LPBC")] IBindCtx* pibc)
     {
-        return ((delegate* unmanaged<IPersistMoniker*, IMoniker*, IBindCtx*, int>)(lpVtbl[7]))((IPersistMoniker*)Unsafe.AsPointer(ref this), pimkName, pibc);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMoniker*, IMoniker*, IBindCtx*, int>)(lpVtbl[7]))((IPersistMoniker*)Unsafe.AsPointer(ref this), pimkName, pibc);
     }
 
     /// <include file='IPersistMoniker.xml' path='doc/member[@name="IPersistMoniker.GetCurMoniker"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface, INativ
     [VtblIndex(8)]
     public HRESULT GetCurMoniker(IMoniker** ppimkName)
     {
-        return ((delegate* unmanaged<IPersistMoniker*, IMoniker**, int>)(lpVtbl[8]))((IPersistMoniker*)Unsafe.AsPointer(ref this), ppimkName);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMoniker*, IMoniker**, int>)(lpVtbl[8]))((IPersistMoniker*)Unsafe.AsPointer(ref this), ppimkName);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsDirty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (BOOL, IMoniker *, LPBC, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, IMoniker*, IBindCtx*, uint, int> Load;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, IMoniker*, IBindCtx*, uint, int> Load;
 
         [NativeTypeName("HRESULT (IMoniker *, LPBC, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, IBindCtx*, BOOL, int> Save;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker*, IBindCtx*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (IMoniker *, LPBC) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, IBindCtx*, int> SaveCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker*, IBindCtx*, int> SaveCompleted;
 
         [NativeTypeName("HRESULT (IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker**, int> GetCurMoniker;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker**, int> GetCurMoniker;
     }
 }

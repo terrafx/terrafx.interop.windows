@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DISK_PERFORMANCE" /> struct.</summary>
 public static unsafe partial class DISK_PERFORMANCETests
 {
-    /// <summary>Validates that the <see cref="DISK_PERFORMANCE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DISK_PERFORMANCE>(), Is.EqualTo(sizeof(DISK_PERFORMANCE)));
-    }
-
-    /// <summary>Validates that the <see cref="DISK_PERFORMANCE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DISK_PERFORMANCE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DISK_PERFORMANCE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DISK_PERFORMANCE), Is.EqualTo(88));
-    }
 }

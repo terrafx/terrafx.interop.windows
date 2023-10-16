@@ -42,7 +42,7 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
     public uint cloneGroupId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.cloneGroupId;
         }
@@ -58,7 +58,7 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
     public uint sourceModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.sourceModeInfoIdx;
         }
@@ -94,7 +94,7 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
             public uint cloneGroupId
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0xFFFFu;
                 }
@@ -111,7 +111,7 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
             public uint sourceModeInfoIdx
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0xFFFFu;
                 }

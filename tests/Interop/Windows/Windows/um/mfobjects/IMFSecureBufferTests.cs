@@ -19,32 +19,4 @@ public static unsafe partial class IMFSecureBufferTests
     {
         Assert.That(typeof(IMFSecureBuffer).GUID, Is.EqualTo(IID_IMFSecureBuffer));
     }
-
-    /// <summary>Validates that the <see cref="IMFSecureBuffer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSecureBuffer>(), Is.EqualTo(sizeof(IMFSecureBuffer)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSecureBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSecureBuffer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSecureBuffer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSecureBuffer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSecureBuffer), Is.EqualTo(4));
-        }
-    }
 }

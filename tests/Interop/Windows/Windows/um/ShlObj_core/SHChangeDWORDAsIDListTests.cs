@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SHChangeDWORDAsIDList" /> struct.</summary>
 public static unsafe partial class SHChangeDWORDAsIDListTests
 {
-    /// <summary>Validates that the <see cref="SHChangeDWORDAsIDList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SHChangeDWORDAsIDList>(), Is.EqualTo(sizeof(SHChangeDWORDAsIDList)));
-    }
-
-    /// <summary>Validates that the <see cref="SHChangeDWORDAsIDList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SHChangeDWORDAsIDList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SHChangeDWORDAsIDList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SHChangeDWORDAsIDList), Is.EqualTo(12));
-    }
 }

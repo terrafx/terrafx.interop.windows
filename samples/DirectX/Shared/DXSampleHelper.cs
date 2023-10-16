@@ -16,10 +16,7 @@ namespace TerraFX.Samples.DirectX;
 
 public static unsafe class DXSampleHelper
 {
-    public static string GetAssetsPath()
-    {
-        return Path.GetDirectoryName(AppContext.BaseDirectory)!;
-    }
+    public static string GetAssetsPath() => Path.GetDirectoryName(AppContext.BaseDirectory)!;
 
     public static byte[] ReadDataFromFile(string filename)
     {
@@ -48,7 +45,7 @@ public static unsafe class DXSampleHelper
     {
         fixed (char* pName = name)
         {
-            _ = pObject->SetName((ushort*)pName);
+            _ = pObject->SetName(pName);
         }
     }
 

@@ -16,5 +16,5 @@ public unsafe partial struct SHARDAPPIDINFOLINK
 
     /// <include file='SHARDAPPIDINFOLINK.xml' path='doc/member[@name="SHARDAPPIDINFOLINK.pszAppID"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszAppID;
+    public char* pszAppID;
 }

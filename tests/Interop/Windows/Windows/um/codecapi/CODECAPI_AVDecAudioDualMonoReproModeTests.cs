@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecAudioDualMonoReproModeTests
     {
         Assert.That(typeof(CODECAPI_AVDecAudioDualMonoReproMode).GUID, Is.EqualTo(IID_CODECAPI_AVDecAudioDualMonoReproMode));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecAudioDualMonoReproMode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecAudioDualMonoReproMode>(), Is.EqualTo(sizeof(CODECAPI_AVDecAudioDualMonoReproMode)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecAudioDualMonoReproMode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecAudioDualMonoReproMode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecAudioDualMonoReproMode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecAudioDualMonoReproMode), Is.EqualTo(1));
-    }
 }

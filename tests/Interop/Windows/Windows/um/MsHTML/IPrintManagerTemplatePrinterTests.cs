@@ -19,32 +19,4 @@ public static unsafe partial class IPrintManagerTemplatePrinterTests
     {
         Assert.That(typeof(IPrintManagerTemplatePrinter).GUID, Is.EqualTo(IID_IPrintManagerTemplatePrinter));
     }
-
-    /// <summary>Validates that the <see cref="IPrintManagerTemplatePrinter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPrintManagerTemplatePrinter>(), Is.EqualTo(sizeof(IPrintManagerTemplatePrinter)));
-    }
-
-    /// <summary>Validates that the <see cref="IPrintManagerTemplatePrinter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPrintManagerTemplatePrinter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPrintManagerTemplatePrinter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPrintManagerTemplatePrinter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPrintManagerTemplatePrinter), Is.EqualTo(4));
-        }
-    }
 }

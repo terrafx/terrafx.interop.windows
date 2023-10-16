@@ -19,25 +19,4 @@ public static unsafe partial class KnownFolderManagerTests
     {
         Assert.That(typeof(KnownFolderManager).GUID, Is.EqualTo(IID_KnownFolderManager));
     }
-
-    /// <summary>Validates that the <see cref="KnownFolderManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KnownFolderManager>(), Is.EqualTo(sizeof(KnownFolderManager)));
-    }
-
-    /// <summary>Validates that the <see cref="KnownFolderManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KnownFolderManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KnownFolderManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(KnownFolderManager), Is.EqualTo(1));
-    }
 }

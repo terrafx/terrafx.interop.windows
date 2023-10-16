@@ -21,32 +21,4 @@ public static unsafe partial class IAppxEncryptionFactory2Tests
     {
         Assert.That(typeof(IAppxEncryptionFactory2).GUID, Is.EqualTo(IID_IAppxEncryptionFactory2));
     }
-
-    /// <summary>Validates that the <see cref="IAppxEncryptionFactory2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxEncryptionFactory2>(), Is.EqualTo(sizeof(IAppxEncryptionFactory2)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxEncryptionFactory2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxEncryptionFactory2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxEncryptionFactory2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxEncryptionFactory2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxEncryptionFactory2), Is.EqualTo(4));
-        }
-    }
 }

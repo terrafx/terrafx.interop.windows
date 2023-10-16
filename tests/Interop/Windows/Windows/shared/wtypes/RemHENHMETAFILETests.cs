@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RemHENHMETAFILE" /> struct.</summary>
 public static unsafe partial class RemHENHMETAFILETests
 {
-    /// <summary>Validates that the <see cref="RemHENHMETAFILE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RemHENHMETAFILE>(), Is.EqualTo(sizeof(RemHENHMETAFILE)));
-    }
-
-    /// <summary>Validates that the <see cref="RemHENHMETAFILE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RemHENHMETAFILE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RemHENHMETAFILE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RemHENHMETAFILE), Is.EqualTo(8));
-    }
 }

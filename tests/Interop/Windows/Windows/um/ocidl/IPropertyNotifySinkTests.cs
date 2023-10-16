@@ -19,32 +19,4 @@ public static unsafe partial class IPropertyNotifySinkTests
     {
         Assert.That(typeof(IPropertyNotifySink).GUID, Is.EqualTo(IID_IPropertyNotifySink));
     }
-
-    /// <summary>Validates that the <see cref="IPropertyNotifySink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPropertyNotifySink>(), Is.EqualTo(sizeof(IPropertyNotifySink)));
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyNotifySink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPropertyNotifySink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyNotifySink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPropertyNotifySink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPropertyNotifySink), Is.EqualTo(4));
-        }
-    }
 }

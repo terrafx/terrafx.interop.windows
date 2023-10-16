@@ -19,32 +19,4 @@ public static unsafe partial class ISVGPreserveAspectRatioTests
     {
         Assert.That(typeof(ISVGPreserveAspectRatio).GUID, Is.EqualTo(IID_ISVGPreserveAspectRatio));
     }
-
-    /// <summary>Validates that the <see cref="ISVGPreserveAspectRatio" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISVGPreserveAspectRatio>(), Is.EqualTo(sizeof(ISVGPreserveAspectRatio)));
-    }
-
-    /// <summary>Validates that the <see cref="ISVGPreserveAspectRatio" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISVGPreserveAspectRatio).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISVGPreserveAspectRatio" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISVGPreserveAspectRatio), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISVGPreserveAspectRatio), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class ShellFolderViewTests
     {
         Assert.That(typeof(ShellFolderView).GUID, Is.EqualTo(IID_ShellFolderView));
     }
-
-    /// <summary>Validates that the <see cref="ShellFolderView" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ShellFolderView>(), Is.EqualTo(sizeof(ShellFolderView)));
-    }
-
-    /// <summary>Validates that the <see cref="ShellFolderView" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ShellFolderView).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ShellFolderView" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ShellFolderView), Is.EqualTo(1));
-    }
 }

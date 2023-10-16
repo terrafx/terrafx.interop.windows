@@ -19,32 +19,4 @@ public static unsafe partial class IPSFactoryBufferTests
     {
         Assert.That(typeof(IPSFactoryBuffer).GUID, Is.EqualTo(IID_IPSFactoryBuffer));
     }
-
-    /// <summary>Validates that the <see cref="IPSFactoryBuffer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPSFactoryBuffer>(), Is.EqualTo(sizeof(IPSFactoryBuffer)));
-    }
-
-    /// <summary>Validates that the <see cref="IPSFactoryBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPSFactoryBuffer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPSFactoryBuffer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPSFactoryBuffer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPSFactoryBuffer), Is.EqualTo(4));
-        }
-    }
 }

@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.WinRT.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class SourceInfoTests
 {
-    /// <summary>Validates that the <see cref="SourceInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SourceInfo>(), Is.EqualTo(sizeof(SourceInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="SourceInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SourceInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SourceInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(SourceInfo), Is.EqualTo(32));
-        }
-        else
-        {
-            Assert.That(sizeof(SourceInfo), Is.EqualTo(20));
-        }
-    }
 }

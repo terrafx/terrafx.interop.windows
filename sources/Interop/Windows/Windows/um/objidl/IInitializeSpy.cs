@@ -25,7 +25,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInitializeSpy*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeSpy*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeSpy*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeSpy*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInitializeSpy*, uint>)(lpVtbl[1]))((IInitializeSpy*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInitializeSpy*, uint>)(lpVtbl[1]))((IInitializeSpy*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInitializeSpy*, uint>)(lpVtbl[2]))((IInitializeSpy*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInitializeSpy*, uint>)(lpVtbl[2]))((IInitializeSpy*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInitializeSpy.xml' path='doc/member[@name="IInitializeSpy.PreInitialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT PreInitialize([NativeTypeName("DWORD")] uint dwCoInit, [NativeTypeName("DWORD")] uint dwCurThreadAptRefs)
     {
-        return ((delegate* unmanaged<IInitializeSpy*, uint, uint, int>)(lpVtbl[3]))((IInitializeSpy*)Unsafe.AsPointer(ref this), dwCoInit, dwCurThreadAptRefs);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeSpy*, uint, uint, int>)(lpVtbl[3]))((IInitializeSpy*)Unsafe.AsPointer(ref this), dwCoInit, dwCurThreadAptRefs);
     }
 
     /// <include file='IInitializeSpy.xml' path='doc/member[@name="IInitializeSpy.PostInitialize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT PostInitialize(HRESULT hrCoInit, [NativeTypeName("DWORD")] uint dwCoInit, [NativeTypeName("DWORD")] uint dwNewThreadAptRefs)
     {
-        return ((delegate* unmanaged<IInitializeSpy*, HRESULT, uint, uint, int>)(lpVtbl[4]))((IInitializeSpy*)Unsafe.AsPointer(ref this), hrCoInit, dwCoInit, dwNewThreadAptRefs);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeSpy*, HRESULT, uint, uint, int>)(lpVtbl[4]))((IInitializeSpy*)Unsafe.AsPointer(ref this), hrCoInit, dwCoInit, dwNewThreadAptRefs);
     }
 
     /// <include file='IInitializeSpy.xml' path='doc/member[@name="IInitializeSpy.PreUninitialize"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT PreUninitialize([NativeTypeName("DWORD")] uint dwCurThreadAptRefs)
     {
-        return ((delegate* unmanaged<IInitializeSpy*, uint, int>)(lpVtbl[5]))((IInitializeSpy*)Unsafe.AsPointer(ref this), dwCurThreadAptRefs);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeSpy*, uint, int>)(lpVtbl[5]))((IInitializeSpy*)Unsafe.AsPointer(ref this), dwCurThreadAptRefs);
     }
 
     /// <include file='IInitializeSpy.xml' path='doc/member[@name="IInitializeSpy.PostUninitialize"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT PostUninitialize([NativeTypeName("DWORD")] uint dwNewThreadAptRefs)
     {
-        return ((delegate* unmanaged<IInitializeSpy*, uint, int>)(lpVtbl[6]))((IInitializeSpy*)Unsafe.AsPointer(ref this), dwNewThreadAptRefs);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeSpy*, uint, int>)(lpVtbl[6]))((IInitializeSpy*)Unsafe.AsPointer(ref this), dwNewThreadAptRefs);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> PreInitialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> PreInitialize;
 
         [NativeTypeName("HRESULT (HRESULT, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, uint, uint, int> PostInitialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, uint, uint, int> PostInitialize;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> PreUninitialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> PreUninitialize;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> PostUninitialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> PostUninitialize;
     }
 }

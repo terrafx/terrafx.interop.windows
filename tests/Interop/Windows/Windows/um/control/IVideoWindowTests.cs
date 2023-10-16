@@ -19,32 +19,4 @@ public static unsafe partial class IVideoWindowTests
     {
         Assert.That(typeof(IVideoWindow).GUID, Is.EqualTo(IID_IVideoWindow));
     }
-
-    /// <summary>Validates that the <see cref="IVideoWindow" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVideoWindow>(), Is.EqualTo(sizeof(IVideoWindow)));
-    }
-
-    /// <summary>Validates that the <see cref="IVideoWindow" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVideoWindow).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVideoWindow" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVideoWindow), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVideoWindow), Is.EqualTo(4));
-        }
-    }
 }

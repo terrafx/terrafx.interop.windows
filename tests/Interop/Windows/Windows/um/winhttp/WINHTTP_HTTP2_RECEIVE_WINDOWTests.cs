@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WINHTTP_HTTP2_RECEIVE_WINDOW" /> struct.</summary>
 public static unsafe partial class WINHTTP_HTTP2_RECEIVE_WINDOWTests
 {
-    /// <summary>Validates that the <see cref="WINHTTP_HTTP2_RECEIVE_WINDOW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WINHTTP_HTTP2_RECEIVE_WINDOW>(), Is.EqualTo(sizeof(WINHTTP_HTTP2_RECEIVE_WINDOW)));
-    }
-
-    /// <summary>Validates that the <see cref="WINHTTP_HTTP2_RECEIVE_WINDOW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WINHTTP_HTTP2_RECEIVE_WINDOW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WINHTTP_HTTP2_RECEIVE_WINDOW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WINHTTP_HTTP2_RECEIVE_WINDOW), Is.EqualTo(8));
-    }
 }

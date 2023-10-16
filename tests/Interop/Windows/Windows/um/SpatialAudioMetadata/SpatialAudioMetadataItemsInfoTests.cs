@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SpatialAudioMetadataItemsInfo" /> struct.</summary>
 public static unsafe partial class SpatialAudioMetadataItemsInfoTests
 {
-    /// <summary>Validates that the <see cref="SpatialAudioMetadataItemsInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpatialAudioMetadataItemsInfo>(), Is.EqualTo(sizeof(SpatialAudioMetadataItemsInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="SpatialAudioMetadataItemsInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpatialAudioMetadataItemsInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpatialAudioMetadataItemsInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpatialAudioMetadataItemsInfo), Is.EqualTo(10));
-    }
 }

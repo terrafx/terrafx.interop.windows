@@ -4,6 +4,8 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
+[assembly: DefaultDllImportSearchPaths(DllImportSearchPath.SafeDirectories)]
+
 namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows

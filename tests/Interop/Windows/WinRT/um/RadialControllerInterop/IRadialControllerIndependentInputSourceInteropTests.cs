@@ -19,32 +19,4 @@ public static unsafe partial class IRadialControllerIndependentInputSourceIntero
     {
         Assert.That(typeof(IRadialControllerIndependentInputSourceInterop).GUID, Is.EqualTo(IID_IRadialControllerIndependentInputSourceInterop));
     }
-
-    /// <summary>Validates that the <see cref="IRadialControllerIndependentInputSourceInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRadialControllerIndependentInputSourceInterop>(), Is.EqualTo(sizeof(IRadialControllerIndependentInputSourceInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IRadialControllerIndependentInputSourceInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRadialControllerIndependentInputSourceInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRadialControllerIndependentInputSourceInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRadialControllerIndependentInputSourceInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRadialControllerIndependentInputSourceInterop), Is.EqualTo(4));
-        }
-    }
 }

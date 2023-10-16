@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DWRITE_FONT_AXIS_VALUE" /> struct.</summary>
 public static unsafe partial class DWRITE_FONT_AXIS_VALUETests
 {
-    /// <summary>Validates that the <see cref="DWRITE_FONT_AXIS_VALUE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DWRITE_FONT_AXIS_VALUE>(), Is.EqualTo(sizeof(DWRITE_FONT_AXIS_VALUE)));
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_FONT_AXIS_VALUE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DWRITE_FONT_AXIS_VALUE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_FONT_AXIS_VALUE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DWRITE_FONT_AXIS_VALUE), Is.EqualTo(8));
-    }
 }

@@ -10,7 +10,7 @@ public unsafe partial struct D3D12_META_COMMAND_PARAMETER_DESC
 {
     /// <include file='D3D12_META_COMMAND_PARAMETER_DESC.xml' path='doc/member[@name="D3D12_META_COMMAND_PARAMETER_DESC.Name"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* Name;
+    public char* Name;
 
     /// <include file='D3D12_META_COMMAND_PARAMETER_DESC.xml' path='doc/member[@name="D3D12_META_COMMAND_PARAMETER_DESC.Type"]/*' />
     public D3D12_META_COMMAND_PARAMETER_TYPE Type;

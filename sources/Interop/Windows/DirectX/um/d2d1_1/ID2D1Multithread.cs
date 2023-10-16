@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1Multithread*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Multithread*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1Multithread*, uint>)(lpVtbl[1]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Multithread*, uint>)(lpVtbl[1]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1Multithread*, uint>)(lpVtbl[2]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Multithread*, uint>)(lpVtbl[2]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1Multithread.xml' path='doc/member[@name="ID2D1Multithread.GetMultithreadProtected"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface, INat
     [VtblIndex(3)]
     public BOOL GetMultithreadProtected()
     {
-        return ((delegate* unmanaged<ID2D1Multithread*, int>)(lpVtbl[3]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Multithread*, int>)(lpVtbl[3]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1Multithread.xml' path='doc/member[@name="ID2D1Multithread.Enter"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface, INat
     [VtblIndex(4)]
     public void Enter()
     {
-        ((delegate* unmanaged<ID2D1Multithread*, void>)(lpVtbl[4]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID2D1Multithread*, void>)(lpVtbl[4]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1Multithread.xml' path='doc/member[@name="ID2D1Multithread.Leave"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface, INat
     [VtblIndex(5)]
     public void Leave()
     {
-        ((delegate* unmanaged<ID2D1Multithread*, void>)(lpVtbl[5]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID2D1Multithread*, void>)(lpVtbl[5]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,21 +87,21 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetMultithreadProtected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetMultithreadProtected;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Enter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Enter;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Leave;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Leave;
     }
 }

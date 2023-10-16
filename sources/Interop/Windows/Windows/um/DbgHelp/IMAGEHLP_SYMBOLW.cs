@@ -30,5 +30,5 @@ public unsafe partial struct IMAGEHLP_SYMBOLW
 
     /// <include file='IMAGEHLP_SYMBOLW.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW.Name"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort Name[1];
+    public fixed char Name[1];
 }

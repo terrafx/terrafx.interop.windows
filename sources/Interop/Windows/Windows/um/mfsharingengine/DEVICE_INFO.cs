@@ -13,21 +13,21 @@ public unsafe partial struct DEVICE_INFO
 {
     /// <include file='DEVICE_INFO.xml' path='doc/member[@name="DEVICE_INFO.pFriendlyDeviceName"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* pFriendlyDeviceName;
+    public char* pFriendlyDeviceName;
 
     /// <include file='DEVICE_INFO.xml' path='doc/member[@name="DEVICE_INFO.pUniqueDeviceName"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* pUniqueDeviceName;
+    public char* pUniqueDeviceName;
 
     /// <include file='DEVICE_INFO.xml' path='doc/member[@name="DEVICE_INFO.pManufacturerName"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* pManufacturerName;
+    public char* pManufacturerName;
 
     /// <include file='DEVICE_INFO.xml' path='doc/member[@name="DEVICE_INFO.pModelName"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* pModelName;
+    public char* pModelName;
 
     /// <include file='DEVICE_INFO.xml' path='doc/member[@name="DEVICE_INFO.pIconURL"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* pIconURL;
+    public char* pIconURL;
 }

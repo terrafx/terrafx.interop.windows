@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR" /> struct.</summary>
 public static unsafe partial class D3D12_VIDEO_ENCODER_RATE_CONTROL_VBRTests
 {
-    /// <summary>Validates that the <see cref="D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR>(), Is.EqualTo(sizeof(D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR), Is.EqualTo(56));
-    }
 }

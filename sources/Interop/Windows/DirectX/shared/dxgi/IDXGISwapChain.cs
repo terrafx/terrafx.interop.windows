@@ -26,7 +26,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, Guid*, void**, int>)(lpVtbl[0]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, Guid*, void**, int>)(lpVtbl[0]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, uint>)(lpVtbl[1]))((IDXGISwapChain*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, uint>)(lpVtbl[1]))((IDXGISwapChain*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, uint>)(lpVtbl[2]))((IDXGISwapChain*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, uint>)(lpVtbl[2]))((IDXGISwapChain*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Name, pUnknown);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetParent" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, Guid*, void**, int>)(lpVtbl[6]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), riid, ppParent);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, Guid*, void**, int>)(lpVtbl[6]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
     /// <inheritdoc cref="IDXGIDeviceSubObject.GetDevice" />
@@ -84,7 +84,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppDevice)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, Guid*, void**, int>)(lpVtbl[7]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), riid, ppDevice);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, Guid*, void**, int>)(lpVtbl[7]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), riid, ppDevice);
     }
 
     /// <include file='IDXGISwapChain.xml' path='doc/member[@name="IDXGISwapChain.Present"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT Present(uint SyncInterval, uint Flags)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, uint, uint, int>)(lpVtbl[8]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), SyncInterval, Flags);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, uint, uint, int>)(lpVtbl[8]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), SyncInterval, Flags);
     }
 
     /// <include file='IDXGISwapChain.xml' path='doc/member[@name="IDXGISwapChain.GetBuffer"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT GetBuffer(uint Buffer, [NativeTypeName("const IID &")] Guid* riid, void** ppSurface)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, uint, Guid*, void**, int>)(lpVtbl[9]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Buffer, riid, ppSurface);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, uint, Guid*, void**, int>)(lpVtbl[9]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Buffer, riid, ppSurface);
     }
 
     /// <include file='IDXGISwapChain.xml' path='doc/member[@name="IDXGISwapChain.SetFullscreenState"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT SetFullscreenState(BOOL Fullscreen, IDXGIOutput* pTarget)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, BOOL, IDXGIOutput*, int>)(lpVtbl[10]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Fullscreen, pTarget);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, BOOL, IDXGIOutput*, int>)(lpVtbl[10]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Fullscreen, pTarget);
     }
 
     /// <include file='IDXGISwapChain.xml' path='doc/member[@name="IDXGISwapChain.GetFullscreenState"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(11)]
     public HRESULT GetFullscreenState(BOOL* pFullscreen, IDXGIOutput** ppTarget)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, BOOL*, IDXGIOutput**, int>)(lpVtbl[11]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pFullscreen, ppTarget);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, BOOL*, IDXGIOutput**, int>)(lpVtbl[11]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pFullscreen, ppTarget);
     }
 
     /// <include file='IDXGISwapChain.xml' path='doc/member[@name="IDXGISwapChain.GetDesc"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT GetDesc(DXGI_SWAP_CHAIN_DESC* pDesc)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, DXGI_SWAP_CHAIN_DESC*, int>)(lpVtbl[12]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, DXGI_SWAP_CHAIN_DESC*, int>)(lpVtbl[12]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='IDXGISwapChain.xml' path='doc/member[@name="IDXGISwapChain.ResizeBuffers"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(13)]
     public HRESULT ResizeBuffers(uint BufferCount, uint Width, uint Height, DXGI_FORMAT NewFormat, uint SwapChainFlags)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, uint, uint, uint, DXGI_FORMAT, uint, int>)(lpVtbl[13]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), BufferCount, Width, Height, NewFormat, SwapChainFlags);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, uint, uint, uint, DXGI_FORMAT, uint, int>)(lpVtbl[13]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), BufferCount, Width, Height, NewFormat, SwapChainFlags);
     }
 
     /// <include file='IDXGISwapChain.xml' path='doc/member[@name="IDXGISwapChain.ResizeTarget"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(14)]
     public HRESULT ResizeTarget([NativeTypeName("const DXGI_MODE_DESC *")] DXGI_MODE_DESC* pNewTargetParameters)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, DXGI_MODE_DESC*, int>)(lpVtbl[14]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pNewTargetParameters);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, DXGI_MODE_DESC*, int>)(lpVtbl[14]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pNewTargetParameters);
     }
 
     /// <include file='IDXGISwapChain.xml' path='doc/member[@name="IDXGISwapChain.GetContainingOutput"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(15)]
     public HRESULT GetContainingOutput(IDXGIOutput** ppOutput)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, IDXGIOutput**, int>)(lpVtbl[15]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), ppOutput);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, IDXGIOutput**, int>)(lpVtbl[15]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), ppOutput);
     }
 
     /// <include file='IDXGISwapChain.xml' path='doc/member[@name="IDXGISwapChain.GetFrameStatistics"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(16)]
     public HRESULT GetFrameStatistics(DXGI_FRAME_STATISTICS* pStats)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, DXGI_FRAME_STATISTICS*, int>)(lpVtbl[16]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pStats);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, DXGI_FRAME_STATISTICS*, int>)(lpVtbl[16]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pStats);
     }
 
     /// <include file='IDXGISwapChain.xml' path='doc/member[@name="IDXGISwapChain.GetLastPresentCount"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
     [VtblIndex(17)]
     public HRESULT GetLastPresentCount(uint* pLastPresentCount)
     {
-        return ((delegate* unmanaged<IDXGISwapChain*, uint*, int>)(lpVtbl[17]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pLastPresentCount);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChain*, uint*, int>)(lpVtbl[17]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pLastPresentCount);
     }
 
     public interface Interface : IDXGIDeviceSubObject.Interface
@@ -204,57 +204,57 @@ public unsafe partial struct IDXGISwapChain : IDXGISwapChain.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> Present;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> Present;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void**, int> GetBuffer;
 
         [NativeTypeName("HRESULT (BOOL, IDXGIOutput *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, IDXGIOutput*, int> SetFullscreenState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, IDXGIOutput*, int> SetFullscreenState;
 
         [NativeTypeName("HRESULT (BOOL *, IDXGIOutput **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, IDXGIOutput**, int> GetFullscreenState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, IDXGIOutput**, int> GetFullscreenState;
 
         [NativeTypeName("HRESULT (DXGI_SWAP_CHAIN_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_SWAP_CHAIN_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_SWAP_CHAIN_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT, DXGI_FORMAT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, DXGI_FORMAT, uint, int> ResizeBuffers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, DXGI_FORMAT, uint, int> ResizeBuffers;
 
         [NativeTypeName("HRESULT (const DXGI_MODE_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_MODE_DESC*, int> ResizeTarget;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_MODE_DESC*, int> ResizeTarget;
 
         [NativeTypeName("HRESULT (IDXGIOutput **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDXGIOutput**, int> GetContainingOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDXGIOutput**, int> GetContainingOutput;
 
         [NativeTypeName("HRESULT (DXGI_FRAME_STATISTICS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_FRAME_STATISTICS*, int> GetFrameStatistics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_FRAME_STATISTICS*, int> GetFrameStatistics;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetLastPresentCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetLastPresentCount;
     }
 }

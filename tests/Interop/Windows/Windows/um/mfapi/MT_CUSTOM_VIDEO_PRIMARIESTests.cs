@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MT_CUSTOM_VIDEO_PRIMARIES" /> struct.</summary>
 public static unsafe partial class MT_CUSTOM_VIDEO_PRIMARIESTests
 {
-    /// <summary>Validates that the <see cref="MT_CUSTOM_VIDEO_PRIMARIES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MT_CUSTOM_VIDEO_PRIMARIES>(), Is.EqualTo(sizeof(MT_CUSTOM_VIDEO_PRIMARIES)));
-    }
-
-    /// <summary>Validates that the <see cref="MT_CUSTOM_VIDEO_PRIMARIES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MT_CUSTOM_VIDEO_PRIMARIES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MT_CUSTOM_VIDEO_PRIMARIES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MT_CUSTOM_VIDEO_PRIMARIES), Is.EqualTo(32));
-    }
 }

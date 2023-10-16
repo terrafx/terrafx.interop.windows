@@ -64,19 +64,19 @@ public unsafe partial struct ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION
 
     /// <include file='ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.lpAssemblyEncodedAssemblyIdentity"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* lpAssemblyEncodedAssemblyIdentity;
+    public char* lpAssemblyEncodedAssemblyIdentity;
 
     /// <include file='ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.lpAssemblyManifestPath"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* lpAssemblyManifestPath;
+    public char* lpAssemblyManifestPath;
 
     /// <include file='ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.lpAssemblyPolicyPath"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* lpAssemblyPolicyPath;
+    public char* lpAssemblyPolicyPath;
 
     /// <include file='ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.lpAssemblyDirectoryName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* lpAssemblyDirectoryName;
+    public char* lpAssemblyDirectoryName;
 
     /// <include file='ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulFileCount"]/*' />
     [NativeTypeName("DWORD")]

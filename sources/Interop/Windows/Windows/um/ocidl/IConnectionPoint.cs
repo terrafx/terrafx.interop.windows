@@ -25,7 +25,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IConnectionPoint*, Guid*, void**, int>)(lpVtbl[0]))((IConnectionPoint*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionPoint*, Guid*, void**, int>)(lpVtbl[0]))((IConnectionPoint*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IConnectionPoint*, uint>)(lpVtbl[1]))((IConnectionPoint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IConnectionPoint*, uint>)(lpVtbl[1]))((IConnectionPoint*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IConnectionPoint*, uint>)(lpVtbl[2]))((IConnectionPoint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IConnectionPoint*, uint>)(lpVtbl[2]))((IConnectionPoint*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint.GetConnectionInterface"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetConnectionInterface([NativeTypeName("IID *")] Guid* pIID)
     {
-        return ((delegate* unmanaged<IConnectionPoint*, Guid*, int>)(lpVtbl[3]))((IConnectionPoint*)Unsafe.AsPointer(ref this), pIID);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionPoint*, Guid*, int>)(lpVtbl[3]))((IConnectionPoint*)Unsafe.AsPointer(ref this), pIID);
     }
 
     /// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint.GetConnectionPointContainer"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetConnectionPointContainer(IConnectionPointContainer** ppCPC)
     {
-        return ((delegate* unmanaged<IConnectionPoint*, IConnectionPointContainer**, int>)(lpVtbl[4]))((IConnectionPoint*)Unsafe.AsPointer(ref this), ppCPC);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionPoint*, IConnectionPointContainer**, int>)(lpVtbl[4]))((IConnectionPoint*)Unsafe.AsPointer(ref this), ppCPC);
     }
 
     /// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint.Advise"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface, INat
     [VtblIndex(5)]
     public HRESULT Advise(IUnknown* pUnkSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<IConnectionPoint*, IUnknown*, uint*, int>)(lpVtbl[5]))((IConnectionPoint*)Unsafe.AsPointer(ref this), pUnkSink, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionPoint*, IUnknown*, uint*, int>)(lpVtbl[5]))((IConnectionPoint*)Unsafe.AsPointer(ref this), pUnkSink, pdwCookie);
     }
 
     /// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint.Unadvise"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface, INat
     [VtblIndex(6)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<IConnectionPoint*, uint, int>)(lpVtbl[6]))((IConnectionPoint*)Unsafe.AsPointer(ref this), dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionPoint*, uint, int>)(lpVtbl[6]))((IConnectionPoint*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
     /// <include file='IConnectionPoint.xml' path='doc/member[@name="IConnectionPoint.EnumConnections"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface, INat
     [VtblIndex(7)]
     public HRESULT EnumConnections(IEnumConnections** ppEnum)
     {
-        return ((delegate* unmanaged<IConnectionPoint*, IEnumConnections**, int>)(lpVtbl[7]))((IConnectionPoint*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionPoint*, IEnumConnections**, int>)(lpVtbl[7]))((IConnectionPoint*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetConnectionInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetConnectionInterface;
 
         [NativeTypeName("HRESULT (IConnectionPointContainer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IConnectionPointContainer**, int> GetConnectionPointContainer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IConnectionPointContainer**, int> GetConnectionPointContainer;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint*, int> Advise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (IEnumConnections **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumConnections**, int> EnumConnections;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumConnections**, int> EnumConnections;
     }
 }

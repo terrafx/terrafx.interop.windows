@@ -18,7 +18,7 @@ public static partial class DirectX
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x36, 0x2E, 0x90, 0xD4,
                 0x7A, 0x75,
                 0x42, 0x49,
@@ -30,7 +30,7 @@ public static partial class DirectX
                 0xFA,
                 0x43,
                 0xCD
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

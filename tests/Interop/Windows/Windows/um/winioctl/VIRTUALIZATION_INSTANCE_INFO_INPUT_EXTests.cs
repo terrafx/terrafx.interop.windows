@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="VIRTUALIZATION_INSTANCE_INFO_INPUT_EX" /> struct.</summary>
 public static unsafe partial class VIRTUALIZATION_INSTANCE_INFO_INPUT_EXTests
 {
-    /// <summary>Validates that the <see cref="VIRTUALIZATION_INSTANCE_INFO_INPUT_EX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<VIRTUALIZATION_INSTANCE_INFO_INPUT_EX>(), Is.EqualTo(sizeof(VIRTUALIZATION_INSTANCE_INFO_INPUT_EX)));
-    }
-
-    /// <summary>Validates that the <see cref="VIRTUALIZATION_INSTANCE_INFO_INPUT_EX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(VIRTUALIZATION_INSTANCE_INFO_INPUT_EX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="VIRTUALIZATION_INSTANCE_INFO_INPUT_EX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(VIRTUALIZATION_INSTANCE_INFO_INPUT_EX), Is.EqualTo(16));
-    }
 }

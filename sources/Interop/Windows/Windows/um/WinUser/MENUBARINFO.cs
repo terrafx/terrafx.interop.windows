@@ -30,9 +30,9 @@ public partial struct MENUBARINFO
     public BOOL fBarFocused
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)(_bitfield & 0x1);
+            return (BOOL)((_bitfield << 31) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,9 +47,9 @@ public partial struct MENUBARINFO
     public BOOL fFocused
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield >> 1) & 0x1);
+            return (BOOL)((_bitfield << 30) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,9 +64,9 @@ public partial struct MENUBARINFO
     public BOOL fUnused
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield >> 2) & 0x3FFFFFFF);
+            return (BOOL)((_bitfield << 0) >> 2);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

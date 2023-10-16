@@ -27,7 +27,7 @@ public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInkCommitRequestHandler*, Guid*, void**, int>)(lpVtbl[0]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInkCommitRequestHandler*, Guid*, void**, int>)(lpVtbl[0]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInkCommitRequestHandler*, uint>)(lpVtbl[1]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInkCommitRequestHandler*, uint>)(lpVtbl[1]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInkCommitRequestHandler*, uint>)(lpVtbl[2]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInkCommitRequestHandler*, uint>)(lpVtbl[2]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInkCommitRequestHandler.xml' path='doc/member[@name="IInkCommitRequestHandler.OnCommitRequested"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler
     [VtblIndex(3)]
     public HRESULT OnCommitRequested()
     {
-        return ((delegate* unmanaged<IInkCommitRequestHandler*, int>)(lpVtbl[3]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInkCommitRequestHandler*, int>)(lpVtbl[3]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnCommitRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnCommitRequested;
     }
 }

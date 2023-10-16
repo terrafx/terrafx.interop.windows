@@ -16,5 +16,5 @@ public unsafe partial struct DEVPROPCOMPKEY
 
     /// <include file='DEVPROPCOMPKEY.xml' path='doc/member[@name="DEVPROPCOMPKEY.LocaleName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* LocaleName;
+    public char* LocaleName;
 }

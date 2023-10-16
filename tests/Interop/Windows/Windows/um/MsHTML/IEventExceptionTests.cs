@@ -19,32 +19,4 @@ public static unsafe partial class IEventExceptionTests
     {
         Assert.That(typeof(IEventException).GUID, Is.EqualTo(IID_IEventException));
     }
-
-    /// <summary>Validates that the <see cref="IEventException" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEventException>(), Is.EqualTo(sizeof(IEventException)));
-    }
-
-    /// <summary>Validates that the <see cref="IEventException" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEventException).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEventException" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEventException), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEventException), Is.EqualTo(4));
-        }
-    }
 }

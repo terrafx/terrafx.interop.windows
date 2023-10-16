@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLXMLHttpRequestFactoryTests
     {
         Assert.That(typeof(IHTMLXMLHttpRequestFactory).GUID, Is.EqualTo(IID_IHTMLXMLHttpRequestFactory));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLXMLHttpRequestFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLXMLHttpRequestFactory>(), Is.EqualTo(sizeof(IHTMLXMLHttpRequestFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLXMLHttpRequestFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLXMLHttpRequestFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLXMLHttpRequestFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLXMLHttpRequestFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLXMLHttpRequestFactory), Is.EqualTo(4));
-        }
-    }
 }

@@ -16,5 +16,5 @@ public unsafe partial struct REGFILTER
 
     /// <include file='REGFILTER.xml' path='doc/member[@name="REGFILTER.Name"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* Name;
+    public char* Name;
 }

@@ -11,7 +11,7 @@ public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSourceReaderFromURL"]/*' />
     [DllImport("mfreadwrite", ExactSpelling = true)]
-    public static extern HRESULT MFCreateSourceReaderFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
+    public static extern HRESULT MFCreateSourceReaderFromURL([NativeTypeName("LPCWSTR")] char* pwszURL, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSourceReaderFromByteStream"]/*' />
     [DllImport("mfreadwrite", ExactSpelling = true)]
@@ -23,7 +23,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSinkWriterFromURL"]/*' />
     [DllImport("mfreadwrite", ExactSpelling = true)]
-    public static extern HRESULT MFCreateSinkWriterFromURL([NativeTypeName("LPCWSTR")] ushort* pwszOutputURL, IMFByteStream* pByteStream, IMFAttributes* pAttributes, IMFSinkWriter** ppSinkWriter);
+    public static extern HRESULT MFCreateSinkWriterFromURL([NativeTypeName("LPCWSTR")] char* pwszOutputURL, IMFByteStream* pByteStream, IMFAttributes* pAttributes, IMFSinkWriter** ppSinkWriter);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSinkWriterFromMediaSink"]/*' />
     [DllImport("mfreadwrite", ExactSpelling = true)]

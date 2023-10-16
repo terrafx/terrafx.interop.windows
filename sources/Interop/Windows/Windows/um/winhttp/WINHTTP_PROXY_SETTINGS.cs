@@ -22,23 +22,23 @@ public unsafe partial struct WINHTTP_PROXY_SETTINGS
 
     /// <include file='WINHTTP_PROXY_SETTINGS.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS.pwszConnectionName"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pwszConnectionName;
+    public char* pwszConnectionName;
 
     /// <include file='WINHTTP_PROXY_SETTINGS.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS.pwszProxy"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pwszProxy;
+    public char* pwszProxy;
 
     /// <include file='WINHTTP_PROXY_SETTINGS.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS.pwszProxyBypass"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pwszProxyBypass;
+    public char* pwszProxyBypass;
 
     /// <include file='WINHTTP_PROXY_SETTINGS.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS.pwszAutoconfigUrl"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pwszAutoconfigUrl;
+    public char* pwszAutoconfigUrl;
 
     /// <include file='WINHTTP_PROXY_SETTINGS.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS.pwszAutoconfigSecondaryUrl"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pwszAutoconfigSecondaryUrl;
+    public char* pwszAutoconfigSecondaryUrl;
 
     /// <include file='WINHTTP_PROXY_SETTINGS.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS.dwAutoDiscoveryFlags"]/*' />
     [NativeTypeName("DWORD")]
@@ -46,7 +46,7 @@ public unsafe partial struct WINHTTP_PROXY_SETTINGS
 
     /// <include file='WINHTTP_PROXY_SETTINGS.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS.pwszLastKnownGoodAutoConfigUrl"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pwszLastKnownGoodAutoConfigUrl;
+    public char* pwszLastKnownGoodAutoConfigUrl;
 
     /// <include file='WINHTTP_PROXY_SETTINGS.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS.dwAutoconfigReloadDelayMins"]/*' />
     [NativeTypeName("DWORD")]

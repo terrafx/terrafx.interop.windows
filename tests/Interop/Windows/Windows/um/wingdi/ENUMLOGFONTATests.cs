@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ENUMLOGFONTA" /> struct.</summary>
 public static unsafe partial class ENUMLOGFONTATests
 {
-    /// <summary>Validates that the <see cref="ENUMLOGFONTA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ENUMLOGFONTA>(), Is.EqualTo(sizeof(ENUMLOGFONTA)));
-    }
-
-    /// <summary>Validates that the <see cref="ENUMLOGFONTA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ENUMLOGFONTA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ENUMLOGFONTA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ENUMLOGFONTA), Is.EqualTo(156));
-    }
 }

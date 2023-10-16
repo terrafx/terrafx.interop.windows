@@ -30,7 +30,7 @@ public unsafe partial struct TF_LMLATTELEMENT
 
     /// <include file='TF_LMLATTELEMENT.xml' path='doc/member[@name="TF_LMLATTELEMENT.bstrText"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* bstrText;
+    public char* bstrText;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.iCost"]/*' />
     [UnscopedRef]

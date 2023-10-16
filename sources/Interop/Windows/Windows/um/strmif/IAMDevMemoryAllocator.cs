@@ -25,7 +25,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMDevMemoryAllocator*, Guid*, void**, int>)(lpVtbl[0]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryAllocator*, Guid*, void**, int>)(lpVtbl[0]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMDevMemoryAllocator*, uint>)(lpVtbl[1]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryAllocator*, uint>)(lpVtbl[1]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMDevMemoryAllocator*, uint>)(lpVtbl[2]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryAllocator*, uint>)(lpVtbl[2]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator.GetInfo"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
     [VtblIndex(3)]
     public HRESULT GetInfo([NativeTypeName("DWORD *")] uint* pdwcbTotalFree, [NativeTypeName("DWORD *")] uint* pdwcbLargestFree, [NativeTypeName("DWORD *")] uint* pdwcbTotalMemory, [NativeTypeName("DWORD *")] uint* pdwcbMinimumChunk)
     {
-        return ((delegate* unmanaged<IAMDevMemoryAllocator*, uint*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), pdwcbTotalFree, pdwcbLargestFree, pdwcbTotalMemory, pdwcbMinimumChunk);
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryAllocator*, uint*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), pdwcbTotalFree, pdwcbLargestFree, pdwcbTotalMemory, pdwcbMinimumChunk);
     }
 
     /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator.CheckMemory"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
     [VtblIndex(4)]
     public HRESULT CheckMemory([NativeTypeName("const BYTE *")] byte* pBuffer)
     {
-        return ((delegate* unmanaged<IAMDevMemoryAllocator*, byte*, int>)(lpVtbl[4]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), pBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryAllocator*, byte*, int>)(lpVtbl[4]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), pBuffer);
     }
 
     /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator.Alloc"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
     [VtblIndex(5)]
     public HRESULT Alloc(byte** ppBuffer, [NativeTypeName("DWORD *")] uint* pdwcbBuffer)
     {
-        return ((delegate* unmanaged<IAMDevMemoryAllocator*, byte**, uint*, int>)(lpVtbl[5]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), ppBuffer, pdwcbBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryAllocator*, byte**, uint*, int>)(lpVtbl[5]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), ppBuffer, pdwcbBuffer);
     }
 
     /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator.Free"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
     [VtblIndex(6)]
     public HRESULT Free(byte* pBuffer)
     {
-        return ((delegate* unmanaged<IAMDevMemoryAllocator*, byte*, int>)(lpVtbl[6]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), pBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryAllocator*, byte*, int>)(lpVtbl[6]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), pBuffer);
     }
 
     /// <include file='IAMDevMemoryAllocator.xml' path='doc/member[@name="IAMDevMemoryAllocator.GetDevMemoryObject"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
     [VtblIndex(7)]
     public HRESULT GetDevMemoryObject(IUnknown** ppUnkInnner, IUnknown* pUnkOuter)
     {
-        return ((delegate* unmanaged<IAMDevMemoryAllocator*, IUnknown**, IUnknown*, int>)(lpVtbl[7]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), ppUnkInnner, pUnkOuter);
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryAllocator*, IUnknown**, IUnknown*, int>)(lpVtbl[7]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), ppUnkInnner, pUnkOuter);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, uint*, uint*, int> GetInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, uint*, uint*, int> GetInfo;
 
         [NativeTypeName("HRESULT (const BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, int> CheckMemory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> CheckMemory;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, int> Alloc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, int> Alloc;
 
         [NativeTypeName("HRESULT (BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, int> Free;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> Free;
 
         [NativeTypeName("HRESULT (IUnknown **, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, IUnknown*, int> GetDevMemoryObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, IUnknown*, int> GetDevMemoryObject;
     }
 }

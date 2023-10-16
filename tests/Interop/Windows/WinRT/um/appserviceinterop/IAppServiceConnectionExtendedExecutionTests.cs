@@ -19,32 +19,4 @@ public static unsafe partial class IAppServiceConnectionExtendedExecutionTests
     {
         Assert.That(typeof(IAppServiceConnectionExtendedExecution).GUID, Is.EqualTo(IID_IAppServiceConnectionExtendedExecution));
     }
-
-    /// <summary>Validates that the <see cref="IAppServiceConnectionExtendedExecution" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppServiceConnectionExtendedExecution>(), Is.EqualTo(sizeof(IAppServiceConnectionExtendedExecution)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppServiceConnectionExtendedExecution" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppServiceConnectionExtendedExecution).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppServiceConnectionExtendedExecution" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppServiceConnectionExtendedExecution), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppServiceConnectionExtendedExecution), Is.EqualTo(4));
-        }
-    }
 }

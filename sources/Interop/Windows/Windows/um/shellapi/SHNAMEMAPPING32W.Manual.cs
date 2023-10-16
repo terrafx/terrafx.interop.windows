@@ -11,10 +11,10 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct SHNAMEMAPPING32W
 {
     [NativeTypeName("LPWSTR")]
-    public ushort* pszOldPath;
+    public char* pszOldPath;
 
     [NativeTypeName("LPWSTR")]
-    public ushort* pszNewPath;
+    public char* pszNewPath;
 
     public int cchOldPath;
 

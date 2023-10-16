@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WRITE_USN_REASON_INPUT" /> struct.</summary>
 public static unsafe partial class WRITE_USN_REASON_INPUTTests
 {
-    /// <summary>Validates that the <see cref="WRITE_USN_REASON_INPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WRITE_USN_REASON_INPUT>(), Is.EqualTo(sizeof(WRITE_USN_REASON_INPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="WRITE_USN_REASON_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WRITE_USN_REASON_INPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WRITE_USN_REASON_INPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WRITE_USN_REASON_INPUT), Is.EqualTo(8));
-    }
 }

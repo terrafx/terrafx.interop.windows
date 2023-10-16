@@ -20,7 +20,7 @@ public partial struct SCOPE_ID
     public uint Zone
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Zone;
         }
@@ -36,7 +36,7 @@ public partial struct SCOPE_ID
     public uint Level
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Level;
         }
@@ -83,7 +83,7 @@ public partial struct SCOPE_ID
             public uint Zone
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0xFFFFFFFu;
                 }
@@ -100,7 +100,7 @@ public partial struct SCOPE_ID
             public uint Level
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 28) & 0xFu;
                 }

@@ -25,7 +25,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMStreamConfig*, Guid*, void**, int>)(lpVtbl[0]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamConfig*, Guid*, void**, int>)(lpVtbl[0]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMStreamConfig*, uint>)(lpVtbl[1]))((IAMStreamConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamConfig*, uint>)(lpVtbl[1]))((IAMStreamConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMStreamConfig*, uint>)(lpVtbl[2]))((IAMStreamConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamConfig*, uint>)(lpVtbl[2]))((IAMStreamConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMStreamConfig.xml' path='doc/member[@name="IAMStreamConfig.SetFormat"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetFormat(AM_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IAMStreamConfig*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), pmt);
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamConfig*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), pmt);
     }
 
     /// <include file='IAMStreamConfig.xml' path='doc/member[@name="IAMStreamConfig.GetFormat"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetFormat(AM_MEDIA_TYPE** ppmt)
     {
-        return ((delegate* unmanaged<IAMStreamConfig*, AM_MEDIA_TYPE**, int>)(lpVtbl[4]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), ppmt);
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamConfig*, AM_MEDIA_TYPE**, int>)(lpVtbl[4]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), ppmt);
     }
 
     /// <include file='IAMStreamConfig.xml' path='doc/member[@name="IAMStreamConfig.GetNumberOfCapabilities"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetNumberOfCapabilities(int* piCount, int* piSize)
     {
-        return ((delegate* unmanaged<IAMStreamConfig*, int*, int*, int>)(lpVtbl[5]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), piCount, piSize);
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamConfig*, int*, int*, int>)(lpVtbl[5]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), piCount, piSize);
     }
 
     /// <include file='IAMStreamConfig.xml' path='doc/member[@name="IAMStreamConfig.GetStreamCaps"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetStreamCaps(int iIndex, AM_MEDIA_TYPE** ppmt, byte* pSCC)
     {
-        return ((delegate* unmanaged<IAMStreamConfig*, int, AM_MEDIA_TYPE**, byte*, int>)(lpVtbl[6]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), iIndex, ppmt, pSCC);
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamConfig*, int, AM_MEDIA_TYPE**, byte*, int>)(lpVtbl[6]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), iIndex, ppmt, pSCC);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, int> SetFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AM_MEDIA_TYPE*, int> SetFormat;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE**, int> GetFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AM_MEDIA_TYPE**, int> GetFormat;
 
         [NativeTypeName("HRESULT (int *, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> GetNumberOfCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> GetNumberOfCapabilities;
 
         [NativeTypeName("HRESULT (int, AM_MEDIA_TYPE **, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, AM_MEDIA_TYPE**, byte*, int> GetStreamCaps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, AM_MEDIA_TYPE**, byte*, int> GetStreamCaps;
     }
 }

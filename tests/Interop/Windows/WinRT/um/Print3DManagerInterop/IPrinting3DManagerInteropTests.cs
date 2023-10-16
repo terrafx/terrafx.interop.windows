@@ -19,32 +19,4 @@ public static unsafe partial class IPrinting3DManagerInteropTests
     {
         Assert.That(typeof(IPrinting3DManagerInterop).GUID, Is.EqualTo(IID_IPrinting3DManagerInterop));
     }
-
-    /// <summary>Validates that the <see cref="IPrinting3DManagerInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPrinting3DManagerInterop>(), Is.EqualTo(sizeof(IPrinting3DManagerInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IPrinting3DManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPrinting3DManagerInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPrinting3DManagerInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPrinting3DManagerInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPrinting3DManagerInterop), Is.EqualTo(4));
-        }
-    }
 }

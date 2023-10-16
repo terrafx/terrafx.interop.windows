@@ -18,11 +18,11 @@ public unsafe partial struct CREDENTIALW
 
     /// <include file='CREDENTIALW.xml' path='doc/member[@name="CREDENTIALW.TargetName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* TargetName;
+    public char* TargetName;
 
     /// <include file='CREDENTIALW.xml' path='doc/member[@name="CREDENTIALW.Comment"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* Comment;
+    public char* Comment;
 
     /// <include file='CREDENTIALW.xml' path='doc/member[@name="CREDENTIALW.LastWritten"]/*' />
     public FILETIME LastWritten;
@@ -49,9 +49,9 @@ public unsafe partial struct CREDENTIALW
 
     /// <include file='CREDENTIALW.xml' path='doc/member[@name="CREDENTIALW.TargetAlias"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* TargetAlias;
+    public char* TargetAlias;
 
     /// <include file='CREDENTIALW.xml' path='doc/member[@name="CREDENTIALW.UserName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* UserName;
+    public char* UserName;
 }

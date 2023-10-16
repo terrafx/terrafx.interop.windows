@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class TOUCH_HIT_TESTING_PROXIMITY_EVALUATIONTests
 {
-    /// <summary>Validates that the <see cref="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TOUCH_HIT_TESTING_PROXIMITY_EVALUATION>(), Is.EqualTo(sizeof(TOUCH_HIT_TESTING_PROXIMITY_EVALUATION)));
-    }
-
-    /// <summary>Validates that the <see cref="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TOUCH_HIT_TESTING_PROXIMITY_EVALUATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TOUCH_HIT_TESTING_PROXIMITY_EVALUATION), Is.EqualTo(12));
-    }
 }

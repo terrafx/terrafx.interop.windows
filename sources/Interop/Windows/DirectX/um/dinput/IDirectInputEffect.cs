@@ -26,7 +26,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, uint>)(lpVtbl[1]))((IDirectInputEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, uint>)(lpVtbl[1]))((IDirectInputEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, uint>)(lpVtbl[2]))((IDirectInputEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, uint>)(lpVtbl[2]))((IDirectInputEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectInputEffect.xml' path='doc/member[@name="IDirectInputEffect.Initialize"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(3)]
     public HRESULT Initialize(HINSTANCE param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("const GUID &")] Guid* param2)
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, HINSTANCE, uint, Guid*, int>)(lpVtbl[3]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0, param1, param2);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, HINSTANCE, uint, Guid*, int>)(lpVtbl[3]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
     /// <include file='IDirectInputEffect.xml' path='doc/member[@name="IDirectInputEffect.GetEffectGuid"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(4)]
     public HRESULT GetEffectGuid([NativeTypeName("LPGUID")] Guid* param0)
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, Guid*, int>)(lpVtbl[4]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, Guid*, int>)(lpVtbl[4]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectInputEffect.xml' path='doc/member[@name="IDirectInputEffect.GetParameters"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(5)]
     public HRESULT GetParameters([NativeTypeName("LPDIEFFECT")] DIEFFECT_DX6* param0, [NativeTypeName("DWORD")] uint param1)
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, DIEFFECT_DX6*, uint, int>)(lpVtbl[5]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, DIEFFECT_DX6*, uint, int>)(lpVtbl[5]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectInputEffect.xml' path='doc/member[@name="IDirectInputEffect.SetParameters"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(6)]
     public HRESULT SetParameters([NativeTypeName("LPCDIEFFECT")] DIEFFECT_DX6* param0, [NativeTypeName("DWORD")] uint param1)
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, DIEFFECT_DX6*, uint, int>)(lpVtbl[6]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, DIEFFECT_DX6*, uint, int>)(lpVtbl[6]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectInputEffect.xml' path='doc/member[@name="IDirectInputEffect.Start"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(7)]
     public HRESULT Start([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1)
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, uint, uint, int>)(lpVtbl[7]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, uint, uint, int>)(lpVtbl[7]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectInputEffect.xml' path='doc/member[@name="IDirectInputEffect.Stop"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(8)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, int>)(lpVtbl[8]))((IDirectInputEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, int>)(lpVtbl[8]))((IDirectInputEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectInputEffect.xml' path='doc/member[@name="IDirectInputEffect.GetEffectStatus"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(9)]
     public HRESULT GetEffectStatus([NativeTypeName("LPDWORD")] uint* param0)
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, uint*, int>)(lpVtbl[9]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, uint*, int>)(lpVtbl[9]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectInputEffect.xml' path='doc/member[@name="IDirectInputEffect.Download"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(10)]
     public HRESULT Download()
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, int>)(lpVtbl[10]))((IDirectInputEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, int>)(lpVtbl[10]))((IDirectInputEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectInputEffect.xml' path='doc/member[@name="IDirectInputEffect.Unload"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(11)]
     public HRESULT Unload()
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, int>)(lpVtbl[11]))((IDirectInputEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, int>)(lpVtbl[11]))((IDirectInputEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectInputEffect.xml' path='doc/member[@name="IDirectInputEffect.Escape"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
     [VtblIndex(12)]
     public HRESULT Escape([NativeTypeName("LPDIEFFESCAPE")] DIEFFESCAPE* param0)
     {
-        return ((delegate* unmanaged<IDirectInputEffect*, DIEFFESCAPE*, int>)(lpVtbl[12]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInputEffect*, DIEFFESCAPE*, int>)(lpVtbl[12]))((IDirectInputEffect*)Unsafe.AsPointer(ref this), param0);
     }
 
     public interface Interface : IUnknown.Interface
@@ -164,42 +164,42 @@ public unsafe partial struct IDirectInputEffect : IDirectInputEffect.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HINSTANCE, DWORD, const GUID &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HINSTANCE, uint, Guid*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HINSTANCE, uint, Guid*, int> Initialize;
 
         [NativeTypeName("HRESULT (LPGUID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetEffectGuid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetEffectGuid;
 
         [NativeTypeName("HRESULT (LPDIEFFECT, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIEFFECT_DX6*, uint, int> GetParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIEFFECT_DX6*, uint, int> GetParameters;
 
         [NativeTypeName("HRESULT (LPCDIEFFECT, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIEFFECT_DX6*, uint, int> SetParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIEFFECT_DX6*, uint, int> SetParameters;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> Start;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> Start;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetEffectStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetEffectStatus;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Download;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Download;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Unload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Unload;
 
         [NativeTypeName("HRESULT (LPDIEFFESCAPE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIEFFESCAPE*, int> Escape;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIEFFESCAPE*, int> Escape;
     }
 }

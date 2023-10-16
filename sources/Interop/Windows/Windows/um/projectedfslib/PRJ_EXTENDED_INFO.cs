@@ -50,7 +50,7 @@ public partial struct PRJ_EXTENDED_INFO
         {
             /// <include file='_Symlink_e__Struct.xml' path='doc/member[@name="_Symlink_e__Struct.TargetName"]/*' />
             [NativeTypeName("PCWSTR")]
-            public ushort* TargetName;
+            public char* TargetName;
         }
     }
 }

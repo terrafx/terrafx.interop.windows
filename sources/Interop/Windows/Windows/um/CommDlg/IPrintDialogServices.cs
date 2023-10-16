@@ -25,7 +25,7 @@ public unsafe partial struct IPrintDialogServices : IPrintDialogServices.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPrintDialogServices*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogServices*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPrintDialogServices : IPrintDialogServices.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPrintDialogServices*, uint>)(lpVtbl[1]))((IPrintDialogServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogServices*, uint>)(lpVtbl[1]))((IPrintDialogServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPrintDialogServices : IPrintDialogServices.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPrintDialogServices*, uint>)(lpVtbl[2]))((IPrintDialogServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogServices*, uint>)(lpVtbl[2]))((IPrintDialogServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrintDialogServices.xml' path='doc/member[@name="IPrintDialogServices.GetCurrentDevMode"]/*' />
@@ -51,23 +51,23 @@ public unsafe partial struct IPrintDialogServices : IPrintDialogServices.Interfa
     [VtblIndex(3)]
     public HRESULT GetCurrentDevMode([NativeTypeName("LPDEVMODE")] DEVMODEW* pDevMode, uint* pcbSize)
     {
-        return ((delegate* unmanaged<IPrintDialogServices*, DEVMODEW*, uint*, int>)(lpVtbl[3]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), pDevMode, pcbSize);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogServices*, DEVMODEW*, uint*, int>)(lpVtbl[3]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), pDevMode, pcbSize);
     }
 
     /// <include file='IPrintDialogServices.xml' path='doc/member[@name="IPrintDialogServices.GetCurrentPrinterName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetCurrentPrinterName([NativeTypeName("LPWSTR")] ushort* pPrinterName, uint* pcchSize)
+    public HRESULT GetCurrentPrinterName([NativeTypeName("LPWSTR")] char* pPrinterName, uint* pcchSize)
     {
-        return ((delegate* unmanaged<IPrintDialogServices*, ushort*, uint*, int>)(lpVtbl[4]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), pPrinterName, pcchSize);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogServices*, char*, uint*, int>)(lpVtbl[4]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), pPrinterName, pcchSize);
     }
 
     /// <include file='IPrintDialogServices.xml' path='doc/member[@name="IPrintDialogServices.GetCurrentPortName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetCurrentPortName([NativeTypeName("LPWSTR")] ushort* pPortName, uint* pcchSize)
+    public HRESULT GetCurrentPortName([NativeTypeName("LPWSTR")] char* pPortName, uint* pcchSize)
     {
-        return ((delegate* unmanaged<IPrintDialogServices*, ushort*, uint*, int>)(lpVtbl[5]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), pPortName, pcchSize);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogServices*, char*, uint*, int>)(lpVtbl[5]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), pPortName, pcchSize);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,31 +76,31 @@ public unsafe partial struct IPrintDialogServices : IPrintDialogServices.Interfa
         HRESULT GetCurrentDevMode([NativeTypeName("LPDEVMODE")] DEVMODEW* pDevMode, uint* pcbSize);
 
         [VtblIndex(4)]
-        HRESULT GetCurrentPrinterName([NativeTypeName("LPWSTR")] ushort* pPrinterName, uint* pcchSize);
+        HRESULT GetCurrentPrinterName([NativeTypeName("LPWSTR")] char* pPrinterName, uint* pcchSize);
 
         [VtblIndex(5)]
-        HRESULT GetCurrentPortName([NativeTypeName("LPWSTR")] ushort* pPortName, uint* pcchSize);
+        HRESULT GetCurrentPortName([NativeTypeName("LPWSTR")] char* pPortName, uint* pcchSize);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDEVMODE, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEVMODEW*, uint*, int> GetCurrentDevMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEVMODEW*, uint*, int> GetCurrentDevMode;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, int> GetCurrentPrinterName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, int> GetCurrentPrinterName;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, int> GetCurrentPortName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, int> GetCurrentPortName;
     }
 }

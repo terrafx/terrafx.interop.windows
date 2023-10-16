@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGEHLP_GET_TYPE_INFO_PARAMS" /> struct.</summary>
 public static unsafe partial class IMAGEHLP_GET_TYPE_INFO_PARAMSTests
 {
-    /// <summary>Validates that the <see cref="IMAGEHLP_GET_TYPE_INFO_PARAMS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGEHLP_GET_TYPE_INFO_PARAMS>(), Is.EqualTo(sizeof(IMAGEHLP_GET_TYPE_INFO_PARAMS)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGEHLP_GET_TYPE_INFO_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGEHLP_GET_TYPE_INFO_PARAMS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGEHLP_GET_TYPE_INFO_PARAMS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMAGEHLP_GET_TYPE_INFO_PARAMS), Is.EqualTo(128));
-        }
-        else
-        {
-            Assert.That(sizeof(IMAGEHLP_GET_TYPE_INFO_PARAMS), Is.EqualTo(88));
-        }
-    }
 }

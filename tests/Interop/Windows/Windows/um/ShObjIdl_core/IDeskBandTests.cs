@@ -19,32 +19,4 @@ public static unsafe partial class IDeskBandTests
     {
         Assert.That(typeof(IDeskBand).GUID, Is.EqualTo(IID_IDeskBand));
     }
-
-    /// <summary>Validates that the <see cref="IDeskBand" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDeskBand>(), Is.EqualTo(sizeof(IDeskBand)));
-    }
-
-    /// <summary>Validates that the <see cref="IDeskBand" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDeskBand).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDeskBand" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDeskBand), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDeskBand), Is.EqualTo(4));
-        }
-    }
 }

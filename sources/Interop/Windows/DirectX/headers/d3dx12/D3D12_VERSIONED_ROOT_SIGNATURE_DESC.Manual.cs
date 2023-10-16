@@ -48,7 +48,7 @@ public unsafe partial struct D3D12_VERSIONED_ROOT_SIGNATURE_DESC
 
             if (Environment.Is64BitProcess)
             {
-                data = new byte[] {
+                data = [
                     0x02, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
@@ -59,18 +59,18 @@ public unsafe partial struct D3D12_VERSIONED_ROOT_SIGNATURE_DESC
                     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00
-                };
+                ];
             }
             else
             {
-                data = new byte[] {
+                data = [
                     0x02, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00
-                };
+                ];
             }
 
             Debug.Assert(data.Length == Unsafe.SizeOf<D3D12_VERSIONED_ROOT_SIGNATURE_DESC>());

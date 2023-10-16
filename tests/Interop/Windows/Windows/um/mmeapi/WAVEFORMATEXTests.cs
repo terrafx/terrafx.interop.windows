@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WAVEFORMATEX" /> struct.</summary>
 public static unsafe partial class WAVEFORMATEXTests
 {
-    /// <summary>Validates that the <see cref="WAVEFORMATEX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WAVEFORMATEX>(), Is.EqualTo(sizeof(WAVEFORMATEX)));
-    }
-
-    /// <summary>Validates that the <see cref="WAVEFORMATEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WAVEFORMATEX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WAVEFORMATEX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WAVEFORMATEX), Is.EqualTo(18));
-    }
 }

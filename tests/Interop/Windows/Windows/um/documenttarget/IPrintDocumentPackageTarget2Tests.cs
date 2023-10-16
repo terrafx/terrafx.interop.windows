@@ -19,32 +19,4 @@ public static unsafe partial class IPrintDocumentPackageTarget2Tests
     {
         Assert.That(typeof(IPrintDocumentPackageTarget2).GUID, Is.EqualTo(IID_IPrintDocumentPackageTarget2));
     }
-
-    /// <summary>Validates that the <see cref="IPrintDocumentPackageTarget2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPrintDocumentPackageTarget2>(), Is.EqualTo(sizeof(IPrintDocumentPackageTarget2)));
-    }
-
-    /// <summary>Validates that the <see cref="IPrintDocumentPackageTarget2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPrintDocumentPackageTarget2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPrintDocumentPackageTarget2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPrintDocumentPackageTarget2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPrintDocumentPackageTarget2), Is.EqualTo(4));
-        }
-    }
 }

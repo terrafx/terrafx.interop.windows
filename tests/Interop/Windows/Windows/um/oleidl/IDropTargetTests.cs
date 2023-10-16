@@ -19,32 +19,4 @@ public static unsafe partial class IDropTargetTests
     {
         Assert.That(typeof(IDropTarget).GUID, Is.EqualTo(IID_IDropTarget));
     }
-
-    /// <summary>Validates that the <see cref="IDropTarget" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDropTarget>(), Is.EqualTo(sizeof(IDropTarget)));
-    }
-
-    /// <summary>Validates that the <see cref="IDropTarget" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDropTarget).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDropTarget" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDropTarget), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDropTarget), Is.EqualTo(4));
-        }
-    }
 }

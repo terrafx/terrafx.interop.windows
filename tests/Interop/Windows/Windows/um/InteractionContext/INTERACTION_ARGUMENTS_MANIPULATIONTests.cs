@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class INTERACTION_ARGUMENTS_MANIPULATIONTests
 {
-    /// <summary>Validates that the <see cref="INTERACTION_ARGUMENTS_MANIPULATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<INTERACTION_ARGUMENTS_MANIPULATION>(), Is.EqualTo(sizeof(INTERACTION_ARGUMENTS_MANIPULATION)));
-    }
-
-    /// <summary>Validates that the <see cref="INTERACTION_ARGUMENTS_MANIPULATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(INTERACTION_ARGUMENTS_MANIPULATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="INTERACTION_ARGUMENTS_MANIPULATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(INTERACTION_ARGUMENTS_MANIPULATION), Is.EqualTo(60));
-    }
 }

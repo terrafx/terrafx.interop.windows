@@ -25,7 +25,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, Guid*, void**, int>)(lpVtbl[0]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, Guid*, void**, int>)(lpVtbl[0]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, uint>)(lpVtbl[1]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, uint>)(lpVtbl[1]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, uint>)(lpVtbl[2]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, uint>)(lpVtbl[2]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszDisplayName)
+    public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] char* pszDisplayName)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, ushort*, int>)(lpVtbl[3]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), pszDisplayName);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, char*, int>)(lpVtbl[3]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), pszDisplayName);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetFolderTypeID"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(4)]
     public HRESULT SetFolderTypeID([NativeTypeName("FOLDERTYPEID")] Guid ftid)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, Guid, int>)(lpVtbl[4]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), ftid);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, Guid, int>)(lpVtbl[4]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), ftid);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetFolderLogicalViewMode"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(5)]
     public HRESULT SetFolderLogicalViewMode(FOLDERLOGICALVIEWMODE flvm)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, FOLDERLOGICALVIEWMODE, int>)(lpVtbl[5]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), flvm);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, FOLDERLOGICALVIEWMODE, int>)(lpVtbl[5]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), flvm);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetIconSize"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(6)]
     public HRESULT SetIconSize(int iIconSize)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, int, int>)(lpVtbl[6]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), iIconSize);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, int, int>)(lpVtbl[6]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), iIconSize);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetVisibleColumns"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(7)]
     public HRESULT SetVisibleColumns(uint cVisibleColumns, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgKey)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int>)(lpVtbl[7]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cVisibleColumns, rgKey);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int>)(lpVtbl[7]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cVisibleColumns, rgKey);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetSortColumns"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(8)]
     public HRESULT SetSortColumns(uint cSortColumns, SORTCOLUMN* rgSortColumns)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, uint, SORTCOLUMN*, int>)(lpVtbl[8]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cSortColumns, rgSortColumns);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, uint, SORTCOLUMN*, int>)(lpVtbl[8]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cSortColumns, rgSortColumns);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetGroupColumn"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(9)]
     public HRESULT SetGroupColumn([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* keyGroup)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, PROPERTYKEY*, int>)(lpVtbl[9]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), keyGroup);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, PROPERTYKEY*, int>)(lpVtbl[9]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), keyGroup);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetStacks"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(10)]
     public HRESULT SetStacks(uint cStackKeys, PROPERTYKEY* rgStackKeys)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int>)(lpVtbl[10]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cStackKeys, rgStackKeys);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int>)(lpVtbl[10]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cStackKeys, rgStackKeys);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetScope"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(11)]
     public HRESULT SetScope(IShellItemArray* psiaScope)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, IShellItemArray*, int>)(lpVtbl[11]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), psiaScope);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, IShellItemArray*, int>)(lpVtbl[11]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), psiaScope);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetCondition"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(12)]
     public HRESULT SetCondition(ICondition* pCondition)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, ICondition*, int>)(lpVtbl[12]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), pCondition);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, ICondition*, int>)(lpVtbl[12]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), pCondition);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.GetShellItem"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(13)]
     public HRESULT GetShellItem([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, Guid*, void**, int>)(lpVtbl[13]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, Guid*, void**, int>)(lpVtbl[13]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.GetIDList"]/*' />
@@ -139,13 +139,13 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     [VtblIndex(14)]
     public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, ITEMIDLIST**, int>)(lpVtbl[14]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), ppidl);
+        return ((delegate* unmanaged[MemberFunction]<ISearchFolderItemFactory*, ITEMIDLIST**, int>)(lpVtbl[14]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), ppidl);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszDisplayName);
+        HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] char* pszDisplayName);
 
         [VtblIndex(4)]
         HRESULT SetFolderTypeID([NativeTypeName("FOLDERTYPEID")] Guid ftid);
@@ -185,48 +185,48 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetDisplayName;
 
         [NativeTypeName("HRESULT (FOLDERTYPEID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> SetFolderTypeID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> SetFolderTypeID;
 
         [NativeTypeName("HRESULT (FOLDERLOGICALVIEWMODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FOLDERLOGICALVIEWMODE, int> SetFolderLogicalViewMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FOLDERLOGICALVIEWMODE, int> SetFolderLogicalViewMode;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetIconSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetIconSize;
 
         [NativeTypeName("HRESULT (UINT, const PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PROPERTYKEY*, int> SetVisibleColumns;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PROPERTYKEY*, int> SetVisibleColumns;
 
         [NativeTypeName("HRESULT (UINT, SORTCOLUMN *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, SORTCOLUMN*, int> SetSortColumns;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, SORTCOLUMN*, int> SetSortColumns;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> SetGroupColumn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, int> SetGroupColumn;
 
         [NativeTypeName("HRESULT (UINT, PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PROPERTYKEY*, int> SetStacks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PROPERTYKEY*, int> SetStacks;
 
         [NativeTypeName("HRESULT (IShellItemArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItemArray*, int> SetScope;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItemArray*, int> SetScope;
 
         [NativeTypeName("HRESULT (ICondition *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICondition*, int> SetCondition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICondition*, int> SetCondition;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetShellItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetShellItem;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetIDList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST**, int> GetIDList;
     }
 }

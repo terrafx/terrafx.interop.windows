@@ -29,5 +29,5 @@ public unsafe partial struct TRANSACTION_PROPERTIES_INFORMATION
 
     /// <include file='TRANSACTION_PROPERTIES_INFORMATION.xml' path='doc/member[@name="TRANSACTION_PROPERTIES_INFORMATION.Description"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort Description[1];
+    public fixed char Description[1];
 }

@@ -33,7 +33,7 @@ public partial struct PROCESS_MITIGATION_ASLR_POLICY
     public uint EnableBottomUpRandomization
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableBottomUpRandomization;
         }
@@ -49,7 +49,7 @@ public partial struct PROCESS_MITIGATION_ASLR_POLICY
     public uint EnableForceRelocateImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableForceRelocateImages;
         }
@@ -65,7 +65,7 @@ public partial struct PROCESS_MITIGATION_ASLR_POLICY
     public uint EnableHighEntropy
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableHighEntropy;
         }
@@ -81,7 +81,7 @@ public partial struct PROCESS_MITIGATION_ASLR_POLICY
     public uint DisallowStrippedImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.DisallowStrippedImages;
         }
@@ -97,7 +97,7 @@ public partial struct PROCESS_MITIGATION_ASLR_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -133,7 +133,7 @@ public partial struct PROCESS_MITIGATION_ASLR_POLICY
             public uint EnableBottomUpRandomization
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -150,7 +150,7 @@ public partial struct PROCESS_MITIGATION_ASLR_POLICY
             public uint EnableForceRelocateImages
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -167,7 +167,7 @@ public partial struct PROCESS_MITIGATION_ASLR_POLICY
             public uint EnableHighEntropy
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -184,7 +184,7 @@ public partial struct PROCESS_MITIGATION_ASLR_POLICY
             public uint DisallowStrippedImages
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -201,7 +201,7 @@ public partial struct PROCESS_MITIGATION_ASLR_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0xFFFFFFFu;
                 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RETRIEVAL_POINTERS_BUFFER" /> struct.</summary>
 public static unsafe partial class RETRIEVAL_POINTERS_BUFFERTests
 {
-    /// <summary>Validates that the <see cref="RETRIEVAL_POINTERS_BUFFER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RETRIEVAL_POINTERS_BUFFER>(), Is.EqualTo(sizeof(RETRIEVAL_POINTERS_BUFFER)));
-    }
-
-    /// <summary>Validates that the <see cref="RETRIEVAL_POINTERS_BUFFER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RETRIEVAL_POINTERS_BUFFER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RETRIEVAL_POINTERS_BUFFER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RETRIEVAL_POINTERS_BUFFER), Is.EqualTo(32));
-    }
 }

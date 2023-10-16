@@ -103,7 +103,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsReadChars"]/*' />
     [DllImport("webservices", ExactSpelling = true)]
-    public static extern HRESULT WsReadChars([NativeTypeName("WS_XML_READER*")] IntPtr reader, [NativeTypeName("WCHAR *")] ushort* chars, [NativeTypeName("ULONG")] uint maxCharCount, [NativeTypeName("ULONG *")] uint* actualCharCount, [NativeTypeName("WS_ERROR*")] IntPtr error);
+    public static extern HRESULT WsReadChars([NativeTypeName("WS_XML_READER*")] IntPtr reader, [NativeTypeName("WCHAR *")] char* chars, [NativeTypeName("ULONG")] uint maxCharCount, [NativeTypeName("ULONG *")] uint* actualCharCount, [NativeTypeName("WS_ERROR*")] IntPtr error);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsReadCharsUtf8"]/*' />
     [DllImport("webservices", ExactSpelling = true)]
@@ -203,7 +203,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsWriteChars"]/*' />
     [DllImport("webservices", ExactSpelling = true)]
-    public static extern HRESULT WsWriteChars([NativeTypeName("WS_XML_WRITER*")] IntPtr writer, [NativeTypeName("const WCHAR *")] ushort* chars, [NativeTypeName("ULONG")] uint charCount, [NativeTypeName("WS_ERROR*")] IntPtr error);
+    public static extern HRESULT WsWriteChars([NativeTypeName("WS_XML_WRITER*")] IntPtr writer, [NativeTypeName("const WCHAR *")] char* chars, [NativeTypeName("ULONG")] uint charCount, [NativeTypeName("WS_ERROR*")] IntPtr error);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsWriteCharsUtf8"]/*' />
     [DllImport("webservices", ExactSpelling = true)]
@@ -259,11 +259,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsTrimXmlWhitespace"]/*' />
     [DllImport("webservices", ExactSpelling = true)]
-    public static extern HRESULT WsTrimXmlWhitespace([NativeTypeName("WCHAR *")] ushort* chars, [NativeTypeName("ULONG")] uint charCount, [NativeTypeName("WCHAR **")] ushort** trimmedChars, [NativeTypeName("ULONG *")] uint* trimmedCount, [NativeTypeName("WS_ERROR*")] IntPtr error);
+    public static extern HRESULT WsTrimXmlWhitespace([NativeTypeName("WCHAR *")] char* chars, [NativeTypeName("ULONG")] uint charCount, [NativeTypeName("WCHAR **")] char** trimmedChars, [NativeTypeName("ULONG *")] uint* trimmedCount, [NativeTypeName("WS_ERROR*")] IntPtr error);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsVerifyXmlNCName"]/*' />
     [DllImport("webservices", ExactSpelling = true)]
-    public static extern HRESULT WsVerifyXmlNCName([NativeTypeName("const WCHAR *")] ushort* ncNameChars, [NativeTypeName("ULONG")] uint ncNameCharCount, [NativeTypeName("WS_ERROR*")] IntPtr error);
+    public static extern HRESULT WsVerifyXmlNCName([NativeTypeName("const WCHAR *")] char* ncNameChars, [NativeTypeName("ULONG")] uint ncNameCharCount, [NativeTypeName("WS_ERROR*")] IntPtr error);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsXmlStringEquals"]/*' />
     [DllImport("webservices", ExactSpelling = true)]
@@ -279,7 +279,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsGetXmlAttribute"]/*' />
     [DllImport("webservices", ExactSpelling = true)]
-    public static extern HRESULT WsGetXmlAttribute([NativeTypeName("WS_XML_READER*")] IntPtr reader, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* localName, [NativeTypeName("WS_HEAP*")] IntPtr heap, [NativeTypeName("WCHAR **")] ushort** valueChars, [NativeTypeName("ULONG *")] uint* valueCharCount, [NativeTypeName("WS_ERROR*")] IntPtr error);
+    public static extern HRESULT WsGetXmlAttribute([NativeTypeName("WS_XML_READER*")] IntPtr reader, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* localName, [NativeTypeName("WS_HEAP*")] IntPtr heap, [NativeTypeName("WCHAR **")] char** valueChars, [NativeTypeName("ULONG *")] uint* valueCharCount, [NativeTypeName("WS_ERROR*")] IntPtr error);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsCopyNode"]/*' />
     [DllImport("webservices", ExactSpelling = true)]

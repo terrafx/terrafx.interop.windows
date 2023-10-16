@@ -26,7 +26,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, uint>)(lpVtbl[1]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, uint>)(lpVtbl[1]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, uint>)(lpVtbl[2]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, uint>)(lpVtbl[2]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDCompositionFilterEffect.SetInput" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [VtblIndex(3)]
     public HRESULT SetInput(uint index, IUnknown* input, uint flags)
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), index, input, flags);
     }
 
     /// <include file='IDCompositionTurbulenceEffect.xml' path='doc/member[@name="IDCompositionTurbulenceEffect.SetOffset"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [VtblIndex(4)]
     public HRESULT SetOffset([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* offset)
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int>)(lpVtbl[4]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), offset);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int>)(lpVtbl[4]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), offset);
     }
 
     /// <include file='IDCompositionTurbulenceEffect.xml' path='doc/member[@name="IDCompositionTurbulenceEffect.SetBaseFrequency"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [VtblIndex(5)]
     public HRESULT SetBaseFrequency([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* frequency)
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int>)(lpVtbl[5]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), frequency);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int>)(lpVtbl[5]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), frequency);
     }
 
     /// <include file='IDCompositionTurbulenceEffect.xml' path='doc/member[@name="IDCompositionTurbulenceEffect.SetSize"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [VtblIndex(6)]
     public HRESULT SetSize([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* size)
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int>)(lpVtbl[6]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), size);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int>)(lpVtbl[6]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), size);
     }
 
     /// <include file='IDCompositionTurbulenceEffect.xml' path='doc/member[@name="IDCompositionTurbulenceEffect.SetNumOctaves"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [VtblIndex(7)]
     public HRESULT SetNumOctaves(uint numOctaves)
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, uint, int>)(lpVtbl[7]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), numOctaves);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, uint, int>)(lpVtbl[7]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), numOctaves);
     }
 
     /// <include file='IDCompositionTurbulenceEffect.xml' path='doc/member[@name="IDCompositionTurbulenceEffect.SetSeed"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [VtblIndex(8)]
     public HRESULT SetSeed(uint seed)
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, uint, int>)(lpVtbl[8]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), seed);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, uint, int>)(lpVtbl[8]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), seed);
     }
 
     /// <include file='IDCompositionTurbulenceEffect.xml' path='doc/member[@name="IDCompositionTurbulenceEffect.SetNoise"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [VtblIndex(9)]
     public HRESULT SetNoise(D2D1_TURBULENCE_NOISE noise)
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, D2D1_TURBULENCE_NOISE, int>)(lpVtbl[9]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), noise);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, D2D1_TURBULENCE_NOISE, int>)(lpVtbl[9]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), noise);
     }
 
     /// <include file='IDCompositionTurbulenceEffect.xml' path='doc/member[@name="IDCompositionTurbulenceEffect.SetStitchable"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
     [VtblIndex(10)]
     public HRESULT SetStitchable(BOOL stitchable)
     {
-        return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, BOOL, int>)(lpVtbl[10]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), stitchable);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTurbulenceEffect*, BOOL, int>)(lpVtbl[10]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), stitchable);
     }
 
     public interface Interface : IDCompositionFilterEffect.Interface
@@ -139,36 +139,36 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_VECTOR_2F*, int> SetOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_VECTOR_2F*, int> SetOffset;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_VECTOR_2F*, int> SetBaseFrequency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_VECTOR_2F*, int> SetBaseFrequency;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_VECTOR_2F*, int> SetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_VECTOR_2F*, int> SetSize;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetNumOctaves;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetNumOctaves;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetSeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetSeed;
 
         [NativeTypeName("HRESULT (D2D1_TURBULENCE_NOISE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_TURBULENCE_NOISE, int> SetNoise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_TURBULENCE_NOISE, int> SetNoise;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetStitchable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetStitchable;
     }
 }

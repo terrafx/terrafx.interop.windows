@@ -19,32 +19,4 @@ public static unsafe partial class ISelectionServicesListenerTests
     {
         Assert.That(typeof(ISelectionServicesListener).GUID, Is.EqualTo(IID_ISelectionServicesListener));
     }
-
-    /// <summary>Validates that the <see cref="ISelectionServicesListener" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISelectionServicesListener>(), Is.EqualTo(sizeof(ISelectionServicesListener)));
-    }
-
-    /// <summary>Validates that the <see cref="ISelectionServicesListener" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISelectionServicesListener).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISelectionServicesListener" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISelectionServicesListener), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISelectionServicesListener), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IDDrawExclModeVideoTests
     {
         Assert.That(typeof(IDDrawExclModeVideo).GUID, Is.EqualTo(IID_IDDrawExclModeVideo));
     }
-
-    /// <summary>Validates that the <see cref="IDDrawExclModeVideo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDDrawExclModeVideo>(), Is.EqualTo(sizeof(IDDrawExclModeVideo)));
-    }
-
-    /// <summary>Validates that the <see cref="IDDrawExclModeVideo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDDrawExclModeVideo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDDrawExclModeVideo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDDrawExclModeVideo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDDrawExclModeVideo), Is.EqualTo(4));
-        }
-    }
 }

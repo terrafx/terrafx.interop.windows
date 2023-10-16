@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SMB_SHARE_FLUSH_AND_PURGE_OUTPUT" /> struct.</summary>
 public static unsafe partial class SMB_SHARE_FLUSH_AND_PURGE_OUTPUTTests
 {
-    /// <summary>Validates that the <see cref="SMB_SHARE_FLUSH_AND_PURGE_OUTPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SMB_SHARE_FLUSH_AND_PURGE_OUTPUT>(), Is.EqualTo(sizeof(SMB_SHARE_FLUSH_AND_PURGE_OUTPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="SMB_SHARE_FLUSH_AND_PURGE_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SMB_SHARE_FLUSH_AND_PURGE_OUTPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SMB_SHARE_FLUSH_AND_PURGE_OUTPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SMB_SHARE_FLUSH_AND_PURGE_OUTPUT), Is.EqualTo(4));
-    }
 }

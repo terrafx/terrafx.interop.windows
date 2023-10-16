@@ -19,32 +19,4 @@ public static unsafe partial class IACListTests
     {
         Assert.That(typeof(IACList).GUID, Is.EqualTo(IID_IACList));
     }
-
-    /// <summary>Validates that the <see cref="IACList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IACList>(), Is.EqualTo(sizeof(IACList)));
-    }
-
-    /// <summary>Validates that the <see cref="IACList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IACList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IACList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IACList), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IACList), Is.EqualTo(4));
-        }
-    }
 }

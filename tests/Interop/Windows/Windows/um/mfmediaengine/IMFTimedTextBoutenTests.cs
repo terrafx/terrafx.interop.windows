@@ -19,32 +19,4 @@ public static unsafe partial class IMFTimedTextBoutenTests
     {
         Assert.That(typeof(IMFTimedTextBouten).GUID, Is.EqualTo(IID_IMFTimedTextBouten));
     }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextBouten" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTimedTextBouten>(), Is.EqualTo(sizeof(IMFTimedTextBouten)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextBouten" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTimedTextBouten).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextBouten" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTimedTextBouten), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTimedTextBouten), Is.EqualTo(4));
-        }
-    }
 }

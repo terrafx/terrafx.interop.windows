@@ -19,32 +19,4 @@ public static unsafe partial class IObjectWithCancelEventTests
     {
         Assert.That(typeof(IObjectWithCancelEvent).GUID, Is.EqualTo(IID_IObjectWithCancelEvent));
     }
-
-    /// <summary>Validates that the <see cref="IObjectWithCancelEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IObjectWithCancelEvent>(), Is.EqualTo(sizeof(IObjectWithCancelEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="IObjectWithCancelEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IObjectWithCancelEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IObjectWithCancelEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IObjectWithCancelEvent), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IObjectWithCancelEvent), Is.EqualTo(4));
-        }
-    }
 }

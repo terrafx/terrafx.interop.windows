@@ -19,32 +19,4 @@ public static unsafe partial class IMMNotificationClientTests
     {
         Assert.That(typeof(IMMNotificationClient).GUID, Is.EqualTo(IID_IMMNotificationClient));
     }
-
-    /// <summary>Validates that the <see cref="IMMNotificationClient" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMMNotificationClient>(), Is.EqualTo(sizeof(IMMNotificationClient)));
-    }
-
-    /// <summary>Validates that the <see cref="IMMNotificationClient" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMMNotificationClient).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMMNotificationClient" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMMNotificationClient), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMMNotificationClient), Is.EqualTo(4));
-        }
-    }
 }

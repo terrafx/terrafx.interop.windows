@@ -25,7 +25,7 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, Guid*, void**, int>)(lpVtbl[0]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, Guid*, void**, int>)(lpVtbl[0]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, uint>)(lpVtbl[1]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, uint>)(lpVtbl[1]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, uint>)(lpVtbl[2]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, uint>)(lpVtbl[2]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, uint*, int>)(lpVtbl[3]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, uint*, int>)(lpVtbl[3]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_errorCode"]/*' />
@@ -83,31 +83,31 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     [VtblIndex(7)]
     public HRESULT get_errorCode([NativeTypeName("long *")] int* errorCode)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, int*, int>)(lpVtbl[7]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), errorCode);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, int*, int>)(lpVtbl[7]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), errorCode);
     }
 
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_url"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_url([NativeTypeName("BSTR *")] ushort** urlString)
+    public HRESULT get_url([NativeTypeName("BSTR *")] char** urlString)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, ushort**, int>)(lpVtbl[8]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), urlString);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, char**, int>)(lpVtbl[8]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), urlString);
     }
 
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_reason"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_reason([NativeTypeName("BSTR *")] ushort** reasonString)
+    public HRESULT get_reason([NativeTypeName("BSTR *")] char** reasonString)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, ushort**, int>)(lpVtbl[9]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), reasonString);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, char**, int>)(lpVtbl[9]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), reasonString);
     }
 
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_srcText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_srcText([NativeTypeName("BSTR *")] ushort** sourceString)
+    public HRESULT get_srcText([NativeTypeName("BSTR *")] char** sourceString)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, ushort**, int>)(lpVtbl[10]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), sourceString);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, char**, int>)(lpVtbl[10]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), sourceString);
     }
 
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_line"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     [VtblIndex(11)]
     public HRESULT get_line([NativeTypeName("long *")] int* lineNumber)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, int*, int>)(lpVtbl[11]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), lineNumber);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, int*, int>)(lpVtbl[11]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), lineNumber);
     }
 
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_linepos"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     [VtblIndex(12)]
     public HRESULT get_linepos([NativeTypeName("long *")] int* linePosition)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, int*, int>)(lpVtbl[12]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), linePosition);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, int*, int>)(lpVtbl[12]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), linePosition);
     }
 
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_filepos"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     [VtblIndex(13)]
     public HRESULT get_filepos([NativeTypeName("long *")] int* filePosition)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, int*, int>)(lpVtbl[13]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), filePosition);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMParseError*, int*, int>)(lpVtbl[13]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), filePosition);
     }
 
     public interface Interface : IDispatch.Interface
@@ -140,13 +140,13 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
         HRESULT get_errorCode([NativeTypeName("long *")] int* errorCode);
 
         [VtblIndex(8)]
-        HRESULT get_url([NativeTypeName("BSTR *")] ushort** urlString);
+        HRESULT get_url([NativeTypeName("BSTR *")] char** urlString);
 
         [VtblIndex(9)]
-        HRESULT get_reason([NativeTypeName("BSTR *")] ushort** reasonString);
+        HRESULT get_reason([NativeTypeName("BSTR *")] char** reasonString);
 
         [VtblIndex(10)]
-        HRESULT get_srcText([NativeTypeName("BSTR *")] ushort** sourceString);
+        HRESULT get_srcText([NativeTypeName("BSTR *")] char** sourceString);
 
         [VtblIndex(11)]
         HRESULT get_line([NativeTypeName("long *")] int* lineNumber);
@@ -162,45 +162,45 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_errorCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_errorCode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_url;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_url;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_reason;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_reason;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_srcText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_srcText;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_line;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_line;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_linepos;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_linepos;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_filepos;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_filepos;
     }
 }

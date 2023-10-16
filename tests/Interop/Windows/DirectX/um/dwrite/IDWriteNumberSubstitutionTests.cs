@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteNumberSubstitutionTests
     {
         Assert.That(typeof(IDWriteNumberSubstitution).GUID, Is.EqualTo(IID_IDWriteNumberSubstitution));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteNumberSubstitution" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteNumberSubstitution>(), Is.EqualTo(sizeof(IDWriteNumberSubstitution)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteNumberSubstitution" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteNumberSubstitution).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteNumberSubstitution" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteNumberSubstitution), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteNumberSubstitution), Is.EqualTo(4));
-        }
-    }
 }

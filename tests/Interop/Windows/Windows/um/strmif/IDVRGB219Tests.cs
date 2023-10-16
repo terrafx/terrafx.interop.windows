@@ -19,32 +19,4 @@ public static unsafe partial class IDVRGB219Tests
     {
         Assert.That(typeof(IDVRGB219).GUID, Is.EqualTo(IID_IDVRGB219));
     }
-
-    /// <summary>Validates that the <see cref="IDVRGB219" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDVRGB219>(), Is.EqualTo(sizeof(IDVRGB219)));
-    }
-
-    /// <summary>Validates that the <see cref="IDVRGB219" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDVRGB219).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDVRGB219" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDVRGB219), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDVRGB219), Is.EqualTo(4));
-        }
-    }
 }

@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGEHLP_LINEW64" /> struct.</summary>
 public static unsafe partial class IMAGEHLP_LINEW64Tests
 {
-    /// <summary>Validates that the <see cref="IMAGEHLP_LINEW64" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGEHLP_LINEW64>(), Is.EqualTo(sizeof(IMAGEHLP_LINEW64)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGEHLP_LINEW64" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGEHLP_LINEW64).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGEHLP_LINEW64" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMAGEHLP_LINEW64), Is.EqualTo(40));
-        }
-        else
-        {
-            Assert.That(sizeof(IMAGEHLP_LINEW64), Is.EqualTo(24));
-        }
-    }
 }

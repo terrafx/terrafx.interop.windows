@@ -25,7 +25,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAnchor*, Guid*, void**, int>)(lpVtbl[0]))((IAnchor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, Guid*, void**, int>)(lpVtbl[0]))((IAnchor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAnchor*, uint>)(lpVtbl[1]))((IAnchor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, uint>)(lpVtbl[1]))((IAnchor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAnchor*, uint>)(lpVtbl[2]))((IAnchor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, uint>)(lpVtbl[2]))((IAnchor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.SetGravity"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetGravity(TsGravity gravity)
     {
-        return ((delegate* unmanaged<IAnchor*, TsGravity, int>)(lpVtbl[3]))((IAnchor*)Unsafe.AsPointer(ref this), gravity);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, TsGravity, int>)(lpVtbl[3]))((IAnchor*)Unsafe.AsPointer(ref this), gravity);
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.GetGravity"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetGravity(TsGravity* pgravity)
     {
-        return ((delegate* unmanaged<IAnchor*, TsGravity*, int>)(lpVtbl[4]))((IAnchor*)Unsafe.AsPointer(ref this), pgravity);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, TsGravity*, int>)(lpVtbl[4]))((IAnchor*)Unsafe.AsPointer(ref this), pgravity);
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.IsEqual"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT IsEqual(IAnchor* paWith, BOOL* pfEqual)
     {
-        return ((delegate* unmanaged<IAnchor*, IAnchor*, BOOL*, int>)(lpVtbl[5]))((IAnchor*)Unsafe.AsPointer(ref this), paWith, pfEqual);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, IAnchor*, BOOL*, int>)(lpVtbl[5]))((IAnchor*)Unsafe.AsPointer(ref this), paWith, pfEqual);
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.Compare"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Compare(IAnchor* paWith, [NativeTypeName("LONG *")] int* plResult)
     {
-        return ((delegate* unmanaged<IAnchor*, IAnchor*, int*, int>)(lpVtbl[6]))((IAnchor*)Unsafe.AsPointer(ref this), paWith, plResult);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, IAnchor*, int*, int>)(lpVtbl[6]))((IAnchor*)Unsafe.AsPointer(ref this), paWith, plResult);
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.Shift"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT Shift([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int cchReq, [NativeTypeName("LONG *")] int* pcch, IAnchor* paHaltAnchor)
     {
-        return ((delegate* unmanaged<IAnchor*, uint, int, int*, IAnchor*, int>)(lpVtbl[7]))((IAnchor*)Unsafe.AsPointer(ref this), dwFlags, cchReq, pcch, paHaltAnchor);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, uint, int, int*, IAnchor*, int>)(lpVtbl[7]))((IAnchor*)Unsafe.AsPointer(ref this), dwFlags, cchReq, pcch, paHaltAnchor);
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.ShiftTo"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT ShiftTo(IAnchor* paSite)
     {
-        return ((delegate* unmanaged<IAnchor*, IAnchor*, int>)(lpVtbl[8]))((IAnchor*)Unsafe.AsPointer(ref this), paSite);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, IAnchor*, int>)(lpVtbl[8]))((IAnchor*)Unsafe.AsPointer(ref this), paSite);
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.ShiftRegion"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT ShiftRegion([NativeTypeName("DWORD")] uint dwFlags, TsShiftDir dir, BOOL* pfNoRegion)
     {
-        return ((delegate* unmanaged<IAnchor*, uint, TsShiftDir, BOOL*, int>)(lpVtbl[9]))((IAnchor*)Unsafe.AsPointer(ref this), dwFlags, dir, pfNoRegion);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, uint, TsShiftDir, BOOL*, int>)(lpVtbl[9]))((IAnchor*)Unsafe.AsPointer(ref this), dwFlags, dir, pfNoRegion);
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.SetChangeHistoryMask"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT SetChangeHistoryMask([NativeTypeName("DWORD")] uint dwMask)
     {
-        return ((delegate* unmanaged<IAnchor*, uint, int>)(lpVtbl[10]))((IAnchor*)Unsafe.AsPointer(ref this), dwMask);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, uint, int>)(lpVtbl[10]))((IAnchor*)Unsafe.AsPointer(ref this), dwMask);
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.GetChangeHistory"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetChangeHistory([NativeTypeName("DWORD *")] uint* pdwHistory)
     {
-        return ((delegate* unmanaged<IAnchor*, uint*, int>)(lpVtbl[11]))((IAnchor*)Unsafe.AsPointer(ref this), pdwHistory);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, uint*, int>)(lpVtbl[11]))((IAnchor*)Unsafe.AsPointer(ref this), pdwHistory);
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.ClearChangeHistory"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT ClearChangeHistory()
     {
-        return ((delegate* unmanaged<IAnchor*, int>)(lpVtbl[12]))((IAnchor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, int>)(lpVtbl[12]))((IAnchor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.Clone"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT Clone(IAnchor** ppaClone)
     {
-        return ((delegate* unmanaged<IAnchor*, IAnchor**, int>)(lpVtbl[13]))((IAnchor*)Unsafe.AsPointer(ref this), ppaClone);
+        return ((delegate* unmanaged[MemberFunction]<IAnchor*, IAnchor**, int>)(lpVtbl[13]))((IAnchor*)Unsafe.AsPointer(ref this), ppaClone);
     }
 
     public interface Interface : IUnknown.Interface
@@ -174,45 +174,45 @@ public unsafe partial struct IAnchor : IAnchor.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TsGravity) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TsGravity, int> SetGravity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TsGravity, int> SetGravity;
 
         [NativeTypeName("HRESULT (TsGravity *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TsGravity*, int> GetGravity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TsGravity*, int> GetGravity;
 
         [NativeTypeName("HRESULT (IAnchor *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor*, BOOL*, int> IsEqual;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor*, BOOL*, int> IsEqual;
 
         [NativeTypeName("HRESULT (IAnchor *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor*, int*, int> Compare;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor*, int*, int> Compare;
 
         [NativeTypeName("HRESULT (DWORD, LONG, LONG *, IAnchor *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int, int*, IAnchor*, int> Shift;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int, int*, IAnchor*, int> Shift;
 
         [NativeTypeName("HRESULT (IAnchor *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor*, int> ShiftTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor*, int> ShiftTo;
 
         [NativeTypeName("HRESULT (DWORD, TsShiftDir, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, TsShiftDir, BOOL*, int> ShiftRegion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, TsShiftDir, BOOL*, int> ShiftRegion;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetChangeHistoryMask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetChangeHistoryMask;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetChangeHistory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetChangeHistory;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ClearChangeHistory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearChangeHistory;
 
         [NativeTypeName("HRESULT (IAnchor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor**, int> Clone;
     }
 }

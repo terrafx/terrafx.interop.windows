@@ -26,7 +26,7 @@ public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICompositorInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICompositorInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICompositorInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICompositorInterop*, uint>)(lpVtbl[1]))((ICompositorInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, uint>)(lpVtbl[1]))((ICompositorInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICompositorInterop*, uint>)(lpVtbl[2]))((ICompositorInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, uint>)(lpVtbl[2]))((ICompositorInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICompositorInterop.xml' path='doc/member[@name="ICompositorInterop.CreateCompositionSurfaceForHandle"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface, 
     [VtblIndex(3)]
     public HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, [NativeTypeName("ICompositionSurface **")] void** result)
     {
-        return ((delegate* unmanaged<ICompositorInterop*, HANDLE, void**, int>)(lpVtbl[3]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
+        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, HANDLE, void**, int>)(lpVtbl[3]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
     }
 
     /// <include file='ICompositorInterop.xml' path='doc/member[@name="ICompositorInterop.CreateCompositionSurfaceForSwapChain"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface, 
     [VtblIndex(4)]
     public HRESULT CreateCompositionSurfaceForSwapChain(IUnknown* swapChain, [NativeTypeName("ICompositionSurface **")] void** result)
     {
-        return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[4]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
+        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[4]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
     }
 
     /// <include file='ICompositorInterop.xml' path='doc/member[@name="ICompositorInterop.CreateGraphicsDevice"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface, 
     [VtblIndex(5)]
     public HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, [NativeTypeName("ICompositionGraphicsDevice **")] void** result)
     {
-        return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[5]))((ICompositorInterop*)Unsafe.AsPointer(ref this), renderingDevice, result);
+        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[5]))((ICompositorInterop*)Unsafe.AsPointer(ref this), renderingDevice, result);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,21 +87,21 @@ public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HANDLE, ICompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, void**, int> CreateCompositionSurfaceForHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, void**, int> CreateCompositionSurfaceForHandle;
 
         [NativeTypeName("HRESULT (IUnknown *, ICompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, void**, int> CreateCompositionSurfaceForSwapChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, void**, int> CreateCompositionSurfaceForSwapChain;
 
         [NativeTypeName("HRESULT (IUnknown *, ICompositionGraphicsDevice **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, void**, int> CreateGraphicsDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, void**, int> CreateGraphicsDevice;
     }
 }

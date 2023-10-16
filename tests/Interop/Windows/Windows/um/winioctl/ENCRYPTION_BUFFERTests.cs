@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ENCRYPTION_BUFFER" /> struct.</summary>
 public static unsafe partial class ENCRYPTION_BUFFERTests
 {
-    /// <summary>Validates that the <see cref="ENCRYPTION_BUFFER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ENCRYPTION_BUFFER>(), Is.EqualTo(sizeof(ENCRYPTION_BUFFER)));
-    }
-
-    /// <summary>Validates that the <see cref="ENCRYPTION_BUFFER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ENCRYPTION_BUFFER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ENCRYPTION_BUFFER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ENCRYPTION_BUFFER), Is.EqualTo(8));
-    }
 }

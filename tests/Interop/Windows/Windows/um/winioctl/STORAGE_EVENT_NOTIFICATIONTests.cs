@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="STORAGE_EVENT_NOTIFICATION" /> struct.</summary>
 public static unsafe partial class STORAGE_EVENT_NOTIFICATIONTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_EVENT_NOTIFICATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_EVENT_NOTIFICATION>(), Is.EqualTo(sizeof(STORAGE_EVENT_NOTIFICATION)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_EVENT_NOTIFICATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_EVENT_NOTIFICATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_EVENT_NOTIFICATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_EVENT_NOTIFICATION), Is.EqualTo(16));
-    }
 }

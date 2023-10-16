@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CY" /> struct.</summary>
 public static unsafe partial class CYTests
 {
-    /// <summary>Validates that the <see cref="CY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CY>(), Is.EqualTo(sizeof(CY)));
-    }
-
-    /// <summary>Validates that the <see cref="CY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutExplicitTest()
-    {
-        Assert.That(typeof(CY).IsExplicitLayout, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CY), Is.EqualTo(8));
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, uint>)(lpVtbl[1]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, uint>)(lpVtbl[1]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, uint>)(lpVtbl[2]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, uint>)(lpVtbl[2]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPropertyStore.GetCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [VtblIndex(3)]
     public HRESULT GetCount([NativeTypeName("DWORD *")] uint* cProps)
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, uint*, int>)(lpVtbl[3]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), cProps);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, uint*, int>)(lpVtbl[3]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), cProps);
     }
 
     /// <inheritdoc cref="IPropertyStore.GetAt" />
@@ -59,7 +59,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [VtblIndex(4)]
     public HRESULT GetAt([NativeTypeName("DWORD")] uint iProp, PROPERTYKEY* pkey)
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, uint, PROPERTYKEY*, int>)(lpVtbl[4]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), iProp, pkey);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, uint, PROPERTYKEY*, int>)(lpVtbl[4]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), iProp, pkey);
     }
 
     /// <inheritdoc cref="IPropertyStore.GetValue" />
@@ -67,7 +67,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [VtblIndex(5)]
     public HRESULT GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* pv)
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, pv);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, pv);
     }
 
     /// <inheritdoc cref="IPropertyStore.SetValue" />
@@ -75,7 +75,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [VtblIndex(6)]
     public HRESULT SetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar)
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, propvar);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, propvar);
     }
 
     /// <inheritdoc cref="IPropertyStore.Commit" />
@@ -83,7 +83,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [VtblIndex(7)]
     public HRESULT Commit()
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, int>)(lpVtbl[7]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, int>)(lpVtbl[7]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyStoreCache.xml' path='doc/member[@name="IPropertyStoreCache.GetState"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [VtblIndex(8)]
     public HRESULT GetState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PSC_STATE* pstate)
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PSC_STATE*, int>)(lpVtbl[8]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, pstate);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, PROPERTYKEY*, PSC_STATE*, int>)(lpVtbl[8]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, pstate);
     }
 
     /// <include file='IPropertyStoreCache.xml' path='doc/member[@name="IPropertyStoreCache.GetValueAndState"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [VtblIndex(9)]
     public HRESULT GetValueAndState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE* pstate)
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE*, int>)(lpVtbl[9]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, ppropvar, pstate);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE*, int>)(lpVtbl[9]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, ppropvar, pstate);
     }
 
     /// <include file='IPropertyStoreCache.xml' path='doc/member[@name="IPropertyStoreCache.SetState"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [VtblIndex(10)]
     public HRESULT SetState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PSC_STATE state)
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PSC_STATE, int>)(lpVtbl[10]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, state);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, PROPERTYKEY*, PSC_STATE, int>)(lpVtbl[10]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, state);
     }
 
     /// <include file='IPropertyStoreCache.xml' path='doc/member[@name="IPropertyStoreCache.SetValueAndState"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     [VtblIndex(11)]
     public HRESULT SetValueAndState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppropvar, PSC_STATE state)
     {
-        return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE, int>)(lpVtbl[11]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, ppropvar, state);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE, int>)(lpVtbl[11]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, ppropvar, state);
     }
 
     public interface Interface : IPropertyStore.Interface
@@ -137,39 +137,39 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (DWORD, PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PROPERTYKEY*, int> GetAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PROPERTYKEY*, int> GetAt;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> GetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> SetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> SetValue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PSC_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PSC_STATE*, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, PSC_STATE*, int> GetState;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *, PSC_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE*, int> GetValueAndState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE*, int> GetValueAndState;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PSC_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PSC_STATE, int> SetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, PSC_STATE, int> SetState;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT *, PSC_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE, int> SetValueAndState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE, int> SetValueAndState;
     }
 }

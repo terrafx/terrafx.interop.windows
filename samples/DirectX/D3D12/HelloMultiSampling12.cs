@@ -60,7 +60,7 @@ public unsafe class HelloMultiSampling12 : HelloTriangle12
 
             // There are 2 special values for quality levels
             // * -1 means all samples should be evenly distributed among the pixel
-            // * -2 means all samples should be in the centre of the pixel
+            // * -2 means all samples should be in the center of the pixel
             _msaaDesc = new DXGI_SAMPLE_DESC(value, msaa.NumQualityLevels - 1);
         }
     }

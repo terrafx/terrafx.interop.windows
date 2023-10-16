@@ -17,13 +17,13 @@ public unsafe partial struct OBJECTS_AND_NAME_W
 
     /// <include file='OBJECTS_AND_NAME_W.xml' path='doc/member[@name="OBJECTS_AND_NAME_W.ObjectTypeName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* ObjectTypeName;
+    public char* ObjectTypeName;
 
     /// <include file='OBJECTS_AND_NAME_W.xml' path='doc/member[@name="OBJECTS_AND_NAME_W.InheritedObjectTypeName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* InheritedObjectTypeName;
+    public char* InheritedObjectTypeName;
 
     /// <include file='OBJECTS_AND_NAME_W.xml' path='doc/member[@name="OBJECTS_AND_NAME_W.ptstrName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* ptstrName;
+    public char* ptstrName;
 }

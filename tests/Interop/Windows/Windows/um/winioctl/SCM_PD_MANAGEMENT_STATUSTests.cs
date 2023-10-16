@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SCM_PD_MANAGEMENT_STATUS" /> struct.</summary>
 public static unsafe partial class SCM_PD_MANAGEMENT_STATUSTests
 {
-    /// <summary>Validates that the <see cref="SCM_PD_MANAGEMENT_STATUS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SCM_PD_MANAGEMENT_STATUS>(), Is.EqualTo(sizeof(SCM_PD_MANAGEMENT_STATUS)));
-    }
-
-    /// <summary>Validates that the <see cref="SCM_PD_MANAGEMENT_STATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SCM_PD_MANAGEMENT_STATUS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SCM_PD_MANAGEMENT_STATUS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SCM_PD_MANAGEMENT_STATUS), Is.EqualTo(88));
-    }
 }

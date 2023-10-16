@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DIEFFECTINFO" /> struct.</summary>
 public static unsafe partial class DIEFFECTINFOTests
 {
-    /// <summary>Validates that the <see cref="DIEFFECTINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DIEFFECTINFO>(), Is.EqualTo(sizeof(DIEFFECTINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="DIEFFECTINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DIEFFECTINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DIEFFECTINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DIEFFECTINFO), Is.EqualTo(552));
-    }
 }

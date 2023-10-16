@@ -26,7 +26,7 @@ public unsafe partial struct ID3D12DebugCommandQueue1 : ID3D12DebugCommandQueue1
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D12DebugCommandQueue1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DebugCommandQueue1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D12DebugCommandQueue1 : ID3D12DebugCommandQueue1
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D12DebugCommandQueue1*, uint>)(lpVtbl[1]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DebugCommandQueue1*, uint>)(lpVtbl[1]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12DebugCommandQueue1 : ID3D12DebugCommandQueue1
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D12DebugCommandQueue1*, uint>)(lpVtbl[2]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DebugCommandQueue1*, uint>)(lpVtbl[2]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D12DebugCommandQueue.AssertResourceState" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D12DebugCommandQueue1 : ID3D12DebugCommandQueue1
     [VtblIndex(3)]
     public BOOL AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State)
     {
-        return ((delegate* unmanaged<ID3D12DebugCommandQueue1*, ID3D12Resource*, uint, uint, int>)(lpVtbl[3]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this), pResource, Subresource, State);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DebugCommandQueue1*, ID3D12Resource*, uint, uint, int>)(lpVtbl[3]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this), pResource, Subresource, State);
     }
 
     /// <include file='ID3D12DebugCommandQueue1.xml' path='doc/member[@name="ID3D12DebugCommandQueue1.AssertResourceAccess"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D12DebugCommandQueue1 : ID3D12DebugCommandQueue1
     [VtblIndex(4)]
     public void AssertResourceAccess(ID3D12Resource* pResource, uint Subresource, D3D12_BARRIER_ACCESS Access)
     {
-        ((delegate* unmanaged<ID3D12DebugCommandQueue1*, ID3D12Resource*, uint, D3D12_BARRIER_ACCESS, void>)(lpVtbl[4]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this), pResource, Subresource, Access);
+        ((delegate* unmanaged[MemberFunction]<ID3D12DebugCommandQueue1*, ID3D12Resource*, uint, D3D12_BARRIER_ACCESS, void>)(lpVtbl[4]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this), pResource, Subresource, Access);
     }
 
     /// <include file='ID3D12DebugCommandQueue1.xml' path='doc/member[@name="ID3D12DebugCommandQueue1.AssertTextureLayout"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D12DebugCommandQueue1 : ID3D12DebugCommandQueue1
     [VtblIndex(5)]
     public void AssertTextureLayout(ID3D12Resource* pResource, uint Subresource, D3D12_BARRIER_LAYOUT Layout)
     {
-        ((delegate* unmanaged<ID3D12DebugCommandQueue1*, ID3D12Resource*, uint, D3D12_BARRIER_LAYOUT, void>)(lpVtbl[5]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this), pResource, Subresource, Layout);
+        ((delegate* unmanaged[MemberFunction]<ID3D12DebugCommandQueue1*, ID3D12Resource*, uint, D3D12_BARRIER_LAYOUT, void>)(lpVtbl[5]))((ID3D12DebugCommandQueue1*)Unsafe.AsPointer(ref this), pResource, Subresource, Layout);
     }
 
     public interface Interface : ID3D12DebugCommandQueue.Interface
@@ -84,21 +84,21 @@ public unsafe partial struct ID3D12DebugCommandQueue1 : ID3D12DebugCommandQueue1
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL (ID3D12Resource *, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, uint, uint, int> AssertResourceState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, uint, uint, int> AssertResourceState;
 
         [NativeTypeName("void (ID3D12Resource *, UINT, D3D12_BARRIER_ACCESS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, uint, D3D12_BARRIER_ACCESS, void> AssertResourceAccess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, uint, D3D12_BARRIER_ACCESS, void> AssertResourceAccess;
 
         [NativeTypeName("void (ID3D12Resource *, UINT, D3D12_BARRIER_LAYOUT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, uint, D3D12_BARRIER_LAYOUT, void> AssertTextureLayout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, uint, D3D12_BARRIER_LAYOUT, void> AssertTextureLayout;
     }
 }

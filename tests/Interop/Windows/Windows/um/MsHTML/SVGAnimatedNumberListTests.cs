@@ -19,25 +19,4 @@ public static unsafe partial class SVGAnimatedNumberListTests
     {
         Assert.That(typeof(SVGAnimatedNumberList).GUID, Is.EqualTo(IID_SVGAnimatedNumberList));
     }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedNumberList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGAnimatedNumberList>(), Is.EqualTo(sizeof(SVGAnimatedNumberList)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedNumberList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGAnimatedNumberList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedNumberList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGAnimatedNumberList), Is.EqualTo(1));
-    }
 }

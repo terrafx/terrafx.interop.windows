@@ -58,7 +58,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetNamedSecurityInfoW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetNamedSecurityInfoW([NativeTypeName("LPCWSTR")] ushort* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID *")] void** ppsidOwner, [NativeTypeName("PSID *")] void** ppsidGroup, [NativeTypeName("PACL *")] ACL** ppDacl, [NativeTypeName("PACL *")] ACL** ppSacl, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** ppSecurityDescriptor);
+    public static extern uint GetNamedSecurityInfoW([NativeTypeName("LPCWSTR")] char* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID *")] void** ppsidOwner, [NativeTypeName("PSID *")] void** ppsidGroup, [NativeTypeName("PACL *")] ACL** ppDacl, [NativeTypeName("PACL *")] ACL** ppSacl, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** ppSecurityDescriptor);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSecurityInfo"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -73,7 +73,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetNamedSecurityInfoW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint SetNamedSecurityInfoW([NativeTypeName("LPWSTR")] ushort* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID")] void* psidOwner, [NativeTypeName("PSID")] void* psidGroup, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("PACL")] ACL* pSacl);
+    public static extern uint SetNamedSecurityInfoW([NativeTypeName("LPWSTR")] char* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID")] void* psidOwner, [NativeTypeName("PSID")] void* psidGroup, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("PACL")] ACL* pSacl);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetSecurityInfo"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -88,7 +88,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetInheritanceSourceW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetInheritanceSourceW([NativeTypeName("LPWSTR")] ushort* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, BOOL Container, Guid** pObjectClassGuids, [NativeTypeName("DWORD")] uint GuidCount, [NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("PFN_OBJECT_MGR_FUNCTS")] FN_OBJECT_MGR_FUNCTS* pfnArray, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* pGenericMapping, [NativeTypeName("PINHERITED_FROMW")] INHERITED_FROMW* pInheritArray);
+    public static extern uint GetInheritanceSourceW([NativeTypeName("LPWSTR")] char* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, BOOL Container, Guid** pObjectClassGuids, [NativeTypeName("DWORD")] uint GuidCount, [NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("PFN_OBJECT_MGR_FUNCTS")] FN_OBJECT_MGR_FUNCTS* pfnArray, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* pGenericMapping, [NativeTypeName("PINHERITED_FROMW")] INHERITED_FROMW* pInheritArray);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeInheritedFromArray"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -98,22 +98,22 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TreeResetNamedSecurityInfoA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint TreeResetNamedSecurityInfoA([NativeTypeName("LPSTR")] sbyte* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("PSID")] void* pGroup, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("PACL")] ACL* pSacl, BOOL KeepExplicit, [NativeTypeName("FN_PROGRESS")] delegate* unmanaged<ushort*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void> fnProgress, PROG_INVOKE_SETTING ProgressInvokeSetting, [NativeTypeName("PVOID")] void* Args);
+    public static extern uint TreeResetNamedSecurityInfoA([NativeTypeName("LPSTR")] sbyte* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("PSID")] void* pGroup, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("PACL")] ACL* pSacl, BOOL KeepExplicit, [NativeTypeName("FN_PROGRESS")] delegate* unmanaged<char*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void> fnProgress, PROG_INVOKE_SETTING ProgressInvokeSetting, [NativeTypeName("PVOID")] void* Args);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TreeResetNamedSecurityInfoW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint TreeResetNamedSecurityInfoW([NativeTypeName("LPWSTR")] ushort* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("PSID")] void* pGroup, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("PACL")] ACL* pSacl, BOOL KeepExplicit, [NativeTypeName("FN_PROGRESS")] delegate* unmanaged<ushort*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void> fnProgress, PROG_INVOKE_SETTING ProgressInvokeSetting, [NativeTypeName("PVOID")] void* Args);
+    public static extern uint TreeResetNamedSecurityInfoW([NativeTypeName("LPWSTR")] char* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("PSID")] void* pGroup, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("PACL")] ACL* pSacl, BOOL KeepExplicit, [NativeTypeName("FN_PROGRESS")] delegate* unmanaged<char*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void> fnProgress, PROG_INVOKE_SETTING ProgressInvokeSetting, [NativeTypeName("PVOID")] void* Args);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TreeSetNamedSecurityInfoA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint TreeSetNamedSecurityInfoA([NativeTypeName("LPSTR")] sbyte* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("PSID")] void* pGroup, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("PACL")] ACL* pSacl, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("FN_PROGRESS")] delegate* unmanaged<ushort*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void> fnProgress, PROG_INVOKE_SETTING ProgressInvokeSetting, [NativeTypeName("PVOID")] void* Args);
+    public static extern uint TreeSetNamedSecurityInfoA([NativeTypeName("LPSTR")] sbyte* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("PSID")] void* pGroup, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("PACL")] ACL* pSacl, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("FN_PROGRESS")] delegate* unmanaged<char*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void> fnProgress, PROG_INVOKE_SETTING ProgressInvokeSetting, [NativeTypeName("PVOID")] void* Args);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TreeSetNamedSecurityInfoW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint TreeSetNamedSecurityInfoW([NativeTypeName("LPWSTR")] ushort* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("PSID")] void* pGroup, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("PACL")] ACL* pSacl, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("FN_PROGRESS")] delegate* unmanaged<ushort*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void> fnProgress, PROG_INVOKE_SETTING ProgressInvokeSetting, [NativeTypeName("PVOID")] void* Args);
+    public static extern uint TreeSetNamedSecurityInfoW([NativeTypeName("LPWSTR")] char* pObjectName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInfo, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("PSID")] void* pGroup, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("PACL")] ACL* pSacl, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("FN_PROGRESS")] delegate* unmanaged<char*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void> fnProgress, PROG_INVOKE_SETTING ProgressInvokeSetting, [NativeTypeName("PVOID")] void* Args);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildSecurityDescriptorA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -141,7 +141,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildExplicitAccessWithNameW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
-    public static extern void BuildExplicitAccessWithNameW([NativeTypeName("PEXPLICIT_ACCESS_W")] EXPLICIT_ACCESS_W* pExplicitAccess, [NativeTypeName("LPWSTR")] ushort* pTrusteeName, [NativeTypeName("DWORD")] uint AccessPermissions, ACCESS_MODE AccessMode, [NativeTypeName("DWORD")] uint Inheritance);
+    public static extern void BuildExplicitAccessWithNameW([NativeTypeName("PEXPLICIT_ACCESS_W")] EXPLICIT_ACCESS_W* pExplicitAccess, [NativeTypeName("LPWSTR")] char* pTrusteeName, [NativeTypeName("DWORD")] uint AccessPermissions, ACCESS_MODE AccessMode, [NativeTypeName("DWORD")] uint Inheritance);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildImpersonateExplicitAccessWithNameA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -149,7 +149,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildImpersonateExplicitAccessWithNameW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
-    public static extern void BuildImpersonateExplicitAccessWithNameW([NativeTypeName("PEXPLICIT_ACCESS_W")] EXPLICIT_ACCESS_W* pExplicitAccess, [NativeTypeName("LPWSTR")] ushort* pTrusteeName, [NativeTypeName("PTRUSTEE_W")] TRUSTEE_W* pTrustee, [NativeTypeName("DWORD")] uint AccessPermissions, ACCESS_MODE AccessMode, [NativeTypeName("DWORD")] uint Inheritance);
+    public static extern void BuildImpersonateExplicitAccessWithNameW([NativeTypeName("PEXPLICIT_ACCESS_W")] EXPLICIT_ACCESS_W* pExplicitAccess, [NativeTypeName("LPWSTR")] char* pTrusteeName, [NativeTypeName("PTRUSTEE_W")] TRUSTEE_W* pTrustee, [NativeTypeName("DWORD")] uint AccessPermissions, ACCESS_MODE AccessMode, [NativeTypeName("DWORD")] uint Inheritance);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildTrusteeWithNameA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -157,7 +157,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildTrusteeWithNameW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
-    public static extern void BuildTrusteeWithNameW([NativeTypeName("PTRUSTEE_W")] TRUSTEE_W* pTrustee, [NativeTypeName("LPWSTR")] ushort* pName);
+    public static extern void BuildTrusteeWithNameW([NativeTypeName("PTRUSTEE_W")] TRUSTEE_W* pTrustee, [NativeTypeName("LPWSTR")] char* pName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildImpersonateTrusteeA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -189,7 +189,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildTrusteeWithObjectsAndNameW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
-    public static extern void BuildTrusteeWithObjectsAndNameW([NativeTypeName("PTRUSTEE_W")] TRUSTEE_W* pTrustee, [NativeTypeName("POBJECTS_AND_NAME_W")] OBJECTS_AND_NAME_W* pObjName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("LPWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPWSTR")] ushort* InheritedObjectTypeName, [NativeTypeName("LPWSTR")] ushort* Name);
+    public static extern void BuildTrusteeWithObjectsAndNameW([NativeTypeName("PTRUSTEE_W")] TRUSTEE_W* pTrustee, [NativeTypeName("POBJECTS_AND_NAME_W")] OBJECTS_AND_NAME_W* pObjName, SE_OBJECT_TYPE ObjectType, [NativeTypeName("LPWSTR")] char* ObjectTypeName, [NativeTypeName("LPWSTR")] char* InheritedObjectTypeName, [NativeTypeName("LPWSTR")] char* Name);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTrusteeNameA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -199,7 +199,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTrusteeNameW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* GetTrusteeNameW([NativeTypeName("PTRUSTEE_W")] TRUSTEE_W* pTrustee);
+    public static extern char* GetTrusteeNameW([NativeTypeName("PTRUSTEE_W")] TRUSTEE_W* pTrustee);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTrusteeTypeA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -248,19 +248,19 @@ public static unsafe partial class Windows
     public static delegate*<ACL*, TRUSTEE_W*, uint*, uint*, uint> GetAuditedPermissionsFromAcl => &GetAuditedPermissionsFromAclW;
 
     [NativeTypeName("#define GetNamedSecurityInfo GetNamedSecurityInfoW")]
-    public static delegate*<ushort*, SE_OBJECT_TYPE, uint, void**, void**, ACL**, ACL**, void**, uint> GetNamedSecurityInfo => &GetNamedSecurityInfoW;
+    public static delegate*<char*, SE_OBJECT_TYPE, uint, void**, void**, ACL**, ACL**, void**, uint> GetNamedSecurityInfo => &GetNamedSecurityInfoW;
 
     [NativeTypeName("#define SetNamedSecurityInfo SetNamedSecurityInfoW")]
-    public static delegate*<ushort*, SE_OBJECT_TYPE, uint, void*, void*, ACL*, ACL*, uint> SetNamedSecurityInfo => &SetNamedSecurityInfoW;
+    public static delegate*<char*, SE_OBJECT_TYPE, uint, void*, void*, ACL*, ACL*, uint> SetNamedSecurityInfo => &SetNamedSecurityInfoW;
 
     [NativeTypeName("#define GetInheritanceSource GetInheritanceSourceW")]
-    public static delegate*<ushort*, SE_OBJECT_TYPE, uint, BOOL, Guid**, uint, ACL*, FN_OBJECT_MGR_FUNCTS*, GENERIC_MAPPING*, INHERITED_FROMW*, uint> GetInheritanceSource => &GetInheritanceSourceW;
+    public static delegate*<char*, SE_OBJECT_TYPE, uint, BOOL, Guid**, uint, ACL*, FN_OBJECT_MGR_FUNCTS*, GENERIC_MAPPING*, INHERITED_FROMW*, uint> GetInheritanceSource => &GetInheritanceSourceW;
 
     [NativeTypeName("#define TreeResetNamedSecurityInfo TreeResetNamedSecurityInfoW")]
-    public static delegate*<ushort*, SE_OBJECT_TYPE, uint, void*, void*, ACL*, ACL*, BOOL, delegate* unmanaged<ushort*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void>, PROG_INVOKE_SETTING, void*, uint> TreeResetNamedSecurityInfo => &TreeResetNamedSecurityInfoW;
+    public static delegate*<char*, SE_OBJECT_TYPE, uint, void*, void*, ACL*, ACL*, BOOL, delegate* unmanaged<char*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void>, PROG_INVOKE_SETTING, void*, uint> TreeResetNamedSecurityInfo => &TreeResetNamedSecurityInfoW;
 
     [NativeTypeName("#define TreeSetNamedSecurityInfo TreeSetNamedSecurityInfoW")]
-    public static delegate*<ushort*, SE_OBJECT_TYPE, uint, void*, void*, ACL*, ACL*, uint, delegate* unmanaged<ushort*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void>, PROG_INVOKE_SETTING, void*, uint> TreeSetNamedSecurityInfo => &TreeSetNamedSecurityInfoW;
+    public static delegate*<char*, SE_OBJECT_TYPE, uint, void*, void*, ACL*, ACL*, uint, delegate* unmanaged<char*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void>, PROG_INVOKE_SETTING, void*, uint> TreeSetNamedSecurityInfo => &TreeSetNamedSecurityInfoW;
 
     [NativeTypeName("#define BuildSecurityDescriptor BuildSecurityDescriptorW")]
     public static delegate*<TRUSTEE_W*, TRUSTEE_W*, uint, EXPLICIT_ACCESS_W*, uint, EXPLICIT_ACCESS_W*, void*, uint*, void**, uint> BuildSecurityDescriptor => &BuildSecurityDescriptorW;
@@ -269,13 +269,13 @@ public static unsafe partial class Windows
     public static delegate*<TRUSTEE_W**, TRUSTEE_W**, uint*, EXPLICIT_ACCESS_W**, uint*, EXPLICIT_ACCESS_W**, void*, uint> LookupSecurityDescriptorParts => &LookupSecurityDescriptorPartsW;
 
     [NativeTypeName("#define BuildExplicitAccessWithName BuildExplicitAccessWithNameW")]
-    public static delegate*<EXPLICIT_ACCESS_W*, ushort*, uint, ACCESS_MODE, uint, void> BuildExplicitAccessWithName => &BuildExplicitAccessWithNameW;
+    public static delegate*<EXPLICIT_ACCESS_W*, char*, uint, ACCESS_MODE, uint, void> BuildExplicitAccessWithName => &BuildExplicitAccessWithNameW;
 
     [NativeTypeName("#define BuildImpersonateExplicitAccessWithName BuildImpersonateExplicitAccessWithNameW")]
-    public static delegate*<EXPLICIT_ACCESS_W*, ushort*, TRUSTEE_W*, uint, ACCESS_MODE, uint, void> BuildImpersonateExplicitAccessWithName => &BuildImpersonateExplicitAccessWithNameW;
+    public static delegate*<EXPLICIT_ACCESS_W*, char*, TRUSTEE_W*, uint, ACCESS_MODE, uint, void> BuildImpersonateExplicitAccessWithName => &BuildImpersonateExplicitAccessWithNameW;
 
     [NativeTypeName("#define BuildTrusteeWithName BuildTrusteeWithNameW")]
-    public static delegate*<TRUSTEE_W*, ushort*, void> BuildTrusteeWithName => &BuildTrusteeWithNameW;
+    public static delegate*<TRUSTEE_W*, char*, void> BuildTrusteeWithName => &BuildTrusteeWithNameW;
 
     [NativeTypeName("#define BuildImpersonateTrustee BuildImpersonateTrusteeW")]
     public static delegate*<TRUSTEE_W*, TRUSTEE_W*, void> BuildImpersonateTrustee => &BuildImpersonateTrusteeW;
@@ -287,10 +287,10 @@ public static unsafe partial class Windows
     public static delegate*<TRUSTEE_W*, OBJECTS_AND_SID*, Guid*, Guid*, void*, void> BuildTrusteeWithObjectsAndSid => &BuildTrusteeWithObjectsAndSidW;
 
     [NativeTypeName("#define BuildTrusteeWithObjectsAndName BuildTrusteeWithObjectsAndNameW")]
-    public static delegate*<TRUSTEE_W*, OBJECTS_AND_NAME_W*, SE_OBJECT_TYPE, ushort*, ushort*, ushort*, void> BuildTrusteeWithObjectsAndName => &BuildTrusteeWithObjectsAndNameW;
+    public static delegate*<TRUSTEE_W*, OBJECTS_AND_NAME_W*, SE_OBJECT_TYPE, char*, char*, char*, void> BuildTrusteeWithObjectsAndName => &BuildTrusteeWithObjectsAndNameW;
 
     [NativeTypeName("#define GetTrusteeName GetTrusteeNameW")]
-    public static delegate*<TRUSTEE_W*, ushort*> GetTrusteeName => &GetTrusteeNameW;
+    public static delegate*<TRUSTEE_W*, char*> GetTrusteeName => &GetTrusteeNameW;
 
     [NativeTypeName("#define GetTrusteeType GetTrusteeTypeW")]
     public static delegate*<TRUSTEE_W*, TRUSTEE_TYPE> GetTrusteeType => &GetTrusteeTypeW;

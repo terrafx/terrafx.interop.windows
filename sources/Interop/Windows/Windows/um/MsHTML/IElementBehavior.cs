@@ -25,7 +25,7 @@ public unsafe partial struct IElementBehavior : IElementBehavior.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IElementBehavior*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehavior*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehavior*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehavior*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IElementBehavior : IElementBehavior.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IElementBehavior*, uint>)(lpVtbl[1]))((IElementBehavior*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehavior*, uint>)(lpVtbl[1]))((IElementBehavior*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IElementBehavior : IElementBehavior.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IElementBehavior*, uint>)(lpVtbl[2]))((IElementBehavior*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehavior*, uint>)(lpVtbl[2]))((IElementBehavior*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IElementBehavior.xml' path='doc/member[@name="IElementBehavior.Init"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IElementBehavior : IElementBehavior.Interface, INat
     [VtblIndex(3)]
     public HRESULT Init(IElementBehaviorSite* pBehaviorSite)
     {
-        return ((delegate* unmanaged<IElementBehavior*, IElementBehaviorSite*, int>)(lpVtbl[3]))((IElementBehavior*)Unsafe.AsPointer(ref this), pBehaviorSite);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehavior*, IElementBehaviorSite*, int>)(lpVtbl[3]))((IElementBehavior*)Unsafe.AsPointer(ref this), pBehaviorSite);
     }
 
     /// <include file='IElementBehavior.xml' path='doc/member[@name="IElementBehavior.Notify"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IElementBehavior : IElementBehavior.Interface, INat
     [VtblIndex(4)]
     public HRESULT Notify([NativeTypeName("LONG")] int lEvent, VARIANT* pVar)
     {
-        return ((delegate* unmanaged<IElementBehavior*, int, VARIANT*, int>)(lpVtbl[4]))((IElementBehavior*)Unsafe.AsPointer(ref this), lEvent, pVar);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehavior*, int, VARIANT*, int>)(lpVtbl[4]))((IElementBehavior*)Unsafe.AsPointer(ref this), lEvent, pVar);
     }
 
     /// <include file='IElementBehavior.xml' path='doc/member[@name="IElementBehavior.Detach"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IElementBehavior : IElementBehavior.Interface, INat
     [VtblIndex(5)]
     public HRESULT Detach()
     {
-        return ((delegate* unmanaged<IElementBehavior*, int>)(lpVtbl[5]))((IElementBehavior*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehavior*, int>)(lpVtbl[5]))((IElementBehavior*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IElementBehavior : IElementBehavior.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IElementBehaviorSite *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IElementBehaviorSite*, int> Init;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IElementBehaviorSite*, int> Init;
 
         [NativeTypeName("HRESULT (LONG, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, VARIANT*, int> Notify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, VARIANT*, int> Notify;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Detach;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Detach;
     }
 }

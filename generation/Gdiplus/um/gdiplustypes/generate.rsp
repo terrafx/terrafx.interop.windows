@@ -1,12 +1,12 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
-Gdiplus.PathData.PathData(const Gdiplus.PathData &):void
+Gdiplus.PathData.PathData(const PathData &):void
 Gdiplus.PathData.Dispose():void
-Gdiplus.Rect.Clone():Gdiplus.Rect *
-Gdiplus.Rect.Intersect(const Gdiplus.Rect &):BOOL
-Gdiplus.RectF.Clone():Gdiplus.RectF *
-Gdiplus.RectF.Intersect(const Gdiplus.RectF &):BOOL
+Gdiplus.Rect.Clone():Rect *
+Gdiplus.Rect.Intersect(const Rect &):BOOL
+Gdiplus.RectF.Clone():RectF *
+Gdiplus.RectF.Intersect(const RectF &):BOOL
 GDIPLUS_MAX
 GDIPLUS_MIN
 operator+

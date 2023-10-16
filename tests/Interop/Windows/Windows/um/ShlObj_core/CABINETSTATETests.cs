@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CABINETSTATE" /> struct.</summary>
 public static unsafe partial class CABINETSTATETests
 {
-    /// <summary>Validates that the <see cref="CABINETSTATE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CABINETSTATE>(), Is.EqualTo(sizeof(CABINETSTATE)));
-    }
-
-    /// <summary>Validates that the <see cref="CABINETSTATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CABINETSTATE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CABINETSTATE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CABINETSTATE), Is.EqualTo(12));
-    }
 }

@@ -16,7 +16,7 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x99, 0x27, 0x01, 0x0C,
                 0x61, 0x1B,
                 0x10, 0x4C,
@@ -28,7 +28,7 @@ public static partial class IID
                 0xE5,
                 0xF5,
                 0x61
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

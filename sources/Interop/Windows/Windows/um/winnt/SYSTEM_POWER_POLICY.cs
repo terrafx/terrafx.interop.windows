@@ -3,10 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -112,25 +109,9 @@ public unsafe partial struct SYSTEM_POWER_POLICY
     public POWER_ACTION_POLICY OverThrottled;
 
     /// <include file='_DischargePolicy_e__FixedBuffer.xml' path='doc/member[@name="_DischargePolicy_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
     public partial struct _DischargePolicy_e__FixedBuffer
     {
         public SYSTEM_POWER_LEVEL e0;
-        public SYSTEM_POWER_LEVEL e1;
-        public SYSTEM_POWER_LEVEL e2;
-        public SYSTEM_POWER_LEVEL e3;
-
-        [UnscopedRef]
-        public ref SYSTEM_POWER_LEVEL this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<SYSTEM_POWER_LEVEL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
     }
 }

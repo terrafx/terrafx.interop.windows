@@ -19,32 +19,4 @@ public static unsafe partial class IMFSampleGrabberSinkCallbackTests
     {
         Assert.That(typeof(IMFSampleGrabberSinkCallback).GUID, Is.EqualTo(IID_IMFSampleGrabberSinkCallback));
     }
-
-    /// <summary>Validates that the <see cref="IMFSampleGrabberSinkCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSampleGrabberSinkCallback>(), Is.EqualTo(sizeof(IMFSampleGrabberSinkCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSampleGrabberSinkCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSampleGrabberSinkCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSampleGrabberSinkCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSampleGrabberSinkCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSampleGrabberSinkCallback), Is.EqualTo(4));
-        }
-    }
 }

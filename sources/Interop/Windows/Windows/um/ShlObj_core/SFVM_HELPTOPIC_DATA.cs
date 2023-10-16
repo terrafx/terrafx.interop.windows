@@ -10,9 +10,9 @@ public unsafe partial struct SFVM_HELPTOPIC_DATA
 {
     /// <include file='SFVM_HELPTOPIC_DATA.xml' path='doc/member[@name="SFVM_HELPTOPIC_DATA.wszHelpFile"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort wszHelpFile[260];
+    public fixed char wszHelpFile[260];
 
     /// <include file='SFVM_HELPTOPIC_DATA.xml' path='doc/member[@name="SFVM_HELPTOPIC_DATA.wszHelpTopic"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort wszHelpTopic[260];
+    public fixed char wszHelpTopic[260];
 }

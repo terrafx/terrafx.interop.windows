@@ -14,5 +14,5 @@ public unsafe partial struct TRANSACTIONMANAGER_LOGPATH_INFORMATION
 
     /// <include file='TRANSACTIONMANAGER_LOGPATH_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_LOGPATH_INFORMATION.LogPath"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort LogPath[1];
+    public fixed char LogPath[1];
 }

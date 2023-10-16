@@ -47,7 +47,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     public ushort UseWrss
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.UseWrss;
         }
@@ -63,7 +63,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     public ushort PopShadowStackOne
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.PopShadowStackOne;
         }
@@ -79,7 +79,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     public ushort Unused
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Unused;
         }
@@ -115,7 +115,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
             public ushort UseWrss
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (ushort)(_bitfield & 0x1u);
                 }
@@ -132,7 +132,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
             public ushort PopShadowStackOne
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (ushort)((_bitfield >> 1) & 0x1u);
                 }
@@ -149,7 +149,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
             public ushort Unused
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (ushort)((_bitfield >> 2) & 0x3FFFu);
                 }

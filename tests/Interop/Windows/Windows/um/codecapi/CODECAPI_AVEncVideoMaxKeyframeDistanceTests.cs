@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoMaxKeyframeDistanceTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoMaxKeyframeDistance).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoMaxKeyframeDistance));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoMaxKeyframeDistance" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoMaxKeyframeDistance>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoMaxKeyframeDistance)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoMaxKeyframeDistance" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoMaxKeyframeDistance).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoMaxKeyframeDistance" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoMaxKeyframeDistance), Is.EqualTo(1));
-    }
 }

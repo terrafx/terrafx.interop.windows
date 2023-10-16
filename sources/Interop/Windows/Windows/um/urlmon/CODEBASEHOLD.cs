@@ -14,11 +14,11 @@ public unsafe partial struct CODEBASEHOLD
 
     /// <include file='CODEBASEHOLD.xml' path='doc/member[@name="CODEBASEHOLD.szDistUnit"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szDistUnit;
+    public char* szDistUnit;
 
     /// <include file='CODEBASEHOLD.xml' path='doc/member[@name="CODEBASEHOLD.szCodeBase"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szCodeBase;
+    public char* szCodeBase;
 
     /// <include file='CODEBASEHOLD.xml' path='doc/member[@name="CODEBASEHOLD.dwVersionMS"]/*' />
     [NativeTypeName("DWORD")]

@@ -27,7 +27,7 @@ public unsafe partial struct IAppxPackageWriter3 : IAppxPackageWriter3.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxPackageWriter3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageWriter3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageWriter3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageWriter3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxPackageWriter3 : IAppxPackageWriter3.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxPackageWriter3*, uint>)(lpVtbl[1]))((IAppxPackageWriter3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageWriter3*, uint>)(lpVtbl[1]))((IAppxPackageWriter3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxPackageWriter3 : IAppxPackageWriter3.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxPackageWriter3*, uint>)(lpVtbl[2]))((IAppxPackageWriter3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageWriter3*, uint>)(lpVtbl[2]))((IAppxPackageWriter3*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxPackageWriter3.xml' path='doc/member[@name="IAppxPackageWriter3.AddPayloadFiles"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxPackageWriter3 : IAppxPackageWriter3.Interface
     [VtblIndex(3)]
     public HRESULT AddPayloadFiles([NativeTypeName("UINT32")] uint fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, [NativeTypeName("UINT64")] ulong memoryLimit)
     {
-        return ((delegate* unmanaged<IAppxPackageWriter3*, uint, APPX_PACKAGE_WRITER_PAYLOAD_STREAM*, ulong, int>)(lpVtbl[3]))((IAppxPackageWriter3*)Unsafe.AsPointer(ref this), fileCount, payloadFiles, memoryLimit);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageWriter3*, uint, APPX_PACKAGE_WRITER_PAYLOAD_STREAM*, ulong, int>)(lpVtbl[3]))((IAppxPackageWriter3*)Unsafe.AsPointer(ref this), fileCount, payloadFiles, memoryLimit);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IAppxPackageWriter3 : IAppxPackageWriter3.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, APPX_PACKAGE_WRITER_PAYLOAD_STREAM *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, APPX_PACKAGE_WRITER_PAYLOAD_STREAM*, ulong, int> AddPayloadFiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, APPX_PACKAGE_WRITER_PAYLOAD_STREAM*, ulong, int> AddPayloadFiles;
     }
 }

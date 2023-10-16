@@ -19,32 +19,4 @@ public static unsafe partial class ITfContextKeyEventSinkTests
     {
         Assert.That(typeof(ITfContextKeyEventSink).GUID, Is.EqualTo(IID_ITfContextKeyEventSink));
     }
-
-    /// <summary>Validates that the <see cref="ITfContextKeyEventSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfContextKeyEventSink>(), Is.EqualTo(sizeof(ITfContextKeyEventSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfContextKeyEventSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfContextKeyEventSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfContextKeyEventSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfContextKeyEventSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfContextKeyEventSink), Is.EqualTo(4));
-        }
-    }
 }

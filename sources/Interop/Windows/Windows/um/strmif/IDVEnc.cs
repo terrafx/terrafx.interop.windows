@@ -25,7 +25,7 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDVEnc*, Guid*, void**, int>)(lpVtbl[0]))((IDVEnc*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDVEnc*, Guid*, void**, int>)(lpVtbl[0]))((IDVEnc*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDVEnc*, uint>)(lpVtbl[1]))((IDVEnc*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDVEnc*, uint>)(lpVtbl[1]))((IDVEnc*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDVEnc*, uint>)(lpVtbl[2]))((IDVEnc*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDVEnc*, uint>)(lpVtbl[2]))((IDVEnc*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDVEnc.xml' path='doc/member[@name="IDVEnc.get_IFormatResolution"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT get_IFormatResolution(int* VideoFormat, int* DVFormat, int* Resolution, byte fDVInfo, DVINFO* sDVInfo)
     {
-        return ((delegate* unmanaged<IDVEnc*, int*, int*, int*, byte, DVINFO*, int>)(lpVtbl[3]))((IDVEnc*)Unsafe.AsPointer(ref this), VideoFormat, DVFormat, Resolution, fDVInfo, sDVInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDVEnc*, int*, int*, int*, byte, DVINFO*, int>)(lpVtbl[3]))((IDVEnc*)Unsafe.AsPointer(ref this), VideoFormat, DVFormat, Resolution, fDVInfo, sDVInfo);
     }
 
     /// <include file='IDVEnc.xml' path='doc/member[@name="IDVEnc.put_IFormatResolution"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT put_IFormatResolution(int VideoFormat, int DVFormat, int Resolution, byte fDVInfo, DVINFO* sDVInfo)
     {
-        return ((delegate* unmanaged<IDVEnc*, int, int, int, byte, DVINFO*, int>)(lpVtbl[4]))((IDVEnc*)Unsafe.AsPointer(ref this), VideoFormat, DVFormat, Resolution, fDVInfo, sDVInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDVEnc*, int, int, int, byte, DVINFO*, int>)(lpVtbl[4]))((IDVEnc*)Unsafe.AsPointer(ref this), VideoFormat, DVFormat, Resolution, fDVInfo, sDVInfo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int *, int *, int *, BYTE, DVINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int*, byte, DVINFO*, int> get_IFormatResolution;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int*, byte, DVINFO*, int> get_IFormatResolution;
 
         [NativeTypeName("HRESULT (int, int, int, BYTE, DVINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int, byte, DVINFO*, int> put_IFormatResolution;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int, byte, DVINFO*, int> put_IFormatResolution;
     }
 }

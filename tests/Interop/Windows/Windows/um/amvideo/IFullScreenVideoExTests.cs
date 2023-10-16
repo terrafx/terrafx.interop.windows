@@ -19,32 +19,4 @@ public static unsafe partial class IFullScreenVideoExTests
     {
         Assert.That(typeof(IFullScreenVideoEx).GUID, Is.EqualTo(IID_IFullScreenVideoEx));
     }
-
-    /// <summary>Validates that the <see cref="IFullScreenVideoEx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFullScreenVideoEx>(), Is.EqualTo(sizeof(IFullScreenVideoEx)));
-    }
-
-    /// <summary>Validates that the <see cref="IFullScreenVideoEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFullScreenVideoEx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFullScreenVideoEx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFullScreenVideoEx), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFullScreenVideoEx), Is.EqualTo(4));
-        }
-    }
 }

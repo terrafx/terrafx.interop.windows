@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIB_TCP6TABLE" /> struct.</summary>
 public static unsafe partial class MIB_TCP6TABLETests
 {
-    /// <summary>Validates that the <see cref="MIB_TCP6TABLE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIB_TCP6TABLE>(), Is.EqualTo(sizeof(MIB_TCP6TABLE)));
-    }
-
-    /// <summary>Validates that the <see cref="MIB_TCP6TABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIB_TCP6TABLE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIB_TCP6TABLE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIB_TCP6TABLE), Is.EqualTo(56));
-    }
 }

@@ -28,7 +28,7 @@ public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTran
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionTranslateTransform*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTranslateTransform*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTran
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionTranslateTransform*, uint>)(lpVtbl[1]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTranslateTransform*, uint>)(lpVtbl[1]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTran
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionTranslateTransform*, uint>)(lpVtbl[2]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTranslateTransform*, uint>)(lpVtbl[2]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionTranslateTransform.xml' path='doc/member[@name="IDCompositionTranslateTransform.SetOffsetX"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTran
     [VtblIndex(3)]
     public HRESULT SetOffsetX(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTranslateTransform*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionTranslateTransform.xml' path='doc/member[@name="IDCompositionTranslateTransform.SetOffsetX"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTran
     [VtblIndex(4)]
     public HRESULT SetOffsetX(float offsetX)
     {
-        return ((delegate* unmanaged<IDCompositionTranslateTransform*, float, int>)(lpVtbl[4]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), offsetX);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTranslateTransform*, float, int>)(lpVtbl[4]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), offsetX);
     }
 
     /// <include file='IDCompositionTranslateTransform.xml' path='doc/member[@name="IDCompositionTranslateTransform.SetOffsetY"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTran
     [VtblIndex(5)]
     public HRESULT SetOffsetY(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTranslateTransform*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionTranslateTransform.xml' path='doc/member[@name="IDCompositionTranslateTransform.SetOffsetY"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTran
     [VtblIndex(6)]
     public HRESULT SetOffsetY(float offsetY)
     {
-        return ((delegate* unmanaged<IDCompositionTranslateTransform*, float, int>)(lpVtbl[6]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), offsetY);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTranslateTransform*, float, int>)(lpVtbl[6]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), offsetY);
     }
 
     public interface Interface : IDCompositionTransform.Interface
@@ -100,24 +100,24 @@ public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTran
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetOffsetX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetOffsetX1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetOffsetX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetOffsetY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetOffsetY1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetOffsetY1;
     }
 }

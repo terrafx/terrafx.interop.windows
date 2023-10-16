@@ -25,7 +25,7 @@ public unsafe partial struct IAMOpenProgress : IAMOpenProgress.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMOpenProgress*, Guid*, void**, int>)(lpVtbl[0]))((IAMOpenProgress*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMOpenProgress*, Guid*, void**, int>)(lpVtbl[0]))((IAMOpenProgress*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMOpenProgress : IAMOpenProgress.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMOpenProgress*, uint>)(lpVtbl[1]))((IAMOpenProgress*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMOpenProgress*, uint>)(lpVtbl[1]))((IAMOpenProgress*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMOpenProgress : IAMOpenProgress.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMOpenProgress*, uint>)(lpVtbl[2]))((IAMOpenProgress*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMOpenProgress*, uint>)(lpVtbl[2]))((IAMOpenProgress*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMOpenProgress.xml' path='doc/member[@name="IAMOpenProgress.QueryProgress"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMOpenProgress : IAMOpenProgress.Interface, INativ
     [VtblIndex(3)]
     public HRESULT QueryProgress([NativeTypeName("LONGLONG *")] long* pllTotal, [NativeTypeName("LONGLONG *")] long* pllCurrent)
     {
-        return ((delegate* unmanaged<IAMOpenProgress*, long*, long*, int>)(lpVtbl[3]))((IAMOpenProgress*)Unsafe.AsPointer(ref this), pllTotal, pllCurrent);
+        return ((delegate* unmanaged[MemberFunction]<IAMOpenProgress*, long*, long*, int>)(lpVtbl[3]))((IAMOpenProgress*)Unsafe.AsPointer(ref this), pllTotal, pllCurrent);
     }
 
     /// <include file='IAMOpenProgress.xml' path='doc/member[@name="IAMOpenProgress.AbortOperation"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMOpenProgress : IAMOpenProgress.Interface, INativ
     [VtblIndex(4)]
     public HRESULT AbortOperation()
     {
-        return ((delegate* unmanaged<IAMOpenProgress*, int>)(lpVtbl[4]))((IAMOpenProgress*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMOpenProgress*, int>)(lpVtbl[4]))((IAMOpenProgress*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAMOpenProgress : IAMOpenProgress.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, long*, int> QueryProgress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, long*, int> QueryProgress;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> AbortOperation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> AbortOperation;
     }
 }

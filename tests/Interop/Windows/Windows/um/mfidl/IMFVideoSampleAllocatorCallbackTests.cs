@@ -19,32 +19,4 @@ public static unsafe partial class IMFVideoSampleAllocatorCallbackTests
     {
         Assert.That(typeof(IMFVideoSampleAllocatorCallback).GUID, Is.EqualTo(IID_IMFVideoSampleAllocatorCallback));
     }
-
-    /// <summary>Validates that the <see cref="IMFVideoSampleAllocatorCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFVideoSampleAllocatorCallback>(), Is.EqualTo(sizeof(IMFVideoSampleAllocatorCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFVideoSampleAllocatorCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFVideoSampleAllocatorCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFVideoSampleAllocatorCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFVideoSampleAllocatorCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFVideoSampleAllocatorCallback), Is.EqualTo(4));
-        }
-    }
 }

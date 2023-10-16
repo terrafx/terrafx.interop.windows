@@ -10,7 +10,7 @@ public unsafe partial struct CREDENTIAL_ATTRIBUTEW
 {
     /// <include file='CREDENTIAL_ATTRIBUTEW.xml' path='doc/member[@name="CREDENTIAL_ATTRIBUTEW.Keyword"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* Keyword;
+    public char* Keyword;
 
     /// <include file='CREDENTIAL_ATTRIBUTEW.xml' path='doc/member[@name="CREDENTIAL_ATTRIBUTEW.Flags"]/*' />
     [NativeTypeName("DWORD")]

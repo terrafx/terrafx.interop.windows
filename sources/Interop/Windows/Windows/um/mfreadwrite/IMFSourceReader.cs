@@ -25,7 +25,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint>)(lpVtbl[1]))((IMFSourceReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint>)(lpVtbl[1]))((IMFSourceReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint>)(lpVtbl[2]))((IMFSourceReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint>)(lpVtbl[2]))((IMFSourceReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceReader.xml' path='doc/member[@name="IMFSourceReader.GetStreamSelection"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL* pfSelected)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint, BOOL*, int>)(lpVtbl[3]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, pfSelected);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint, BOOL*, int>)(lpVtbl[3]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, pfSelected);
     }
 
     /// <include file='IMFSourceReader.xml' path='doc/member[@name="IMFSourceReader.SetStreamSelection"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(4)]
     public HRESULT SetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL fSelected)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint, BOOL, int>)(lpVtbl[4]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, fSelected);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint, BOOL, int>)(lpVtbl[4]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, fSelected);
     }
 
     /// <include file='IMFSourceReader.xml' path='doc/member[@name="IMFSourceReader.GetNativeMediaType"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetNativeMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwMediaTypeIndex, IMFMediaType** ppMediaType)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint, uint, IMFMediaType**, int>)(lpVtbl[5]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, dwMediaTypeIndex, ppMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint, uint, IMFMediaType**, int>)(lpVtbl[5]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, dwMediaTypeIndex, ppMediaType);
     }
 
     /// <include file='IMFSourceReader.xml' path='doc/member[@name="IMFSourceReader.GetCurrentMediaType"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetCurrentMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType** ppMediaType)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint, IMFMediaType**, int>)(lpVtbl[6]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, ppMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint, IMFMediaType**, int>)(lpVtbl[6]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, ppMediaType);
     }
 
     /// <include file='IMFSourceReader.xml' path='doc/member[@name="IMFSourceReader.SetCurrentMediaType"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(7)]
     public HRESULT SetCurrentMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, IMFMediaType* pMediaType)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint, uint*, IMFMediaType*, int>)(lpVtbl[7]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, pdwReserved, pMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint, uint*, IMFMediaType*, int>)(lpVtbl[7]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, pdwReserved, pMediaType);
     }
 
     /// <include file='IMFSourceReader.xml' path='doc/member[@name="IMFSourceReader.SetCurrentPosition"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(8)]
     public HRESULT SetCurrentPosition([NativeTypeName("const GUID &")] Guid* guidTimeFormat, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* varPosition)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, Guid*, PROPVARIANT*, int>)(lpVtbl[8]))((IMFSourceReader*)Unsafe.AsPointer(ref this), guidTimeFormat, varPosition);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, Guid*, PROPVARIANT*, int>)(lpVtbl[8]))((IMFSourceReader*)Unsafe.AsPointer(ref this), guidTimeFormat, varPosition);
     }
 
     /// <include file='IMFSourceReader.xml' path='doc/member[@name="IMFSourceReader.ReadSample"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(9)]
     public HRESULT ReadSample([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwControlFlags, [NativeTypeName("DWORD *")] uint* pdwActualStreamIndex, [NativeTypeName("DWORD *")] uint* pdwStreamFlags, [NativeTypeName("LONGLONG *")] long* pllTimestamp, IMFSample** ppSample)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint, uint, uint*, uint*, long*, IMFSample**, int>)(lpVtbl[9]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, dwControlFlags, pdwActualStreamIndex, pdwStreamFlags, pllTimestamp, ppSample);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint, uint, uint*, uint*, long*, IMFSample**, int>)(lpVtbl[9]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, dwControlFlags, pdwActualStreamIndex, pdwStreamFlags, pllTimestamp, ppSample);
     }
 
     /// <include file='IMFSourceReader.xml' path='doc/member[@name="IMFSourceReader.Flush"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(10)]
     public HRESULT Flush([NativeTypeName("DWORD")] uint dwStreamIndex)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint, int>)(lpVtbl[10]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint, int>)(lpVtbl[10]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex);
     }
 
     /// <include file='IMFSourceReader.xml' path='doc/member[@name="IMFSourceReader.GetServiceForStream"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(11)]
     public HRESULT GetServiceForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint, Guid*, Guid*, void**, int>)(lpVtbl[11]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, guidService, riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint, Guid*, Guid*, void**, int>)(lpVtbl[11]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, guidService, riid, ppvObject);
     }
 
     /// <include file='IMFSourceReader.xml' path='doc/member[@name="IMFSourceReader.GetPresentationAttribute"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
     [VtblIndex(12)]
     public HRESULT GetPresentationAttribute([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidAttribute, PROPVARIANT* pvarAttribute)
     {
-        return ((delegate* unmanaged<IMFSourceReader*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[12]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, guidAttribute, pvarAttribute);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceReader*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[12]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, guidAttribute, pvarAttribute);
     }
 
     public interface Interface : IUnknown.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL*, int> GetStreamSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL*, int> GetStreamSelection;
 
         [NativeTypeName("HRESULT (DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL, int> SetStreamSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL, int> SetStreamSelection;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IMFMediaType**, int> GetNativeMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IMFMediaType**, int> GetNativeMediaType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetCurrentMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType**, int> GetCurrentMediaType;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, IMFMediaType*, int> SetCurrentMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, IMFMediaType*, int> SetCurrentMediaType;
 
         [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> SetCurrentPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, PROPVARIANT*, int> SetCurrentPosition;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *, DWORD *, LONGLONG *, IMFSample **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint*, uint*, long*, IMFSample**, int> ReadSample;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint*, uint*, long*, IMFSample**, int> ReadSample;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Flush;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Flush;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, PROPVARIANT*, int> GetPresentationAttribute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, PROPVARIANT*, int> GetPresentationAttribute;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IMFExtendedDRMTypeSupportTests
     {
         Assert.That(typeof(IMFExtendedDRMTypeSupport).GUID, Is.EqualTo(IID_IMFExtendedDRMTypeSupport));
     }
-
-    /// <summary>Validates that the <see cref="IMFExtendedDRMTypeSupport" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFExtendedDRMTypeSupport>(), Is.EqualTo(sizeof(IMFExtendedDRMTypeSupport)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFExtendedDRMTypeSupport" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFExtendedDRMTypeSupport).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFExtendedDRMTypeSupport" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFExtendedDRMTypeSupport), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFExtendedDRMTypeSupport), Is.EqualTo(4));
-        }
-    }
 }

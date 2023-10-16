@@ -19,32 +19,4 @@ public static unsafe partial class IWICBitmapSourceTransformTests
     {
         Assert.That(typeof(IWICBitmapSourceTransform).GUID, Is.EqualTo(IID_IWICBitmapSourceTransform));
     }
-
-    /// <summary>Validates that the <see cref="IWICBitmapSourceTransform" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICBitmapSourceTransform>(), Is.EqualTo(sizeof(IWICBitmapSourceTransform)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICBitmapSourceTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICBitmapSourceTransform).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICBitmapSourceTransform" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICBitmapSourceTransform), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICBitmapSourceTransform), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IDropSource : IDropSource.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDropSource*, Guid*, void**, int>)(lpVtbl[0]))((IDropSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDropSource*, Guid*, void**, int>)(lpVtbl[0]))((IDropSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDropSource : IDropSource.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDropSource*, uint>)(lpVtbl[1]))((IDropSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDropSource*, uint>)(lpVtbl[1]))((IDropSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDropSource : IDropSource.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDropSource*, uint>)(lpVtbl[2]))((IDropSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDropSource*, uint>)(lpVtbl[2]))((IDropSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDropSource.xml' path='doc/member[@name="IDropSource.QueryContinueDrag"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDropSource : IDropSource.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT QueryContinueDrag(BOOL fEscapePressed, [NativeTypeName("DWORD")] uint grfKeyState)
     {
-        return ((delegate* unmanaged<IDropSource*, BOOL, uint, int>)(lpVtbl[3]))((IDropSource*)Unsafe.AsPointer(ref this), fEscapePressed, grfKeyState);
+        return ((delegate* unmanaged[MemberFunction]<IDropSource*, BOOL, uint, int>)(lpVtbl[3]))((IDropSource*)Unsafe.AsPointer(ref this), fEscapePressed, grfKeyState);
     }
 
     /// <include file='IDropSource.xml' path='doc/member[@name="IDropSource.GiveFeedback"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDropSource : IDropSource.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GiveFeedback([NativeTypeName("DWORD")] uint dwEffect)
     {
-        return ((delegate* unmanaged<IDropSource*, uint, int>)(lpVtbl[4]))((IDropSource*)Unsafe.AsPointer(ref this), dwEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDropSource*, uint, int>)(lpVtbl[4]))((IDropSource*)Unsafe.AsPointer(ref this), dwEffect);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IDropSource : IDropSource.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, uint, int> QueryContinueDrag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, uint, int> QueryContinueDrag;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> GiveFeedback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> GiveFeedback;
     }
 }

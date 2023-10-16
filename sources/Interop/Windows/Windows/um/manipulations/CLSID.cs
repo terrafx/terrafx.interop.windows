@@ -18,7 +18,7 @@ public static partial class CLSID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x87, 0x70, 0xB2, 0xAB,
                 0xE0, 0x4C,
                 0x58, 0x4E,
@@ -30,7 +30,7 @@ public static partial class CLSID
                 0x68,
                 0x14,
                 0xBE
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class CLSID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB0, 0x4F, 0x7D, 0x59,
                 0xFD, 0x47,
                 0xFF, 0x4A,
@@ -55,7 +55,7 @@ public static partial class CLSID
                 0x8C,
                 0xF0,
                 0x8E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

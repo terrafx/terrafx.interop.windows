@@ -19,32 +19,4 @@ public static unsafe partial class IMessageDispatcherTests
     {
         Assert.That(typeof(IMessageDispatcher).GUID, Is.EqualTo(IID_IMessageDispatcher));
     }
-
-    /// <summary>Validates that the <see cref="IMessageDispatcher" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMessageDispatcher>(), Is.EqualTo(sizeof(IMessageDispatcher)));
-    }
-
-    /// <summary>Validates that the <see cref="IMessageDispatcher" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMessageDispatcher).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMessageDispatcher" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMessageDispatcher), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMessageDispatcher), Is.EqualTo(4));
-        }
-    }
 }

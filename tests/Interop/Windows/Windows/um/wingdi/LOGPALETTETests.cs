@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LOGPALETTE" /> struct.</summary>
 public static unsafe partial class LOGPALETTETests
 {
-    /// <summary>Validates that the <see cref="LOGPALETTE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LOGPALETTE>(), Is.EqualTo(sizeof(LOGPALETTE)));
-    }
-
-    /// <summary>Validates that the <see cref="LOGPALETTE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LOGPALETTE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LOGPALETTE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(LOGPALETTE), Is.EqualTo(8));
-    }
 }

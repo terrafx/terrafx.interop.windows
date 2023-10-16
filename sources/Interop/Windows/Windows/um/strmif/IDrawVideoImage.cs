@@ -25,7 +25,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDrawVideoImage*, Guid*, void**, int>)(lpVtbl[0]))((IDrawVideoImage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDrawVideoImage*, Guid*, void**, int>)(lpVtbl[0]))((IDrawVideoImage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDrawVideoImage*, uint>)(lpVtbl[1]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDrawVideoImage*, uint>)(lpVtbl[1]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDrawVideoImage*, uint>)(lpVtbl[2]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDrawVideoImage*, uint>)(lpVtbl[2]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDrawVideoImage.xml' path='doc/member[@name="IDrawVideoImage.DrawVideoImageBegin"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface, INativ
     [VtblIndex(3)]
     public HRESULT DrawVideoImageBegin()
     {
-        return ((delegate* unmanaged<IDrawVideoImage*, int>)(lpVtbl[3]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDrawVideoImage*, int>)(lpVtbl[3]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDrawVideoImage.xml' path='doc/member[@name="IDrawVideoImage.DrawVideoImageEnd"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface, INativ
     [VtblIndex(4)]
     public HRESULT DrawVideoImageEnd()
     {
-        return ((delegate* unmanaged<IDrawVideoImage*, int>)(lpVtbl[4]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDrawVideoImage*, int>)(lpVtbl[4]))((IDrawVideoImage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDrawVideoImage.xml' path='doc/member[@name="IDrawVideoImage.DrawVideoImageDraw"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface, INativ
     [VtblIndex(5)]
     public HRESULT DrawVideoImageDraw(HDC hdc, [NativeTypeName("LPRECT")] RECT* lprcSrc, [NativeTypeName("LPRECT")] RECT* lprcDst)
     {
-        return ((delegate* unmanaged<IDrawVideoImage*, HDC, RECT*, RECT*, int>)(lpVtbl[5]))((IDrawVideoImage*)Unsafe.AsPointer(ref this), hdc, lprcSrc, lprcDst);
+        return ((delegate* unmanaged[MemberFunction]<IDrawVideoImage*, HDC, RECT*, RECT*, int>)(lpVtbl[5]))((IDrawVideoImage*)Unsafe.AsPointer(ref this), hdc, lprcSrc, lprcDst);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DrawVideoImageBegin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DrawVideoImageBegin;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DrawVideoImageEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DrawVideoImageEnd;
 
         [NativeTypeName("HRESULT (HDC, LPRECT, LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, RECT*, RECT*, int> DrawVideoImageDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, RECT*, RECT*, int> DrawVideoImageDraw;
     }
 }

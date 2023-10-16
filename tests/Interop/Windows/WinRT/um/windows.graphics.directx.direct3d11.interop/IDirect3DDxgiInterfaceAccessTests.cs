@@ -19,32 +19,4 @@ public static unsafe partial class IDirect3DDxgiInterfaceAccessTests
     {
         Assert.That(typeof(IDirect3DDxgiInterfaceAccess).GUID, Is.EqualTo(IID_IDirect3DDxgiInterfaceAccess));
     }
-
-    /// <summary>Validates that the <see cref="IDirect3DDxgiInterfaceAccess" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDirect3DDxgiInterfaceAccess>(), Is.EqualTo(sizeof(IDirect3DDxgiInterfaceAccess)));
-    }
-
-    /// <summary>Validates that the <see cref="IDirect3DDxgiInterfaceAccess" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDirect3DDxgiInterfaceAccess).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDirect3DDxgiInterfaceAccess" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDirect3DDxgiInterfaceAccess), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDirect3DDxgiInterfaceAccess), Is.EqualTo(4));
-        }
-    }
 }

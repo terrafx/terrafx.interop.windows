@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIB_BOUNDARYROW" /> struct.</summary>
 public static unsafe partial class MIB_BOUNDARYROWTests
 {
-    /// <summary>Validates that the <see cref="MIB_BOUNDARYROW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIB_BOUNDARYROW>(), Is.EqualTo(sizeof(MIB_BOUNDARYROW)));
-    }
-
-    /// <summary>Validates that the <see cref="MIB_BOUNDARYROW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIB_BOUNDARYROW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIB_BOUNDARYROW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIB_BOUNDARYROW), Is.EqualTo(8));
-    }
 }

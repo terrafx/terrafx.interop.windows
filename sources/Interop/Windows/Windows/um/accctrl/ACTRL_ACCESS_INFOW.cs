@@ -14,5 +14,5 @@ public unsafe partial struct ACTRL_ACCESS_INFOW
 
     /// <include file='ACTRL_ACCESS_INFOW.xml' path='doc/member[@name="ACTRL_ACCESS_INFOW.lpAccessPermissionName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpAccessPermissionName;
+    public char* lpAccessPermissionName;
 }

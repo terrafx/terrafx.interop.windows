@@ -33,7 +33,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
     public uint DisallowWin32kSystemCalls
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.DisallowWin32kSystemCalls;
         }
@@ -49,7 +49,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
     public uint AuditDisallowWin32kSystemCalls
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditDisallowWin32kSystemCalls;
         }
@@ -65,7 +65,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -101,7 +101,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
             public uint DisallowWin32kSystemCalls
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -118,7 +118,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
             public uint AuditDisallowWin32kSystemCalls
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -135,7 +135,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x3FFFFFFFu;
                 }

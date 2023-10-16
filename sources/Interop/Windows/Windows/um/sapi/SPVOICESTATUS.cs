@@ -45,7 +45,7 @@ public partial struct SPVOICESTATUS
 
     /// <include file='SPVOICESTATUS.xml' path='doc/member[@name="SPVOICESTATUS.PhonemeId"]/*' />
     [NativeTypeName("SPPHONEID")]
-    public ushort PhonemeId;
+    public char PhonemeId;
 
     /// <include file='SPVOICESTATUS.xml' path='doc/member[@name="SPVOICESTATUS.VisemeId"]/*' />
     public SPVISEMES VisemeId;

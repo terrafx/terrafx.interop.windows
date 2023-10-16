@@ -25,7 +25,7 @@ public unsafe partial struct IRpcHelper : IRpcHelper.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRpcHelper*, Guid*, void**, int>)(lpVtbl[0]))((IRpcHelper*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRpcHelper*, Guid*, void**, int>)(lpVtbl[0]))((IRpcHelper*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRpcHelper : IRpcHelper.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRpcHelper*, uint>)(lpVtbl[1]))((IRpcHelper*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcHelper*, uint>)(lpVtbl[1]))((IRpcHelper*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRpcHelper : IRpcHelper.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRpcHelper*, uint>)(lpVtbl[2]))((IRpcHelper*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcHelper*, uint>)(lpVtbl[2]))((IRpcHelper*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRpcHelper.xml' path='doc/member[@name="IRpcHelper.GetDCOMProtocolVersion"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRpcHelper : IRpcHelper.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetDCOMProtocolVersion([NativeTypeName("DWORD *")] uint* pComVersion)
     {
-        return ((delegate* unmanaged<IRpcHelper*, uint*, int>)(lpVtbl[3]))((IRpcHelper*)Unsafe.AsPointer(ref this), pComVersion);
+        return ((delegate* unmanaged[MemberFunction]<IRpcHelper*, uint*, int>)(lpVtbl[3]))((IRpcHelper*)Unsafe.AsPointer(ref this), pComVersion);
     }
 
     /// <include file='IRpcHelper.xml' path='doc/member[@name="IRpcHelper.GetIIDFromOBJREF"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRpcHelper : IRpcHelper.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetIIDFromOBJREF(void* pObjRef, [NativeTypeName("IID **")] Guid** piid)
     {
-        return ((delegate* unmanaged<IRpcHelper*, void*, Guid**, int>)(lpVtbl[4]))((IRpcHelper*)Unsafe.AsPointer(ref this), pObjRef, piid);
+        return ((delegate* unmanaged[MemberFunction]<IRpcHelper*, void*, Guid**, int>)(lpVtbl[4]))((IRpcHelper*)Unsafe.AsPointer(ref this), pObjRef, piid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IRpcHelper : IRpcHelper.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetDCOMProtocolVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetDCOMProtocolVersion;
 
         [NativeTypeName("HRESULT (void *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, Guid**, int> GetIIDFromOBJREF;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, Guid**, int> GetIIDFromOBJREF;
     }
 }

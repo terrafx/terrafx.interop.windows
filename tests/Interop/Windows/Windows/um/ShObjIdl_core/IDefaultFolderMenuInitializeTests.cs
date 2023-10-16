@@ -19,32 +19,4 @@ public static unsafe partial class IDefaultFolderMenuInitializeTests
     {
         Assert.That(typeof(IDefaultFolderMenuInitialize).GUID, Is.EqualTo(IID_IDefaultFolderMenuInitialize));
     }
-
-    /// <summary>Validates that the <see cref="IDefaultFolderMenuInitialize" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDefaultFolderMenuInitialize>(), Is.EqualTo(sizeof(IDefaultFolderMenuInitialize)));
-    }
-
-    /// <summary>Validates that the <see cref="IDefaultFolderMenuInitialize" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDefaultFolderMenuInitialize).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDefaultFolderMenuInitialize" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDefaultFolderMenuInitialize), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDefaultFolderMenuInitialize), Is.EqualTo(4));
-        }
-    }
 }

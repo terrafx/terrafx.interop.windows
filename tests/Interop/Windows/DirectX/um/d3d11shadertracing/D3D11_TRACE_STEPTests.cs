@@ -13,24 +13,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class D3D11_TRACE_STEPTests
 {
-    /// <summary>Validates that the <see cref="D3D11_TRACE_STEP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D11_TRACE_STEP>(), Is.EqualTo(sizeof(D3D11_TRACE_STEP)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_TRACE_STEP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D11_TRACE_STEP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_TRACE_STEP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D11_TRACE_STEP), Is.EqualTo(24));
-    }
 }

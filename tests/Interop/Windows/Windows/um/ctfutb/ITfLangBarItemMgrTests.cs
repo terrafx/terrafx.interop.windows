@@ -19,32 +19,4 @@ public static unsafe partial class ITfLangBarItemMgrTests
     {
         Assert.That(typeof(ITfLangBarItemMgr).GUID, Is.EqualTo(IID_ITfLangBarItemMgr));
     }
-
-    /// <summary>Validates that the <see cref="ITfLangBarItemMgr" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfLangBarItemMgr>(), Is.EqualTo(sizeof(ITfLangBarItemMgr)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfLangBarItemMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfLangBarItemMgr).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfLangBarItemMgr" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfLangBarItemMgr), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfLangBarItemMgr), Is.EqualTo(4));
-        }
-    }
 }

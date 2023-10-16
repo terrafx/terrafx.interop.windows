@@ -25,7 +25,7 @@ public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrati
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDOMEventRegistrationCallback*, Guid*, void**, int>)(lpVtbl[0]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDOMEventRegistrationCallback*, Guid*, void**, int>)(lpVtbl[0]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrati
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDOMEventRegistrationCallback*, uint>)(lpVtbl[1]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDOMEventRegistrationCallback*, uint>)(lpVtbl[1]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrati
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDOMEventRegistrationCallback*, uint>)(lpVtbl[2]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDOMEventRegistrationCallback*, uint>)(lpVtbl[2]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDOMEventRegistrationCallback.xml' path='doc/member[@name="IDOMEventRegistrationCallback.OnDOMEventListenerAdded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnDOMEventListenerAdded([NativeTypeName("LPCWSTR")] ushort* pszEventType, IScriptEventHandler* pHandler)
+    public HRESULT OnDOMEventListenerAdded([NativeTypeName("LPCWSTR")] char* pszEventType, IScriptEventHandler* pHandler)
     {
-        return ((delegate* unmanaged<IDOMEventRegistrationCallback*, ushort*, IScriptEventHandler*, int>)(lpVtbl[3]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this), pszEventType, pHandler);
+        return ((delegate* unmanaged[MemberFunction]<IDOMEventRegistrationCallback*, char*, IScriptEventHandler*, int>)(lpVtbl[3]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this), pszEventType, pHandler);
     }
 
     /// <include file='IDOMEventRegistrationCallback.xml' path='doc/member[@name="IDOMEventRegistrationCallback.OnDOMEventListenerRemoved"]/*' />
@@ -59,13 +59,13 @@ public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrati
     [VtblIndex(4)]
     public HRESULT OnDOMEventListenerRemoved([NativeTypeName("ULONGLONG")] ulong ullCookie)
     {
-        return ((delegate* unmanaged<IDOMEventRegistrationCallback*, ulong, int>)(lpVtbl[4]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this), ullCookie);
+        return ((delegate* unmanaged[MemberFunction]<IDOMEventRegistrationCallback*, ulong, int>)(lpVtbl[4]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this), ullCookie);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnDOMEventListenerAdded([NativeTypeName("LPCWSTR")] ushort* pszEventType, IScriptEventHandler* pHandler);
+        HRESULT OnDOMEventListenerAdded([NativeTypeName("LPCWSTR")] char* pszEventType, IScriptEventHandler* pHandler);
 
         [VtblIndex(4)]
         HRESULT OnDOMEventListenerRemoved([NativeTypeName("ULONGLONG")] ulong ullCookie);
@@ -75,18 +75,18 @@ public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrati
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IScriptEventHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IScriptEventHandler*, int> OnDOMEventListenerAdded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IScriptEventHandler*, int> OnDOMEventListenerAdded;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, int> OnDOMEventListenerRemoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, int> OnDOMEventListenerRemoved;
     }
 }

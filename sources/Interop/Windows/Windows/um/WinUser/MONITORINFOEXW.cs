@@ -14,5 +14,5 @@ public unsafe partial struct MONITORINFOEXW
 
     /// <include file='MONITORINFOEXW.xml' path='doc/member[@name="MONITORINFOEXW.szDevice"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort szDevice[32];
+    public fixed char szDevice[32];
 }

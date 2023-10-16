@@ -25,7 +25,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMDroppedFrames*, Guid*, void**, int>)(lpVtbl[0]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMDroppedFrames*, Guid*, void**, int>)(lpVtbl[0]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMDroppedFrames*, uint>)(lpVtbl[1]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMDroppedFrames*, uint>)(lpVtbl[1]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMDroppedFrames*, uint>)(lpVtbl[2]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMDroppedFrames*, uint>)(lpVtbl[2]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMDroppedFrames.xml' path='doc/member[@name="IAMDroppedFrames.GetNumDropped"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetNumDropped([NativeTypeName("long *")] int* plDropped)
     {
-        return ((delegate* unmanaged<IAMDroppedFrames*, int*, int>)(lpVtbl[3]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), plDropped);
+        return ((delegate* unmanaged[MemberFunction]<IAMDroppedFrames*, int*, int>)(lpVtbl[3]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), plDropped);
     }
 
     /// <include file='IAMDroppedFrames.xml' path='doc/member[@name="IAMDroppedFrames.GetNumNotDropped"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetNumNotDropped([NativeTypeName("long *")] int* plNotDropped)
     {
-        return ((delegate* unmanaged<IAMDroppedFrames*, int*, int>)(lpVtbl[4]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), plNotDropped);
+        return ((delegate* unmanaged[MemberFunction]<IAMDroppedFrames*, int*, int>)(lpVtbl[4]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), plNotDropped);
     }
 
     /// <include file='IAMDroppedFrames.xml' path='doc/member[@name="IAMDroppedFrames.GetDroppedInfo"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetDroppedInfo([NativeTypeName("long")] int lSize, [NativeTypeName("long *")] int* plArray, [NativeTypeName("long *")] int* plNumCopied)
     {
-        return ((delegate* unmanaged<IAMDroppedFrames*, int, int*, int*, int>)(lpVtbl[5]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), lSize, plArray, plNumCopied);
+        return ((delegate* unmanaged[MemberFunction]<IAMDroppedFrames*, int, int*, int*, int>)(lpVtbl[5]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), lSize, plArray, plNumCopied);
     }
 
     /// <include file='IAMDroppedFrames.xml' path='doc/member[@name="IAMDroppedFrames.GetAverageFrameSize"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetAverageFrameSize([NativeTypeName("long *")] int* plAverageSize)
     {
-        return ((delegate* unmanaged<IAMDroppedFrames*, int*, int>)(lpVtbl[6]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), plAverageSize);
+        return ((delegate* unmanaged[MemberFunction]<IAMDroppedFrames*, int*, int>)(lpVtbl[6]))((IAMDroppedFrames*)Unsafe.AsPointer(ref this), plAverageSize);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetNumDropped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetNumDropped;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetNumNotDropped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetNumNotDropped;
 
         [NativeTypeName("HRESULT (long, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int*, int> GetDroppedInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int*, int> GetDroppedInfo;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetAverageFrameSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetAverageFrameSize;
     }
 }

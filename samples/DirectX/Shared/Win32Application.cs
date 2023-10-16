@@ -28,6 +28,8 @@ public static unsafe class Win32Application
 
     public static int Run(DXSample sample, HINSTANCE hInstance, int nCmdShow)
     {
+        ArgumentNullException.ThrowIfNull(sample);
+
         var useWarpDevice = false;
 
         // Parse the command line parameters
@@ -49,8 +51,8 @@ public static unsafe class Win32Application
                 style = CS_HREDRAW | CS_VREDRAW,
                 lpfnWndProc = &WindowProc,
                 hInstance = hInstance,
-                hCursor = LoadCursorW(HINSTANCE.NULL, (ushort*)IDC_ARROW),
-                lpszClassName = (ushort*)lpszClassName
+                hCursor = LoadCursorW(HINSTANCE.NULL, IDC_ARROW),
+                lpszClassName = lpszClassName
             };
             _ = RegisterClassExW(&windowClass);
 
@@ -58,7 +60,7 @@ public static unsafe class Win32Application
             s_hwnd = CreateWindowExW(
                 0,
                 windowClass.lpszClassName,
-                (ushort*)lpWindowName,
+                lpWindowName,
                 WS_OVERLAPPEDWINDOW,
                 CW_USEDEFAULT,
                 CW_USEDEFAULT,
@@ -99,7 +101,7 @@ public static unsafe class Win32Application
             {
                 fixed (char* lpWindowName = $"{sample.Name} ({framesPerSecond} fps)")
                 {
-                    _ = SetWindowTextW(s_hwnd, (ushort*)lpWindowName);
+                    _ = SetWindowTextW(s_hwnd, lpWindowName);
                 }
                 lastFramesPerSecond = framesPerSecond;
             }

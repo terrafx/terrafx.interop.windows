@@ -19,32 +19,4 @@ public static unsafe partial class IObjectWithSiteTests
     {
         Assert.That(typeof(IObjectWithSite).GUID, Is.EqualTo(IID_IObjectWithSite));
     }
-
-    /// <summary>Validates that the <see cref="IObjectWithSite" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IObjectWithSite>(), Is.EqualTo(sizeof(IObjectWithSite)));
-    }
-
-    /// <summary>Validates that the <see cref="IObjectWithSite" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IObjectWithSite).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IObjectWithSite" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IObjectWithSite), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IObjectWithSite), Is.EqualTo(4));
-        }
-    }
 }

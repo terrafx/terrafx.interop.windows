@@ -18,7 +18,7 @@ public unsafe partial struct SecPkgContext_CertInfo
 
     /// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo.pwszSubjectName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszSubjectName;
+    public char* pwszSubjectName;
 
     /// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo.cbIssuerName"]/*' />
     [NativeTypeName("DWORD")]
@@ -26,7 +26,7 @@ public unsafe partial struct SecPkgContext_CertInfo
 
     /// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo.pwszIssuerName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszIssuerName;
+    public char* pwszIssuerName;
 
     /// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo.dwKeySize"]/*' />
     [NativeTypeName("DWORD")]

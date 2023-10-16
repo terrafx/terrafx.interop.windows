@@ -19,25 +19,4 @@ public static unsafe partial class ShellDesktopTests
     {
         Assert.That(typeof(ShellDesktop).GUID, Is.EqualTo(IID_ShellDesktop));
     }
-
-    /// <summary>Validates that the <see cref="ShellDesktop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ShellDesktop>(), Is.EqualTo(sizeof(ShellDesktop)));
-    }
-
-    /// <summary>Validates that the <see cref="ShellDesktop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ShellDesktop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ShellDesktop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ShellDesktop), Is.EqualTo(1));
-    }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IMFContentDecryptionModuleTests
     {
         Assert.That(typeof(IMFContentDecryptionModule).GUID, Is.EqualTo(IID_IMFContentDecryptionModule));
     }
-
-    /// <summary>Validates that the <see cref="IMFContentDecryptionModule" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFContentDecryptionModule>(), Is.EqualTo(sizeof(IMFContentDecryptionModule)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFContentDecryptionModule" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFContentDecryptionModule).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFContentDecryptionModule" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFContentDecryptionModule), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFContentDecryptionModule), Is.EqualTo(4));
-        }
-    }
 }

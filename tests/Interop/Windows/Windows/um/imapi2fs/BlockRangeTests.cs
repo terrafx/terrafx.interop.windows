@@ -19,25 +19,4 @@ public static unsafe partial class BlockRangeTests
     {
         Assert.That(typeof(BlockRange).GUID, Is.EqualTo(CLSID_BlockRange));
     }
-
-    /// <summary>Validates that the <see cref="BlockRange" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BlockRange>(), Is.EqualTo(sizeof(BlockRange)));
-    }
-
-    /// <summary>Validates that the <see cref="BlockRange" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BlockRange).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BlockRange" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BlockRange), Is.EqualTo(1));
-    }
 }

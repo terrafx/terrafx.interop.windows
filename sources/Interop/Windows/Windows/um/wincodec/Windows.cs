@@ -24,13 +24,13 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WICMapGuidToShortName"]/*' />
     [DllImport("windowscodecs", ExactSpelling = true)]
-    public static extern HRESULT WICMapGuidToShortName([NativeTypeName("const GUID &")] Guid* guid, uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, uint* pcchActual);
+    public static extern HRESULT WICMapGuidToShortName([NativeTypeName("const GUID &")] Guid* guid, uint cchName, [NativeTypeName("WCHAR *")] char* wzName, uint* pcchActual);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WICMapShortNameToGuid"]/*' />
     [DllImport("windowscodecs", ExactSpelling = true)]
-    public static extern HRESULT WICMapShortNameToGuid([NativeTypeName("PCWSTR")] ushort* wzName, Guid* pguid);
+    public static extern HRESULT WICMapShortNameToGuid([NativeTypeName("PCWSTR")] char* wzName, Guid* pguid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WICMapSchemaToName"]/*' />
     [DllImport("windowscodecs", ExactSpelling = true)]
-    public static extern HRESULT WICMapSchemaToName([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] ushort* pwzSchema, uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, uint* pcchActual);
+    public static extern HRESULT WICMapSchemaToName([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] char* pwzSchema, uint cchName, [NativeTypeName("WCHAR *")] char* wzName, uint* pcchActual);
 }

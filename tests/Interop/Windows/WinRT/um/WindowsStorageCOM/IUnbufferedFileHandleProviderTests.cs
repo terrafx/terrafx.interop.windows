@@ -21,32 +21,4 @@ public static unsafe partial class IUnbufferedFileHandleProviderTests
     {
         Assert.That(typeof(IUnbufferedFileHandleProvider).GUID, Is.EqualTo(IID_IUnbufferedFileHandleProvider));
     }
-
-    /// <summary>Validates that the <see cref="IUnbufferedFileHandleProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUnbufferedFileHandleProvider>(), Is.EqualTo(sizeof(IUnbufferedFileHandleProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="IUnbufferedFileHandleProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUnbufferedFileHandleProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUnbufferedFileHandleProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUnbufferedFileHandleProvider), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUnbufferedFileHandleProvider), Is.EqualTo(4));
-        }
-    }
 }

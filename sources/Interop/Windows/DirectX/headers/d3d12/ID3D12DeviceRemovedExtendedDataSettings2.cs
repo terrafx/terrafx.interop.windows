@@ -26,7 +26,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings2 : ID3D12De
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings2*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceRemovedExtendedDataSettings2*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings2 : ID3D12De
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings2*, uint>)(lpVtbl[1]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceRemovedExtendedDataSettings2*, uint>)(lpVtbl[1]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings2 : ID3D12De
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings2*, uint>)(lpVtbl[2]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceRemovedExtendedDataSettings2*, uint>)(lpVtbl[2]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D12DeviceRemovedExtendedDataSettings.SetAutoBreadcrumbsEnablement" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings2 : ID3D12De
     [VtblIndex(3)]
     public void SetAutoBreadcrumbsEnablement(D3D12_DRED_ENABLEMENT Enablement)
     {
-        ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings2*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[3]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), Enablement);
+        ((delegate* unmanaged[MemberFunction]<ID3D12DeviceRemovedExtendedDataSettings2*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[3]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), Enablement);
     }
 
     /// <inheritdoc cref="ID3D12DeviceRemovedExtendedDataSettings.SetPageFaultEnablement" />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings2 : ID3D12De
     [VtblIndex(4)]
     public void SetPageFaultEnablement(D3D12_DRED_ENABLEMENT Enablement)
     {
-        ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings2*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[4]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), Enablement);
+        ((delegate* unmanaged[MemberFunction]<ID3D12DeviceRemovedExtendedDataSettings2*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[4]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), Enablement);
     }
 
     /// <inheritdoc cref="ID3D12DeviceRemovedExtendedDataSettings.SetWatsonDumpEnablement" />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings2 : ID3D12De
     [VtblIndex(5)]
     public void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement)
     {
-        ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings2*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[5]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), Enablement);
+        ((delegate* unmanaged[MemberFunction]<ID3D12DeviceRemovedExtendedDataSettings2*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[5]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), Enablement);
     }
 
     /// <inheritdoc cref="ID3D12DeviceRemovedExtendedDataSettings1.SetBreadcrumbContextEnablement" />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings2 : ID3D12De
     [VtblIndex(6)]
     public void SetBreadcrumbContextEnablement(D3D12_DRED_ENABLEMENT Enablement)
     {
-        ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings2*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[6]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), Enablement);
+        ((delegate* unmanaged[MemberFunction]<ID3D12DeviceRemovedExtendedDataSettings2*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[6]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), Enablement);
     }
 
     /// <include file='ID3D12DeviceRemovedExtendedDataSettings2.xml' path='doc/member[@name="ID3D12DeviceRemovedExtendedDataSettings2.UseMarkersOnlyAutoBreadcrumbs"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings2 : ID3D12De
     [VtblIndex(7)]
     public void UseMarkersOnlyAutoBreadcrumbs(BOOL MarkersOnly)
     {
-        ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings2*, BOOL, void>)(lpVtbl[7]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), MarkersOnly);
+        ((delegate* unmanaged[MemberFunction]<ID3D12DeviceRemovedExtendedDataSettings2*, BOOL, void>)(lpVtbl[7]))((ID3D12DeviceRemovedExtendedDataSettings2*)Unsafe.AsPointer(ref this), MarkersOnly);
     }
 
     public interface Interface : ID3D12DeviceRemovedExtendedDataSettings1.Interface
@@ -97,27 +97,27 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings2 : ID3D12De
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_DRED_ENABLEMENT, void> SetAutoBreadcrumbsEnablement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_DRED_ENABLEMENT, void> SetAutoBreadcrumbsEnablement;
 
         [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_DRED_ENABLEMENT, void> SetPageFaultEnablement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_DRED_ENABLEMENT, void> SetPageFaultEnablement;
 
         [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_DRED_ENABLEMENT, void> SetWatsonDumpEnablement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_DRED_ENABLEMENT, void> SetWatsonDumpEnablement;
 
         [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_DRED_ENABLEMENT, void> SetBreadcrumbContextEnablement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_DRED_ENABLEMENT, void> SetBreadcrumbContextEnablement;
 
         [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, void> UseMarkersOnlyAutoBreadcrumbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, void> UseMarkersOnlyAutoBreadcrumbs;
     }
 }

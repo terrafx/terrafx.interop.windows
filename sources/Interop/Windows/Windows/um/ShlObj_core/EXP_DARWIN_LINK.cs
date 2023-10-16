@@ -20,5 +20,5 @@ public unsafe partial struct EXP_DARWIN_LINK
 
     /// <include file='EXP_DARWIN_LINK.xml' path='doc/member[@name="EXP_DARWIN_LINK.szwDarwinID"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szwDarwinID[260];
+    public fixed char szwDarwinID[260];
 }

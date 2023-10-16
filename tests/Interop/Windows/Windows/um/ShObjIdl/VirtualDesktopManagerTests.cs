@@ -19,25 +19,4 @@ public static unsafe partial class VirtualDesktopManagerTests
     {
         Assert.That(typeof(VirtualDesktopManager).GUID, Is.EqualTo(IID_VirtualDesktopManager));
     }
-
-    /// <summary>Validates that the <see cref="VirtualDesktopManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<VirtualDesktopManager>(), Is.EqualTo(sizeof(VirtualDesktopManager)));
-    }
-
-    /// <summary>Validates that the <see cref="VirtualDesktopManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(VirtualDesktopManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="VirtualDesktopManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(VirtualDesktopManager), Is.EqualTo(1));
-    }
 }

@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CONFIRMSAFETY" /> struct.</summary>
 public static unsafe partial class CONFIRMSAFETYTests
 {
-    /// <summary>Validates that the <see cref="CONFIRMSAFETY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CONFIRMSAFETY>(), Is.EqualTo(sizeof(CONFIRMSAFETY)));
-    }
-
-    /// <summary>Validates that the <see cref="CONFIRMSAFETY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CONFIRMSAFETY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CONFIRMSAFETY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(CONFIRMSAFETY), Is.EqualTo(32));
-        }
-        else
-        {
-            Assert.That(sizeof(CONFIRMSAFETY), Is.EqualTo(24));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IPrintDialogCallbackTests
     {
         Assert.That(typeof(IPrintDialogCallback).GUID, Is.EqualTo(IID_IPrintDialogCallback));
     }
-
-    /// <summary>Validates that the <see cref="IPrintDialogCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPrintDialogCallback>(), Is.EqualTo(sizeof(IPrintDialogCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IPrintDialogCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPrintDialogCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPrintDialogCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPrintDialogCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPrintDialogCallback), Is.EqualTo(4));
-        }
-    }
 }

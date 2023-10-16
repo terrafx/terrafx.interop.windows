@@ -17,11 +17,11 @@ public unsafe partial struct BROWSEINFOW
 
     /// <include file='BROWSEINFOW.xml' path='doc/member[@name="BROWSEINFOW.pszDisplayName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszDisplayName;
+    public char* pszDisplayName;
 
     /// <include file='BROWSEINFOW.xml' path='doc/member[@name="BROWSEINFOW.lpszTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszTitle;
+    public char* lpszTitle;
 
     /// <include file='BROWSEINFOW.xml' path='doc/member[@name="BROWSEINFOW.ulFlags"]/*' />
     public uint ulFlags;

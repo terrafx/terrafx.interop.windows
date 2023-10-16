@@ -25,7 +25,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo4 : IAppxBundleManife
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo4*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo4*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo4 : IAppxBundleManife
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo4*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo4*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo4 : IAppxBundleManife
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo4*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo4*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBundleManifestPackageInfo4.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo4.GetIsStub"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo4 : IAppxBundleManife
     [VtblIndex(3)]
     public HRESULT GetIsStub(BOOL* isStub)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo4*, BOOL*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this), isStub);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo4*, BOOL*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this), isStub);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IAppxBundleManifestPackageInfo4 : IAppxBundleManife
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetIsStub;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetIsStub;
     }
 }

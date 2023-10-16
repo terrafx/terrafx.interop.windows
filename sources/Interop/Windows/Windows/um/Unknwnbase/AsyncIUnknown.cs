@@ -25,7 +25,7 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<AsyncIUnknown*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIUnknown*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIUnknown*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIUnknown*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<AsyncIUnknown*, uint>)(lpVtbl[1]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIUnknown*, uint>)(lpVtbl[1]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<AsyncIUnknown*, uint>)(lpVtbl[2]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIUnknown*, uint>)(lpVtbl[2]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Begin_QueryInterface"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT Begin_QueryInterface([NativeTypeName("const IID &")] Guid* riid)
     {
-        return ((delegate* unmanaged<AsyncIUnknown*, Guid*, int>)(lpVtbl[3]))((AsyncIUnknown*)Unsafe.AsPointer(ref this), riid);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIUnknown*, Guid*, int>)(lpVtbl[3]))((AsyncIUnknown*)Unsafe.AsPointer(ref this), riid);
     }
 
     /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Finish_QueryInterface"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT Finish_QueryInterface(void** ppvObject)
     {
-        return ((delegate* unmanaged<AsyncIUnknown*, void**, int>)(lpVtbl[4]))((AsyncIUnknown*)Unsafe.AsPointer(ref this), ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIUnknown*, void**, int>)(lpVtbl[4]))((AsyncIUnknown*)Unsafe.AsPointer(ref this), ppvObject);
     }
 
     /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Begin_AddRef"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT Begin_AddRef()
     {
-        return ((delegate* unmanaged<AsyncIUnknown*, int>)(lpVtbl[5]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIUnknown*, int>)(lpVtbl[5]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Finish_AddRef"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Finish_AddRef()
     {
-        return ((delegate* unmanaged<AsyncIUnknown*, uint>)(lpVtbl[6]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIUnknown*, uint>)(lpVtbl[6]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Begin_Release"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT Begin_Release()
     {
-        return ((delegate* unmanaged<AsyncIUnknown*, int>)(lpVtbl[7]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIUnknown*, int>)(lpVtbl[7]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Finish_Release"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Finish_Release()
     {
-        return ((delegate* unmanaged<AsyncIUnknown*, uint>)(lpVtbl[8]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIUnknown*, uint>)(lpVtbl[8]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -123,30 +123,30 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> Begin_QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> Begin_QueryInterface;
 
         [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void**, int> Finish_QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void**, int> Finish_QueryInterface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Begin_AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Begin_AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Finish_AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Finish_AddRef;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Begin_Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Begin_Release;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Finish_Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Finish_Release;
     }
 }

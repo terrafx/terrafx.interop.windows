@@ -26,7 +26,7 @@ public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPrintDocumentPageSource*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPageSource*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPrintDocumentPageSource*, uint>)(lpVtbl[1]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPageSource*, uint>)(lpVtbl[1]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPrintDocumentPageSource*, uint>)(lpVtbl[2]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPageSource*, uint>)(lpVtbl[2]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrintDocumentPageSource.xml' path='doc/member[@name="IPrintDocumentPageSource.GetPreviewPageCollection"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource
     [VtblIndex(3)]
     public HRESULT GetPreviewPageCollection(IPrintDocumentPackageTarget* docPackageTarget, IPrintPreviewPageCollection** docPageCollection)
     {
-        return ((delegate* unmanaged<IPrintDocumentPageSource*, IPrintDocumentPackageTarget*, IPrintPreviewPageCollection**, int>)(lpVtbl[3]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this), docPackageTarget, docPageCollection);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPageSource*, IPrintDocumentPackageTarget*, IPrintPreviewPageCollection**, int>)(lpVtbl[3]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this), docPackageTarget, docPageCollection);
     }
 
     /// <include file='IPrintDocumentPageSource.xml' path='doc/member[@name="IPrintDocumentPageSource.MakeDocument"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource
     [VtblIndex(4)]
     public HRESULT MakeDocument(IInspectable* printTaskOptions, IPrintDocumentPackageTarget* docPackageTarget)
     {
-        return ((delegate* unmanaged<IPrintDocumentPageSource*, IInspectable*, IPrintDocumentPackageTarget*, int>)(lpVtbl[4]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this), printTaskOptions, docPackageTarget);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPageSource*, IInspectable*, IPrintDocumentPackageTarget*, int>)(lpVtbl[4]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this), printTaskOptions, docPackageTarget);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPrintDocumentPackageTarget *, IPrintPreviewPageCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPrintDocumentPackageTarget*, IPrintPreviewPageCollection**, int> GetPreviewPageCollection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPrintDocumentPackageTarget*, IPrintPreviewPageCollection**, int> GetPreviewPageCollection;
 
         [NativeTypeName("HRESULT (IInspectable *, IPrintDocumentPackageTarget *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IInspectable*, IPrintDocumentPackageTarget*, int> MakeDocument;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable*, IPrintDocumentPackageTarget*, int> MakeDocument;
     }
 }

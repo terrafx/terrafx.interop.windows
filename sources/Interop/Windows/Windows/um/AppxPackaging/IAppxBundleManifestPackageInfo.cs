@@ -27,7 +27,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetPackageType"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
     [VtblIndex(3)]
     public HRESULT GetPackageType(APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE* packageType)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), packageType);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo*, APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), packageType);
     }
 
     /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetPackageId"]/*' />
@@ -61,15 +61,15 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
     [VtblIndex(4)]
     public HRESULT GetPackageId(IAppxManifestPackageId** packageId)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, IAppxManifestPackageId**, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), packageId);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo*, IAppxManifestPackageId**, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), packageId);
     }
 
     /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName)
+    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] char** fileName)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, ushort**, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), fileName);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo*, char**, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), fileName);
     }
 
     /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetOffset"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
     [VtblIndex(6)]
     public HRESULT GetOffset([NativeTypeName("UINT64 *")] ulong* offset)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, ulong*, int>)(lpVtbl[6]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), offset);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo*, ulong*, int>)(lpVtbl[6]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), offset);
     }
 
     /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetSize"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
     [VtblIndex(7)]
     public HRESULT GetSize([NativeTypeName("UINT64 *")] ulong* size)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, ulong*, int>)(lpVtbl[7]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), size);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo*, ulong*, int>)(lpVtbl[7]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), size);
     }
 
     /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetResources"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
     [VtblIndex(8)]
     public HRESULT GetResources(IAppxManifestQualifiedResourcesEnumerator** resources)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, IAppxManifestQualifiedResourcesEnumerator**, int>)(lpVtbl[8]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), resources);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo*, IAppxManifestQualifiedResourcesEnumerator**, int>)(lpVtbl[8]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), resources);
     }
 
     public interface Interface : IUnknown.Interface
@@ -105,7 +105,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         HRESULT GetPackageId(IAppxManifestPackageId** packageId);
 
         [VtblIndex(5)]
-        HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName);
+        HRESULT GetFileName([NativeTypeName("LPWSTR *")] char** fileName);
 
         [VtblIndex(6)]
         HRESULT GetOffset([NativeTypeName("UINT64 *")] ulong* offset);
@@ -121,30 +121,30 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE*, int> GetPackageType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE*, int> GetPackageType;
 
         [NativeTypeName("HRESULT (IAppxManifestPackageId **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetFileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetFileName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetOffset;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetSize;
 
         [NativeTypeName("HRESULT (IAppxManifestQualifiedResourcesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestQualifiedResourcesEnumerator**, int> GetResources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestQualifiedResourcesEnumerator**, int> GetResources;
     }
 }

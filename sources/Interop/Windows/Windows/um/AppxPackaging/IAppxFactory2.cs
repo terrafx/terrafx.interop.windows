@@ -27,7 +27,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxFactory2*, uint>)(lpVtbl[1]))((IAppxFactory2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory2*, uint>)(lpVtbl[1]))((IAppxFactory2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxFactory2*, uint>)(lpVtbl[2]))((IAppxFactory2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory2*, uint>)(lpVtbl[2]))((IAppxFactory2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxFactory2.xml' path='doc/member[@name="IAppxFactory2.CreateContentGroupMapReader"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT CreateContentGroupMapReader(IStream* inputStream, IAppxContentGroupMapReader** contentGroupMapReader)
     {
-        return ((delegate* unmanaged<IAppxFactory2*, IStream*, IAppxContentGroupMapReader**, int>)(lpVtbl[3]))((IAppxFactory2*)Unsafe.AsPointer(ref this), inputStream, contentGroupMapReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory2*, IStream*, IAppxContentGroupMapReader**, int>)(lpVtbl[3]))((IAppxFactory2*)Unsafe.AsPointer(ref this), inputStream, contentGroupMapReader);
     }
 
     /// <include file='IAppxFactory2.xml' path='doc/member[@name="IAppxFactory2.CreateSourceContentGroupMapReader"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT CreateSourceContentGroupMapReader(IStream* inputStream, IAppxSourceContentGroupMapReader** reader)
     {
-        return ((delegate* unmanaged<IAppxFactory2*, IStream*, IAppxSourceContentGroupMapReader**, int>)(lpVtbl[4]))((IAppxFactory2*)Unsafe.AsPointer(ref this), inputStream, reader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory2*, IStream*, IAppxSourceContentGroupMapReader**, int>)(lpVtbl[4]))((IAppxFactory2*)Unsafe.AsPointer(ref this), inputStream, reader);
     }
 
     /// <include file='IAppxFactory2.xml' path='doc/member[@name="IAppxFactory2.CreateContentGroupMapWriter"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT CreateContentGroupMapWriter(IStream* stream, IAppxContentGroupMapWriter** contentGroupMapWriter)
     {
-        return ((delegate* unmanaged<IAppxFactory2*, IStream*, IAppxContentGroupMapWriter**, int>)(lpVtbl[5]))((IAppxFactory2*)Unsafe.AsPointer(ref this), stream, contentGroupMapWriter);
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory2*, IStream*, IAppxContentGroupMapWriter**, int>)(lpVtbl[5]))((IAppxFactory2*)Unsafe.AsPointer(ref this), stream, contentGroupMapWriter);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, IAppxContentGroupMapReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IAppxContentGroupMapReader**, int> CreateContentGroupMapReader;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IAppxContentGroupMapReader**, int> CreateContentGroupMapReader;
 
         [NativeTypeName("HRESULT (IStream *, IAppxSourceContentGroupMapReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IAppxSourceContentGroupMapReader**, int> CreateSourceContentGroupMapReader;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IAppxSourceContentGroupMapReader**, int> CreateSourceContentGroupMapReader;
 
         [NativeTypeName("HRESULT (IStream *, IAppxContentGroupMapWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IAppxContentGroupMapWriter**, int> CreateContentGroupMapWriter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IAppxContentGroupMapWriter**, int> CreateContentGroupMapWriter;
     }
 }

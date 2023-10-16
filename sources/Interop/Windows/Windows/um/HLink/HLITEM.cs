@@ -14,5 +14,5 @@ public unsafe partial struct HLITEM
 
     /// <include file='HLITEM.xml' path='doc/member[@name="HLITEM.pwzFriendlyName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwzFriendlyName;
+    public char* pwzFriendlyName;
 }

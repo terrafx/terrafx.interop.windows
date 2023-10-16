@@ -19,32 +19,4 @@ public static unsafe partial class IHighlightRenderingServicesTests
     {
         Assert.That(typeof(IHighlightRenderingServices).GUID, Is.EqualTo(IID_IHighlightRenderingServices));
     }
-
-    /// <summary>Validates that the <see cref="IHighlightRenderingServices" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHighlightRenderingServices>(), Is.EqualTo(sizeof(IHighlightRenderingServices)));
-    }
-
-    /// <summary>Validates that the <see cref="IHighlightRenderingServices" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHighlightRenderingServices).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHighlightRenderingServices" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHighlightRenderingServices), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHighlightRenderingServices), Is.EqualTo(4));
-        }
-    }
 }

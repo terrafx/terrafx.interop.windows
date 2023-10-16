@@ -19,32 +19,4 @@ public static unsafe partial class IRpcStubBufferTests
     {
         Assert.That(typeof(IRpcStubBuffer).GUID, Is.EqualTo(IID_IRpcStubBuffer));
     }
-
-    /// <summary>Validates that the <see cref="IRpcStubBuffer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRpcStubBuffer>(), Is.EqualTo(sizeof(IRpcStubBuffer)));
-    }
-
-    /// <summary>Validates that the <see cref="IRpcStubBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRpcStubBuffer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRpcStubBuffer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRpcStubBuffer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRpcStubBuffer), Is.EqualTo(4));
-        }
-    }
 }

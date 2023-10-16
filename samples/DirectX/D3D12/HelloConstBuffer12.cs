@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from D3D12HelloConstBuffor in https://github.com/Microsoft/DirectX-Graphics-Samples
+// Ported from D3D12HelloConstBuffer in https://github.com/Microsoft/DirectX-Graphics-Samples
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
@@ -124,11 +124,11 @@ public unsafe class HelloConstBuffer12 : HelloTriangle12
         {
             var entryPoint = 0x00006E69614D5356;    // VSMain
             var target = 0x0000305F355F7376;        // vs_5_0
-            ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
+            ThrowIfFailed(D3DCompileFromFile(fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
 
             entryPoint = 0x00006E69614D5350;        // PSMain
             target = 0x0000305F355F7370;            // ps_5_0
-            ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
+            ThrowIfFailed(D3DCompileFromFile(fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
         }
 
         // Define the vertex input layout.

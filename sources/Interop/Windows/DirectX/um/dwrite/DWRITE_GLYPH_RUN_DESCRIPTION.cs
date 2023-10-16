@@ -10,11 +10,11 @@ public unsafe partial struct DWRITE_GLYPH_RUN_DESCRIPTION
 {
     /// <include file='DWRITE_GLYPH_RUN_DESCRIPTION.xml' path='doc/member[@name="DWRITE_GLYPH_RUN_DESCRIPTION.localeName"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* localeName;
+    public char* localeName;
 
     /// <include file='DWRITE_GLYPH_RUN_DESCRIPTION.xml' path='doc/member[@name="DWRITE_GLYPH_RUN_DESCRIPTION.@string"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* @string;
+    public char* @string;
 
     /// <include file='DWRITE_GLYPH_RUN_DESCRIPTION.xml' path='doc/member[@name="DWRITE_GLYPH_RUN_DESCRIPTION.stringLength"]/*' />
     [NativeTypeName("UINT32")]

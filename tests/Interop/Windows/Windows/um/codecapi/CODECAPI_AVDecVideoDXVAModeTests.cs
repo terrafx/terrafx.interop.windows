@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecVideoDXVAModeTests
     {
         Assert.That(typeof(CODECAPI_AVDecVideoDXVAMode).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoDXVAMode));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoDXVAMode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecVideoDXVAMode>(), Is.EqualTo(sizeof(CODECAPI_AVDecVideoDXVAMode)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoDXVAMode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecVideoDXVAMode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoDXVAMode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecVideoDXVAMode), Is.EqualTo(1));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AUDIODESCRIPTION" /> struct.</summary>
 public static unsafe partial class AUDIODESCRIPTIONTests
 {
-    /// <summary>Validates that the <see cref="AUDIODESCRIPTION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AUDIODESCRIPTION>(), Is.EqualTo(sizeof(AUDIODESCRIPTION)));
-    }
-
-    /// <summary>Validates that the <see cref="AUDIODESCRIPTION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AUDIODESCRIPTION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AUDIODESCRIPTION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AUDIODESCRIPTION), Is.EqualTo(12));
-    }
 }

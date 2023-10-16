@@ -19,32 +19,4 @@ public static unsafe partial class ICDBurnExtTests
     {
         Assert.That(typeof(ICDBurnExt).GUID, Is.EqualTo(IID_ICDBurnExt));
     }
-
-    /// <summary>Validates that the <see cref="ICDBurnExt" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICDBurnExt>(), Is.EqualTo(sizeof(ICDBurnExt)));
-    }
-
-    /// <summary>Validates that the <see cref="ICDBurnExt" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICDBurnExt).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICDBurnExt" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICDBurnExt), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICDBurnExt), Is.EqualTo(4));
-        }
-    }
 }

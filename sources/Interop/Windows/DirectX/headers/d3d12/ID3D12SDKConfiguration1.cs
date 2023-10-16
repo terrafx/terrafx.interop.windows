@@ -26,7 +26,7 @@ public unsafe partial struct ID3D12SDKConfiguration1 : ID3D12SDKConfiguration1.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D12SDKConfiguration1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12SDKConfiguration1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D12SDKConfiguration1 : ID3D12SDKConfiguration1.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D12SDKConfiguration1*, uint>)(lpVtbl[1]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12SDKConfiguration1*, uint>)(lpVtbl[1]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12SDKConfiguration1 : ID3D12SDKConfiguration1.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D12SDKConfiguration1*, uint>)(lpVtbl[2]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12SDKConfiguration1*, uint>)(lpVtbl[2]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D12SDKConfiguration.SetSDKVersion" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D12SDKConfiguration1 : ID3D12SDKConfiguration1.I
     [VtblIndex(3)]
     public HRESULT SetSDKVersion(uint SDKVersion, [NativeTypeName("LPCSTR")] sbyte* SDKPath)
     {
-        return ((delegate* unmanaged<ID3D12SDKConfiguration1*, uint, sbyte*, int>)(lpVtbl[3]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this), SDKVersion, SDKPath);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12SDKConfiguration1*, uint, sbyte*, int>)(lpVtbl[3]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this), SDKVersion, SDKPath);
     }
 
     /// <include file='ID3D12SDKConfiguration1.xml' path='doc/member[@name="ID3D12SDKConfiguration1.CreateDeviceFactory"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D12SDKConfiguration1 : ID3D12SDKConfiguration1.I
     [VtblIndex(4)]
     public HRESULT CreateDeviceFactory(uint SDKVersion, [NativeTypeName("LPCSTR")] sbyte* SDKPath, [NativeTypeName("const IID &")] Guid* riid, void** ppvFactory)
     {
-        return ((delegate* unmanaged<ID3D12SDKConfiguration1*, uint, sbyte*, Guid*, void**, int>)(lpVtbl[4]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this), SDKVersion, SDKPath, riid, ppvFactory);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12SDKConfiguration1*, uint, sbyte*, Guid*, void**, int>)(lpVtbl[4]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this), SDKVersion, SDKPath, riid, ppvFactory);
     }
 
     /// <include file='ID3D12SDKConfiguration1.xml' path='doc/member[@name="ID3D12SDKConfiguration1.FreeUnusedSDKs"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D12SDKConfiguration1 : ID3D12SDKConfiguration1.I
     [VtblIndex(5)]
     public void FreeUnusedSDKs()
     {
-        ((delegate* unmanaged<ID3D12SDKConfiguration1*, void>)(lpVtbl[5]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID3D12SDKConfiguration1*, void>)(lpVtbl[5]))((ID3D12SDKConfiguration1*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID3D12SDKConfiguration.Interface
@@ -84,21 +84,21 @@ public unsafe partial struct ID3D12SDKConfiguration1 : ID3D12SDKConfiguration1.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, LPCSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, sbyte*, int> SetSDKVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, sbyte*, int> SetSDKVersion;
 
         [NativeTypeName("HRESULT (UINT, LPCSTR, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, sbyte*, Guid*, void**, int> CreateDeviceFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, sbyte*, Guid*, void**, int> CreateDeviceFactory;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> FreeUnusedSDKs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> FreeUnusedSDKs;
     }
 }

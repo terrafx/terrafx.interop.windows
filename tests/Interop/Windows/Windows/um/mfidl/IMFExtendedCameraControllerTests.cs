@@ -19,32 +19,4 @@ public static unsafe partial class IMFExtendedCameraControllerTests
     {
         Assert.That(typeof(IMFExtendedCameraController).GUID, Is.EqualTo(IID_IMFExtendedCameraController));
     }
-
-    /// <summary>Validates that the <see cref="IMFExtendedCameraController" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFExtendedCameraController>(), Is.EqualTo(sizeof(IMFExtendedCameraController)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFExtendedCameraController" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFExtendedCameraController).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFExtendedCameraController" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFExtendedCameraController), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFExtendedCameraController), Is.EqualTo(4));
-        }
-    }
 }

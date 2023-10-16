@@ -25,7 +25,7 @@ public unsafe partial struct IApplicationActivationManager : IApplicationActivat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IApplicationActivationManager*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationActivationManager*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IApplicationActivationManager : IApplicationActivat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IApplicationActivationManager*, uint>)(lpVtbl[1]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationActivationManager*, uint>)(lpVtbl[1]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,64 +43,64 @@ public unsafe partial struct IApplicationActivationManager : IApplicationActivat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IApplicationActivationManager*, uint>)(lpVtbl[2]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationActivationManager*, uint>)(lpVtbl[2]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IApplicationActivationManager.xml' path='doc/member[@name="IApplicationActivationManager.ActivateApplication"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ActivateApplication([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* arguments, ACTIVATEOPTIONS options, [NativeTypeName("DWORD *")] uint* processId)
+    public HRESULT ActivateApplication([NativeTypeName("LPCWSTR")] char* appUserModelId, [NativeTypeName("LPCWSTR")] char* arguments, ACTIVATEOPTIONS options, [NativeTypeName("DWORD *")] uint* processId)
     {
-        return ((delegate* unmanaged<IApplicationActivationManager*, ushort*, ushort*, ACTIVATEOPTIONS, uint*, int>)(lpVtbl[3]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, arguments, options, processId);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationActivationManager*, char*, char*, ACTIVATEOPTIONS, uint*, int>)(lpVtbl[3]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, arguments, options, processId);
     }
 
     /// <include file='IApplicationActivationManager.xml' path='doc/member[@name="IApplicationActivationManager.ActivateForFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT ActivateForFile([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("LPCWSTR")] ushort* verb, [NativeTypeName("DWORD *")] uint* processId)
+    public HRESULT ActivateForFile([NativeTypeName("LPCWSTR")] char* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("LPCWSTR")] char* verb, [NativeTypeName("DWORD *")] uint* processId)
     {
-        return ((delegate* unmanaged<IApplicationActivationManager*, ushort*, IShellItemArray*, ushort*, uint*, int>)(lpVtbl[4]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, itemArray, verb, processId);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationActivationManager*, char*, IShellItemArray*, char*, uint*, int>)(lpVtbl[4]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, itemArray, verb, processId);
     }
 
     /// <include file='IApplicationActivationManager.xml' path='doc/member[@name="IApplicationActivationManager.ActivateForProtocol"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT ActivateForProtocol([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("DWORD *")] uint* processId)
+    public HRESULT ActivateForProtocol([NativeTypeName("LPCWSTR")] char* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("DWORD *")] uint* processId)
     {
-        return ((delegate* unmanaged<IApplicationActivationManager*, ushort*, IShellItemArray*, uint*, int>)(lpVtbl[5]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, itemArray, processId);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationActivationManager*, char*, IShellItemArray*, uint*, int>)(lpVtbl[5]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, itemArray, processId);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ActivateApplication([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* arguments, ACTIVATEOPTIONS options, [NativeTypeName("DWORD *")] uint* processId);
+        HRESULT ActivateApplication([NativeTypeName("LPCWSTR")] char* appUserModelId, [NativeTypeName("LPCWSTR")] char* arguments, ACTIVATEOPTIONS options, [NativeTypeName("DWORD *")] uint* processId);
 
         [VtblIndex(4)]
-        HRESULT ActivateForFile([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("LPCWSTR")] ushort* verb, [NativeTypeName("DWORD *")] uint* processId);
+        HRESULT ActivateForFile([NativeTypeName("LPCWSTR")] char* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("LPCWSTR")] char* verb, [NativeTypeName("DWORD *")] uint* processId);
 
         [VtblIndex(5)]
-        HRESULT ActivateForProtocol([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("DWORD *")] uint* processId);
+        HRESULT ActivateForProtocol([NativeTypeName("LPCWSTR")] char* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("DWORD *")] uint* processId);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ACTIVATEOPTIONS, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ACTIVATEOPTIONS, uint*, int> ActivateApplication;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, ACTIVATEOPTIONS, uint*, int> ActivateApplication;
 
         [NativeTypeName("HRESULT (LPCWSTR, IShellItemArray *, LPCWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IShellItemArray*, ushort*, uint*, int> ActivateForFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IShellItemArray*, char*, uint*, int> ActivateForFile;
 
         [NativeTypeName("HRESULT (LPCWSTR, IShellItemArray *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IShellItemArray*, uint*, int> ActivateForProtocol;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IShellItemArray*, uint*, int> ActivateForProtocol;
     }
 }

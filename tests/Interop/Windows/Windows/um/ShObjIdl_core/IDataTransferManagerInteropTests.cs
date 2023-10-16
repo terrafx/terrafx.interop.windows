@@ -19,32 +19,4 @@ public static unsafe partial class IDataTransferManagerInteropTests
     {
         Assert.That(typeof(IDataTransferManagerInterop).GUID, Is.EqualTo(IID_IDataTransferManagerInterop));
     }
-
-    /// <summary>Validates that the <see cref="IDataTransferManagerInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDataTransferManagerInterop>(), Is.EqualTo(sizeof(IDataTransferManagerInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IDataTransferManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDataTransferManagerInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDataTransferManagerInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDataTransferManagerInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDataTransferManagerInterop), Is.EqualTo(4));
-        }
-    }
 }

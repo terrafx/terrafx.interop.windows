@@ -28,7 +28,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGIDebug1*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIDebug1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDebug1*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIDebug1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGIDebug1*, uint>)(lpVtbl[1]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDebug1*, uint>)(lpVtbl[1]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGIDebug1*, uint>)(lpVtbl[2]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDebug1*, uint>)(lpVtbl[2]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDXGIDebug.ReportLiveObjects" />
@@ -54,7 +54,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT ReportLiveObjects(Guid apiid, DXGI_DEBUG_RLO_FLAGS flags)
     {
-        return ((delegate* unmanaged<IDXGIDebug1*, Guid, DXGI_DEBUG_RLO_FLAGS, int>)(lpVtbl[3]))((IDXGIDebug1*)Unsafe.AsPointer(ref this), apiid, flags);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDebug1*, Guid, DXGI_DEBUG_RLO_FLAGS, int>)(lpVtbl[3]))((IDXGIDebug1*)Unsafe.AsPointer(ref this), apiid, flags);
     }
 
     /// <include file='IDXGIDebug1.xml' path='doc/member[@name="IDXGIDebug1.EnableLeakTrackingForThread"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface, INativeGuid
     [VtblIndex(4)]
     public void EnableLeakTrackingForThread()
     {
-        ((delegate* unmanaged<IDXGIDebug1*, void>)(lpVtbl[4]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IDXGIDebug1*, void>)(lpVtbl[4]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXGIDebug1.xml' path='doc/member[@name="IDXGIDebug1.DisableLeakTrackingForThread"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface, INativeGuid
     [VtblIndex(5)]
     public void DisableLeakTrackingForThread()
     {
-        ((delegate* unmanaged<IDXGIDebug1*, void>)(lpVtbl[5]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IDXGIDebug1*, void>)(lpVtbl[5]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXGIDebug1.xml' path='doc/member[@name="IDXGIDebug1.IsLeakTrackingEnabledForThread"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface, INativeGuid
     [VtblIndex(6)]
     public BOOL IsLeakTrackingEnabledForThread()
     {
-        return ((delegate* unmanaged<IDXGIDebug1*, int>)(lpVtbl[6]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDebug1*, int>)(lpVtbl[6]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDXGIDebug.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID, DXGI_DEBUG_RLO_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_DEBUG_RLO_FLAGS, int> ReportLiveObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_DEBUG_RLO_FLAGS, int> ReportLiveObjects;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> EnableLeakTrackingForThread;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> EnableLeakTrackingForThread;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> DisableLeakTrackingForThread;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> DisableLeakTrackingForThread;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsLeakTrackingEnabledForThread;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsLeakTrackingEnabledForThread;
     }
 }

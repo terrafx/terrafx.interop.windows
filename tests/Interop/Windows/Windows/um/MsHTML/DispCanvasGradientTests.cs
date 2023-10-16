@@ -19,32 +19,4 @@ public static unsafe partial class DispCanvasGradientTests
     {
         Assert.That(typeof(DispCanvasGradient).GUID, Is.EqualTo(IID_DispCanvasGradient));
     }
-
-    /// <summary>Validates that the <see cref="DispCanvasGradient" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispCanvasGradient>(), Is.EqualTo(sizeof(DispCanvasGradient)));
-    }
-
-    /// <summary>Validates that the <see cref="DispCanvasGradient" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispCanvasGradient).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispCanvasGradient" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispCanvasGradient), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispCanvasGradient), Is.EqualTo(4));
-        }
-    }
 }

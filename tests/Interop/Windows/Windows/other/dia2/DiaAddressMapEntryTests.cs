@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DiaAddressMapEntry" /> struct.</summary>
 public static unsafe partial class DiaAddressMapEntryTests
 {
-    /// <summary>Validates that the <see cref="DiaAddressMapEntry" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DiaAddressMapEntry>(), Is.EqualTo(sizeof(DiaAddressMapEntry)));
-    }
-
-    /// <summary>Validates that the <see cref="DiaAddressMapEntry" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DiaAddressMapEntry).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DiaAddressMapEntry" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DiaAddressMapEntry), Is.EqualTo(8));
-    }
 }

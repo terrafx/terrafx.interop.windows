@@ -19,7 +19,7 @@ public unsafe partial struct NMHDDISPINFOW
 
     /// <include file='NMHDDISPINFOW.xml' path='doc/member[@name="NMHDDISPINFOW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='NMHDDISPINFOW.xml' path='doc/member[@name="NMHDDISPINFOW.cchTextMax"]/*' />
     public int cchTextMax;

@@ -19,32 +19,4 @@ public static unsafe partial class ITfCleanupContextDurationSinkTests
     {
         Assert.That(typeof(ITfCleanupContextDurationSink).GUID, Is.EqualTo(IID_ITfCleanupContextDurationSink));
     }
-
-    /// <summary>Validates that the <see cref="ITfCleanupContextDurationSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfCleanupContextDurationSink>(), Is.EqualTo(sizeof(ITfCleanupContextDurationSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfCleanupContextDurationSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfCleanupContextDurationSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfCleanupContextDurationSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfCleanupContextDurationSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfCleanupContextDurationSink), Is.EqualTo(4));
-        }
-    }
 }

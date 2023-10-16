@@ -21,32 +21,4 @@ public static unsafe partial class IWICDdsDecoderTests
     {
         Assert.That(typeof(IWICDdsDecoder).GUID, Is.EqualTo(IID_IWICDdsDecoder));
     }
-
-    /// <summary>Validates that the <see cref="IWICDdsDecoder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICDdsDecoder>(), Is.EqualTo(sizeof(IWICDdsDecoder)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICDdsDecoder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICDdsDecoder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICDdsDecoder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICDdsDecoder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICDdsDecoder), Is.EqualTo(4));
-        }
-    }
 }

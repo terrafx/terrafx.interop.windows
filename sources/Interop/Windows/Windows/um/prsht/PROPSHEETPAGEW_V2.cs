@@ -33,7 +33,7 @@ public unsafe partial struct PROPSHEETPAGEW_V2
 
     /// <include file='PROPSHEETPAGEW_V2.xml' path='doc/member[@name="PROPSHEETPAGEW_V2.pszTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszTitle;
+    public char* pszTitle;
 
     /// <include file='PROPSHEETPAGEW_V2.xml' path='doc/member[@name="PROPSHEETPAGEW_V2.pfnDlgProc"]/*' />
     [NativeTypeName("DLGPROC")]
@@ -51,15 +51,15 @@ public unsafe partial struct PROPSHEETPAGEW_V2
 
     /// <include file='PROPSHEETPAGEW_V2.xml' path='doc/member[@name="PROPSHEETPAGEW_V2.pszHeaderTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszHeaderTitle;
+    public char* pszHeaderTitle;
 
     /// <include file='PROPSHEETPAGEW_V2.xml' path='doc/member[@name="PROPSHEETPAGEW_V2.pszHeaderSubTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszHeaderSubTitle;
+    public char* pszHeaderSubTitle;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszTemplate"]/*' />
     [UnscopedRef]
-    public ref ushort* pszTemplate
+    public ref char* pszTemplate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -92,7 +92,7 @@ public unsafe partial struct PROPSHEETPAGEW_V2
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszIcon"]/*' />
     [UnscopedRef]
-    public ref ushort* pszIcon
+    public ref char* pszIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -108,7 +108,7 @@ public unsafe partial struct PROPSHEETPAGEW_V2
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszTemplate"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pszTemplate;
+        public char* pszTemplate;
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pResource"]/*' />
         [FieldOffset(0)]
@@ -127,6 +127,6 @@ public unsafe partial struct PROPSHEETPAGEW_V2
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszIcon"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pszIcon;
+        public char* pszIcon;
     }
 }

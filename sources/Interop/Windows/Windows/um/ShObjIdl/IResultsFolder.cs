@@ -25,7 +25,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IResultsFolder*, Guid*, void**, int>)(lpVtbl[0]))((IResultsFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IResultsFolder*, Guid*, void**, int>)(lpVtbl[0]))((IResultsFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IResultsFolder*, uint>)(lpVtbl[1]))((IResultsFolder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IResultsFolder*, uint>)(lpVtbl[1]))((IResultsFolder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IResultsFolder*, uint>)(lpVtbl[2]))((IResultsFolder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IResultsFolder*, uint>)(lpVtbl[2]))((IResultsFolder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder.AddItem"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT AddItem(IShellItem* psi)
     {
-        return ((delegate* unmanaged<IResultsFolder*, IShellItem*, int>)(lpVtbl[3]))((IResultsFolder*)Unsafe.AsPointer(ref this), psi);
+        return ((delegate* unmanaged[MemberFunction]<IResultsFolder*, IShellItem*, int>)(lpVtbl[3]))((IResultsFolder*)Unsafe.AsPointer(ref this), psi);
     }
 
     /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder.AddIDList"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT AddIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlAdded)
     {
-        return ((delegate* unmanaged<IResultsFolder*, ITEMIDLIST*, ITEMIDLIST**, int>)(lpVtbl[4]))((IResultsFolder*)Unsafe.AsPointer(ref this), pidl, ppidlAdded);
+        return ((delegate* unmanaged[MemberFunction]<IResultsFolder*, ITEMIDLIST*, ITEMIDLIST**, int>)(lpVtbl[4]))((IResultsFolder*)Unsafe.AsPointer(ref this), pidl, ppidlAdded);
     }
 
     /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder.RemoveItem"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT RemoveItem(IShellItem* psi)
     {
-        return ((delegate* unmanaged<IResultsFolder*, IShellItem*, int>)(lpVtbl[5]))((IResultsFolder*)Unsafe.AsPointer(ref this), psi);
+        return ((delegate* unmanaged[MemberFunction]<IResultsFolder*, IShellItem*, int>)(lpVtbl[5]))((IResultsFolder*)Unsafe.AsPointer(ref this), psi);
     }
 
     /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder.RemoveIDList"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT RemoveIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
     {
-        return ((delegate* unmanaged<IResultsFolder*, ITEMIDLIST*, int>)(lpVtbl[6]))((IResultsFolder*)Unsafe.AsPointer(ref this), pidl);
+        return ((delegate* unmanaged[MemberFunction]<IResultsFolder*, ITEMIDLIST*, int>)(lpVtbl[6]))((IResultsFolder*)Unsafe.AsPointer(ref this), pidl);
     }
 
     /// <include file='IResultsFolder.xml' path='doc/member[@name="IResultsFolder.RemoveAll"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT RemoveAll()
     {
-        return ((delegate* unmanaged<IResultsFolder*, int>)(lpVtbl[7]))((IResultsFolder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IResultsFolder*, int>)(lpVtbl[7]))((IResultsFolder*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> AddItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> AddItem;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, ITEMIDLIST**, int> AddIDList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, ITEMIDLIST**, int> AddIDList;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> RemoveItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> RemoveItem;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> RemoveIDList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, int> RemoveIDList;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RemoveAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RemoveAll;
     }
 }

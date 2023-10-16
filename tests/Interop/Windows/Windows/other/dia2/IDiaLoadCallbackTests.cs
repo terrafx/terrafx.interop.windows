@@ -19,32 +19,4 @@ public static unsafe partial class IDiaLoadCallbackTests
     {
         Assert.That(typeof(IDiaLoadCallback).GUID, Is.EqualTo(IID_IDiaLoadCallback));
     }
-
-    /// <summary>Validates that the <see cref="IDiaLoadCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaLoadCallback>(), Is.EqualTo(sizeof(IDiaLoadCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaLoadCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaLoadCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaLoadCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaLoadCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaLoadCallback), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IAudioChannelConfigTests
     {
         Assert.That(typeof(IAudioChannelConfig).GUID, Is.EqualTo(IID_IAudioChannelConfig));
     }
-
-    /// <summary>Validates that the <see cref="IAudioChannelConfig" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioChannelConfig>(), Is.EqualTo(sizeof(IAudioChannelConfig)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioChannelConfig" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioChannelConfig).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioChannelConfig" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioChannelConfig), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioChannelConfig), Is.EqualTo(4));
-        }
-    }
 }

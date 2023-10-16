@@ -19,25 +19,4 @@ public static unsafe partial class HTMLTextElementTests
     {
         Assert.That(typeof(HTMLTextElement).GUID, Is.EqualTo(IID_HTMLTextElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLTextElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLTextElement>(), Is.EqualTo(sizeof(HTMLTextElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLTextElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLTextElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLTextElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLTextElement), Is.EqualTo(1));
-    }
 }

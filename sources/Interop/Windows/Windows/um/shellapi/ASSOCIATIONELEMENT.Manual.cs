@@ -69,7 +69,7 @@ public unsafe partial struct ASSOCIATIONELEMENT
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* pszClass
+    public ref char* pszClass
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

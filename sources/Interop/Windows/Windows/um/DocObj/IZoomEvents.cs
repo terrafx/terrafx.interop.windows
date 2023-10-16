@@ -25,7 +25,7 @@ public unsafe partial struct IZoomEvents : IZoomEvents.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IZoomEvents*, Guid*, void**, int>)(lpVtbl[0]))((IZoomEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IZoomEvents*, Guid*, void**, int>)(lpVtbl[0]))((IZoomEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IZoomEvents : IZoomEvents.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IZoomEvents*, uint>)(lpVtbl[1]))((IZoomEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IZoomEvents*, uint>)(lpVtbl[1]))((IZoomEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IZoomEvents : IZoomEvents.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IZoomEvents*, uint>)(lpVtbl[2]))((IZoomEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IZoomEvents*, uint>)(lpVtbl[2]))((IZoomEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IZoomEvents.xml' path='doc/member[@name="IZoomEvents.OnZoomPercentChanged"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IZoomEvents : IZoomEvents.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT OnZoomPercentChanged([NativeTypeName("ULONG")] uint ulZoomPercent)
     {
-        return ((delegate* unmanaged<IZoomEvents*, uint, int>)(lpVtbl[3]))((IZoomEvents*)Unsafe.AsPointer(ref this), ulZoomPercent);
+        return ((delegate* unmanaged[MemberFunction]<IZoomEvents*, uint, int>)(lpVtbl[3]))((IZoomEvents*)Unsafe.AsPointer(ref this), ulZoomPercent);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IZoomEvents : IZoomEvents.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnZoomPercentChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnZoomPercentChanged;
     }
 }

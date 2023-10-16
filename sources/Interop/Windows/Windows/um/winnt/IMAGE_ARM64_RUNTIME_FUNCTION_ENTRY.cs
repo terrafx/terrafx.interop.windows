@@ -35,7 +35,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
     public uint Flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Flag;
         }
@@ -51,7 +51,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
     public uint FunctionLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.FunctionLength;
         }
@@ -67,7 +67,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
     public uint RegF
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.RegF;
         }
@@ -83,7 +83,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
     public uint RegI
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.RegI;
         }
@@ -99,7 +99,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
     public uint H
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.H;
         }
@@ -115,7 +115,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
     public uint CR
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.CR;
         }
@@ -131,7 +131,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
     public uint FrameSize
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.FrameSize;
         }
@@ -167,7 +167,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
             public uint Flag
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x3u;
                 }
@@ -184,7 +184,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
             public uint FunctionLength
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x7FFu;
                 }
@@ -201,7 +201,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
             public uint RegF
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 13) & 0x7u;
                 }
@@ -218,7 +218,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
             public uint RegI
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0xFu;
                 }
@@ -235,7 +235,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
             public uint H
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 20) & 0x1u;
                 }
@@ -252,7 +252,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
             public uint CR
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 21) & 0x3u;
                 }
@@ -269,7 +269,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
             public uint FrameSize
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 23) & 0x1FFu;
                 }

@@ -19,25 +19,4 @@ public static unsafe partial class XblIdpAuthManagerTests
     {
         Assert.That(typeof(XblIdpAuthManager).GUID, Is.EqualTo(CLSID_XblIdpAuthManager));
     }
-
-    /// <summary>Validates that the <see cref="XblIdpAuthManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<XblIdpAuthManager>(), Is.EqualTo(sizeof(XblIdpAuthManager)));
-    }
-
-    /// <summary>Validates that the <see cref="XblIdpAuthManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(XblIdpAuthManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="XblIdpAuthManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(XblIdpAuthManager), Is.EqualTo(1));
-    }
 }

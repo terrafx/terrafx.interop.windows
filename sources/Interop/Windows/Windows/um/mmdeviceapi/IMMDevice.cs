@@ -25,7 +25,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMMDevice*, Guid*, void**, int>)(lpVtbl[0]))((IMMDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMMDevice*, Guid*, void**, int>)(lpVtbl[0]))((IMMDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMMDevice*, uint>)(lpVtbl[1]))((IMMDevice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMMDevice*, uint>)(lpVtbl[1]))((IMMDevice*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMMDevice*, uint>)(lpVtbl[2]))((IMMDevice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMMDevice*, uint>)(lpVtbl[2]))((IMMDevice*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice.Activate"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Activate([NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("DWORD")] uint dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface)
     {
-        return ((delegate* unmanaged<IMMDevice*, Guid*, uint, PROPVARIANT*, void**, int>)(lpVtbl[3]))((IMMDevice*)Unsafe.AsPointer(ref this), iid, dwClsCtx, pActivationParams, ppInterface);
+        return ((delegate* unmanaged[MemberFunction]<IMMDevice*, Guid*, uint, PROPVARIANT*, void**, int>)(lpVtbl[3]))((IMMDevice*)Unsafe.AsPointer(ref this), iid, dwClsCtx, pActivationParams, ppInterface);
     }
 
     /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice.OpenPropertyStore"]/*' />
@@ -59,15 +59,15 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT OpenPropertyStore([NativeTypeName("DWORD")] uint stgmAccess, IPropertyStore** ppProperties)
     {
-        return ((delegate* unmanaged<IMMDevice*, uint, IPropertyStore**, int>)(lpVtbl[4]))((IMMDevice*)Unsafe.AsPointer(ref this), stgmAccess, ppProperties);
+        return ((delegate* unmanaged[MemberFunction]<IMMDevice*, uint, IPropertyStore**, int>)(lpVtbl[4]))((IMMDevice*)Unsafe.AsPointer(ref this), stgmAccess, ppProperties);
     }
 
     /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice.GetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetId([NativeTypeName("LPWSTR *")] ushort** ppstrId)
+    public HRESULT GetId([NativeTypeName("LPWSTR *")] char** ppstrId)
     {
-        return ((delegate* unmanaged<IMMDevice*, ushort**, int>)(lpVtbl[5]))((IMMDevice*)Unsafe.AsPointer(ref this), ppstrId);
+        return ((delegate* unmanaged[MemberFunction]<IMMDevice*, char**, int>)(lpVtbl[5]))((IMMDevice*)Unsafe.AsPointer(ref this), ppstrId);
     }
 
     /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice.GetState"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetState([NativeTypeName("DWORD *")] uint* pdwState)
     {
-        return ((delegate* unmanaged<IMMDevice*, uint*, int>)(lpVtbl[6]))((IMMDevice*)Unsafe.AsPointer(ref this), pdwState);
+        return ((delegate* unmanaged[MemberFunction]<IMMDevice*, uint*, int>)(lpVtbl[6]))((IMMDevice*)Unsafe.AsPointer(ref this), pdwState);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,7 +87,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
         HRESULT OpenPropertyStore([NativeTypeName("DWORD")] uint stgmAccess, IPropertyStore** ppProperties);
 
         [VtblIndex(5)]
-        HRESULT GetId([NativeTypeName("LPWSTR *")] ushort** ppstrId);
+        HRESULT GetId([NativeTypeName("LPWSTR *")] char** ppstrId);
 
         [VtblIndex(6)]
         HRESULT GetState([NativeTypeName("DWORD *")] uint* pdwState);
@@ -97,24 +97,24 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, DWORD, PROPVARIANT *, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, PROPVARIANT*, void**, int> Activate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, PROPVARIANT*, void**, int> Activate;
 
         [NativeTypeName("HRESULT (DWORD, IPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IPropertyStore**, int> OpenPropertyStore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPropertyStore**, int> OpenPropertyStore;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetState;
     }
 }

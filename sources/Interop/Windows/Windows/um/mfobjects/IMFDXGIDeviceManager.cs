@@ -27,7 +27,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFDXGIDeviceManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFDXGIDeviceManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFDXGIDeviceManager*, uint>)(lpVtbl[1]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFDXGIDeviceManager*, uint>)(lpVtbl[1]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFDXGIDeviceManager*, uint>)(lpVtbl[2]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFDXGIDeviceManager*, uint>)(lpVtbl[2]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.CloseDeviceHandle"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
     [VtblIndex(3)]
     public HRESULT CloseDeviceHandle(HANDLE hDevice)
     {
-        return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int>)(lpVtbl[3]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice);
+        return ((delegate* unmanaged[MemberFunction]<IMFDXGIDeviceManager*, HANDLE, int>)(lpVtbl[3]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice);
     }
 
     /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.GetVideoService"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
     [VtblIndex(4)]
     public HRESULT GetVideoService(HANDLE hDevice, [NativeTypeName("const IID &")] Guid* riid, void** ppService)
     {
-        return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, int>)(lpVtbl[4]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, riid, ppService);
+        return ((delegate* unmanaged[MemberFunction]<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, int>)(lpVtbl[4]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, riid, ppService);
     }
 
     /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.LockDevice"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
     [VtblIndex(5)]
     public HRESULT LockDevice(HANDLE hDevice, [NativeTypeName("const IID &")] Guid* riid, void** ppUnkDevice, BOOL fBlock)
     {
-        return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, BOOL, int>)(lpVtbl[5]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, riid, ppUnkDevice, fBlock);
+        return ((delegate* unmanaged[MemberFunction]<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, BOOL, int>)(lpVtbl[5]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, riid, ppUnkDevice, fBlock);
     }
 
     /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.OpenDeviceHandle"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
     [VtblIndex(6)]
     public HRESULT OpenDeviceHandle(HANDLE* phDevice)
     {
-        return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE*, int>)(lpVtbl[6]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), phDevice);
+        return ((delegate* unmanaged[MemberFunction]<IMFDXGIDeviceManager*, HANDLE*, int>)(lpVtbl[6]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), phDevice);
     }
 
     /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.ResetDevice"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
     [VtblIndex(7)]
     public HRESULT ResetDevice(IUnknown* pUnkDevice, uint resetToken)
     {
-        return ((delegate* unmanaged<IMFDXGIDeviceManager*, IUnknown*, uint, int>)(lpVtbl[7]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), pUnkDevice, resetToken);
+        return ((delegate* unmanaged[MemberFunction]<IMFDXGIDeviceManager*, IUnknown*, uint, int>)(lpVtbl[7]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), pUnkDevice, resetToken);
     }
 
     /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.TestDevice"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
     [VtblIndex(8)]
     public HRESULT TestDevice(HANDLE hDevice)
     {
-        return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int>)(lpVtbl[8]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice);
+        return ((delegate* unmanaged[MemberFunction]<IMFDXGIDeviceManager*, HANDLE, int>)(lpVtbl[8]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice);
     }
 
     /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.UnlockDevice"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
     [VtblIndex(9)]
     public HRESULT UnlockDevice(HANDLE hDevice, BOOL fSaveState)
     {
-        return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, BOOL, int>)(lpVtbl[9]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, fSaveState);
+        return ((delegate* unmanaged[MemberFunction]<IMFDXGIDeviceManager*, HANDLE, BOOL, int>)(lpVtbl[9]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, fSaveState);
     }
 
     public interface Interface : IUnknown.Interface
@@ -132,33 +132,33 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, int> CloseDeviceHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, int> CloseDeviceHandle;
 
         [NativeTypeName("HRESULT (HANDLE, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, Guid*, void**, int> GetVideoService;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, Guid*, void**, int> GetVideoService;
 
         [NativeTypeName("HRESULT (HANDLE, const IID &, void **, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, Guid*, void**, BOOL, int> LockDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, Guid*, void**, BOOL, int> LockDevice;
 
         [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE*, int> OpenDeviceHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE*, int> OpenDeviceHandle;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> ResetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, int> ResetDevice;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, int> TestDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, int> TestDevice;
 
         [NativeTypeName("HRESULT (HANDLE, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, BOOL, int> UnlockDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, BOOL, int> UnlockDevice;
     }
 }

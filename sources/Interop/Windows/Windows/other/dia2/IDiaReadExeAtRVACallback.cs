@@ -25,7 +25,7 @@ public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, Guid*, void**, int>)(lpVtbl[0]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaReadExeAtRVACallback*, Guid*, void**, int>)(lpVtbl[0]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, uint>)(lpVtbl[1]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaReadExeAtRVACallback*, uint>)(lpVtbl[1]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, uint>)(lpVtbl[2]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaReadExeAtRVACallback*, uint>)(lpVtbl[2]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaReadExeAtRVACallback.xml' path='doc/member[@name="IDiaReadExeAtRVACallback.ReadExecutableAtRVA"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback
     [VtblIndex(3)]
     public HRESULT ReadExecutableAtRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
     {
-        return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, uint, uint, uint*, byte*, int>)(lpVtbl[3]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this), relativeVirtualAddress, cbData, pcbData, pbData);
+        return ((delegate* unmanaged[MemberFunction]<IDiaReadExeAtRVACallback*, uint, uint, uint*, byte*, int>)(lpVtbl[3]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this), relativeVirtualAddress, cbData, pcbData, pbData);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint*, byte*, int> ReadExecutableAtRVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint*, byte*, int> ReadExecutableAtRVA;
     }
 }

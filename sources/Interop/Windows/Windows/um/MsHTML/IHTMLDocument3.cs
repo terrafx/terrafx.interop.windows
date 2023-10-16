@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, uint>)(lpVtbl[1]))((IHTMLDocument3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, uint>)(lpVtbl[1]))((IHTMLDocument3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, uint>)(lpVtbl[2]))((IHTMLDocument3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, uint>)(lpVtbl[2]))((IHTMLDocument3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, uint*, int>)(lpVtbl[3]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, uint*, int>)(lpVtbl[3]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.releaseCapture"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT releaseCapture()
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, int>)(lpVtbl[7]))((IHTMLDocument3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, int>)(lpVtbl[7]))((IHTMLDocument3*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.recalc"]/*' />
@@ -91,15 +91,15 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT recalc([NativeTypeName("VARIANT_BOOL")] short fForce = 0)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, short, int>)(lpVtbl[8]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), fForce);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, short, int>)(lpVtbl[8]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), fForce);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.createTextNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT createTextNode([NativeTypeName("BSTR")] ushort* text, IHTMLDOMNode** newTextNode)
+    public HRESULT createTextNode([NativeTypeName("BSTR")] char* text, IHTMLDOMNode** newTextNode)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort*, IHTMLDOMNode**, int>)(lpVtbl[9]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), text, newTextNode);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char*, IHTMLDOMNode**, int>)(lpVtbl[9]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), text, newTextNode);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_documentElement"]/*' />
@@ -107,31 +107,31 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT get_documentElement(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, IHTMLElement**, int>)(lpVtbl[10]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, IHTMLElement**, int>)(lpVtbl[10]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_uniqueID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_uniqueID([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_uniqueID([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort**, int>)(lpVtbl[11]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char**, int>)(lpVtbl[11]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.attachEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT attachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult)
+    public HRESULT attachEvent([NativeTypeName("BSTR")] char* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort*, IDispatch*, short*, int>)(lpVtbl[12]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), @event, pDisp, pfResult);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char*, IDispatch*, short*, int>)(lpVtbl[12]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), @event, pDisp, pfResult);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.detachEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp)
+    public HRESULT detachEvent([NativeTypeName("BSTR")] char* @event, IDispatch* pDisp)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort*, IDispatch*, int>)(lpVtbl[13]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), @event, pDisp);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char*, IDispatch*, int>)(lpVtbl[13]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), @event, pDisp);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_onrowsdelete"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(14)]
     public HRESULT put_onrowsdelete(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT, int>)(lpVtbl[14]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT, int>)(lpVtbl[14]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_onrowsdelete"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(15)]
     public HRESULT get_onrowsdelete(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[15]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[15]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_onrowsinserted"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(16)]
     public HRESULT put_onrowsinserted(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT, int>)(lpVtbl[16]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT, int>)(lpVtbl[16]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_onrowsinserted"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(17)]
     public HRESULT get_onrowsinserted(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[17]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[17]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_oncellchange"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(18)]
     public HRESULT put_oncellchange(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT, int>)(lpVtbl[18]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT, int>)(lpVtbl[18]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_oncellchange"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(19)]
     public HRESULT get_oncellchange(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[19]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[19]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_ondatasetchanged"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(20)]
     public HRESULT put_ondatasetchanged(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT, int>)(lpVtbl[20]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT, int>)(lpVtbl[20]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_ondatasetchanged"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(21)]
     public HRESULT get_ondatasetchanged(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[21]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[21]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_ondataavailable"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(22)]
     public HRESULT put_ondataavailable(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT, int>)(lpVtbl[22]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT, int>)(lpVtbl[22]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_ondataavailable"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(23)]
     public HRESULT get_ondataavailable(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[23]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[23]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_ondatasetcomplete"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(24)]
     public HRESULT put_ondatasetcomplete(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT, int>)(lpVtbl[24]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT, int>)(lpVtbl[24]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_ondatasetcomplete"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(25)]
     public HRESULT get_ondatasetcomplete(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[25]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[25]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_onpropertychange"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(26)]
     public HRESULT put_onpropertychange(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT, int>)(lpVtbl[26]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT, int>)(lpVtbl[26]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_onpropertychange"]/*' />
@@ -243,23 +243,23 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(27)]
     public HRESULT get_onpropertychange(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[27]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[27]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_dir"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT put_dir([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_dir([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort*, int>)(lpVtbl[28]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char*, int>)(lpVtbl[28]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_dir"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT get_dir([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_dir([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort**, int>)(lpVtbl[29]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char**, int>)(lpVtbl[29]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_oncontextmenu"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(30)]
     public HRESULT put_oncontextmenu(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT, int>)(lpVtbl[30]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT, int>)(lpVtbl[30]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_oncontextmenu"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(31)]
     public HRESULT get_oncontextmenu(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[31]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[31]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_onstop"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(32)]
     public HRESULT put_onstop(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT, int>)(lpVtbl[32]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT, int>)(lpVtbl[32]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_onstop"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(33)]
     public HRESULT get_onstop(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[33]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[33]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.createDocumentFragment"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(34)]
     public HRESULT createDocumentFragment(IHTMLDocument2** pNewDoc)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, IHTMLDocument2**, int>)(lpVtbl[34]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), pNewDoc);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, IHTMLDocument2**, int>)(lpVtbl[34]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), pNewDoc);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_parentDocument"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(35)]
     public HRESULT get_parentDocument(IHTMLDocument2** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, IHTMLDocument2**, int>)(lpVtbl[35]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, IHTMLDocument2**, int>)(lpVtbl[35]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_enableDownload"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(36)]
     public HRESULT put_enableDownload([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, short, int>)(lpVtbl[36]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, short, int>)(lpVtbl[36]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_enableDownload"]/*' />
@@ -323,23 +323,23 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(37)]
     public HRESULT get_enableDownload([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, short*, int>)(lpVtbl[37]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, short*, int>)(lpVtbl[37]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_baseUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
-    public HRESULT put_baseUrl([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_baseUrl([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort*, int>)(lpVtbl[38]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char*, int>)(lpVtbl[38]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_baseUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
-    public HRESULT get_baseUrl([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_baseUrl([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort**, int>)(lpVtbl[39]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char**, int>)(lpVtbl[39]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_childNodes"]/*' />
@@ -347,7 +347,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(40)]
     public HRESULT get_childNodes(IDispatch** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, IDispatch**, int>)(lpVtbl[40]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, IDispatch**, int>)(lpVtbl[40]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_inheritStyleSheets"]/*' />
@@ -355,7 +355,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(41)]
     public HRESULT put_inheritStyleSheets([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, short, int>)(lpVtbl[41]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, short, int>)(lpVtbl[41]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_inheritStyleSheets"]/*' />
@@ -363,7 +363,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(42)]
     public HRESULT get_inheritStyleSheets([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, short*, int>)(lpVtbl[42]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, short*, int>)(lpVtbl[42]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.put_onbeforeeditfocus"]/*' />
@@ -371,7 +371,7 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(43)]
     public HRESULT put_onbeforeeditfocus(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT, int>)(lpVtbl[43]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT, int>)(lpVtbl[43]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.get_onbeforeeditfocus"]/*' />
@@ -379,31 +379,31 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
     [VtblIndex(44)]
     public HRESULT get_onbeforeeditfocus(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[44]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, VARIANT*, int>)(lpVtbl[44]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.getElementsByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
-    public HRESULT getElementsByName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pelColl)
+    public HRESULT getElementsByName([NativeTypeName("BSTR")] char* v, IHTMLElementCollection** pelColl)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort*, IHTMLElementCollection**, int>)(lpVtbl[45]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v, pelColl);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char*, IHTMLElementCollection**, int>)(lpVtbl[45]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v, pelColl);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.getElementById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
-    public HRESULT getElementById([NativeTypeName("BSTR")] ushort* v, IHTMLElement** pel)
+    public HRESULT getElementById([NativeTypeName("BSTR")] char* v, IHTMLElement** pel)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort*, IHTMLElement**, int>)(lpVtbl[46]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v, pel);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char*, IHTMLElement**, int>)(lpVtbl[46]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v, pel);
     }
 
     /// <include file='IHTMLDocument3.xml' path='doc/member[@name="IHTMLDocument3.getElementsByTagName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
-    public HRESULT getElementsByTagName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pelColl)
+    public HRESULT getElementsByTagName([NativeTypeName("BSTR")] char* v, IHTMLElementCollection** pelColl)
     {
-        return ((delegate* unmanaged<IHTMLDocument3*, ushort*, IHTMLElementCollection**, int>)(lpVtbl[47]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v, pelColl);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDocument3*, char*, IHTMLElementCollection**, int>)(lpVtbl[47]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v, pelColl);
     }
 
     public interface Interface : IDispatch.Interface
@@ -415,19 +415,19 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
         HRESULT recalc([NativeTypeName("VARIANT_BOOL")] short fForce = 0);
 
         [VtblIndex(9)]
-        HRESULT createTextNode([NativeTypeName("BSTR")] ushort* text, IHTMLDOMNode** newTextNode);
+        HRESULT createTextNode([NativeTypeName("BSTR")] char* text, IHTMLDOMNode** newTextNode);
 
         [VtblIndex(10)]
         HRESULT get_documentElement(IHTMLElement** p);
 
         [VtblIndex(11)]
-        HRESULT get_uniqueID([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_uniqueID([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(12)]
-        HRESULT attachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
+        HRESULT attachEvent([NativeTypeName("BSTR")] char* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
 
         [VtblIndex(13)]
-        HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp);
+        HRESULT detachEvent([NativeTypeName("BSTR")] char* @event, IDispatch* pDisp);
 
         [VtblIndex(14)]
         HRESULT put_onrowsdelete(VARIANT v);
@@ -472,10 +472,10 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
         HRESULT get_onpropertychange(VARIANT* p);
 
         [VtblIndex(28)]
-        HRESULT put_dir([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_dir([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(29)]
-        HRESULT get_dir([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_dir([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(30)]
         HRESULT put_oncontextmenu(VARIANT v);
@@ -502,10 +502,10 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
         HRESULT get_enableDownload([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(38)]
-        HRESULT put_baseUrl([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_baseUrl([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(39)]
-        HRESULT get_baseUrl([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_baseUrl([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(40)]
         HRESULT get_childNodes(IDispatch** p);
@@ -523,160 +523,160 @@ public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface, INativeG
         HRESULT get_onbeforeeditfocus(VARIANT* p);
 
         [VtblIndex(45)]
-        HRESULT getElementsByName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pelColl);
+        HRESULT getElementsByName([NativeTypeName("BSTR")] char* v, IHTMLElementCollection** pelColl);
 
         [VtblIndex(46)]
-        HRESULT getElementById([NativeTypeName("BSTR")] ushort* v, IHTMLElement** pel);
+        HRESULT getElementById([NativeTypeName("BSTR")] char* v, IHTMLElement** pel);
 
         [VtblIndex(47)]
-        HRESULT getElementsByTagName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pelColl);
+        HRESULT getElementsByTagName([NativeTypeName("BSTR")] char* v, IHTMLElementCollection** pelColl);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> releaseCapture;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> releaseCapture;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> recalc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> recalc;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMNode**, int> createTextNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IHTMLDOMNode**, int> createTextNode;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_documentElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_documentElement;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_uniqueID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_uniqueID;
 
         [NativeTypeName("HRESULT (BSTR, IDispatch *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IDispatch*, short*, int> attachEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IDispatch*, short*, int> attachEvent;
 
         [NativeTypeName("HRESULT (BSTR, IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IDispatch*, int> detachEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IDispatch*, int> detachEvent;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onrowsdelete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onrowsdelete;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onrowsdelete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onrowsdelete;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onrowsinserted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onrowsinserted;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onrowsinserted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onrowsinserted;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_oncellchange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_oncellchange;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_oncellchange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_oncellchange;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_ondatasetchanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_ondatasetchanged;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_ondatasetchanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_ondatasetchanged;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_ondataavailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_ondataavailable;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_ondataavailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_ondataavailable;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_ondatasetcomplete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_ondatasetcomplete;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_ondatasetcomplete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_ondatasetcomplete;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onpropertychange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onpropertychange;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onpropertychange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onpropertychange;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_dir;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_dir;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_dir;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_dir;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_oncontextmenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_oncontextmenu;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_oncontextmenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_oncontextmenu;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onstop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onstop;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onstop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onstop;
 
         [NativeTypeName("HRESULT (IHTMLDocument2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLDocument2**, int> createDocumentFragment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLDocument2**, int> createDocumentFragment;
 
         [NativeTypeName("HRESULT (IHTMLDocument2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLDocument2**, int> get_parentDocument;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLDocument2**, int> get_parentDocument;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_enableDownload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_enableDownload;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_enableDownload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_enableDownload;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_baseUrl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_baseUrl;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_baseUrl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_baseUrl;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_childNodes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_childNodes;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_inheritStyleSheets;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_inheritStyleSheets;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_inheritStyleSheets;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_inheritStyleSheets;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onbeforeeditfocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onbeforeeditfocus;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onbeforeeditfocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onbeforeeditfocus;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElementCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLElementCollection**, int> getElementsByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IHTMLElementCollection**, int> getElementsByName;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLElement**, int> getElementById;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IHTMLElement**, int> getElementById;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElementCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLElementCollection**, int> getElementsByTagName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IHTMLElementCollection**, int> getElementsByTagName;
     }
 }

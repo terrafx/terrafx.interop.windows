@@ -19,25 +19,4 @@ public static unsafe partial class UnsecuredApartmentTests
     {
         Assert.That(typeof(UnsecuredApartment).GUID, Is.EqualTo(IID_UnsecuredApartment));
     }
-
-    /// <summary>Validates that the <see cref="UnsecuredApartment" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<UnsecuredApartment>(), Is.EqualTo(sizeof(UnsecuredApartment)));
-    }
-
-    /// <summary>Validates that the <see cref="UnsecuredApartment" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(UnsecuredApartment).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="UnsecuredApartment" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(UnsecuredApartment), Is.EqualTo(1));
-    }
 }

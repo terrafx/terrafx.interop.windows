@@ -31,7 +31,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
     public uint SmtBranchTargetIsolation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.SmtBranchTargetIsolation;
         }
@@ -47,7 +47,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
     public uint IsolateSecurityDomain
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.IsolateSecurityDomain;
         }
@@ -63,7 +63,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
     public uint DisablePageCombine
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.DisablePageCombine;
         }
@@ -79,7 +79,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
     public uint SpeculativeStoreBypassDisable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.SpeculativeStoreBypassDisable;
         }
@@ -95,7 +95,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
     public uint RestrictCoreSharing
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.RestrictCoreSharing;
         }
@@ -111,7 +111,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -147,7 +147,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
             public uint SmtBranchTargetIsolation
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -164,7 +164,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
             public uint IsolateSecurityDomain
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -181,7 +181,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
             public uint DisablePageCombine
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -198,7 +198,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
             public uint SpeculativeStoreBypassDisable
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -215,7 +215,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
             public uint RestrictCoreSharing
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x1u;
                 }
@@ -232,7 +232,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 5) & 0x7FFFFFFu;
                 }

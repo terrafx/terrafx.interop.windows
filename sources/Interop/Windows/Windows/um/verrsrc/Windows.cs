@@ -8,7 +8,7 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class Windows
 {
     [NativeTypeName("#define VS_FILE_INFO RT_VERSION")]
-    public static ushort* VS_FILE_INFO => ((ushort*)((nuint)((ushort)(16))));
+    public static char* VS_FILE_INFO => ((char*)((nuint)((ushort)(16))));
 
     [NativeTypeName("#define VS_VERSION_INFO 1")]
     public const int VS_VERSION_INFO = 1;

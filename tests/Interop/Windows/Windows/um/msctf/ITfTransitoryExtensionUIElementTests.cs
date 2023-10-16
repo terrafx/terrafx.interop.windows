@@ -19,32 +19,4 @@ public static unsafe partial class ITfTransitoryExtensionUIElementTests
     {
         Assert.That(typeof(ITfTransitoryExtensionUIElement).GUID, Is.EqualTo(IID_ITfTransitoryExtensionUIElement));
     }
-
-    /// <summary>Validates that the <see cref="ITfTransitoryExtensionUIElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfTransitoryExtensionUIElement>(), Is.EqualTo(sizeof(ITfTransitoryExtensionUIElement)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfTransitoryExtensionUIElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfTransitoryExtensionUIElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfTransitoryExtensionUIElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfTransitoryExtensionUIElement), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfTransitoryExtensionUIElement), Is.EqualTo(4));
-        }
-    }
 }

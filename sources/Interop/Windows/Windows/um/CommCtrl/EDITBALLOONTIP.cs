@@ -14,11 +14,11 @@ public unsafe partial struct EDITBALLOONTIP
 
     /// <include file='EDITBALLOONTIP.xml' path='doc/member[@name="EDITBALLOONTIP.pszTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszTitle;
+    public char* pszTitle;
 
     /// <include file='EDITBALLOONTIP.xml' path='doc/member[@name="EDITBALLOONTIP.pszText"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='EDITBALLOONTIP.xml' path='doc/member[@name="EDITBALLOONTIP.ttiIcon"]/*' />
     public int ttiIcon;

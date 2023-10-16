@@ -25,7 +25,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, Guid*, void**, int>)(lpVtbl[0]))((IAMExtDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, Guid*, void**, int>)(lpVtbl[0]))((IAMExtDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMExtDevice*, uint>)(lpVtbl[1]))((IAMExtDevice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, uint>)(lpVtbl[1]))((IAMExtDevice*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMExtDevice*, uint>)(lpVtbl[2]))((IAMExtDevice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, uint>)(lpVtbl[2]))((IAMExtDevice*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.GetCapability"]/*' />
@@ -51,23 +51,23 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, int, int*, double*, int>)(lpVtbl[3]))((IAMExtDevice*)Unsafe.AsPointer(ref this), Capability, pValue, pdblValue);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, int, int*, double*, int>)(lpVtbl[3]))((IAMExtDevice*)Unsafe.AsPointer(ref this), Capability, pValue, pdblValue);
     }
 
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.get_ExternalDeviceID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT get_ExternalDeviceID([NativeTypeName("LPOLESTR *")] ushort** ppszData)
+    public HRESULT get_ExternalDeviceID([NativeTypeName("LPOLESTR *")] char** ppszData)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, ushort**, int>)(lpVtbl[4]))((IAMExtDevice*)Unsafe.AsPointer(ref this), ppszData);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, char**, int>)(lpVtbl[4]))((IAMExtDevice*)Unsafe.AsPointer(ref this), ppszData);
     }
 
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.get_ExternalDeviceVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT get_ExternalDeviceVersion([NativeTypeName("LPOLESTR *")] ushort** ppszData)
+    public HRESULT get_ExternalDeviceVersion([NativeTypeName("LPOLESTR *")] char** ppszData)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, ushort**, int>)(lpVtbl[5]))((IAMExtDevice*)Unsafe.AsPointer(ref this), ppszData);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, char**, int>)(lpVtbl[5]))((IAMExtDevice*)Unsafe.AsPointer(ref this), ppszData);
     }
 
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.put_DevicePower"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT put_DevicePower([NativeTypeName("long")] int PowerMode)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, int, int>)(lpVtbl[6]))((IAMExtDevice*)Unsafe.AsPointer(ref this), PowerMode);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, int, int>)(lpVtbl[6]))((IAMExtDevice*)Unsafe.AsPointer(ref this), PowerMode);
     }
 
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.get_DevicePower"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_DevicePower([NativeTypeName("long *")] int* pPowerMode)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, int*, int>)(lpVtbl[7]))((IAMExtDevice*)Unsafe.AsPointer(ref this), pPowerMode);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, int*, int>)(lpVtbl[7]))((IAMExtDevice*)Unsafe.AsPointer(ref this), pPowerMode);
     }
 
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.Calibrate"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT Calibrate(HEVENT hEvent, [NativeTypeName("long")] int Mode, [NativeTypeName("long *")] int* pStatus)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, HEVENT, int, int*, int>)(lpVtbl[8]))((IAMExtDevice*)Unsafe.AsPointer(ref this), hEvent, Mode, pStatus);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, HEVENT, int, int*, int>)(lpVtbl[8]))((IAMExtDevice*)Unsafe.AsPointer(ref this), hEvent, Mode, pStatus);
     }
 
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.put_DevicePort"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT put_DevicePort([NativeTypeName("long")] int DevicePort)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, int, int>)(lpVtbl[9]))((IAMExtDevice*)Unsafe.AsPointer(ref this), DevicePort);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, int, int>)(lpVtbl[9]))((IAMExtDevice*)Unsafe.AsPointer(ref this), DevicePort);
     }
 
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.get_DevicePort"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT get_DevicePort([NativeTypeName("long *")] int* pDevicePort)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, int*, int>)(lpVtbl[10]))((IAMExtDevice*)Unsafe.AsPointer(ref this), pDevicePort);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtDevice*, int*, int>)(lpVtbl[10]))((IAMExtDevice*)Unsafe.AsPointer(ref this), pDevicePort);
     }
 
     public interface Interface : IUnknown.Interface
@@ -116,10 +116,10 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
         HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue);
 
         [VtblIndex(4)]
-        HRESULT get_ExternalDeviceID([NativeTypeName("LPOLESTR *")] ushort** ppszData);
+        HRESULT get_ExternalDeviceID([NativeTypeName("LPOLESTR *")] char** ppszData);
 
         [VtblIndex(5)]
-        HRESULT get_ExternalDeviceVersion([NativeTypeName("LPOLESTR *")] ushort** ppszData);
+        HRESULT get_ExternalDeviceVersion([NativeTypeName("LPOLESTR *")] char** ppszData);
 
         [VtblIndex(6)]
         HRESULT put_DevicePower([NativeTypeName("long")] int PowerMode);
@@ -141,36 +141,36 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, double*, int> GetCapability;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, double*, int> GetCapability;
 
         [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ExternalDeviceID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ExternalDeviceID;
 
         [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ExternalDeviceVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ExternalDeviceVersion;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_DevicePower;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_DevicePower;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_DevicePower;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_DevicePower;
 
         [NativeTypeName("HRESULT (HEVENT, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HEVENT, int, int*, int> Calibrate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HEVENT, int, int*, int> Calibrate;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_DevicePort;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_DevicePort;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_DevicePort;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_DevicePort;
     }
 }

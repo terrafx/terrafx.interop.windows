@@ -19,17 +19,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wvsprintfW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int wvsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("va_list")] sbyte* arglist);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfA"]/*' />
-    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [SetsLastSystemError]
-    public static extern int wsprintfA([NativeTypeName("LPSTR")] sbyte* param0, [NativeTypeName("LPCSTR")] sbyte* param1, __arglist);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfW"]/*' />
-    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [SetsLastSystemError]
-    public static extern int wsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1, __arglist);
+    public static extern int wvsprintfW([NativeTypeName("LPWSTR")] char* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("va_list")] sbyte* arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadKeyboardLayoutA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -39,7 +29,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadKeyboardLayoutW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HKL LoadKeyboardLayoutW([NativeTypeName("LPCWSTR")] ushort* pwszKLID, uint Flags);
+    public static extern HKL LoadKeyboardLayoutW([NativeTypeName("LPCWSTR")] char* pwszKLID, uint Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ActivateKeyboardLayout"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -48,7 +38,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ToUnicodeEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern int ToUnicodeEx(uint wVirtKey, uint wScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWSTR")] ushort* pwszBuff, int cchBuff, uint wFlags, HKL dwhkl);
+    public static extern int ToUnicodeEx(uint wVirtKey, uint wScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWSTR")] char* pwszBuff, int cchBuff, uint wFlags, HKL dwhkl);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnloadKeyboardLayout"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -62,7 +52,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyboardLayoutNameW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetKeyboardLayoutNameW([NativeTypeName("LPWSTR")] ushort* pwszKLID);
+    public static extern BOOL GetKeyboardLayoutNameW([NativeTypeName("LPWSTR")] char* pwszKLID);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyboardLayoutList"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -86,7 +76,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDesktopW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HDESK CreateDesktopW([NativeTypeName("LPCWSTR")] ushort* lpszDesktop, [NativeTypeName("LPCWSTR")] ushort* lpszDevice, DEVMODEW* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
+    public static extern HDESK CreateDesktopW([NativeTypeName("LPCWSTR")] char* lpszDesktop, [NativeTypeName("LPCWSTR")] char* lpszDevice, DEVMODEW* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDesktopExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -96,7 +86,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDesktopExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HDESK CreateDesktopExW([NativeTypeName("LPCWSTR")] ushort* lpszDesktop, [NativeTypeName("LPCWSTR")] ushort* lpszDevice, DEVMODEW* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa, [NativeTypeName("ULONG")] uint ulHeapSize, [NativeTypeName("PVOID")] void* pvoid);
+    public static extern HDESK CreateDesktopExW([NativeTypeName("LPCWSTR")] char* lpszDesktop, [NativeTypeName("LPCWSTR")] char* lpszDevice, DEVMODEW* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa, [NativeTypeName("ULONG")] uint ulHeapSize, [NativeTypeName("PVOID")] void* pvoid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenDesktopA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -106,7 +96,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenDesktopW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HDESK OpenDesktopW([NativeTypeName("LPCWSTR")] ushort* lpszDesktop, [NativeTypeName("DWORD")] uint dwFlags, BOOL fInherit, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess);
+    public static extern HDESK OpenDesktopW([NativeTypeName("LPCWSTR")] char* lpszDesktop, [NativeTypeName("DWORD")] uint dwFlags, BOOL fInherit, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenInputDesktop"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -121,7 +111,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDesktopsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL EnumDesktopsW(HWINSTA hwinsta, [NativeTypeName("DESKTOPENUMPROCW")] delegate* unmanaged<ushort*, LPARAM, BOOL> lpEnumFunc, LPARAM lParam);
+    public static extern BOOL EnumDesktopsW(HWINSTA hwinsta, [NativeTypeName("DESKTOPENUMPROCW")] delegate* unmanaged<char*, LPARAM, BOOL> lpEnumFunc, LPARAM lParam);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDesktopWindows"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -156,7 +146,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWindowStationW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HWINSTA CreateWindowStationW([NativeTypeName("LPCWSTR")] ushort* lpwinsta, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
+    public static extern HWINSTA CreateWindowStationW([NativeTypeName("LPCWSTR")] char* lpwinsta, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenWindowStationA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -166,7 +156,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenWindowStationW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HWINSTA OpenWindowStationW([NativeTypeName("LPCWSTR")] ushort* lpszWinSta, BOOL fInherit, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess);
+    public static extern HWINSTA OpenWindowStationW([NativeTypeName("LPCWSTR")] char* lpszWinSta, BOOL fInherit, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumWindowStationsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -176,7 +166,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumWindowStationsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL EnumWindowStationsW([NativeTypeName("WINSTAENUMPROCW")] delegate* unmanaged<ushort*, LPARAM, BOOL> lpEnumFunc, LPARAM lParam);
+    public static extern BOOL EnumWindowStationsW([NativeTypeName("WINSTAENUMPROCW")] delegate* unmanaged<char*, LPARAM, BOOL> lpEnumFunc, LPARAM lParam);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseWindowStation"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -239,7 +229,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterWindowMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern uint RegisterWindowMessageW([NativeTypeName("LPCWSTR")] ushort* lpString);
+    public static extern uint RegisterWindowMessageW([NativeTypeName("LPCWSTR")] char* lpString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TrackMouseEvent"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -539,7 +529,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterClassW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL UnregisterClassW([NativeTypeName("LPCWSTR")] ushort* lpClassName, HINSTANCE hInstance);
+    public static extern BOOL UnregisterClassW([NativeTypeName("LPCWSTR")] char* lpClassName, HINSTANCE hInstance);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassInfoA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -549,7 +539,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassInfoW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetClassInfoW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPWNDCLASSW")] WNDCLASSW* lpWndClass);
+    public static extern BOOL GetClassInfoW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpClassName, [NativeTypeName("LPWNDCLASSW")] WNDCLASSW* lpWndClass);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterClassExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -571,7 +561,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassInfoExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetClassInfoExW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpszClass, [NativeTypeName("LPWNDCLASSEXW")] WNDCLASSEXW* lpwcx);
+    public static extern BOOL GetClassInfoExW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpszClass, [NativeTypeName("LPWNDCLASSEXW")] WNDCLASSEXW* lpwcx);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWindowExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -581,7 +571,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWindowExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HWND CreateWindowExW([NativeTypeName("DWORD")] uint dwExStyle, [NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam);
+    public static extern HWND CreateWindowExW([NativeTypeName("DWORD")] uint dwExStyle, [NativeTypeName("LPCWSTR")] char* lpClassName, [NativeTypeName("LPCWSTR")] char* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -732,7 +722,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDialogParamW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HWND CreateDialogParamW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
+    public static extern HWND CreateDialogParamW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpTemplateName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDialogIndirectParamA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -754,7 +744,7 @@ public static unsafe partial class Windows
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("INT_PTR")]
-    public static extern nint DialogBoxParamW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
+    public static extern nint DialogBoxParamW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpTemplateName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DialogBoxIndirectParamA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -796,7 +786,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDlgItemTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL SetDlgItemTextW(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPCWSTR")] ushort* lpString);
+    public static extern BOOL SetDlgItemTextW(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPCWSTR")] char* lpString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDlgItemTextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -806,7 +796,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDlgItemTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern uint GetDlgItemTextW(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPWSTR")] ushort* lpString, int cchMax);
+    public static extern uint GetDlgItemTextW(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPWSTR")] char* lpString, int cchMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CheckDlgButton"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -946,7 +936,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterClipboardFormatW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern uint RegisterClipboardFormatW([NativeTypeName("LPCWSTR")] ushort* lpszFormat);
+    public static extern uint RegisterClipboardFormatW([NativeTypeName("LPCWSTR")] char* lpszFormat);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CountClipboardFormats"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -966,7 +956,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipboardFormatNameW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int GetClipboardFormatNameW(uint format, [NativeTypeName("LPWSTR")] ushort* lpszFormatName, int cchMaxCount);
+    public static extern int GetClipboardFormatNameW(uint format, [NativeTypeName("LPWSTR")] char* lpszFormatName, int cchMaxCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EmptyClipboard"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1011,7 +1001,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharToOemW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CharToOemW([NativeTypeName("LPCWSTR")] ushort* pSrc, [NativeTypeName("LPSTR")] sbyte* pDst);
+    public static extern BOOL CharToOemW([NativeTypeName("LPCWSTR")] char* pSrc, [NativeTypeName("LPSTR")] sbyte* pDst);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OemToCharA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1021,7 +1011,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OemToCharW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL OemToCharW([NativeTypeName("LPCSTR")] sbyte* pSrc, [NativeTypeName("LPWSTR")] ushort* pDst);
+    public static extern BOOL OemToCharW([NativeTypeName("LPCSTR")] sbyte* pSrc, [NativeTypeName("LPWSTR")] char* pDst);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharToOemBuffA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1031,7 +1021,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharToOemBuffW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CharToOemBuffW([NativeTypeName("LPCWSTR")] ushort* lpszSrc, [NativeTypeName("LPSTR")] sbyte* lpszDst, [NativeTypeName("DWORD")] uint cchDstLength);
+    public static extern BOOL CharToOemBuffW([NativeTypeName("LPCWSTR")] char* lpszSrc, [NativeTypeName("LPSTR")] sbyte* lpszDst, [NativeTypeName("DWORD")] uint cchDstLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OemToCharBuffA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1041,7 +1031,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OemToCharBuffW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL OemToCharBuffW([NativeTypeName("LPCSTR")] sbyte* lpszSrc, [NativeTypeName("LPWSTR")] ushort* lpszDst, [NativeTypeName("DWORD")] uint cchDstLength);
+    public static extern BOOL OemToCharBuffW([NativeTypeName("LPCSTR")] sbyte* lpszSrc, [NativeTypeName("LPWSTR")] char* lpszDst, [NativeTypeName("DWORD")] uint cchDstLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharUpperA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1053,7 +1043,7 @@ public static unsafe partial class Windows
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* CharUpperW([NativeTypeName("LPWSTR")] ushort* lpsz);
+    public static extern char* CharUpperW([NativeTypeName("LPWSTR")] char* lpsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharUpperBuffA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1063,7 +1053,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharUpperBuffW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint CharUpperBuffW([NativeTypeName("LPWSTR")] ushort* lpsz, [NativeTypeName("DWORD")] uint cchLength);
+    public static extern uint CharUpperBuffW([NativeTypeName("LPWSTR")] char* lpsz, [NativeTypeName("DWORD")] uint cchLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharLowerA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1075,7 +1065,7 @@ public static unsafe partial class Windows
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* CharLowerW([NativeTypeName("LPWSTR")] ushort* lpsz);
+    public static extern char* CharLowerW([NativeTypeName("LPWSTR")] char* lpsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharLowerBuffA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1085,7 +1075,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharLowerBuffW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint CharLowerBuffW([NativeTypeName("LPWSTR")] ushort* lpsz, [NativeTypeName("DWORD")] uint cchLength);
+    public static extern uint CharLowerBuffW([NativeTypeName("LPWSTR")] char* lpsz, [NativeTypeName("DWORD")] uint cchLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharNextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1095,7 +1085,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharNextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* CharNextW([NativeTypeName("LPCWSTR")] ushort* lpsz);
+    public static extern char* CharNextW([NativeTypeName("LPCWSTR")] char* lpsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharPrevA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1105,7 +1095,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharPrevW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* CharPrevW([NativeTypeName("LPCWSTR")] ushort* lpszStart, [NativeTypeName("LPCWSTR")] ushort* lpszCurrent);
+    public static extern char* CharPrevW([NativeTypeName("LPCWSTR")] char* lpszStart, [NativeTypeName("LPCWSTR")] char* lpszCurrent);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CharNextExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1125,7 +1115,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharAlphaW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL IsCharAlphaW([NativeTypeName("WCHAR")] ushort ch);
+    public static extern BOOL IsCharAlphaW([NativeTypeName("WCHAR")] char ch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharAlphaNumericA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1135,7 +1125,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharAlphaNumericW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL IsCharAlphaNumericW([NativeTypeName("WCHAR")] ushort ch);
+    public static extern BOOL IsCharAlphaNumericW([NativeTypeName("WCHAR")] char ch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharUpperA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1145,7 +1135,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharUpperW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL IsCharUpperW([NativeTypeName("WCHAR")] ushort ch);
+    public static extern BOOL IsCharUpperW([NativeTypeName("WCHAR")] char ch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharLowerA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1155,7 +1145,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharLowerW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL IsCharLowerW([NativeTypeName("WCHAR")] ushort ch);
+    public static extern BOOL IsCharLowerW([NativeTypeName("WCHAR")] char ch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetFocus"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1200,7 +1190,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyNameTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int GetKeyNameTextW([NativeTypeName("LONG")] int lParam, [NativeTypeName("LPWSTR")] ushort* lpString, int cchSize);
+    public static extern int GetKeyNameTextW([NativeTypeName("LONG")] int lParam, [NativeTypeName("LPWSTR")] char* lpString, int cchSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyboardType"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1217,7 +1207,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ToUnicode"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern int ToUnicode(uint wVirtKey, uint wScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWSTR")] ushort* pwszBuff, int cchBuff, uint wFlags);
+    public static extern int ToUnicode(uint wVirtKey, uint wScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWSTR")] char* pwszBuff, int cchBuff, uint wFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OemKeyScan"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1230,7 +1220,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VkKeyScanW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern short VkKeyScanW([NativeTypeName("WCHAR")] ushort ch);
+    public static extern short VkKeyScanW([NativeTypeName("WCHAR")] char ch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VkKeyScanExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1238,7 +1228,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VkKeyScanExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern short VkKeyScanExW([NativeTypeName("WCHAR")] ushort ch, HKL dwhkl);
+    public static extern short VkKeyScanExW([NativeTypeName("WCHAR")] char ch, HKL dwhkl);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.keybd_event"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1559,7 +1549,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadAcceleratorsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HACCEL LoadAcceleratorsW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTableName);
+    public static extern HACCEL LoadAcceleratorsW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpTableName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateAcceleratorTableA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1612,7 +1602,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadMenuW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HMENU LoadMenuW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpMenuName);
+    public static extern HMENU LoadMenuW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpMenuName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadMenuIndirectA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1639,7 +1629,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeMenuW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern BOOL ChangeMenuW(HMENU hMenu, uint cmd, [NativeTypeName("LPCWSTR")] ushort* lpszNewItem, uint cmdInsert, uint flags);
+    public static extern BOOL ChangeMenuW(HMENU hMenu, uint cmd, [NativeTypeName("LPCWSTR")] char* lpszNewItem, uint cmdInsert, uint flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HiliteMenuItem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1651,7 +1641,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuStringW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern int GetMenuStringW(HMENU hMenu, uint uIDItem, [NativeTypeName("LPWSTR")] ushort* lpString, int cchMax, uint flags);
+    public static extern int GetMenuStringW(HMENU hMenu, uint uIDItem, [NativeTypeName("LPWSTR")] char* lpString, int cchMax, uint flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuState"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1711,7 +1701,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InsertMenuW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL InsertMenuW(HMENU hMenu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
+    public static extern BOOL InsertMenuW(HMENU hMenu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] char* lpNewItem);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AppendMenuA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1721,7 +1711,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AppendMenuW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL AppendMenuW(HMENU hMenu, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
+    public static extern BOOL AppendMenuW(HMENU hMenu, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] char* lpNewItem);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ModifyMenuA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1731,7 +1721,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ModifyMenuW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ModifyMenuW(HMENU hMnu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
+    public static extern BOOL ModifyMenuW(HMENU hMnu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] char* lpNewItem);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1852,7 +1842,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern int DrawTextW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format);
+    public static extern int DrawTextW(HDC hdc, [NativeTypeName("LPCWSTR")] char* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawTextExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1860,7 +1850,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawTextExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern int DrawTextExW(HDC hdc, [NativeTypeName("LPWSTR")] ushort* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format, [NativeTypeName("LPDRAWTEXTPARAMS")] DRAWTEXTPARAMS* lpdtp);
+    public static extern int DrawTextExW(HDC hdc, [NativeTypeName("LPWSTR")] char* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format, [NativeTypeName("LPDRAWTEXTPARAMS")] DRAWTEXTPARAMS* lpdtp);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GrayStringA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1886,7 +1876,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TabbedTextOutW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
-    public static extern int TabbedTextOutW(HDC hdc, int x, int y, [NativeTypeName("LPCWSTR")] ushort* lpString, int chCount, int nTabPositions, [NativeTypeName("const INT *")] int* lpnTabStopPositions, int nTabOrigin);
+    public static extern int TabbedTextOutW(HDC hdc, int x, int y, [NativeTypeName("LPCWSTR")] char* lpString, int chCount, int nTabPositions, [NativeTypeName("const INT *")] int* lpnTabStopPositions, int nTabOrigin);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTabbedTextExtentA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1896,7 +1886,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTabbedTextExtentW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetTabbedTextExtentW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int chCount, int nTabPositions, [NativeTypeName("const INT *")] int* lpnTabStopPositions);
+    public static extern uint GetTabbedTextExtentW(HDC hdc, [NativeTypeName("LPCWSTR")] char* lpString, int chCount, int nTabPositions, [NativeTypeName("const INT *")] int* lpnTabStopPositions);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UpdateWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2062,7 +2052,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetPropW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL SetPropW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpString, HANDLE hData);
+    public static extern BOOL SetPropW(HWND hWnd, [NativeTypeName("LPCWSTR")] char* lpString, HANDLE hData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPropA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2070,7 +2060,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPropW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern HANDLE GetPropW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpString);
+    public static extern HANDLE GetPropW(HWND hWnd, [NativeTypeName("LPCWSTR")] char* lpString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RemovePropA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2078,7 +2068,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RemovePropW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern HANDLE RemovePropW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpString);
+    public static extern HANDLE RemovePropW(HWND hWnd, [NativeTypeName("LPCWSTR")] char* lpString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPropsExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2086,7 +2076,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPropsExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern int EnumPropsExW(HWND hWnd, [NativeTypeName("PROPENUMPROCEXW")] delegate* unmanaged<HWND, ushort*, HANDLE, nuint, BOOL> lpEnumFunc, LPARAM lParam);
+    public static extern int EnumPropsExW(HWND hWnd, [NativeTypeName("PROPENUMPROCEXW")] delegate* unmanaged<HWND, char*, HANDLE, nuint, BOOL> lpEnumFunc, LPARAM lParam);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPropsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2094,7 +2084,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPropsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern int EnumPropsW(HWND hWnd, [NativeTypeName("PROPENUMPROCW")] delegate* unmanaged<HWND, ushort*, HANDLE, BOOL> lpEnumFunc);
+    public static extern int EnumPropsW(HWND hWnd, [NativeTypeName("PROPENUMPROCW")] delegate* unmanaged<HWND, char*, HANDLE, BOOL> lpEnumFunc);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowTextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2104,7 +2094,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL SetWindowTextW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpString);
+    public static extern BOOL SetWindowTextW(HWND hWnd, [NativeTypeName("LPCWSTR")] char* lpString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowTextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2114,7 +2104,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int GetWindowTextW(HWND hWnd, [NativeTypeName("LPWSTR")] ushort* lpString, int nMaxCount);
+    public static extern int GetWindowTextW(HWND hWnd, [NativeTypeName("LPWSTR")] char* lpString, int nMaxCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowTextLengthA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2180,7 +2170,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBoxW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int MessageBoxW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpText, [NativeTypeName("LPCWSTR")] ushort* lpCaption, uint uType);
+    public static extern int MessageBoxW(HWND hWnd, [NativeTypeName("LPCWSTR")] char* lpText, [NativeTypeName("LPCWSTR")] char* lpCaption, uint uType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBoxExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2190,7 +2180,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBoxExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int MessageBoxExW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpText, [NativeTypeName("LPCWSTR")] ushort* lpCaption, uint uType, [NativeTypeName("WORD")] ushort wLanguageId);
+    public static extern int MessageBoxExW(HWND hWnd, [NativeTypeName("LPCWSTR")] char* lpText, [NativeTypeName("LPCWSTR")] char* lpCaption, uint uType, [NativeTypeName("WORD")] ushort wLanguageId);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBoxIndirectA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2513,7 +2503,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FindWindowW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HWND FindWindowW([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName);
+    public static extern HWND FindWindowW([NativeTypeName("LPCWSTR")] char* lpClassName, [NativeTypeName("LPCWSTR")] char* lpWindowName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FindWindowExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2523,7 +2513,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FindWindowExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HWND FindWindowExW(HWND hWndParent, HWND hWndChildAfter, [NativeTypeName("LPCWSTR")] ushort* lpszClass, [NativeTypeName("LPCWSTR")] ushort* lpszWindow);
+    public static extern HWND FindWindowExW(HWND hWndParent, HWND hWndChildAfter, [NativeTypeName("LPCWSTR")] char* lpszClass, [NativeTypeName("LPCWSTR")] char* lpszWindow);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetShellWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2554,7 +2544,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassNameW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int GetClassNameW(HWND hWnd, [NativeTypeName("LPWSTR")] ushort* lpClassName, int nMaxCount);
+    public static extern int GetClassNameW(HWND hWnd, [NativeTypeName("LPWSTR")] char* lpClassName, int nMaxCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTopWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2621,7 +2611,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadBitmapW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern HBITMAP LoadBitmapW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpBitmapName);
+    public static extern HBITMAP LoadBitmapW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpBitmapName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadCursorA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2631,7 +2621,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadCursorW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HCURSOR LoadCursorW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpCursorName);
+    public static extern HCURSOR LoadCursorW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpCursorName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadCursorFromFileA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2641,7 +2631,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadCursorFromFileW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HCURSOR LoadCursorFromFileW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
+    public static extern HCURSOR LoadCursorFromFileW([NativeTypeName("LPCWSTR")] char* lpFileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateCursor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2666,7 +2656,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadIconW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HICON LoadIconW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpIconName);
+    public static extern HICON LoadIconW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpIconName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PrivateExtractIconsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2674,7 +2664,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PrivateExtractIconsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern uint PrivateExtractIconsW([NativeTypeName("LPCWSTR")] ushort* szFileName, int nIconIndex, int cxIcon, int cyIcon, HICON* phicon, uint* piconid, uint nIcons, uint flags);
+    public static extern uint PrivateExtractIconsW([NativeTypeName("LPCWSTR")] char* szFileName, int nIconIndex, int cxIcon, int cyIcon, HICON* phicon, uint* piconid, uint nIcons, uint flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateIcon"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2718,7 +2708,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadImageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE LoadImageW(HINSTANCE hInst, [NativeTypeName("LPCWSTR")] ushort* name, uint type, int cx, int cy, uint fuLoad);
+    public static extern HANDLE LoadImageW(HINSTANCE hInst, [NativeTypeName("LPCWSTR")] char* name, uint type, int cx, int cy, uint fuLoad);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyImage"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2772,7 +2762,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirListW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern int DlgDirListW(HWND hDlg, [NativeTypeName("LPWSTR")] ushort* lpPathSpec, int nIDListBox, int nIDStaticPath, uint uFileType);
+    public static extern int DlgDirListW(HWND hDlg, [NativeTypeName("LPWSTR")] char* lpPathSpec, int nIDListBox, int nIDStaticPath, uint uFileType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirSelectExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2782,7 +2772,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirSelectExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL DlgDirSelectExW(HWND hwndDlg, [NativeTypeName("LPWSTR")] ushort* lpString, int chCount, int idListBox);
+    public static extern BOOL DlgDirSelectExW(HWND hwndDlg, [NativeTypeName("LPWSTR")] char* lpString, int chCount, int idListBox);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirListComboBoxA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2792,7 +2782,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirListComboBoxW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int DlgDirListComboBoxW(HWND hDlg, [NativeTypeName("LPWSTR")] ushort* lpPathSpec, int nIDComboBox, int nIDStaticPath, uint uFiletype);
+    public static extern int DlgDirListComboBoxW(HWND hDlg, [NativeTypeName("LPWSTR")] char* lpPathSpec, int nIDComboBox, int nIDStaticPath, uint uFiletype);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirSelectComboBoxExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2802,7 +2792,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirSelectComboBoxExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL DlgDirSelectComboBoxExW(HWND hwndDlg, [NativeTypeName("LPWSTR")] ushort* lpString, int cchOut, int idComboBox);
+    public static extern BOOL DlgDirSelectComboBoxExW(HWND hwndDlg, [NativeTypeName("LPWSTR")] char* lpString, int cchOut, int idComboBox);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetScrollInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2846,7 +2836,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMDIWindowW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HWND CreateMDIWindowW([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HINSTANCE hInstance, LPARAM lParam);
+    public static extern HWND CreateMDIWindowW([NativeTypeName("LPCWSTR")] char* lpClassName, [NativeTypeName("LPCWSTR")] char* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HINSTANCE hInstance, LPARAM lParam);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TileWindows"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2868,7 +2858,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHelpW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHelpW(HWND hWndMain, [NativeTypeName("LPCWSTR")] ushort* lpszHelp, uint uCommand, [NativeTypeName("ULONG_PTR")] nuint dwData);
+    public static extern BOOL WinHelpW(HWND hWndMain, [NativeTypeName("LPCWSTR")] char* lpszHelp, uint uCommand, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGuiResources"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2894,7 +2884,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeDisplaySettingsExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
-    public static extern int ChangeDisplaySettingsExW([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, DEVMODEW* lpDevMode, HWND hwnd, [NativeTypeName("DWORD")] uint dwflags, [NativeTypeName("LPVOID")] void* lParam);
+    public static extern int ChangeDisplaySettingsExW([NativeTypeName("LPCWSTR")] char* lpszDeviceName, DEVMODEW* lpDevMode, HWND hwnd, [NativeTypeName("DWORD")] uint dwflags, [NativeTypeName("LPVOID")] void* lParam);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplaySettingsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2902,7 +2892,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplaySettingsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern BOOL EnumDisplaySettingsW([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, DEVMODEW* lpDevMode);
+    public static extern BOOL EnumDisplaySettingsW([NativeTypeName("LPCWSTR")] char* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, DEVMODEW* lpDevMode);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplaySettingsExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2910,7 +2900,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplaySettingsExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern BOOL EnumDisplaySettingsExW([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, DEVMODEW* lpDevMode, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL EnumDisplaySettingsExW([NativeTypeName("LPCWSTR")] char* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, DEVMODEW* lpDevMode, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplayDevicesA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2918,7 +2908,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplayDevicesW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern BOOL EnumDisplayDevicesW([NativeTypeName("LPCWSTR")] ushort* lpDevice, [NativeTypeName("DWORD")] uint iDevNum, [NativeTypeName("PDISPLAY_DEVICEW")] DISPLAY_DEVICEW* lpDisplayDevice, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL EnumDisplayDevicesW([NativeTypeName("LPCWSTR")] char* lpDevice, [NativeTypeName("DWORD")] uint iDevNum, [NativeTypeName("PDISPLAY_DEVICEW")] DISPLAY_DEVICEW* lpDisplayDevice, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDisplayConfigBufferSizes"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -2976,7 +2966,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InternalGetWindowText"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int InternalGetWindowText(HWND hWnd, [NativeTypeName("LPWSTR")] ushort* pString, int cchMaxCount);
+    public static extern int InternalGetWindowText(HWND hWnd, [NativeTypeName("LPWSTR")] char* pString, int cchMaxCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CancelShutdown"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -3131,7 +3121,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowModuleFileNameW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern uint GetWindowModuleFileNameW(HWND hwnd, [NativeTypeName("LPWSTR")] ushort* pszFileName, uint cchFileNameMax);
+    public static extern uint GetWindowModuleFileNameW(HWND hwnd, [NativeTypeName("LPWSTR")] char* pszFileName, uint cchFileNameMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCursorInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -3179,7 +3169,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RealGetWindowClassW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern uint RealGetWindowClassW(HWND hwnd, [NativeTypeName("LPWSTR")] ushort* ptszClassName, uint cchClassNameMax);
+    public static extern uint RealGetWindowClassW(HWND hwnd, [NativeTypeName("LPWSTR")] char* ptszClassName, uint cchClassNameMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAltTabInfoA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -3189,7 +3179,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAltTabInfoW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetAltTabInfoW(HWND hwnd, int iItem, [NativeTypeName("PALTTABINFO")] ALTTABINFO* pati, [NativeTypeName("LPWSTR")] ushort* pszItemText, uint cchItemText);
+    public static extern BOOL GetAltTabInfoW(HWND hwnd, int iItem, [NativeTypeName("PALTTABINFO")] ALTTABINFO* pati, [NativeTypeName("LPWSTR")] char* pszItemText, uint cchItemText);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetListBoxInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -3324,12 +3314,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ShutdownBlockReasonCreate"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ShutdownBlockReasonCreate(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* pwszReason);
+    public static extern BOOL ShutdownBlockReasonCreate(HWND hWnd, [NativeTypeName("LPCWSTR")] char* pwszReason);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ShutdownBlockReasonQuery"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ShutdownBlockReasonQuery(HWND hWnd, [NativeTypeName("LPWSTR")] ushort* pwszBuff, [NativeTypeName("DWORD *")] uint* pcchBuff);
+    public static extern BOOL ShutdownBlockReasonQuery(HWND hWnd, [NativeTypeName("LPWSTR")] char* pwszBuff, [NativeTypeName("DWORD *")] uint* pcchBuff);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ShutdownBlockReasonDestroy"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -3388,28 +3378,28 @@ public static unsafe partial class Windows
     public const int DIFFERENCE = 11;
 
     [NativeTypeName("#define CREATEPROCESS_MANIFEST_RESOURCE_ID MAKEINTRESOURCE( 1)")]
-    public static ushort* CREATEPROCESS_MANIFEST_RESOURCE_ID => ((ushort*)((nuint)((ushort)(1))));
+    public static char* CREATEPROCESS_MANIFEST_RESOURCE_ID => ((char*)((nuint)((ushort)(1))));
 
     [NativeTypeName("#define ISOLATIONAWARE_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(2)")]
-    public static ushort* ISOLATIONAWARE_MANIFEST_RESOURCE_ID => ((ushort*)((nuint)((ushort)(2))));
+    public static char* ISOLATIONAWARE_MANIFEST_RESOURCE_ID => ((char*)((nuint)((ushort)(2))));
 
     [NativeTypeName("#define ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(3)")]
-    public static ushort* ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID => ((ushort*)((nuint)((ushort)(3))));
+    public static char* ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID => ((char*)((nuint)((ushort)(3))));
 
     [NativeTypeName("#define ISOLATIONPOLICY_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(4)")]
-    public static ushort* ISOLATIONPOLICY_MANIFEST_RESOURCE_ID => ((ushort*)((nuint)((ushort)(4))));
+    public static char* ISOLATIONPOLICY_MANIFEST_RESOURCE_ID => ((char*)((nuint)((ushort)(4))));
 
     [NativeTypeName("#define ISOLATIONPOLICY_BROWSER_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(5)")]
-    public static ushort* ISOLATIONPOLICY_BROWSER_MANIFEST_RESOURCE_ID => ((ushort*)((nuint)((ushort)(5))));
+    public static char* ISOLATIONPOLICY_BROWSER_MANIFEST_RESOURCE_ID => ((char*)((nuint)((ushort)(5))));
 
     [NativeTypeName("#define MINIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE( 1 /*inclusive*/)")]
-    public static ushort* MINIMUM_RESERVED_MANIFEST_RESOURCE_ID => ((ushort*)((nuint)((ushort)(1))));
+    public static char* MINIMUM_RESERVED_MANIFEST_RESOURCE_ID => ((char*)((nuint)((ushort)(1))));
 
     [NativeTypeName("#define wvsprintf wvsprintfW")]
-    public static delegate*<ushort*, ushort*, sbyte*, int> wvsprintf => &wvsprintfW;
+    public static delegate*<char*, char*, sbyte*, int> wvsprintf => &wvsprintfW;
 
     [NativeTypeName("#define SETWALLPAPER_DEFAULT ((LPWSTR)-1)")]
-    public static ushort* SETWALLPAPER_DEFAULT => unchecked((ushort*)(-1));
+    public static char* SETWALLPAPER_DEFAULT => unchecked((char*)(-1));
 
     [NativeTypeName("#define HIDE_WINDOW 0")]
     public const int HIDE_WINDOW = 0;
@@ -3568,10 +3558,10 @@ public static unsafe partial class Windows
     public const int KL_NAMELENGTH = 9;
 
     [NativeTypeName("#define LoadKeyboardLayout LoadKeyboardLayoutW")]
-    public static delegate*<ushort*, uint, HKL> LoadKeyboardLayout => &LoadKeyboardLayoutW;
+    public static delegate*<char*, uint, HKL> LoadKeyboardLayout => &LoadKeyboardLayoutW;
 
     [NativeTypeName("#define GetKeyboardLayoutName GetKeyboardLayoutNameW")]
-    public static delegate*<ushort*, BOOL> GetKeyboardLayoutName => &GetKeyboardLayoutNameW;
+    public static delegate*<char*, BOOL> GetKeyboardLayoutName => &GetKeyboardLayoutNameW;
 
     [NativeTypeName("#define GMMP_USE_DISPLAY_POINTS 1")]
     public const int GMMP_USE_DISPLAY_POINTS = 1;
@@ -3583,16 +3573,16 @@ public static unsafe partial class Windows
     public const int DF_ALLOWOTHERACCOUNTHOOK = 0x0001;
 
     [NativeTypeName("#define CreateDesktop CreateDesktopW")]
-    public static delegate*<ushort*, ushort*, DEVMODEW*, uint, uint, SECURITY_ATTRIBUTES*, HDESK> CreateDesktop => &CreateDesktopW;
+    public static delegate*<char*, char*, DEVMODEW*, uint, uint, SECURITY_ATTRIBUTES*, HDESK> CreateDesktop => &CreateDesktopW;
 
     [NativeTypeName("#define CreateDesktopEx CreateDesktopExW")]
-    public static delegate*<ushort*, ushort*, DEVMODEW*, uint, uint, SECURITY_ATTRIBUTES*, uint, void*, HDESK> CreateDesktopEx => &CreateDesktopExW;
+    public static delegate*<char*, char*, DEVMODEW*, uint, uint, SECURITY_ATTRIBUTES*, uint, void*, HDESK> CreateDesktopEx => &CreateDesktopExW;
 
     [NativeTypeName("#define OpenDesktop OpenDesktopW")]
-    public static delegate*<ushort*, uint, BOOL, uint, HDESK> OpenDesktop => &OpenDesktopW;
+    public static delegate*<char*, uint, BOOL, uint, HDESK> OpenDesktop => &OpenDesktopW;
 
     [NativeTypeName("#define EnumDesktops EnumDesktopsW")]
-    public static delegate*<HWINSTA, delegate* unmanaged<ushort*, LPARAM, BOOL>, LPARAM, BOOL> EnumDesktops => &EnumDesktopsW;
+    public static delegate*<HWINSTA, delegate* unmanaged<char*, LPARAM, BOOL>, LPARAM, BOOL> EnumDesktops => &EnumDesktopsW;
 
     [NativeTypeName("#define CWF_CREATE_ONLY 0x00000001")]
     public const int CWF_CREATE_ONLY = 0x00000001;
@@ -3601,13 +3591,13 @@ public static unsafe partial class Windows
     public const int WSF_VISIBLE = 0x0001;
 
     [NativeTypeName("#define CreateWindowStation CreateWindowStationW")]
-    public static delegate*<ushort*, uint, uint, SECURITY_ATTRIBUTES*, HWINSTA> CreateWindowStation => &CreateWindowStationW;
+    public static delegate*<char*, uint, uint, SECURITY_ATTRIBUTES*, HWINSTA> CreateWindowStation => &CreateWindowStationW;
 
     [NativeTypeName("#define OpenWindowStation OpenWindowStationW")]
-    public static delegate*<ushort*, BOOL, uint, HWINSTA> OpenWindowStation => &OpenWindowStationW;
+    public static delegate*<char*, BOOL, uint, HWINSTA> OpenWindowStation => &OpenWindowStationW;
 
     [NativeTypeName("#define EnumWindowStations EnumWindowStationsW")]
-    public static delegate*<delegate* unmanaged<ushort*, LPARAM, BOOL>, LPARAM, BOOL> EnumWindowStations => &EnumWindowStationsW;
+    public static delegate*<delegate* unmanaged<char*, LPARAM, BOOL>, LPARAM, BOOL> EnumWindowStations => &EnumWindowStationsW;
 
     [NativeTypeName("#define UOI_FLAGS 1")]
     public const int UOI_FLAGS = 1;
@@ -3847,7 +3837,7 @@ public static unsafe partial class Windows
     public const int ICON_SMALL2 = 2;
 
     [NativeTypeName("#define RegisterWindowMessage RegisterWindowMessageW")]
-    public static delegate*<ushort*, uint> RegisterWindowMessage => &RegisterWindowMessageW;
+    public static delegate*<char*, uint> RegisterWindowMessage => &RegisterWindowMessageW;
 
     [NativeTypeName("#define SIZE_RESTORED 0")]
     public const int SIZE_RESTORED = 0;
@@ -4084,22 +4074,22 @@ public static unsafe partial class Windows
     public static delegate*<WNDCLASSW*, ushort> RegisterClass => &RegisterClassW;
 
     [NativeTypeName("#define UnregisterClass UnregisterClassW")]
-    public static delegate*<ushort*, HINSTANCE, BOOL> UnregisterClass => &UnregisterClassW;
+    public static delegate*<char*, HINSTANCE, BOOL> UnregisterClass => &UnregisterClassW;
 
     [NativeTypeName("#define GetClassInfo GetClassInfoW")]
-    public static delegate*<HINSTANCE, ushort*, WNDCLASSW*, BOOL> GetClassInfo => &GetClassInfoW;
+    public static delegate*<HINSTANCE, char*, WNDCLASSW*, BOOL> GetClassInfo => &GetClassInfoW;
 
     [NativeTypeName("#define RegisterClassEx RegisterClassExW")]
     public static delegate*<WNDCLASSEXW*, ushort> RegisterClassEx => &RegisterClassExW;
 
     [NativeTypeName("#define GetClassInfoEx GetClassInfoExW")]
-    public static delegate*<HINSTANCE, ushort*, WNDCLASSEXW*, BOOL> GetClassInfoEx => &GetClassInfoExW;
+    public static delegate*<HINSTANCE, char*, WNDCLASSEXW*, BOOL> GetClassInfoEx => &GetClassInfoExW;
 
     [NativeTypeName("#define CW_USEDEFAULT ((int)0x80000000)")]
     public const int CW_USEDEFAULT = unchecked((int)(0x80000000));
 
     [NativeTypeName("#define CreateWindowEx CreateWindowExW")]
-    public static delegate*<uint, ushort*, ushort*, uint, int, int, int, int, HWND, HMENU, HINSTANCE, void*, HWND> CreateWindowEx => &CreateWindowExW;
+    public static delegate*<uint, char*, char*, uint, int, int, int, int, HWND, HMENU, HINSTANCE, void*, HWND> CreateWindowEx => &CreateWindowExW;
 
     [NativeTypeName("#define PW_CLIENTONLY 0x00000001")]
     public const int PW_CLIENTONLY = 0x00000001;
@@ -4147,22 +4137,22 @@ public static unsafe partial class Windows
     public const int WDA_EXCLUDEFROMCAPTURE = 0x00000011;
 
     [NativeTypeName("#define CreateDialogParam CreateDialogParamW")]
-    public static delegate*<HINSTANCE, ushort*, HWND, delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint>, LPARAM, HWND> CreateDialogParam => &CreateDialogParamW;
+    public static delegate*<HINSTANCE, char*, HWND, delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint>, LPARAM, HWND> CreateDialogParam => &CreateDialogParamW;
 
     [NativeTypeName("#define CreateDialogIndirectParam CreateDialogIndirectParamW")]
     public static delegate*<HINSTANCE, DLGTEMPLATE*, HWND, delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint>, LPARAM, HWND> CreateDialogIndirectParam => &CreateDialogIndirectParamW;
 
     [NativeTypeName("#define DialogBoxParam DialogBoxParamW")]
-    public static delegate*<HINSTANCE, ushort*, HWND, delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint>, LPARAM, nint> DialogBoxParam => &DialogBoxParamW;
+    public static delegate*<HINSTANCE, char*, HWND, delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint>, LPARAM, nint> DialogBoxParam => &DialogBoxParamW;
 
     [NativeTypeName("#define DialogBoxIndirectParam DialogBoxIndirectParamW")]
     public static delegate*<HINSTANCE, DLGTEMPLATE*, HWND, delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint>, LPARAM, nint> DialogBoxIndirectParam => &DialogBoxIndirectParamW;
 
     [NativeTypeName("#define SetDlgItemText SetDlgItemTextW")]
-    public static delegate*<HWND, int, ushort*, BOOL> SetDlgItemText => &SetDlgItemTextW;
+    public static delegate*<HWND, int, char*, BOOL> SetDlgItemText => &SetDlgItemTextW;
 
     [NativeTypeName("#define GetDlgItemText GetDlgItemTextW")]
-    public static delegate*<HWND, int, ushort*, int, uint> GetDlgItemText => &GetDlgItemTextW;
+    public static delegate*<HWND, int, char*, int, uint> GetDlgItemText => &GetDlgItemTextW;
 
     [NativeTypeName("#define SendDlgItemMessage SendDlgItemMessageW")]
     public static delegate*<HWND, int, uint, WPARAM, LPARAM, LRESULT> SendDlgItemMessage => &SendDlgItemMessageW;
@@ -4177,40 +4167,40 @@ public static unsafe partial class Windows
     public static delegate*<MSG*, int, BOOL> CallMsgFilter => &CallMsgFilterW;
 
     [NativeTypeName("#define RegisterClipboardFormat RegisterClipboardFormatW")]
-    public static delegate*<ushort*, uint> RegisterClipboardFormat => &RegisterClipboardFormatW;
+    public static delegate*<char*, uint> RegisterClipboardFormat => &RegisterClipboardFormatW;
 
     [NativeTypeName("#define GetClipboardFormatName GetClipboardFormatNameW")]
-    public static delegate*<uint, ushort*, int, int> GetClipboardFormatName => &GetClipboardFormatNameW;
+    public static delegate*<uint, char*, int, int> GetClipboardFormatName => &GetClipboardFormatNameW;
 
     [NativeTypeName("#define CharToOem CharToOemW")]
-    public static delegate*<ushort*, sbyte*, BOOL> CharToOem => &CharToOemW;
+    public static delegate*<char*, sbyte*, BOOL> CharToOem => &CharToOemW;
 
     [NativeTypeName("#define OemToChar OemToCharW")]
-    public static delegate*<sbyte*, ushort*, BOOL> OemToChar => &OemToCharW;
+    public static delegate*<sbyte*, char*, BOOL> OemToChar => &OemToCharW;
 
     [NativeTypeName("#define CharToOemBuff CharToOemBuffW")]
-    public static delegate*<ushort*, sbyte*, uint, BOOL> CharToOemBuff => &CharToOemBuffW;
+    public static delegate*<char*, sbyte*, uint, BOOL> CharToOemBuff => &CharToOemBuffW;
 
     [NativeTypeName("#define OemToCharBuff OemToCharBuffW")]
-    public static delegate*<sbyte*, ushort*, uint, BOOL> OemToCharBuff => &OemToCharBuffW;
+    public static delegate*<sbyte*, char*, uint, BOOL> OemToCharBuff => &OemToCharBuffW;
 
     [NativeTypeName("#define CharUpper CharUpperW")]
-    public static delegate*<ushort*, ushort*> CharUpper => &CharUpperW;
+    public static delegate*<char*, char*> CharUpper => &CharUpperW;
 
     [NativeTypeName("#define CharUpperBuff CharUpperBuffW")]
-    public static delegate*<ushort*, uint, uint> CharUpperBuff => &CharUpperBuffW;
+    public static delegate*<char*, uint, uint> CharUpperBuff => &CharUpperBuffW;
 
     [NativeTypeName("#define CharLower CharLowerW")]
-    public static delegate*<ushort*, ushort*> CharLower => &CharLowerW;
+    public static delegate*<char*, char*> CharLower => &CharLowerW;
 
     [NativeTypeName("#define CharLowerBuff CharLowerBuffW")]
-    public static delegate*<ushort*, uint, uint> CharLowerBuff => &CharLowerBuffW;
+    public static delegate*<char*, uint, uint> CharLowerBuff => &CharLowerBuffW;
 
     [NativeTypeName("#define CharNext CharNextW")]
-    public static delegate*<ushort*, ushort*> CharNext => &CharNextW;
+    public static delegate*<char*, char*> CharNext => &CharNextW;
 
     [NativeTypeName("#define CharPrev CharPrevW")]
-    public static delegate*<ushort*, ushort*, ushort*> CharPrev => &CharPrevW;
+    public static delegate*<char*, char*, char*> CharPrev => &CharPrevW;
 
     [NativeTypeName("#define AnsiToOem CharToOemA")]
     public static delegate*<sbyte*, sbyte*, BOOL> AnsiToOem => &CharToOemA;
@@ -4243,25 +4233,25 @@ public static unsafe partial class Windows
     public static delegate*<sbyte*, sbyte*, sbyte*> AnsiPrev => &CharPrevA;
 
     [NativeTypeName("#define IsCharAlpha IsCharAlphaW")]
-    public static delegate*<ushort, BOOL> IsCharAlpha => &IsCharAlphaW;
+    public static delegate*<char, BOOL> IsCharAlpha => &IsCharAlphaW;
 
     [NativeTypeName("#define IsCharAlphaNumeric IsCharAlphaNumericW")]
-    public static delegate*<ushort, BOOL> IsCharAlphaNumeric => &IsCharAlphaNumericW;
+    public static delegate*<char, BOOL> IsCharAlphaNumeric => &IsCharAlphaNumericW;
 
     [NativeTypeName("#define IsCharUpper IsCharUpperW")]
-    public static delegate*<ushort, BOOL> IsCharUpper => &IsCharUpperW;
+    public static delegate*<char, BOOL> IsCharUpper => &IsCharUpperW;
 
     [NativeTypeName("#define IsCharLower IsCharLowerW")]
-    public static delegate*<ushort, BOOL> IsCharLower => &IsCharLowerW;
+    public static delegate*<char, BOOL> IsCharLower => &IsCharLowerW;
 
     [NativeTypeName("#define GetKeyNameText GetKeyNameTextW")]
-    public static delegate*<int, ushort*, int, int> GetKeyNameText => &GetKeyNameTextW;
+    public static delegate*<int, char*, int, int> GetKeyNameText => &GetKeyNameTextW;
 
     [NativeTypeName("#define VkKeyScan VkKeyScanW")]
-    public static delegate*<ushort, short> VkKeyScan => &VkKeyScanW;
+    public static delegate*<char, short> VkKeyScan => &VkKeyScanW;
 
     [NativeTypeName("#define VkKeyScanEx VkKeyScanExW")]
-    public static delegate*<ushort, HKL, short> VkKeyScanEx => &VkKeyScanExW;
+    public static delegate*<char, HKL, short> VkKeyScanEx => &VkKeyScanExW;
 
     [NativeTypeName("#define KEYEVENTF_EXTENDEDKEY 0x0001")]
     public const int KEYEVENTF_EXTENDEDKEY = 0x0001;
@@ -4384,7 +4374,7 @@ public static unsafe partial class Windows
     public const int TIMERV_COALESCING_MAX = (0x7FFFFFF5);
 
     [NativeTypeName("#define LoadAccelerators LoadAcceleratorsW")]
-    public static delegate*<HINSTANCE, ushort*, HACCEL> LoadAccelerators => &LoadAcceleratorsW;
+    public static delegate*<HINSTANCE, char*, HACCEL> LoadAccelerators => &LoadAcceleratorsW;
 
     [NativeTypeName("#define CreateAcceleratorTable CreateAcceleratorTableW")]
     public static delegate*<ACCEL*, int, HACCEL> CreateAcceleratorTable => &CreateAcceleratorTableW;
@@ -4396,28 +4386,28 @@ public static unsafe partial class Windows
     public static delegate*<HWND, HACCEL, MSG*, int> TranslateAccelerator => &TranslateAcceleratorW;
 
     [NativeTypeName("#define LoadMenu LoadMenuW")]
-    public static delegate*<HINSTANCE, ushort*, HMENU> LoadMenu => &LoadMenuW;
+    public static delegate*<HINSTANCE, char*, HMENU> LoadMenu => &LoadMenuW;
 
     [NativeTypeName("#define LoadMenuIndirect LoadMenuIndirectW")]
     public static delegate*<void*, HMENU> LoadMenuIndirect => &LoadMenuIndirectW;
 
     [NativeTypeName("#define ChangeMenu ChangeMenuW")]
-    public static delegate*<HMENU, uint, ushort*, uint, uint, BOOL> ChangeMenu => &ChangeMenuW;
+    public static delegate*<HMENU, uint, char*, uint, uint, BOOL> ChangeMenu => &ChangeMenuW;
 
     [NativeTypeName("#define GetMenuString GetMenuStringW")]
-    public static delegate*<HMENU, uint, ushort*, int, uint, int> GetMenuString => &GetMenuStringW;
+    public static delegate*<HMENU, uint, char*, int, uint, int> GetMenuString => &GetMenuStringW;
 
     [NativeTypeName("#define PMB_ACTIVE 0x00000001")]
     public const int PMB_ACTIVE = 0x00000001;
 
     [NativeTypeName("#define InsertMenu InsertMenuW")]
-    public static delegate*<HMENU, uint, uint, nuint, ushort*, BOOL> InsertMenu => &InsertMenuW;
+    public static delegate*<HMENU, uint, uint, nuint, char*, BOOL> InsertMenu => &InsertMenuW;
 
     [NativeTypeName("#define AppendMenu AppendMenuW")]
-    public static delegate*<HMENU, uint, nuint, ushort*, BOOL> AppendMenu => &AppendMenuW;
+    public static delegate*<HMENU, uint, nuint, char*, BOOL> AppendMenu => &AppendMenuW;
 
     [NativeTypeName("#define ModifyMenu ModifyMenuW")]
-    public static delegate*<HMENU, uint, uint, nuint, ushort*, BOOL> ModifyMenu => &ModifyMenuW;
+    public static delegate*<HMENU, uint, uint, nuint, char*, BOOL> ModifyMenu => &ModifyMenuW;
 
     [NativeTypeName("#define MNC_IGNORE 0")]
     public const int MNC_IGNORE = 0;
@@ -4534,10 +4524,10 @@ public static unsafe partial class Windows
     public const int DO_PRINTFILE = 0x544E5250;
 
     [NativeTypeName("#define DrawText DrawTextW")]
-    public static delegate*<HDC, ushort*, int, RECT*, uint, int> DrawText => &DrawTextW;
+    public static delegate*<HDC, char*, int, RECT*, uint, int> DrawText => &DrawTextW;
 
     [NativeTypeName("#define DrawTextEx DrawTextExW")]
-    public static delegate*<HDC, ushort*, int, RECT*, uint, DRAWTEXTPARAMS*, int> DrawTextEx => &DrawTextExW;
+    public static delegate*<HDC, char*, int, RECT*, uint, DRAWTEXTPARAMS*, int> DrawTextEx => &DrawTextExW;
 
     [NativeTypeName("#define GrayString GrayStringW")]
     public static delegate*<HDC, HBRUSH, delegate* unmanaged<HDC, LPARAM, int, BOOL>, LPARAM, int, int, int, int, int, BOOL> GrayString => &GrayStringW;
@@ -4582,10 +4572,10 @@ public static unsafe partial class Windows
     public static delegate*<HDC, HBRUSH, delegate* unmanaged<HDC, LPARAM, WPARAM, int, int, BOOL>, LPARAM, WPARAM, int, int, int, int, uint, BOOL> DrawState => &DrawStateW;
 
     [NativeTypeName("#define TabbedTextOut TabbedTextOutW")]
-    public static delegate*<HDC, int, int, ushort*, int, int, int*, int, int> TabbedTextOut => &TabbedTextOutW;
+    public static delegate*<HDC, int, int, char*, int, int, int*, int, int> TabbedTextOut => &TabbedTextOutW;
 
     [NativeTypeName("#define GetTabbedTextExtent GetTabbedTextExtentW")]
-    public static delegate*<HDC, ushort*, int, int, int*, uint> GetTabbedTextExtent => &GetTabbedTextExtentW;
+    public static delegate*<HDC, char*, int, int, int*, uint> GetTabbedTextExtent => &GetTabbedTextExtentW;
 
     [NativeTypeName("#define ASFW_ANY ((DWORD)-1)")]
     public const uint ASFW_ANY = unchecked((uint)(-1));
@@ -4621,25 +4611,25 @@ public static unsafe partial class Windows
     public const int ESB_DISABLE_RTDN = 0x0002;
 
     [NativeTypeName("#define SetProp SetPropW")]
-    public static delegate*<HWND, ushort*, HANDLE, BOOL> SetProp => &SetPropW;
+    public static delegate*<HWND, char*, HANDLE, BOOL> SetProp => &SetPropW;
 
     [NativeTypeName("#define GetProp GetPropW")]
-    public static delegate*<HWND, ushort*, HANDLE> GetProp => &GetPropW;
+    public static delegate*<HWND, char*, HANDLE> GetProp => &GetPropW;
 
     [NativeTypeName("#define RemoveProp RemovePropW")]
-    public static delegate*<HWND, ushort*, HANDLE> RemoveProp => &RemovePropW;
+    public static delegate*<HWND, char*, HANDLE> RemoveProp => &RemovePropW;
 
     [NativeTypeName("#define EnumPropsEx EnumPropsExW")]
-    public static delegate*<HWND, delegate* unmanaged<HWND, ushort*, HANDLE, nuint, BOOL>, LPARAM, int> EnumPropsEx => &EnumPropsExW;
+    public static delegate*<HWND, delegate* unmanaged<HWND, char*, HANDLE, nuint, BOOL>, LPARAM, int> EnumPropsEx => &EnumPropsExW;
 
     [NativeTypeName("#define EnumProps EnumPropsW")]
-    public static delegate*<HWND, delegate* unmanaged<HWND, ushort*, HANDLE, BOOL>, int> EnumProps => &EnumPropsW;
+    public static delegate*<HWND, delegate* unmanaged<HWND, char*, HANDLE, BOOL>, int> EnumProps => &EnumPropsW;
 
     [NativeTypeName("#define SetWindowText SetWindowTextW")]
-    public static delegate*<HWND, ushort*, BOOL> SetWindowText => &SetWindowTextW;
+    public static delegate*<HWND, char*, BOOL> SetWindowText => &SetWindowTextW;
 
     [NativeTypeName("#define GetWindowText GetWindowTextW")]
-    public static delegate*<HWND, ushort*, int, int> GetWindowText => &GetWindowTextW;
+    public static delegate*<HWND, char*, int, int> GetWindowText => &GetWindowTextW;
 
     [NativeTypeName("#define GetWindowTextLength GetWindowTextLengthW")]
     public static delegate*<HWND, int> GetWindowTextLength => &GetWindowTextLengthW;
@@ -4651,10 +4641,10 @@ public static unsafe partial class Windows
     public const int HELPINFO_MENUITEM = 0x0002;
 
     [NativeTypeName("#define MessageBox MessageBoxW")]
-    public static delegate*<HWND, ushort*, ushort*, uint, int> MessageBox => &MessageBoxW;
+    public static delegate*<HWND, char*, char*, uint, int> MessageBox => &MessageBoxW;
 
     [NativeTypeName("#define MessageBoxEx MessageBoxExW")]
-    public static delegate*<HWND, ushort*, ushort*, uint, ushort, int> MessageBoxEx => &MessageBoxExW;
+    public static delegate*<HWND, char*, char*, uint, ushort, int> MessageBoxEx => &MessageBoxExW;
 
     [NativeTypeName("#define MessageBoxIndirect MessageBoxIndirectW")]
     public static delegate*<MSGBOXPARAMSW*, int> MessageBoxIndirect => &MessageBoxIndirectW;
@@ -4708,13 +4698,13 @@ public static unsafe partial class Windows
     public static delegate*<HWND, int, int, uint> SetClassLong => &SetClassLongW;
 
     [NativeTypeName("#define FindWindow FindWindowW")]
-    public static delegate*<ushort*, ushort*, HWND> FindWindow => &FindWindowW;
+    public static delegate*<char*, char*, HWND> FindWindow => &FindWindowW;
 
     [NativeTypeName("#define FindWindowEx FindWindowExW")]
-    public static delegate*<HWND, HWND, ushort*, ushort*, HWND> FindWindowEx => &FindWindowExW;
+    public static delegate*<HWND, HWND, char*, char*, HWND> FindWindowEx => &FindWindowExW;
 
     [NativeTypeName("#define GetClassName GetClassNameW")]
-    public static delegate*<HWND, ushort*, int, int> GetClassName => &GetClassNameW;
+    public static delegate*<HWND, char*, int, int> GetClassName => &GetClassNameW;
 
     [NativeTypeName("#define GW_HWNDFIRST 0")]
     public const int GW_HWNDFIRST = 0;
@@ -4774,19 +4764,19 @@ public static unsafe partial class Windows
     public const int SCF_ISSECURE = 0x00000001;
 
     [NativeTypeName("#define LoadBitmap LoadBitmapW")]
-    public static delegate*<HINSTANCE, ushort*, HBITMAP> LoadBitmap => &LoadBitmapW;
+    public static delegate*<HINSTANCE, char*, HBITMAP> LoadBitmap => &LoadBitmapW;
 
     [NativeTypeName("#define LoadCursor LoadCursorW")]
-    public static delegate*<HINSTANCE, ushort*, HCURSOR> LoadCursor => &LoadCursorW;
+    public static delegate*<HINSTANCE, char*, HCURSOR> LoadCursor => &LoadCursorW;
 
     [NativeTypeName("#define LoadCursorFromFile LoadCursorFromFileW")]
-    public static delegate*<ushort*, HCURSOR> LoadCursorFromFile => &LoadCursorFromFileW;
+    public static delegate*<char*, HCURSOR> LoadCursorFromFile => &LoadCursorFromFileW;
 
     [NativeTypeName("#define LoadIcon LoadIconW")]
-    public static delegate*<HINSTANCE, ushort*, HICON> LoadIcon => &LoadIconW;
+    public static delegate*<HINSTANCE, char*, HICON> LoadIcon => &LoadIconW;
 
     [NativeTypeName("#define PrivateExtractIcons PrivateExtractIconsW")]
-    public static delegate*<ushort*, int, int, int, HICON*, uint*, uint, uint, uint> PrivateExtractIcons => &PrivateExtractIconsW;
+    public static delegate*<char*, int, int, int, HICON*, uint*, uint, uint, uint> PrivateExtractIcons => &PrivateExtractIconsW;
 
     [NativeTypeName("#define CURSOR_CREATION_SCALING_NONE 1")]
     public const int CURSOR_CREATION_SCALING_NONE = 1;
@@ -4795,7 +4785,7 @@ public static unsafe partial class Windows
     public const int CURSOR_CREATION_SCALING_DEFAULT = 2;
 
     [NativeTypeName("#define LoadImage LoadImageW")]
-    public static delegate*<HINSTANCE, ushort*, uint, int, int, uint, HANDLE> LoadImage => &LoadImageW;
+    public static delegate*<HINSTANCE, char*, uint, int, int, uint, HANDLE> LoadImage => &LoadImageW;
 
     [NativeTypeName("#define GetIconInfoEx GetIconInfoExW")]
     public static delegate*<HICON, ICONINFOEXW*, BOOL> GetIconInfoEx => &GetIconInfoExW;
@@ -4957,7 +4947,7 @@ public static unsafe partial class Windows
     public static delegate*<HWND, MSG*, BOOL> IsDialogMessage => &IsDialogMessageW;
 
     [NativeTypeName("#define DlgDirList DlgDirListW")]
-    public static delegate*<HWND, ushort*, int, int, uint, int> DlgDirList => &DlgDirListW;
+    public static delegate*<HWND, char*, int, int, uint, int> DlgDirList => &DlgDirListW;
 
     [NativeTypeName("#define DDL_READWRITE 0x0000")]
     public const int DDL_READWRITE = 0x0000;
@@ -4987,13 +4977,13 @@ public static unsafe partial class Windows
     public const int DDL_EXCLUSIVE = 0x8000;
 
     [NativeTypeName("#define DlgDirSelectEx DlgDirSelectExW")]
-    public static delegate*<HWND, ushort*, int, int, BOOL> DlgDirSelectEx => &DlgDirSelectExW;
+    public static delegate*<HWND, char*, int, int, BOOL> DlgDirSelectEx => &DlgDirSelectExW;
 
     [NativeTypeName("#define DlgDirListComboBox DlgDirListComboBoxW")]
-    public static delegate*<HWND, ushort*, int, int, uint, int> DlgDirListComboBox => &DlgDirListComboBoxW;
+    public static delegate*<HWND, char*, int, int, uint, int> DlgDirListComboBox => &DlgDirListComboBoxW;
 
     [NativeTypeName("#define DlgDirSelectComboBoxEx DlgDirSelectComboBoxExW")]
-    public static delegate*<HWND, ushort*, int, int, BOOL> DlgDirSelectComboBoxEx => &DlgDirSelectComboBoxExW;
+    public static delegate*<HWND, char*, int, int, BOOL> DlgDirSelectComboBoxEx => &DlgDirSelectComboBoxExW;
 
     [NativeTypeName("#define LBN_ERRSPACE (-2)")]
     public const int LBN_ERRSPACE = (-2);
@@ -5080,7 +5070,7 @@ public static unsafe partial class Windows
     public static delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> DefMDIChildProc => &DefMDIChildProcW;
 
     [NativeTypeName("#define CreateMDIWindow CreateMDIWindowW")]
-    public static delegate*<ushort*, ushort*, uint, int, int, int, int, HWND, HINSTANCE, LPARAM, HWND> CreateMDIWindow => &CreateMDIWindowW;
+    public static delegate*<char*, char*, uint, int, int, int, int, HWND, HINSTANCE, LPARAM, HWND> CreateMDIWindow => &CreateMDIWindowW;
 
     [NativeTypeName("#define IDH_NO_HELP 28440")]
     public const int IDH_NO_HELP = 28440;
@@ -5101,7 +5091,7 @@ public static unsafe partial class Windows
     public const int IDH_HELP = 28445;
 
     [NativeTypeName("#define WinHelp WinHelpW")]
-    public static delegate*<HWND, ushort*, uint, nuint, BOOL> WinHelp => &WinHelpW;
+    public static delegate*<HWND, char*, uint, nuint, BOOL> WinHelp => &WinHelpW;
 
     [NativeTypeName("#define TOUCHPREDICTIONPARAMETERS_DEFAULT_LATENCY 8")]
     public const int TOUCHPREDICTIONPARAMETERS_DEFAULT_LATENCY = 8;
@@ -5236,13 +5226,13 @@ public static unsafe partial class Windows
     public static delegate*<DEVMODEW*, uint, int> ChangeDisplaySettings => &ChangeDisplaySettingsW;
 
     [NativeTypeName("#define ChangeDisplaySettingsEx ChangeDisplaySettingsExW")]
-    public static delegate*<ushort*, DEVMODEW*, HWND, uint, void*, int> ChangeDisplaySettingsEx => &ChangeDisplaySettingsExW;
+    public static delegate*<char*, DEVMODEW*, HWND, uint, void*, int> ChangeDisplaySettingsEx => &ChangeDisplaySettingsExW;
 
     [NativeTypeName("#define EnumDisplaySettings EnumDisplaySettingsW")]
-    public static delegate*<ushort*, uint, DEVMODEW*, BOOL> EnumDisplaySettings => &EnumDisplaySettingsW;
+    public static delegate*<char*, uint, DEVMODEW*, BOOL> EnumDisplaySettings => &EnumDisplaySettingsW;
 
     [NativeTypeName("#define EnumDisplaySettingsEx EnumDisplaySettingsExW")]
-    public static delegate*<ushort*, uint, DEVMODEW*, uint, BOOL> EnumDisplaySettingsEx => &EnumDisplaySettingsExW;
+    public static delegate*<char*, uint, DEVMODEW*, uint, BOOL> EnumDisplaySettingsEx => &EnumDisplaySettingsExW;
 
     [NativeTypeName("#define EDS_RAWMODE 0x00000002")]
     public const int EDS_RAWMODE = 0x00000002;
@@ -5251,7 +5241,7 @@ public static unsafe partial class Windows
     public const int EDS_ROTATEDMODE = 0x00000004;
 
     [NativeTypeName("#define EnumDisplayDevices EnumDisplayDevicesW")]
-    public static delegate*<ushort*, uint, DISPLAY_DEVICEW*, uint, BOOL> EnumDisplayDevices => &EnumDisplayDevicesW;
+    public static delegate*<char*, uint, DISPLAY_DEVICEW*, uint, BOOL> EnumDisplayDevices => &EnumDisplayDevicesW;
 
     [NativeTypeName("#define EDD_GET_DEVICE_INTERFACE_NAME 0x00000001")]
     public const int EDD_GET_DEVICE_INTERFACE_NAME = 0x00000001;
@@ -5413,7 +5403,7 @@ public static unsafe partial class Windows
     public const int USER_DEFAULT_SCREEN_DPI = 96;
 
     [NativeTypeName("#define GetWindowModuleFileName GetWindowModuleFileNameW")]
-    public static delegate*<HWND, ushort*, uint, uint> GetWindowModuleFileName => &GetWindowModuleFileNameW;
+    public static delegate*<HWND, char*, uint, uint> GetWindowModuleFileName => &GetWindowModuleFileNameW;
 
     [NativeTypeName("#define CCHILDREN_TITLEBAR 5")]
     public const int CCHILDREN_TITLEBAR = 5;
@@ -5428,10 +5418,10 @@ public static unsafe partial class Windows
     public const int CURSOR_SUPPRESSED = 0x00000002;
 
     [NativeTypeName("#define RealGetWindowClass RealGetWindowClassW")]
-    public static delegate*<HWND, ushort*, uint, uint> RealGetWindowClass => &RealGetWindowClassW;
+    public static delegate*<HWND, char*, uint, uint> RealGetWindowClass => &RealGetWindowClassW;
 
     [NativeTypeName("#define GetAltTabInfo GetAltTabInfoW")]
-    public static delegate*<HWND, int, ALTTABINFO*, ushort*, uint, BOOL> GetAltTabInfo => &GetAltTabInfoW;
+    public static delegate*<HWND, int, ALTTABINFO*, char*, uint, BOOL> GetAltTabInfo => &GetAltTabInfoW;
 
     [NativeTypeName("#define RIM_INPUT 0")]
     public const int RIM_INPUT = 0;

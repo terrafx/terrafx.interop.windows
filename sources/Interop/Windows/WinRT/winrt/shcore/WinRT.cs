@@ -13,7 +13,7 @@ public static unsafe partial class WinRT
 {
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CreateRandomAccessStreamOnFile"]/*' />
     [DllImport("shcore", ExactSpelling = true)]
-    public static extern HRESULT CreateRandomAccessStreamOnFile([NativeTypeName("PCWSTR")] ushort* filePath, [NativeTypeName("DWORD")] uint accessMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public static extern HRESULT CreateRandomAccessStreamOnFile([NativeTypeName("PCWSTR")] char* filePath, [NativeTypeName("DWORD")] uint accessMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CreateRandomAccessStreamOverStream"]/*' />
     [DllImport("shcore", ExactSpelling = true)]

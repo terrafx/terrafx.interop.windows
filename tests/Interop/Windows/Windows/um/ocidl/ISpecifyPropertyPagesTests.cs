@@ -19,32 +19,4 @@ public static unsafe partial class ISpecifyPropertyPagesTests
     {
         Assert.That(typeof(ISpecifyPropertyPages).GUID, Is.EqualTo(IID_ISpecifyPropertyPages));
     }
-
-    /// <summary>Validates that the <see cref="ISpecifyPropertyPages" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpecifyPropertyPages>(), Is.EqualTo(sizeof(ISpecifyPropertyPages)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpecifyPropertyPages" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpecifyPropertyPages).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpecifyPropertyPages" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpecifyPropertyPages), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpecifyPropertyPages), Is.EqualTo(4));
-        }
-    }
 }

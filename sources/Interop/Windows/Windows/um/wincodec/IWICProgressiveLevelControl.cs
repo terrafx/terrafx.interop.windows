@@ -25,7 +25,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICProgressiveLevelControl*, Guid*, void**, int>)(lpVtbl[0]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICProgressiveLevelControl*, Guid*, void**, int>)(lpVtbl[0]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICProgressiveLevelControl*, uint>)(lpVtbl[1]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICProgressiveLevelControl*, uint>)(lpVtbl[1]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICProgressiveLevelControl*, uint>)(lpVtbl[2]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICProgressiveLevelControl*, uint>)(lpVtbl[2]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICProgressiveLevelControl.xml' path='doc/member[@name="IWICProgressiveLevelControl.GetLevelCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
     [VtblIndex(3)]
     public HRESULT GetLevelCount(uint* pcLevels)
     {
-        return ((delegate* unmanaged<IWICProgressiveLevelControl*, uint*, int>)(lpVtbl[3]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), pcLevels);
+        return ((delegate* unmanaged[MemberFunction]<IWICProgressiveLevelControl*, uint*, int>)(lpVtbl[3]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), pcLevels);
     }
 
     /// <include file='IWICProgressiveLevelControl.xml' path='doc/member[@name="IWICProgressiveLevelControl.GetCurrentLevel"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
     [VtblIndex(4)]
     public HRESULT GetCurrentLevel(uint* pnLevel)
     {
-        return ((delegate* unmanaged<IWICProgressiveLevelControl*, uint*, int>)(lpVtbl[4]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), pnLevel);
+        return ((delegate* unmanaged[MemberFunction]<IWICProgressiveLevelControl*, uint*, int>)(lpVtbl[4]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), pnLevel);
     }
 
     /// <include file='IWICProgressiveLevelControl.xml' path='doc/member[@name="IWICProgressiveLevelControl.SetCurrentLevel"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
     [VtblIndex(5)]
     public HRESULT SetCurrentLevel(uint nLevel)
     {
-        return ((delegate* unmanaged<IWICProgressiveLevelControl*, uint, int>)(lpVtbl[5]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), nLevel);
+        return ((delegate* unmanaged[MemberFunction]<IWICProgressiveLevelControl*, uint, int>)(lpVtbl[5]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), nLevel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetLevelCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetLevelCount;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCurrentLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCurrentLevel;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetCurrentLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetCurrentLevel;
     }
 }

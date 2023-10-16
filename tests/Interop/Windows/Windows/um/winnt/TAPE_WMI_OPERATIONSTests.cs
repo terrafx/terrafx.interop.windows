@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TAPE_WMI_OPERATIONS" /> struct.</summary>
 public static unsafe partial class TAPE_WMI_OPERATIONSTests
 {
-    /// <summary>Validates that the <see cref="TAPE_WMI_OPERATIONS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TAPE_WMI_OPERATIONS>(), Is.EqualTo(sizeof(TAPE_WMI_OPERATIONS)));
-    }
-
-    /// <summary>Validates that the <see cref="TAPE_WMI_OPERATIONS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TAPE_WMI_OPERATIONS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TAPE_WMI_OPERATIONS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(TAPE_WMI_OPERATIONS), Is.EqualTo(16));
-        }
-        else
-        {
-            Assert.That(sizeof(TAPE_WMI_OPERATIONS), Is.EqualTo(12));
-        }
-    }
 }

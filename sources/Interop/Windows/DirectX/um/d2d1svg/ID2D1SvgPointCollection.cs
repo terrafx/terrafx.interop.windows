@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1SvgPointCollection*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPointCollection*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1SvgPointCollection*, uint>)(lpVtbl[1]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPointCollection*, uint>)(lpVtbl[1]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1SvgPointCollection*, uint>)(lpVtbl[2]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPointCollection*, uint>)(lpVtbl[2]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged<ID2D1SvgPointCollection*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SvgPointCollection*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), factory);
     }
 
     /// <inheritdoc cref="ID2D1SvgAttribute.GetElement" />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [VtblIndex(4)]
     public void GetElement(ID2D1SvgElement** element)
     {
-        ((delegate* unmanaged<ID2D1SvgPointCollection*, ID2D1SvgElement**, void>)(lpVtbl[4]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), element);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SvgPointCollection*, ID2D1SvgElement**, void>)(lpVtbl[4]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), element);
     }
 
     /// <inheritdoc cref="ID2D1SvgAttribute.Clone" />
@@ -68,7 +68,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [VtblIndex(5)]
     public HRESULT Clone(ID2D1SvgAttribute** attribute)
     {
-        return ((delegate* unmanaged<ID2D1SvgPointCollection*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), attribute);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPointCollection*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), attribute);
     }
 
     /// <include file='ID2D1SvgPointCollection.xml' path='doc/member[@name="ID2D1SvgPointCollection.RemovePointsAtEnd"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [VtblIndex(6)]
     public HRESULT RemovePointsAtEnd([NativeTypeName("UINT32")] uint pointsCount)
     {
-        return ((delegate* unmanaged<ID2D1SvgPointCollection*, uint, int>)(lpVtbl[6]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), pointsCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPointCollection*, uint, int>)(lpVtbl[6]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), pointsCount);
     }
 
     /// <include file='ID2D1SvgPointCollection.xml' path='doc/member[@name="ID2D1SvgPointCollection.UpdatePoints"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [VtblIndex(7)]
     public HRESULT UpdatePoints([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
     {
-        return ((delegate* unmanaged<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int>)(lpVtbl[7]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), points, pointsCount, startIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int>)(lpVtbl[7]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), points, pointsCount, startIndex);
     }
 
     /// <include file='ID2D1SvgPointCollection.xml' path='doc/member[@name="ID2D1SvgPointCollection.GetPoints"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [VtblIndex(8)]
     public HRESULT GetPoints([NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
     {
-        return ((delegate* unmanaged<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int>)(lpVtbl[8]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), points, pointsCount, startIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int>)(lpVtbl[8]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), points, pointsCount, startIndex);
     }
 
     /// <include file='ID2D1SvgPointCollection.xml' path='doc/member[@name="ID2D1SvgPointCollection.GetPointsCount"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [return: NativeTypeName("UINT32")]
     public uint GetPointsCount()
     {
-        return ((delegate* unmanaged<ID2D1SvgPointCollection*, uint>)(lpVtbl[9]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPointCollection*, uint>)(lpVtbl[9]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1SvgAttribute.Interface
@@ -124,33 +124,33 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1SvgElement**, void> GetElement;
 
         [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1SvgAttribute**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1SvgAttribute**, int> Clone;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemovePointsAtEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemovePointsAtEnd;
 
         [NativeTypeName("HRESULT (const D2D1_POINT_2F *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2F*, uint, uint, int> UpdatePoints;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2F*, uint, uint, int> UpdatePoints;
 
         [NativeTypeName("HRESULT (D2D1_POINT_2F *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2F*, uint, uint, int> GetPoints;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2F*, uint, uint, int> GetPoints;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetPointsCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetPointsCount;
     }
 }

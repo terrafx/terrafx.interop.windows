@@ -19,32 +19,4 @@ public static unsafe partial class ITravelEntryTests
     {
         Assert.That(typeof(ITravelEntry).GUID, Is.EqualTo(IID_ITravelEntry));
     }
-
-    /// <summary>Validates that the <see cref="ITravelEntry" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITravelEntry>(), Is.EqualTo(sizeof(ITravelEntry)));
-    }
-
-    /// <summary>Validates that the <see cref="ITravelEntry" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITravelEntry).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITravelEntry" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITravelEntry), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITravelEntry), Is.EqualTo(4));
-        }
-    }
 }

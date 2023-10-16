@@ -19,25 +19,4 @@ public static unsafe partial class HTMLCSSImportRuleTests
     {
         Assert.That(typeof(HTMLCSSImportRule).GUID, Is.EqualTo(IID_HTMLCSSImportRule));
     }
-
-    /// <summary>Validates that the <see cref="HTMLCSSImportRule" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLCSSImportRule>(), Is.EqualTo(sizeof(HTMLCSSImportRule)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLCSSImportRule" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLCSSImportRule).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLCSSImportRule" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLCSSImportRule), Is.EqualTo(1));
-    }
 }

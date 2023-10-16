@@ -19,32 +19,4 @@ public static unsafe partial class IUIAnimationPrimitiveInterpolationTests
     {
         Assert.That(typeof(IUIAnimationPrimitiveInterpolation).GUID, Is.EqualTo(IID_IUIAnimationPrimitiveInterpolation));
     }
-
-    /// <summary>Validates that the <see cref="IUIAnimationPrimitiveInterpolation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUIAnimationPrimitiveInterpolation>(), Is.EqualTo(sizeof(IUIAnimationPrimitiveInterpolation)));
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationPrimitiveInterpolation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUIAnimationPrimitiveInterpolation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationPrimitiveInterpolation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUIAnimationPrimitiveInterpolation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUIAnimationPrimitiveInterpolation), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationManagerEventHandler2 : IUIAnimationMana
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationManagerEventHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationManagerEventHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManagerEventHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationManagerEventHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationManagerEventHandler2 : IUIAnimationMana
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationManagerEventHandler2*, uint>)(lpVtbl[1]))((IUIAnimationManagerEventHandler2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManagerEventHandler2*, uint>)(lpVtbl[1]))((IUIAnimationManagerEventHandler2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationManagerEventHandler2 : IUIAnimationMana
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationManagerEventHandler2*, uint>)(lpVtbl[2]))((IUIAnimationManagerEventHandler2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManagerEventHandler2*, uint>)(lpVtbl[2]))((IUIAnimationManagerEventHandler2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationManagerEventHandler2.xml' path='doc/member[@name="IUIAnimationManagerEventHandler2.OnManagerStatusChanged"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationManagerEventHandler2 : IUIAnimationMana
     [VtblIndex(3)]
     public HRESULT OnManagerStatusChanged(UI_ANIMATION_MANAGER_STATUS newStatus, UI_ANIMATION_MANAGER_STATUS previousStatus)
     {
-        return ((delegate* unmanaged<IUIAnimationManagerEventHandler2*, UI_ANIMATION_MANAGER_STATUS, UI_ANIMATION_MANAGER_STATUS, int>)(lpVtbl[3]))((IUIAnimationManagerEventHandler2*)Unsafe.AsPointer(ref this), newStatus, previousStatus);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManagerEventHandler2*, UI_ANIMATION_MANAGER_STATUS, UI_ANIMATION_MANAGER_STATUS, int>)(lpVtbl[3]))((IUIAnimationManagerEventHandler2*)Unsafe.AsPointer(ref this), newStatus, previousStatus);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IUIAnimationManagerEventHandler2 : IUIAnimationMana
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_MANAGER_STATUS, UI_ANIMATION_MANAGER_STATUS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UI_ANIMATION_MANAGER_STATUS, UI_ANIMATION_MANAGER_STATUS, int> OnManagerStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UI_ANIMATION_MANAGER_STATUS, UI_ANIMATION_MANAGER_STATUS, int> OnManagerStatusChanged;
     }
 }

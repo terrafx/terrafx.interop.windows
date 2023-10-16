@@ -10,11 +10,11 @@ public unsafe partial struct D3D12_EXPORT_DESC
 {
     /// <include file='D3D12_EXPORT_DESC.xml' path='doc/member[@name="D3D12_EXPORT_DESC.Name"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* Name;
+    public char* Name;
 
     /// <include file='D3D12_EXPORT_DESC.xml' path='doc/member[@name="D3D12_EXPORT_DESC.ExportToRename"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* ExportToRename;
+    public char* ExportToRename;
 
     /// <include file='D3D12_EXPORT_DESC.xml' path='doc/member[@name="D3D12_EXPORT_DESC.Flags"]/*' />
     public D3D12_EXPORT_FLAGS Flags;

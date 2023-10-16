@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="COMBOBOXEXITEMW" /> struct.</summary>
 public static unsafe partial class COMBOBOXEXITEMWTests
 {
-    /// <summary>Validates that the <see cref="COMBOBOXEXITEMW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<COMBOBOXEXITEMW>(), Is.EqualTo(sizeof(COMBOBOXEXITEMW)));
-    }
-
-    /// <summary>Validates that the <see cref="COMBOBOXEXITEMW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(COMBOBOXEXITEMW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="COMBOBOXEXITEMW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(COMBOBOXEXITEMW), Is.EqualTo(56));
-        }
-        else
-        {
-            Assert.That(sizeof(COMBOBOXEXITEMW), Is.EqualTo(36));
-        }
-    }
 }

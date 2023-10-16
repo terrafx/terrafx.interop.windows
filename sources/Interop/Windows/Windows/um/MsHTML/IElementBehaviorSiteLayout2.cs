@@ -25,7 +25,7 @@ public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteL
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteLayout2*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteL
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, uint>)(lpVtbl[1]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteLayout2*, uint>)(lpVtbl[1]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteL
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, uint>)(lpVtbl[2]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteLayout2*, uint>)(lpVtbl[2]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IElementBehaviorSiteLayout2.xml' path='doc/member[@name="IElementBehaviorSiteLayout2.GetFontInfo"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteL
     [VtblIndex(3)]
     public HRESULT GetFontInfo(LOGFONTW* plf)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, LOGFONTW*, int>)(lpVtbl[3]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this), plf);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteLayout2*, LOGFONTW*, int>)(lpVtbl[3]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this), plf);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteL
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LOGFONTW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LOGFONTW*, int> GetFontInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LOGFONTW*, int> GetFontInfo;
     }
 }

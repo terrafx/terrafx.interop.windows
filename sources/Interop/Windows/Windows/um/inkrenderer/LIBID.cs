@@ -18,7 +18,7 @@ public static partial class LIBID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB0, 0x0A, 0x0D, 0x39,
                 0xE2, 0x19,
                 0xBB, 0x46,
@@ -30,7 +30,7 @@ public static partial class LIBID
                 0xDC,
                 0xF8,
                 0xB9
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

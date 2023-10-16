@@ -25,7 +25,7 @@ public unsafe partial struct IPartsList : IPartsList.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPartsList*, Guid*, void**, int>)(lpVtbl[0]))((IPartsList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPartsList*, Guid*, void**, int>)(lpVtbl[0]))((IPartsList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPartsList : IPartsList.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPartsList*, uint>)(lpVtbl[1]))((IPartsList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPartsList*, uint>)(lpVtbl[1]))((IPartsList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPartsList : IPartsList.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPartsList*, uint>)(lpVtbl[2]))((IPartsList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPartsList*, uint>)(lpVtbl[2]))((IPartsList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPartsList.xml' path='doc/member[@name="IPartsList.GetCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPartsList : IPartsList.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetCount(uint* pCount)
     {
-        return ((delegate* unmanaged<IPartsList*, uint*, int>)(lpVtbl[3]))((IPartsList*)Unsafe.AsPointer(ref this), pCount);
+        return ((delegate* unmanaged[MemberFunction]<IPartsList*, uint*, int>)(lpVtbl[3]))((IPartsList*)Unsafe.AsPointer(ref this), pCount);
     }
 
     /// <include file='IPartsList.xml' path='doc/member[@name="IPartsList.GetPart"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPartsList : IPartsList.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetPart(uint nIndex, IPart** ppPart)
     {
-        return ((delegate* unmanaged<IPartsList*, uint, IPart**, int>)(lpVtbl[4]))((IPartsList*)Unsafe.AsPointer(ref this), nIndex, ppPart);
+        return ((delegate* unmanaged[MemberFunction]<IPartsList*, uint, IPart**, int>)(lpVtbl[4]))((IPartsList*)Unsafe.AsPointer(ref this), nIndex, ppPart);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IPartsList : IPartsList.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, IPart **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IPart**, int> GetPart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPart**, int> GetPart;
     }
 }

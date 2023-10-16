@@ -19,32 +19,4 @@ public static unsafe partial class IWICColorTransformTests
     {
         Assert.That(typeof(IWICColorTransform).GUID, Is.EqualTo(IID_IWICColorTransform));
     }
-
-    /// <summary>Validates that the <see cref="IWICColorTransform" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICColorTransform>(), Is.EqualTo(sizeof(IWICColorTransform)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICColorTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICColorTransform).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICColorTransform" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICColorTransform), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICColorTransform), Is.EqualTo(4));
-        }
-    }
 }

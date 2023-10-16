@@ -19,32 +19,4 @@ public static unsafe partial class IDeveloperConsoleMessageReceiverTests
     {
         Assert.That(typeof(IDeveloperConsoleMessageReceiver).GUID, Is.EqualTo(IID_IDeveloperConsoleMessageReceiver));
     }
-
-    /// <summary>Validates that the <see cref="IDeveloperConsoleMessageReceiver" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDeveloperConsoleMessageReceiver>(), Is.EqualTo(sizeof(IDeveloperConsoleMessageReceiver)));
-    }
-
-    /// <summary>Validates that the <see cref="IDeveloperConsoleMessageReceiver" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDeveloperConsoleMessageReceiver).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDeveloperConsoleMessageReceiver" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDeveloperConsoleMessageReceiver), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDeveloperConsoleMessageReceiver), Is.EqualTo(4));
-        }
-    }
 }

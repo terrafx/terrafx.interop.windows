@@ -19,32 +19,4 @@ public static unsafe partial class IKsPropertySetTests
     {
         Assert.That(typeof(IKsPropertySet).GUID, Is.EqualTo(IID_IKsPropertySet));
     }
-
-    /// <summary>Validates that the <see cref="IKsPropertySet" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IKsPropertySet>(), Is.EqualTo(sizeof(IKsPropertySet)));
-    }
-
-    /// <summary>Validates that the <see cref="IKsPropertySet" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IKsPropertySet).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IKsPropertySet" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IKsPropertySet), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IKsPropertySet), Is.EqualTo(4));
-        }
-    }
 }

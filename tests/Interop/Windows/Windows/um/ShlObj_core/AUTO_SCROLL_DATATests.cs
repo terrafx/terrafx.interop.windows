@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AUTO_SCROLL_DATA" /> struct.</summary>
 public static unsafe partial class AUTO_SCROLL_DATATests
 {
-    /// <summary>Validates that the <see cref="AUTO_SCROLL_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AUTO_SCROLL_DATA>(), Is.EqualTo(sizeof(AUTO_SCROLL_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="AUTO_SCROLL_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AUTO_SCROLL_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AUTO_SCROLL_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AUTO_SCROLL_DATA), Is.EqualTo(48));
-    }
 }

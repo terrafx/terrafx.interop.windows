@@ -26,7 +26,7 @@ public unsafe partial struct ILearningModelSessionOptionsNative1 : ILearningMode
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILearningModelSessionOptionsNative1*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelSessionOptionsNative1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelSessionOptionsNative1*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelSessionOptionsNative1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ILearningModelSessionOptionsNative1 : ILearningMode
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILearningModelSessionOptionsNative1*, uint>)(lpVtbl[1]))((ILearningModelSessionOptionsNative1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelSessionOptionsNative1*, uint>)(lpVtbl[1]))((ILearningModelSessionOptionsNative1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ILearningModelSessionOptionsNative1 : ILearningMode
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILearningModelSessionOptionsNative1*, uint>)(lpVtbl[2]))((ILearningModelSessionOptionsNative1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelSessionOptionsNative1*, uint>)(lpVtbl[2]))((ILearningModelSessionOptionsNative1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILearningModelSessionOptionsNative1.xml' path='doc/member[@name="ILearningModelSessionOptionsNative1.SetIntraOpThreadSpinning"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ILearningModelSessionOptionsNative1 : ILearningMode
     [VtblIndex(3)]
     public HRESULT SetIntraOpThreadSpinning([NativeTypeName("boolean")] byte allowSpinning)
     {
-        return ((delegate* unmanaged<ILearningModelSessionOptionsNative1*, byte, int>)(lpVtbl[3]))((ILearningModelSessionOptionsNative1*)Unsafe.AsPointer(ref this), allowSpinning);
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelSessionOptionsNative1*, byte, int>)(lpVtbl[3]))((ILearningModelSessionOptionsNative1*)Unsafe.AsPointer(ref this), allowSpinning);
     }
 
     public interface Interface : IUnknown.Interface
@@ -65,15 +65,15 @@ public unsafe partial struct ILearningModelSessionOptionsNative1 : ILearningMode
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (boolean) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte, int> SetIntraOpThreadSpinning;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> SetIntraOpThreadSpinning;
     }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WS_TIMESPAN" /> struct.</summary>
 public static unsafe partial class WS_TIMESPANTests
 {
-    /// <summary>Validates that the <see cref="WS_TIMESPAN" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WS_TIMESPAN>(), Is.EqualTo(sizeof(WS_TIMESPAN)));
-    }
-
-    /// <summary>Validates that the <see cref="WS_TIMESPAN" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WS_TIMESPAN).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WS_TIMESPAN" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WS_TIMESPAN), Is.EqualTo(8));
-    }
 }

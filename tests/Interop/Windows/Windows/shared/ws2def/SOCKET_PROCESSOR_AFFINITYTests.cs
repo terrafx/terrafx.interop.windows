@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class SOCKET_PROCESSOR_AFFINITYTests
 {
-    /// <summary>Validates that the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SOCKET_PROCESSOR_AFFINITY>(), Is.EqualTo(sizeof(SOCKET_PROCESSOR_AFFINITY)));
-    }
-
-    /// <summary>Validates that the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SOCKET_PROCESSOR_AFFINITY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SOCKET_PROCESSOR_AFFINITY), Is.EqualTo(8));
-    }
 }

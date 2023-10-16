@@ -31,7 +31,7 @@ public partial struct PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY
     public uint EnablePointerAuthUserIp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnablePointerAuthUserIp;
         }
@@ -47,7 +47,7 @@ public partial struct PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -83,7 +83,7 @@ public partial struct PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY
             public uint EnablePointerAuthUserIp
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -100,7 +100,7 @@ public partial struct PROCESS_MITIGATION_USER_POINTER_AUTH_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

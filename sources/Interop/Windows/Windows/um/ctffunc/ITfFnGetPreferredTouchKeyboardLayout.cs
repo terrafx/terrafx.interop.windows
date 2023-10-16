@@ -27,7 +27,7 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetPreferredTouchKeyboardLayout*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, uint>)(lpVtbl[1]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetPreferredTouchKeyboardLayout*, uint>)(lpVtbl[1]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,15 +45,15 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, uint>)(lpVtbl[2]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetPreferredTouchKeyboardLayout*, uint>)(lpVtbl[2]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, ushort**, int>)(lpVtbl[3]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetPreferredTouchKeyboardLayout*, char**, int>)(lpVtbl[3]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnGetPreferredTouchKeyboardLayout.xml' path='doc/member[@name="ITfFnGetPreferredTouchKeyboardLayout.GetLayout"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
     [VtblIndex(4)]
     public HRESULT GetLayout(TKBLayoutType* pTKBLayoutType, [NativeTypeName("WORD *")] ushort* pwPreferredLayoutId)
     {
-        return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, TKBLayoutType*, ushort*, int>)(lpVtbl[4]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this), pTKBLayoutType, pwPreferredLayoutId);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetPreferredTouchKeyboardLayout*, TKBLayoutType*, ushort*, int>)(lpVtbl[4]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this), pTKBLayoutType, pwPreferredLayoutId);
     }
 
     public interface Interface : ITfFunction.Interface
@@ -74,18 +74,18 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (TKBLayoutType *, WORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TKBLayoutType*, ushort*, int> GetLayout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TKBLayoutType*, ushort*, int> GetLayout;
     }
 }

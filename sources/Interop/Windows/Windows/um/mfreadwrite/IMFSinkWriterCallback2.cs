@@ -25,7 +25,7 @@ public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSinkWriterCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSinkWriterCallback2*, uint>)(lpVtbl[1]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterCallback2*, uint>)(lpVtbl[1]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSinkWriterCallback2*, uint>)(lpVtbl[2]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterCallback2*, uint>)(lpVtbl[2]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFSinkWriterCallback.OnFinalize" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Int
     [VtblIndex(3)]
     public HRESULT OnFinalize(HRESULT hrStatus)
     {
-        return ((delegate* unmanaged<IMFSinkWriterCallback2*, HRESULT, int>)(lpVtbl[3]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this), hrStatus);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterCallback2*, HRESULT, int>)(lpVtbl[3]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this), hrStatus);
     }
 
     /// <inheritdoc cref="IMFSinkWriterCallback.OnMarker" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Int
     [VtblIndex(4)]
     public HRESULT OnMarker([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LPVOID")] void* pvContext)
     {
-        return ((delegate* unmanaged<IMFSinkWriterCallback2*, uint, void*, int>)(lpVtbl[4]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this), dwStreamIndex, pvContext);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterCallback2*, uint, void*, int>)(lpVtbl[4]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this), dwStreamIndex, pvContext);
     }
 
     /// <include file='IMFSinkWriterCallback2.xml' path='doc/member[@name="IMFSinkWriterCallback2.OnTransformChange"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Int
     [VtblIndex(5)]
     public HRESULT OnTransformChange()
     {
-        return ((delegate* unmanaged<IMFSinkWriterCallback2*, int>)(lpVtbl[5]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterCallback2*, int>)(lpVtbl[5]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSinkWriterCallback2.xml' path='doc/member[@name="IMFSinkWriterCallback2.OnStreamError"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Int
     [VtblIndex(6)]
     public HRESULT OnStreamError([NativeTypeName("DWORD")] uint dwStreamIndex, HRESULT hrStatus)
     {
-        return ((delegate* unmanaged<IMFSinkWriterCallback2*, uint, HRESULT, int>)(lpVtbl[6]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this), dwStreamIndex, hrStatus);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterCallback2*, uint, HRESULT, int>)(lpVtbl[6]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this), dwStreamIndex, hrStatus);
     }
 
     public interface Interface : IMFSinkWriterCallback.Interface
@@ -91,24 +91,24 @@ public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, int> OnFinalize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, int> OnFinalize;
 
         [NativeTypeName("HRESULT (DWORD, LPVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, int> OnMarker;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, int> OnMarker;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnTransformChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnTransformChange;
 
         [NativeTypeName("HRESULT (DWORD, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, HRESULT, int> OnStreamError;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, HRESULT, int> OnStreamError;
     }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DEVNAMES" /> struct.</summary>
 public static unsafe partial class DEVNAMESTests
 {
-    /// <summary>Validates that the <see cref="DEVNAMES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DEVNAMES>(), Is.EqualTo(sizeof(DEVNAMES)));
-    }
-
-    /// <summary>Validates that the <see cref="DEVNAMES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DEVNAMES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DEVNAMES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DEVNAMES), Is.EqualTo(8));
-    }
 }

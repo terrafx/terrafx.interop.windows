@@ -26,7 +26,7 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D11On12On7*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11On12On7*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11On12On7*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11On12On7*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D11On12On7*, uint>)(lpVtbl[1]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11On12On7*, uint>)(lpVtbl[1]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D11On12On7*, uint>)(lpVtbl[2]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11On12On7*, uint>)(lpVtbl[2]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D11On12On7.xml' path='doc/member[@name="ID3D11On12On7.SetThreadDeviceCreationParams"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGui
     [VtblIndex(3)]
     public void SetThreadDeviceCreationParams(ID3D12Device* pDevice, ID3D12CommandQueue* pGraphicsQueue)
     {
-        ((delegate* unmanaged<ID3D11On12On7*, ID3D12Device*, ID3D12CommandQueue*, void>)(lpVtbl[3]))((ID3D11On12On7*)Unsafe.AsPointer(ref this), pDevice, pGraphicsQueue);
+        ((delegate* unmanaged[MemberFunction]<ID3D11On12On7*, ID3D12Device*, ID3D12CommandQueue*, void>)(lpVtbl[3]))((ID3D11On12On7*)Unsafe.AsPointer(ref this), pDevice, pGraphicsQueue);
     }
 
     /// <include file='ID3D11On12On7.xml' path='doc/member[@name="ID3D11On12On7.SetThreadResourceCreationParams"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGui
     [VtblIndex(4)]
     public void SetThreadResourceCreationParams(ID3D12Resource* pResource)
     {
-        ((delegate* unmanaged<ID3D11On12On7*, ID3D12Resource*, void>)(lpVtbl[4]))((ID3D11On12On7*)Unsafe.AsPointer(ref this), pResource);
+        ((delegate* unmanaged[MemberFunction]<ID3D11On12On7*, ID3D12Resource*, void>)(lpVtbl[4]))((ID3D11On12On7*)Unsafe.AsPointer(ref this), pResource);
     }
 
     /// <include file='ID3D11On12On7.xml' path='doc/member[@name="ID3D11On12On7.GetThreadLastCreatedDevice"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGui
     [VtblIndex(5)]
     public ID3D11On12On7Device* GetThreadLastCreatedDevice()
     {
-        return ((delegate* unmanaged<ID3D11On12On7*, ID3D11On12On7Device*>)(lpVtbl[5]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11On12On7*, ID3D11On12On7Device*>)(lpVtbl[5]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D11On12On7.xml' path='doc/member[@name="ID3D11On12On7.GetThreadLastCreatedResource"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGui
     [return: NativeTypeName("ID3D11On12On7Resource*")]
     public void* GetThreadLastCreatedResource()
     {
-        return ((delegate* unmanaged<ID3D11On12On7*, void*>)(lpVtbl[6]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11On12On7*, void*>)(lpVtbl[6]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -100,24 +100,24 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D12Device *, ID3D12CommandQueue *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Device*, ID3D12CommandQueue*, void> SetThreadDeviceCreationParams;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Device*, ID3D12CommandQueue*, void> SetThreadDeviceCreationParams;
 
         [NativeTypeName("void (ID3D12Resource *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, void> SetThreadResourceCreationParams;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, void> SetThreadResourceCreationParams;
 
         [NativeTypeName("ID3D11On12On7Device *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D11On12On7Device*> GetThreadLastCreatedDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D11On12On7Device*> GetThreadLastCreatedDevice;
 
         [NativeTypeName("ID3D11On12On7Resource *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> GetThreadLastCreatedResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> GetThreadLastCreatedResource;
     }
 }

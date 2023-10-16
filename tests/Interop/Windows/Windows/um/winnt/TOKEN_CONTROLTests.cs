@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TOKEN_CONTROL" /> struct.</summary>
 public static unsafe partial class TOKEN_CONTROLTests
 {
-    /// <summary>Validates that the <see cref="TOKEN_CONTROL" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TOKEN_CONTROL>(), Is.EqualTo(sizeof(TOKEN_CONTROL)));
-    }
-
-    /// <summary>Validates that the <see cref="TOKEN_CONTROL" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TOKEN_CONTROL).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TOKEN_CONTROL" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TOKEN_CONTROL), Is.EqualTo(40));
-    }
 }

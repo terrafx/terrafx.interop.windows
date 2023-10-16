@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KERB_CLOUD_KERBEROS_DEBUG_REQUEST" /> struct.</summary>
 public static unsafe partial class KERB_CLOUD_KERBEROS_DEBUG_REQUESTTests
 {
-    /// <summary>Validates that the <see cref="KERB_CLOUD_KERBEROS_DEBUG_REQUEST" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KERB_CLOUD_KERBEROS_DEBUG_REQUEST>(), Is.EqualTo(sizeof(KERB_CLOUD_KERBEROS_DEBUG_REQUEST)));
-    }
-
-    /// <summary>Validates that the <see cref="KERB_CLOUD_KERBEROS_DEBUG_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KERB_CLOUD_KERBEROS_DEBUG_REQUEST).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KERB_CLOUD_KERBEROS_DEBUG_REQUEST" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(KERB_CLOUD_KERBEROS_DEBUG_REQUEST), Is.EqualTo(12));
-    }
 }

@@ -198,11 +198,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoQueryProxyBlanket"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CoQueryProxyBlanket(IUnknown* pProxy, [NativeTypeName("DWORD *")] uint* pwAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("LPOLESTR *")] ushort** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, [NativeTypeName("RPC_AUTH_IDENTITY_HANDLE *")] void** pAuthInfo, [NativeTypeName("DWORD *")] uint* pCapabilites);
+    public static extern HRESULT CoQueryProxyBlanket(IUnknown* pProxy, [NativeTypeName("DWORD *")] uint* pwAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("LPOLESTR *")] char** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, [NativeTypeName("RPC_AUTH_IDENTITY_HANDLE *")] void** pAuthInfo, [NativeTypeName("DWORD *")] uint* pCapabilites);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoSetProxyBlanket"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CoSetProxyBlanket(IUnknown* pProxy, [NativeTypeName("DWORD")] uint dwAuthnSvc, [NativeTypeName("DWORD")] uint dwAuthzSvc, [NativeTypeName("OLECHAR *")] ushort* pServerPrincName, [NativeTypeName("DWORD")] uint dwAuthnLevel, [NativeTypeName("DWORD")] uint dwImpLevel, [NativeTypeName("RPC_AUTH_IDENTITY_HANDLE")] void* pAuthInfo, [NativeTypeName("DWORD")] uint dwCapabilities);
+    public static extern HRESULT CoSetProxyBlanket(IUnknown* pProxy, [NativeTypeName("DWORD")] uint dwAuthnSvc, [NativeTypeName("DWORD")] uint dwAuthzSvc, [NativeTypeName("OLECHAR *")] char* pServerPrincName, [NativeTypeName("DWORD")] uint dwAuthnLevel, [NativeTypeName("DWORD")] uint dwImpLevel, [NativeTypeName("RPC_AUTH_IDENTITY_HANDLE")] void* pAuthInfo, [NativeTypeName("DWORD")] uint dwCapabilities);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoCopyProxy"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -210,7 +210,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoQueryClientBlanket"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CoQueryClientBlanket([NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("LPOLESTR *")] ushort** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, [NativeTypeName("RPC_AUTHZ_HANDLE *")] void** pPrivs, [NativeTypeName("DWORD *")] uint* pCapabilities);
+    public static extern HRESULT CoQueryClientBlanket([NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("LPOLESTR *")] char** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, [NativeTypeName("RPC_AUTHZ_HANDLE *")] void** pPrivs, [NativeTypeName("DWORD *")] uint* pCapabilities);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoImpersonateClient"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -271,31 +271,31 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StringFromCLSID"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT StringFromCLSID([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPOLESTR *")] ushort** lplpsz);
+    public static extern HRESULT StringFromCLSID([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPOLESTR *")] char** lplpsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CLSIDFromString"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CLSIDFromString([NativeTypeName("LPCOLESTR")] ushort* lpsz, [NativeTypeName("LPCLSID")] Guid* pclsid);
+    public static extern HRESULT CLSIDFromString([NativeTypeName("LPCOLESTR")] char* lpsz, [NativeTypeName("LPCLSID")] Guid* pclsid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StringFromIID"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT StringFromIID([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPOLESTR *")] ushort** lplpsz);
+    public static extern HRESULT StringFromIID([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPOLESTR *")] char** lplpsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IIDFromString"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT IIDFromString([NativeTypeName("LPCOLESTR")] ushort* lpsz, [NativeTypeName("LPIID")] Guid* lpiid);
+    public static extern HRESULT IIDFromString([NativeTypeName("LPCOLESTR")] char* lpsz, [NativeTypeName("LPIID")] Guid* lpiid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ProgIDFromCLSID"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT ProgIDFromCLSID([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPOLESTR *")] ushort** lplpszProgID);
+    public static extern HRESULT ProgIDFromCLSID([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPOLESTR *")] char** lplpszProgID);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CLSIDFromProgID"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CLSIDFromProgID([NativeTypeName("LPCOLESTR")] ushort* lpszProgID, [NativeTypeName("LPCLSID")] Guid* lpclsid);
+    public static extern HRESULT CLSIDFromProgID([NativeTypeName("LPCOLESTR")] char* lpszProgID, [NativeTypeName("LPCLSID")] Guid* lpclsid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StringFromGUID2"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern int StringFromGUID2([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("LPOLESTR")] ushort* lpsz, int cchMax);
+    public static extern int StringFromGUID2([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("LPOLESTR")] char* lpsz, int cchMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoCreateGuid"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -327,7 +327,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInvalidateRemoteMachineBindings"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CoInvalidateRemoteMachineBindings([NativeTypeName("LPOLESTR")] ushort* pszMachineName);
+    public static extern HRESULT CoInvalidateRemoteMachineBindings([NativeTypeName("LPOLESTR")] char* pszMachineName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RoGetAgileReference"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -354,11 +354,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CLSIDFromProgIDEx"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CLSIDFromProgIDEx([NativeTypeName("LPCOLESTR")] ushort* lpszProgID, [NativeTypeName("LPCLSID")] Guid* lpclsid);
+    public static extern HRESULT CLSIDFromProgIDEx([NativeTypeName("LPCOLESTR")] char* lpszProgID, [NativeTypeName("LPCLSID")] Guid* lpclsid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoRegisterDeviceCatalog"]/*' />
     [DllImport("combase", ExactSpelling = true)]
-    public static extern HRESULT CoRegisterDeviceCatalog([NativeTypeName("PCWSTR")] ushort* deviceInstanceId, CO_DEVICE_CATALOG_COOKIE* cookie);
+    public static extern HRESULT CoRegisterDeviceCatalog([NativeTypeName("PCWSTR")] char* deviceInstanceId, CO_DEVICE_CATALOG_COOKIE* cookie);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoRevokeDeviceCatalog"]/*' />
     [DllImport("combase", ExactSpelling = true)]

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IDEREGS" /> struct.</summary>
 public static unsafe partial class IDEREGSTests
 {
-    /// <summary>Validates that the <see cref="IDEREGS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDEREGS>(), Is.EqualTo(sizeof(IDEREGS)));
-    }
-
-    /// <summary>Validates that the <see cref="IDEREGS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDEREGS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDEREGS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IDEREGS), Is.EqualTo(8));
-    }
 }

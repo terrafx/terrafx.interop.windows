@@ -19,32 +19,4 @@ public static unsafe partial class ITensorStaticsNativeTests
     {
         Assert.That(typeof(ITensorStaticsNative).GUID, Is.EqualTo(IID_ITensorStaticsNative));
     }
-
-    /// <summary>Validates that the <see cref="ITensorStaticsNative" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITensorStaticsNative>(), Is.EqualTo(sizeof(ITensorStaticsNative)));
-    }
-
-    /// <summary>Validates that the <see cref="ITensorStaticsNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITensorStaticsNative).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITensorStaticsNative" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITensorStaticsNative), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITensorStaticsNative), Is.EqualTo(4));
-        }
-    }
 }

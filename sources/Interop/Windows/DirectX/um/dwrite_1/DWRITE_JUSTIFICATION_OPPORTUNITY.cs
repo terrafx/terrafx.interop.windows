@@ -26,7 +26,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
     public uint expansionPriority
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0xFFu;
         }
@@ -43,7 +43,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
     public uint compressionPriority
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 8) & 0xFFu;
         }
@@ -60,7 +60,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
     public uint allowResidualExpansion
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 16) & 0x1u;
         }
@@ -77,7 +77,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
     public uint allowResidualCompression
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 17) & 0x1u;
         }
@@ -94,7 +94,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
     public uint applyToLeadingEdge
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 18) & 0x1u;
         }
@@ -111,7 +111,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
     public uint applyToTrailingEdge
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 19) & 0x1u;
         }
@@ -128,7 +128,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 20) & 0xFFFu;
         }

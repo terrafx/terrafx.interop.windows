@@ -58,5 +58,5 @@ public unsafe partial struct PSS_VA_SPACE_ENTRY
 
     /// <include file='PSS_VA_SPACE_ENTRY.xml' path='doc/member[@name="PSS_VA_SPACE_ENTRY.MappedFileName"]/*' />
     [NativeTypeName("const wchar_t *")]
-    public ushort* MappedFileName;
+    public char* MappedFileName;
 }

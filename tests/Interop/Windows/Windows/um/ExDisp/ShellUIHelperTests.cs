@@ -19,25 +19,4 @@ public static unsafe partial class ShellUIHelperTests
     {
         Assert.That(typeof(ShellUIHelper).GUID, Is.EqualTo(IID_ShellUIHelper));
     }
-
-    /// <summary>Validates that the <see cref="ShellUIHelper" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ShellUIHelper>(), Is.EqualTo(sizeof(ShellUIHelper)));
-    }
-
-    /// <summary>Validates that the <see cref="ShellUIHelper" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ShellUIHelper).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ShellUIHelper" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ShellUIHelper), Is.EqualTo(1));
-    }
 }

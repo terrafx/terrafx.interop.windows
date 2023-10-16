@@ -14,7 +14,7 @@ public unsafe partial struct D3D12_AUTO_BREADCRUMB_NODE
 
     /// <include file='D3D12_AUTO_BREADCRUMB_NODE.xml' path='doc/member[@name="D3D12_AUTO_BREADCRUMB_NODE.pCommandListDebugNameW"]/*' />
     [NativeTypeName("const wchar_t *")]
-    public ushort* pCommandListDebugNameW;
+    public char* pCommandListDebugNameW;
 
     /// <include file='D3D12_AUTO_BREADCRUMB_NODE.xml' path='doc/member[@name="D3D12_AUTO_BREADCRUMB_NODE.pCommandQueueDebugNameA"]/*' />
     [NativeTypeName("const char *")]
@@ -22,7 +22,7 @@ public unsafe partial struct D3D12_AUTO_BREADCRUMB_NODE
 
     /// <include file='D3D12_AUTO_BREADCRUMB_NODE.xml' path='doc/member[@name="D3D12_AUTO_BREADCRUMB_NODE.pCommandQueueDebugNameW"]/*' />
     [NativeTypeName("const wchar_t *")]
-    public ushort* pCommandQueueDebugNameW;
+    public char* pCommandQueueDebugNameW;
 
     /// <include file='D3D12_AUTO_BREADCRUMB_NODE.xml' path='doc/member[@name="D3D12_AUTO_BREADCRUMB_NODE.pCommandList"]/*' />
     public ID3D12GraphicsCommandList* pCommandList;

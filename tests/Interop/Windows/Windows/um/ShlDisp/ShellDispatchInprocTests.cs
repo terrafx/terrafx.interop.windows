@@ -19,25 +19,4 @@ public static unsafe partial class ShellDispatchInprocTests
     {
         Assert.That(typeof(ShellDispatchInproc).GUID, Is.EqualTo(IID_ShellDispatchInproc));
     }
-
-    /// <summary>Validates that the <see cref="ShellDispatchInproc" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ShellDispatchInproc>(), Is.EqualTo(sizeof(ShellDispatchInproc)));
-    }
-
-    /// <summary>Validates that the <see cref="ShellDispatchInproc" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ShellDispatchInproc).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ShellDispatchInproc" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ShellDispatchInproc), Is.EqualTo(1));
-    }
 }

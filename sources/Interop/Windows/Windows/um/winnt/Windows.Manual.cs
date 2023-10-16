@@ -73,7 +73,7 @@ public static unsafe partial class Windows
     public const int UNWIND_CHAIN_LIMIT = 32;
 
     [NativeTypeName("#define OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK_EXPORT_NAME \"OutOfProcessFunctionTableCallback\"")]
-    public static ReadOnlySpan<byte> OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK_EXPORT_NAME => new byte[] { 0x4F, 0x75, 0x74, 0x4F, 0x66, 0x50, 0x72, 0x6F, 0x63, 0x65, 0x73, 0x73, 0x46, 0x75, 0x6E, 0x63, 0x74, 0x69, 0x6F, 0x6E, 0x54, 0x61, 0x62, 0x6C, 0x65, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK_EXPORT_NAME => "OutOfProcessFunctionTableCallback"u8;
 
     [NativeTypeName("#define ARM64_MAX_BREAKPOINTS 8")]
     public const int ARM64_MAX_BREAKPOINTS = 8;

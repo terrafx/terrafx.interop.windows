@@ -19,25 +19,4 @@ public static unsafe partial class HTMLDocumentCompatibleInfoTests
     {
         Assert.That(typeof(HTMLDocumentCompatibleInfo).GUID, Is.EqualTo(IID_HTMLDocumentCompatibleInfo));
     }
-
-    /// <summary>Validates that the <see cref="HTMLDocumentCompatibleInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLDocumentCompatibleInfo>(), Is.EqualTo(sizeof(HTMLDocumentCompatibleInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLDocumentCompatibleInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLDocumentCompatibleInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLDocumentCompatibleInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLDocumentCompatibleInfo), Is.EqualTo(1));
-    }
 }

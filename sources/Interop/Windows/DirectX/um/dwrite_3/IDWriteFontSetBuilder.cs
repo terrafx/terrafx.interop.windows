@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteFontSetBuilder : IDWriteFontSetBuilder.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteFontSetBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontSetBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteFontSetBuilder : IDWriteFontSetBuilder.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteFontSetBuilder*, uint>)(lpVtbl[1]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontSetBuilder*, uint>)(lpVtbl[1]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteFontSetBuilder : IDWriteFontSetBuilder.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteFontSetBuilder*, uint>)(lpVtbl[2]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontSetBuilder*, uint>)(lpVtbl[2]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontSetBuilder.xml' path='doc/member[@name="IDWriteFontSetBuilder.AddFontFaceReference"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteFontSetBuilder : IDWriteFontSetBuilder.Inter
     [VtblIndex(3)]
     public HRESULT AddFontFaceReference(IDWriteFontFaceReference* fontFaceReference, [NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount)
     {
-        return ((delegate* unmanaged<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, DWRITE_FONT_PROPERTY*, uint, int>)(lpVtbl[3]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontFaceReference, properties, propertyCount);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, DWRITE_FONT_PROPERTY*, uint, int>)(lpVtbl[3]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontFaceReference, properties, propertyCount);
     }
 
     /// <include file='IDWriteFontSetBuilder.xml' path='doc/member[@name="IDWriteFontSetBuilder.AddFontFaceReference"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteFontSetBuilder : IDWriteFontSetBuilder.Inter
     [VtblIndex(4)]
     public HRESULT AddFontFaceReference(IDWriteFontFaceReference* fontFaceReference)
     {
-        return ((delegate* unmanaged<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, int>)(lpVtbl[4]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontFaceReference);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, int>)(lpVtbl[4]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontFaceReference);
     }
 
     /// <include file='IDWriteFontSetBuilder.xml' path='doc/member[@name="IDWriteFontSetBuilder.AddFontSet"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDWriteFontSetBuilder : IDWriteFontSetBuilder.Inter
     [VtblIndex(5)]
     public HRESULT AddFontSet(IDWriteFontSet* fontSet)
     {
-        return ((delegate* unmanaged<IDWriteFontSetBuilder*, IDWriteFontSet*, int>)(lpVtbl[5]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontSet);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontSetBuilder*, IDWriteFontSet*, int>)(lpVtbl[5]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontSet);
     }
 
     /// <include file='IDWriteFontSetBuilder.xml' path='doc/member[@name="IDWriteFontSetBuilder.CreateFontSet"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDWriteFontSetBuilder : IDWriteFontSetBuilder.Inter
     [VtblIndex(6)]
     public HRESULT CreateFontSet(IDWriteFontSet** fontSet)
     {
-        return ((delegate* unmanaged<IDWriteFontSetBuilder*, IDWriteFontSet**, int>)(lpVtbl[6]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontSet);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontSetBuilder*, IDWriteFontSet**, int>)(lpVtbl[6]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontSet);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,24 +98,24 @@ public unsafe partial struct IDWriteFontSetBuilder : IDWriteFontSetBuilder.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDWriteFontFaceReference *, const DWRITE_FONT_PROPERTY *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontFaceReference*, DWRITE_FONT_PROPERTY*, uint, int> AddFontFaceReference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontFaceReference*, DWRITE_FONT_PROPERTY*, uint, int> AddFontFaceReference;
 
         [NativeTypeName("HRESULT (IDWriteFontFaceReference *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontFaceReference*, int> AddFontFaceReference1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontFaceReference*, int> AddFontFaceReference1;
 
         [NativeTypeName("HRESULT (IDWriteFontSet *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontSet*, int> AddFontSet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontSet*, int> AddFontSet;
 
         [NativeTypeName("HRESULT (IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontSet**, int> CreateFontSet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontSet**, int> CreateFontSet;
     }
 }

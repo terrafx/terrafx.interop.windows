@@ -25,7 +25,7 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICredentialProviderFilter*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderFilter*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICredentialProviderFilter*, uint>)(lpVtbl[1]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderFilter*, uint>)(lpVtbl[1]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICredentialProviderFilter*, uint>)(lpVtbl[2]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderFilter*, uint>)(lpVtbl[2]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICredentialProviderFilter.xml' path='doc/member[@name="ICredentialProviderFilter.Filter"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
     [VtblIndex(3)]
     public HRESULT Filter(CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, [NativeTypeName("DWORD")] uint dwFlags, Guid* rgclsidProviders, BOOL* rgbAllow, [NativeTypeName("DWORD")] uint cProviders)
     {
-        return ((delegate* unmanaged<ICredentialProviderFilter*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, Guid*, BOOL*, uint, int>)(lpVtbl[3]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this), cpus, dwFlags, rgclsidProviders, rgbAllow, cProviders);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderFilter*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, Guid*, BOOL*, uint, int>)(lpVtbl[3]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this), cpus, dwFlags, rgclsidProviders, rgbAllow, cProviders);
     }
 
     /// <include file='ICredentialProviderFilter.xml' path='doc/member[@name="ICredentialProviderFilter.UpdateRemoteCredential"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
     [VtblIndex(4)]
     public HRESULT UpdateRemoteCredential([NativeTypeName("const CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *")] CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcsIn, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcsOut)
     {
-        return ((delegate* unmanaged<ICredentialProviderFilter*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, int>)(lpVtbl[4]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this), pcpcsIn, pcpcsOut);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderFilter*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, int>)(lpVtbl[4]))((ICredentialProviderFilter*)Unsafe.AsPointer(ref this), pcpcsIn, pcpcsOut);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CREDENTIAL_PROVIDER_USAGE_SCENARIO, DWORD, GUID *, BOOL *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, Guid*, BOOL*, uint, int> Filter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, Guid*, BOOL*, uint, int> Filter;
 
         [NativeTypeName("HRESULT (const CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, int> UpdateRemoteCredential;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, int> UpdateRemoteCredential;
     }
 }

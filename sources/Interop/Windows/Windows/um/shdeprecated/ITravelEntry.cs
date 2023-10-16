@@ -25,7 +25,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITravelEntry*, Guid*, void**, int>)(lpVtbl[0]))((ITravelEntry*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITravelEntry*, Guid*, void**, int>)(lpVtbl[0]))((ITravelEntry*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITravelEntry*, uint>)(lpVtbl[1]))((ITravelEntry*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITravelEntry*, uint>)(lpVtbl[1]))((ITravelEntry*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITravelEntry*, uint>)(lpVtbl[2]))((ITravelEntry*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITravelEntry*, uint>)(lpVtbl[2]))((ITravelEntry*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITravelEntry.xml' path='doc/member[@name="ITravelEntry.Invoke"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Invoke(IUnknown* punk)
     {
-        return ((delegate* unmanaged<ITravelEntry*, IUnknown*, int>)(lpVtbl[3]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk);
+        return ((delegate* unmanaged[MemberFunction]<ITravelEntry*, IUnknown*, int>)(lpVtbl[3]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk);
     }
 
     /// <include file='ITravelEntry.xml' path='doc/member[@name="ITravelEntry.Update"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Update(IUnknown* punk, BOOL fIsLocalAnchor)
     {
-        return ((delegate* unmanaged<ITravelEntry*, IUnknown*, BOOL, int>)(lpVtbl[4]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
+        return ((delegate* unmanaged[MemberFunction]<ITravelEntry*, IUnknown*, BOOL, int>)(lpVtbl[4]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
     }
 
     /// <include file='ITravelEntry.xml' path='doc/member[@name="ITravelEntry.GetPidl"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
     {
-        return ((delegate* unmanaged<ITravelEntry*, ITEMIDLIST**, int>)(lpVtbl[5]))((ITravelEntry*)Unsafe.AsPointer(ref this), ppidl);
+        return ((delegate* unmanaged[MemberFunction]<ITravelEntry*, ITEMIDLIST**, int>)(lpVtbl[5]))((ITravelEntry*)Unsafe.AsPointer(ref this), ppidl);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> Invoke;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, BOOL, int> Update;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, BOOL, int> Update;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetPidl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST**, int> GetPidl;
     }
 }

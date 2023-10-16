@@ -22,7 +22,7 @@ public unsafe partial struct WINHTTP_EXTENDED_HEADER
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pwszName"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszName
+    public ref char* pwszName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -44,7 +44,7 @@ public unsafe partial struct WINHTTP_EXTENDED_HEADER
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pwszValue"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszValue
+    public ref char* pwszValue
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -71,7 +71,7 @@ public unsafe partial struct WINHTTP_EXTENDED_HEADER
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pwszName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCWSTR")]
-        public ushort* pwszName;
+        public char* pwszName;
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszName"]/*' />
         [FieldOffset(0)]
@@ -86,7 +86,7 @@ public unsafe partial struct WINHTTP_EXTENDED_HEADER
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pwszValue"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCWSTR")]
-        public ushort* pwszValue;
+        public char* pwszValue;
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszValue"]/*' />
         [FieldOffset(0)]

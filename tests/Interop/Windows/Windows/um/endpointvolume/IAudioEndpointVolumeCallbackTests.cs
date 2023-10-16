@@ -19,32 +19,4 @@ public static unsafe partial class IAudioEndpointVolumeCallbackTests
     {
         Assert.That(typeof(IAudioEndpointVolumeCallback).GUID, Is.EqualTo(IID_IAudioEndpointVolumeCallback));
     }
-
-    /// <summary>Validates that the <see cref="IAudioEndpointVolumeCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioEndpointVolumeCallback>(), Is.EqualTo(sizeof(IAudioEndpointVolumeCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioEndpointVolumeCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioEndpointVolumeCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioEndpointVolumeCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioEndpointVolumeCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioEndpointVolumeCallback), Is.EqualTo(4));
-        }
-    }
 }

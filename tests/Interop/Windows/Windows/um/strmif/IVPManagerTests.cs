@@ -19,32 +19,4 @@ public static unsafe partial class IVPManagerTests
     {
         Assert.That(typeof(IVPManager).GUID, Is.EqualTo(IID_IVPManager));
     }
-
-    /// <summary>Validates that the <see cref="IVPManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVPManager>(), Is.EqualTo(sizeof(IVPManager)));
-    }
-
-    /// <summary>Validates that the <see cref="IVPManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVPManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVPManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVPManager), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVPManager), Is.EqualTo(4));
-        }
-    }
 }

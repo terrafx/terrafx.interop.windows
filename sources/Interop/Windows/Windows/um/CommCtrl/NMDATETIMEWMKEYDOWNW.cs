@@ -16,7 +16,7 @@ public unsafe partial struct NMDATETIMEWMKEYDOWNW
 
     /// <include file='NMDATETIMEWMKEYDOWNW.xml' path='doc/member[@name="NMDATETIMEWMKEYDOWNW.pszFormat"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszFormat;
+    public char* pszFormat;
 
     /// <include file='NMDATETIMEWMKEYDOWNW.xml' path='doc/member[@name="NMDATETIMEWMKEYDOWNW.st"]/*' />
     public SYSTEMTIME st;

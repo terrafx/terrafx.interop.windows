@@ -25,7 +25,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWizardExtension*, Guid*, void**, int>)(lpVtbl[0]))((IWizardExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWizardExtension*, Guid*, void**, int>)(lpVtbl[0]))((IWizardExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWizardExtension*, uint>)(lpVtbl[1]))((IWizardExtension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWizardExtension*, uint>)(lpVtbl[1]))((IWizardExtension*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWizardExtension*, uint>)(lpVtbl[2]))((IWizardExtension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWizardExtension*, uint>)(lpVtbl[2]))((IWizardExtension*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWizardExtension.xml' path='doc/member[@name="IWizardExtension.AddPages"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface, INat
     [VtblIndex(3)]
     public HRESULT AddPages(HPROPSHEETPAGE* aPages, uint cPages, uint* pnPagesAdded)
     {
-        return ((delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int>)(lpVtbl[3]))((IWizardExtension*)Unsafe.AsPointer(ref this), aPages, cPages, pnPagesAdded);
+        return ((delegate* unmanaged[MemberFunction]<IWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int>)(lpVtbl[3]))((IWizardExtension*)Unsafe.AsPointer(ref this), aPages, cPages, pnPagesAdded);
     }
 
     /// <include file='IWizardExtension.xml' path='doc/member[@name="IWizardExtension.GetFirstPage"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetFirstPage(HPROPSHEETPAGE* phpage)
     {
-        return ((delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IWizardExtension*)Unsafe.AsPointer(ref this), phpage);
+        return ((delegate* unmanaged[MemberFunction]<IWizardExtension*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IWizardExtension*)Unsafe.AsPointer(ref this), phpage);
     }
 
     /// <include file='IWizardExtension.xml' path='doc/member[@name="IWizardExtension.GetLastPage"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetLastPage(HPROPSHEETPAGE* phpage)
     {
-        return ((delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IWizardExtension*)Unsafe.AsPointer(ref this), phpage);
+        return ((delegate* unmanaged[MemberFunction]<IWizardExtension*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IWizardExtension*)Unsafe.AsPointer(ref this), phpage);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetFirstPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HPROPSHEETPAGE*, int> GetFirstPage;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetLastPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HPROPSHEETPAGE*, int> GetLastPage;
     }
 }

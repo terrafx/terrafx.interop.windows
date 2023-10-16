@@ -26,7 +26,7 @@ public unsafe partial struct ID3D12DebugDevice1 : ID3D12DebugDevice1.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D12DebugDevice1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DebugDevice1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D12DebugDevice1 : ID3D12DebugDevice1.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D12DebugDevice1*, uint>)(lpVtbl[1]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DebugDevice1*, uint>)(lpVtbl[1]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12DebugDevice1 : ID3D12DebugDevice1.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D12DebugDevice1*, uint>)(lpVtbl[2]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DebugDevice1*, uint>)(lpVtbl[2]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12DebugDevice1.xml' path='doc/member[@name="ID3D12DebugDevice1.SetDebugParameter"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D12DebugDevice1 : ID3D12DebugDevice1.Interface, 
     [VtblIndex(3)]
     public HRESULT SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, [NativeTypeName("const void *")] void* pData, uint DataSize)
     {
-        return ((delegate* unmanaged<ID3D12DebugDevice1*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int>)(lpVtbl[3]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this), Type, pData, DataSize);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DebugDevice1*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int>)(lpVtbl[3]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this), Type, pData, DataSize);
     }
 
     /// <include file='ID3D12DebugDevice1.xml' path='doc/member[@name="ID3D12DebugDevice1.GetDebugParameter"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D12DebugDevice1 : ID3D12DebugDevice1.Interface, 
     [VtblIndex(4)]
     public HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint DataSize)
     {
-        return ((delegate* unmanaged<ID3D12DebugDevice1*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int>)(lpVtbl[4]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this), Type, pData, DataSize);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DebugDevice1*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int>)(lpVtbl[4]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this), Type, pData, DataSize);
     }
 
     /// <include file='ID3D12DebugDevice1.xml' path='doc/member[@name="ID3D12DebugDevice1.ReportLiveDeviceObjects"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D12DebugDevice1 : ID3D12DebugDevice1.Interface, 
     [VtblIndex(5)]
     public HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags)
     {
-        return ((delegate* unmanaged<ID3D12DebugDevice1*, D3D12_RLDO_FLAGS, int>)(lpVtbl[5]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this), Flags);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DebugDevice1*, D3D12_RLDO_FLAGS, int>)(lpVtbl[5]))((ID3D12DebugDevice1*)Unsafe.AsPointer(ref this), Flags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,21 +87,21 @@ public unsafe partial struct ID3D12DebugDevice1 : ID3D12DebugDevice1.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (D3D12_DEBUG_DEVICE_PARAMETER_TYPE, const void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int> SetDebugParameter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int> SetDebugParameter;
 
         [NativeTypeName("HRESULT (D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int> GetDebugParameter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int> GetDebugParameter;
 
         [NativeTypeName("HRESULT (D3D12_RLDO_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_RLDO_FLAGS, int> ReportLiveDeviceObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_RLDO_FLAGS, int> ReportLiveDeviceObjects;
     }
 }

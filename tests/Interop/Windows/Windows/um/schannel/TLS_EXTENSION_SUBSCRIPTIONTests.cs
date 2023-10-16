@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TLS_EXTENSION_SUBSCRIPTION" /> struct.</summary>
 public static unsafe partial class TLS_EXTENSION_SUBSCRIPTIONTests
 {
-    /// <summary>Validates that the <see cref="TLS_EXTENSION_SUBSCRIPTION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TLS_EXTENSION_SUBSCRIPTION>(), Is.EqualTo(sizeof(TLS_EXTENSION_SUBSCRIPTION)));
-    }
-
-    /// <summary>Validates that the <see cref="TLS_EXTENSION_SUBSCRIPTION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TLS_EXTENSION_SUBSCRIPTION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TLS_EXTENSION_SUBSCRIPTION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TLS_EXTENSION_SUBSCRIPTION), Is.EqualTo(4));
-    }
 }

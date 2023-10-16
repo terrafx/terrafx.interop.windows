@@ -27,7 +27,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public nuint Valid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Valid;
         }
@@ -43,7 +43,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public nuint ShareCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ShareCount;
         }
@@ -59,7 +59,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public nuint Win32Protection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Win32Protection;
         }
@@ -75,7 +75,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public nuint Shared
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Shared;
         }
@@ -91,7 +91,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public nuint Node
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Node;
         }
@@ -107,7 +107,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public nuint Locked
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Locked;
         }
@@ -123,7 +123,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public nuint LargePage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.LargePage;
         }
@@ -139,7 +139,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public nuint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Reserved;
         }
@@ -155,7 +155,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public nuint Bad
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Bad;
         }
@@ -171,7 +171,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public nuint ReservedUlong
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedUlong;
         }
@@ -218,7 +218,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Valid
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -235,7 +235,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint ShareCount
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7u;
                 }
@@ -252,7 +252,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Win32Protection
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x7FFu;
                 }
@@ -269,7 +269,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Shared
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 15) & 0x1u;
                 }
@@ -286,7 +286,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Node
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0x3Fu;
                 }
@@ -303,7 +303,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Locked
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 22) & 0x1u;
                 }
@@ -320,7 +320,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint LargePage
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 23) & 0x1u;
                 }
@@ -337,7 +337,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 24) & 0x7Fu;
                 }
@@ -354,7 +354,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Bad
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 31) & 0x1u;
                 }
@@ -371,7 +371,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint ReservedUlong
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 32) & 0x0u;
                 }
@@ -394,7 +394,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Valid
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -411,7 +411,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Reserved0
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x3FFFu;
                 }
@@ -428,7 +428,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Shared
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 15) & 0x1u;
                 }
@@ -445,7 +445,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Reserved1
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0x7FFFu;
                 }
@@ -462,7 +462,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint Bad
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 31) & 0x1u;
                 }
@@ -479,7 +479,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
             public nuint ReservedUlong
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 32) & 0x0u;
                 }

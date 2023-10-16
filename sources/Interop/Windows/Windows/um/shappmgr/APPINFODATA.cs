@@ -18,73 +18,73 @@ public unsafe partial struct APPINFODATA
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszDisplayName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszDisplayName;
+    public char* pszDisplayName;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszVersion"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszVersion;
+    public char* pszVersion;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszPublisher"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszPublisher;
+    public char* pszPublisher;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszProductID"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszProductID;
+    public char* pszProductID;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszRegisteredOwner"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszRegisteredOwner;
+    public char* pszRegisteredOwner;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszRegisteredCompany"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszRegisteredCompany;
+    public char* pszRegisteredCompany;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszLanguage"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszLanguage;
+    public char* pszLanguage;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszSupportUrl"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszSupportUrl;
+    public char* pszSupportUrl;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszSupportTelephone"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszSupportTelephone;
+    public char* pszSupportTelephone;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszHelpLink"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszHelpLink;
+    public char* pszHelpLink;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszInstallLocation"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszInstallLocation;
+    public char* pszInstallLocation;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszInstallSource"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszInstallSource;
+    public char* pszInstallSource;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszInstallDate"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszInstallDate;
+    public char* pszInstallDate;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszContact"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszContact;
+    public char* pszContact;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszComments"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszComments;
+    public char* pszComments;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszImage"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszImage;
+    public char* pszImage;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszReadmeUrl"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszReadmeUrl;
+    public char* pszReadmeUrl;
 
     /// <include file='APPINFODATA.xml' path='doc/member[@name="APPINFODATA.pszUpdateInfoUrl"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszUpdateInfoUrl;
+    public char* pszUpdateInfoUrl;
 }

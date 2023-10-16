@@ -19,32 +19,4 @@ public static unsafe partial class IInsertItemTests
     {
         Assert.That(typeof(IInsertItem).GUID, Is.EqualTo(IID_IInsertItem));
     }
-
-    /// <summary>Validates that the <see cref="IInsertItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInsertItem>(), Is.EqualTo(sizeof(IInsertItem)));
-    }
-
-    /// <summary>Validates that the <see cref="IInsertItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInsertItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInsertItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInsertItem), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInsertItem), Is.EqualTo(4));
-        }
-    }
 }

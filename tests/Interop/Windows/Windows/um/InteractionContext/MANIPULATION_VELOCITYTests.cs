@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class MANIPULATION_VELOCITYTests
 {
-    /// <summary>Validates that the <see cref="MANIPULATION_VELOCITY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MANIPULATION_VELOCITY>(), Is.EqualTo(sizeof(MANIPULATION_VELOCITY)));
-    }
-
-    /// <summary>Validates that the <see cref="MANIPULATION_VELOCITY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MANIPULATION_VELOCITY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MANIPULATION_VELOCITY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MANIPULATION_VELOCITY), Is.EqualTo(16));
-    }
 }

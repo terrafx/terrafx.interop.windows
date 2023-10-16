@@ -25,7 +25,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, uint>)(lpVtbl[1]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, uint>)(lpVtbl[1]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, uint>)(lpVtbl[2]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, uint>)(lpVtbl[2]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnTextChange"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [VtblIndex(3)]
     public HRESULT OnTextChange([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd)
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, uint, IAnchor*, IAnchor*, int>)(lpVtbl[3]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, uint, IAnchor*, IAnchor*, int>)(lpVtbl[3]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd);
     }
 
     /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnSelectionChange"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [VtblIndex(4)]
     public HRESULT OnSelectionChange()
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, int>)(lpVtbl[4]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, int>)(lpVtbl[4]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnLayoutChange"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [VtblIndex(5)]
     public HRESULT OnLayoutChange(TsLayoutCode lcode, [NativeTypeName("TsViewCookie")] uint vcView)
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, TsLayoutCode, uint, int>)(lpVtbl[5]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), lcode, vcView);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, TsLayoutCode, uint, int>)(lpVtbl[5]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), lcode, vcView);
     }
 
     /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnStatusChange"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [VtblIndex(6)]
     public HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, uint, int>)(lpVtbl[6]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, uint, int>)(lpVtbl[6]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnAttrsChange"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [VtblIndex(7)]
     public HRESULT OnAttrsChange(IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("ULONG")] uint cAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paAttrs)
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, IAnchor*, IAnchor*, uint, Guid*, int>)(lpVtbl[7]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), paStart, paEnd, cAttrs, paAttrs);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, IAnchor*, IAnchor*, uint, Guid*, int>)(lpVtbl[7]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), paStart, paEnd, cAttrs, paAttrs);
     }
 
     /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnLockGranted"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [VtblIndex(8)]
     public HRESULT OnLockGranted([NativeTypeName("DWORD")] uint dwLockFlags)
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, uint, int>)(lpVtbl[8]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), dwLockFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, uint, int>)(lpVtbl[8]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this), dwLockFlags);
     }
 
     /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnStartEditTransaction"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [VtblIndex(9)]
     public HRESULT OnStartEditTransaction()
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, int>)(lpVtbl[9]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, int>)(lpVtbl[9]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITextStoreAnchorSink.xml' path='doc/member[@name="ITextStoreAnchorSink.OnEndEditTransaction"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
     [VtblIndex(10)]
     public HRESULT OnEndEditTransaction()
     {
-        return ((delegate* unmanaged<ITextStoreAnchorSink*, int>)(lpVtbl[10]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchorSink*, int>)(lpVtbl[10]))((ITextStoreAnchorSink*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -141,36 +141,36 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IAnchor *, IAnchor *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IAnchor*, IAnchor*, int> OnTextChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAnchor*, IAnchor*, int> OnTextChange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnSelectionChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnSelectionChange;
 
         [NativeTypeName("HRESULT (TsLayoutCode, TsViewCookie) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TsLayoutCode, uint, int> OnLayoutChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TsLayoutCode, uint, int> OnLayoutChange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnStatusChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnStatusChange;
 
         [NativeTypeName("HRESULT (IAnchor *, IAnchor *, ULONG, const TS_ATTRID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor*, IAnchor*, uint, Guid*, int> OnAttrsChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor*, IAnchor*, uint, Guid*, int> OnAttrsChange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnLockGranted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnLockGranted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnStartEditTransaction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnStartEditTransaction;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnEndEditTransaction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnEndEditTransaction;
     }
 }

@@ -27,5 +27,5 @@ public unsafe partial struct CONSOLE_FONT_INFOEX
 
     /// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX.FaceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort FaceName[32];
+    public fixed char FaceName[32];
 }

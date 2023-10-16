@@ -25,7 +25,7 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMMDeviceEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMMDeviceEnumerator*, uint>)(lpVtbl[1]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceEnumerator*, uint>)(lpVtbl[1]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMMDeviceEnumerator*, uint>)(lpVtbl[2]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceEnumerator*, uint>)(lpVtbl[2]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMMDeviceEnumerator.xml' path='doc/member[@name="IMMDeviceEnumerator.EnumAudioEndpoints"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
     [VtblIndex(3)]
     public HRESULT EnumAudioEndpoints(EDataFlow dataFlow, [NativeTypeName("DWORD")] uint dwStateMask, IMMDeviceCollection** ppDevices)
     {
-        return ((delegate* unmanaged<IMMDeviceEnumerator*, EDataFlow, uint, IMMDeviceCollection**, int>)(lpVtbl[3]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), dataFlow, dwStateMask, ppDevices);
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceEnumerator*, EDataFlow, uint, IMMDeviceCollection**, int>)(lpVtbl[3]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), dataFlow, dwStateMask, ppDevices);
     }
 
     /// <include file='IMMDeviceEnumerator.xml' path='doc/member[@name="IMMDeviceEnumerator.GetDefaultAudioEndpoint"]/*' />
@@ -59,15 +59,15 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
     [VtblIndex(4)]
     public HRESULT GetDefaultAudioEndpoint(EDataFlow dataFlow, ERole role, IMMDevice** ppEndpoint)
     {
-        return ((delegate* unmanaged<IMMDeviceEnumerator*, EDataFlow, ERole, IMMDevice**, int>)(lpVtbl[4]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), dataFlow, role, ppEndpoint);
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceEnumerator*, EDataFlow, ERole, IMMDevice**, int>)(lpVtbl[4]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), dataFlow, role, ppEndpoint);
     }
 
     /// <include file='IMMDeviceEnumerator.xml' path='doc/member[@name="IMMDeviceEnumerator.GetDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetDevice([NativeTypeName("LPCWSTR")] ushort* pwstrId, IMMDevice** ppDevice)
+    public HRESULT GetDevice([NativeTypeName("LPCWSTR")] char* pwstrId, IMMDevice** ppDevice)
     {
-        return ((delegate* unmanaged<IMMDeviceEnumerator*, ushort*, IMMDevice**, int>)(lpVtbl[5]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), pwstrId, ppDevice);
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceEnumerator*, char*, IMMDevice**, int>)(lpVtbl[5]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), pwstrId, ppDevice);
     }
 
     /// <include file='IMMDeviceEnumerator.xml' path='doc/member[@name="IMMDeviceEnumerator.RegisterEndpointNotificationCallback"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
     [VtblIndex(6)]
     public HRESULT RegisterEndpointNotificationCallback(IMMNotificationClient* pClient)
     {
-        return ((delegate* unmanaged<IMMDeviceEnumerator*, IMMNotificationClient*, int>)(lpVtbl[6]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), pClient);
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceEnumerator*, IMMNotificationClient*, int>)(lpVtbl[6]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), pClient);
     }
 
     /// <include file='IMMDeviceEnumerator.xml' path='doc/member[@name="IMMDeviceEnumerator.UnregisterEndpointNotificationCallback"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
     [VtblIndex(7)]
     public HRESULT UnregisterEndpointNotificationCallback(IMMNotificationClient* pClient)
     {
-        return ((delegate* unmanaged<IMMDeviceEnumerator*, IMMNotificationClient*, int>)(lpVtbl[7]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), pClient);
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceEnumerator*, IMMNotificationClient*, int>)(lpVtbl[7]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), pClient);
     }
 
     public interface Interface : IUnknown.Interface
@@ -95,7 +95,7 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
         HRESULT GetDefaultAudioEndpoint(EDataFlow dataFlow, ERole role, IMMDevice** ppEndpoint);
 
         [VtblIndex(5)]
-        HRESULT GetDevice([NativeTypeName("LPCWSTR")] ushort* pwstrId, IMMDevice** ppDevice);
+        HRESULT GetDevice([NativeTypeName("LPCWSTR")] char* pwstrId, IMMDevice** ppDevice);
 
         [VtblIndex(6)]
         HRESULT RegisterEndpointNotificationCallback(IMMNotificationClient* pClient);
@@ -108,27 +108,27 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (EDataFlow, DWORD, IMMDeviceCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, EDataFlow, uint, IMMDeviceCollection**, int> EnumAudioEndpoints;
+        public delegate* unmanaged[MemberFunction]<TSelf*, EDataFlow, uint, IMMDeviceCollection**, int> EnumAudioEndpoints;
 
         [NativeTypeName("HRESULT (EDataFlow, ERole, IMMDevice **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, EDataFlow, ERole, IMMDevice**, int> GetDefaultAudioEndpoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, EDataFlow, ERole, IMMDevice**, int> GetDefaultAudioEndpoint;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMMDevice **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMMDevice**, int> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IMMDevice**, int> GetDevice;
 
         [NativeTypeName("HRESULT (IMMNotificationClient *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMMNotificationClient*, int> RegisterEndpointNotificationCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMMNotificationClient*, int> RegisterEndpointNotificationCallback;
 
         [NativeTypeName("HRESULT (IMMNotificationClient *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMMNotificationClient*, int> UnregisterEndpointNotificationCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMMNotificationClient*, int> UnregisterEndpointNotificationCallback;
     }
 }

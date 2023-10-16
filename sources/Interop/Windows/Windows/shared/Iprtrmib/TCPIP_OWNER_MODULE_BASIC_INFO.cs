@@ -10,9 +10,9 @@ public unsafe partial struct TCPIP_OWNER_MODULE_BASIC_INFO
 {
     /// <include file='TCPIP_OWNER_MODULE_BASIC_INFO.xml' path='doc/member[@name="TCPIP_OWNER_MODULE_BASIC_INFO.pModuleName"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* pModuleName;
+    public char* pModuleName;
 
     /// <include file='TCPIP_OWNER_MODULE_BASIC_INFO.xml' path='doc/member[@name="TCPIP_OWNER_MODULE_BASIC_INFO.pModulePath"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* pModulePath;
+    public char* pModulePath;
 }

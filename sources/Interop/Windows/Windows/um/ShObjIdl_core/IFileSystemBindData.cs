@@ -25,7 +25,7 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFileSystemBindData*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFileSystemBindData*, uint>)(lpVtbl[1]))((IFileSystemBindData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData*, uint>)(lpVtbl[1]))((IFileSystemBindData*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFileSystemBindData*, uint>)(lpVtbl[2]))((IFileSystemBindData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData*, uint>)(lpVtbl[2]))((IFileSystemBindData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFileSystemBindData.xml' path='doc/member[@name="IFileSystemBindData.SetFindData"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
     [VtblIndex(3)]
     public HRESULT SetFindData([NativeTypeName("const WIN32_FIND_DATAW *")] WIN32_FIND_DATAW* pfd)
     {
-        return ((delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int>)(lpVtbl[3]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), pfd);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData*, WIN32_FIND_DATAW*, int>)(lpVtbl[3]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), pfd);
     }
 
     /// <include file='IFileSystemBindData.xml' path='doc/member[@name="IFileSystemBindData.GetFindData"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
     [VtblIndex(4)]
     public HRESULT GetFindData(WIN32_FIND_DATAW* pfd)
     {
-        return ((delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int>)(lpVtbl[4]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), pfd);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData*, WIN32_FIND_DATAW*, int>)(lpVtbl[4]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), pfd);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const WIN32_FIND_DATAW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WIN32_FIND_DATAW*, int> SetFindData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WIN32_FIND_DATAW*, int> SetFindData;
 
         [NativeTypeName("HRESULT (WIN32_FIND_DATAW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WIN32_FIND_DATAW*, int> GetFindData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WIN32_FIND_DATAW*, int> GetFindData;
     }
 }

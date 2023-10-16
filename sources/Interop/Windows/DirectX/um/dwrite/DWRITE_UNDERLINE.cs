@@ -28,7 +28,7 @@ public unsafe partial struct DWRITE_UNDERLINE
 
     /// <include file='DWRITE_UNDERLINE.xml' path='doc/member[@name="DWRITE_UNDERLINE.localeName"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* localeName;
+    public char* localeName;
 
     /// <include file='DWRITE_UNDERLINE.xml' path='doc/member[@name="DWRITE_UNDERLINE.measuringMode"]/*' />
     public DWRITE_MEASURING_MODE measuringMode;

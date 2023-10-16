@@ -27,7 +27,7 @@ public unsafe partial struct IMFVideoSampleAllocatorNotifyEx : IMFVideoSampleAll
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorNotifyEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFVideoSampleAllocatorNotifyEx : IMFVideoSampleAll
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, uint>)(lpVtbl[1]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorNotifyEx*, uint>)(lpVtbl[1]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFVideoSampleAllocatorNotifyEx : IMFVideoSampleAll
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, uint>)(lpVtbl[2]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorNotifyEx*, uint>)(lpVtbl[2]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFVideoSampleAllocatorNotify.NotifyRelease" />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFVideoSampleAllocatorNotifyEx : IMFVideoSampleAll
     [VtblIndex(3)]
     public HRESULT NotifyRelease()
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, int>)(lpVtbl[3]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorNotifyEx*, int>)(lpVtbl[3]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFVideoSampleAllocatorNotifyEx.xml' path='doc/member[@name="IMFVideoSampleAllocatorNotifyEx.NotifyPrune"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFVideoSampleAllocatorNotifyEx : IMFVideoSampleAll
     [VtblIndex(4)]
     public HRESULT NotifyPrune(IMFSample* __MIDL__IMFVideoSampleAllocatorNotifyEx0000)
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, IMFSample*, int>)(lpVtbl[4]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this), __MIDL__IMFVideoSampleAllocatorNotifyEx0000);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorNotifyEx*, IMFSample*, int>)(lpVtbl[4]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this), __MIDL__IMFVideoSampleAllocatorNotifyEx0000);
     }
 
     public interface Interface : IMFVideoSampleAllocatorNotify.Interface
@@ -74,18 +74,18 @@ public unsafe partial struct IMFVideoSampleAllocatorNotifyEx : IMFVideoSampleAll
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> NotifyRelease;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> NotifyRelease;
 
         [NativeTypeName("HRESULT (IMFSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFSample*, int> NotifyPrune;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFSample*, int> NotifyPrune;
     }
 }

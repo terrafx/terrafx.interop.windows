@@ -19,32 +19,4 @@ public static unsafe partial class IAudioAutoGainControlTests
     {
         Assert.That(typeof(IAudioAutoGainControl).GUID, Is.EqualTo(IID_IAudioAutoGainControl));
     }
-
-    /// <summary>Validates that the <see cref="IAudioAutoGainControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioAutoGainControl>(), Is.EqualTo(sizeof(IAudioAutoGainControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioAutoGainControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioAutoGainControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioAutoGainControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioAutoGainControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioAutoGainControl), Is.EqualTo(4));
-        }
-    }
 }

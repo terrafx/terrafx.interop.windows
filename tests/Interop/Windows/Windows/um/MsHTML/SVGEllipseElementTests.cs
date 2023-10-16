@@ -19,25 +19,4 @@ public static unsafe partial class SVGEllipseElementTests
     {
         Assert.That(typeof(SVGEllipseElement).GUID, Is.EqualTo(IID_SVGEllipseElement));
     }
-
-    /// <summary>Validates that the <see cref="SVGEllipseElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGEllipseElement>(), Is.EqualTo(sizeof(SVGEllipseElement)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGEllipseElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGEllipseElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGEllipseElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGEllipseElement), Is.EqualTo(1));
-    }
 }

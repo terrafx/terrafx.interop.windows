@@ -20,11 +20,11 @@ public unsafe partial struct OPENFILENAMEW
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.lpstrFilter"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpstrFilter;
+    public char* lpstrFilter;
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.lpstrCustomFilter"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpstrCustomFilter;
+    public char* lpstrCustomFilter;
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.nMaxCustFilter"]/*' />
     [NativeTypeName("DWORD")]
@@ -36,7 +36,7 @@ public unsafe partial struct OPENFILENAMEW
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.lpstrFile"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpstrFile;
+    public char* lpstrFile;
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.nMaxFile"]/*' />
     [NativeTypeName("DWORD")]
@@ -44,7 +44,7 @@ public unsafe partial struct OPENFILENAMEW
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.lpstrFileTitle"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpstrFileTitle;
+    public char* lpstrFileTitle;
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.nMaxFileTitle"]/*' />
     [NativeTypeName("DWORD")]
@@ -52,11 +52,11 @@ public unsafe partial struct OPENFILENAMEW
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.lpstrInitialDir"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpstrInitialDir;
+    public char* lpstrInitialDir;
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.lpstrTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpstrTitle;
+    public char* lpstrTitle;
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.Flags"]/*' />
     [NativeTypeName("DWORD")]
@@ -72,7 +72,7 @@ public unsafe partial struct OPENFILENAMEW
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.lpstrDefExt"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpstrDefExt;
+    public char* lpstrDefExt;
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.lCustData"]/*' />
     public LPARAM lCustData;
@@ -83,7 +83,7 @@ public unsafe partial struct OPENFILENAMEW
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.lpTemplateName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpTemplateName;
+    public char* lpTemplateName;
 
     /// <include file='OPENFILENAMEW.xml' path='doc/member[@name="OPENFILENAMEW.pvReserved"]/*' />
     public void* pvReserved;

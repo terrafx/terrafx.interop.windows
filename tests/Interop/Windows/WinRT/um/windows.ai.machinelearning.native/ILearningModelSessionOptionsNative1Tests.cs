@@ -19,32 +19,4 @@ public static unsafe partial class ILearningModelSessionOptionsNative1Tests
     {
         Assert.That(typeof(ILearningModelSessionOptionsNative1).GUID, Is.EqualTo(IID_ILearningModelSessionOptionsNative1));
     }
-
-    /// <summary>Validates that the <see cref="ILearningModelSessionOptionsNative1" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ILearningModelSessionOptionsNative1>(), Is.EqualTo(sizeof(ILearningModelSessionOptionsNative1)));
-    }
-
-    /// <summary>Validates that the <see cref="ILearningModelSessionOptionsNative1" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ILearningModelSessionOptionsNative1).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ILearningModelSessionOptionsNative1" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ILearningModelSessionOptionsNative1), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ILearningModelSessionOptionsNative1), Is.EqualTo(4));
-        }
-    }
 }

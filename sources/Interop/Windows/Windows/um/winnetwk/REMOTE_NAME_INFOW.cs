@@ -10,13 +10,13 @@ public unsafe partial struct REMOTE_NAME_INFOW
 {
     /// <include file='REMOTE_NAME_INFOW.xml' path='doc/member[@name="REMOTE_NAME_INFOW.lpUniversalName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpUniversalName;
+    public char* lpUniversalName;
 
     /// <include file='REMOTE_NAME_INFOW.xml' path='doc/member[@name="REMOTE_NAME_INFOW.lpConnectionName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpConnectionName;
+    public char* lpConnectionName;
 
     /// <include file='REMOTE_NAME_INFOW.xml' path='doc/member[@name="REMOTE_NAME_INFOW.lpRemainingPath"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpRemainingPath;
+    public char* lpRemainingPath;
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ISVGElementInstanceListTests
     {
         Assert.That(typeof(ISVGElementInstanceList).GUID, Is.EqualTo(IID_ISVGElementInstanceList));
     }
-
-    /// <summary>Validates that the <see cref="ISVGElementInstanceList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISVGElementInstanceList>(), Is.EqualTo(sizeof(ISVGElementInstanceList)));
-    }
-
-    /// <summary>Validates that the <see cref="ISVGElementInstanceList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISVGElementInstanceList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISVGElementInstanceList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISVGElementInstanceList), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISVGElementInstanceList), Is.EqualTo(4));
-        }
-    }
 }

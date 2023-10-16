@@ -25,7 +25,7 @@ public unsafe partial struct IObjectProvider : IObjectProvider.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IObjectProvider*, Guid*, void**, int>)(lpVtbl[0]))((IObjectProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IObjectProvider*, Guid*, void**, int>)(lpVtbl[0]))((IObjectProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IObjectProvider : IObjectProvider.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IObjectProvider*, uint>)(lpVtbl[1]))((IObjectProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectProvider*, uint>)(lpVtbl[1]))((IObjectProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IObjectProvider : IObjectProvider.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IObjectProvider*, uint>)(lpVtbl[2]))((IObjectProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectProvider*, uint>)(lpVtbl[2]))((IObjectProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IObjectProvider.xml' path='doc/member[@name="IObjectProvider.QueryObject"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IObjectProvider : IObjectProvider.Interface, INativ
     [VtblIndex(3)]
     public HRESULT QueryObject([NativeTypeName("const GUID &")] Guid* guidObject, [NativeTypeName("const IID &")] Guid* riid, void** ppvOut)
     {
-        return ((delegate* unmanaged<IObjectProvider*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IObjectProvider*)Unsafe.AsPointer(ref this), guidObject, riid, ppvOut);
+        return ((delegate* unmanaged[MemberFunction]<IObjectProvider*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IObjectProvider*)Unsafe.AsPointer(ref this), guidObject, riid, ppvOut);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IObjectProvider : IObjectProvider.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> QueryObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, void**, int> QueryObject;
     }
 }

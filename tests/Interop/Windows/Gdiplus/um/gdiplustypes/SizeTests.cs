@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="Size" /> struct.</summary>
 public static unsafe partial class SizeTests
 {
-    /// <summary>Validates that the <see cref="Size" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<Size>(), Is.EqualTo(sizeof(Size)));
-    }
-
-    /// <summary>Validates that the <see cref="Size" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(Size).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="Size" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(Size), Is.EqualTo(8));
-    }
 }

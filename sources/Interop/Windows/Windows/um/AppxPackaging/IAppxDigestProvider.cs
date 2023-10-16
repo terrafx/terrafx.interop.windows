@@ -25,7 +25,7 @@ public unsafe partial struct IAppxDigestProvider : IAppxDigestProvider.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxDigestProvider*, Guid*, void**, int>)(lpVtbl[0]))((IAppxDigestProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxDigestProvider*, Guid*, void**, int>)(lpVtbl[0]))((IAppxDigestProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppxDigestProvider : IAppxDigestProvider.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxDigestProvider*, uint>)(lpVtbl[1]))((IAppxDigestProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxDigestProvider*, uint>)(lpVtbl[1]))((IAppxDigestProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct IAppxDigestProvider : IAppxDigestProvider.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxDigestProvider*, uint>)(lpVtbl[2]))((IAppxDigestProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxDigestProvider*, uint>)(lpVtbl[2]))((IAppxDigestProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxDigestProvider.xml' path='doc/member[@name="IAppxDigestProvider.GetDigest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDigest([NativeTypeName("LPWSTR *")] ushort** digest)
+    public HRESULT GetDigest([NativeTypeName("LPWSTR *")] char** digest)
     {
-        return ((delegate* unmanaged<IAppxDigestProvider*, ushort**, int>)(lpVtbl[3]))((IAppxDigestProvider*)Unsafe.AsPointer(ref this), digest);
+        return ((delegate* unmanaged[MemberFunction]<IAppxDigestProvider*, char**, int>)(lpVtbl[3]))((IAppxDigestProvider*)Unsafe.AsPointer(ref this), digest);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetDigest([NativeTypeName("LPWSTR *")] ushort** digest);
+        HRESULT GetDigest([NativeTypeName("LPWSTR *")] char** digest);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDigest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDigest;
     }
 }

@@ -18,7 +18,7 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Interface
     [VtblIndex(0)]
     public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, uint* pBytes)
     {
-        return ((delegate* unmanaged<ID3DInclude*, D3D_INCLUDE_TYPE, sbyte*, void*, void**, uint*, int>)(lpVtbl[0]))((ID3DInclude*)Unsafe.AsPointer(ref this), IncludeType, pFileName, pParentData, ppData, pBytes);
+        return ((delegate* unmanaged[MemberFunction]<ID3DInclude*, D3D_INCLUDE_TYPE, sbyte*, void*, void**, uint*, int>)(lpVtbl[0]))((ID3DInclude*)Unsafe.AsPointer(ref this), IncludeType, pFileName, pParentData, ppData, pBytes);
     }
 
     /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Close"]/*' />
@@ -26,7 +26,7 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Interface
     [VtblIndex(1)]
     public HRESULT Close([NativeTypeName("LPCVOID")] void* pData)
     {
-        return ((delegate* unmanaged<ID3DInclude*, void*, int>)(lpVtbl[1]))((ID3DInclude*)Unsafe.AsPointer(ref this), pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3DInclude*, void*, int>)(lpVtbl[1]))((ID3DInclude*)Unsafe.AsPointer(ref this), pData);
     }
 
     public interface Interface
@@ -42,9 +42,9 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D_INCLUDE_TYPE, LPCSTR, LPCVOID, LPCVOID *, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D_INCLUDE_TYPE, sbyte*, void*, void**, uint*, int> Open;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D_INCLUDE_TYPE, sbyte*, void*, void**, uint*, int> Open;
 
         [NativeTypeName("HRESULT (LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, int> Close;
     }
 }

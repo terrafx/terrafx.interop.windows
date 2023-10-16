@@ -13,15 +13,15 @@ public unsafe partial struct DOCINFOW
 
     /// <include file='DOCINFOW.xml' path='doc/member[@name="DOCINFOW.lpszDocName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszDocName;
+    public char* lpszDocName;
 
     /// <include file='DOCINFOW.xml' path='doc/member[@name="DOCINFOW.lpszOutput"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszOutput;
+    public char* lpszOutput;
 
     /// <include file='DOCINFOW.xml' path='doc/member[@name="DOCINFOW.lpszDatatype"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszDatatype;
+    public char* lpszDatatype;
 
     /// <include file='DOCINFOW.xml' path='doc/member[@name="DOCINFOW.fwType"]/*' />
     [NativeTypeName("DWORD")]

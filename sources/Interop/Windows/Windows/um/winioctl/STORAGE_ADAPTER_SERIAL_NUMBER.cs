@@ -21,5 +21,5 @@ public unsafe partial struct STORAGE_ADAPTER_SERIAL_NUMBER
 
     /// <include file='STORAGE_ADAPTER_SERIAL_NUMBER.xml' path='doc/member[@name="STORAGE_ADAPTER_SERIAL_NUMBER.SerialNumber"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort SerialNumber[128];
+    public fixed char SerialNumber[128];
 }

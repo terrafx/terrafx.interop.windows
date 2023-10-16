@@ -19,32 +19,4 @@ public static unsafe partial class IMachineGlobalObjectTableTests
     {
         Assert.That(typeof(IMachineGlobalObjectTable).GUID, Is.EqualTo(IID_IMachineGlobalObjectTable));
     }
-
-    /// <summary>Validates that the <see cref="IMachineGlobalObjectTable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMachineGlobalObjectTable>(), Is.EqualTo(sizeof(IMachineGlobalObjectTable)));
-    }
-
-    /// <summary>Validates that the <see cref="IMachineGlobalObjectTable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMachineGlobalObjectTable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMachineGlobalObjectTable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMachineGlobalObjectTable), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMachineGlobalObjectTable), Is.EqualTo(4));
-        }
-    }
 }

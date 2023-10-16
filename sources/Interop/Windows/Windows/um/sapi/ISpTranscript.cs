@@ -25,7 +25,7 @@ public unsafe partial struct ISpTranscript : ISpTranscript.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpTranscript*, Guid*, void**, int>)(lpVtbl[0]))((ISpTranscript*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpTranscript*, Guid*, void**, int>)(lpVtbl[0]))((ISpTranscript*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpTranscript : ISpTranscript.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpTranscript*, uint>)(lpVtbl[1]))((ISpTranscript*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpTranscript*, uint>)(lpVtbl[1]))((ISpTranscript*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,50 +43,50 @@ public unsafe partial struct ISpTranscript : ISpTranscript.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpTranscript*, uint>)(lpVtbl[2]))((ISpTranscript*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpTranscript*, uint>)(lpVtbl[2]))((ISpTranscript*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpTranscript.xml' path='doc/member[@name="ISpTranscript.GetTranscript"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetTranscript([NativeTypeName("LPWSTR *")] ushort** ppszTranscript)
+    public HRESULT GetTranscript([NativeTypeName("LPWSTR *")] char** ppszTranscript)
     {
-        return ((delegate* unmanaged<ISpTranscript*, ushort**, int>)(lpVtbl[3]))((ISpTranscript*)Unsafe.AsPointer(ref this), ppszTranscript);
+        return ((delegate* unmanaged[MemberFunction]<ISpTranscript*, char**, int>)(lpVtbl[3]))((ISpTranscript*)Unsafe.AsPointer(ref this), ppszTranscript);
     }
 
     /// <include file='ISpTranscript.xml' path='doc/member[@name="ISpTranscript.AppendTranscript"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AppendTranscript([NativeTypeName("LPCWSTR")] ushort* pszTranscript)
+    public HRESULT AppendTranscript([NativeTypeName("LPCWSTR")] char* pszTranscript)
     {
-        return ((delegate* unmanaged<ISpTranscript*, ushort*, int>)(lpVtbl[4]))((ISpTranscript*)Unsafe.AsPointer(ref this), pszTranscript);
+        return ((delegate* unmanaged[MemberFunction]<ISpTranscript*, char*, int>)(lpVtbl[4]))((ISpTranscript*)Unsafe.AsPointer(ref this), pszTranscript);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetTranscript([NativeTypeName("LPWSTR *")] ushort** ppszTranscript);
+        HRESULT GetTranscript([NativeTypeName("LPWSTR *")] char** ppszTranscript);
 
         [VtblIndex(4)]
-        HRESULT AppendTranscript([NativeTypeName("LPCWSTR")] ushort* pszTranscript);
+        HRESULT AppendTranscript([NativeTypeName("LPCWSTR")] char* pszTranscript);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTranscript;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetTranscript;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> AppendTranscript;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> AppendTranscript;
     }
 }

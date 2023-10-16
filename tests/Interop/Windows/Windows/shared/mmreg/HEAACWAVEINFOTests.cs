@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="HEAACWAVEINFO" /> struct.</summary>
 public static unsafe partial class HEAACWAVEINFOTests
 {
-    /// <summary>Validates that the <see cref="HEAACWAVEINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HEAACWAVEINFO>(), Is.EqualTo(sizeof(HEAACWAVEINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="HEAACWAVEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HEAACWAVEINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HEAACWAVEINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HEAACWAVEINFO), Is.EqualTo(30));
-    }
 }

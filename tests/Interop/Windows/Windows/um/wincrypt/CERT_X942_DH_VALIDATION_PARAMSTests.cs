@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CERT_X942_DH_VALIDATION_PARAMS" /> struct.</summary>
 public static unsafe partial class CERT_X942_DH_VALIDATION_PARAMSTests
 {
-    /// <summary>Validates that the <see cref="CERT_X942_DH_VALIDATION_PARAMS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CERT_X942_DH_VALIDATION_PARAMS>(), Is.EqualTo(sizeof(CERT_X942_DH_VALIDATION_PARAMS)));
-    }
-
-    /// <summary>Validates that the <see cref="CERT_X942_DH_VALIDATION_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CERT_X942_DH_VALIDATION_PARAMS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CERT_X942_DH_VALIDATION_PARAMS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(CERT_X942_DH_VALIDATION_PARAMS), Is.EqualTo(32));
-        }
-        else
-        {
-            Assert.That(sizeof(CERT_X942_DH_VALIDATION_PARAMS), Is.EqualTo(16));
-        }
-    }
 }

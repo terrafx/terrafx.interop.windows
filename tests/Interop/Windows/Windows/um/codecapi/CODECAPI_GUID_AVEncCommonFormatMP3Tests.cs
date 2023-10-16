@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_GUID_AVEncCommonFormatMP3Tests
     {
         Assert.That(typeof(CODECAPI_GUID_AVEncCommonFormatMP3).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVEncCommonFormatMP3));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVEncCommonFormatMP3" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_GUID_AVEncCommonFormatMP3>(), Is.EqualTo(sizeof(CODECAPI_GUID_AVEncCommonFormatMP3)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVEncCommonFormatMP3" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_GUID_AVEncCommonFormatMP3).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVEncCommonFormatMP3" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_GUID_AVEncCommonFormatMP3), Is.EqualTo(1));
-    }
 }

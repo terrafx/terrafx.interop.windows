@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D3D11_BOX" /> struct.</summary>
 public static unsafe partial class D3D11_BOXTests
 {
-    /// <summary>Validates that the <see cref="D3D11_BOX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D11_BOX>(), Is.EqualTo(sizeof(D3D11_BOX)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_BOX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D11_BOX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_BOX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D11_BOX), Is.EqualTo(24));
-    }
 }

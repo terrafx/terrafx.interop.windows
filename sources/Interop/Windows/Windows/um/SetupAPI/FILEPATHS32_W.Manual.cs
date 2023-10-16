@@ -11,10 +11,10 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FILEPATHS32_W
 {
     [NativeTypeName("PCWSTR")]
-    public ushort* Target;
+    public char* Target;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* Source;
+    public char* Source;
 
     public uint Win32Error;
 

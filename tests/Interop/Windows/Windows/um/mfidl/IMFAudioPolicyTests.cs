@@ -19,32 +19,4 @@ public static unsafe partial class IMFAudioPolicyTests
     {
         Assert.That(typeof(IMFAudioPolicy).GUID, Is.EqualTo(IID_IMFAudioPolicy));
     }
-
-    /// <summary>Validates that the <see cref="IMFAudioPolicy" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFAudioPolicy>(), Is.EqualTo(sizeof(IMFAudioPolicy)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFAudioPolicy" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFAudioPolicy).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFAudioPolicy" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFAudioPolicy), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFAudioPolicy), Is.EqualTo(4));
-        }
-    }
 }

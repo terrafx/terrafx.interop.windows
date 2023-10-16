@@ -25,7 +25,7 @@ public unsafe partial struct IActivationFilter : IActivationFilter.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IActivationFilter*, Guid*, void**, int>)(lpVtbl[0]))((IActivationFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IActivationFilter*, Guid*, void**, int>)(lpVtbl[0]))((IActivationFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IActivationFilter : IActivationFilter.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IActivationFilter*, uint>)(lpVtbl[1]))((IActivationFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActivationFilter*, uint>)(lpVtbl[1]))((IActivationFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IActivationFilter : IActivationFilter.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IActivationFilter*, uint>)(lpVtbl[2]))((IActivationFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActivationFilter*, uint>)(lpVtbl[2]))((IActivationFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IActivationFilter.xml' path='doc/member[@name="IActivationFilter.HandleActivation"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IActivationFilter : IActivationFilter.Interface, IN
     [VtblIndex(3)]
     public HRESULT HandleActivation([NativeTypeName("DWORD")] uint dwActivationType, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("CLSID *")] Guid* pReplacementClsId)
     {
-        return ((delegate* unmanaged<IActivationFilter*, uint, Guid*, Guid*, int>)(lpVtbl[3]))((IActivationFilter*)Unsafe.AsPointer(ref this), dwActivationType, rclsid, pReplacementClsId);
+        return ((delegate* unmanaged[MemberFunction]<IActivationFilter*, uint, Guid*, Guid*, int>)(lpVtbl[3]))((IActivationFilter*)Unsafe.AsPointer(ref this), dwActivationType, rclsid, pReplacementClsId);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IActivationFilter : IActivationFilter.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const IID &, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, int> HandleActivation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, Guid*, int> HandleActivation;
     }
 }

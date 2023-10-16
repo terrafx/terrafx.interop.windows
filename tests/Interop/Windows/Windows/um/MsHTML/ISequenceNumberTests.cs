@@ -19,32 +19,4 @@ public static unsafe partial class ISequenceNumberTests
     {
         Assert.That(typeof(ISequenceNumber).GUID, Is.EqualTo(IID_ISequenceNumber));
     }
-
-    /// <summary>Validates that the <see cref="ISequenceNumber" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISequenceNumber>(), Is.EqualTo(sizeof(ISequenceNumber)));
-    }
-
-    /// <summary>Validates that the <see cref="ISequenceNumber" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISequenceNumber).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISequenceNumber" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISequenceNumber), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISequenceNumber), Is.EqualTo(4));
-        }
-    }
 }

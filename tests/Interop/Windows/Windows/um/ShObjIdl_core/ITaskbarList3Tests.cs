@@ -19,32 +19,4 @@ public static unsafe partial class ITaskbarList3Tests
     {
         Assert.That(typeof(ITaskbarList3).GUID, Is.EqualTo(IID_ITaskbarList3));
     }
-
-    /// <summary>Validates that the <see cref="ITaskbarList3" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITaskbarList3>(), Is.EqualTo(sizeof(ITaskbarList3)));
-    }
-
-    /// <summary>Validates that the <see cref="ITaskbarList3" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITaskbarList3).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITaskbarList3" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITaskbarList3), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITaskbarList3), Is.EqualTo(4));
-        }
-    }
 }

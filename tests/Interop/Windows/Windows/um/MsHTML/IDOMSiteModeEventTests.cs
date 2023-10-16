@@ -19,32 +19,4 @@ public static unsafe partial class IDOMSiteModeEventTests
     {
         Assert.That(typeof(IDOMSiteModeEvent).GUID, Is.EqualTo(IID_IDOMSiteModeEvent));
     }
-
-    /// <summary>Validates that the <see cref="IDOMSiteModeEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDOMSiteModeEvent>(), Is.EqualTo(sizeof(IDOMSiteModeEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="IDOMSiteModeEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDOMSiteModeEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDOMSiteModeEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDOMSiteModeEvent), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDOMSiteModeEvent), Is.EqualTo(4));
-        }
-    }
 }

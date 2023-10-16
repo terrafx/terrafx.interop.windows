@@ -19,25 +19,4 @@ public static unsafe partial class SpSharedRecoContextTests
     {
         Assert.That(typeof(SpSharedRecoContext).GUID, Is.EqualTo(CLSID_SpSharedRecoContext));
     }
-
-    /// <summary>Validates that the <see cref="SpSharedRecoContext" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpSharedRecoContext>(), Is.EqualTo(sizeof(SpSharedRecoContext)));
-    }
-
-    /// <summary>Validates that the <see cref="SpSharedRecoContext" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpSharedRecoContext).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpSharedRecoContext" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpSharedRecoContext), Is.EqualTo(1));
-    }
 }

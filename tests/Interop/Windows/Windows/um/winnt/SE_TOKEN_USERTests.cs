@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SE_TOKEN_USER" /> struct.</summary>
 public static unsafe partial class SE_TOKEN_USERTests
 {
-    /// <summary>Validates that the <see cref="SE_TOKEN_USER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SE_TOKEN_USER>(), Is.EqualTo(sizeof(SE_TOKEN_USER)));
-    }
-
-    /// <summary>Validates that the <see cref="SE_TOKEN_USER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SE_TOKEN_USER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SE_TOKEN_USER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(SE_TOKEN_USER), Is.EqualTo(88));
-        }
-        else
-        {
-            Assert.That(sizeof(SE_TOKEN_USER), Is.EqualTo(76));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILaunchTargetMonitor*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILaunchTargetMonitor*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILaunchTargetMonitor*, uint>)(lpVtbl[1]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILaunchTargetMonitor*, uint>)(lpVtbl[1]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILaunchTargetMonitor*, uint>)(lpVtbl[2]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILaunchTargetMonitor*, uint>)(lpVtbl[2]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILaunchTargetMonitor.xml' path='doc/member[@name="ILaunchTargetMonitor.GetMonitor"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interfa
     [VtblIndex(3)]
     public HRESULT GetMonitor(HMONITOR* monitor)
     {
-        return ((delegate* unmanaged<ILaunchTargetMonitor*, HMONITOR*, int>)(lpVtbl[3]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this), monitor);
+        return ((delegate* unmanaged[MemberFunction]<ILaunchTargetMonitor*, HMONITOR*, int>)(lpVtbl[3]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this), monitor);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMONITOR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMONITOR*, int> GetMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMONITOR*, int> GetMonitor;
     }
 }

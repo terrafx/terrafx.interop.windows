@@ -19,32 +19,4 @@ public static unsafe partial class IPersistMediaPropertyBagTests
     {
         Assert.That(typeof(IPersistMediaPropertyBag).GUID, Is.EqualTo(IID_IPersistMediaPropertyBag));
     }
-
-    /// <summary>Validates that the <see cref="IPersistMediaPropertyBag" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPersistMediaPropertyBag>(), Is.EqualTo(sizeof(IPersistMediaPropertyBag)));
-    }
-
-    /// <summary>Validates that the <see cref="IPersistMediaPropertyBag" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPersistMediaPropertyBag).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPersistMediaPropertyBag" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPersistMediaPropertyBag), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPersistMediaPropertyBag), Is.EqualTo(4));
-        }
-    }
 }

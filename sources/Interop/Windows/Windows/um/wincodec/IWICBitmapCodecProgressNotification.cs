@@ -25,7 +25,7 @@ public unsafe partial struct IWICBitmapCodecProgressNotification : IWICBitmapCod
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecProgressNotification*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapCodecProgressNotification*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICBitmapCodecProgressNotification : IWICBitmapCod
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICBitmapCodecProgressNotification*, uint>)(lpVtbl[1]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapCodecProgressNotification*, uint>)(lpVtbl[1]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICBitmapCodecProgressNotification : IWICBitmapCod
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICBitmapCodecProgressNotification*, uint>)(lpVtbl[2]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapCodecProgressNotification*, uint>)(lpVtbl[2]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICBitmapCodecProgressNotification.xml' path='doc/member[@name="IWICBitmapCodecProgressNotification.RegisterProgressNotification"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICBitmapCodecProgressNotification : IWICBitmapCod
     [VtblIndex(3)]
     public HRESULT RegisterProgressNotification([NativeTypeName("PFNProgressNotification")] delegate* unmanaged<void*, uint, WICProgressOperation, double, HRESULT> pfnProgressNotification, [NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("DWORD")] uint dwProgressFlags)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecProgressNotification*, delegate* unmanaged<void*, uint, WICProgressOperation, double, HRESULT>, void*, uint, int>)(lpVtbl[3]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this), pfnProgressNotification, pvData, dwProgressFlags);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapCodecProgressNotification*, delegate* unmanaged<void*, uint, WICProgressOperation, double, HRESULT>, void*, uint, int>)(lpVtbl[3]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this), pfnProgressNotification, pvData, dwProgressFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -62,15 +62,15 @@ public unsafe partial struct IWICBitmapCodecProgressNotification : IWICBitmapCod
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PFNProgressNotification, LPVOID, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, delegate* unmanaged<void*, uint, WICProgressOperation, double, HRESULT>, void*, uint, int> RegisterProgressNotification;
+        public delegate* unmanaged[MemberFunction]<TSelf*, delegate* unmanaged<void*, uint, WICProgressOperation, double, HRESULT>, void*, uint, int> RegisterProgressNotification;
     }
 }

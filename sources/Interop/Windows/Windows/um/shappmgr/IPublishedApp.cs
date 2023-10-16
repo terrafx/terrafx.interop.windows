@@ -25,7 +25,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPublishedApp*, Guid*, void**, int>)(lpVtbl[0]))((IPublishedApp*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, Guid*, void**, int>)(lpVtbl[0]))((IPublishedApp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPublishedApp*, uint>)(lpVtbl[1]))((IPublishedApp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, uint>)(lpVtbl[1]))((IPublishedApp*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPublishedApp*, uint>)(lpVtbl[2]))((IPublishedApp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, uint>)(lpVtbl[2]))((IPublishedApp*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellApp.GetAppInfo" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetAppInfo([NativeTypeName("PAPPINFODATA")] APPINFODATA* pai)
     {
-        return ((delegate* unmanaged<IPublishedApp*, APPINFODATA*, int>)(lpVtbl[3]))((IPublishedApp*)Unsafe.AsPointer(ref this), pai);
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, APPINFODATA*, int>)(lpVtbl[3]))((IPublishedApp*)Unsafe.AsPointer(ref this), pai);
     }
 
     /// <inheritdoc cref="IShellApp.GetPossibleActions" />
@@ -59,7 +59,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetPossibleActions([NativeTypeName("DWORD *")] uint* pdwActions)
     {
-        return ((delegate* unmanaged<IPublishedApp*, uint*, int>)(lpVtbl[4]))((IPublishedApp*)Unsafe.AsPointer(ref this), pdwActions);
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, uint*, int>)(lpVtbl[4]))((IPublishedApp*)Unsafe.AsPointer(ref this), pdwActions);
     }
 
     /// <inheritdoc cref="IShellApp.GetSlowAppInfo" />
@@ -67,7 +67,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid)
     {
-        return ((delegate* unmanaged<IPublishedApp*, SLOWAPPINFO*, int>)(lpVtbl[5]))((IPublishedApp*)Unsafe.AsPointer(ref this), psaid);
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, SLOWAPPINFO*, int>)(lpVtbl[5]))((IPublishedApp*)Unsafe.AsPointer(ref this), psaid);
     }
 
     /// <inheritdoc cref="IShellApp.GetCachedSlowAppInfo" />
@@ -75,7 +75,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetCachedSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid)
     {
-        return ((delegate* unmanaged<IPublishedApp*, SLOWAPPINFO*, int>)(lpVtbl[6]))((IPublishedApp*)Unsafe.AsPointer(ref this), psaid);
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, SLOWAPPINFO*, int>)(lpVtbl[6]))((IPublishedApp*)Unsafe.AsPointer(ref this), psaid);
     }
 
     /// <inheritdoc cref="IShellApp.IsInstalled" />
@@ -83,7 +83,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT IsInstalled()
     {
-        return ((delegate* unmanaged<IPublishedApp*, int>)(lpVtbl[7]))((IPublishedApp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, int>)(lpVtbl[7]))((IPublishedApp*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPublishedApp.xml' path='doc/member[@name="IPublishedApp.Install"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT Install([NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* pstInstall)
     {
-        return ((delegate* unmanaged<IPublishedApp*, SYSTEMTIME*, int>)(lpVtbl[8]))((IPublishedApp*)Unsafe.AsPointer(ref this), pstInstall);
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, SYSTEMTIME*, int>)(lpVtbl[8]))((IPublishedApp*)Unsafe.AsPointer(ref this), pstInstall);
     }
 
     /// <include file='IPublishedApp.xml' path='doc/member[@name="IPublishedApp.GetPublishedAppInfo"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT GetPublishedAppInfo([NativeTypeName("PPUBAPPINFO")] PUBAPPINFO* ppai)
     {
-        return ((delegate* unmanaged<IPublishedApp*, PUBAPPINFO*, int>)(lpVtbl[9]))((IPublishedApp*)Unsafe.AsPointer(ref this), ppai);
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, PUBAPPINFO*, int>)(lpVtbl[9]))((IPublishedApp*)Unsafe.AsPointer(ref this), ppai);
     }
 
     /// <include file='IPublishedApp.xml' path='doc/member[@name="IPublishedApp.Unschedule"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT Unschedule()
     {
-        return ((delegate* unmanaged<IPublishedApp*, int>)(lpVtbl[10]))((IPublishedApp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPublishedApp*, int>)(lpVtbl[10]))((IPublishedApp*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IShellApp.Interface
@@ -126,36 +126,36 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PAPPINFODATA) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPINFODATA*, int> GetAppInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPINFODATA*, int> GetAppInfo;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetPossibleActions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetPossibleActions;
 
         [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SLOWAPPINFO*, int> GetSlowAppInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SLOWAPPINFO*, int> GetSlowAppInfo;
 
         [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SLOWAPPINFO*, int> GetCachedSlowAppInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SLOWAPPINFO*, int> GetCachedSlowAppInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsInstalled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsInstalled;
 
         [NativeTypeName("HRESULT (LPSYSTEMTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SYSTEMTIME*, int> Install;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SYSTEMTIME*, int> Install;
 
         [NativeTypeName("HRESULT (PPUBAPPINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PUBAPPINFO*, int> GetPublishedAppInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PUBAPPINFO*, int> GetPublishedAppInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Unschedule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Unschedule;
     }
 }

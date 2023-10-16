@@ -30,7 +30,7 @@ public unsafe partial struct SYNCMGRITEM
 
     /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.wszItemName"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort wszItemName[128];
+    public fixed char wszItemName[128];
 
     /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.ftLastUpdate"]/*' />
     public FILETIME ftLastUpdate;

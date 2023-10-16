@@ -25,7 +25,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDataObject*, Guid*, void**, int>)(lpVtbl[0]))((IDataObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, Guid*, void**, int>)(lpVtbl[0]))((IDataObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDataObject*, uint>)(lpVtbl[1]))((IDataObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, uint>)(lpVtbl[1]))((IDataObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDataObject*, uint>)(lpVtbl[2]))((IDataObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, uint>)(lpVtbl[2]))((IDataObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.GetData"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetData(FORMATETC* pformatetcIn, STGMEDIUM* pmedium)
     {
-        return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[3]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetcIn, pmedium);
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[3]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetcIn, pmedium);
     }
 
     /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.GetDataHere"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetDataHere(FORMATETC* pformatetc, STGMEDIUM* pmedium)
     {
-        return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[4]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium);
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[4]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium);
     }
 
     /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.QueryGetData"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT QueryGetData(FORMATETC* pformatetc)
     {
-        return ((delegate* unmanaged<IDataObject*, FORMATETC*, int>)(lpVtbl[5]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc);
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, FORMATETC*, int>)(lpVtbl[5]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc);
     }
 
     /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.GetCanonicalFormatEtc"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetCanonicalFormatEtc(FORMATETC* pformatectIn, FORMATETC* pformatetcOut)
     {
-        return ((delegate* unmanaged<IDataObject*, FORMATETC*, FORMATETC*, int>)(lpVtbl[6]))((IDataObject*)Unsafe.AsPointer(ref this), pformatectIn, pformatetcOut);
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, FORMATETC*, FORMATETC*, int>)(lpVtbl[6]))((IDataObject*)Unsafe.AsPointer(ref this), pformatectIn, pformatetcOut);
     }
 
     /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.SetData"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT SetData(FORMATETC* pformatetc, STGMEDIUM* pmedium, BOOL fRelease)
     {
-        return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, BOOL, int>)(lpVtbl[7]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium, fRelease);
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, FORMATETC*, STGMEDIUM*, BOOL, int>)(lpVtbl[7]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium, fRelease);
     }
 
     /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.EnumFormatEtc"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT EnumFormatEtc([NativeTypeName("DWORD")] uint dwDirection, IEnumFORMATETC** ppenumFormatEtc)
     {
-        return ((delegate* unmanaged<IDataObject*, uint, IEnumFORMATETC**, int>)(lpVtbl[8]))((IDataObject*)Unsafe.AsPointer(ref this), dwDirection, ppenumFormatEtc);
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, uint, IEnumFORMATETC**, int>)(lpVtbl[8]))((IDataObject*)Unsafe.AsPointer(ref this), dwDirection, ppenumFormatEtc);
     }
 
     /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.DAdvise"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT DAdvise(FORMATETC* pformatetc, [NativeTypeName("DWORD")] uint advf, IAdviseSink* pAdvSink, [NativeTypeName("DWORD *")] uint* pdwConnection)
     {
-        return ((delegate* unmanaged<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)(lpVtbl[9]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, advf, pAdvSink, pdwConnection);
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)(lpVtbl[9]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, advf, pAdvSink, pdwConnection);
     }
 
     /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.DUnadvise"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT DUnadvise([NativeTypeName("DWORD")] uint dwConnection)
     {
-        return ((delegate* unmanaged<IDataObject*, uint, int>)(lpVtbl[10]))((IDataObject*)Unsafe.AsPointer(ref this), dwConnection);
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, uint, int>)(lpVtbl[10]))((IDataObject*)Unsafe.AsPointer(ref this), dwConnection);
     }
 
     /// <include file='IDataObject.xml' path='doc/member[@name="IDataObject.EnumDAdvise"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT EnumDAdvise(IEnumSTATDATA** ppenumAdvise)
     {
-        return ((delegate* unmanaged<IDataObject*, IEnumSTATDATA**, int>)(lpVtbl[11]))((IDataObject*)Unsafe.AsPointer(ref this), ppenumAdvise);
+        return ((delegate* unmanaged[MemberFunction]<IDataObject*, IEnumSTATDATA**, int>)(lpVtbl[11]))((IDataObject*)Unsafe.AsPointer(ref this), ppenumAdvise);
     }
 
     public interface Interface : IUnknown.Interface
@@ -152,39 +152,39 @@ public unsafe partial struct IDataObject : IDataObject.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, int> GetData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FORMATETC*, STGMEDIUM*, int> GetData;
 
         [NativeTypeName("HRESULT (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, int> GetDataHere;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FORMATETC*, STGMEDIUM*, int> GetDataHere;
 
         [NativeTypeName("HRESULT (FORMATETC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FORMATETC*, int> QueryGetData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FORMATETC*, int> QueryGetData;
 
         [NativeTypeName("HRESULT (FORMATETC *, FORMATETC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FORMATETC*, FORMATETC*, int> GetCanonicalFormatEtc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FORMATETC*, FORMATETC*, int> GetCanonicalFormatEtc;
 
         [NativeTypeName("HRESULT (FORMATETC *, STGMEDIUM *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, BOOL, int> SetData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FORMATETC*, STGMEDIUM*, BOOL, int> SetData;
 
         [NativeTypeName("HRESULT (DWORD, IEnumFORMATETC **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IEnumFORMATETC**, int> EnumFormatEtc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IEnumFORMATETC**, int> EnumFormatEtc;
 
         [NativeTypeName("HRESULT (FORMATETC *, DWORD, IAdviseSink *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FORMATETC*, uint, IAdviseSink*, uint*, int> DAdvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FORMATETC*, uint, IAdviseSink*, uint*, int> DAdvise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> DUnadvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> DUnadvise;
 
         [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumSTATDATA**, int> EnumDAdvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumSTATDATA**, int> EnumDAdvise;
     }
 }

@@ -17,13 +17,13 @@ public unsafe partial struct PACKAGE_INFO
     public uint flags;
 
     [NativeTypeName("PWSTR")]
-    public ushort* path;
+    public char* path;
 
     [NativeTypeName("PWSTR")]
-    public ushort* packageFullName;
+    public char* packageFullName;
 
     [NativeTypeName("PWSTR")]
-    public ushort* packageFamilyName;
+    public char* packageFamilyName;
 
     public PACKAGE_ID packageId;
 }

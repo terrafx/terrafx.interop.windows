@@ -19,11 +19,11 @@ public unsafe partial struct MSGBOXPARAMSW
 
     /// <include file='MSGBOXPARAMSW.xml' path='doc/member[@name="MSGBOXPARAMSW.lpszText"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszText;
+    public char* lpszText;
 
     /// <include file='MSGBOXPARAMSW.xml' path='doc/member[@name="MSGBOXPARAMSW.lpszCaption"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszCaption;
+    public char* lpszCaption;
 
     /// <include file='MSGBOXPARAMSW.xml' path='doc/member[@name="MSGBOXPARAMSW.dwStyle"]/*' />
     [NativeTypeName("DWORD")]
@@ -31,7 +31,7 @@ public unsafe partial struct MSGBOXPARAMSW
 
     /// <include file='MSGBOXPARAMSW.xml' path='doc/member[@name="MSGBOXPARAMSW.lpszIcon"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszIcon;
+    public char* lpszIcon;
 
     /// <include file='MSGBOXPARAMSW.xml' path='doc/member[@name="MSGBOXPARAMSW.dwContextHelpId"]/*' />
     [NativeTypeName("DWORD_PTR")]

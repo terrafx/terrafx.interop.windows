@@ -21,32 +21,4 @@ public static unsafe partial class IDWriteColorGlyphRunEnumeratorTests
     {
         Assert.That(typeof(IDWriteColorGlyphRunEnumerator).GUID, Is.EqualTo(IID_IDWriteColorGlyphRunEnumerator));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteColorGlyphRunEnumerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteColorGlyphRunEnumerator>(), Is.EqualTo(sizeof(IDWriteColorGlyphRunEnumerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteColorGlyphRunEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteColorGlyphRunEnumerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteColorGlyphRunEnumerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteColorGlyphRunEnumerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteColorGlyphRunEnumerator), Is.EqualTo(4));
-        }
-    }
 }

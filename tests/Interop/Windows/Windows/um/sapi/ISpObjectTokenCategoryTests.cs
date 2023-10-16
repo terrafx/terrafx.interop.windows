@@ -19,32 +19,4 @@ public static unsafe partial class ISpObjectTokenCategoryTests
     {
         Assert.That(typeof(ISpObjectTokenCategory).GUID, Is.EqualTo(IID_ISpObjectTokenCategory));
     }
-
-    /// <summary>Validates that the <see cref="ISpObjectTokenCategory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpObjectTokenCategory>(), Is.EqualTo(sizeof(ISpObjectTokenCategory)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpObjectTokenCategory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpObjectTokenCategory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpObjectTokenCategory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpObjectTokenCategory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpObjectTokenCategory), Is.EqualTo(4));
-        }
-    }
 }

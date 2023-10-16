@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DXCoreHardwareIDParts" /> struct.</summary>
 public static unsafe partial class DXCoreHardwareIDPartsTests
 {
-    /// <summary>Validates that the <see cref="DXCoreHardwareIDParts" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DXCoreHardwareIDParts>(), Is.EqualTo(sizeof(DXCoreHardwareIDParts)));
-    }
-
-    /// <summary>Validates that the <see cref="DXCoreHardwareIDParts" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DXCoreHardwareIDParts).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DXCoreHardwareIDParts" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DXCoreHardwareIDParts), Is.EqualTo(20));
-    }
 }

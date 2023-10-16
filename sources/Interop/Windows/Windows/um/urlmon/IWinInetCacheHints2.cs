@@ -25,7 +25,7 @@ public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWinInetCacheHints2*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWinInetCacheHints2*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWinInetCacheHints2*, uint>)(lpVtbl[1]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWinInetCacheHints2*, uint>)(lpVtbl[1]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,47 +43,47 @@ public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWinInetCacheHints2*, uint>)(lpVtbl[2]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWinInetCacheHints2*, uint>)(lpVtbl[2]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IWinInetCacheHints.SetCacheExtension" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetCacheExtension([NativeTypeName("LPCWSTR")] ushort* pwzExt, [NativeTypeName("LPVOID")] void* pszCacheFile, [NativeTypeName("DWORD *")] uint* pcbCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved)
+    public HRESULT SetCacheExtension([NativeTypeName("LPCWSTR")] char* pwzExt, [NativeTypeName("LPVOID")] void* pszCacheFile, [NativeTypeName("DWORD *")] uint* pcbCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved)
     {
-        return ((delegate* unmanaged<IWinInetCacheHints2*, ushort*, void*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this), pwzExt, pszCacheFile, pcbCacheFile, pdwWinInetError, pdwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IWinInetCacheHints2*, char*, void*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this), pwzExt, pszCacheFile, pcbCacheFile, pdwWinInetError, pdwReserved);
     }
 
     /// <include file='IWinInetCacheHints2.xml' path='doc/member[@name="IWinInetCacheHints2.SetCacheExtension2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetCacheExtension2([NativeTypeName("LPCWSTR")] ushort* pwzExt, [NativeTypeName("WCHAR *")] ushort* pwzCacheFile, [NativeTypeName("DWORD *")] uint* pcchCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved)
+    public HRESULT SetCacheExtension2([NativeTypeName("LPCWSTR")] char* pwzExt, [NativeTypeName("WCHAR *")] char* pwzCacheFile, [NativeTypeName("DWORD *")] uint* pcchCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved)
     {
-        return ((delegate* unmanaged<IWinInetCacheHints2*, ushort*, ushort*, uint*, uint*, uint*, int>)(lpVtbl[4]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this), pwzExt, pwzCacheFile, pcchCacheFile, pdwWinInetError, pdwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IWinInetCacheHints2*, char*, char*, uint*, uint*, uint*, int>)(lpVtbl[4]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this), pwzExt, pwzCacheFile, pcchCacheFile, pdwWinInetError, pdwReserved);
     }
 
     public interface Interface : IWinInetCacheHints.Interface
     {
         [VtblIndex(4)]
-        HRESULT SetCacheExtension2([NativeTypeName("LPCWSTR")] ushort* pwzExt, [NativeTypeName("WCHAR *")] ushort* pwzCacheFile, [NativeTypeName("DWORD *")] uint* pcchCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved);
+        HRESULT SetCacheExtension2([NativeTypeName("LPCWSTR")] char* pwzExt, [NativeTypeName("WCHAR *")] char* pwzCacheFile, [NativeTypeName("DWORD *")] uint* pcchCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPVOID, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, void*, uint*, uint*, uint*, int> SetCacheExtension;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, void*, uint*, uint*, uint*, int> SetCacheExtension;
 
         [NativeTypeName("HRESULT (LPCWSTR, WCHAR *, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint*, uint*, uint*, int> SetCacheExtension2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, uint*, uint*, uint*, int> SetCacheExtension2;
     }
 }

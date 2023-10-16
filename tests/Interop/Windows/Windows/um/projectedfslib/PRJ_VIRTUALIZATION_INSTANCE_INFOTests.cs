@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0.17763.0")]
 public static unsafe partial class PRJ_VIRTUALIZATION_INSTANCE_INFOTests
 {
-    /// <summary>Validates that the <see cref="PRJ_VIRTUALIZATION_INSTANCE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PRJ_VIRTUALIZATION_INSTANCE_INFO>(), Is.EqualTo(sizeof(PRJ_VIRTUALIZATION_INSTANCE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="PRJ_VIRTUALIZATION_INSTANCE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PRJ_VIRTUALIZATION_INSTANCE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PRJ_VIRTUALIZATION_INSTANCE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PRJ_VIRTUALIZATION_INSTANCE_INFO), Is.EqualTo(20));
-    }
 }

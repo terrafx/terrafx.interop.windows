@@ -19,32 +19,4 @@ public static unsafe partial class AsyncIAdviseSink2Tests
     {
         Assert.That(typeof(AsyncIAdviseSink2).GUID, Is.EqualTo(IID_AsyncIAdviseSink2));
     }
-
-    /// <summary>Validates that the <see cref="AsyncIAdviseSink2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AsyncIAdviseSink2>(), Is.EqualTo(sizeof(AsyncIAdviseSink2)));
-    }
-
-    /// <summary>Validates that the <see cref="AsyncIAdviseSink2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AsyncIAdviseSink2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AsyncIAdviseSink2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(AsyncIAdviseSink2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(AsyncIAdviseSink2), Is.EqualTo(4));
-        }
-    }
 }

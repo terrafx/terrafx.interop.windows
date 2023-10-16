@@ -21,32 +21,4 @@ public static unsafe partial class IDWriteFontDownloadListenerTests
     {
         Assert.That(typeof(IDWriteFontDownloadListener).GUID, Is.EqualTo(IID_IDWriteFontDownloadListener));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteFontDownloadListener" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteFontDownloadListener>(), Is.EqualTo(sizeof(IDWriteFontDownloadListener)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteFontDownloadListener" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteFontDownloadListener).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteFontDownloadListener" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteFontDownloadListener), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteFontDownloadListener), Is.EqualTo(4));
-        }
-    }
 }

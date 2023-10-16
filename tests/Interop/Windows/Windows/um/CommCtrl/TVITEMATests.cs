@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TVITEMA" /> struct.</summary>
 public static unsafe partial class TVITEMATests
 {
-    /// <summary>Validates that the <see cref="TVITEMA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TVITEMA>(), Is.EqualTo(sizeof(TVITEMA)));
-    }
-
-    /// <summary>Validates that the <see cref="TVITEMA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TVITEMA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TVITEMA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(TVITEMA), Is.EqualTo(56));
-        }
-        else
-        {
-            Assert.That(sizeof(TVITEMA), Is.EqualTo(40));
-        }
-    }
 }

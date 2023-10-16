@@ -19,25 +19,4 @@ public static unsafe partial class KSDATAFORMAT_SUBTYPE_WAVEFORMATEXTests
     {
         Assert.That(typeof(KSDATAFORMAT_SUBTYPE_WAVEFORMATEX).GUID, Is.EqualTo(IID_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX));
     }
-
-    /// <summary>Validates that the <see cref="KSDATAFORMAT_SUBTYPE_WAVEFORMATEX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KSDATAFORMAT_SUBTYPE_WAVEFORMATEX>(), Is.EqualTo(sizeof(KSDATAFORMAT_SUBTYPE_WAVEFORMATEX)));
-    }
-
-    /// <summary>Validates that the <see cref="KSDATAFORMAT_SUBTYPE_WAVEFORMATEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KSDATAFORMAT_SUBTYPE_WAVEFORMATEX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KSDATAFORMAT_SUBTYPE_WAVEFORMATEX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(KSDATAFORMAT_SUBTYPE_WAVEFORMATEX), Is.EqualTo(1));
-    }
 }

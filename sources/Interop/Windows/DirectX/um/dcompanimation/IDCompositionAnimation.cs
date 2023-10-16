@@ -28,7 +28,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionAnimation*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionAnimation*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionAnimation*, uint>)(lpVtbl[1]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionAnimation*, uint>)(lpVtbl[1]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionAnimation*, uint>)(lpVtbl[2]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionAnimation*, uint>)(lpVtbl[2]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.Reset"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
     [VtblIndex(3)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.SetAbsoluteBeginTime"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
     [VtblIndex(4)]
     public HRESULT SetAbsoluteBeginTime(LARGE_INTEGER beginTime)
     {
-        return ((delegate* unmanaged<IDCompositionAnimation*, LARGE_INTEGER, int>)(lpVtbl[4]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginTime);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionAnimation*, LARGE_INTEGER, int>)(lpVtbl[4]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginTime);
     }
 
     /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.AddCubic"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
     [VtblIndex(5)]
     public HRESULT AddCubic(double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient)
     {
-        return ((delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int>)(lpVtbl[5]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionAnimation*, double, float, float, float, float, int>)(lpVtbl[5]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
     }
 
     /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.AddSinusoidal"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
     [VtblIndex(6)]
     public HRESULT AddSinusoidal(double beginOffset, float bias, float amplitude, float frequency, float phase)
     {
-        return ((delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int>)(lpVtbl[6]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, bias, amplitude, frequency, phase);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionAnimation*, double, float, float, float, float, int>)(lpVtbl[6]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, bias, amplitude, frequency, phase);
     }
 
     /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.AddRepeat"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
     [VtblIndex(7)]
     public HRESULT AddRepeat(double beginOffset, double durationToRepeat)
     {
-        return ((delegate* unmanaged<IDCompositionAnimation*, double, double, int>)(lpVtbl[7]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, durationToRepeat);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionAnimation*, double, double, int>)(lpVtbl[7]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, durationToRepeat);
     }
 
     /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.End"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
     [VtblIndex(8)]
     public HRESULT End(double endOffset, float endValue)
     {
-        return ((delegate* unmanaged<IDCompositionAnimation*, double, float, int>)(lpVtbl[8]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), endOffset, endValue);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionAnimation*, double, float, int>)(lpVtbl[8]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), endOffset, endValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -122,30 +122,30 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LARGE_INTEGER, int> SetAbsoluteBeginTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LARGE_INTEGER, int> SetAbsoluteBeginTime;
 
         [NativeTypeName("HRESULT (double, float, float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, float, float, float, float, int> AddCubic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, float, float, float, float, int> AddCubic;
 
         [NativeTypeName("HRESULT (double, float, float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, float, float, float, float, int> AddSinusoidal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, float, float, float, float, int> AddSinusoidal;
 
         [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, int> AddRepeat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, int> AddRepeat;
 
         [NativeTypeName("HRESULT (double, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, float, int> End;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, float, int> End;
     }
 }

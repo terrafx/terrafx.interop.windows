@@ -21,32 +21,4 @@ public static unsafe partial class IAppxManifestDeviceCapabilitiesEnumeratorTest
     {
         Assert.That(typeof(IAppxManifestDeviceCapabilitiesEnumerator).GUID, Is.EqualTo(IID_IAppxManifestDeviceCapabilitiesEnumerator));
     }
-
-    /// <summary>Validates that the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxManifestDeviceCapabilitiesEnumerator>(), Is.EqualTo(sizeof(IAppxManifestDeviceCapabilitiesEnumerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxManifestDeviceCapabilitiesEnumerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxManifestDeviceCapabilitiesEnumerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxManifestDeviceCapabilitiesEnumerator), Is.EqualTo(4));
-        }
-    }
 }

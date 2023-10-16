@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EMRGRADIENTFILL" /> struct.</summary>
 public static unsafe partial class EMRGRADIENTFILLTests
 {
-    /// <summary>Validates that the <see cref="EMRGRADIENTFILL" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EMRGRADIENTFILL>(), Is.EqualTo(sizeof(EMRGRADIENTFILL)));
-    }
-
-    /// <summary>Validates that the <see cref="EMRGRADIENTFILL" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EMRGRADIENTFILL).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EMRGRADIENTFILL" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EMRGRADIENTFILL), Is.EqualTo(52));
-    }
 }

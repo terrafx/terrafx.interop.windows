@@ -25,7 +25,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInternetProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IInternetProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IInternetProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInternetProtocol*, uint>)(lpVtbl[1]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, uint>)(lpVtbl[1]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInternetProtocol*, uint>)(lpVtbl[2]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, uint>)(lpVtbl[2]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInternetProtocolRoot.Start" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Start([NativeTypeName("LPCWSTR")] ushort* szUrl, IInternetProtocolSink* pOIProtSink, IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, HANDLE_PTR dwReserved)
+    public HRESULT Start([NativeTypeName("LPCWSTR")] char* szUrl, IInternetProtocolSink* pOIProtSink, IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, HANDLE_PTR dwReserved)
     {
-        return ((delegate* unmanaged<IInternetProtocol*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int>)(lpVtbl[3]))((IInternetProtocol*)Unsafe.AsPointer(ref this), szUrl, pOIProtSink, pOIBindInfo, grfPI, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, char*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int>)(lpVtbl[3]))((IInternetProtocol*)Unsafe.AsPointer(ref this), szUrl, pOIProtSink, pOIBindInfo, grfPI, dwReserved);
     }
 
     /// <inheritdoc cref="IInternetProtocolRoot.Continue" />
@@ -59,7 +59,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [VtblIndex(4)]
     public HRESULT Continue(PROTOCOLDATA* pProtocolData)
     {
-        return ((delegate* unmanaged<IInternetProtocol*, PROTOCOLDATA*, int>)(lpVtbl[4]))((IInternetProtocol*)Unsafe.AsPointer(ref this), pProtocolData);
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, PROTOCOLDATA*, int>)(lpVtbl[4]))((IInternetProtocol*)Unsafe.AsPointer(ref this), pProtocolData);
     }
 
     /// <inheritdoc cref="IInternetProtocolRoot.Abort" />
@@ -67,7 +67,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [VtblIndex(5)]
     public HRESULT Abort(HRESULT hrReason, [NativeTypeName("DWORD")] uint dwOptions)
     {
-        return ((delegate* unmanaged<IInternetProtocol*, HRESULT, uint, int>)(lpVtbl[5]))((IInternetProtocol*)Unsafe.AsPointer(ref this), hrReason, dwOptions);
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, HRESULT, uint, int>)(lpVtbl[5]))((IInternetProtocol*)Unsafe.AsPointer(ref this), hrReason, dwOptions);
     }
 
     /// <inheritdoc cref="IInternetProtocolRoot.Terminate" />
@@ -75,7 +75,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [VtblIndex(6)]
     public HRESULT Terminate([NativeTypeName("DWORD")] uint dwOptions)
     {
-        return ((delegate* unmanaged<IInternetProtocol*, uint, int>)(lpVtbl[6]))((IInternetProtocol*)Unsafe.AsPointer(ref this), dwOptions);
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, uint, int>)(lpVtbl[6]))((IInternetProtocol*)Unsafe.AsPointer(ref this), dwOptions);
     }
 
     /// <inheritdoc cref="IInternetProtocolRoot.Suspend" />
@@ -83,7 +83,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [VtblIndex(7)]
     public HRESULT Suspend()
     {
-        return ((delegate* unmanaged<IInternetProtocol*, int>)(lpVtbl[7]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, int>)(lpVtbl[7]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInternetProtocolRoot.Resume" />
@@ -91,7 +91,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [VtblIndex(8)]
     public HRESULT Resume()
     {
-        return ((delegate* unmanaged<IInternetProtocol*, int>)(lpVtbl[8]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, int>)(lpVtbl[8]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInternetProtocol.xml' path='doc/member[@name="IInternetProtocol.Read"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [VtblIndex(9)]
     public HRESULT Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
     {
-        return ((delegate* unmanaged<IInternetProtocol*, void*, uint, uint*, int>)(lpVtbl[9]))((IInternetProtocol*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, void*, uint, uint*, int>)(lpVtbl[9]))((IInternetProtocol*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
     }
 
     /// <include file='IInternetProtocol.xml' path='doc/member[@name="IInternetProtocol.Seek"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [VtblIndex(10)]
     public HRESULT Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
     {
-        return ((delegate* unmanaged<IInternetProtocol*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[10]))((IInternetProtocol*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[10]))((IInternetProtocol*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
     }
 
     /// <include file='IInternetProtocol.xml' path='doc/member[@name="IInternetProtocol.LockRequest"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [VtblIndex(11)]
     public HRESULT LockRequest([NativeTypeName("DWORD")] uint dwOptions)
     {
-        return ((delegate* unmanaged<IInternetProtocol*, uint, int>)(lpVtbl[11]))((IInternetProtocol*)Unsafe.AsPointer(ref this), dwOptions);
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, uint, int>)(lpVtbl[11]))((IInternetProtocol*)Unsafe.AsPointer(ref this), dwOptions);
     }
 
     /// <include file='IInternetProtocol.xml' path='doc/member[@name="IInternetProtocol.UnlockRequest"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     [VtblIndex(12)]
     public HRESULT UnlockRequest()
     {
-        return ((delegate* unmanaged<IInternetProtocol*, int>)(lpVtbl[12]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocol*, int>)(lpVtbl[12]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IInternetProtocolRoot.Interface
@@ -145,42 +145,42 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IInternetProtocolSink *, IInternetBindInfo *, DWORD, HANDLE_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int> Start;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int> Start;
 
         [NativeTypeName("HRESULT (PROTOCOLDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROTOCOLDATA*, int> Continue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROTOCOLDATA*, int> Continue;
 
         [NativeTypeName("HRESULT (HRESULT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, uint, int> Abort;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, uint, int> Abort;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Terminate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Terminate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Suspend;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Suspend;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Resume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Resume;
 
         [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Read;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, uint*, int> Read;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> LockRequest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> LockRequest;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UnlockRequest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UnlockRequest;
     }
 }

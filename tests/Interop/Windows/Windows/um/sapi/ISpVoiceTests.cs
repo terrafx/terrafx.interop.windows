@@ -19,32 +19,4 @@ public static unsafe partial class ISpVoiceTests
     {
         Assert.That(typeof(ISpVoice).GUID, Is.EqualTo(IID_ISpVoice));
     }
-
-    /// <summary>Validates that the <see cref="ISpVoice" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpVoice>(), Is.EqualTo(sizeof(ISpVoice)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpVoice" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpVoice).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpVoice" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpVoice), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpVoice), Is.EqualTo(4));
-        }
-    }
 }

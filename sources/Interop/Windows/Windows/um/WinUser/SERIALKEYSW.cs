@@ -17,11 +17,11 @@ public unsafe partial struct SERIALKEYSW
 
     /// <include file='SERIALKEYSW.xml' path='doc/member[@name="SERIALKEYSW.lpszActivePort"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszActivePort;
+    public char* lpszActivePort;
 
     /// <include file='SERIALKEYSW.xml' path='doc/member[@name="SERIALKEYSW.lpszPort"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszPort;
+    public char* lpszPort;
 
     /// <include file='SERIALKEYSW.xml' path='doc/member[@name="SERIALKEYSW.iBaudRate"]/*' />
     public uint iBaudRate;

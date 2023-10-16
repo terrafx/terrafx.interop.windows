@@ -19,32 +19,4 @@ public static unsafe partial class DispHTMLBRElementTests
     {
         Assert.That(typeof(DispHTMLBRElement).GUID, Is.EqualTo(IID_DispHTMLBRElement));
     }
-
-    /// <summary>Validates that the <see cref="DispHTMLBRElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispHTMLBRElement>(), Is.EqualTo(sizeof(DispHTMLBRElement)));
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLBRElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispHTMLBRElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLBRElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispHTMLBRElement), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispHTMLBRElement), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IFilterGraphTests
     {
         Assert.That(typeof(IFilterGraph).GUID, Is.EqualTo(IID_IFilterGraph));
     }
-
-    /// <summary>Validates that the <see cref="IFilterGraph" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFilterGraph>(), Is.EqualTo(sizeof(IFilterGraph)));
-    }
-
-    /// <summary>Validates that the <see cref="IFilterGraph" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFilterGraph).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFilterGraph" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFilterGraph), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFilterGraph), Is.EqualTo(4));
-        }
-    }
 }

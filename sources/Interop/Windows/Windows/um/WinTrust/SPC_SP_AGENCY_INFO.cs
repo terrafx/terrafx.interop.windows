@@ -14,7 +14,7 @@ public unsafe partial struct SPC_SP_AGENCY_INFO
 
     /// <include file='SPC_SP_AGENCY_INFO.xml' path='doc/member[@name="SPC_SP_AGENCY_INFO.pwszPolicyDisplayText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszPolicyDisplayText;
+    public char* pwszPolicyDisplayText;
 
     /// <include file='SPC_SP_AGENCY_INFO.xml' path='doc/member[@name="SPC_SP_AGENCY_INFO.pLogoImage"]/*' />
     [NativeTypeName("PSPC_IMAGE")]

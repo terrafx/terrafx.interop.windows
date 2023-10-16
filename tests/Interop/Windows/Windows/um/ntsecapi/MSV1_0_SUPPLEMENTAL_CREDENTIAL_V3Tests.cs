@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3" /> struct.</summary>
 public static unsafe partial class MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3Tests
 {
-    /// <summary>Validates that the <see cref="MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3>(), Is.EqualTo(sizeof(MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3)));
-    }
-
-    /// <summary>Validates that the <see cref="MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3), Is.EqualTo(68));
-    }
 }

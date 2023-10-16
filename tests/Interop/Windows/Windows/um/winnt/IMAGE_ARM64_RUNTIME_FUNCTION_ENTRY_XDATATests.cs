@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA" /> struct.</summary>
 public static unsafe partial class IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATATests
 {
-    /// <summary>Validates that the <see cref="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA>(), Is.EqualTo(sizeof(IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutExplicitTest()
-    {
-        Assert.That(typeof(IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA).IsExplicitLayout, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA), Is.EqualTo(4));
-    }
 }

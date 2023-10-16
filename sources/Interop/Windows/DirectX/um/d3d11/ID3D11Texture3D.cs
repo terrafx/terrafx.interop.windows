@@ -26,7 +26,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D11Texture3D*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D11Texture3D*, uint>)(lpVtbl[1]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, uint>)(lpVtbl[1]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D11Texture3D*, uint>)(lpVtbl[2]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, uint>)(lpVtbl[2]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.GetDevice" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [VtblIndex(3)]
     public void GetDevice(ID3D11Device** ppDevice)
     {
-        ((delegate* unmanaged<ID3D11Texture3D*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), ppDevice);
+        ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.GetPrivateData" />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<ID3D11Texture3D*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateData" />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [VtblIndex(5)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<ID3D11Texture3D*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateDataInterface" />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [VtblIndex(6)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
     {
-        return ((delegate* unmanaged<ID3D11Texture3D*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), guid, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
     /// <inheritdoc cref="ID3D11Resource.GetType" />
@@ -84,7 +84,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [VtblIndex(7)]
     public void GetType(D3D11_RESOURCE_DIMENSION* pResourceDimension)
     {
-        ((delegate* unmanaged<ID3D11Texture3D*, D3D11_RESOURCE_DIMENSION*, void>)(lpVtbl[7]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), pResourceDimension);
+        ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, D3D11_RESOURCE_DIMENSION*, void>)(lpVtbl[7]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), pResourceDimension);
     }
 
     /// <inheritdoc cref="ID3D11Resource.SetEvictionPriority" />
@@ -92,7 +92,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [VtblIndex(8)]
     public void SetEvictionPriority(uint EvictionPriority)
     {
-        ((delegate* unmanaged<ID3D11Texture3D*, uint, void>)(lpVtbl[8]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), EvictionPriority);
+        ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, uint, void>)(lpVtbl[8]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), EvictionPriority);
     }
 
     /// <inheritdoc cref="ID3D11Resource.GetEvictionPriority" />
@@ -100,7 +100,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [VtblIndex(9)]
     public uint GetEvictionPriority()
     {
-        return ((delegate* unmanaged<ID3D11Texture3D*, uint>)(lpVtbl[9]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, uint>)(lpVtbl[9]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D11Texture3D.xml' path='doc/member[@name="ID3D11Texture3D.GetDesc"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
     [VtblIndex(10)]
     public void GetDesc(D3D11_TEXTURE3D_DESC* pDesc)
     {
-        ((delegate* unmanaged<ID3D11Texture3D*, D3D11_TEXTURE3D_DESC*, void>)(lpVtbl[10]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), pDesc);
+        ((delegate* unmanaged[MemberFunction]<ID3D11Texture3D*, D3D11_TEXTURE3D_DESC*, void>)(lpVtbl[10]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     public interface Interface : ID3D11Resource.Interface
@@ -121,36 +121,36 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D11Device**, void> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D11Device**, void> GetDevice;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("void (D3D11_RESOURCE_DIMENSION *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, D3D11_RESOURCE_DIMENSION*, void> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, D3D11_RESOURCE_DIMENSION*, void> GetType;
 
         [NativeTypeName("void (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void> SetEvictionPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void> SetEvictionPriority;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetEvictionPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetEvictionPriority;
 
         [NativeTypeName("void (D3D11_TEXTURE3D_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D11_TEXTURE3D_DESC*, void> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D11_TEXTURE3D_DESC*, void> GetDesc;
     }
 }

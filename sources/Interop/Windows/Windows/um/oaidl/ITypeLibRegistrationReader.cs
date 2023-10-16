@@ -25,7 +25,7 @@ public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationRe
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITypeLibRegistrationReader*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITypeLibRegistrationReader*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationRe
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITypeLibRegistrationReader*, uint>)(lpVtbl[1]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITypeLibRegistrationReader*, uint>)(lpVtbl[1]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationRe
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITypeLibRegistrationReader*, uint>)(lpVtbl[2]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITypeLibRegistrationReader*, uint>)(lpVtbl[2]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITypeLibRegistrationReader.xml' path='doc/member[@name="ITypeLibRegistrationReader.EnumTypeLibRegistrations"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationRe
     [VtblIndex(3)]
     public HRESULT EnumTypeLibRegistrations(IEnumUnknown** ppEnumUnknown)
     {
-        return ((delegate* unmanaged<ITypeLibRegistrationReader*, IEnumUnknown**, int>)(lpVtbl[3]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), ppEnumUnknown);
+        return ((delegate* unmanaged[MemberFunction]<ITypeLibRegistrationReader*, IEnumUnknown**, int>)(lpVtbl[3]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), ppEnumUnknown);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationRe
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumUnknown**, int> EnumTypeLibRegistrations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumUnknown**, int> EnumTypeLibRegistrations;
     }
 }

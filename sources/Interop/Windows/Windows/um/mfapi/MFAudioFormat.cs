@@ -18,7 +18,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -30,7 +30,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x01, 0x00, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -55,7 +55,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -68,7 +68,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x03, 0x00, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -80,7 +80,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -93,7 +93,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x08, 0x00, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -105,7 +105,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -118,7 +118,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x92, 0x00, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -130,7 +130,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -143,7 +143,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x09, 0x00, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -155,7 +155,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -168,7 +168,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x61, 0x01, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -180,7 +180,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -193,7 +193,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x62, 0x01, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -205,7 +205,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -218,7 +218,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x63, 0x01, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -230,7 +230,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -243,7 +243,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x64, 0x01, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -255,7 +255,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -268,7 +268,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x0A, 0x00, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -280,7 +280,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -293,7 +293,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x55, 0x00, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -305,7 +305,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -318,7 +318,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x50, 0x00, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -330,7 +330,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -343,7 +343,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x10, 0x16, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -355,7 +355,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -368,7 +368,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x00, 0x16, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -380,7 +380,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -393,7 +393,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x61, 0x73, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -405,7 +405,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -418,7 +418,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x62, 0x73, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -430,7 +430,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -443,7 +443,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x63, 0x73, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -455,7 +455,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -468,7 +468,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAC, 0xF1, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -480,7 +480,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -493,7 +493,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x61, 0x6C, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -505,7 +505,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -518,7 +518,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x4F, 0x70, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -530,7 +530,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -543,7 +543,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x40, 0xAC, 0x00, 0x00,
                 0x00, 0x00,
                 0x10, 0x00,
@@ -555,7 +555,7 @@ public static partial class MFAudioFormat
                 0x38,
                 0x9B,
                 0x71
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -568,7 +568,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x2C, 0x80, 0x6D, 0xE0,
                 0x46, 0xDB,
                 0xCF, 0x11,
@@ -580,7 +580,7 @@ public static partial class MFAudioFormat
                 0x6C,
                 0xBB,
                 0xEA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -593,7 +593,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAF, 0x87, 0xFB, 0xA7,
                 0x02, 0x2D,
                 0xFB, 0x42,
@@ -605,7 +605,7 @@ public static partial class MFAudioFormat
                 0x84,
                 0x3B,
                 0xDD
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -618,7 +618,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x7C, 0x92, 0xB7, 0x36,
                 0x87, 0x3D,
                 0x2A, 0x4A,
@@ -630,7 +630,7 @@ public static partial class MFAudioFormat
                 0xE9,
                 0x35,
                 0xE6
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -643,7 +643,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA0, 0xB2, 0x98, 0x79,
                 0xDD, 0x17,
                 0xB6, 0x49,
@@ -655,7 +655,7 @@ public static partial class MFAudioFormat
                 0x52,
                 0xA2,
                 0xAC
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -668,7 +668,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC6, 0xCC, 0x8D, 0x9D,
                 0x56, 0xD1,
                 0xB8, 0x4F,
@@ -680,7 +680,7 @@ public static partial class MFAudioFormat
                 0xD2,
                 0x1D,
                 0xFA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -693,7 +693,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xF9, 0xC9, 0x58, 0x7E,
                 0x70, 0xB0,
                 0xF4, 0x45,
@@ -705,7 +705,7 @@ public static partial class MFAudioFormat
                 0x17,
                 0xC1,
                 0xAC
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -718,7 +718,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x0B, 0xD1, 0x2F, 0x8D,
                 0x41, 0x58,
                 0x6B, 0x4A,
@@ -730,7 +730,7 @@ public static partial class MFAudioFormat
                 0x1A,
                 0xDE,
                 0xD9
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -743,7 +743,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x33, 0x80, 0x6D, 0xE0,
                 0x46, 0xDB,
                 0xCF, 0x11,
@@ -755,7 +755,7 @@ public static partial class MFAudioFormat
                 0x6C,
                 0xBB,
                 0xEA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -768,7 +768,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB7, 0x8E, 0xE5, 0xA2,
                 0xA9, 0x0F,
                 0xBB, 0x48,
@@ -780,7 +780,7 @@ public static partial class MFAudioFormat
                 0x6D,
                 0x06,
                 0x45
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -793,7 +793,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x1B, 0x7C, 0xB3, 0x45,
                 0x70, 0x8C,
                 0x59, 0x4E,
@@ -805,7 +805,7 @@ public static partial class MFAudioFormat
                 0x81,
                 0xC8,
                 0x0D
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -818,7 +818,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x0A, 0x6F, 0xFE, 0xC2,
                 0x3C, 0x4E,
                 0xF1, 0x4D,
@@ -830,7 +830,7 @@ public static partial class MFAudioFormat
                 0x91,
                 0xE4,
                 0xB9
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -843,7 +843,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x17, 0x01, 0x02, 0x87,
                 0xE3, 0xAC,
                 0xDE, 0x42,
@@ -855,7 +855,7 @@ public static partial class MFAudioFormat
                 0x62,
                 0x63,
                 0xF8
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -868,7 +868,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x00, 0xCA, 0x9C, 0x9B,
                 0xB9, 0x91,
                 0xCC, 0x4C,
@@ -880,7 +880,7 @@ public static partial class MFAudioFormat
                 0xC3,
                 0xCC,
                 0x86
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -893,7 +893,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x94, 0xCD, 0x39, 0xFA,
                 0x64, 0xBC,
                 0xB1, 0x4A,
@@ -905,7 +905,7 @@ public static partial class MFAudioFormat
                 0x5A,
                 0x7E,
                 0x7A
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -918,7 +918,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x32, 0x80, 0x6D, 0xE0,
                 0x46, 0xDB,
                 0xCF, 0x11,
@@ -930,7 +930,7 @@ public static partial class MFAudioFormat
                 0x6C,
                 0xBB,
                 0xEA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -943,7 +943,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x01, 0xFF, 0xE7, 0xA5,
                 0x11, 0x84,
                 0xCC, 0x4A,
@@ -955,7 +955,7 @@ public static partial class MFAudioFormat
                 0x28,
                 0x8D,
                 0x80
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -968,7 +968,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x80, 0x3A, 0x66, 0x97,
                 0xFB, 0x8F,
                 0x45, 0x44,
@@ -980,7 +980,7 @@ public static partial class MFAudioFormat
                 0x8F,
                 0x49,
                 0x7F
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -993,7 +993,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x76, 0xCE, 0x9B, 0x41,
                 0x72, 0x8B,
                 0x0F, 0x40,
@@ -1005,7 +1005,7 @@ public static partial class MFAudioFormat
                 0x63,
                 0x48,
                 0x4D
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -1018,7 +1018,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA3, 0x63, 0x49, 0xDA,
                 0xD8, 0x14,
                 0xCF, 0x4D,
@@ -1030,7 +1030,7 @@ public static partial class MFAudioFormat
                 0x43,
                 0x63,
                 0xDB
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -1043,7 +1043,7 @@ public static partial class MFAudioFormat
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xBC, 0xB5, 0x84, 0x38,
                 0x77, 0xE2,
                 0xFD, 0x43,
@@ -1055,7 +1055,7 @@ public static partial class MFAudioFormat
                 0xD9,
                 0xB6,
                 0x05
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

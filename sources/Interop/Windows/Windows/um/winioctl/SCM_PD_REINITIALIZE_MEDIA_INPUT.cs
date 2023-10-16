@@ -32,7 +32,7 @@ public partial struct SCM_PD_REINITIALIZE_MEDIA_INPUT
         public uint Overwrite
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x1u;
             }

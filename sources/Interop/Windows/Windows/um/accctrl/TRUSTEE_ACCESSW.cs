@@ -10,7 +10,7 @@ public unsafe partial struct TRUSTEE_ACCESSW
 {
     /// <include file='TRUSTEE_ACCESSW.xml' path='doc/member[@name="TRUSTEE_ACCESSW.lpProperty"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpProperty;
+    public char* lpProperty;
 
     /// <include file='TRUSTEE_ACCESSW.xml' path='doc/member[@name="TRUSTEE_ACCESSW.Access"]/*' />
     [NativeTypeName("ACCESS_RIGHTS")]

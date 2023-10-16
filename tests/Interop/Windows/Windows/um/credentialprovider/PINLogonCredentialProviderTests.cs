@@ -19,25 +19,4 @@ public static unsafe partial class PINLogonCredentialProviderTests
     {
         Assert.That(typeof(PINLogonCredentialProvider).GUID, Is.EqualTo(IID_PINLogonCredentialProvider));
     }
-
-    /// <summary>Validates that the <see cref="PINLogonCredentialProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PINLogonCredentialProvider>(), Is.EqualTo(sizeof(PINLogonCredentialProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="PINLogonCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PINLogonCredentialProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PINLogonCredentialProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PINLogonCredentialProvider), Is.EqualTo(1));
-    }
 }

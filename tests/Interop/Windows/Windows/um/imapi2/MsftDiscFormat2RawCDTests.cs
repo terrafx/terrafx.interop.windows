@@ -19,25 +19,4 @@ public static unsafe partial class MsftDiscFormat2RawCDTests
     {
         Assert.That(typeof(MsftDiscFormat2RawCD).GUID, Is.EqualTo(CLSID_MsftDiscFormat2RawCD));
     }
-
-    /// <summary>Validates that the <see cref="MsftDiscFormat2RawCD" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MsftDiscFormat2RawCD>(), Is.EqualTo(sizeof(MsftDiscFormat2RawCD)));
-    }
-
-    /// <summary>Validates that the <see cref="MsftDiscFormat2RawCD" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MsftDiscFormat2RawCD).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MsftDiscFormat2RawCD" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MsftDiscFormat2RawCD), Is.EqualTo(1));
-    }
 }

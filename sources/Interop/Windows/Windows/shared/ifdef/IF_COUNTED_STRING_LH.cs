@@ -13,5 +13,5 @@ public unsafe partial struct IF_COUNTED_STRING_LH
 
     /// <include file='IF_COUNTED_STRING_LH.xml' path='doc/member[@name="IF_COUNTED_STRING_LH.String"]/*' />
     [NativeTypeName("WCHAR[257]")]
-    public fixed ushort String[257];
+    public fixed char String[257];
 }

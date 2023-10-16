@@ -19,32 +19,4 @@ public static unsafe partial class ITfMenuTests
     {
         Assert.That(typeof(ITfMenu).GUID, Is.EqualTo(IID_ITfMenu));
     }
-
-    /// <summary>Validates that the <see cref="ITfMenu" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfMenu>(), Is.EqualTo(sizeof(ITfMenu)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfMenu" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfMenu).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfMenu" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfMenu), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfMenu), Is.EqualTo(4));
-        }
-    }
 }

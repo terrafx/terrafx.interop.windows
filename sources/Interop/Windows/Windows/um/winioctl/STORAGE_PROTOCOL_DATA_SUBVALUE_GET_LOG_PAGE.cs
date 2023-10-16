@@ -26,7 +26,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
     public uint RetainAsynEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.RetainAsynEvent;
         }
@@ -42,7 +42,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
     public uint LogSpecificField
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.LogSpecificField;
         }
@@ -58,7 +58,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Reserved;
         }
@@ -80,7 +80,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
         public uint RetainAsynEvent
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x1u;
             }
@@ -97,7 +97,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
         public uint LogSpecificField
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 1) & 0xFu;
             }
@@ -114,7 +114,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 5) & 0x7FFFFFFu;
             }

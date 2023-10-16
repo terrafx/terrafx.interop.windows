@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class USN_RECORD_EXTENTTests
 {
-    /// <summary>Validates that the <see cref="USN_RECORD_EXTENT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<USN_RECORD_EXTENT>(), Is.EqualTo(sizeof(USN_RECORD_EXTENT)));
-    }
-
-    /// <summary>Validates that the <see cref="USN_RECORD_EXTENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(USN_RECORD_EXTENT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="USN_RECORD_EXTENT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(USN_RECORD_EXTENT), Is.EqualTo(16));
-    }
 }

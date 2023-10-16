@@ -12,10 +12,10 @@ public unsafe partial struct SHFILEOPSTRUCT64W
     public uint wFunc;
 
     [NativeTypeName("PCZZWSTR")]
-    public ushort* pFrom;
+    public char* pFrom;
 
     [NativeTypeName("PCZZWSTR")]
-    public ushort* pTo;
+    public char* pTo;
 
     [NativeTypeName("FILEOP_FLAGS")]
     public ushort fFlags;
@@ -26,5 +26,5 @@ public unsafe partial struct SHFILEOPSTRUCT64W
     public void* hNameMappings;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* lpszProgressTitle;
+    public char* lpszProgressTitle;
 }

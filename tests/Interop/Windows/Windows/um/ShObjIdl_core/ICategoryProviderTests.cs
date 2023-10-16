@@ -19,32 +19,4 @@ public static unsafe partial class ICategoryProviderTests
     {
         Assert.That(typeof(ICategoryProvider).GUID, Is.EqualTo(IID_ICategoryProvider));
     }
-
-    /// <summary>Validates that the <see cref="ICategoryProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICategoryProvider>(), Is.EqualTo(sizeof(ICategoryProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="ICategoryProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICategoryProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICategoryProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICategoryProvider), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICategoryProvider), Is.EqualTo(4));
-        }
-    }
 }

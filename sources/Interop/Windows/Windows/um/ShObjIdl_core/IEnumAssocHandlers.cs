@@ -25,7 +25,7 @@ public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumAssocHandlers*, Guid*, void**, int>)(lpVtbl[0]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumAssocHandlers*, Guid*, void**, int>)(lpVtbl[0]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumAssocHandlers*, uint>)(lpVtbl[1]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumAssocHandlers*, uint>)(lpVtbl[1]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumAssocHandlers*, uint>)(lpVtbl[2]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumAssocHandlers*, uint>)(lpVtbl[2]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumAssocHandlers.xml' path='doc/member[@name="IEnumAssocHandlers.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface, 
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IAssocHandler** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumAssocHandlers*, uint, IAssocHandler**, uint*, int>)(lpVtbl[3]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumAssocHandlers*, uint, IAssocHandler**, uint*, int>)(lpVtbl[3]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, IAssocHandler **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IAssocHandler**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAssocHandler**, uint*, int> Next;
     }
 }

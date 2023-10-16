@@ -17,9 +17,9 @@ public partial struct SPSERIALIZEDEVENT64
     public SPEVENTENUM eEventId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (SPEVENTENUM)(_bitfield & 0xFFFF);
+            return (SPEVENTENUM)((_bitfield << 16) >> 16);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,9 +34,9 @@ public partial struct SPSERIALIZEDEVENT64
     public SPEVENTLPARAMTYPE elParamType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (SPEVENTLPARAMTYPE)((_bitfield >> 16) & 0xFFFF);
+            return (SPEVENTLPARAMTYPE)((_bitfield << 0) >> 16);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

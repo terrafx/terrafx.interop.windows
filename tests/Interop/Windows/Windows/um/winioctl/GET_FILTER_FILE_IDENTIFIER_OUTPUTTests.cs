@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="GET_FILTER_FILE_IDENTIFIER_OUTPUT" /> struct.</summary>
 public static unsafe partial class GET_FILTER_FILE_IDENTIFIER_OUTPUTTests
 {
-    /// <summary>Validates that the <see cref="GET_FILTER_FILE_IDENTIFIER_OUTPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<GET_FILTER_FILE_IDENTIFIER_OUTPUT>(), Is.EqualTo(sizeof(GET_FILTER_FILE_IDENTIFIER_OUTPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="GET_FILTER_FILE_IDENTIFIER_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(GET_FILTER_FILE_IDENTIFIER_OUTPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="GET_FILTER_FILE_IDENTIFIER_OUTPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(GET_FILTER_FILE_IDENTIFIER_OUTPUT), Is.EqualTo(4));
-    }
 }

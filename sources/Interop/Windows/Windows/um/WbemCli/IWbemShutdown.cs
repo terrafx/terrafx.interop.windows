@@ -25,7 +25,7 @@ public unsafe partial struct IWbemShutdown : IWbemShutdown.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWbemShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IWbemShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWbemShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IWbemShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWbemShutdown : IWbemShutdown.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWbemShutdown*, uint>)(lpVtbl[1]))((IWbemShutdown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemShutdown*, uint>)(lpVtbl[1]))((IWbemShutdown*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWbemShutdown : IWbemShutdown.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWbemShutdown*, uint>)(lpVtbl[2]))((IWbemShutdown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemShutdown*, uint>)(lpVtbl[2]))((IWbemShutdown*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWbemShutdown.xml' path='doc/member[@name="IWbemShutdown.Shutdown"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWbemShutdown : IWbemShutdown.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT Shutdown([NativeTypeName("LONG")] int uReason, [NativeTypeName("ULONG")] uint uMaxMilliseconds, IWbemContext* pCtx)
     {
-        return ((delegate* unmanaged<IWbemShutdown*, int, uint, IWbemContext*, int>)(lpVtbl[3]))((IWbemShutdown*)Unsafe.AsPointer(ref this), uReason, uMaxMilliseconds, pCtx);
+        return ((delegate* unmanaged[MemberFunction]<IWbemShutdown*, int, uint, IWbemContext*, int>)(lpVtbl[3]))((IWbemShutdown*)Unsafe.AsPointer(ref this), uReason, uMaxMilliseconds, pCtx);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IWbemShutdown : IWbemShutdown.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG, ULONG, IWbemContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint, IWbemContext*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, uint, IWbemContext*, int> Shutdown;
     }
 }

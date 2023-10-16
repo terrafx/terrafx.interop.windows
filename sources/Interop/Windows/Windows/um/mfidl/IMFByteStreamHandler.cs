@@ -25,7 +25,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFByteStreamHandler*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamHandler*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFByteStreamHandler*, uint>)(lpVtbl[1]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamHandler*, uint>)(lpVtbl[1]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFByteStreamHandler*, uint>)(lpVtbl[2]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamHandler*, uint>)(lpVtbl[2]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFByteStreamHandler.xml' path='doc/member[@name="IMFByteStreamHandler.BeginCreateObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT BeginCreateObject(IMFByteStream* pByteStream, [NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState)
+    public HRESULT BeginCreateObject(IMFByteStream* pByteStream, [NativeTypeName("LPCWSTR")] char* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState)
     {
-        return ((delegate* unmanaged<IMFByteStreamHandler*, IMFByteStream*, ushort*, uint, IPropertyStore*, IUnknown**, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pByteStream, pwszURL, dwFlags, pProps, ppIUnknownCancelCookie, pCallback, punkState);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamHandler*, IMFByteStream*, char*, uint, IPropertyStore*, IUnknown**, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pByteStream, pwszURL, dwFlags, pProps, ppIUnknownCancelCookie, pCallback, punkState);
     }
 
     /// <include file='IMFByteStreamHandler.xml' path='doc/member[@name="IMFByteStreamHandler.EndCreateObject"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
     [VtblIndex(4)]
     public HRESULT EndCreateObject(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject)
     {
-        return ((delegate* unmanaged<IMFByteStreamHandler*, IMFAsyncResult*, MF_OBJECT_TYPE*, IUnknown**, int>)(lpVtbl[4]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pResult, pObjectType, ppObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamHandler*, IMFAsyncResult*, MF_OBJECT_TYPE*, IUnknown**, int>)(lpVtbl[4]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pResult, pObjectType, ppObject);
     }
 
     /// <include file='IMFByteStreamHandler.xml' path='doc/member[@name="IMFByteStreamHandler.CancelObjectCreation"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
     [VtblIndex(5)]
     public HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie)
     {
-        return ((delegate* unmanaged<IMFByteStreamHandler*, IUnknown*, int>)(lpVtbl[5]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pIUnknownCancelCookie);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamHandler*, IUnknown*, int>)(lpVtbl[5]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pIUnknownCancelCookie);
     }
 
     /// <include file='IMFByteStreamHandler.xml' path='doc/member[@name="IMFByteStreamHandler.GetMaxNumberOfBytesRequiredForResolution"]/*' />
@@ -75,13 +75,13 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
     [VtblIndex(6)]
     public HRESULT GetMaxNumberOfBytesRequiredForResolution([NativeTypeName("QWORD *")] ulong* pqwBytes)
     {
-        return ((delegate* unmanaged<IMFByteStreamHandler*, ulong*, int>)(lpVtbl[6]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pqwBytes);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamHandler*, ulong*, int>)(lpVtbl[6]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pqwBytes);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT BeginCreateObject(IMFByteStream* pByteStream, [NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState);
+        HRESULT BeginCreateObject(IMFByteStream* pByteStream, [NativeTypeName("LPCWSTR")] char* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState);
 
         [VtblIndex(4)]
         HRESULT EndCreateObject(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject);
@@ -97,24 +97,24 @@ public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFByteStream *, LPCWSTR, DWORD, IPropertyStore *, IUnknown **, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFByteStream*, ushort*, uint, IPropertyStore*, IUnknown**, IMFAsyncCallback*, IUnknown*, int> BeginCreateObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFByteStream*, char*, uint, IPropertyStore*, IUnknown**, IMFAsyncCallback*, IUnknown*, int> BeginCreateObject;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, MF_OBJECT_TYPE *, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, MF_OBJECT_TYPE*, IUnknown**, int> EndCreateObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, MF_OBJECT_TYPE*, IUnknown**, int> EndCreateObject;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> CancelObjectCreation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> CancelObjectCreation;
 
         [NativeTypeName("HRESULT (QWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetMaxNumberOfBytesRequiredForResolution;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetMaxNumberOfBytesRequiredForResolution;
     }
 }

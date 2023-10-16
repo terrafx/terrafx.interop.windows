@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="QCMINFO_IDMAP" /> struct.</summary>
 public static unsafe partial class QCMINFO_IDMAPTests
 {
-    /// <summary>Validates that the <see cref="QCMINFO_IDMAP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<QCMINFO_IDMAP>(), Is.EqualTo(sizeof(QCMINFO_IDMAP)));
-    }
-
-    /// <summary>Validates that the <see cref="QCMINFO_IDMAP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(QCMINFO_IDMAP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="QCMINFO_IDMAP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(QCMINFO_IDMAP), Is.EqualTo(12));
-    }
 }

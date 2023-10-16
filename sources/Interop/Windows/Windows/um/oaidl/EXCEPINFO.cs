@@ -18,15 +18,15 @@ public unsafe partial struct EXCEPINFO
 
     /// <include file='EXCEPINFO.xml' path='doc/member[@name="EXCEPINFO.bstrSource"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* bstrSource;
+    public char* bstrSource;
 
     /// <include file='EXCEPINFO.xml' path='doc/member[@name="EXCEPINFO.bstrDescription"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* bstrDescription;
+    public char* bstrDescription;
 
     /// <include file='EXCEPINFO.xml' path='doc/member[@name="EXCEPINFO.bstrHelpFile"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* bstrHelpFile;
+    public char* bstrHelpFile;
 
     /// <include file='EXCEPINFO.xml' path='doc/member[@name="EXCEPINFO.dwHelpContext"]/*' />
     [NativeTypeName("DWORD")]

@@ -25,7 +25,7 @@ public unsafe partial struct IMFStreamingSinkConfig : IMFStreamingSinkConfig.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFStreamingSinkConfig*, Guid*, void**, int>)(lpVtbl[0]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFStreamingSinkConfig*, Guid*, void**, int>)(lpVtbl[0]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFStreamingSinkConfig : IMFStreamingSinkConfig.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFStreamingSinkConfig*, uint>)(lpVtbl[1]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFStreamingSinkConfig*, uint>)(lpVtbl[1]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFStreamingSinkConfig : IMFStreamingSinkConfig.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFStreamingSinkConfig*, uint>)(lpVtbl[2]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFStreamingSinkConfig*, uint>)(lpVtbl[2]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFStreamingSinkConfig.xml' path='doc/member[@name="IMFStreamingSinkConfig.StartStreaming"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFStreamingSinkConfig : IMFStreamingSinkConfig.Int
     [VtblIndex(3)]
     public HRESULT StartStreaming(BOOL fSeekOffsetIsByteOffset, [NativeTypeName("QWORD")] ulong qwSeekOffset)
     {
-        return ((delegate* unmanaged<IMFStreamingSinkConfig*, BOOL, ulong, int>)(lpVtbl[3]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this), fSeekOffsetIsByteOffset, qwSeekOffset);
+        return ((delegate* unmanaged[MemberFunction]<IMFStreamingSinkConfig*, BOOL, ulong, int>)(lpVtbl[3]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this), fSeekOffsetIsByteOffset, qwSeekOffset);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFStreamingSinkConfig : IMFStreamingSinkConfig.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, QWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, ulong, int> StartStreaming;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, ulong, int> StartStreaming;
     }
 }

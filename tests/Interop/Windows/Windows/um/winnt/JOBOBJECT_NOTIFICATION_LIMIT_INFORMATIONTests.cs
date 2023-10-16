@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class JOBOBJECT_NOTIFICATION_LIMIT_INFORMATIONTests
 {
-    /// <summary>Validates that the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION>(), Is.EqualTo(sizeof(JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION)));
-    }
-
-    /// <summary>Validates that the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION), Is.EqualTo(48));
-    }
 }

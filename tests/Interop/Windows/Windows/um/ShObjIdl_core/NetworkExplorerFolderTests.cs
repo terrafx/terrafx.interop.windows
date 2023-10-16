@@ -19,25 +19,4 @@ public static unsafe partial class NetworkExplorerFolderTests
     {
         Assert.That(typeof(NetworkExplorerFolder).GUID, Is.EqualTo(IID_NetworkExplorerFolder));
     }
-
-    /// <summary>Validates that the <see cref="NetworkExplorerFolder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NetworkExplorerFolder>(), Is.EqualTo(sizeof(NetworkExplorerFolder)));
-    }
-
-    /// <summary>Validates that the <see cref="NetworkExplorerFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NetworkExplorerFolder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NetworkExplorerFolder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NetworkExplorerFolder), Is.EqualTo(1));
-    }
 }

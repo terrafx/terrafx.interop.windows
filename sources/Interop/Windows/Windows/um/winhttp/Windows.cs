@@ -20,22 +20,22 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpTimeFromSystemTime"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHttpTimeFromSystemTime([NativeTypeName("const SYSTEMTIME *")] SYSTEMTIME* pst, [NativeTypeName("LPWSTR")] ushort* pwszTime);
+    public static extern BOOL WinHttpTimeFromSystemTime([NativeTypeName("const SYSTEMTIME *")] SYSTEMTIME* pst, [NativeTypeName("LPWSTR")] char* pwszTime);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpTimeToSystemTime"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHttpTimeToSystemTime([NativeTypeName("LPCWSTR")] ushort* pwszTime, SYSTEMTIME* pst);
+    public static extern BOOL WinHttpTimeToSystemTime([NativeTypeName("LPCWSTR")] char* pwszTime, SYSTEMTIME* pst);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpCrackUrl"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHttpCrackUrl([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwUrlLength, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPURL_COMPONENTS")] URL_COMPONENTS* lpUrlComponents);
+    public static extern BOOL WinHttpCrackUrl([NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("DWORD")] uint dwUrlLength, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPURL_COMPONENTS")] URL_COMPONENTS* lpUrlComponents);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpCreateUrl"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHttpCreateUrl([NativeTypeName("LPURL_COMPONENTS")] URL_COMPONENTS* lpUrlComponents, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pwszUrl, [NativeTypeName("LPDWORD")] uint* pdwUrlLength);
+    public static extern BOOL WinHttpCreateUrl([NativeTypeName("LPURL_COMPONENTS")] URL_COMPONENTS* lpUrlComponents, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] char* pwszUrl, [NativeTypeName("LPDWORD")] uint* pdwUrlLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpCheckPlatform"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
@@ -54,7 +54,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpOpen"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HINTERNET WinHttpOpen([NativeTypeName("LPCWSTR")] ushort* pszAgentW, [NativeTypeName("DWORD")] uint dwAccessType, [NativeTypeName("LPCWSTR")] ushort* pszProxyW, [NativeTypeName("LPCWSTR")] ushort* pszProxyBypassW, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HINTERNET WinHttpOpen([NativeTypeName("LPCWSTR")] char* pszAgentW, [NativeTypeName("DWORD")] uint dwAccessType, [NativeTypeName("LPCWSTR")] char* pszProxyW, [NativeTypeName("LPCWSTR")] char* pszProxyBypassW, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpCloseHandle"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
@@ -64,7 +64,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpConnect"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HINTERNET WinHttpConnect(HINTERNET hSession, [NativeTypeName("LPCWSTR")] ushort* pswzServerName, [NativeTypeName("INTERNET_PORT")] ushort nServerPort, [NativeTypeName("DWORD")] uint dwReserved);
+    public static extern HINTERNET WinHttpConnect(HINTERNET hSession, [NativeTypeName("LPCWSTR")] char* pswzServerName, [NativeTypeName("INTERNET_PORT")] ushort nServerPort, [NativeTypeName("DWORD")] uint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpReadData"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
@@ -104,12 +104,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpOpenRequest"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HINTERNET WinHttpOpenRequest(HINTERNET hConnect, [NativeTypeName("LPCWSTR")] ushort* pwszVerb, [NativeTypeName("LPCWSTR")] ushort* pwszObjectName, [NativeTypeName("LPCWSTR")] ushort* pwszVersion, [NativeTypeName("LPCWSTR")] ushort* pwszReferrer, [NativeTypeName("LPCWSTR *")] ushort** ppwszAcceptTypes, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HINTERNET WinHttpOpenRequest(HINTERNET hConnect, [NativeTypeName("LPCWSTR")] char* pwszVerb, [NativeTypeName("LPCWSTR")] char* pwszObjectName, [NativeTypeName("LPCWSTR")] char* pwszVersion, [NativeTypeName("LPCWSTR")] char* pwszReferrer, [NativeTypeName("LPCWSTR *")] char** ppwszAcceptTypes, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpAddRequestHeaders"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHttpAddRequestHeaders(HINTERNET hRequest, [NativeTypeName("LPCWSTR")] ushort* lpszHeaders, [NativeTypeName("DWORD")] uint dwHeadersLength, [NativeTypeName("DWORD")] uint dwModifiers);
+    public static extern BOOL WinHttpAddRequestHeaders(HINTERNET hRequest, [NativeTypeName("LPCWSTR")] char* lpszHeaders, [NativeTypeName("DWORD")] uint dwHeadersLength, [NativeTypeName("DWORD")] uint dwModifiers);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpAddRequestHeadersEx"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
@@ -119,12 +119,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpSendRequest"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHttpSendRequest(HINTERNET hRequest, [NativeTypeName("LPCWSTR")] ushort* lpszHeaders, [NativeTypeName("DWORD")] uint dwHeadersLength, [NativeTypeName("LPVOID")] void* lpOptional, [NativeTypeName("DWORD")] uint dwOptionalLength, [NativeTypeName("DWORD")] uint dwTotalLength, [NativeTypeName("DWORD_PTR")] nuint dwContext);
+    public static extern BOOL WinHttpSendRequest(HINTERNET hRequest, [NativeTypeName("LPCWSTR")] char* lpszHeaders, [NativeTypeName("DWORD")] uint dwHeadersLength, [NativeTypeName("LPVOID")] void* lpOptional, [NativeTypeName("DWORD")] uint dwOptionalLength, [NativeTypeName("DWORD")] uint dwTotalLength, [NativeTypeName("DWORD_PTR")] nuint dwContext);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpSetCredentials"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHttpSetCredentials(HINTERNET hRequest, [NativeTypeName("DWORD")] uint AuthTargets, [NativeTypeName("DWORD")] uint AuthScheme, [NativeTypeName("LPCWSTR")] ushort* pwszUserName, [NativeTypeName("LPCWSTR")] ushort* pwszPassword, [NativeTypeName("LPVOID")] void* pAuthParams);
+    public static extern BOOL WinHttpSetCredentials(HINTERNET hRequest, [NativeTypeName("DWORD")] uint AuthTargets, [NativeTypeName("DWORD")] uint AuthScheme, [NativeTypeName("LPCWSTR")] char* pwszUserName, [NativeTypeName("LPCWSTR")] char* pwszPassword, [NativeTypeName("LPVOID")] void* pAuthParams);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpQueryAuthSchemes"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
@@ -139,7 +139,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpQueryHeaders"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHttpQueryHeaders(HINTERNET hRequest, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPCWSTR")] ushort* pwszName, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpdwBufferLength, [NativeTypeName("LPDWORD")] uint* lpdwIndex);
+    public static extern BOOL WinHttpQueryHeaders(HINTERNET hRequest, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPCWSTR")] char* pwszName, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpdwBufferLength, [NativeTypeName("LPDWORD")] uint* lpdwIndex);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpQueryHeadersEx"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
@@ -158,12 +158,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpDetectAutoProxyConfigUrl"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHttpDetectAutoProxyConfigUrl([NativeTypeName("DWORD")] uint dwAutoDetectFlags, [NativeTypeName("LPWSTR *")] ushort** ppwstrAutoConfigUrl);
+    public static extern BOOL WinHttpDetectAutoProxyConfigUrl([NativeTypeName("DWORD")] uint dwAutoDetectFlags, [NativeTypeName("LPWSTR *")] char** ppwstrAutoConfigUrl);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpGetProxyForUrl"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WinHttpGetProxyForUrl(HINTERNET hSession, [NativeTypeName("LPCWSTR")] ushort* lpcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, WINHTTP_PROXY_INFO* pProxyInfo);
+    public static extern BOOL WinHttpGetProxyForUrl(HINTERNET hSession, [NativeTypeName("LPCWSTR")] char* lpcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, WINHTTP_PROXY_INFO* pProxyInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpCreateProxyResolver"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
@@ -175,12 +175,12 @@ public static unsafe partial class Windows
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     [SupportedOSPlatform("windows6.2")]
-    public static extern uint WinHttpGetProxyForUrlEx(HINTERNET hResolver, [NativeTypeName("PCWSTR")] ushort* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD_PTR")] nuint pContext);
+    public static extern uint WinHttpGetProxyForUrlEx(HINTERNET hResolver, [NativeTypeName("PCWSTR")] char* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD_PTR")] nuint pContext);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpGetProxyForUrlEx2"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WinHttpGetProxyForUrlEx2(HINTERNET hResolver, [NativeTypeName("PCWSTR")] ushort* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD")] uint cbInterfaceSelectionContext, byte* pInterfaceSelectionContext, [NativeTypeName("DWORD_PTR")] nuint pContext);
+    public static extern uint WinHttpGetProxyForUrlEx2(HINTERNET hResolver, [NativeTypeName("PCWSTR")] char* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD")] uint cbInterfaceSelectionContext, byte* pInterfaceSelectionContext, [NativeTypeName("DWORD_PTR")] nuint pContext);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpGetProxyResult"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
@@ -221,7 +221,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpReadProxySettings"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WinHttpReadProxySettings(HINTERNET hSession, [NativeTypeName("PCWSTR")] ushort* pcwszConnectionName, BOOL fFallBackToDefaultSettings, BOOL fSetAutoDiscoverForDefaultSettings, [NativeTypeName("DWORD *")] uint* pdwSettingsVersion, BOOL* pfDefaultSettingsAreReturned, WINHTTP_PROXY_SETTINGS* pWinHttpProxySettings);
+    public static extern uint WinHttpReadProxySettings(HINTERNET hSession, [NativeTypeName("PCWSTR")] char* pcwszConnectionName, BOOL fFallBackToDefaultSettings, BOOL fSetAutoDiscoverForDefaultSettings, [NativeTypeName("DWORD *")] uint* pdwSettingsVersion, BOOL* pfDefaultSettingsAreReturned, WINHTTP_PROXY_SETTINGS* pWinHttpProxySettings);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpFreeProxySettings"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]

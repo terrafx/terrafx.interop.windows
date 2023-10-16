@@ -25,7 +25,7 @@ public unsafe partial struct IObjectWithSite : IObjectWithSite.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IObjectWithSite*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithSite*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IObjectWithSite : IObjectWithSite.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IObjectWithSite*, uint>)(lpVtbl[1]))((IObjectWithSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithSite*, uint>)(lpVtbl[1]))((IObjectWithSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IObjectWithSite : IObjectWithSite.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IObjectWithSite*, uint>)(lpVtbl[2]))((IObjectWithSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithSite*, uint>)(lpVtbl[2]))((IObjectWithSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IObjectWithSite.xml' path='doc/member[@name="IObjectWithSite.SetSite"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IObjectWithSite : IObjectWithSite.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetSite(IUnknown* pUnkSite)
     {
-        return ((delegate* unmanaged<IObjectWithSite*, IUnknown*, int>)(lpVtbl[3]))((IObjectWithSite*)Unsafe.AsPointer(ref this), pUnkSite);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithSite*, IUnknown*, int>)(lpVtbl[3]))((IObjectWithSite*)Unsafe.AsPointer(ref this), pUnkSite);
     }
 
     /// <include file='IObjectWithSite.xml' path='doc/member[@name="IObjectWithSite.GetSite"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IObjectWithSite : IObjectWithSite.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetSite([NativeTypeName("const IID &")] Guid* riid, void** ppvSite)
     {
-        return ((delegate* unmanaged<IObjectWithSite*, Guid*, void**, int>)(lpVtbl[4]))((IObjectWithSite*)Unsafe.AsPointer(ref this), riid, ppvSite);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithSite*, Guid*, void**, int>)(lpVtbl[4]))((IObjectWithSite*)Unsafe.AsPointer(ref this), riid, ppvSite);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IObjectWithSite : IObjectWithSite.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetSite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetSite;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetSite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetSite;
     }
 }

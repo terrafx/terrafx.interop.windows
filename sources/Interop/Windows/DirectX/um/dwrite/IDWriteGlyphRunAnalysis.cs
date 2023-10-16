@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGlyphRunAnalysis*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, uint>)(lpVtbl[1]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGlyphRunAnalysis*, uint>)(lpVtbl[1]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, uint>)(lpVtbl[2]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGlyphRunAnalysis*, uint>)(lpVtbl[2]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteGlyphRunAnalysis.xml' path='doc/member[@name="IDWriteGlyphRunAnalysis.GetAlphaTextureBounds"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
     [VtblIndex(3)]
     public HRESULT GetAlphaTextureBounds(DWRITE_TEXTURE_TYPE textureType, RECT* textureBounds)
     {
-        return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, DWRITE_TEXTURE_TYPE, RECT*, int>)(lpVtbl[3]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), textureType, textureBounds);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGlyphRunAnalysis*, DWRITE_TEXTURE_TYPE, RECT*, int>)(lpVtbl[3]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), textureType, textureBounds);
     }
 
     /// <include file='IDWriteGlyphRunAnalysis.xml' path='doc/member[@name="IDWriteGlyphRunAnalysis.CreateAlphaTexture"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
     [VtblIndex(4)]
     public HRESULT CreateAlphaTexture(DWRITE_TEXTURE_TYPE textureType, [NativeTypeName("const RECT *")] RECT* textureBounds, byte* alphaValues, [NativeTypeName("UINT32")] uint bufferSize)
     {
-        return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, DWRITE_TEXTURE_TYPE, RECT*, byte*, uint, int>)(lpVtbl[4]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), textureType, textureBounds, alphaValues, bufferSize);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGlyphRunAnalysis*, DWRITE_TEXTURE_TYPE, RECT*, byte*, uint, int>)(lpVtbl[4]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), textureType, textureBounds, alphaValues, bufferSize);
     }
 
     /// <include file='IDWriteGlyphRunAnalysis.xml' path='doc/member[@name="IDWriteGlyphRunAnalysis.GetAlphaBlendParams"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
     [VtblIndex(5)]
     public HRESULT GetAlphaBlendParams(IDWriteRenderingParams* renderingParams, float* blendGamma, float* blendEnhancedContrast, float* blendClearTypeLevel)
     {
-        return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, IDWriteRenderingParams*, float*, float*, float*, int>)(lpVtbl[5]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), renderingParams, blendGamma, blendEnhancedContrast, blendClearTypeLevel);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGlyphRunAnalysis*, IDWriteRenderingParams*, float*, float*, float*, int>)(lpVtbl[5]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), renderingParams, blendGamma, blendEnhancedContrast, blendClearTypeLevel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,21 +87,21 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWRITE_TEXTURE_TYPE, RECT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TEXTURE_TYPE, RECT*, int> GetAlphaTextureBounds;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TEXTURE_TYPE, RECT*, int> GetAlphaTextureBounds;
 
         [NativeTypeName("HRESULT (DWRITE_TEXTURE_TYPE, const RECT *, BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TEXTURE_TYPE, RECT*, byte*, uint, int> CreateAlphaTexture;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TEXTURE_TYPE, RECT*, byte*, uint, int> CreateAlphaTexture;
 
         [NativeTypeName("HRESULT (IDWriteRenderingParams *, FLOAT *, FLOAT *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteRenderingParams*, float*, float*, float*, int> GetAlphaBlendParams;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteRenderingParams*, float*, float*, float*, int> GetAlphaBlendParams;
     }
 }

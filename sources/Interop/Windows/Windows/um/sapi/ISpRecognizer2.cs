@@ -25,7 +25,7 @@ public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpRecognizer2*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer2*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpRecognizer2*, uint>)(lpVtbl[1]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer2*, uint>)(lpVtbl[1]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpRecognizer2*, uint>)(lpVtbl[2]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer2*, uint>)(lpVtbl[2]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpRecognizer2.xml' path='doc/member[@name="ISpRecognizer2.EmulateRecognitionEx"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT EmulateRecognitionEx(ISpPhrase* pPhrase, [NativeTypeName("DWORD")] uint dwCompareFlags)
     {
-        return ((delegate* unmanaged<ISpRecognizer2*, ISpPhrase*, uint, int>)(lpVtbl[3]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), pPhrase, dwCompareFlags);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer2*, ISpPhrase*, uint, int>)(lpVtbl[3]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), pPhrase, dwCompareFlags);
     }
 
     /// <include file='ISpRecognizer2.xml' path='doc/member[@name="ISpRecognizer2.SetTrainingState"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT SetTrainingState(BOOL fDoingTraining, BOOL fAdaptFromTrainingData)
     {
-        return ((delegate* unmanaged<ISpRecognizer2*, BOOL, BOOL, int>)(lpVtbl[4]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), fDoingTraining, fAdaptFromTrainingData);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer2*, BOOL, BOOL, int>)(lpVtbl[4]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), fDoingTraining, fAdaptFromTrainingData);
     }
 
     /// <include file='ISpRecognizer2.xml' path='doc/member[@name="ISpRecognizer2.ResetAcousticModelAdaptation"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT ResetAcousticModelAdaptation()
     {
-        return ((delegate* unmanaged<ISpRecognizer2*, int>)(lpVtbl[5]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer2*, int>)(lpVtbl[5]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpPhrase *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpPhrase*, uint, int> EmulateRecognitionEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpPhrase*, uint, int> EmulateRecognitionEx;
 
         [NativeTypeName("HRESULT (BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, BOOL, int> SetTrainingState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, BOOL, int> SetTrainingState;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResetAcousticModelAdaptation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResetAcousticModelAdaptation;
     }
 }

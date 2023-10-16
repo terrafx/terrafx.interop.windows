@@ -30,14 +30,14 @@ public unsafe partial struct D2D_MATRIX_3X2_F : IEquatable<D2D_MATRIX_3X2_F>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
-                    0x00, 0x00, 0x80, 0x3F,
-                    0x00, 0x00, 0x00, 0x00,
-                    0x00, 0x00, 0x00, 0x00,
-                    0x00, 0x00, 0x80, 0x3F,
-                    0x00, 0x00, 0x00, 0x00,
-                    0x00, 0x00, 0x00, 0x00,
-                };
+            ReadOnlySpan<byte> data = [
+                0x00, 0x00, 0x80, 0x3F,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x80, 0x3F,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<D2D_MATRIX_3X2_F>());
             return ref Unsafe.As<byte, D2D_MATRIX_3X2_F>(ref MemoryMarshal.GetReference(data));

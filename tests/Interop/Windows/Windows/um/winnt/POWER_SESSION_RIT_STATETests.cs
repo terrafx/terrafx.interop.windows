@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="POWER_SESSION_RIT_STATE" /> struct.</summary>
 public static unsafe partial class POWER_SESSION_RIT_STATETests
 {
-    /// <summary>Validates that the <see cref="POWER_SESSION_RIT_STATE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<POWER_SESSION_RIT_STATE>(), Is.EqualTo(sizeof(POWER_SESSION_RIT_STATE)));
-    }
-
-    /// <summary>Validates that the <see cref="POWER_SESSION_RIT_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(POWER_SESSION_RIT_STATE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="POWER_SESSION_RIT_STATE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(POWER_SESSION_RIT_STATE), Is.EqualTo(16));
-    }
 }

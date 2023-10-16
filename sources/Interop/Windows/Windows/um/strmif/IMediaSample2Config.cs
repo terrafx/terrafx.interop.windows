@@ -25,7 +25,7 @@ public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMediaSample2Config*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSample2Config*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2Config*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSample2Config*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMediaSample2Config*, uint>)(lpVtbl[1]))((IMediaSample2Config*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2Config*, uint>)(lpVtbl[1]))((IMediaSample2Config*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMediaSample2Config*, uint>)(lpVtbl[2]))((IMediaSample2Config*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2Config*, uint>)(lpVtbl[2]))((IMediaSample2Config*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaSample2Config.xml' path='doc/member[@name="IMediaSample2Config.GetSurface"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
     [VtblIndex(3)]
     public HRESULT GetSurface(IUnknown** ppDirect3DSurface9)
     {
-        return ((delegate* unmanaged<IMediaSample2Config*, IUnknown**, int>)(lpVtbl[3]))((IMediaSample2Config*)Unsafe.AsPointer(ref this), ppDirect3DSurface9);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2Config*, IUnknown**, int>)(lpVtbl[3]))((IMediaSample2Config*)Unsafe.AsPointer(ref this), ppDirect3DSurface9);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> GetSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> GetSurface;
     }
 }

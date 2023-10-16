@@ -26,7 +26,7 @@ public unsafe partial struct CMC_STATUS_INFO
 
     /// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO.pwszStatusString"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszStatusString;
+    public char* pwszStatusString;
 
     /// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO.dwOtherInfoChoice"]/*' />
     [NativeTypeName("DWORD")]

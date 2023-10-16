@@ -18,7 +18,7 @@ public unsafe partial struct IMAGEHLP_CBA_EVENTW
 
     /// <include file='IMAGEHLP_CBA_EVENTW.xml' path='doc/member[@name="IMAGEHLP_CBA_EVENTW.desc"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* desc;
+    public char* desc;
 
     /// <include file='IMAGEHLP_CBA_EVENTW.xml' path='doc/member[@name="IMAGEHLP_CBA_EVENTW.@object"]/*' />
     [NativeTypeName("PVOID")]

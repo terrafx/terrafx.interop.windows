@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KERNINGPAIR" /> struct.</summary>
 public static unsafe partial class KERNINGPAIRTests
 {
-    /// <summary>Validates that the <see cref="KERNINGPAIR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KERNINGPAIR>(), Is.EqualTo(sizeof(KERNINGPAIR)));
-    }
-
-    /// <summary>Validates that the <see cref="KERNINGPAIR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KERNINGPAIR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KERNINGPAIR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(KERNINGPAIR), Is.EqualTo(8));
-    }
 }

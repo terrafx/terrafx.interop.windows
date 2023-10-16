@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="XFORM" /> struct.</summary>
 public static unsafe partial class XFORMTests
 {
-    /// <summary>Validates that the <see cref="XFORM" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<XFORM>(), Is.EqualTo(sizeof(XFORM)));
-    }
-
-    /// <summary>Validates that the <see cref="XFORM" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(XFORM).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="XFORM" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(XFORM), Is.EqualTo(24));
-    }
 }

@@ -64,11 +64,11 @@ public unsafe partial struct PRINTDLGW
 
     /// <include file='PRINTDLGW.xml' path='doc/member[@name="PRINTDLGW.lpPrintTemplateName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpPrintTemplateName;
+    public char* lpPrintTemplateName;
 
     /// <include file='PRINTDLGW.xml' path='doc/member[@name="PRINTDLGW.lpSetupTemplateName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpSetupTemplateName;
+    public char* lpSetupTemplateName;
 
     /// <include file='PRINTDLGW.xml' path='doc/member[@name="PRINTDLGW.hPrintTemplate"]/*' />
     public HGLOBAL hPrintTemplate;

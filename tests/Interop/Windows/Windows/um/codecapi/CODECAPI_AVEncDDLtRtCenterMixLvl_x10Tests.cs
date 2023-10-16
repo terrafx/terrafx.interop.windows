@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncDDLtRtCenterMixLvl_x10Tests
     {
         Assert.That(typeof(CODECAPI_AVEncDDLtRtCenterMixLvl_x10).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDLtRtCenterMixLvl_x10));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDLtRtCenterMixLvl_x10" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncDDLtRtCenterMixLvl_x10>(), Is.EqualTo(sizeof(CODECAPI_AVEncDDLtRtCenterMixLvl_x10)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDLtRtCenterMixLvl_x10" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncDDLtRtCenterMixLvl_x10).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDLtRtCenterMixLvl_x10" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncDDLtRtCenterMixLvl_x10), Is.EqualTo(1));
-    }
 }

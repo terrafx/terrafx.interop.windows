@@ -19,32 +19,4 @@ public static unsafe partial class ITfFnLMProcessorTests
     {
         Assert.That(typeof(ITfFnLMProcessor).GUID, Is.EqualTo(IID_ITfFnLMProcessor));
     }
-
-    /// <summary>Validates that the <see cref="ITfFnLMProcessor" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfFnLMProcessor>(), Is.EqualTo(sizeof(ITfFnLMProcessor)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnLMProcessor" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfFnLMProcessor).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnLMProcessor" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfFnLMProcessor), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfFnLMProcessor), Is.EqualTo(4));
-        }
-    }
 }

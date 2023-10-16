@@ -19,32 +19,4 @@ public static unsafe partial class IWICFormatConverterTests
     {
         Assert.That(typeof(IWICFormatConverter).GUID, Is.EqualTo(IID_IWICFormatConverter));
     }
-
-    /// <summary>Validates that the <see cref="IWICFormatConverter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICFormatConverter>(), Is.EqualTo(sizeof(IWICFormatConverter)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICFormatConverter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICFormatConverter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICFormatConverter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICFormatConverter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICFormatConverter), Is.EqualTo(4));
-        }
-    }
 }

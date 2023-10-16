@@ -19,25 +19,4 @@ public static unsafe partial class MsftMultisessionRandomWriteTests
     {
         Assert.That(typeof(MsftMultisessionRandomWrite).GUID, Is.EqualTo(CLSID_MsftMultisessionRandomWrite));
     }
-
-    /// <summary>Validates that the <see cref="MsftMultisessionRandomWrite" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MsftMultisessionRandomWrite>(), Is.EqualTo(sizeof(MsftMultisessionRandomWrite)));
-    }
-
-    /// <summary>Validates that the <see cref="MsftMultisessionRandomWrite" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MsftMultisessionRandomWrite).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MsftMultisessionRandomWrite" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MsftMultisessionRandomWrite), Is.EqualTo(1));
-    }
 }

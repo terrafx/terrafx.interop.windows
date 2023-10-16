@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteBitmapRenderTargetTests
     {
         Assert.That(typeof(IDWriteBitmapRenderTarget).GUID, Is.EqualTo(IID_IDWriteBitmapRenderTarget));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteBitmapRenderTarget" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteBitmapRenderTarget>(), Is.EqualTo(sizeof(IDWriteBitmapRenderTarget)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteBitmapRenderTarget" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteBitmapRenderTarget).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteBitmapRenderTarget" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteBitmapRenderTarget), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteBitmapRenderTarget), Is.EqualTo(4));
-        }
-    }
 }

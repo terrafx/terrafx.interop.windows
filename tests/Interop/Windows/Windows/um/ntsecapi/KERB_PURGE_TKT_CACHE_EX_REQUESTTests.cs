@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KERB_PURGE_TKT_CACHE_EX_REQUEST" /> struct.</summary>
 public static unsafe partial class KERB_PURGE_TKT_CACHE_EX_REQUESTTests
 {
-    /// <summary>Validates that the <see cref="KERB_PURGE_TKT_CACHE_EX_REQUEST" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KERB_PURGE_TKT_CACHE_EX_REQUEST>(), Is.EqualTo(sizeof(KERB_PURGE_TKT_CACHE_EX_REQUEST)));
-    }
-
-    /// <summary>Validates that the <see cref="KERB_PURGE_TKT_CACHE_EX_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KERB_PURGE_TKT_CACHE_EX_REQUEST).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KERB_PURGE_TKT_CACHE_EX_REQUEST" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(KERB_PURGE_TKT_CACHE_EX_REQUEST), Is.EqualTo(112));
-        }
-        else
-        {
-            Assert.That(sizeof(KERB_PURGE_TKT_CACHE_EX_REQUEST), Is.EqualTo(80));
-        }
-    }
 }

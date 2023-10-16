@@ -10,7 +10,7 @@ public unsafe partial struct PVALUEW
 {
     /// <include file='PVALUEW.xml' path='doc/member[@name="PVALUEW.pv_valuename"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pv_valuename;
+    public char* pv_valuename;
 
     /// <include file='PVALUEW.xml' path='doc/member[@name="PVALUEW.pv_valuelen"]/*' />
     public int pv_valuelen;

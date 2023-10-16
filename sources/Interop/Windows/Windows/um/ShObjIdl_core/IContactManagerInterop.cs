@@ -25,7 +25,7 @@ public unsafe partial struct IContactManagerInterop : IContactManagerInterop.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IContactManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IContactManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IContactManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IContactManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IContactManagerInterop : IContactManagerInterop.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IContactManagerInterop*, uint>)(lpVtbl[1]))((IContactManagerInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IContactManagerInterop*, uint>)(lpVtbl[1]))((IContactManagerInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IContactManagerInterop : IContactManagerInterop.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IContactManagerInterop*, uint>)(lpVtbl[2]))((IContactManagerInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IContactManagerInterop*, uint>)(lpVtbl[2]))((IContactManagerInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IContactManagerInterop.xml' path='doc/member[@name="IContactManagerInterop.ShowContactCardForWindow"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IContactManagerInterop : IContactManagerInterop.Int
     [VtblIndex(3)]
     public HRESULT ShowContactCardForWindow(HWND appWindow, IUnknown* contact, [NativeTypeName("const RECT *")] RECT* selection, FLYOUT_PLACEMENT preferredPlacement)
     {
-        return ((delegate* unmanaged<IContactManagerInterop*, HWND, IUnknown*, RECT*, FLYOUT_PLACEMENT, int>)(lpVtbl[3]))((IContactManagerInterop*)Unsafe.AsPointer(ref this), appWindow, contact, selection, preferredPlacement);
+        return ((delegate* unmanaged[MemberFunction]<IContactManagerInterop*, HWND, IUnknown*, RECT*, FLYOUT_PLACEMENT, int>)(lpVtbl[3]))((IContactManagerInterop*)Unsafe.AsPointer(ref this), appWindow, contact, selection, preferredPlacement);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IContactManagerInterop : IContactManagerInterop.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IUnknown *, const RECT *, FLYOUT_PLACEMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, IUnknown*, RECT*, FLYOUT_PLACEMENT, int> ShowContactCardForWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, IUnknown*, RECT*, FLYOUT_PLACEMENT, int> ShowContactCardForWindow;
     }
 }

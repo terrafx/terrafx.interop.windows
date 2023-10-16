@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D3D11_QUERY_DATA_PIPELINE_STATISTICS" /> struct.</summary>
 public static unsafe partial class D3D11_QUERY_DATA_PIPELINE_STATISTICSTests
 {
-    /// <summary>Validates that the <see cref="D3D11_QUERY_DATA_PIPELINE_STATISTICS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D11_QUERY_DATA_PIPELINE_STATISTICS>(), Is.EqualTo(sizeof(D3D11_QUERY_DATA_PIPELINE_STATISTICS)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_QUERY_DATA_PIPELINE_STATISTICS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D11_QUERY_DATA_PIPELINE_STATISTICS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_QUERY_DATA_PIPELINE_STATISTICS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D11_QUERY_DATA_PIPELINE_STATISTICS), Is.EqualTo(88));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KEY_TYPE_SUBTYPE" /> struct.</summary>
 public static unsafe partial class KEY_TYPE_SUBTYPETests
 {
-    /// <summary>Validates that the <see cref="KEY_TYPE_SUBTYPE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KEY_TYPE_SUBTYPE>(), Is.EqualTo(sizeof(KEY_TYPE_SUBTYPE)));
-    }
-
-    /// <summary>Validates that the <see cref="KEY_TYPE_SUBTYPE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KEY_TYPE_SUBTYPE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KEY_TYPE_SUBTYPE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(KEY_TYPE_SUBTYPE), Is.EqualTo(36));
-    }
 }

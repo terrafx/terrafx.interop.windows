@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIXERCAPS2W" /> struct.</summary>
 public static unsafe partial class MIXERCAPS2WTests
 {
-    /// <summary>Validates that the <see cref="MIXERCAPS2W" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIXERCAPS2W>(), Is.EqualTo(sizeof(MIXERCAPS2W)));
-    }
-
-    /// <summary>Validates that the <see cref="MIXERCAPS2W" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIXERCAPS2W).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIXERCAPS2W" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIXERCAPS2W), Is.EqualTo(128));
-    }
 }

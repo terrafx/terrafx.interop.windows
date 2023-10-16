@@ -19,32 +19,4 @@ public static unsafe partial class ISVGMatrixTests
     {
         Assert.That(typeof(ISVGMatrix).GUID, Is.EqualTo(IID_ISVGMatrix));
     }
-
-    /// <summary>Validates that the <see cref="ISVGMatrix" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISVGMatrix>(), Is.EqualTo(sizeof(ISVGMatrix)));
-    }
-
-    /// <summary>Validates that the <see cref="ISVGMatrix" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISVGMatrix).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISVGMatrix" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISVGMatrix), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISVGMatrix), Is.EqualTo(4));
-        }
-    }
 }

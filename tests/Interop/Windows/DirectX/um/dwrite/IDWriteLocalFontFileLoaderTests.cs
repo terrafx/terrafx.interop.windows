@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteLocalFontFileLoaderTests
     {
         Assert.That(typeof(IDWriteLocalFontFileLoader).GUID, Is.EqualTo(IID_IDWriteLocalFontFileLoader));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteLocalFontFileLoader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteLocalFontFileLoader>(), Is.EqualTo(sizeof(IDWriteLocalFontFileLoader)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteLocalFontFileLoader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteLocalFontFileLoader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteLocalFontFileLoader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteLocalFontFileLoader), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteLocalFontFileLoader), Is.EqualTo(4));
-        }
-    }
 }

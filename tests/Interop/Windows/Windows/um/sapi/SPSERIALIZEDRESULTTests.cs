@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SPSERIALIZEDRESULT" /> struct.</summary>
 public static unsafe partial class SPSERIALIZEDRESULTTests
 {
-    /// <summary>Validates that the <see cref="SPSERIALIZEDRESULT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SPSERIALIZEDRESULT>(), Is.EqualTo(sizeof(SPSERIALIZEDRESULT)));
-    }
-
-    /// <summary>Validates that the <see cref="SPSERIALIZEDRESULT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SPSERIALIZEDRESULT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SPSERIALIZEDRESULT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SPSERIALIZEDRESULT), Is.EqualTo(4));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class DispHTMLTimeRangesTests
     {
         Assert.That(typeof(DispHTMLTimeRanges).GUID, Is.EqualTo(IID_DispHTMLTimeRanges));
     }
-
-    /// <summary>Validates that the <see cref="DispHTMLTimeRanges" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispHTMLTimeRanges>(), Is.EqualTo(sizeof(DispHTMLTimeRanges)));
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLTimeRanges" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispHTMLTimeRanges).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLTimeRanges" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispHTMLTimeRanges), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispHTMLTimeRanges), Is.EqualTo(4));
-        }
-    }
 }

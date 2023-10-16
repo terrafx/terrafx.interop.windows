@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="GSM610WAVEFORMAT" /> struct.</summary>
 public static unsafe partial class GSM610WAVEFORMATTests
 {
-    /// <summary>Validates that the <see cref="GSM610WAVEFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<GSM610WAVEFORMAT>(), Is.EqualTo(sizeof(GSM610WAVEFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="GSM610WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(GSM610WAVEFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="GSM610WAVEFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(GSM610WAVEFORMAT), Is.EqualTo(20));
-    }
 }

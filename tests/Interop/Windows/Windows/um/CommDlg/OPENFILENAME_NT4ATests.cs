@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="OPENFILENAME_NT4A" /> struct.</summary>
 public static unsafe partial class OPENFILENAME_NT4ATests
 {
-    /// <summary>Validates that the <see cref="OPENFILENAME_NT4A" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<OPENFILENAME_NT4A>(), Is.EqualTo(sizeof(OPENFILENAME_NT4A)));
-    }
-
-    /// <summary>Validates that the <see cref="OPENFILENAME_NT4A" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(OPENFILENAME_NT4A).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="OPENFILENAME_NT4A" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(OPENFILENAME_NT4A), Is.EqualTo(136));
-        }
-        else
-        {
-            Assert.That(sizeof(OPENFILENAME_NT4A), Is.EqualTo(76));
-        }
-    }
 }

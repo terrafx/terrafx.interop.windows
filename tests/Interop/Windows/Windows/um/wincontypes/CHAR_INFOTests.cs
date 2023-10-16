@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CHAR_INFO" /> struct.</summary>
 public static unsafe partial class CHAR_INFOTests
 {
-    /// <summary>Validates that the <see cref="CHAR_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CHAR_INFO>(), Is.EqualTo(sizeof(CHAR_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="CHAR_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CHAR_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CHAR_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CHAR_INFO), Is.EqualTo(4));
-    }
 }

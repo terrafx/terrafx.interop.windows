@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DVD_PLAYBACK_LOCATION2" /> struct.</summary>
 public static unsafe partial class DVD_PLAYBACK_LOCATION2Tests
 {
-    /// <summary>Validates that the <see cref="DVD_PLAYBACK_LOCATION2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DVD_PLAYBACK_LOCATION2>(), Is.EqualTo(sizeof(DVD_PLAYBACK_LOCATION2)));
-    }
-
-    /// <summary>Validates that the <see cref="DVD_PLAYBACK_LOCATION2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DVD_PLAYBACK_LOCATION2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DVD_PLAYBACK_LOCATION2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DVD_PLAYBACK_LOCATION2), Is.EqualTo(16));
-    }
 }

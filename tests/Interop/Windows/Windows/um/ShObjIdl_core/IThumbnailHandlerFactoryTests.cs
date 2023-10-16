@@ -19,32 +19,4 @@ public static unsafe partial class IThumbnailHandlerFactoryTests
     {
         Assert.That(typeof(IThumbnailHandlerFactory).GUID, Is.EqualTo(IID_IThumbnailHandlerFactory));
     }
-
-    /// <summary>Validates that the <see cref="IThumbnailHandlerFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IThumbnailHandlerFactory>(), Is.EqualTo(sizeof(IThumbnailHandlerFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IThumbnailHandlerFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IThumbnailHandlerFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IThumbnailHandlerFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IThumbnailHandlerFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IThumbnailHandlerFactory), Is.EqualTo(4));
-        }
-    }
 }

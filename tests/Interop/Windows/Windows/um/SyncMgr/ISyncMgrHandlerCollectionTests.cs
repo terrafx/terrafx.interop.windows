@@ -19,32 +19,4 @@ public static unsafe partial class ISyncMgrHandlerCollectionTests
     {
         Assert.That(typeof(ISyncMgrHandlerCollection).GUID, Is.EqualTo(IID_ISyncMgrHandlerCollection));
     }
-
-    /// <summary>Validates that the <see cref="ISyncMgrHandlerCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISyncMgrHandlerCollection>(), Is.EqualTo(sizeof(ISyncMgrHandlerCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="ISyncMgrHandlerCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISyncMgrHandlerCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISyncMgrHandlerCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISyncMgrHandlerCollection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISyncMgrHandlerCollection), Is.EqualTo(4));
-        }
-    }
 }

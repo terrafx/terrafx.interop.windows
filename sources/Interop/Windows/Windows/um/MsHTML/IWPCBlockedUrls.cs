@@ -25,7 +25,7 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWPCBlockedUrls*, Guid*, void**, int>)(lpVtbl[0]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWPCBlockedUrls*, Guid*, void**, int>)(lpVtbl[0]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWPCBlockedUrls*, uint>)(lpVtbl[1]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWPCBlockedUrls*, uint>)(lpVtbl[1]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWPCBlockedUrls*, uint>)(lpVtbl[2]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWPCBlockedUrls*, uint>)(lpVtbl[2]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWPCBlockedUrls.xml' path='doc/member[@name="IWPCBlockedUrls.GetCount"]/*' />
@@ -51,15 +51,15 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetCount([NativeTypeName("DWORD *")] uint* pdwCount)
     {
-        return ((delegate* unmanaged<IWPCBlockedUrls*, uint*, int>)(lpVtbl[3]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), pdwCount);
+        return ((delegate* unmanaged[MemberFunction]<IWPCBlockedUrls*, uint*, int>)(lpVtbl[3]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
     /// <include file='IWPCBlockedUrls.xml' path='doc/member[@name="IWPCBlockedUrls.GetUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] ushort** pbstrUrl)
+    public HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] char** pbstrUrl)
     {
-        return ((delegate* unmanaged<IWPCBlockedUrls*, uint, ushort**, int>)(lpVtbl[4]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), dwIdx, pbstrUrl);
+        return ((delegate* unmanaged[MemberFunction]<IWPCBlockedUrls*, uint, char**, int>)(lpVtbl[4]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), dwIdx, pbstrUrl);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,25 +68,25 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, INativ
         HRESULT GetCount([NativeTypeName("DWORD *")] uint* pdwCount);
 
         [VtblIndex(4)]
-        HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] ushort** pbstrUrl);
+        HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] char** pbstrUrl);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetUrl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> GetUrl;
     }
 }

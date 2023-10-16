@@ -19,32 +19,4 @@ public static unsafe partial class ICaptureGraphBuilder2Tests
     {
         Assert.That(typeof(ICaptureGraphBuilder2).GUID, Is.EqualTo(IID_ICaptureGraphBuilder2));
     }
-
-    /// <summary>Validates that the <see cref="ICaptureGraphBuilder2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICaptureGraphBuilder2>(), Is.EqualTo(sizeof(ICaptureGraphBuilder2)));
-    }
-
-    /// <summary>Validates that the <see cref="ICaptureGraphBuilder2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICaptureGraphBuilder2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICaptureGraphBuilder2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICaptureGraphBuilder2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICaptureGraphBuilder2), Is.EqualTo(4));
-        }
-    }
 }

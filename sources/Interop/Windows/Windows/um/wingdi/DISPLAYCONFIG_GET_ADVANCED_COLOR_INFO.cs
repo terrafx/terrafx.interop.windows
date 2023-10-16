@@ -30,7 +30,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     public uint advancedColorSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.advancedColorSupported;
         }
@@ -46,7 +46,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     public uint advancedColorEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.advancedColorEnabled;
         }
@@ -62,7 +62,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     public uint wideColorEnforced
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.wideColorEnforced;
         }
@@ -78,7 +78,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     public uint advancedColorForceDisabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.advancedColorForceDisabled;
         }
@@ -94,7 +94,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -141,7 +141,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
             public uint advancedColorSupported
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -158,7 +158,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
             public uint advancedColorEnabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -175,7 +175,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
             public uint wideColorEnforced
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -192,7 +192,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
             public uint advancedColorForceDisabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -209,7 +209,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0xFFFFFFFu;
                 }

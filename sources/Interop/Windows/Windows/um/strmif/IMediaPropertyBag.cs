@@ -25,7 +25,7 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMediaPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMediaPropertyBag*, uint>)(lpVtbl[1]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaPropertyBag*, uint>)(lpVtbl[1]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,23 +43,23 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMediaPropertyBag*, uint>)(lpVtbl[2]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaPropertyBag*, uint>)(lpVtbl[2]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPropertyBag.Read" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Read([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar, IErrorLog* pErrorLog)
+    public HRESULT Read([NativeTypeName("LPCOLESTR")] char* pszPropName, VARIANT* pVar, IErrorLog* pErrorLog)
     {
-        return ((delegate* unmanaged<IMediaPropertyBag*, ushort*, VARIANT*, IErrorLog*, int>)(lpVtbl[3]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar, pErrorLog);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPropertyBag*, char*, VARIANT*, IErrorLog*, int>)(lpVtbl[3]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar, pErrorLog);
     }
 
     /// <inheritdoc cref="IPropertyBag.Write" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Write([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar)
+    public HRESULT Write([NativeTypeName("LPCOLESTR")] char* pszPropName, VARIANT* pVar)
     {
-        return ((delegate* unmanaged<IMediaPropertyBag*, ushort*, VARIANT*, int>)(lpVtbl[4]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPropertyBag*, char*, VARIANT*, int>)(lpVtbl[4]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar);
     }
 
     /// <include file='IMediaPropertyBag.xml' path='doc/member[@name="IMediaPropertyBag.EnumProperty"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface, IN
     [VtblIndex(5)]
     public HRESULT EnumProperty([NativeTypeName("ULONG")] uint iProperty, VARIANT* pvarPropertyName, VARIANT* pvarPropertyValue)
     {
-        return ((delegate* unmanaged<IMediaPropertyBag*, uint, VARIANT*, VARIANT*, int>)(lpVtbl[5]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), iProperty, pvarPropertyName, pvarPropertyValue);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPropertyBag*, uint, VARIANT*, VARIANT*, int>)(lpVtbl[5]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), iProperty, pvarPropertyName, pvarPropertyValue);
     }
 
     public interface Interface : IPropertyBag.Interface
@@ -80,21 +80,21 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, IErrorLog*, int> Read;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, IErrorLog*, int> Read;
 
         [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> Write;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, int> Write;
 
         [NativeTypeName("HRESULT (ULONG, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, VARIANT*, VARIANT*, int> EnumProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, VARIANT*, VARIANT*, int> EnumProperty;
     }
 }

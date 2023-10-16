@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RemotableHandle" /> struct.</summary>
 public static unsafe partial class RemotableHandleTests
 {
-    /// <summary>Validates that the <see cref="RemotableHandle" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RemotableHandle>(), Is.EqualTo(sizeof(RemotableHandle)));
-    }
-
-    /// <summary>Validates that the <see cref="RemotableHandle" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RemotableHandle).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RemotableHandle" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RemotableHandle), Is.EqualTo(8));
-    }
 }

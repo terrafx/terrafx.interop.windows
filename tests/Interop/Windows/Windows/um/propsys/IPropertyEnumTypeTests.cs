@@ -19,32 +19,4 @@ public static unsafe partial class IPropertyEnumTypeTests
     {
         Assert.That(typeof(IPropertyEnumType).GUID, Is.EqualTo(IID_IPropertyEnumType));
     }
-
-    /// <summary>Validates that the <see cref="IPropertyEnumType" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPropertyEnumType>(), Is.EqualTo(sizeof(IPropertyEnumType)));
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyEnumType" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPropertyEnumType).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyEnumType" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPropertyEnumType), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPropertyEnumType), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AXISINFOA" /> struct.</summary>
 public static unsafe partial class AXISINFOATests
 {
-    /// <summary>Validates that the <see cref="AXISINFOA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AXISINFOA>(), Is.EqualTo(sizeof(AXISINFOA)));
-    }
-
-    /// <summary>Validates that the <see cref="AXISINFOA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AXISINFOA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AXISINFOA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AXISINFOA), Is.EqualTo(24));
-    }
 }

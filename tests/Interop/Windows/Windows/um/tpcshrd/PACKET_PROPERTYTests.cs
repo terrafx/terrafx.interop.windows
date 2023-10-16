@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PACKET_PROPERTY" /> struct.</summary>
 public static unsafe partial class PACKET_PROPERTYTests
 {
-    /// <summary>Validates that the <see cref="PACKET_PROPERTY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PACKET_PROPERTY>(), Is.EqualTo(sizeof(PACKET_PROPERTY)));
-    }
-
-    /// <summary>Validates that the <see cref="PACKET_PROPERTY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PACKET_PROPERTY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PACKET_PROPERTY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PACKET_PROPERTY), Is.EqualTo(32));
-    }
 }

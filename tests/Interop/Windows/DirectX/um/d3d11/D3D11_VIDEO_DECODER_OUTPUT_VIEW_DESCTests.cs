@@ -13,24 +13,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESCTests
 {
-    /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC>(), Is.EqualTo(sizeof(D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC), Is.EqualTo(24));
-    }
 }

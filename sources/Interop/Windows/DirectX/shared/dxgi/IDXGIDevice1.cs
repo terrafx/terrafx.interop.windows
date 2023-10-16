@@ -26,7 +26,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, uint>)(lpVtbl[1]))((IDXGIDevice1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, uint>)(lpVtbl[1]))((IDXGIDevice1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, uint>)(lpVtbl[2]))((IDXGIDevice1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, uint>)(lpVtbl[2]))((IDXGIDevice1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), Name, pUnknown);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetParent" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), riid, ppParent);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
     /// <inheritdoc cref="IDXGIDevice.GetAdapter" />
@@ -84,7 +84,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetAdapter(IDXGIAdapter** pAdapter)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, IDXGIAdapter**, int>)(lpVtbl[7]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), pAdapter);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, IDXGIAdapter**, int>)(lpVtbl[7]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), pAdapter);
     }
 
     /// <inheritdoc cref="IDXGIDevice.CreateSurface" />
@@ -92,7 +92,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT CreateSurface([NativeTypeName("const DXGI_SURFACE_DESC *")] DXGI_SURFACE_DESC* pDesc, uint NumSurfaces, [NativeTypeName("DXGI_USAGE")] uint Usage, [NativeTypeName("const DXGI_SHARED_RESOURCE *")] DXGI_SHARED_RESOURCE* pSharedResource, IDXGISurface** ppSurface)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, DXGI_SURFACE_DESC*, uint, uint, DXGI_SHARED_RESOURCE*, IDXGISurface**, int>)(lpVtbl[8]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, DXGI_SURFACE_DESC*, uint, uint, DXGI_SHARED_RESOURCE*, IDXGISurface**, int>)(lpVtbl[8]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
     }
 
     /// <inheritdoc cref="IDXGIDevice.QueryResourceResidency" />
@@ -100,7 +100,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT QueryResourceResidency([NativeTypeName("IUnknown *const *")] IUnknown** ppResources, DXGI_RESIDENCY* pResidencyStatus, uint NumResources)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, IUnknown**, DXGI_RESIDENCY*, uint, int>)(lpVtbl[9]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), ppResources, pResidencyStatus, NumResources);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, IUnknown**, DXGI_RESIDENCY*, uint, int>)(lpVtbl[9]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), ppResources, pResidencyStatus, NumResources);
     }
 
     /// <inheritdoc cref="IDXGIDevice.SetGPUThreadPriority" />
@@ -108,7 +108,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT SetGPUThreadPriority(int Priority)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, int, int>)(lpVtbl[10]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), Priority);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, int, int>)(lpVtbl[10]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), Priority);
     }
 
     /// <inheritdoc cref="IDXGIDevice.GetGPUThreadPriority" />
@@ -116,7 +116,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetGPUThreadPriority(int* pPriority)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, int*, int>)(lpVtbl[11]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), pPriority);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, int*, int>)(lpVtbl[11]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), pPriority);
     }
 
     /// <include file='IDXGIDevice1.xml' path='doc/member[@name="IDXGIDevice1.SetMaximumFrameLatency"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT SetMaximumFrameLatency(uint MaxLatency)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, uint, int>)(lpVtbl[12]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), MaxLatency);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, uint, int>)(lpVtbl[12]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), MaxLatency);
     }
 
     /// <include file='IDXGIDevice1.xml' path='doc/member[@name="IDXGIDevice1.GetMaximumFrameLatency"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT GetMaximumFrameLatency(uint* pMaxLatency)
     {
-        return ((delegate* unmanaged<IDXGIDevice1*, uint*, int>)(lpVtbl[13]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), pMaxLatency);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDevice1*, uint*, int>)(lpVtbl[13]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), pMaxLatency);
     }
 
     public interface Interface : IDXGIDevice.Interface
@@ -148,45 +148,45 @@ public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (IDXGIAdapter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDXGIAdapter**, int> GetAdapter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDXGIAdapter**, int> GetAdapter;
 
         [NativeTypeName("HRESULT (const DXGI_SURFACE_DESC *, UINT, DXGI_USAGE, const DXGI_SHARED_RESOURCE *, IDXGISurface **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_SURFACE_DESC*, uint, uint, DXGI_SHARED_RESOURCE*, IDXGISurface**, int> CreateSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_SURFACE_DESC*, uint, uint, DXGI_SHARED_RESOURCE*, IDXGISurface**, int> CreateSurface;
 
         [NativeTypeName("HRESULT (IUnknown *const *, DXGI_RESIDENCY *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, DXGI_RESIDENCY*, uint, int> QueryResourceResidency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, DXGI_RESIDENCY*, uint, int> QueryResourceResidency;
 
         [NativeTypeName("HRESULT (INT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetGPUThreadPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetGPUThreadPriority;
 
         [NativeTypeName("HRESULT (INT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetGPUThreadPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetGPUThreadPriority;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetMaximumFrameLatency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetMaximumFrameLatency;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMaximumFrameLatency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMaximumFrameLatency;
     }
 }

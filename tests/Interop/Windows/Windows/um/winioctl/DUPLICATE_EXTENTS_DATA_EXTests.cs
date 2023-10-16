@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DUPLICATE_EXTENTS_DATA_EX" /> struct.</summary>
 public static unsafe partial class DUPLICATE_EXTENTS_DATA_EXTests
 {
-    /// <summary>Validates that the <see cref="DUPLICATE_EXTENTS_DATA_EX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DUPLICATE_EXTENTS_DATA_EX>(), Is.EqualTo(sizeof(DUPLICATE_EXTENTS_DATA_EX)));
-    }
-
-    /// <summary>Validates that the <see cref="DUPLICATE_EXTENTS_DATA_EX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DUPLICATE_EXTENTS_DATA_EX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DUPLICATE_EXTENTS_DATA_EX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DUPLICATE_EXTENTS_DATA_EX), Is.EqualTo(48));
-        }
-        else
-        {
-            Assert.That(sizeof(DUPLICATE_EXTENTS_DATA_EX), Is.EqualTo(40));
-        }
-    }
 }

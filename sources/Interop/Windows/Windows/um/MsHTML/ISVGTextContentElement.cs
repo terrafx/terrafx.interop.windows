@@ -25,7 +25,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, uint>)(lpVtbl[1]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, uint>)(lpVtbl[1]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, uint>)(lpVtbl[2]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, uint>)(lpVtbl[2]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, uint*, int>)(lpVtbl[3]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, uint*, int>)(lpVtbl[3]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.putref_textLength"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(7)]
     public HRESULT putref_textLength(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedLength*, int>)(lpVtbl[7]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, ISVGAnimatedLength*, int>)(lpVtbl[7]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.get_textLength"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(8)]
     public HRESULT get_textLength(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedLength**, int>)(lpVtbl[8]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, ISVGAnimatedLength**, int>)(lpVtbl[8]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.putref_lengthAdjust"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(9)]
     public HRESULT putref_lengthAdjust(ISVGAnimatedEnumeration* v)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[9]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[9]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.get_lengthAdjust"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(10)]
     public HRESULT get_lengthAdjust(ISVGAnimatedEnumeration** p)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[10]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[10]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getNumberOfChars"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(11)]
     public HRESULT getNumberOfChars([NativeTypeName("long *")] int* pResult)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, int*, int>)(lpVtbl[11]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), pResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, int*, int>)(lpVtbl[11]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getComputedTextLength"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(12)]
     public HRESULT getComputedTextLength(float* pResult)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, float*, int>)(lpVtbl[12]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), pResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, float*, int>)(lpVtbl[12]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), pResult);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getSubStringLength"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(13)]
     public HRESULT getSubStringLength([NativeTypeName("long")] int charnum, [NativeTypeName("long")] int nchars, float* pResult)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, int, int, float*, int>)(lpVtbl[13]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, nchars, pResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, int, int, float*, int>)(lpVtbl[13]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, nchars, pResult);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getStartPositionOfChar"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(14)]
     public HRESULT getStartPositionOfChar([NativeTypeName("long")] int charnum, ISVGPoint** ppResult)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, int, ISVGPoint**, int>)(lpVtbl[14]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, int, ISVGPoint**, int>)(lpVtbl[14]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, ppResult);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getEndPositionOfChar"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(15)]
     public HRESULT getEndPositionOfChar([NativeTypeName("long")] int charnum, ISVGPoint** ppResult)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, int, ISVGPoint**, int>)(lpVtbl[15]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, int, ISVGPoint**, int>)(lpVtbl[15]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, ppResult);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getExtentOfChar"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(16)]
     public HRESULT getExtentOfChar([NativeTypeName("long")] int charnum, ISVGRect** ppResult)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, int, ISVGRect**, int>)(lpVtbl[16]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, int, ISVGRect**, int>)(lpVtbl[16]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, ppResult);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getRotationOfChar"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(17)]
     public HRESULT getRotationOfChar([NativeTypeName("long")] int charnum, float* pResult)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, int, float*, int>)(lpVtbl[17]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, pResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, int, float*, int>)(lpVtbl[17]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, pResult);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.getCharNumAtPosition"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(18)]
     public HRESULT getCharNumAtPosition(ISVGPoint* point, [NativeTypeName("long *")] int* pResult)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, ISVGPoint*, int*, int>)(lpVtbl[18]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), point, pResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, ISVGPoint*, int*, int>)(lpVtbl[18]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), point, pResult);
     }
 
     /// <include file='ISVGTextContentElement.xml' path='doc/member[@name="ISVGTextContentElement.selectSubString"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
     [VtblIndex(19)]
     public HRESULT selectSubString([NativeTypeName("long")] int charnum, [NativeTypeName("long")] int nchars)
     {
-        return ((delegate* unmanaged<ISVGTextContentElement*, int, int, int>)(lpVtbl[19]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, nchars);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTextContentElement*, int, int, int>)(lpVtbl[19]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, nchars);
     }
 
     public interface Interface : IDispatch.Interface
@@ -228,63 +228,63 @@ public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_textLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_textLength;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_textLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_textLength;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration*, int> putref_lengthAdjust;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedEnumeration*, int> putref_lengthAdjust;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration**, int> get_lengthAdjust;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedEnumeration**, int> get_lengthAdjust;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> getNumberOfChars;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> getNumberOfChars;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> getComputedTextLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> getComputedTextLength;
 
         [NativeTypeName("HRESULT (long, long, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, float*, int> getSubStringLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, float*, int> getSubStringLength;
 
         [NativeTypeName("HRESULT (long, ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ISVGPoint**, int> getStartPositionOfChar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, ISVGPoint**, int> getStartPositionOfChar;
 
         [NativeTypeName("HRESULT (long, ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ISVGPoint**, int> getEndPositionOfChar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, ISVGPoint**, int> getEndPositionOfChar;
 
         [NativeTypeName("HRESULT (long, ISVGRect **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ISVGRect**, int> getExtentOfChar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, ISVGRect**, int> getExtentOfChar;
 
         [NativeTypeName("HRESULT (long, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, float*, int> getRotationOfChar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, float*, int> getRotationOfChar;
 
         [NativeTypeName("HRESULT (ISVGPoint *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGPoint*, int*, int> getCharNumAtPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGPoint*, int*, int> getCharNumAtPosition;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> selectSubString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> selectSubString;
     }
 }

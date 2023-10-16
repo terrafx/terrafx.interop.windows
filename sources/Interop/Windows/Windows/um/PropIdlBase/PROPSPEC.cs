@@ -33,7 +33,7 @@ public unsafe partial struct PROPSPEC
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpwstr"]/*' />
     [UnscopedRef]
-    public ref ushort* lpwstr
+    public ref char* lpwstr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -54,6 +54,6 @@ public unsafe partial struct PROPSPEC
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpwstr"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
-        public ushort* lpwstr;
+        public char* lpwstr;
     }
 }

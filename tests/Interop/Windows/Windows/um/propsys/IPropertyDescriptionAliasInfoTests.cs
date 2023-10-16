@@ -19,32 +19,4 @@ public static unsafe partial class IPropertyDescriptionAliasInfoTests
     {
         Assert.That(typeof(IPropertyDescriptionAliasInfo).GUID, Is.EqualTo(IID_IPropertyDescriptionAliasInfo));
     }
-
-    /// <summary>Validates that the <see cref="IPropertyDescriptionAliasInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPropertyDescriptionAliasInfo>(), Is.EqualTo(sizeof(IPropertyDescriptionAliasInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyDescriptionAliasInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPropertyDescriptionAliasInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyDescriptionAliasInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPropertyDescriptionAliasInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPropertyDescriptionAliasInfo), Is.EqualTo(4));
-        }
-    }
 }

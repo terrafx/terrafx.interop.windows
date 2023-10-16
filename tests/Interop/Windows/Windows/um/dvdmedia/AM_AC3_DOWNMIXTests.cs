@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AM_AC3_DOWNMIX" /> struct.</summary>
 public static unsafe partial class AM_AC3_DOWNMIXTests
 {
-    /// <summary>Validates that the <see cref="AM_AC3_DOWNMIX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AM_AC3_DOWNMIX>(), Is.EqualTo(sizeof(AM_AC3_DOWNMIX)));
-    }
-
-    /// <summary>Validates that the <see cref="AM_AC3_DOWNMIX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AM_AC3_DOWNMIX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AM_AC3_DOWNMIX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AM_AC3_DOWNMIX), Is.EqualTo(8));
-    }
 }

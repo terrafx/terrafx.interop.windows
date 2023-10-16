@@ -17,5 +17,5 @@ public unsafe partial struct HIGHCONTRASTW
 
     /// <include file='HIGHCONTRASTW.xml' path='doc/member[@name="HIGHCONTRASTW.lpszDefaultScheme"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszDefaultScheme;
+    public char* lpszDefaultScheme;
 }

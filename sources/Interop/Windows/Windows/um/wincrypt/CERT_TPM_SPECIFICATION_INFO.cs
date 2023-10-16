@@ -10,7 +10,7 @@ public unsafe partial struct CERT_TPM_SPECIFICATION_INFO
 {
     /// <include file='CERT_TPM_SPECIFICATION_INFO.xml' path='doc/member[@name="CERT_TPM_SPECIFICATION_INFO.pwszFamily"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszFamily;
+    public char* pwszFamily;
 
     /// <include file='CERT_TPM_SPECIFICATION_INFO.xml' path='doc/member[@name="CERT_TPM_SPECIFICATION_INFO.dwLevel"]/*' />
     [NativeTypeName("DWORD")]

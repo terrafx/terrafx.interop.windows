@@ -25,7 +25,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertyEnumType*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumType*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertyEnumType*, uint>)(lpVtbl[1]))((IPropertyEnumType*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumType*, uint>)(lpVtbl[1]))((IPropertyEnumType*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertyEnumType*, uint>)(lpVtbl[2]))((IPropertyEnumType*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumType*, uint>)(lpVtbl[2]))((IPropertyEnumType*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetEnumType"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetEnumType(PROPENUMTYPE* penumtype)
     {
-        return ((delegate* unmanaged<IPropertyEnumType*, PROPENUMTYPE*, int>)(lpVtbl[3]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), penumtype);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumType*, PROPENUMTYPE*, int>)(lpVtbl[3]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), penumtype);
     }
 
     /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetValue"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetValue(PROPVARIANT* ppropvar)
     {
-        return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[4]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvar);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[4]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvar);
     }
 
     /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetRangeMinValue"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetRangeMinValue(PROPVARIANT* ppropvarMin)
     {
-        return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvarMin);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvarMin);
     }
 
     /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetRangeSetValue"]/*' />
@@ -75,15 +75,15 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
     [VtblIndex(6)]
     public HRESULT GetRangeSetValue(PROPVARIANT* ppropvarSet)
     {
-        return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvarSet);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvarSet);
     }
 
     /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetDisplayText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay)
+    public HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] char** ppszDisplay)
     {
-        return ((delegate* unmanaged<IPropertyEnumType*, ushort**, int>)(lpVtbl[7]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppszDisplay);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumType*, char**, int>)(lpVtbl[7]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppszDisplay);
     }
 
     public interface Interface : IUnknown.Interface
@@ -101,34 +101,34 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
         HRESULT GetRangeSetValue(PROPVARIANT* ppropvarSet);
 
         [VtblIndex(7)]
-        HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay);
+        HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] char** ppszDisplay);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PROPENUMTYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPENUMTYPE*, int> GetEnumType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPENUMTYPE*, int> GetEnumType;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetRangeMinValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, int> GetRangeMinValue;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetRangeSetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, int> GetRangeSetValue;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDisplayText;
     }
 }

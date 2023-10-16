@@ -15,13 +15,13 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetInputScopes"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
-    public static extern HRESULT SetInputScopes(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, uint cInputScopes, [NativeTypeName("PWSTR *")] ushort** ppszPhraseList, uint cPhrases, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
+    public static extern HRESULT SetInputScopes(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, uint cInputScopes, [NativeTypeName("PWSTR *")] char** ppszPhraseList, uint cPhrases, [NativeTypeName("PWSTR")] char* pszRegExp, [NativeTypeName("PWSTR")] char* pszSRGS);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetInputScopeXML"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
-    public static extern HRESULT SetInputScopeXML(HWND hwnd, [NativeTypeName("PWSTR")] ushort* pszXML);
+    public static extern HRESULT SetInputScopeXML(HWND hwnd, [NativeTypeName("PWSTR")] char* pszXML);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetInputScopes2"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
-    public static extern HRESULT SetInputScopes2(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, uint cInputScopes, IEnumString* pEnumString, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
+    public static extern HRESULT SetInputScopes2(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, uint cInputScopes, IEnumString* pEnumString, [NativeTypeName("PWSTR")] char* pszRegExp, [NativeTypeName("PWSTR")] char* pszSRGS);
 }

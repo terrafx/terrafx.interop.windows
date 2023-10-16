@@ -19,25 +19,4 @@ public static unsafe partial class HTMLBaseFontElementTests
     {
         Assert.That(typeof(HTMLBaseFontElement).GUID, Is.EqualTo(IID_HTMLBaseFontElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLBaseFontElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLBaseFontElement>(), Is.EqualTo(sizeof(HTMLBaseFontElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLBaseFontElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLBaseFontElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLBaseFontElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLBaseFontElement), Is.EqualTo(1));
-    }
 }

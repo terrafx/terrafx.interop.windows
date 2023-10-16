@@ -19,25 +19,4 @@ public static unsafe partial class HTMLTableRowTests
     {
         Assert.That(typeof(HTMLTableRow).GUID, Is.EqualTo(IID_HTMLTableRow));
     }
-
-    /// <summary>Validates that the <see cref="HTMLTableRow" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLTableRow>(), Is.EqualTo(sizeof(HTMLTableRow)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLTableRow" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLTableRow).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLTableRow" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLTableRow), Is.EqualTo(1));
-    }
 }

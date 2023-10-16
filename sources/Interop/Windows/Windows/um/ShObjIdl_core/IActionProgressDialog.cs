@@ -25,7 +25,7 @@ public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IActionProgressDialog*, Guid*, void**, int>)(lpVtbl[0]))((IActionProgressDialog*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IActionProgressDialog*, Guid*, void**, int>)(lpVtbl[0]))((IActionProgressDialog*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IActionProgressDialog*, uint>)(lpVtbl[1]))((IActionProgressDialog*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActionProgressDialog*, uint>)(lpVtbl[1]))((IActionProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IActionProgressDialog*, uint>)(lpVtbl[2]))((IActionProgressDialog*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActionProgressDialog*, uint>)(lpVtbl[2]))((IActionProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IActionProgressDialog.xml' path='doc/member[@name="IActionProgressDialog.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Initialize([NativeTypeName("SPINITF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszCancel)
+    public HRESULT Initialize([NativeTypeName("SPINITF")] uint flags, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszCancel)
     {
-        return ((delegate* unmanaged<IActionProgressDialog*, uint, ushort*, ushort*, int>)(lpVtbl[3]))((IActionProgressDialog*)Unsafe.AsPointer(ref this), flags, pszTitle, pszCancel);
+        return ((delegate* unmanaged[MemberFunction]<IActionProgressDialog*, uint, char*, char*, int>)(lpVtbl[3]))((IActionProgressDialog*)Unsafe.AsPointer(ref this), flags, pszTitle, pszCancel);
     }
 
     /// <include file='IActionProgressDialog.xml' path='doc/member[@name="IActionProgressDialog.Stop"]/*' />
@@ -59,13 +59,13 @@ public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Inter
     [VtblIndex(4)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IActionProgressDialog*, int>)(lpVtbl[4]))((IActionProgressDialog*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActionProgressDialog*, int>)(lpVtbl[4]))((IActionProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Initialize([NativeTypeName("SPINITF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszCancel);
+        HRESULT Initialize([NativeTypeName("SPINITF")] uint flags, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszCancel);
 
         [VtblIndex(4)]
         HRESULT Stop();
@@ -75,18 +75,18 @@ public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPINITF, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, char*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
     }
 }

@@ -35,7 +35,7 @@ public unsafe partial struct SOURCE_MEDIA_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* Reserved
+    public ref char* Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -53,7 +53,7 @@ public unsafe partial struct SOURCE_MEDIA_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* Tagfile
+    public ref char* Tagfile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -71,7 +71,7 @@ public unsafe partial struct SOURCE_MEDIA_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* Description
+    public ref char* Description
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -89,7 +89,7 @@ public unsafe partial struct SOURCE_MEDIA_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* SourcePath
+    public ref char* SourcePath
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -107,7 +107,7 @@ public unsafe partial struct SOURCE_MEDIA_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* SourceFile
+    public ref char* SourceFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

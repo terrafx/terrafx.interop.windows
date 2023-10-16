@@ -25,7 +25,7 @@ public unsafe partial struct IRpcOptions : IRpcOptions.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRpcOptions*, Guid*, void**, int>)(lpVtbl[0]))((IRpcOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRpcOptions*, Guid*, void**, int>)(lpVtbl[0]))((IRpcOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRpcOptions : IRpcOptions.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRpcOptions*, uint>)(lpVtbl[1]))((IRpcOptions*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcOptions*, uint>)(lpVtbl[1]))((IRpcOptions*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRpcOptions : IRpcOptions.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRpcOptions*, uint>)(lpVtbl[2]))((IRpcOptions*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcOptions*, uint>)(lpVtbl[2]))((IRpcOptions*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRpcOptions.xml' path='doc/member[@name="IRpcOptions.Set"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRpcOptions : IRpcOptions.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Set(IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR")] nuint dwValue)
     {
-        return ((delegate* unmanaged<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint, int>)(lpVtbl[3]))((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, dwValue);
+        return ((delegate* unmanaged[MemberFunction]<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint, int>)(lpVtbl[3]))((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, dwValue);
     }
 
     /// <include file='IRpcOptions.xml' path='doc/member[@name="IRpcOptions.Query"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRpcOptions : IRpcOptions.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Query(IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR *")] nuint* pdwValue)
     {
-        return ((delegate* unmanaged<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint*, int>)(lpVtbl[4]))((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, pdwValue);
+        return ((delegate* unmanaged[MemberFunction]<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint*, int>)(lpVtbl[4]))((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, pdwValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IRpcOptions : IRpcOptions.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, RPCOPT_PROPERTIES, ULONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, RPCOPT_PROPERTIES, nuint, int> Set;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, RPCOPT_PROPERTIES, nuint, int> Set;
 
         [NativeTypeName("HRESULT (IUnknown *, RPCOPT_PROPERTIES, ULONG_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, RPCOPT_PROPERTIES, nuint*, int> Query;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, RPCOPT_PROPERTIES, nuint*, int> Query;
     }
 }

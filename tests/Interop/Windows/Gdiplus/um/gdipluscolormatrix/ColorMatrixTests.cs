@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="ColorMatrix" /> struct.</summary>
 public static unsafe partial class ColorMatrixTests
 {
-    /// <summary>Validates that the <see cref="ColorMatrix" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ColorMatrix>(), Is.EqualTo(sizeof(ColorMatrix)));
-    }
-
-    /// <summary>Validates that the <see cref="ColorMatrix" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ColorMatrix).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ColorMatrix" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ColorMatrix), Is.EqualTo(100));
-    }
 }

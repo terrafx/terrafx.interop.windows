@@ -19,25 +19,4 @@ public static unsafe partial class HTMLUrnCollectionTests
     {
         Assert.That(typeof(HTMLUrnCollection).GUID, Is.EqualTo(IID_HTMLUrnCollection));
     }
-
-    /// <summary>Validates that the <see cref="HTMLUrnCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLUrnCollection>(), Is.EqualTo(sizeof(HTMLUrnCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLUrnCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLUrnCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLUrnCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLUrnCollection), Is.EqualTo(1));
-    }
 }

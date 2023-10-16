@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGE_AUX_SYMBOL_TOKEN_DEF" /> struct.</summary>
 public static unsafe partial class IMAGE_AUX_SYMBOL_TOKEN_DEFTests
 {
-    /// <summary>Validates that the <see cref="IMAGE_AUX_SYMBOL_TOKEN_DEF" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_AUX_SYMBOL_TOKEN_DEF>(), Is.EqualTo(sizeof(IMAGE_AUX_SYMBOL_TOKEN_DEF)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_AUX_SYMBOL_TOKEN_DEF" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGE_AUX_SYMBOL_TOKEN_DEF).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_AUX_SYMBOL_TOKEN_DEF" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_AUX_SYMBOL_TOKEN_DEF), Is.EqualTo(18));
-    }
 }

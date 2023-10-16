@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="GP_LOG_PAGE_DESCRIPTOR" /> struct.</summary>
 public static unsafe partial class GP_LOG_PAGE_DESCRIPTORTests
 {
-    /// <summary>Validates that the <see cref="GP_LOG_PAGE_DESCRIPTOR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<GP_LOG_PAGE_DESCRIPTOR>(), Is.EqualTo(sizeof(GP_LOG_PAGE_DESCRIPTOR)));
-    }
-
-    /// <summary>Validates that the <see cref="GP_LOG_PAGE_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(GP_LOG_PAGE_DESCRIPTOR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="GP_LOG_PAGE_DESCRIPTOR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(GP_LOG_PAGE_DESCRIPTOR), Is.EqualTo(4));
-    }
 }

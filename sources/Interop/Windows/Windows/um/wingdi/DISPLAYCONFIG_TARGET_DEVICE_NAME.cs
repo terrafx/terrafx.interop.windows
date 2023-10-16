@@ -31,9 +31,9 @@ public unsafe partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME
 
     /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME.monitorFriendlyDeviceName"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort monitorFriendlyDeviceName[64];
+    public fixed char monitorFriendlyDeviceName[64];
 
     /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME.monitorDevicePath"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort monitorDevicePath[128];
+    public fixed char monitorDevicePath[128];
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IThumbnailCachePrimer : IThumbnailCachePrimer.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IThumbnailCachePrimer*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailCachePrimer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailCachePrimer*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailCachePrimer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IThumbnailCachePrimer : IThumbnailCachePrimer.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IThumbnailCachePrimer*, uint>)(lpVtbl[1]))((IThumbnailCachePrimer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailCachePrimer*, uint>)(lpVtbl[1]))((IThumbnailCachePrimer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IThumbnailCachePrimer : IThumbnailCachePrimer.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IThumbnailCachePrimer*, uint>)(lpVtbl[2]))((IThumbnailCachePrimer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailCachePrimer*, uint>)(lpVtbl[2]))((IThumbnailCachePrimer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IThumbnailCachePrimer.xml' path='doc/member[@name="IThumbnailCachePrimer.PageInThumbnail"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IThumbnailCachePrimer : IThumbnailCachePrimer.Inter
     [VtblIndex(3)]
     public HRESULT PageInThumbnail(IShellItem* psi, WTS_FLAGS wtsFlags, uint cxyRequestedThumbSize)
     {
-        return ((delegate* unmanaged<IThumbnailCachePrimer*, IShellItem*, WTS_FLAGS, uint, int>)(lpVtbl[3]))((IThumbnailCachePrimer*)Unsafe.AsPointer(ref this), psi, wtsFlags, cxyRequestedThumbSize);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailCachePrimer*, IShellItem*, WTS_FLAGS, uint, int>)(lpVtbl[3]))((IThumbnailCachePrimer*)Unsafe.AsPointer(ref this), psi, wtsFlags, cxyRequestedThumbSize);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IThumbnailCachePrimer : IThumbnailCachePrimer.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, WTS_FLAGS, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, WTS_FLAGS, uint, int> PageInThumbnail;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, WTS_FLAGS, uint, int> PageInThumbnail;
     }
 }

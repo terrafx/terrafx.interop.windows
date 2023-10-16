@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationPrimitiveInterpolation*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint>)(lpVtbl[1]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationPrimitiveInterpolation*, uint>)(lpVtbl[1]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint>)(lpVtbl[2]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationPrimitiveInterpolation*, uint>)(lpVtbl[2]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationPrimitiveInterpolation.xml' path='doc/member[@name="IUIAnimationPrimitiveInterpolation.AddCubic"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
     [VtblIndex(3)]
     public HRESULT AddCubic(uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient)
     {
-        return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint, double, float, float, float, float, int>)(lpVtbl[3]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this), dimension, beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationPrimitiveInterpolation*, uint, double, float, float, float, float, int>)(lpVtbl[3]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this), dimension, beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
     }
 
     /// <include file='IUIAnimationPrimitiveInterpolation.xml' path='doc/member[@name="IUIAnimationPrimitiveInterpolation.AddSinusoidal"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
     [VtblIndex(4)]
     public HRESULT AddSinusoidal(uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, float bias, float amplitude, float frequency, float phase)
     {
-        return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint, double, float, float, float, float, int>)(lpVtbl[4]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this), dimension, beginOffset, bias, amplitude, frequency, phase);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationPrimitiveInterpolation*, uint, double, float, float, float, float, int>)(lpVtbl[4]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this), dimension, beginOffset, bias, amplitude, frequency, phase);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, UI_ANIMATION_SECONDS, FLOAT, FLOAT, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, double, float, float, float, float, int> AddCubic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, double, float, float, float, float, int> AddCubic;
 
         [NativeTypeName("HRESULT (UINT, UI_ANIMATION_SECONDS, FLOAT, FLOAT, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, double, float, float, float, float, int> AddSinusoidal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, double, float, float, float, float, int> AddSinusoidal;
     }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DXGI_JPEG_AC_HUFFMAN_TABLE" /> struct.</summary>
 public static unsafe partial class DXGI_JPEG_AC_HUFFMAN_TABLETests
 {
-    /// <summary>Validates that the <see cref="DXGI_JPEG_AC_HUFFMAN_TABLE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DXGI_JPEG_AC_HUFFMAN_TABLE>(), Is.EqualTo(sizeof(DXGI_JPEG_AC_HUFFMAN_TABLE)));
-    }
-
-    /// <summary>Validates that the <see cref="DXGI_JPEG_AC_HUFFMAN_TABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DXGI_JPEG_AC_HUFFMAN_TABLE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DXGI_JPEG_AC_HUFFMAN_TABLE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DXGI_JPEG_AC_HUFFMAN_TABLE), Is.EqualTo(178));
-    }
 }

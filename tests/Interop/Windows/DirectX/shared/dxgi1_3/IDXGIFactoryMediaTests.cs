@@ -21,32 +21,4 @@ public static unsafe partial class IDXGIFactoryMediaTests
     {
         Assert.That(typeof(IDXGIFactoryMedia).GUID, Is.EqualTo(IID_IDXGIFactoryMedia));
     }
-
-    /// <summary>Validates that the <see cref="IDXGIFactoryMedia" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDXGIFactoryMedia>(), Is.EqualTo(sizeof(IDXGIFactoryMedia)));
-    }
-
-    /// <summary>Validates that the <see cref="IDXGIFactoryMedia" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDXGIFactoryMedia).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDXGIFactoryMedia" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDXGIFactoryMedia), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDXGIFactoryMedia), Is.EqualTo(4));
-        }
-    }
 }

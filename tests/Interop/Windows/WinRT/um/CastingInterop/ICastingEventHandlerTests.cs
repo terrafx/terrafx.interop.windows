@@ -19,32 +19,4 @@ public static unsafe partial class ICastingEventHandlerTests
     {
         Assert.That(typeof(ICastingEventHandler).GUID, Is.EqualTo(IID_ICastingEventHandler));
     }
-
-    /// <summary>Validates that the <see cref="ICastingEventHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICastingEventHandler>(), Is.EqualTo(sizeof(ICastingEventHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="ICastingEventHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICastingEventHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICastingEventHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICastingEventHandler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICastingEventHandler), Is.EqualTo(4));
-        }
-    }
 }

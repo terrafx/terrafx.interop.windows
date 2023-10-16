@@ -132,7 +132,7 @@ public static partial class Windows
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xD1, 0xAC, 0x72, 0xA3,
                 0xEF, 0x3B,
                 0xBD, 0x4B,
@@ -144,7 +144,7 @@ public static partial class Windows
                 0x41,
                 0x6A,
                 0xF8
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -155,7 +155,7 @@ public static partial class Windows
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x42, 0xCB, 0x8F, 0x7B,
                 0x9D, 0x0E,
                 0x00, 0x4F,
@@ -167,7 +167,7 @@ public static partial class Windows
                 0x17,
                 0x9D,
                 0x3D
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

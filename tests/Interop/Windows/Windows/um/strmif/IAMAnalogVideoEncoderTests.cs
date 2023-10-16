@@ -19,32 +19,4 @@ public static unsafe partial class IAMAnalogVideoEncoderTests
     {
         Assert.That(typeof(IAMAnalogVideoEncoder).GUID, Is.EqualTo(IID_IAMAnalogVideoEncoder));
     }
-
-    /// <summary>Validates that the <see cref="IAMAnalogVideoEncoder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMAnalogVideoEncoder>(), Is.EqualTo(sizeof(IAMAnalogVideoEncoder)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMAnalogVideoEncoder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMAnalogVideoEncoder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMAnalogVideoEncoder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMAnalogVideoEncoder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMAnalogVideoEncoder), Is.EqualTo(4));
-        }
-    }
 }

@@ -10,11 +10,11 @@ public unsafe partial struct RSOP_TARGET
 {
     /// <include file='RSOP_TARGET.xml' path='doc/member[@name="RSOP_TARGET.pwszAccountName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszAccountName;
+    public char* pwszAccountName;
 
     /// <include file='RSOP_TARGET.xml' path='doc/member[@name="RSOP_TARGET.pwszNewSOM"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszNewSOM;
+    public char* pwszNewSOM;
 
     /// <include file='RSOP_TARGET.xml' path='doc/member[@name="RSOP_TARGET.psaSecurityGroups"]/*' />
     public SAFEARRAY* psaSecurityGroups;

@@ -19,32 +19,4 @@ public static unsafe partial class IWebBridgeTests
     {
         Assert.That(typeof(IWebBridge).GUID, Is.EqualTo(IID_IWebBridge));
     }
-
-    /// <summary>Validates that the <see cref="IWebBridge" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWebBridge>(), Is.EqualTo(sizeof(IWebBridge)));
-    }
-
-    /// <summary>Validates that the <see cref="IWebBridge" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWebBridge).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWebBridge" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWebBridge), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWebBridge), Is.EqualTo(4));
-        }
-    }
 }

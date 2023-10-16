@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteRenderingParams1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRenderingParams1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteRenderingParams1*, uint>)(lpVtbl[1]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRenderingParams1*, uint>)(lpVtbl[1]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteRenderingParams1*, uint>)(lpVtbl[2]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRenderingParams1*, uint>)(lpVtbl[2]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteRenderingParams.GetGamma" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.I
     [VtblIndex(3)]
     public float GetGamma()
     {
-        return ((delegate* unmanaged<IDWriteRenderingParams1*, float>)(lpVtbl[3]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRenderingParams1*, float>)(lpVtbl[3]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteRenderingParams.GetEnhancedContrast" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.I
     [VtblIndex(4)]
     public float GetEnhancedContrast()
     {
-        return ((delegate* unmanaged<IDWriteRenderingParams1*, float>)(lpVtbl[4]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRenderingParams1*, float>)(lpVtbl[4]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteRenderingParams.GetClearTypeLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.I
     [VtblIndex(5)]
     public float GetClearTypeLevel()
     {
-        return ((delegate* unmanaged<IDWriteRenderingParams1*, float>)(lpVtbl[5]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRenderingParams1*, float>)(lpVtbl[5]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteRenderingParams.GetPixelGeometry" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.I
     [VtblIndex(6)]
     public DWRITE_PIXEL_GEOMETRY GetPixelGeometry()
     {
-        return ((delegate* unmanaged<IDWriteRenderingParams1*, DWRITE_PIXEL_GEOMETRY>)(lpVtbl[6]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRenderingParams1*, DWRITE_PIXEL_GEOMETRY>)(lpVtbl[6]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteRenderingParams.GetRenderingMode" />
@@ -84,7 +84,7 @@ public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.I
     [VtblIndex(7)]
     public DWRITE_RENDERING_MODE GetRenderingMode()
     {
-        return ((delegate* unmanaged<IDWriteRenderingParams1*, DWRITE_RENDERING_MODE>)(lpVtbl[7]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRenderingParams1*, DWRITE_RENDERING_MODE>)(lpVtbl[7]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteRenderingParams1.xml' path='doc/member[@name="IDWriteRenderingParams1.GetGrayscaleEnhancedContrast"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.I
     [VtblIndex(8)]
     public float GetGrayscaleEnhancedContrast()
     {
-        return ((delegate* unmanaged<IDWriteRenderingParams1*, float>)(lpVtbl[8]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRenderingParams1*, float>)(lpVtbl[8]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDWriteRenderingParams.Interface
@@ -105,30 +105,30 @@ public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetGamma;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetGamma;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetEnhancedContrast;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetEnhancedContrast;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetClearTypeLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetClearTypeLevel;
 
         [NativeTypeName("DWRITE_PIXEL_GEOMETRY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_PIXEL_GEOMETRY> GetPixelGeometry;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_PIXEL_GEOMETRY> GetPixelGeometry;
 
         [NativeTypeName("DWRITE_RENDERING_MODE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_RENDERING_MODE> GetRenderingMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_RENDERING_MODE> GetRenderingMode;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetGrayscaleEnhancedContrast;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetGrayscaleEnhancedContrast;
     }
 }

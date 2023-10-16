@@ -19,32 +19,4 @@ public static unsafe partial class IAudioFrameNativeTests
     {
         Assert.That(typeof(IAudioFrameNative).GUID, Is.EqualTo(IID_IAudioFrameNative));
     }
-
-    /// <summary>Validates that the <see cref="IAudioFrameNative" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioFrameNative>(), Is.EqualTo(sizeof(IAudioFrameNative)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioFrameNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioFrameNative).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioFrameNative" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioFrameNative), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioFrameNative), Is.EqualTo(4));
-        }
-    }
 }

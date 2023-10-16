@@ -19,25 +19,4 @@ public static unsafe partial class AppShellVerbHandlerTests
     {
         Assert.That(typeof(AppShellVerbHandler).GUID, Is.EqualTo(IID_AppShellVerbHandler));
     }
-
-    /// <summary>Validates that the <see cref="AppShellVerbHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AppShellVerbHandler>(), Is.EqualTo(sizeof(AppShellVerbHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="AppShellVerbHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AppShellVerbHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AppShellVerbHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AppShellVerbHandler), Is.EqualTo(1));
-    }
 }

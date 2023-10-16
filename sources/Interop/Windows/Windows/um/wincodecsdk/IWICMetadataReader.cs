@@ -25,7 +25,7 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICMetadataReader*, Guid*, void**, int>)(lpVtbl[0]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataReader*, Guid*, void**, int>)(lpVtbl[0]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICMetadataReader*, uint>)(lpVtbl[1]))((IWICMetadataReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataReader*, uint>)(lpVtbl[1]))((IWICMetadataReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICMetadataReader*, uint>)(lpVtbl[2]))((IWICMetadataReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataReader*, uint>)(lpVtbl[2]))((IWICMetadataReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICMetadataReader.xml' path='doc/member[@name="IWICMetadataReader.GetMetadataFormat"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface, 
     [VtblIndex(3)]
     public HRESULT GetMetadataFormat(Guid* pguidMetadataFormat)
     {
-        return ((delegate* unmanaged<IWICMetadataReader*, Guid*, int>)(lpVtbl[3]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), pguidMetadataFormat);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataReader*, Guid*, int>)(lpVtbl[3]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), pguidMetadataFormat);
     }
 
     /// <include file='IWICMetadataReader.xml' path='doc/member[@name="IWICMetadataReader.GetMetadataHandlerInfo"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface, 
     [VtblIndex(4)]
     public HRESULT GetMetadataHandlerInfo(IWICMetadataHandlerInfo** ppIHandler)
     {
-        return ((delegate* unmanaged<IWICMetadataReader*, IWICMetadataHandlerInfo**, int>)(lpVtbl[4]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), ppIHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataReader*, IWICMetadataHandlerInfo**, int>)(lpVtbl[4]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), ppIHandler);
     }
 
     /// <include file='IWICMetadataReader.xml' path='doc/member[@name="IWICMetadataReader.GetCount"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface, 
     [VtblIndex(5)]
     public HRESULT GetCount(uint* pcCount)
     {
-        return ((delegate* unmanaged<IWICMetadataReader*, uint*, int>)(lpVtbl[5]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), pcCount);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataReader*, uint*, int>)(lpVtbl[5]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), pcCount);
     }
 
     /// <include file='IWICMetadataReader.xml' path='doc/member[@name="IWICMetadataReader.GetValueByIndex"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface, 
     [VtblIndex(6)]
     public HRESULT GetValueByIndex(uint nIndex, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<IWICMetadataReader*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[6]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), nIndex, pvarSchema, pvarId, pvarValue);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataReader*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[6]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), nIndex, pvarSchema, pvarId, pvarValue);
     }
 
     /// <include file='IWICMetadataReader.xml' path='doc/member[@name="IWICMetadataReader.GetValue"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface, 
     [VtblIndex(7)]
     public HRESULT GetValue([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId, PROPVARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<IWICMetadataReader*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[7]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), pvarSchema, pvarId, pvarValue);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataReader*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[7]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), pvarSchema, pvarId, pvarValue);
     }
 
     /// <include file='IWICMetadataReader.xml' path='doc/member[@name="IWICMetadataReader.GetEnumerator"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface, 
     [VtblIndex(8)]
     public HRESULT GetEnumerator(IWICEnumMetadataItem** ppIEnumMetadata)
     {
-        return ((delegate* unmanaged<IWICMetadataReader*, IWICEnumMetadataItem**, int>)(lpVtbl[8]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), ppIEnumMetadata);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataReader*, IWICEnumMetadataItem**, int>)(lpVtbl[8]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), ppIEnumMetadata);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetMetadataFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetMetadataFormat;
 
         [NativeTypeName("HRESULT (IWICMetadataHandlerInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICMetadataHandlerInfo**, int> GetMetadataHandlerInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICMetadataHandlerInfo**, int> GetMetadataHandlerInfo;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, PROPVARIANT *, PROPVARIANT *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValueByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValueByIndex;
 
         [NativeTypeName("HRESULT (const PROPVARIANT *, const PROPVARIANT *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (IWICEnumMetadataItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICEnumMetadataItem**, int> GetEnumerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICEnumMetadataItem**, int> GetEnumerator;
     }
 }

@@ -70,7 +70,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte ServiceAction
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)(_bitfield & 0x1Fu);
                 }
@@ -87,7 +87,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte Reserved1
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)((_bitfield >> 5) & 0x7u);
                 }
@@ -114,7 +114,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte ServiceAction
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)(_bitfield1 & 0x1Fu);
                 }
@@ -131,7 +131,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte Reserved1
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)((_bitfield1 >> 5) & 0x7u);
                 }
@@ -150,7 +150,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte Type
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)(_bitfield2 & 0xFu);
                 }
@@ -167,7 +167,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte Scope
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)((_bitfield2 >> 4) & 0xFu);
                 }

@@ -25,7 +25,7 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IResourceManager*, Guid*, void**, int>)(lpVtbl[0]))((IResourceManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, Guid*, void**, int>)(lpVtbl[0]))((IResourceManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IResourceManager*, uint>)(lpVtbl[1]))((IResourceManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, uint>)(lpVtbl[1]))((IResourceManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,23 +43,23 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IResourceManager*, uint>)(lpVtbl[2]))((IResourceManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, uint>)(lpVtbl[2]))((IResourceManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.Register"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Register([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* plToken)
+    public HRESULT Register([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* plToken)
     {
-        return ((delegate* unmanaged<IResourceManager*, ushort*, int, int*, int>)(lpVtbl[3]))((IResourceManager*)Unsafe.AsPointer(ref this), pName, cResource, plToken);
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, char*, int, int*, int>)(lpVtbl[3]))((IResourceManager*)Unsafe.AsPointer(ref this), pName, cResource, plToken);
     }
 
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.RegisterGroup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT RegisterGroup([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* palTokens, [NativeTypeName("LONG *")] int* plToken)
+    public HRESULT RegisterGroup([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* palTokens, [NativeTypeName("LONG *")] int* plToken)
     {
-        return ((delegate* unmanaged<IResourceManager*, ushort*, int, int*, int*, int>)(lpVtbl[4]))((IResourceManager*)Unsafe.AsPointer(ref this), pName, cResource, palTokens, plToken);
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, char*, int, int*, int*, int>)(lpVtbl[4]))((IResourceManager*)Unsafe.AsPointer(ref this), pName, cResource, palTokens, plToken);
     }
 
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.RequestResource"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     [VtblIndex(5)]
     public HRESULT RequestResource([NativeTypeName("LONG")] int idResource, IUnknown* pFocusObject, IResourceConsumer* pConsumer)
     {
-        return ((delegate* unmanaged<IResourceManager*, int, IUnknown*, IResourceConsumer*, int>)(lpVtbl[5]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pFocusObject, pConsumer);
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, int, IUnknown*, IResourceConsumer*, int>)(lpVtbl[5]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pFocusObject, pConsumer);
     }
 
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.NotifyAcquire"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     [VtblIndex(6)]
     public HRESULT NotifyAcquire([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer, HRESULT hr)
     {
-        return ((delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, HRESULT, int>)(lpVtbl[6]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer, hr);
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, int, IResourceConsumer*, HRESULT, int>)(lpVtbl[6]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer, hr);
     }
 
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.NotifyRelease"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     [VtblIndex(7)]
     public HRESULT NotifyRelease([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer, BOOL bStillWant)
     {
-        return ((delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, BOOL, int>)(lpVtbl[7]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer, bStillWant);
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, int, IResourceConsumer*, BOOL, int>)(lpVtbl[7]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer, bStillWant);
     }
 
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.CancelRequest"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     [VtblIndex(8)]
     public HRESULT CancelRequest([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer)
     {
-        return ((delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, int>)(lpVtbl[8]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer);
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, int, IResourceConsumer*, int>)(lpVtbl[8]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer);
     }
 
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.SetFocus"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     [VtblIndex(9)]
     public HRESULT SetFocus(IUnknown* pFocusObject)
     {
-        return ((delegate* unmanaged<IResourceManager*, IUnknown*, int>)(lpVtbl[9]))((IResourceManager*)Unsafe.AsPointer(ref this), pFocusObject);
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, IUnknown*, int>)(lpVtbl[9]))((IResourceManager*)Unsafe.AsPointer(ref this), pFocusObject);
     }
 
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.ReleaseFocus"]/*' />
@@ -107,16 +107,16 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     [VtblIndex(10)]
     public HRESULT ReleaseFocus(IUnknown* pFocusObject)
     {
-        return ((delegate* unmanaged<IResourceManager*, IUnknown*, int>)(lpVtbl[10]))((IResourceManager*)Unsafe.AsPointer(ref this), pFocusObject);
+        return ((delegate* unmanaged[MemberFunction]<IResourceManager*, IUnknown*, int>)(lpVtbl[10]))((IResourceManager*)Unsafe.AsPointer(ref this), pFocusObject);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Register([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* plToken);
+        HRESULT Register([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* plToken);
 
         [VtblIndex(4)]
-        HRESULT RegisterGroup([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* palTokens, [NativeTypeName("LONG *")] int* plToken);
+        HRESULT RegisterGroup([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* palTokens, [NativeTypeName("LONG *")] int* plToken);
 
         [VtblIndex(5)]
         HRESULT RequestResource([NativeTypeName("LONG")] int idResource, IUnknown* pFocusObject, IResourceConsumer* pConsumer);
@@ -141,36 +141,36 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> Register;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int*, int> Register;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG, LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int*, int> RegisterGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int*, int*, int> RegisterGroup;
 
         [NativeTypeName("HRESULT (LONG, IUnknown *, IResourceConsumer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IUnknown*, IResourceConsumer*, int> RequestResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IUnknown*, IResourceConsumer*, int> RequestResource;
 
         [NativeTypeName("HRESULT (LONG, IResourceConsumer *, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IResourceConsumer*, HRESULT, int> NotifyAcquire;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IResourceConsumer*, HRESULT, int> NotifyAcquire;
 
         [NativeTypeName("HRESULT (LONG, IResourceConsumer *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IResourceConsumer*, BOOL, int> NotifyRelease;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IResourceConsumer*, BOOL, int> NotifyRelease;
 
         [NativeTypeName("HRESULT (LONG, IResourceConsumer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IResourceConsumer*, int> CancelRequest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IResourceConsumer*, int> CancelRequest;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetFocus;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> ReleaseFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> ReleaseFocus;
     }
 }

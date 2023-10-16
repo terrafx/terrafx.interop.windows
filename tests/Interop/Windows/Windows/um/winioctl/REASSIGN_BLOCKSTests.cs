@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="REASSIGN_BLOCKS" /> struct.</summary>
 public static unsafe partial class REASSIGN_BLOCKSTests
 {
-    /// <summary>Validates that the <see cref="REASSIGN_BLOCKS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<REASSIGN_BLOCKS>(), Is.EqualTo(sizeof(REASSIGN_BLOCKS)));
-    }
-
-    /// <summary>Validates that the <see cref="REASSIGN_BLOCKS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(REASSIGN_BLOCKS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="REASSIGN_BLOCKS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(REASSIGN_BLOCKS), Is.EqualTo(8));
-    }
 }

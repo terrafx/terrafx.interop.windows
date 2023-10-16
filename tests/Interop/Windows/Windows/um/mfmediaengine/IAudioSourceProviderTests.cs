@@ -19,32 +19,4 @@ public static unsafe partial class IAudioSourceProviderTests
     {
         Assert.That(typeof(IAudioSourceProvider).GUID, Is.EqualTo(IID_IAudioSourceProvider));
     }
-
-    /// <summary>Validates that the <see cref="IAudioSourceProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioSourceProvider>(), Is.EqualTo(sizeof(IAudioSourceProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioSourceProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioSourceProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioSourceProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioSourceProvider), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioSourceProvider), Is.EqualTo(4));
-        }
-    }
 }

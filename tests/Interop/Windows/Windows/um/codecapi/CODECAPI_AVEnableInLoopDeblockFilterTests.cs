@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEnableInLoopDeblockFilterTests
     {
         Assert.That(typeof(CODECAPI_AVEnableInLoopDeblockFilter).GUID, Is.EqualTo(IID_CODECAPI_AVEnableInLoopDeblockFilter));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEnableInLoopDeblockFilter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEnableInLoopDeblockFilter>(), Is.EqualTo(sizeof(CODECAPI_AVEnableInLoopDeblockFilter)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEnableInLoopDeblockFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEnableInLoopDeblockFilter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEnableInLoopDeblockFilter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEnableInLoopDeblockFilter), Is.EqualTo(1));
-    }
 }

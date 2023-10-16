@@ -39,7 +39,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
     public uint AllowDemotion
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }
@@ -56,7 +56,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
     public uint AllowPromotion
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 1) & 0x1u;
         }
@@ -73,7 +73,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 2) & 0x3FFFFFFFu;
         }

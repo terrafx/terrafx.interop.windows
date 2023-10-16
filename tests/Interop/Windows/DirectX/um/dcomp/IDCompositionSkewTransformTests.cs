@@ -21,32 +21,4 @@ public static unsafe partial class IDCompositionSkewTransformTests
     {
         Assert.That(typeof(IDCompositionSkewTransform).GUID, Is.EqualTo(IID_IDCompositionSkewTransform));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionSkewTransform" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionSkewTransform>(), Is.EqualTo(sizeof(IDCompositionSkewTransform)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionSkewTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionSkewTransform).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionSkewTransform" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionSkewTransform), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionSkewTransform), Is.EqualTo(4));
-        }
-    }
 }

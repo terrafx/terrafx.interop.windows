@@ -19,32 +19,4 @@ public static unsafe partial class IHTCEventBehaviorTests
     {
         Assert.That(typeof(IHTCEventBehavior).GUID, Is.EqualTo(IID_IHTCEventBehavior));
     }
-
-    /// <summary>Validates that the <see cref="IHTCEventBehavior" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTCEventBehavior>(), Is.EqualTo(sizeof(IHTCEventBehavior)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTCEventBehavior" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTCEventBehavior).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTCEventBehavior" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTCEventBehavior), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTCEventBehavior), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IProvideMultipleClassInfo*, Guid*, void**, int>)(lpVtbl[0]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IProvideMultipleClassInfo*, Guid*, void**, int>)(lpVtbl[0]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint>)(lpVtbl[1]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProvideMultipleClassInfo*, uint>)(lpVtbl[1]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint>)(lpVtbl[2]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProvideMultipleClassInfo*, uint>)(lpVtbl[2]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IProvideClassInfo.GetClassInfo" />
@@ -51,7 +51,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
     [VtblIndex(3)]
     public HRESULT GetClassInfo(ITypeInfo** ppTI)
     {
-        return ((delegate* unmanaged<IProvideMultipleClassInfo*, ITypeInfo**, int>)(lpVtbl[3]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), ppTI);
+        return ((delegate* unmanaged[MemberFunction]<IProvideMultipleClassInfo*, ITypeInfo**, int>)(lpVtbl[3]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), ppTI);
     }
 
     /// <inheritdoc cref="IProvideClassInfo2.GetGUID" />
@@ -59,7 +59,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
     [VtblIndex(4)]
     public HRESULT GetGUID([NativeTypeName("DWORD")] uint dwGuidKind, Guid* pGUID)
     {
-        return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint, Guid*, int>)(lpVtbl[4]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), dwGuidKind, pGUID);
+        return ((delegate* unmanaged[MemberFunction]<IProvideMultipleClassInfo*, uint, Guid*, int>)(lpVtbl[4]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), dwGuidKind, pGUID);
     }
 
     /// <include file='IProvideMultipleClassInfo.xml' path='doc/member[@name="IProvideMultipleClassInfo.GetMultiTypeInfoCount"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
     [VtblIndex(5)]
     public HRESULT GetMultiTypeInfoCount([NativeTypeName("ULONG *")] uint* pcti)
     {
-        return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint*, int>)(lpVtbl[5]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), pcti);
+        return ((delegate* unmanaged[MemberFunction]<IProvideMultipleClassInfo*, uint*, int>)(lpVtbl[5]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), pcti);
     }
 
     /// <include file='IProvideMultipleClassInfo.xml' path='doc/member[@name="IProvideMultipleClassInfo.GetInfoOfIndex"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
     [VtblIndex(6)]
     public HRESULT GetInfoOfIndex([NativeTypeName("ULONG")] uint iti, [NativeTypeName("DWORD")] uint dwFlags, ITypeInfo** pptiCoClass, [NativeTypeName("DWORD *")] uint* pdwTIFlags, [NativeTypeName("ULONG *")] uint* pcdispidReserved, [NativeTypeName("IID *")] Guid* piidPrimary, [NativeTypeName("IID *")] Guid* piidSource)
     {
-        return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int>)(lpVtbl[6]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), iti, dwFlags, pptiCoClass, pdwTIFlags, pcdispidReserved, piidPrimary, piidSource);
+        return ((delegate* unmanaged[MemberFunction]<IProvideMultipleClassInfo*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int>)(lpVtbl[6]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), iti, dwFlags, pptiCoClass, pdwTIFlags, pcdispidReserved, piidPrimary, piidSource);
     }
 
     public interface Interface : IProvideClassInfo2.Interface
@@ -91,24 +91,24 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITypeInfo**, int> GetClassInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypeInfo**, int> GetClassInfo;
 
         [NativeTypeName("HRESULT (DWORD, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMultiTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMultiTypeInfoCount;
 
         [NativeTypeName("HRESULT (ULONG, DWORD, ITypeInfo **, DWORD *, ULONG *, IID *, IID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int> GetInfoOfIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int> GetInfoOfIndex;
     }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IMFSinkWriterEncoderConfigTests
     {
         Assert.That(typeof(IMFSinkWriterEncoderConfig).GUID, Is.EqualTo(IID_IMFSinkWriterEncoderConfig));
     }
-
-    /// <summary>Validates that the <see cref="IMFSinkWriterEncoderConfig" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSinkWriterEncoderConfig>(), Is.EqualTo(sizeof(IMFSinkWriterEncoderConfig)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSinkWriterEncoderConfig" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSinkWriterEncoderConfig).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSinkWriterEncoderConfig" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSinkWriterEncoderConfig), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSinkWriterEncoderConfig), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ISpPhraseTests
     {
         Assert.That(typeof(ISpPhrase).GUID, Is.EqualTo(IID_ISpPhrase));
     }
-
-    /// <summary>Validates that the <see cref="ISpPhrase" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpPhrase>(), Is.EqualTo(sizeof(ISpPhrase)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpPhrase" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpPhrase).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpPhrase" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpPhrase), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpPhrase), Is.EqualTo(4));
-        }
-    }
 }

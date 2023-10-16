@@ -25,7 +25,7 @@ public unsafe partial struct IContextMenu : IContextMenu.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IContextMenu*, Guid*, void**, int>)(lpVtbl[0]))((IContextMenu*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IContextMenu*, Guid*, void**, int>)(lpVtbl[0]))((IContextMenu*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IContextMenu : IContextMenu.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IContextMenu*, uint>)(lpVtbl[1]))((IContextMenu*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IContextMenu*, uint>)(lpVtbl[1]))((IContextMenu*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IContextMenu : IContextMenu.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IContextMenu*, uint>)(lpVtbl[2]))((IContextMenu*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IContextMenu*, uint>)(lpVtbl[2]))((IContextMenu*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IContextMenu.xml' path='doc/member[@name="IContextMenu.QueryContextMenu"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IContextMenu : IContextMenu.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT QueryContextMenu(HMENU hmenu, uint indexMenu, uint idCmdFirst, uint idCmdLast, uint uFlags)
     {
-        return ((delegate* unmanaged<IContextMenu*, HMENU, uint, uint, uint, uint, int>)(lpVtbl[3]))((IContextMenu*)Unsafe.AsPointer(ref this), hmenu, indexMenu, idCmdFirst, idCmdLast, uFlags);
+        return ((delegate* unmanaged[MemberFunction]<IContextMenu*, HMENU, uint, uint, uint, uint, int>)(lpVtbl[3]))((IContextMenu*)Unsafe.AsPointer(ref this), hmenu, indexMenu, idCmdFirst, idCmdLast, uFlags);
     }
 
     /// <include file='IContextMenu.xml' path='doc/member[@name="IContextMenu.InvokeCommand"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IContextMenu : IContextMenu.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT InvokeCommand(CMINVOKECOMMANDINFO* pici)
     {
-        return ((delegate* unmanaged<IContextMenu*, CMINVOKECOMMANDINFO*, int>)(lpVtbl[4]))((IContextMenu*)Unsafe.AsPointer(ref this), pici);
+        return ((delegate* unmanaged[MemberFunction]<IContextMenu*, CMINVOKECOMMANDINFO*, int>)(lpVtbl[4]))((IContextMenu*)Unsafe.AsPointer(ref this), pici);
     }
 
     /// <include file='IContextMenu.xml' path='doc/member[@name="IContextMenu.GetCommandString"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IContextMenu : IContextMenu.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetCommandString([NativeTypeName("UINT_PTR")] nuint idCmd, uint uType, uint* pReserved, [NativeTypeName("CHAR *")] sbyte* pszName, uint cchMax)
     {
-        return ((delegate* unmanaged<IContextMenu*, nuint, uint, uint*, sbyte*, uint, int>)(lpVtbl[5]))((IContextMenu*)Unsafe.AsPointer(ref this), idCmd, uType, pReserved, pszName, cchMax);
+        return ((delegate* unmanaged[MemberFunction]<IContextMenu*, nuint, uint, uint*, sbyte*, uint, int>)(lpVtbl[5]))((IContextMenu*)Unsafe.AsPointer(ref this), idCmd, uType, pReserved, pszName, cchMax);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IContextMenu : IContextMenu.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMENU, UINT, UINT, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMENU, uint, uint, uint, uint, int> QueryContextMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMENU, uint, uint, uint, uint, int> QueryContextMenu;
 
         [NativeTypeName("HRESULT (CMINVOKECOMMANDINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CMINVOKECOMMANDINFO*, int> InvokeCommand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CMINVOKECOMMANDINFO*, int> InvokeCommand;
 
         [NativeTypeName("HRESULT (UINT_PTR, UINT, UINT *, CHAR *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, uint, uint*, sbyte*, uint, int> GetCommandString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, uint, uint*, sbyte*, uint, int> GetCommandString;
     }
 }

@@ -12,7 +12,7 @@ public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAddDefaultPropertiesByExt"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHAddDefaultPropertiesByExt([NativeTypeName("PCWSTR")] ushort* pszExt, IPropertyStore* pPropStore);
+    public static extern HRESULT SHAddDefaultPropertiesByExt([NativeTypeName("PCWSTR")] char* pszExt, IPropertyStore* pPropStore);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateDefaultPropertiesOp"]/*' />
     [DllImport("shell32", ExactSpelling = true)]

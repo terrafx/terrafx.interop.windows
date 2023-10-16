@@ -25,7 +25,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IImageList*, Guid*, void**, int>)(lpVtbl[0]))((IImageList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, Guid*, void**, int>)(lpVtbl[0]))((IImageList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IImageList*, uint>)(lpVtbl[1]))((IImageList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, uint>)(lpVtbl[1]))((IImageList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IImageList*, uint>)(lpVtbl[2]))((IImageList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, uint>)(lpVtbl[2]))((IImageList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Add"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Add(HBITMAP hbmImage, HBITMAP hbmMask, int* pi)
     {
-        return ((delegate* unmanaged<IImageList*, HBITMAP, HBITMAP, int*, int>)(lpVtbl[3]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, hbmMask, pi);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, HBITMAP, HBITMAP, int*, int>)(lpVtbl[3]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, hbmMask, pi);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.ReplaceIcon"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT ReplaceIcon(int i, HICON hicon, int* pi)
     {
-        return ((delegate* unmanaged<IImageList*, int, HICON, int*, int>)(lpVtbl[4]))((IImageList*)Unsafe.AsPointer(ref this), i, hicon, pi);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, HICON, int*, int>)(lpVtbl[4]))((IImageList*)Unsafe.AsPointer(ref this), i, hicon, pi);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.SetOverlayImage"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetOverlayImage(int iImage, int iOverlay)
     {
-        return ((delegate* unmanaged<IImageList*, int, int, int>)(lpVtbl[5]))((IImageList*)Unsafe.AsPointer(ref this), iImage, iOverlay);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, int, int>)(lpVtbl[5]))((IImageList*)Unsafe.AsPointer(ref this), iImage, iOverlay);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Replace"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Replace(int i, HBITMAP hbmImage, HBITMAP hbmMask)
     {
-        return ((delegate* unmanaged<IImageList*, int, HBITMAP, HBITMAP, int>)(lpVtbl[6]))((IImageList*)Unsafe.AsPointer(ref this), i, hbmImage, hbmMask);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, HBITMAP, HBITMAP, int>)(lpVtbl[6]))((IImageList*)Unsafe.AsPointer(ref this), i, hbmImage, hbmMask);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.AddMasked"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT AddMasked(HBITMAP hbmImage, COLORREF crMask, int* pi)
     {
-        return ((delegate* unmanaged<IImageList*, HBITMAP, COLORREF, int*, int>)(lpVtbl[7]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, crMask, pi);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, HBITMAP, COLORREF, int*, int>)(lpVtbl[7]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, crMask, pi);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Draw"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT Draw(IMAGELISTDRAWPARAMS* pimldp)
     {
-        return ((delegate* unmanaged<IImageList*, IMAGELISTDRAWPARAMS*, int>)(lpVtbl[8]))((IImageList*)Unsafe.AsPointer(ref this), pimldp);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, IMAGELISTDRAWPARAMS*, int>)(lpVtbl[8]))((IImageList*)Unsafe.AsPointer(ref this), pimldp);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Remove"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT Remove(int i)
     {
-        return ((delegate* unmanaged<IImageList*, int, int>)(lpVtbl[9]))((IImageList*)Unsafe.AsPointer(ref this), i);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, int>)(lpVtbl[9]))((IImageList*)Unsafe.AsPointer(ref this), i);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetIcon"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetIcon(int i, uint flags, HICON* picon)
     {
-        return ((delegate* unmanaged<IImageList*, int, uint, HICON*, int>)(lpVtbl[10]))((IImageList*)Unsafe.AsPointer(ref this), i, flags, picon);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, uint, HICON*, int>)(lpVtbl[10]))((IImageList*)Unsafe.AsPointer(ref this), i, flags, picon);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetImageInfo"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetImageInfo(int i, IMAGEINFO* pImageInfo)
     {
-        return ((delegate* unmanaged<IImageList*, int, IMAGEINFO*, int>)(lpVtbl[11]))((IImageList*)Unsafe.AsPointer(ref this), i, pImageInfo);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, IMAGEINFO*, int>)(lpVtbl[11]))((IImageList*)Unsafe.AsPointer(ref this), i, pImageInfo);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Copy"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT Copy(int iDst, IUnknown* punkSrc, int iSrc, uint uFlags)
     {
-        return ((delegate* unmanaged<IImageList*, int, IUnknown*, int, uint, int>)(lpVtbl[12]))((IImageList*)Unsafe.AsPointer(ref this), iDst, punkSrc, iSrc, uFlags);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, IUnknown*, int, uint, int>)(lpVtbl[12]))((IImageList*)Unsafe.AsPointer(ref this), iDst, punkSrc, iSrc, uFlags);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Merge"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT Merge(int i1, IUnknown* punk2, int i2, int dx, int dy, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IImageList*, int, IUnknown*, int, int, int, Guid*, void**, int>)(lpVtbl[13]))((IImageList*)Unsafe.AsPointer(ref this), i1, punk2, i2, dx, dy, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, IUnknown*, int, int, int, Guid*, void**, int>)(lpVtbl[13]))((IImageList*)Unsafe.AsPointer(ref this), i1, punk2, i2, dx, dy, riid, ppv);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Clone"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT Clone([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IImageList*, Guid*, void**, int>)(lpVtbl[14]))((IImageList*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, Guid*, void**, int>)(lpVtbl[14]))((IImageList*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetImageRect"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT GetImageRect(int i, RECT* prc)
     {
-        return ((delegate* unmanaged<IImageList*, int, RECT*, int>)(lpVtbl[15]))((IImageList*)Unsafe.AsPointer(ref this), i, prc);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, RECT*, int>)(lpVtbl[15]))((IImageList*)Unsafe.AsPointer(ref this), i, prc);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetIconSize"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT GetIconSize(int* cx, int* cy)
     {
-        return ((delegate* unmanaged<IImageList*, int*, int*, int>)(lpVtbl[16]))((IImageList*)Unsafe.AsPointer(ref this), cx, cy);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int*, int*, int>)(lpVtbl[16]))((IImageList*)Unsafe.AsPointer(ref this), cx, cy);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.SetIconSize"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT SetIconSize(int cx, int cy)
     {
-        return ((delegate* unmanaged<IImageList*, int, int, int>)(lpVtbl[17]))((IImageList*)Unsafe.AsPointer(ref this), cx, cy);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, int, int>)(lpVtbl[17]))((IImageList*)Unsafe.AsPointer(ref this), cx, cy);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetImageCount"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT GetImageCount(int* pi)
     {
-        return ((delegate* unmanaged<IImageList*, int*, int>)(lpVtbl[18]))((IImageList*)Unsafe.AsPointer(ref this), pi);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int*, int>)(lpVtbl[18]))((IImageList*)Unsafe.AsPointer(ref this), pi);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.SetImageCount"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT SetImageCount(uint uNewCount)
     {
-        return ((delegate* unmanaged<IImageList*, uint, int>)(lpVtbl[19]))((IImageList*)Unsafe.AsPointer(ref this), uNewCount);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, uint, int>)(lpVtbl[19]))((IImageList*)Unsafe.AsPointer(ref this), uNewCount);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.SetBkColor"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT SetBkColor(COLORREF clrBk, COLORREF* pclr)
     {
-        return ((delegate* unmanaged<IImageList*, COLORREF, COLORREF*, int>)(lpVtbl[20]))((IImageList*)Unsafe.AsPointer(ref this), clrBk, pclr);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, COLORREF, COLORREF*, int>)(lpVtbl[20]))((IImageList*)Unsafe.AsPointer(ref this), clrBk, pclr);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetBkColor"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT GetBkColor(COLORREF* pclr)
     {
-        return ((delegate* unmanaged<IImageList*, COLORREF*, int>)(lpVtbl[21]))((IImageList*)Unsafe.AsPointer(ref this), pclr);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, COLORREF*, int>)(lpVtbl[21]))((IImageList*)Unsafe.AsPointer(ref this), pclr);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.BeginDrag"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT BeginDrag(int iTrack, int dxHotspot, int dyHotspot)
     {
-        return ((delegate* unmanaged<IImageList*, int, int, int, int>)(lpVtbl[22]))((IImageList*)Unsafe.AsPointer(ref this), iTrack, dxHotspot, dyHotspot);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, int, int, int>)(lpVtbl[22]))((IImageList*)Unsafe.AsPointer(ref this), iTrack, dxHotspot, dyHotspot);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.EndDrag"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT EndDrag()
     {
-        return ((delegate* unmanaged<IImageList*, int>)(lpVtbl[23]))((IImageList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int>)(lpVtbl[23]))((IImageList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.DragEnter"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT DragEnter(HWND hwndLock, int x, int y)
     {
-        return ((delegate* unmanaged<IImageList*, HWND, int, int, int>)(lpVtbl[24]))((IImageList*)Unsafe.AsPointer(ref this), hwndLock, x, y);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, HWND, int, int, int>)(lpVtbl[24]))((IImageList*)Unsafe.AsPointer(ref this), hwndLock, x, y);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.DragLeave"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT DragLeave(HWND hwndLock)
     {
-        return ((delegate* unmanaged<IImageList*, HWND, int>)(lpVtbl[25]))((IImageList*)Unsafe.AsPointer(ref this), hwndLock);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, HWND, int>)(lpVtbl[25]))((IImageList*)Unsafe.AsPointer(ref this), hwndLock);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.DragMove"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT DragMove(int x, int y)
     {
-        return ((delegate* unmanaged<IImageList*, int, int, int>)(lpVtbl[26]))((IImageList*)Unsafe.AsPointer(ref this), x, y);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, int, int>)(lpVtbl[26]))((IImageList*)Unsafe.AsPointer(ref this), x, y);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.SetDragCursorImage"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(27)]
     public HRESULT SetDragCursorImage(IUnknown* punk, int iDrag, int dxHotspot, int dyHotspot)
     {
-        return ((delegate* unmanaged<IImageList*, IUnknown*, int, int, int, int>)(lpVtbl[27]))((IImageList*)Unsafe.AsPointer(ref this), punk, iDrag, dxHotspot, dyHotspot);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, IUnknown*, int, int, int, int>)(lpVtbl[27]))((IImageList*)Unsafe.AsPointer(ref this), punk, iDrag, dxHotspot, dyHotspot);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.DragShowNolock"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(28)]
     public HRESULT DragShowNolock(BOOL fShow)
     {
-        return ((delegate* unmanaged<IImageList*, BOOL, int>)(lpVtbl[28]))((IImageList*)Unsafe.AsPointer(ref this), fShow);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, BOOL, int>)(lpVtbl[28]))((IImageList*)Unsafe.AsPointer(ref this), fShow);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetDragImage"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(29)]
     public HRESULT GetDragImage(POINT* ppt, POINT* pptHotspot, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IImageList*, POINT*, POINT*, Guid*, void**, int>)(lpVtbl[29]))((IImageList*)Unsafe.AsPointer(ref this), ppt, pptHotspot, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, POINT*, POINT*, Guid*, void**, int>)(lpVtbl[29]))((IImageList*)Unsafe.AsPointer(ref this), ppt, pptHotspot, riid, ppv);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetItemFlags"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(30)]
     public HRESULT GetItemFlags(int i, [NativeTypeName("DWORD *")] uint* dwFlags)
     {
-        return ((delegate* unmanaged<IImageList*, int, uint*, int>)(lpVtbl[30]))((IImageList*)Unsafe.AsPointer(ref this), i, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, uint*, int>)(lpVtbl[30]))((IImageList*)Unsafe.AsPointer(ref this), i, dwFlags);
     }
 
     /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetOverlayImage"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
     [VtblIndex(31)]
     public HRESULT GetOverlayImage(int iOverlay, int* piIndex)
     {
-        return ((delegate* unmanaged<IImageList*, int, int*, int>)(lpVtbl[31]))((IImageList*)Unsafe.AsPointer(ref this), iOverlay, piIndex);
+        return ((delegate* unmanaged[MemberFunction]<IImageList*, int, int*, int>)(lpVtbl[31]))((IImageList*)Unsafe.AsPointer(ref this), iOverlay, piIndex);
     }
 
     public interface Interface : IUnknown.Interface
@@ -372,99 +372,99 @@ public unsafe partial struct IImageList : IImageList.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HBITMAP, HBITMAP, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HBITMAP, HBITMAP, int*, int> Add;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HBITMAP, HBITMAP, int*, int> Add;
 
         [NativeTypeName("HRESULT (int, HICON, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, HICON, int*, int> ReplaceIcon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, HICON, int*, int> ReplaceIcon;
 
         [NativeTypeName("HRESULT (int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetOverlayImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetOverlayImage;
 
         [NativeTypeName("HRESULT (int, HBITMAP, HBITMAP) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, HBITMAP, HBITMAP, int> Replace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, HBITMAP, HBITMAP, int> Replace;
 
         [NativeTypeName("HRESULT (HBITMAP, COLORREF, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HBITMAP, COLORREF, int*, int> AddMasked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HBITMAP, COLORREF, int*, int> AddMasked;
 
         [NativeTypeName("HRESULT (IMAGELISTDRAWPARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAGELISTDRAWPARAMS*, int> Draw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAGELISTDRAWPARAMS*, int> Draw;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> Remove;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> Remove;
 
         [NativeTypeName("HRESULT (int, UINT, HICON *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint, HICON*, int> GetIcon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, uint, HICON*, int> GetIcon;
 
         [NativeTypeName("HRESULT (int, IMAGEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IMAGEINFO*, int> GetImageInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IMAGEINFO*, int> GetImageInfo;
 
         [NativeTypeName("HRESULT (int, IUnknown *, int, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IUnknown*, int, uint, int> Copy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IUnknown*, int, uint, int> Copy;
 
         [NativeTypeName("HRESULT (int, IUnknown *, int, int, int, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IUnknown*, int, int, int, Guid*, void**, int> Merge;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IUnknown*, int, int, int, Guid*, void**, int> Merge;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> Clone;
 
         [NativeTypeName("HRESULT (int, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, RECT*, int> GetImageRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, RECT*, int> GetImageRect;
 
         [NativeTypeName("HRESULT (int *, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> GetIconSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> GetIconSize;
 
         [NativeTypeName("HRESULT (int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetIconSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetIconSize;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetImageCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetImageCount;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetImageCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetImageCount;
 
         [NativeTypeName("HRESULT (COLORREF, COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORREF, COLORREF*, int> SetBkColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORREF, COLORREF*, int> SetBkColor;
 
         [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORREF*, int> GetBkColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORREF*, int> GetBkColor;
 
         [NativeTypeName("HRESULT (int, int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int, int> BeginDrag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int, int> BeginDrag;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EndDrag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EndDrag;
 
         [NativeTypeName("HRESULT (HWND, int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int, int, int> DragEnter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int, int, int> DragEnter;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> DragLeave;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> DragLeave;
 
         [NativeTypeName("HRESULT (int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> DragMove;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> DragMove;
 
         [NativeTypeName("HRESULT (IUnknown *, int, int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int, int, int, int> SetDragCursorImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int, int, int, int> SetDragCursorImage;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> DragShowNolock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> DragShowNolock;
 
         [NativeTypeName("HRESULT (POINT *, POINT *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT*, POINT*, Guid*, void**, int> GetDragImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT*, POINT*, Guid*, void**, int> GetDragImage;
 
         [NativeTypeName("HRESULT (int, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint*, int> GetItemFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, uint*, int> GetItemFlags;
 
         [NativeTypeName("HRESULT (int, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> GetOverlayImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> GetOverlayImage;
     }
 }

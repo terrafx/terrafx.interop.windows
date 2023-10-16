@@ -16,19 +16,19 @@ public static unsafe partial class CLSID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
-                    0x3C, 0x16, 0x33, 0x6B,
-                    0xA5, 0x76,
-                    0x6C, 0x4B,
-                    0xBF,
-                    0x21,
-                    0x45,
-                    0xDE,
-                    0x9C,
-                    0xD5,
-                    0x03,
-                    0xA1
-                };
+            ReadOnlySpan<byte> data = [
+                0x3C, 0x16, 0x33, 0x6B,
+                0xA5, 0x76,
+                0x6C, 0x4B,
+                0xBF,
+                0x21,
+                0x45,
+                0xDE,
+                0x9C,
+                0xD5,
+                0x03,
+                0xA1
+            ];
 
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }

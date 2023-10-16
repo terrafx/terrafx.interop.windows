@@ -14,5 +14,5 @@ public unsafe partial struct CRYPT_URL_ARRAY
 
     /// <include file='CRYPT_URL_ARRAY.xml' path='doc/member[@name="CRYPT_URL_ARRAY.rgwszUrl"]/*' />
     [NativeTypeName("LPWSTR *")]
-    public ushort** rgwszUrl;
+    public char** rgwszUrl;
 }

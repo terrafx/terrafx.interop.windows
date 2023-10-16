@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CRYPT_DECODE_PARA" /> struct.</summary>
 public static unsafe partial class CRYPT_DECODE_PARATests
 {
-    /// <summary>Validates that the <see cref="CRYPT_DECODE_PARA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CRYPT_DECODE_PARA>(), Is.EqualTo(sizeof(CRYPT_DECODE_PARA)));
-    }
-
-    /// <summary>Validates that the <see cref="CRYPT_DECODE_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CRYPT_DECODE_PARA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CRYPT_DECODE_PARA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(CRYPT_DECODE_PARA), Is.EqualTo(24));
-        }
-        else
-        {
-            Assert.That(sizeof(CRYPT_DECODE_PARA), Is.EqualTo(12));
-        }
-    }
 }

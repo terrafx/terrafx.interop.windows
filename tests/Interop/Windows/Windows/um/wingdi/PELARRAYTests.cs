@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PELARRAY" /> struct.</summary>
 public static unsafe partial class PELARRAYTests
 {
-    /// <summary>Validates that the <see cref="PELARRAY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PELARRAY>(), Is.EqualTo(sizeof(PELARRAY)));
-    }
-
-    /// <summary>Validates that the <see cref="PELARRAY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PELARRAY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PELARRAY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PELARRAY), Is.EqualTo(20));
-    }
 }

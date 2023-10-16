@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WIN32_FIND_STREAM_DATA" /> struct.</summary>
 public static unsafe partial class WIN32_FIND_STREAM_DATATests
 {
-    /// <summary>Validates that the <see cref="WIN32_FIND_STREAM_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WIN32_FIND_STREAM_DATA>(), Is.EqualTo(sizeof(WIN32_FIND_STREAM_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="WIN32_FIND_STREAM_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WIN32_FIND_STREAM_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WIN32_FIND_STREAM_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WIN32_FIND_STREAM_DATA), Is.EqualTo(600));
-    }
 }

@@ -38,7 +38,7 @@ public unsafe partial struct SIGNER_SIGN_EX2_PARAMS
 
     /// <include file='SIGNER_SIGN_EX2_PARAMS.xml' path='doc/member[@name="SIGNER_SIGN_EX2_PARAMS.pwszTimestampURL"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pwszTimestampURL;
+    public char* pwszTimestampURL;
 
     /// <include file='SIGNER_SIGN_EX2_PARAMS.xml' path='doc/member[@name="SIGNER_SIGN_EX2_PARAMS.pCryptAttrs"]/*' />
     [NativeTypeName("PCRYPT_ATTRIBUTES")]

@@ -19,32 +19,4 @@ public static unsafe partial class IElementNamespaceFactoryCallbackTests
     {
         Assert.That(typeof(IElementNamespaceFactoryCallback).GUID, Is.EqualTo(IID_IElementNamespaceFactoryCallback));
     }
-
-    /// <summary>Validates that the <see cref="IElementNamespaceFactoryCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IElementNamespaceFactoryCallback>(), Is.EqualTo(sizeof(IElementNamespaceFactoryCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IElementNamespaceFactoryCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IElementNamespaceFactoryCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IElementNamespaceFactoryCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IElementNamespaceFactoryCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IElementNamespaceFactoryCallback), Is.EqualTo(4));
-        }
-    }
 }

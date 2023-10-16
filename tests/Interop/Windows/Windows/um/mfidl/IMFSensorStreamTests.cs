@@ -21,32 +21,4 @@ public static unsafe partial class IMFSensorStreamTests
     {
         Assert.That(typeof(IMFSensorStream).GUID, Is.EqualTo(IID_IMFSensorStream));
     }
-
-    /// <summary>Validates that the <see cref="IMFSensorStream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSensorStream>(), Is.EqualTo(sizeof(IMFSensorStream)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSensorStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSensorStream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSensorStream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSensorStream), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSensorStream), Is.EqualTo(4));
-        }
-    }
 }

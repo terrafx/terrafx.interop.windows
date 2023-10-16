@@ -25,7 +25,7 @@ public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBrowserFrameOptions*, Guid*, void**, int>)(lpVtbl[0]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBrowserFrameOptions*, Guid*, void**, int>)(lpVtbl[0]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBrowserFrameOptions*, uint>)(lpVtbl[1]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBrowserFrameOptions*, uint>)(lpVtbl[1]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBrowserFrameOptions*, uint>)(lpVtbl[2]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBrowserFrameOptions*, uint>)(lpVtbl[2]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBrowserFrameOptions.xml' path='doc/member[@name="IBrowserFrameOptions.GetFrameOptions"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interfa
     [VtblIndex(3)]
     public HRESULT GetFrameOptions([NativeTypeName("BROWSERFRAMEOPTIONS")] uint dwMask, [NativeTypeName("BROWSERFRAMEOPTIONS *")] uint* pdwOptions)
     {
-        return ((delegate* unmanaged<IBrowserFrameOptions*, uint, uint*, int>)(lpVtbl[3]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this), dwMask, pdwOptions);
+        return ((delegate* unmanaged[MemberFunction]<IBrowserFrameOptions*, uint, uint*, int>)(lpVtbl[3]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this), dwMask, pdwOptions);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BROWSERFRAMEOPTIONS, BROWSERFRAMEOPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetFrameOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetFrameOptions;
     }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class ThumbnailStreamCacheTests
     {
         Assert.That(typeof(ThumbnailStreamCache).GUID, Is.EqualTo(IID_ThumbnailStreamCache));
     }
-
-    /// <summary>Validates that the <see cref="ThumbnailStreamCache" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ThumbnailStreamCache>(), Is.EqualTo(sizeof(ThumbnailStreamCache)));
-    }
-
-    /// <summary>Validates that the <see cref="ThumbnailStreamCache" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ThumbnailStreamCache).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ThumbnailStreamCache" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ThumbnailStreamCache), Is.EqualTo(1));
-    }
 }

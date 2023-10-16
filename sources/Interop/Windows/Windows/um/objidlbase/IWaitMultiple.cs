@@ -25,7 +25,7 @@ public unsafe partial struct IWaitMultiple : IWaitMultiple.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWaitMultiple*, Guid*, void**, int>)(lpVtbl[0]))((IWaitMultiple*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWaitMultiple*, Guid*, void**, int>)(lpVtbl[0]))((IWaitMultiple*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWaitMultiple : IWaitMultiple.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWaitMultiple*, uint>)(lpVtbl[1]))((IWaitMultiple*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWaitMultiple*, uint>)(lpVtbl[1]))((IWaitMultiple*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWaitMultiple : IWaitMultiple.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWaitMultiple*, uint>)(lpVtbl[2]))((IWaitMultiple*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWaitMultiple*, uint>)(lpVtbl[2]))((IWaitMultiple*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWaitMultiple.xml' path='doc/member[@name="IWaitMultiple.WaitMultiple"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWaitMultiple : IWaitMultiple.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT WaitMultiple([NativeTypeName("DWORD")] uint timeout, ISynchronize** pSync)
     {
-        return ((delegate* unmanaged<IWaitMultiple*, uint, ISynchronize**, int>)(lpVtbl[3]))((IWaitMultiple*)Unsafe.AsPointer(ref this), timeout, pSync);
+        return ((delegate* unmanaged[MemberFunction]<IWaitMultiple*, uint, ISynchronize**, int>)(lpVtbl[3]))((IWaitMultiple*)Unsafe.AsPointer(ref this), timeout, pSync);
     }
 
     /// <include file='IWaitMultiple.xml' path='doc/member[@name="IWaitMultiple.AddSynchronize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWaitMultiple : IWaitMultiple.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT AddSynchronize(ISynchronize* pSync)
     {
-        return ((delegate* unmanaged<IWaitMultiple*, ISynchronize*, int>)(lpVtbl[4]))((IWaitMultiple*)Unsafe.AsPointer(ref this), pSync);
+        return ((delegate* unmanaged[MemberFunction]<IWaitMultiple*, ISynchronize*, int>)(lpVtbl[4]))((IWaitMultiple*)Unsafe.AsPointer(ref this), pSync);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IWaitMultiple : IWaitMultiple.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, ISynchronize **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ISynchronize**, int> WaitMultiple;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ISynchronize**, int> WaitMultiple;
 
         [NativeTypeName("HRESULT (ISynchronize *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISynchronize*, int> AddSynchronize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISynchronize*, int> AddSynchronize;
     }
 }

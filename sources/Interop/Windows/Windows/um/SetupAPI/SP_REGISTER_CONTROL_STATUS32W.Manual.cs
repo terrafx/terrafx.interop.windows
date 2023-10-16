@@ -14,7 +14,7 @@ public unsafe partial struct SP_REGISTER_CONTROL_STATUS32W
     public uint cbSize;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* FileName;
+    public char* FileName;
 
     [NativeTypeName("DWORD")]
     public uint Win32Error;

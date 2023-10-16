@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="BIND_OPTS" /> struct.</summary>
 public static unsafe partial class BIND_OPTSTests
 {
-    /// <summary>Validates that the <see cref="BIND_OPTS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BIND_OPTS>(), Is.EqualTo(sizeof(BIND_OPTS)));
-    }
-
-    /// <summary>Validates that the <see cref="BIND_OPTS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BIND_OPTS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BIND_OPTS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BIND_OPTS), Is.EqualTo(16));
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioAmbisonicsControl*, Guid*, void**, int>)(lpVtbl[0]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioAmbisonicsControl*, Guid*, void**, int>)(lpVtbl[0]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioAmbisonicsControl*, uint>)(lpVtbl[1]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioAmbisonicsControl*, uint>)(lpVtbl[1]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioAmbisonicsControl*, uint>)(lpVtbl[2]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioAmbisonicsControl*, uint>)(lpVtbl[2]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioAmbisonicsControl.xml' path='doc/member[@name="IAudioAmbisonicsControl.SetData"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
     [VtblIndex(3)]
     public HRESULT SetData([NativeTypeName("const AMBISONICS_PARAMS *")] AMBISONICS_PARAMS* pAmbisonicsParams, [NativeTypeName("UINT32")] uint cbAmbisonicsParams)
     {
-        return ((delegate* unmanaged<IAudioAmbisonicsControl*, AMBISONICS_PARAMS*, uint, int>)(lpVtbl[3]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), pAmbisonicsParams, cbAmbisonicsParams);
+        return ((delegate* unmanaged[MemberFunction]<IAudioAmbisonicsControl*, AMBISONICS_PARAMS*, uint, int>)(lpVtbl[3]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), pAmbisonicsParams, cbAmbisonicsParams);
     }
 
     /// <include file='IAudioAmbisonicsControl.xml' path='doc/member[@name="IAudioAmbisonicsControl.SetHeadTracking"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
     [VtblIndex(4)]
     public HRESULT SetHeadTracking(BOOL bEnableHeadTracking)
     {
-        return ((delegate* unmanaged<IAudioAmbisonicsControl*, BOOL, int>)(lpVtbl[4]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), bEnableHeadTracking);
+        return ((delegate* unmanaged[MemberFunction]<IAudioAmbisonicsControl*, BOOL, int>)(lpVtbl[4]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), bEnableHeadTracking);
     }
 
     /// <include file='IAudioAmbisonicsControl.xml' path='doc/member[@name="IAudioAmbisonicsControl.GetHeadTracking"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
     [VtblIndex(5)]
     public HRESULT GetHeadTracking(BOOL* pbEnableHeadTracking)
     {
-        return ((delegate* unmanaged<IAudioAmbisonicsControl*, BOOL*, int>)(lpVtbl[5]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), pbEnableHeadTracking);
+        return ((delegate* unmanaged[MemberFunction]<IAudioAmbisonicsControl*, BOOL*, int>)(lpVtbl[5]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), pbEnableHeadTracking);
     }
 
     /// <include file='IAudioAmbisonicsControl.xml' path='doc/member[@name="IAudioAmbisonicsControl.SetRotation"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
     [VtblIndex(6)]
     public HRESULT SetRotation(float X, float Y, float Z, float W)
     {
-        return ((delegate* unmanaged<IAudioAmbisonicsControl*, float, float, float, float, int>)(lpVtbl[6]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), X, Y, Z, W);
+        return ((delegate* unmanaged[MemberFunction]<IAudioAmbisonicsControl*, float, float, float, float, int>)(lpVtbl[6]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), X, Y, Z, W);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const AMBISONICS_PARAMS *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AMBISONICS_PARAMS*, uint, int> SetData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AMBISONICS_PARAMS*, uint, int> SetData;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetHeadTracking;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetHeadTracking;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetHeadTracking;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetHeadTracking;
 
         [NativeTypeName("HRESULT (float, float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, int> SetRotation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, int> SetRotation;
     }
 }

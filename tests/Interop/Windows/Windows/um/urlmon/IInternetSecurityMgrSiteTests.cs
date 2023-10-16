@@ -19,32 +19,4 @@ public static unsafe partial class IInternetSecurityMgrSiteTests
     {
         Assert.That(typeof(IInternetSecurityMgrSite).GUID, Is.EqualTo(IID_IInternetSecurityMgrSite));
     }
-
-    /// <summary>Validates that the <see cref="IInternetSecurityMgrSite" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInternetSecurityMgrSite>(), Is.EqualTo(sizeof(IInternetSecurityMgrSite)));
-    }
-
-    /// <summary>Validates that the <see cref="IInternetSecurityMgrSite" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInternetSecurityMgrSite).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInternetSecurityMgrSite" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInternetSecurityMgrSite), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInternetSecurityMgrSite), Is.EqualTo(4));
-        }
-    }
 }

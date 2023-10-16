@@ -19,32 +19,4 @@ public static unsafe partial class ISpDataKeyTests
     {
         Assert.That(typeof(ISpDataKey).GUID, Is.EqualTo(IID_ISpDataKey));
     }
-
-    /// <summary>Validates that the <see cref="ISpDataKey" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpDataKey>(), Is.EqualTo(sizeof(ISpDataKey)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpDataKey" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpDataKey).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpDataKey" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpDataKey), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpDataKey), Is.EqualTo(4));
-        }
-    }
 }

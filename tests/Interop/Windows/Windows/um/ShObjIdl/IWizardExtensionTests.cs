@@ -19,32 +19,4 @@ public static unsafe partial class IWizardExtensionTests
     {
         Assert.That(typeof(IWizardExtension).GUID, Is.EqualTo(IID_IWizardExtension));
     }
-
-    /// <summary>Validates that the <see cref="IWizardExtension" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWizardExtension>(), Is.EqualTo(sizeof(IWizardExtension)));
-    }
-
-    /// <summary>Validates that the <see cref="IWizardExtension" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWizardExtension).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWizardExtension" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWizardExtension), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWizardExtension), Is.EqualTo(4));
-        }
-    }
 }

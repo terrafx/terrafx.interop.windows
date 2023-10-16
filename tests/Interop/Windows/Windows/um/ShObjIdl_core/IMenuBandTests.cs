@@ -19,32 +19,4 @@ public static unsafe partial class IMenuBandTests
     {
         Assert.That(typeof(IMenuBand).GUID, Is.EqualTo(IID_IMenuBand));
     }
-
-    /// <summary>Validates that the <see cref="IMenuBand" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMenuBand>(), Is.EqualTo(sizeof(IMenuBand)));
-    }
-
-    /// <summary>Validates that the <see cref="IMenuBand" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMenuBand).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMenuBand" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMenuBand), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMenuBand), Is.EqualTo(4));
-        }
-    }
 }

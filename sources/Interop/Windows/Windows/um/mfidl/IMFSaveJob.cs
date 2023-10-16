@@ -25,7 +25,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSaveJob*, Guid*, void**, int>)(lpVtbl[0]))((IMFSaveJob*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSaveJob*, Guid*, void**, int>)(lpVtbl[0]))((IMFSaveJob*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSaveJob*, uint>)(lpVtbl[1]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSaveJob*, uint>)(lpVtbl[1]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSaveJob*, uint>)(lpVtbl[2]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSaveJob*, uint>)(lpVtbl[2]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSaveJob.xml' path='doc/member[@name="IMFSaveJob.BeginSave"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT BeginSave(IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState)
     {
-        return ((delegate* unmanaged<IMFSaveJob*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pStream, pCallback, pState);
+        return ((delegate* unmanaged[MemberFunction]<IMFSaveJob*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pStream, pCallback, pState);
     }
 
     /// <include file='IMFSaveJob.xml' path='doc/member[@name="IMFSaveJob.EndSave"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT EndSave(IMFAsyncResult* pResult)
     {
-        return ((delegate* unmanaged<IMFSaveJob*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pResult);
+        return ((delegate* unmanaged[MemberFunction]<IMFSaveJob*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pResult);
     }
 
     /// <include file='IMFSaveJob.xml' path='doc/member[@name="IMFSaveJob.CancelSave"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT CancelSave()
     {
-        return ((delegate* unmanaged<IMFSaveJob*, int>)(lpVtbl[5]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSaveJob*, int>)(lpVtbl[5]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSaveJob.xml' path='doc/member[@name="IMFSaveJob.GetProgress"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete)
     {
-        return ((delegate* unmanaged<IMFSaveJob*, uint*, int>)(lpVtbl[6]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pdwPercentComplete);
+        return ((delegate* unmanaged[MemberFunction]<IMFSaveJob*, uint*, int>)(lpVtbl[6]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pdwPercentComplete);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFByteStream *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int> BeginSave;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int> BeginSave;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, int> EndSave;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, int> EndSave;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CancelSave;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CancelSave;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetProgress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetProgress;
     }
 }

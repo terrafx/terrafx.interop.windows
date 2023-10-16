@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TEXTMETRICA" /> struct.</summary>
 public static unsafe partial class TEXTMETRICATests
 {
-    /// <summary>Validates that the <see cref="TEXTMETRICA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TEXTMETRICA>(), Is.EqualTo(sizeof(TEXTMETRICA)));
-    }
-
-    /// <summary>Validates that the <see cref="TEXTMETRICA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TEXTMETRICA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TEXTMETRICA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TEXTMETRICA), Is.EqualTo(56));
-    }
 }

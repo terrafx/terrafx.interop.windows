@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="POWER_IDLE_RESILIENCY" /> struct.</summary>
 public static unsafe partial class POWER_IDLE_RESILIENCYTests
 {
-    /// <summary>Validates that the <see cref="POWER_IDLE_RESILIENCY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<POWER_IDLE_RESILIENCY>(), Is.EqualTo(sizeof(POWER_IDLE_RESILIENCY)));
-    }
-
-    /// <summary>Validates that the <see cref="POWER_IDLE_RESILIENCY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(POWER_IDLE_RESILIENCY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="POWER_IDLE_RESILIENCY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(POWER_IDLE_RESILIENCY), Is.EqualTo(8));
-    }
 }

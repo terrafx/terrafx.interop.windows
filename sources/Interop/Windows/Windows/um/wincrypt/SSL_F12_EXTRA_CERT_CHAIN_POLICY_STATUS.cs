@@ -29,5 +29,5 @@ public unsafe partial struct SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS
 
     /// <include file='SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS.wszErrorText"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort wszErrorText[256];
+    public fixed char wszErrorText[256];
 }

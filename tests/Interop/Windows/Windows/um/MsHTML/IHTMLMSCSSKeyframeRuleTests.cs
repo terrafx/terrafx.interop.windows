@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLMSCSSKeyframeRuleTests
     {
         Assert.That(typeof(IHTMLMSCSSKeyframeRule).GUID, Is.EqualTo(IID_IHTMLMSCSSKeyframeRule));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLMSCSSKeyframeRule" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLMSCSSKeyframeRule>(), Is.EqualTo(sizeof(IHTMLMSCSSKeyframeRule)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLMSCSSKeyframeRule" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLMSCSSKeyframeRule).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLMSCSSKeyframeRule" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLMSCSSKeyframeRule), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLMSCSSKeyframeRule), Is.EqualTo(4));
-        }
-    }
 }

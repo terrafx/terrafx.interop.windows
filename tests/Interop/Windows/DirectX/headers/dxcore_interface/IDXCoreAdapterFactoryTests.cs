@@ -21,32 +21,4 @@ public static unsafe partial class IDXCoreAdapterFactoryTests
     {
         Assert.That(typeof(IDXCoreAdapterFactory).GUID, Is.EqualTo(IID_IDXCoreAdapterFactory));
     }
-
-    /// <summary>Validates that the <see cref="IDXCoreAdapterFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDXCoreAdapterFactory>(), Is.EqualTo(sizeof(IDXCoreAdapterFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IDXCoreAdapterFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDXCoreAdapterFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDXCoreAdapterFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDXCoreAdapterFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDXCoreAdapterFactory), Is.EqualTo(4));
-        }
-    }
 }

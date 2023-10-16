@@ -19,32 +19,4 @@ public static unsafe partial class ICategorizerTests
     {
         Assert.That(typeof(ICategorizer).GUID, Is.EqualTo(IID_ICategorizer));
     }
-
-    /// <summary>Validates that the <see cref="ICategorizer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICategorizer>(), Is.EqualTo(sizeof(ICategorizer)));
-    }
-
-    /// <summary>Validates that the <see cref="ICategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICategorizer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICategorizer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICategorizer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICategorizer), Is.EqualTo(4));
-        }
-    }
 }

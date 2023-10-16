@@ -21,32 +21,4 @@ public static unsafe partial class IPdfRendererNativeTests
     {
         Assert.That(typeof(IPdfRendererNative).GUID, Is.EqualTo(IID_IPdfRendererNative));
     }
-
-    /// <summary>Validates that the <see cref="IPdfRendererNative" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPdfRendererNative>(), Is.EqualTo(sizeof(IPdfRendererNative)));
-    }
-
-    /// <summary>Validates that the <see cref="IPdfRendererNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPdfRendererNative).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPdfRendererNative" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPdfRendererNative), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPdfRendererNative), Is.EqualTo(4));
-        }
-    }
 }

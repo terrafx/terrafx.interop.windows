@@ -25,7 +25,7 @@ public unsafe partial struct IPropertyStoreCapabilities : IPropertyStoreCapabili
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertyStoreCapabilities*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCapabilities*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPropertyStoreCapabilities : IPropertyStoreCapabili
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertyStoreCapabilities*, uint>)(lpVtbl[1]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCapabilities*, uint>)(lpVtbl[1]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPropertyStoreCapabilities : IPropertyStoreCapabili
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertyStoreCapabilities*, uint>)(lpVtbl[2]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCapabilities*, uint>)(lpVtbl[2]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyStoreCapabilities.xml' path='doc/member[@name="IPropertyStoreCapabilities.IsPropertyWritable"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPropertyStoreCapabilities : IPropertyStoreCapabili
     [VtblIndex(3)]
     public HRESULT IsPropertyWritable([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
     {
-        return ((delegate* unmanaged<IPropertyStoreCapabilities*, PROPERTYKEY*, int>)(lpVtbl[3]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this), key);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStoreCapabilities*, PROPERTYKEY*, int>)(lpVtbl[3]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this), key);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IPropertyStoreCapabilities : IPropertyStoreCapabili
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> IsPropertyWritable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, int> IsPropertyWritable;
     }
 }

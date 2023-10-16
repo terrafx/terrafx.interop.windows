@@ -20,5 +20,5 @@ public unsafe partial struct TTGETTITLE
 
     /// <include file='TTGETTITLE.xml' path='doc/member[@name="TTGETTITLE.pszTitle"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pszTitle;
+    public char* pszTitle;
 }

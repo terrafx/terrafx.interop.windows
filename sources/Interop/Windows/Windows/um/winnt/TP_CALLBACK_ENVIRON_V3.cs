@@ -73,7 +73,7 @@ public unsafe partial struct TP_CALLBACK_ENVIRON_V3
             public uint LongFunction
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -90,7 +90,7 @@ public unsafe partial struct TP_CALLBACK_ENVIRON_V3
             public uint Persistent
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -107,7 +107,7 @@ public unsafe partial struct TP_CALLBACK_ENVIRON_V3
             public uint Private
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x3FFFFFFFu;
                 }

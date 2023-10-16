@@ -19,32 +19,4 @@ public static unsafe partial class IDMLDispatchableTests
     {
         Assert.That(typeof(IDMLDispatchable).GUID, Is.EqualTo(IID_IDMLDispatchable));
     }
-
-    /// <summary>Validates that the <see cref="IDMLDispatchable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDMLDispatchable>(), Is.EqualTo(sizeof(IDMLDispatchable)));
-    }
-
-    /// <summary>Validates that the <see cref="IDMLDispatchable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDMLDispatchable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDMLDispatchable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDMLDispatchable), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDMLDispatchable), Is.EqualTo(4));
-        }
-    }
 }

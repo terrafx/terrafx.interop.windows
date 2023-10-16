@@ -19,7 +19,7 @@ public static partial class CLSID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xE0, 0x0E, 0xB7, 0xD7,
                 0x40, 0x43,
                 0xCF, 0x11,
@@ -31,7 +31,7 @@ public static partial class CLSID
                 0xC2,
                 0xCD,
                 0x35
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -44,7 +44,7 @@ public static partial class CLSID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x96, 0x51, 0x30, 0x3C,
                 0xDB, 0x50,
                 0xD3, 0x11,
@@ -56,7 +56,7 @@ public static partial class CLSID
                 0xD9,
                 0x30,
                 0xC5
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -69,7 +69,7 @@ public static partial class CLSID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA0, 0x17, 0x38, 0x59,
                 0xB3, 0x7D,
                 0xCF, 0x11,
@@ -81,7 +81,7 @@ public static partial class CLSID
                 0xB9,
                 0x33,
                 0x56
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

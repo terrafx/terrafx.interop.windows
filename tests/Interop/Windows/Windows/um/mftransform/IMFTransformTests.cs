@@ -19,32 +19,4 @@ public static unsafe partial class IMFTransformTests
     {
         Assert.That(typeof(IMFTransform).GUID, Is.EqualTo(IID_IMFTransform));
     }
-
-    /// <summary>Validates that the <see cref="IMFTransform" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTransform>(), Is.EqualTo(sizeof(IMFTransform)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTransform).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTransform" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTransform), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTransform), Is.EqualTo(4));
-        }
-    }
 }

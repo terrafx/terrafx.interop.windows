@@ -14,5 +14,5 @@ public unsafe partial struct CALPOLESTR
 
     /// <include file='CALPOLESTR.xml' path='doc/member[@name="CALPOLESTR.pElems"]/*' />
     [NativeTypeName("LPOLESTR *")]
-    public ushort** pElems;
+    public char** pElems;
 }

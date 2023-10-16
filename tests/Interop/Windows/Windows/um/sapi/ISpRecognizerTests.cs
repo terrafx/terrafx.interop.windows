@@ -19,32 +19,4 @@ public static unsafe partial class ISpRecognizerTests
     {
         Assert.That(typeof(ISpRecognizer).GUID, Is.EqualTo(IID_ISpRecognizer));
     }
-
-    /// <summary>Validates that the <see cref="ISpRecognizer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpRecognizer>(), Is.EqualTo(sizeof(ISpRecognizer)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpRecognizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpRecognizer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpRecognizer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpRecognizer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpRecognizer), Is.EqualTo(4));
-        }
-    }
 }

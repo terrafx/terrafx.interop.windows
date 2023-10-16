@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LM_OWF_PASSWORD" /> struct.</summary>
 public static unsafe partial class LM_OWF_PASSWORDTests
 {
-    /// <summary>Validates that the <see cref="LM_OWF_PASSWORD" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LM_OWF_PASSWORD>(), Is.EqualTo(sizeof(LM_OWF_PASSWORD)));
-    }
-
-    /// <summary>Validates that the <see cref="LM_OWF_PASSWORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LM_OWF_PASSWORD).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LM_OWF_PASSWORD" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(LM_OWF_PASSWORD), Is.EqualTo(16));
-    }
 }

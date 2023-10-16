@@ -19,32 +19,4 @@ public static unsafe partial class ITfFnReconversionTests
     {
         Assert.That(typeof(ITfFnReconversion).GUID, Is.EqualTo(IID_ITfFnReconversion));
     }
-
-    /// <summary>Validates that the <see cref="ITfFnReconversion" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfFnReconversion>(), Is.EqualTo(sizeof(ITfFnReconversion)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnReconversion" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfFnReconversion).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnReconversion" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfFnReconversion), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfFnReconversion), Is.EqualTo(4));
-        }
-    }
 }

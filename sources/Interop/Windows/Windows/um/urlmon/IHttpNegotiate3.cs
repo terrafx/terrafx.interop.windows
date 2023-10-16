@@ -25,7 +25,7 @@ public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHttpNegotiate3*, Guid*, void**, int>)(lpVtbl[0]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHttpNegotiate3*, Guid*, void**, int>)(lpVtbl[0]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHttpNegotiate3*, uint>)(lpVtbl[1]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpNegotiate3*, uint>)(lpVtbl[1]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,23 +43,23 @@ public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHttpNegotiate3*, uint>)(lpVtbl[2]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpNegotiate3*, uint>)(lpVtbl[2]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IHttpNegotiate.BeginningTransaction" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT BeginningTransaction([NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("LPCWSTR")] ushort* szHeaders, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalHeaders)
+    public HRESULT BeginningTransaction([NativeTypeName("LPCWSTR")] char* szURL, [NativeTypeName("LPCWSTR")] char* szHeaders, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPWSTR *")] char** pszAdditionalHeaders)
     {
-        return ((delegate* unmanaged<IHttpNegotiate3*, ushort*, ushort*, uint, ushort**, int>)(lpVtbl[3]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), szURL, szHeaders, dwReserved, pszAdditionalHeaders);
+        return ((delegate* unmanaged[MemberFunction]<IHttpNegotiate3*, char*, char*, uint, char**, int>)(lpVtbl[3]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), szURL, szHeaders, dwReserved, pszAdditionalHeaders);
     }
 
     /// <inheritdoc cref="IHttpNegotiate.OnResponse" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OnResponse([NativeTypeName("DWORD")] uint dwResponseCode, [NativeTypeName("LPCWSTR")] ushort* szResponseHeaders, [NativeTypeName("LPCWSTR")] ushort* szRequestHeaders, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalRequestHeaders)
+    public HRESULT OnResponse([NativeTypeName("DWORD")] uint dwResponseCode, [NativeTypeName("LPCWSTR")] char* szResponseHeaders, [NativeTypeName("LPCWSTR")] char* szRequestHeaders, [NativeTypeName("LPWSTR *")] char** pszAdditionalRequestHeaders)
     {
-        return ((delegate* unmanaged<IHttpNegotiate3*, uint, ushort*, ushort*, ushort**, int>)(lpVtbl[4]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), dwResponseCode, szResponseHeaders, szRequestHeaders, pszAdditionalRequestHeaders);
+        return ((delegate* unmanaged[MemberFunction]<IHttpNegotiate3*, uint, char*, char*, char**, int>)(lpVtbl[4]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), dwResponseCode, szResponseHeaders, szRequestHeaders, pszAdditionalRequestHeaders);
     }
 
     /// <inheritdoc cref="IHttpNegotiate2.GetRootSecurityId" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetRootSecurityId(byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
     {
-        return ((delegate* unmanaged<IHttpNegotiate3*, byte*, uint*, nuint, int>)(lpVtbl[5]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), pbSecurityId, pcbSecurityId, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IHttpNegotiate3*, byte*, uint*, nuint, int>)(lpVtbl[5]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), pbSecurityId, pcbSecurityId, dwReserved);
     }
 
     /// <include file='IHttpNegotiate3.xml' path='doc/member[@name="IHttpNegotiate3.GetSerializedClientCertContext"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetSerializedClientCertContext(byte** ppbCert, [NativeTypeName("DWORD *")] uint* pcbCert)
     {
-        return ((delegate* unmanaged<IHttpNegotiate3*, byte**, uint*, int>)(lpVtbl[6]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), ppbCert, pcbCert);
+        return ((delegate* unmanaged[MemberFunction]<IHttpNegotiate3*, byte**, uint*, int>)(lpVtbl[6]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), ppbCert, pcbCert);
     }
 
     public interface Interface : IHttpNegotiate2.Interface
@@ -88,24 +88,24 @@ public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, ushort**, int> BeginningTransaction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, uint, char**, int> BeginningTransaction;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, ushort**, int> OnResponse;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, char*, char**, int> OnResponse;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD *, DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint*, nuint, int> GetRootSecurityId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint*, nuint, int> GetRootSecurityId;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetSerializedClientCertContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, int> GetSerializedClientCertContext;
     }
 }

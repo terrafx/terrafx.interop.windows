@@ -29,7 +29,7 @@ public unsafe partial struct TTTOOLINFOW
 
     /// <include file='TTTOOLINFOW.xml' path='doc/member[@name="TTTOOLINFOW.lpszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszText;
+    public char* lpszText;
 
     /// <include file='TTTOOLINFOW.xml' path='doc/member[@name="TTTOOLINFOW.lParam"]/*' />
     public LPARAM lParam;

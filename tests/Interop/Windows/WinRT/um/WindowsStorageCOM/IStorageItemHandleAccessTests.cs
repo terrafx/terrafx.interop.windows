@@ -21,32 +21,4 @@ public static unsafe partial class IStorageItemHandleAccessTests
     {
         Assert.That(typeof(IStorageItemHandleAccess).GUID, Is.EqualTo(IID_IStorageItemHandleAccess));
     }
-
-    /// <summary>Validates that the <see cref="IStorageItemHandleAccess" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IStorageItemHandleAccess>(), Is.EqualTo(sizeof(IStorageItemHandleAccess)));
-    }
-
-    /// <summary>Validates that the <see cref="IStorageItemHandleAccess" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IStorageItemHandleAccess).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IStorageItemHandleAccess" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IStorageItemHandleAccess), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IStorageItemHandleAccess), Is.EqualTo(4));
-        }
-    }
 }

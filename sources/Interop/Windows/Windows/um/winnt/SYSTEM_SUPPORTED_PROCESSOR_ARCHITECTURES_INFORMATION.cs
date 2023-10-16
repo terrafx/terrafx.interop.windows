@@ -17,7 +17,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
     public uint Machine
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0xFFFFu;
         }
@@ -34,7 +34,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
     public uint KernelMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 16) & 0x1u;
         }
@@ -51,7 +51,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
     public uint UserMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 17) & 0x1u;
         }
@@ -68,7 +68,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
     public uint Native
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 18) & 0x1u;
         }
@@ -85,7 +85,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
     public uint Process
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 19) & 0x1u;
         }
@@ -102,7 +102,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
     public uint WoW64Container
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 20) & 0x1u;
         }
@@ -119,7 +119,7 @@ public partial struct SYSTEM_SUPPORTED_PROCESSOR_ARCHITECTURES_INFORMATION
     public uint ReservedZero0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 21) & 0x7FFu;
         }

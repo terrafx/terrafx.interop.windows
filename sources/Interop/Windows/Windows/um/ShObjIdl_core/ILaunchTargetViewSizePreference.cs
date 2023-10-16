@@ -25,7 +25,7 @@ public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetView
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILaunchTargetViewSizePreference*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetView
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, uint>)(lpVtbl[1]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILaunchTargetViewSizePreference*, uint>)(lpVtbl[1]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetView
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, uint>)(lpVtbl[2]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILaunchTargetViewSizePreference*, uint>)(lpVtbl[2]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILaunchTargetViewSizePreference.xml' path='doc/member[@name="ILaunchTargetViewSizePreference.GetTargetViewSizePreference"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetView
     [VtblIndex(3)]
     public HRESULT GetTargetViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch)
     {
-        return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int>)(lpVtbl[3]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), targetSizeOnLaunch);
+        return ((delegate* unmanaged[MemberFunction]<ILaunchTargetViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int>)(lpVtbl[3]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), targetSizeOnLaunch);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetView
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (APPLICATION_VIEW_SIZE_PREFERENCE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetTargetViewSizePreference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetTargetViewSizePreference;
     }
 }

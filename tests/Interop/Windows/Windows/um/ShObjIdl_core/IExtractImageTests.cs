@@ -19,32 +19,4 @@ public static unsafe partial class IExtractImageTests
     {
         Assert.That(typeof(IExtractImage).GUID, Is.EqualTo(IID_IExtractImage));
     }
-
-    /// <summary>Validates that the <see cref="IExtractImage" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IExtractImage>(), Is.EqualTo(sizeof(IExtractImage)));
-    }
-
-    /// <summary>Validates that the <see cref="IExtractImage" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IExtractImage).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IExtractImage" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IExtractImage), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IExtractImage), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="BlackInformation" /> struct.</summary>
 public static unsafe partial class BlackInformationTests
 {
-    /// <summary>Validates that the <see cref="BlackInformation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BlackInformation>(), Is.EqualTo(sizeof(BlackInformation)));
-    }
-
-    /// <summary>Validates that the <see cref="BlackInformation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BlackInformation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BlackInformation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BlackInformation), Is.EqualTo(8));
-    }
 }

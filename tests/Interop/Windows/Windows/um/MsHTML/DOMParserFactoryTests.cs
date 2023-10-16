@@ -19,25 +19,4 @@ public static unsafe partial class DOMParserFactoryTests
     {
         Assert.That(typeof(DOMParserFactory).GUID, Is.EqualTo(IID_DOMParserFactory));
     }
-
-    /// <summary>Validates that the <see cref="DOMParserFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMParserFactory>(), Is.EqualTo(sizeof(DOMParserFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMParserFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMParserFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMParserFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMParserFactory), Is.EqualTo(1));
-    }
 }

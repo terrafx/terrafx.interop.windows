@@ -19,32 +19,4 @@ public static unsafe partial class IAMTunerNotificationTests
     {
         Assert.That(typeof(IAMTunerNotification).GUID, Is.EqualTo(IID_IAMTunerNotification));
     }
-
-    /// <summary>Validates that the <see cref="IAMTunerNotification" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMTunerNotification>(), Is.EqualTo(sizeof(IAMTunerNotification)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMTunerNotification" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMTunerNotification).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMTunerNotification" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMTunerNotification), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMTunerNotification), Is.EqualTo(4));
-        }
-    }
 }

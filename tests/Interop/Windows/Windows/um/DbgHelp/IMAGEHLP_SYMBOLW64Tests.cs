@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGEHLP_SYMBOLW64" /> struct.</summary>
 public static unsafe partial class IMAGEHLP_SYMBOLW64Tests
 {
-    /// <summary>Validates that the <see cref="IMAGEHLP_SYMBOLW64" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGEHLP_SYMBOLW64>(), Is.EqualTo(sizeof(IMAGEHLP_SYMBOLW64)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGEHLP_SYMBOLW64" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGEHLP_SYMBOLW64).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGEHLP_SYMBOLW64" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGEHLP_SYMBOLW64), Is.EqualTo(32));
-    }
 }

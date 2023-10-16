@@ -14,5 +14,5 @@ public unsafe partial struct PATHNAME_BUFFER
 
     /// <include file='PATHNAME_BUFFER.xml' path='doc/member[@name="PATHNAME_BUFFER.Name"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort Name[1];
+    public fixed char Name[1];
 }

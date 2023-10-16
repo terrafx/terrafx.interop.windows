@@ -42,7 +42,7 @@ public static unsafe partial class Windows
 
         fixed (char* lpLibFileName = "hid.dll")
         {
-            module = LoadLibraryW((ushort*)lpLibFileName);
+            module = LoadLibraryW(lpLibFileName);
         }
 
         if (module == HMODULE.NULL)

@@ -19,32 +19,4 @@ public static unsafe partial class DispDOMCompositionEventTests
     {
         Assert.That(typeof(DispDOMCompositionEvent).GUID, Is.EqualTo(IID_DispDOMCompositionEvent));
     }
-
-    /// <summary>Validates that the <see cref="DispDOMCompositionEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispDOMCompositionEvent>(), Is.EqualTo(sizeof(DispDOMCompositionEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DispDOMCompositionEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispDOMCompositionEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispDOMCompositionEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispDOMCompositionEvent), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispDOMCompositionEvent), Is.EqualTo(4));
-        }
-    }
 }

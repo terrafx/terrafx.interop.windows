@@ -33,7 +33,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
     public uint MicrosoftSignedOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.MicrosoftSignedOnly;
         }
@@ -49,7 +49,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
     public uint StoreSignedOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.StoreSignedOnly;
         }
@@ -65,7 +65,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
     public uint MitigationOptIn
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.MitigationOptIn;
         }
@@ -81,7 +81,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
     public uint AuditMicrosoftSignedOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditMicrosoftSignedOnly;
         }
@@ -97,7 +97,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
     public uint AuditStoreSignedOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditStoreSignedOnly;
         }
@@ -113,7 +113,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -149,7 +149,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
             public uint MicrosoftSignedOnly
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -166,7 +166,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
             public uint StoreSignedOnly
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -183,7 +183,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
             public uint MitigationOptIn
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -200,7 +200,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
             public uint AuditMicrosoftSignedOnly
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -217,7 +217,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
             public uint AuditStoreSignedOnly
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x1u;
                 }
@@ -234,7 +234,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 5) & 0x7FFFFFFu;
                 }

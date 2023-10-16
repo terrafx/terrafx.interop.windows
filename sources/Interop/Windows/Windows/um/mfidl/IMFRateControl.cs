@@ -25,7 +25,7 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFRateControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFRateControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFRateControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFRateControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFRateControl*, uint>)(lpVtbl[1]))((IMFRateControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRateControl*, uint>)(lpVtbl[1]))((IMFRateControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFRateControl*, uint>)(lpVtbl[2]))((IMFRateControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRateControl*, uint>)(lpVtbl[2]))((IMFRateControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFRateControl.xml' path='doc/member[@name="IMFRateControl.SetRate"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT SetRate(BOOL fThin, float flRate)
     {
-        return ((delegate* unmanaged<IMFRateControl*, BOOL, float, int>)(lpVtbl[3]))((IMFRateControl*)Unsafe.AsPointer(ref this), fThin, flRate);
+        return ((delegate* unmanaged[MemberFunction]<IMFRateControl*, BOOL, float, int>)(lpVtbl[3]))((IMFRateControl*)Unsafe.AsPointer(ref this), fThin, flRate);
     }
 
     /// <include file='IMFRateControl.xml' path='doc/member[@name="IMFRateControl.GetRate"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetRate(BOOL* pfThin, float* pflRate)
     {
-        return ((delegate* unmanaged<IMFRateControl*, BOOL*, float*, int>)(lpVtbl[4]))((IMFRateControl*)Unsafe.AsPointer(ref this), pfThin, pflRate);
+        return ((delegate* unmanaged[MemberFunction]<IMFRateControl*, BOOL*, float*, int>)(lpVtbl[4]))((IMFRateControl*)Unsafe.AsPointer(ref this), pfThin, pflRate);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, float, int> SetRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, float, int> SetRate;
 
         [NativeTypeName("HRESULT (BOOL *, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, float*, int> GetRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, float*, int> GetRate;
     }
 }

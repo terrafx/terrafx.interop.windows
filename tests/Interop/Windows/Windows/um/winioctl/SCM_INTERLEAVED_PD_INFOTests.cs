@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SCM_INTERLEAVED_PD_INFO" /> struct.</summary>
 public static unsafe partial class SCM_INTERLEAVED_PD_INFOTests
 {
-    /// <summary>Validates that the <see cref="SCM_INTERLEAVED_PD_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SCM_INTERLEAVED_PD_INFO>(), Is.EqualTo(sizeof(SCM_INTERLEAVED_PD_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="SCM_INTERLEAVED_PD_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SCM_INTERLEAVED_PD_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SCM_INTERLEAVED_PD_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SCM_INTERLEAVED_PD_INFO), Is.EqualTo(20));
-    }
 }

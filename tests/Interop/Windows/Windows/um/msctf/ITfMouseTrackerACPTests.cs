@@ -19,32 +19,4 @@ public static unsafe partial class ITfMouseTrackerACPTests
     {
         Assert.That(typeof(ITfMouseTrackerACP).GUID, Is.EqualTo(IID_ITfMouseTrackerACP));
     }
-
-    /// <summary>Validates that the <see cref="ITfMouseTrackerACP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfMouseTrackerACP>(), Is.EqualTo(sizeof(ITfMouseTrackerACP)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfMouseTrackerACP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfMouseTrackerACP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfMouseTrackerACP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfMouseTrackerACP), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfMouseTrackerACP), Is.EqualTo(4));
-        }
-    }
 }

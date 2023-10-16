@@ -25,7 +25,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, uint>)(lpVtbl[1]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, uint>)(lpVtbl[1]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, uint>)(lpVtbl[2]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, uint>)(lpVtbl[2]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFVideoProcessorControl.SetBorderColor" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(3)]
     public HRESULT SetBorderColor(MFARGB* pBorderColor)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, MFARGB*, int>)(lpVtbl[3]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pBorderColor);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, MFARGB*, int>)(lpVtbl[3]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pBorderColor);
     }
 
     /// <inheritdoc cref="IMFVideoProcessorControl.SetSourceRectangle" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(4)]
     public HRESULT SetSourceRectangle(RECT* pSrcRect)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, RECT*, int>)(lpVtbl[4]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pSrcRect);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, RECT*, int>)(lpVtbl[4]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pSrcRect);
     }
 
     /// <inheritdoc cref="IMFVideoProcessorControl.SetDestinationRectangle" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(5)]
     public HRESULT SetDestinationRectangle(RECT* pDstRect)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, RECT*, int>)(lpVtbl[5]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pDstRect);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, RECT*, int>)(lpVtbl[5]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pDstRect);
     }
 
     /// <inheritdoc cref="IMFVideoProcessorControl.SetMirror" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(6)]
     public HRESULT SetMirror(MF_VIDEO_PROCESSOR_MIRROR eMirror)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, MF_VIDEO_PROCESSOR_MIRROR, int>)(lpVtbl[6]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), eMirror);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, MF_VIDEO_PROCESSOR_MIRROR, int>)(lpVtbl[6]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), eMirror);
     }
 
     /// <inheritdoc cref="IMFVideoProcessorControl.SetRotation" />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(7)]
     public HRESULT SetRotation(MF_VIDEO_PROCESSOR_ROTATION eRotation)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, MF_VIDEO_PROCESSOR_ROTATION, int>)(lpVtbl[7]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), eRotation);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, MF_VIDEO_PROCESSOR_ROTATION, int>)(lpVtbl[7]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), eRotation);
     }
 
     /// <inheritdoc cref="IMFVideoProcessorControl.SetConstrictionSize" />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(8)]
     public HRESULT SetConstrictionSize(SIZE* pConstrictionSize)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, SIZE*, int>)(lpVtbl[8]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pConstrictionSize);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, SIZE*, int>)(lpVtbl[8]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pConstrictionSize);
     }
 
     /// <inheritdoc cref="IMFVideoProcessorControl2.SetRotationOverride" />
@@ -99,7 +99,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(9)]
     public HRESULT SetRotationOverride(uint uiRotation)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, uint, int>)(lpVtbl[9]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), uiRotation);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, uint, int>)(lpVtbl[9]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), uiRotation);
     }
 
     /// <inheritdoc cref="IMFVideoProcessorControl2.EnableHardwareEffects" />
@@ -107,7 +107,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(10)]
     public HRESULT EnableHardwareEffects(BOOL fEnabled)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, BOOL, int>)(lpVtbl[10]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), fEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, BOOL, int>)(lpVtbl[10]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), fEnabled);
     }
 
     /// <inheritdoc cref="IMFVideoProcessorControl2.GetSupportedHardwareEffects" />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(11)]
     public HRESULT GetSupportedHardwareEffects(uint* puiSupport)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, uint*, int>)(lpVtbl[11]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), puiSupport);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, uint*, int>)(lpVtbl[11]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), puiSupport);
     }
 
     /// <include file='IMFVideoProcessorControl3.xml' path='doc/member[@name="IMFVideoProcessorControl3.GetNaturalOutputType"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(12)]
     public HRESULT GetNaturalOutputType(IMFMediaType** ppType)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, IMFMediaType**, int>)(lpVtbl[12]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), ppType);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, IMFMediaType**, int>)(lpVtbl[12]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), ppType);
     }
 
     /// <include file='IMFVideoProcessorControl3.xml' path='doc/member[@name="IMFVideoProcessorControl3.EnableSphericalVideoProcessing"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(13)]
     public HRESULT EnableSphericalVideoProcessing(BOOL fEnable, MFVideoSphericalFormat eFormat, MFVideoSphericalProjectionMode eProjectionMode)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, BOOL, MFVideoSphericalFormat, MFVideoSphericalProjectionMode, int>)(lpVtbl[13]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), fEnable, eFormat, eProjectionMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, BOOL, MFVideoSphericalFormat, MFVideoSphericalProjectionMode, int>)(lpVtbl[13]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), fEnable, eFormat, eProjectionMode);
     }
 
     /// <include file='IMFVideoProcessorControl3.xml' path='doc/member[@name="IMFVideoProcessorControl3.SetSphericalVideoProperties"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(14)]
     public HRESULT SetSphericalVideoProperties(float X, float Y, float Z, float W, float fieldOfView)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, float, float, float, float, float, int>)(lpVtbl[14]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), X, Y, Z, W, fieldOfView);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, float, float, float, float, float, int>)(lpVtbl[14]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), X, Y, Z, W, fieldOfView);
     }
 
     /// <include file='IMFVideoProcessorControl3.xml' path='doc/member[@name="IMFVideoProcessorControl3.SetOutputDevice"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
     [VtblIndex(15)]
     public HRESULT SetOutputDevice(IUnknown* pOutputDevice)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl3*, IUnknown*, int>)(lpVtbl[15]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pOutputDevice);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl3*, IUnknown*, int>)(lpVtbl[15]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pOutputDevice);
     }
 
     public interface Interface : IMFVideoProcessorControl2.Interface
@@ -169,51 +169,51 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFARGB*, int> SetBorderColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFARGB*, int> SetBorderColor;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetSourceRectangle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetSourceRectangle;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetDestinationRectangle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetDestinationRectangle;
 
         [NativeTypeName("HRESULT (MF_VIDEO_PROCESSOR_MIRROR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_VIDEO_PROCESSOR_MIRROR, int> SetMirror;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_VIDEO_PROCESSOR_MIRROR, int> SetMirror;
 
         [NativeTypeName("HRESULT (MF_VIDEO_PROCESSOR_ROTATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_VIDEO_PROCESSOR_ROTATION, int> SetRotation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_VIDEO_PROCESSOR_ROTATION, int> SetRotation;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, int> SetConstrictionSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, int> SetConstrictionSize;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetRotationOverride;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetRotationOverride;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> EnableHardwareEffects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> EnableHardwareEffects;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSupportedHardwareEffects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSupportedHardwareEffects;
 
         [NativeTypeName("HRESULT (IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaType**, int> GetNaturalOutputType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaType**, int> GetNaturalOutputType;
 
         [NativeTypeName("HRESULT (BOOL, MFVideoSphericalFormat, MFVideoSphericalProjectionMode) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, MFVideoSphericalFormat, MFVideoSphericalProjectionMode, int> EnableSphericalVideoProcessing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, MFVideoSphericalFormat, MFVideoSphericalProjectionMode, int> EnableSphericalVideoProcessing;
 
         [NativeTypeName("HRESULT (float, float, float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, float, int> SetSphericalVideoProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, float, int> SetSphericalVideoProperties;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetOutputDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetOutputDevice;
     }
 }

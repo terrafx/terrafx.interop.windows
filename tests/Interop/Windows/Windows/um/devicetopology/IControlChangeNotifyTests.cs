@@ -19,32 +19,4 @@ public static unsafe partial class IControlChangeNotifyTests
     {
         Assert.That(typeof(IControlChangeNotify).GUID, Is.EqualTo(IID_IControlChangeNotify));
     }
-
-    /// <summary>Validates that the <see cref="IControlChangeNotify" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IControlChangeNotify>(), Is.EqualTo(sizeof(IControlChangeNotify)));
-    }
-
-    /// <summary>Validates that the <see cref="IControlChangeNotify" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IControlChangeNotify).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IControlChangeNotify" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IControlChangeNotify), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IControlChangeNotify), Is.EqualTo(4));
-        }
-    }
 }

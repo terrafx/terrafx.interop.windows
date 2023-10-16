@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EMRCREATEDIBPATTERNBRUSHPT" /> struct.</summary>
 public static unsafe partial class EMRCREATEDIBPATTERNBRUSHPTTests
 {
-    /// <summary>Validates that the <see cref="EMRCREATEDIBPATTERNBRUSHPT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EMRCREATEDIBPATTERNBRUSHPT>(), Is.EqualTo(sizeof(EMRCREATEDIBPATTERNBRUSHPT)));
-    }
-
-    /// <summary>Validates that the <see cref="EMRCREATEDIBPATTERNBRUSHPT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EMRCREATEDIBPATTERNBRUSHPT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EMRCREATEDIBPATTERNBRUSHPT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EMRCREATEDIBPATTERNBRUSHPT), Is.EqualTo(32));
-    }
 }

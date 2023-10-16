@@ -27,7 +27,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, uint>)(lpVtbl[1]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, uint>)(lpVtbl[1]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, uint>)(lpVtbl[2]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, uint>)(lpVtbl[2]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IAppxManifestReader.GetPackageId" />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [VtblIndex(3)]
     public HRESULT GetPackageId(IAppxManifestPackageId** packageId)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, IAppxManifestPackageId**, int>)(lpVtbl[3]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), packageId);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, IAppxManifestPackageId**, int>)(lpVtbl[3]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), packageId);
     }
 
     /// <inheritdoc cref="IAppxManifestReader.GetProperties" />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [VtblIndex(4)]
     public HRESULT GetProperties(IAppxManifestProperties** packageProperties)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, IAppxManifestProperties**, int>)(lpVtbl[4]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), packageProperties);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, IAppxManifestProperties**, int>)(lpVtbl[4]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), packageProperties);
     }
 
     /// <inheritdoc cref="IAppxManifestReader.GetPackageDependencies" />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [VtblIndex(5)]
     public HRESULT GetPackageDependencies(IAppxManifestPackageDependenciesEnumerator** dependencies)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, IAppxManifestPackageDependenciesEnumerator**, int>)(lpVtbl[5]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), dependencies);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, IAppxManifestPackageDependenciesEnumerator**, int>)(lpVtbl[5]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), dependencies);
     }
 
     /// <inheritdoc cref="IAppxManifestReader.GetCapabilities" />
@@ -77,7 +77,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [VtblIndex(6)]
     public HRESULT GetCapabilities(APPX_CAPABILITIES* capabilities)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, APPX_CAPABILITIES*, int>)(lpVtbl[6]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), capabilities);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, APPX_CAPABILITIES*, int>)(lpVtbl[6]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), capabilities);
     }
 
     /// <inheritdoc cref="IAppxManifestReader.GetResources" />
@@ -85,7 +85,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [VtblIndex(7)]
     public HRESULT GetResources(IAppxManifestResourcesEnumerator** resources)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, IAppxManifestResourcesEnumerator**, int>)(lpVtbl[7]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), resources);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, IAppxManifestResourcesEnumerator**, int>)(lpVtbl[7]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), resources);
     }
 
     /// <inheritdoc cref="IAppxManifestReader.GetDeviceCapabilities" />
@@ -93,15 +93,15 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [VtblIndex(8)]
     public HRESULT GetDeviceCapabilities(IAppxManifestDeviceCapabilitiesEnumerator** deviceCapabilities)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, IAppxManifestDeviceCapabilitiesEnumerator**, int>)(lpVtbl[8]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), deviceCapabilities);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, IAppxManifestDeviceCapabilitiesEnumerator**, int>)(lpVtbl[8]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), deviceCapabilities);
     }
 
     /// <inheritdoc cref="IAppxManifestReader.GetPrerequisite" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("UINT64 *")] ulong* value)
+    public HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("UINT64 *")] ulong* value)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, ushort*, ulong*, int>)(lpVtbl[9]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, char*, ulong*, int>)(lpVtbl[9]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), name, value);
     }
 
     /// <inheritdoc cref="IAppxManifestReader.GetApplications" />
@@ -109,7 +109,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [VtblIndex(10)]
     public HRESULT GetApplications(IAppxManifestApplicationsEnumerator** applications)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, IAppxManifestApplicationsEnumerator**, int>)(lpVtbl[10]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), applications);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, IAppxManifestApplicationsEnumerator**, int>)(lpVtbl[10]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), applications);
     }
 
     /// <inheritdoc cref="IAppxManifestReader.GetStream" />
@@ -117,7 +117,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [VtblIndex(11)]
     public HRESULT GetStream(IStream** manifestStream)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, IStream**, int>)(lpVtbl[11]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), manifestStream);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, IStream**, int>)(lpVtbl[11]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), manifestStream);
     }
 
     /// <include file='IAppxManifestReader2.xml' path='doc/member[@name="IAppxManifestReader2.GetQualifiedResources"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
     [VtblIndex(12)]
     public HRESULT GetQualifiedResources(IAppxManifestQualifiedResourcesEnumerator** resources)
     {
-        return ((delegate* unmanaged<IAppxManifestReader2*, IAppxManifestQualifiedResourcesEnumerator**, int>)(lpVtbl[12]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), resources);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestReader2*, IAppxManifestQualifiedResourcesEnumerator**, int>)(lpVtbl[12]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), resources);
     }
 
     public interface Interface : IAppxManifestReader.Interface
@@ -138,42 +138,42 @@ public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestPackageId **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
 
         [NativeTypeName("HRESULT (IAppxManifestProperties **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestProperties**, int> GetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestProperties**, int> GetProperties;
 
         [NativeTypeName("HRESULT (IAppxManifestPackageDependenciesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestPackageDependenciesEnumerator**, int> GetPackageDependencies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestPackageDependenciesEnumerator**, int> GetPackageDependencies;
 
         [NativeTypeName("HRESULT (APPX_CAPABILITIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPX_CAPABILITIES*, int> GetCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPX_CAPABILITIES*, int> GetCapabilities;
 
         [NativeTypeName("HRESULT (IAppxManifestResourcesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestResourcesEnumerator**, int> GetResources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestResourcesEnumerator**, int> GetResources;
 
         [NativeTypeName("HRESULT (IAppxManifestDeviceCapabilitiesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestDeviceCapabilitiesEnumerator**, int> GetDeviceCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestDeviceCapabilitiesEnumerator**, int> GetDeviceCapabilities;
 
         [NativeTypeName("HRESULT (LPCWSTR, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ulong*, int> GetPrerequisite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ulong*, int> GetPrerequisite;
 
         [NativeTypeName("HRESULT (IAppxManifestApplicationsEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestApplicationsEnumerator**, int> GetApplications;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestApplicationsEnumerator**, int> GetApplications;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream**, int> GetStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream**, int> GetStream;
 
         [NativeTypeName("HRESULT (IAppxManifestQualifiedResourcesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestQualifiedResourcesEnumerator**, int> GetQualifiedResources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestQualifiedResourcesEnumerator**, int> GetQualifiedResources;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfEditRecord*, Guid*, void**, int>)(lpVtbl[0]))((ITfEditRecord*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfEditRecord*, Guid*, void**, int>)(lpVtbl[0]))((ITfEditRecord*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfEditRecord*, uint>)(lpVtbl[1]))((ITfEditRecord*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfEditRecord*, uint>)(lpVtbl[1]))((ITfEditRecord*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfEditRecord*, uint>)(lpVtbl[2]))((ITfEditRecord*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfEditRecord*, uint>)(lpVtbl[2]))((ITfEditRecord*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfEditRecord.xml' path='doc/member[@name="ITfEditRecord.GetSelectionStatus"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetSelectionStatus(BOOL* pfChanged)
     {
-        return ((delegate* unmanaged<ITfEditRecord*, BOOL*, int>)(lpVtbl[3]))((ITfEditRecord*)Unsafe.AsPointer(ref this), pfChanged);
+        return ((delegate* unmanaged[MemberFunction]<ITfEditRecord*, BOOL*, int>)(lpVtbl[3]))((ITfEditRecord*)Unsafe.AsPointer(ref this), pfChanged);
     }
 
     /// <include file='ITfEditRecord.xml' path='doc/member[@name="ITfEditRecord.GetTextAndPropertyUpdates"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetTextAndPropertyUpdates([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID **")] Guid** prgProperties, [NativeTypeName("ULONG")] uint cProperties, IEnumTfRanges** ppEnum)
     {
-        return ((delegate* unmanaged<ITfEditRecord*, uint, Guid**, uint, IEnumTfRanges**, int>)(lpVtbl[4]))((ITfEditRecord*)Unsafe.AsPointer(ref this), dwFlags, prgProperties, cProperties, ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfEditRecord*, uint, Guid**, uint, IEnumTfRanges**, int>)(lpVtbl[4]))((ITfEditRecord*)Unsafe.AsPointer(ref this), dwFlags, prgProperties, cProperties, ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetSelectionStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetSelectionStatus;
 
         [NativeTypeName("HRESULT (DWORD, const GUID **, ULONG, IEnumTfRanges **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid**, uint, IEnumTfRanges**, int> GetTextAndPropertyUpdates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid**, uint, IEnumTfRanges**, int> GetTextAndPropertyUpdates;
     }
 }

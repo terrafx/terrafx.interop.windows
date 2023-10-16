@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IP_INTERFACE_INFO" /> struct.</summary>
 public static unsafe partial class IP_INTERFACE_INFOTests
 {
-    /// <summary>Validates that the <see cref="IP_INTERFACE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IP_INTERFACE_INFO>(), Is.EqualTo(sizeof(IP_INTERFACE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="IP_INTERFACE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IP_INTERFACE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IP_INTERFACE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IP_INTERFACE_INFO), Is.EqualTo(264));
-    }
 }

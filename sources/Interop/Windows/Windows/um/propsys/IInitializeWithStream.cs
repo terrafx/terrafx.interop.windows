@@ -25,7 +25,7 @@ public unsafe partial struct IInitializeWithStream : IInitializeWithStream.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInitializeWithStream*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeWithStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeWithStream*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeWithStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInitializeWithStream : IInitializeWithStream.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInitializeWithStream*, uint>)(lpVtbl[1]))((IInitializeWithStream*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInitializeWithStream*, uint>)(lpVtbl[1]))((IInitializeWithStream*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInitializeWithStream : IInitializeWithStream.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInitializeWithStream*, uint>)(lpVtbl[2]))((IInitializeWithStream*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInitializeWithStream*, uint>)(lpVtbl[2]))((IInitializeWithStream*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInitializeWithStream.xml' path='doc/member[@name="IInitializeWithStream.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IInitializeWithStream : IInitializeWithStream.Inter
     [VtblIndex(3)]
     public HRESULT Initialize(IStream* pstream, [NativeTypeName("DWORD")] uint grfMode)
     {
-        return ((delegate* unmanaged<IInitializeWithStream*, IStream*, uint, int>)(lpVtbl[3]))((IInitializeWithStream*)Unsafe.AsPointer(ref this), pstream, grfMode);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeWithStream*, IStream*, uint, int>)(lpVtbl[3]))((IInitializeWithStream*)Unsafe.AsPointer(ref this), pstream, grfMode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IInitializeWithStream : IInitializeWithStream.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, uint, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, uint, int> Initialize;
     }
 }

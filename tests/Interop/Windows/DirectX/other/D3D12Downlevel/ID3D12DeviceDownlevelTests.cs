@@ -19,32 +19,4 @@ public static unsafe partial class ID3D12DeviceDownlevelTests
     {
         Assert.That(typeof(ID3D12DeviceDownlevel).GUID, Is.EqualTo(IID_ID3D12DeviceDownlevel));
     }
-
-    /// <summary>Validates that the <see cref="ID3D12DeviceDownlevel" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID3D12DeviceDownlevel>(), Is.EqualTo(sizeof(ID3D12DeviceDownlevel)));
-    }
-
-    /// <summary>Validates that the <see cref="ID3D12DeviceDownlevel" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID3D12DeviceDownlevel).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID3D12DeviceDownlevel" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID3D12DeviceDownlevel), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID3D12DeviceDownlevel), Is.EqualTo(4));
-        }
-    }
 }

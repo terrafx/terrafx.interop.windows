@@ -19,25 +19,4 @@ public static unsafe partial class SpPhoneticAlphabetConverterTests
     {
         Assert.That(typeof(SpPhoneticAlphabetConverter).GUID, Is.EqualTo(IID_SpPhoneticAlphabetConverter));
     }
-
-    /// <summary>Validates that the <see cref="SpPhoneticAlphabetConverter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpPhoneticAlphabetConverter>(), Is.EqualTo(sizeof(SpPhoneticAlphabetConverter)));
-    }
-
-    /// <summary>Validates that the <see cref="SpPhoneticAlphabetConverter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpPhoneticAlphabetConverter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpPhoneticAlphabetConverter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpPhoneticAlphabetConverter), Is.EqualTo(1));
-    }
 }

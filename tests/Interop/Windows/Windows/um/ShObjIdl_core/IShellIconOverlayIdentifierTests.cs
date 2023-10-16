@@ -19,32 +19,4 @@ public static unsafe partial class IShellIconOverlayIdentifierTests
     {
         Assert.That(typeof(IShellIconOverlayIdentifier).GUID, Is.EqualTo(IID_IShellIconOverlayIdentifier));
     }
-
-    /// <summary>Validates that the <see cref="IShellIconOverlayIdentifier" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellIconOverlayIdentifier>(), Is.EqualTo(sizeof(IShellIconOverlayIdentifier)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellIconOverlayIdentifier" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellIconOverlayIdentifier).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellIconOverlayIdentifier" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellIconOverlayIdentifier), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellIconOverlayIdentifier), Is.EqualTo(4));
-        }
-    }
 }

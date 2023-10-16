@@ -27,7 +27,7 @@ public unsafe partial struct IMFMediaEngineNeedKeyNotify : IMFMediaEngineNeedKey
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaEngineNeedKeyNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineNeedKeyNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineNeedKeyNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineNeedKeyNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMediaEngineNeedKeyNotify : IMFMediaEngineNeedKey
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaEngineNeedKeyNotify*, uint>)(lpVtbl[1]))((IMFMediaEngineNeedKeyNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineNeedKeyNotify*, uint>)(lpVtbl[1]))((IMFMediaEngineNeedKeyNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMediaEngineNeedKeyNotify : IMFMediaEngineNeedKey
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaEngineNeedKeyNotify*, uint>)(lpVtbl[2]))((IMFMediaEngineNeedKeyNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineNeedKeyNotify*, uint>)(lpVtbl[2]))((IMFMediaEngineNeedKeyNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngineNeedKeyNotify.xml' path='doc/member[@name="IMFMediaEngineNeedKeyNotify.NeedKey"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFMediaEngineNeedKeyNotify : IMFMediaEngineNeedKey
     [VtblIndex(3)]
     public void NeedKey([NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb)
     {
-        ((delegate* unmanaged<IMFMediaEngineNeedKeyNotify*, byte*, uint, void>)(lpVtbl[3]))((IMFMediaEngineNeedKeyNotify*)Unsafe.AsPointer(ref this), initData, cb);
+        ((delegate* unmanaged[MemberFunction]<IMFMediaEngineNeedKeyNotify*, byte*, uint, void>)(lpVtbl[3]))((IMFMediaEngineNeedKeyNotify*)Unsafe.AsPointer(ref this), initData, cb);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IMFMediaEngineNeedKeyNotify : IMFMediaEngineNeedKey
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, void> NeedKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, void> NeedKey;
     }
 }

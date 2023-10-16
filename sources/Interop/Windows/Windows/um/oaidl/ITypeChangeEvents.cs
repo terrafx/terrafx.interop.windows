@@ -25,7 +25,7 @@ public unsafe partial struct ITypeChangeEvents : ITypeChangeEvents.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITypeChangeEvents*, Guid*, void**, int>)(lpVtbl[0]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITypeChangeEvents*, Guid*, void**, int>)(lpVtbl[0]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITypeChangeEvents : ITypeChangeEvents.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITypeChangeEvents*, uint>)(lpVtbl[1]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITypeChangeEvents*, uint>)(lpVtbl[1]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,50 +43,50 @@ public unsafe partial struct ITypeChangeEvents : ITypeChangeEvents.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITypeChangeEvents*, uint>)(lpVtbl[2]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITypeChangeEvents*, uint>)(lpVtbl[2]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITypeChangeEvents.xml' path='doc/member[@name="ITypeChangeEvents.RequestTypeChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RequestTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoBefore, [NativeTypeName("LPOLESTR")] ushort* pStrName, int* pfCancel)
+    public HRESULT RequestTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoBefore, [NativeTypeName("LPOLESTR")] char* pStrName, int* pfCancel)
     {
-        return ((delegate* unmanaged<ITypeChangeEvents*, CHANGEKIND, ITypeInfo*, ushort*, int*, int>)(lpVtbl[3]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this), changeKind, pTInfoBefore, pStrName, pfCancel);
+        return ((delegate* unmanaged[MemberFunction]<ITypeChangeEvents*, CHANGEKIND, ITypeInfo*, char*, int*, int>)(lpVtbl[3]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this), changeKind, pTInfoBefore, pStrName, pfCancel);
     }
 
     /// <include file='ITypeChangeEvents.xml' path='doc/member[@name="ITypeChangeEvents.AfterTypeChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AfterTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoAfter, [NativeTypeName("LPOLESTR")] ushort* pStrName)
+    public HRESULT AfterTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoAfter, [NativeTypeName("LPOLESTR")] char* pStrName)
     {
-        return ((delegate* unmanaged<ITypeChangeEvents*, CHANGEKIND, ITypeInfo*, ushort*, int>)(lpVtbl[4]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this), changeKind, pTInfoAfter, pStrName);
+        return ((delegate* unmanaged[MemberFunction]<ITypeChangeEvents*, CHANGEKIND, ITypeInfo*, char*, int>)(lpVtbl[4]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this), changeKind, pTInfoAfter, pStrName);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RequestTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoBefore, [NativeTypeName("LPOLESTR")] ushort* pStrName, int* pfCancel);
+        HRESULT RequestTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoBefore, [NativeTypeName("LPOLESTR")] char* pStrName, int* pfCancel);
 
         [VtblIndex(4)]
-        HRESULT AfterTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoAfter, [NativeTypeName("LPOLESTR")] ushort* pStrName);
+        HRESULT AfterTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoAfter, [NativeTypeName("LPOLESTR")] char* pStrName);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CHANGEKIND, ITypeInfo *, LPOLESTR, INT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CHANGEKIND, ITypeInfo*, ushort*, int*, int> RequestTypeChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CHANGEKIND, ITypeInfo*, char*, int*, int> RequestTypeChange;
 
         [NativeTypeName("HRESULT (CHANGEKIND, ITypeInfo *, LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CHANGEKIND, ITypeInfo*, ushort*, int> AfterTypeChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CHANGEKIND, ITypeInfo*, char*, int> AfterTypeChange;
     }
 }

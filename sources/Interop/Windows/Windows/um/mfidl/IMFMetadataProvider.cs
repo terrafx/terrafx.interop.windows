@@ -25,7 +25,7 @@ public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMetadataProvider*, Guid*, void**, int>)(lpVtbl[0]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadataProvider*, Guid*, void**, int>)(lpVtbl[0]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMetadataProvider*, uint>)(lpVtbl[1]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadataProvider*, uint>)(lpVtbl[1]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMetadataProvider*, uint>)(lpVtbl[2]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadataProvider*, uint>)(lpVtbl[2]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMetadataProvider.xml' path='doc/member[@name="IMFMetadataProvider.GetMFMetadata"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
     [VtblIndex(3)]
     public HRESULT GetMFMetadata(IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("DWORD")] uint dwStreamIdentifier, [NativeTypeName("DWORD")] uint dwFlags, IMFMetadata** ppMFMetadata)
     {
-        return ((delegate* unmanaged<IMFMetadataProvider*, IMFPresentationDescriptor*, uint, uint, IMFMetadata**, int>)(lpVtbl[3]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this), pPresentationDescriptor, dwStreamIdentifier, dwFlags, ppMFMetadata);
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadataProvider*, IMFPresentationDescriptor*, uint, uint, IMFMetadata**, int>)(lpVtbl[3]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this), pPresentationDescriptor, dwStreamIdentifier, dwFlags, ppMFMetadata);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFPresentationDescriptor *, DWORD, DWORD, IMFMetadata **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationDescriptor*, uint, uint, IMFMetadata**, int> GetMFMetadata;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationDescriptor*, uint, uint, IMFMetadata**, int> GetMFMetadata;
     }
 }

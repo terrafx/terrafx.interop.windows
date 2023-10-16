@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="INPUT_RECORD" /> struct.</summary>
 public static unsafe partial class INPUT_RECORDTests
 {
-    /// <summary>Validates that the <see cref="INPUT_RECORD" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<INPUT_RECORD>(), Is.EqualTo(sizeof(INPUT_RECORD)));
-    }
-
-    /// <summary>Validates that the <see cref="INPUT_RECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(INPUT_RECORD).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="INPUT_RECORD" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(INPUT_RECORD), Is.EqualTo(20));
-    }
 }

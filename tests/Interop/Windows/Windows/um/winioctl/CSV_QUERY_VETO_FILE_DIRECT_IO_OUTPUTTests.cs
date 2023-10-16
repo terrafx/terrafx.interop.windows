@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct.</summary>
 public static unsafe partial class CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUTTests
 {
-    /// <summary>Validates that the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT>(), Is.EqualTo(sizeof(CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT), Is.EqualTo(528));
-    }
 }

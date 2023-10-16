@@ -19,25 +19,4 @@ public static unsafe partial class FXEQTests
     {
         Assert.That(typeof(FXEQ).GUID, Is.EqualTo(CLSID_FXEQ));
     }
-
-    /// <summary>Validates that the <see cref="FXEQ" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FXEQ>(), Is.EqualTo(sizeof(FXEQ)));
-    }
-
-    /// <summary>Validates that the <see cref="FXEQ" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FXEQ).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FXEQ" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FXEQ), Is.EqualTo(1));
-    }
 }

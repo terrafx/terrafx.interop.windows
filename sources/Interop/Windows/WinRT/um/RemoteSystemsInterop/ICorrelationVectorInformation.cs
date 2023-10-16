@@ -26,7 +26,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICorrelationVectorInformation*, Guid*, void**, int>)(lpVtbl[0]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorInformation*, Guid*, void**, int>)(lpVtbl[0]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICorrelationVectorInformation*, uint>)(lpVtbl[1]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorInformation*, uint>)(lpVtbl[1]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICorrelationVectorInformation*, uint>)(lpVtbl[2]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorInformation*, uint>)(lpVtbl[2]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<ICorrelationVectorInformation*, uint*, Guid**, int>)(lpVtbl[3]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorInformation*, uint*, Guid**, int>)(lpVtbl[3]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[4]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[4]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<ICorrelationVectorInformation*, TrustLevel*, int>)(lpVtbl[5]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorInformation*, TrustLevel*, int>)(lpVtbl[5]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='ICorrelationVectorInformation.xml' path='doc/member[@name="ICorrelationVectorInformation.get_LastCorrelationVectorForThread"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
     [VtblIndex(6)]
     public HRESULT get_LastCorrelationVectorForThread(HSTRING* cv)
     {
-        return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[6]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[6]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
     }
 
     /// <include file='ICorrelationVectorInformation.xml' path='doc/member[@name="ICorrelationVectorInformation.get_NextCorrelationVectorForThread"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
     [VtblIndex(7)]
     public HRESULT get_NextCorrelationVectorForThread(HSTRING* cv)
     {
-        return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[7]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[7]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
     }
 
     /// <include file='ICorrelationVectorInformation.xml' path='doc/member[@name="ICorrelationVectorInformation.put_NextCorrelationVectorForThread"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
     [VtblIndex(8)]
     public HRESULT put_NextCorrelationVectorForThread(HSTRING cv)
     {
-        return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING, int>)(lpVtbl[8]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
+        return ((delegate* unmanaged[MemberFunction]<ICorrelationVectorInformation*, HSTRING, int>)(lpVtbl[8]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
     }
 
     public interface Interface : IInspectable.Interface
@@ -111,30 +111,30 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> get_LastCorrelationVectorForThread;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_LastCorrelationVectorForThread;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> get_NextCorrelationVectorForThread;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_NextCorrelationVectorForThread;
 
         [NativeTypeName("HRESULT (HSTRING) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, int> put_NextCorrelationVectorForThread;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_NextCorrelationVectorForThread;
     }
 }

@@ -14,45 +14,45 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysAllocString"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
     [return: NativeTypeName("BSTR")]
-    public static extern ushort* SysAllocString([NativeTypeName("const OLECHAR *")] ushort* psz);
+    public static extern char* SysAllocString([NativeTypeName("const OLECHAR *")] char* psz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysReAllocString"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern int SysReAllocString([NativeTypeName("BSTR *")] ushort** pbstr, [NativeTypeName("const OLECHAR *")] ushort* psz);
+    public static extern int SysReAllocString([NativeTypeName("BSTR *")] char** pbstr, [NativeTypeName("const OLECHAR *")] char* psz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysAllocStringLen"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
     [return: NativeTypeName("BSTR")]
-    public static extern ushort* SysAllocStringLen([NativeTypeName("const OLECHAR *")] ushort* strIn, uint ui);
+    public static extern char* SysAllocStringLen([NativeTypeName("const OLECHAR *")] char* strIn, uint ui);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysReAllocStringLen"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern int SysReAllocStringLen([NativeTypeName("BSTR *")] ushort** pbstr, [NativeTypeName("const OLECHAR *")] ushort* psz, [NativeTypeName("unsigned int")] uint len);
+    public static extern int SysReAllocStringLen([NativeTypeName("BSTR *")] char** pbstr, [NativeTypeName("const OLECHAR *")] char* psz, [NativeTypeName("unsigned int")] uint len);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysAddRefString"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT SysAddRefString([NativeTypeName("BSTR")] ushort* bstrString);
+    public static extern HRESULT SysAddRefString([NativeTypeName("BSTR")] char* bstrString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysReleaseString"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern void SysReleaseString([NativeTypeName("BSTR")] ushort* bstrString);
+    public static extern void SysReleaseString([NativeTypeName("BSTR")] char* bstrString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysFreeString"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern void SysFreeString([NativeTypeName("BSTR")] ushort* bstrString);
+    public static extern void SysFreeString([NativeTypeName("BSTR")] char* bstrString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysStringLen"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern uint SysStringLen([NativeTypeName("BSTR")] ushort* pbstr);
+    public static extern uint SysStringLen([NativeTypeName("BSTR")] char* pbstr);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysStringByteLen"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern uint SysStringByteLen([NativeTypeName("BSTR")] ushort* bstr);
+    public static extern uint SysStringByteLen([NativeTypeName("BSTR")] char* bstr);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SysAllocStringByteLen"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
     [return: NativeTypeName("BSTR")]
-    public static extern ushort* SysAllocStringByteLen([NativeTypeName("LPCSTR")] sbyte* psz, uint len);
+    public static extern char* SysAllocStringByteLen([NativeTypeName("LPCSTR")] sbyte* psz, uint len);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DosDateTimeToVariantTime"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -224,11 +224,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VectorFromBstr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VectorFromBstr([NativeTypeName("BSTR")] ushort* bstr, SAFEARRAY** ppsa);
+    public static extern HRESULT VectorFromBstr([NativeTypeName("BSTR")] char* bstr, SAFEARRAY** ppsa);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.BstrFromVector"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT BstrFromVector(SAFEARRAY* psa, [NativeTypeName("BSTR *")] ushort** pbstr);
+    public static extern HRESULT BstrFromVector(SAFEARRAY* psa, [NativeTypeName("BSTR *")] char** pbstr);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI1FromI2"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -260,7 +260,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI1FromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarUI1FromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, byte* pbOut);
+    public static extern HRESULT VarUI1FromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, byte* pbOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI1FromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -320,7 +320,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI2FromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarI2FromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, short* psOut);
+    public static extern HRESULT VarI2FromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, short* psOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI2FromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -376,7 +376,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI4FromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarI4FromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("LONG *")] int* plOut);
+    public static extern HRESULT VarI4FromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("LONG *")] int* plOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI4FromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -428,7 +428,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI8FromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarI8FromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("LONG64 *")] long* pi64Out);
+    public static extern HRESULT VarI8FromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("LONG64 *")] long* pi64Out);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI8FromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -488,7 +488,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarR4FromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarR4FromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, float* pfltOut);
+    public static extern HRESULT VarR4FromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, float* pfltOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarR4FromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -548,7 +548,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarR8FromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarR8FromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, double* pdblOut);
+    public static extern HRESULT VarR8FromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, double* pdblOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarR8FromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -608,7 +608,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarDateFromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarDateFromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("DATE *")] double* pdateOut);
+    public static extern HRESULT VarDateFromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("DATE *")] double* pdateOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarDateFromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -668,7 +668,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarCyFromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarCyFromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, CY* pcyOut);
+    public static extern HRESULT VarCyFromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, CY* pcyOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarCyFromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -700,63 +700,63 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromUI1"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromUI1(byte bVal, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromUI1(byte bVal, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromI2"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromI2(short iVal, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromI2(short iVal, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromI4"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromI4([NativeTypeName("LONG")] int lIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromI4([NativeTypeName("LONG")] int lIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromI8"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromI8([NativeTypeName("LONG64")] long i64In, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromI8([NativeTypeName("LONG64")] long i64In, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromR4"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromR4(float fltIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromR4(float fltIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromR8"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromR8(double dblIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromR8(double dblIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromCy"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromCy(CY cyIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromCy(CY cyIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromDate"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromDate([NativeTypeName("DATE")] double dateIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromDate([NativeTypeName("DATE")] double dateIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromDisp(IDispatch* pdispIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromDisp(IDispatch* pdispIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromBool"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromBool([NativeTypeName("VARIANT_BOOL")] short boolIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromBool([NativeTypeName("VARIANT_BOOL")] short boolIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromI1"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromI1([NativeTypeName("CHAR")] sbyte cIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromI1([NativeTypeName("CHAR")] sbyte cIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromUI2"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromUI2(ushort uiIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromUI2(ushort uiIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromUI4"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromUI4([NativeTypeName("ULONG")] uint ulIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromUI4([NativeTypeName("ULONG")] uint ulIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromUI8"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromUI8([NativeTypeName("ULONG64")] ulong ui64In, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromUI8([NativeTypeName("ULONG64")] ulong ui64In, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromDec"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrFromDec([NativeTypeName("const DECIMAL *")] DECIMAL* pdecIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarBstrFromDec([NativeTypeName("const DECIMAL *")] DECIMAL* pdecIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBoolFromUI1"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -792,7 +792,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBoolFromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBoolFromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("VARIANT_BOOL *")] short* pboolOut);
+    public static extern HRESULT VarBoolFromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("VARIANT_BOOL *")] short* pboolOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBoolFromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -852,7 +852,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI1FromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarI1FromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("CHAR *")] sbyte* pcOut);
+    public static extern HRESULT VarI1FromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("CHAR *")] sbyte* pcOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI1FromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -912,7 +912,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI2FromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarUI2FromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, ushort* puiOut);
+    public static extern HRESULT VarUI2FromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, ushort* puiOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI2FromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -972,7 +972,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI4FromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarUI4FromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulOut);
+    public static extern HRESULT VarUI4FromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI4FromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1028,7 +1028,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI8FromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarUI8FromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("ULONG64 *")] ulong* pi64Out);
+    public static extern HRESULT VarUI8FromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("ULONG64 *")] ulong* pi64Out);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI8FromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1088,7 +1088,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarDecFromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarDecFromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, DECIMAL* pdecOut);
+    public static extern HRESULT VarDecFromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, DECIMAL* pdecOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarDecFromDisp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1116,7 +1116,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarParseNumFromStr"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarParseNumFromStr([NativeTypeName("LPCOLESTR")] ushort* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, NUMPARSE* pnumprs, byte* rgbDig);
+    public static extern HRESULT VarParseNumFromStr([NativeTypeName("LPCOLESTR")] char* strIn, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags, NUMPARSE* pnumprs, byte* rgbDig);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarNumFromParseNum"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1302,11 +1302,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrCat"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrCat([NativeTypeName("BSTR")] ushort* bstrLeft, [NativeTypeName("BSTR")] ushort* bstrRight, [NativeTypeName("LPBSTR")] ushort** pbstrResult);
+    public static extern HRESULT VarBstrCat([NativeTypeName("BSTR")] char* bstrLeft, [NativeTypeName("BSTR")] char* bstrRight, [NativeTypeName("LPBSTR")] char** pbstrResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrCmp"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarBstrCmp([NativeTypeName("BSTR")] ushort* bstrLeft, [NativeTypeName("BSTR")] ushort* bstrRight, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags);
+    public static extern HRESULT VarBstrCmp([NativeTypeName("BSTR")] char* bstrLeft, [NativeTypeName("BSTR")] char* bstrRight, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ULONG")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarR8Pow"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1334,43 +1334,43 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAltMonthNames"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT GetAltMonthNames([NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPOLESTR **")] ushort*** prgp);
+    public static extern HRESULT GetAltMonthNames([NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPOLESTR **")] char*** prgp);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarFormat"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarFormat([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, [NativeTypeName("LPOLESTR")] ushort* pstrFormat, int iFirstDay, int iFirstWeek, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarFormat([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, [NativeTypeName("LPOLESTR")] char* pstrFormat, int iFirstDay, int iFirstWeek, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarFormatDateTime"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarFormatDateTime([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, int iNamedFormat, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarFormatDateTime([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, int iNamedFormat, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarFormatNumber"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarFormatNumber([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, int iNumDig, int iIncLead, int iUseParens, int iGroup, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarFormatNumber([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, int iNumDig, int iIncLead, int iUseParens, int iGroup, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarFormatPercent"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarFormatPercent([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, int iNumDig, int iIncLead, int iUseParens, int iGroup, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarFormatPercent([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, int iNumDig, int iIncLead, int iUseParens, int iGroup, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarFormatCurrency"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarFormatCurrency([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, int iNumDig, int iIncLead, int iUseParens, int iGroup, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarFormatCurrency([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, int iNumDig, int iIncLead, int iUseParens, int iGroup, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarWeekdayName"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarWeekdayName(int iWeekday, int fAbbrev, int iFirstDay, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarWeekdayName(int iWeekday, int fAbbrev, int iFirstDay, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarMonthName"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarMonthName(int iMonth, int fAbbrev, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut);
+    public static extern HRESULT VarMonthName(int iMonth, int fAbbrev, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarFormatFromTokens"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarFormatFromTokens([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, [NativeTypeName("LPOLESTR")] ushort* pstrFormat, [NativeTypeName("LPBYTE")] byte* pbTokCur, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] ushort** pbstrOut, [NativeTypeName("LCID")] uint lcid);
+    public static extern HRESULT VarFormatFromTokens([NativeTypeName("LPVARIANT")] VARIANT* pvarIn, [NativeTypeName("LPOLESTR")] char* pstrFormat, [NativeTypeName("LPBYTE")] byte* pbTokCur, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("BSTR *")] char** pbstrOut, [NativeTypeName("LCID")] uint lcid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarTokenizeFormatString"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarTokenizeFormatString([NativeTypeName("LPOLESTR")] ushort* pstrFormat, [NativeTypeName("LPBYTE")] byte* rgbTok, int cbTok, int iFirstDay, int iFirstWeek, [NativeTypeName("LCID")] uint lcid, int* pcbActual);
+    public static extern HRESULT VarTokenizeFormatString([NativeTypeName("LPOLESTR")] char* pstrFormat, [NativeTypeName("LPBYTE")] byte* rgbTok, int cbTok, int iFirstDay, int iFirstWeek, [NativeTypeName("LCID")] uint lcid, int* pcbActual);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LHashValOfNameSysA"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1380,15 +1380,15 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LHashValOfNameSys"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
-    public static extern uint LHashValOfNameSys(SYSKIND syskind, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("const OLECHAR *")] ushort* szName);
+    public static extern uint LHashValOfNameSys(SYSKIND syskind, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("const OLECHAR *")] char* szName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadTypeLib"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT LoadTypeLib([NativeTypeName("LPCOLESTR")] ushort* szFile, ITypeLib** pptlib);
+    public static extern HRESULT LoadTypeLib([NativeTypeName("LPCOLESTR")] char* szFile, ITypeLib** pptlib);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadTypeLibEx"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT LoadTypeLibEx([NativeTypeName("LPCOLESTR")] ushort* szFile, REGKIND regkind, ITypeLib** pptlib);
+    public static extern HRESULT LoadTypeLibEx([NativeTypeName("LPCOLESTR")] char* szFile, REGKIND regkind, ITypeLib** pptlib);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadRegTypeLib"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1396,11 +1396,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.QueryPathOfRegTypeLib"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT QueryPathOfRegTypeLib([NativeTypeName("const GUID &")] Guid* guid, ushort wMaj, ushort wMin, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPBSTR")] ushort** lpbstrPathName);
+    public static extern HRESULT QueryPathOfRegTypeLib([NativeTypeName("const GUID &")] Guid* guid, ushort wMaj, ushort wMin, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPBSTR")] char** lpbstrPathName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterTypeLib"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT RegisterTypeLib(ITypeLib* ptlib, [NativeTypeName("LPCOLESTR")] ushort* szFullPath, [NativeTypeName("LPCOLESTR")] ushort* szHelpDir);
+    public static extern HRESULT RegisterTypeLib(ITypeLib* ptlib, [NativeTypeName("LPCOLESTR")] char* szFullPath, [NativeTypeName("LPCOLESTR")] char* szHelpDir);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnRegisterTypeLib"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1408,7 +1408,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterTypeLibForUser"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT RegisterTypeLibForUser(ITypeLib* ptlib, [NativeTypeName("OLECHAR *")] ushort* szFullPath, [NativeTypeName("OLECHAR *")] ushort* szHelpDir);
+    public static extern HRESULT RegisterTypeLibForUser(ITypeLib* ptlib, [NativeTypeName("OLECHAR *")] char* szFullPath, [NativeTypeName("OLECHAR *")] char* szHelpDir);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnRegisterTypeLibForUser"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1416,11 +1416,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateTypeLib"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT CreateTypeLib(SYSKIND syskind, [NativeTypeName("LPCOLESTR")] ushort* szFile, ICreateTypeLib** ppctlib);
+    public static extern HRESULT CreateTypeLib(SYSKIND syskind, [NativeTypeName("LPCOLESTR")] char* szFile, ICreateTypeLib** ppctlib);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateTypeLib2"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT CreateTypeLib2(SYSKIND syskind, [NativeTypeName("LPCOLESTR")] ushort* szFile, ICreateTypeLib2** ppctlib);
+    public static extern HRESULT CreateTypeLib2(SYSKIND syskind, [NativeTypeName("LPCOLESTR")] char* szFile, ICreateTypeLib2** ppctlib);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DispGetParam"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1428,7 +1428,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DispGetIDsOfNames"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT DispGetIDsOfNames(ITypeInfo* ptinfo, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("DISPID *")] int* rgdispid);
+    public static extern HRESULT DispGetIDsOfNames(ITypeInfo* ptinfo, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("DISPID *")] int* rgdispid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DispInvoke"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
@@ -1609,10 +1609,10 @@ public static unsafe partial class Windows
     public static delegate*<uint, CY*, HRESULT> VarCyFromUint => &VarCyFromUI4;
 
     [NativeTypeName("#define VarBstrFromInt VarBstrFromI4")]
-    public static delegate*<int, uint, uint, ushort**, HRESULT> VarBstrFromInt => &VarBstrFromI4;
+    public static delegate*<int, uint, uint, char**, HRESULT> VarBstrFromInt => &VarBstrFromI4;
 
     [NativeTypeName("#define VarBstrFromUint VarBstrFromUI4")]
-    public static delegate*<uint, uint, uint, ushort**, HRESULT> VarBstrFromUint => &VarBstrFromUI4;
+    public static delegate*<uint, uint, uint, char**, HRESULT> VarBstrFromUint => &VarBstrFromUI4;
 
     [NativeTypeName("#define VarBoolFromInt VarBoolFromI4")]
     public static delegate*<int, short*, HRESULT> VarBoolFromInt => &VarBoolFromI4;
@@ -1663,7 +1663,7 @@ public static unsafe partial class Windows
     public static delegate*<CY, int*, HRESULT> VarIntFromCy => &VarI4FromCy;
 
     [NativeTypeName("#define VarIntFromStr VarI4FromStr")]
-    public static delegate*<ushort*, uint, uint, int*, HRESULT> VarIntFromStr => &VarI4FromStr;
+    public static delegate*<char*, uint, uint, int*, HRESULT> VarIntFromStr => &VarI4FromStr;
 
     [NativeTypeName("#define VarIntFromDisp VarI4FromDisp")]
     public static delegate*<IDispatch*, uint, int*, HRESULT> VarIntFromDisp => &VarI4FromDisp;
@@ -1714,7 +1714,7 @@ public static unsafe partial class Windows
     public static delegate*<CY, uint*, HRESULT> VarUintFromCy => &VarUI4FromCy;
 
     [NativeTypeName("#define VarUintFromStr VarUI4FromStr")]
-    public static delegate*<ushort*, uint, uint, uint*, HRESULT> VarUintFromStr => &VarUI4FromStr;
+    public static delegate*<char*, uint, uint, uint*, HRESULT> VarUintFromStr => &VarUI4FromStr;
 
     [NativeTypeName("#define VarUintFromDisp VarUI4FromDisp")]
     public static delegate*<IDispatch*, uint, uint*, HRESULT> VarUintFromDisp => &VarUI4FromDisp;

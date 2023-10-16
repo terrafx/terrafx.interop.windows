@@ -19,25 +19,4 @@ public static unsafe partial class DocPropShellExtensionTests
     {
         Assert.That(typeof(DocPropShellExtension).GUID, Is.EqualTo(IID_DocPropShellExtension));
     }
-
-    /// <summary>Validates that the <see cref="DocPropShellExtension" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DocPropShellExtension>(), Is.EqualTo(sizeof(DocPropShellExtension)));
-    }
-
-    /// <summary>Validates that the <see cref="DocPropShellExtension" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DocPropShellExtension).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DocPropShellExtension" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DocPropShellExtension), Is.EqualTo(1));
-    }
 }

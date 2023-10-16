@@ -19,32 +19,4 @@ public static unsafe partial class IQueryCodePageTests
     {
         Assert.That(typeof(IQueryCodePage).GUID, Is.EqualTo(IID_IQueryCodePage));
     }
-
-    /// <summary>Validates that the <see cref="IQueryCodePage" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IQueryCodePage>(), Is.EqualTo(sizeof(IQueryCodePage)));
-    }
-
-    /// <summary>Validates that the <see cref="IQueryCodePage" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IQueryCodePage).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IQueryCodePage" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IQueryCodePage), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IQueryCodePage), Is.EqualTo(4));
-        }
-    }
 }

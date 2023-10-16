@@ -25,7 +25,7 @@ public unsafe partial struct IMFContentProtectionManager : IMFContentProtectionM
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFContentProtectionManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentProtectionManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFContentProtectionManager : IMFContentProtectionM
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFContentProtectionManager*, uint>)(lpVtbl[1]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentProtectionManager*, uint>)(lpVtbl[1]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFContentProtectionManager : IMFContentProtectionM
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFContentProtectionManager*, uint>)(lpVtbl[2]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentProtectionManager*, uint>)(lpVtbl[2]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFContentProtectionManager.xml' path='doc/member[@name="IMFContentProtectionManager.BeginEnableContent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFContentProtectionManager : IMFContentProtectionM
     [VtblIndex(3)]
     public HRESULT BeginEnableContent(IMFActivate* pEnablerActivate, IMFTopology* pTopo, IMFAsyncCallback* pCallback, IUnknown* punkState)
     {
-        return ((delegate* unmanaged<IMFContentProtectionManager*, IMFActivate*, IMFTopology*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this), pEnablerActivate, pTopo, pCallback, punkState);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentProtectionManager*, IMFActivate*, IMFTopology*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this), pEnablerActivate, pTopo, pCallback, punkState);
     }
 
     /// <include file='IMFContentProtectionManager.xml' path='doc/member[@name="IMFContentProtectionManager.EndEnableContent"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFContentProtectionManager : IMFContentProtectionM
     [VtblIndex(4)]
     public HRESULT EndEnableContent(IMFAsyncResult* pResult)
     {
-        return ((delegate* unmanaged<IMFContentProtectionManager*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this), pResult);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentProtectionManager*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this), pResult);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFContentProtectionManager : IMFContentProtectionM
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFActivate *, IMFTopology *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFActivate*, IMFTopology*, IMFAsyncCallback*, IUnknown*, int> BeginEnableContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFActivate*, IMFTopology*, IMFAsyncCallback*, IUnknown*, int> BeginEnableContent;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, int> EndEnableContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, int> EndEnableContent;
     }
 }

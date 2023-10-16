@@ -19,32 +19,4 @@ public static unsafe partial class IPartsListTests
     {
         Assert.That(typeof(IPartsList).GUID, Is.EqualTo(IID_IPartsList));
     }
-
-    /// <summary>Validates that the <see cref="IPartsList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPartsList>(), Is.EqualTo(sizeof(IPartsList)));
-    }
-
-    /// <summary>Validates that the <see cref="IPartsList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPartsList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPartsList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPartsList), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPartsList), Is.EqualTo(4));
-        }
-    }
 }

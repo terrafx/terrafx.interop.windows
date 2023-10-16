@@ -22,7 +22,7 @@ public unsafe partial struct TVITEMEXW
 
     /// <include file='TVITEMEXW.xml' path='doc/member[@name="TVITEMEXW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='TVITEMEXW.xml' path='doc/member[@name="TVITEMEXW.cchTextMax"]/*' />
     public int cchTextMax;

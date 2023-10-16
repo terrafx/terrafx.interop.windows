@@ -19,32 +19,4 @@ public static unsafe partial class ITransferAdviseSinkTests
     {
         Assert.That(typeof(ITransferAdviseSink).GUID, Is.EqualTo(IID_ITransferAdviseSink));
     }
-
-    /// <summary>Validates that the <see cref="ITransferAdviseSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITransferAdviseSink>(), Is.EqualTo(sizeof(ITransferAdviseSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITransferAdviseSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITransferAdviseSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITransferAdviseSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITransferAdviseSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITransferAdviseSink), Is.EqualTo(4));
-        }
-    }
 }

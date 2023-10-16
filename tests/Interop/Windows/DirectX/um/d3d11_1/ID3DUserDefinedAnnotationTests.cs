@@ -19,32 +19,4 @@ public static unsafe partial class ID3DUserDefinedAnnotationTests
     {
         Assert.That(typeof(ID3DUserDefinedAnnotation).GUID, Is.EqualTo(IID_ID3DUserDefinedAnnotation));
     }
-
-    /// <summary>Validates that the <see cref="ID3DUserDefinedAnnotation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID3DUserDefinedAnnotation>(), Is.EqualTo(sizeof(ID3DUserDefinedAnnotation)));
-    }
-
-    /// <summary>Validates that the <see cref="ID3DUserDefinedAnnotation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID3DUserDefinedAnnotation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID3DUserDefinedAnnotation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID3DUserDefinedAnnotation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID3DUserDefinedAnnotation), Is.EqualTo(4));
-        }
-    }
 }

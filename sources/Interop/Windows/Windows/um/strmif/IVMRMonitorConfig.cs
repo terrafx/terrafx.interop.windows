@@ -25,7 +25,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRMonitorConfig*, Guid*, void**, int>)(lpVtbl[0]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMonitorConfig*, Guid*, void**, int>)(lpVtbl[0]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRMonitorConfig*, uint>)(lpVtbl[1]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRMonitorConfig*, uint>)(lpVtbl[1]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRMonitorConfig*, uint>)(lpVtbl[2]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRMonitorConfig*, uint>)(lpVtbl[2]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig.SetMonitor"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, IN
     [VtblIndex(3)]
     public HRESULT SetMonitor([NativeTypeName("const VMRGUID *")] VMRGUID* pGUID)
     {
-        return ((delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[3]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[3]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
     }
 
     /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig.GetMonitor"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetMonitor(VMRGUID* pGUID)
     {
-        return ((delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[4]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[4]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
     }
 
     /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig.SetDefaultMonitor"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, IN
     [VtblIndex(5)]
     public HRESULT SetDefaultMonitor([NativeTypeName("const VMRGUID *")] VMRGUID* pGUID)
     {
-        return ((delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[5]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[5]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
     }
 
     /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig.GetDefaultMonitor"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, IN
     [VtblIndex(6)]
     public HRESULT GetDefaultMonitor(VMRGUID* pGUID)
     {
-        return ((delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[6]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[6]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
     }
 
     /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig.GetAvailableMonitors"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, IN
     [VtblIndex(7)]
     public HRESULT GetAvailableMonitors(VMRMONITORINFO* pInfo, [NativeTypeName("DWORD")] uint dwMaxInfoArraySize, [NativeTypeName("DWORD *")] uint* pdwNumDevices)
     {
-        return ((delegate* unmanaged<IVMRMonitorConfig*, VMRMONITORINFO*, uint, uint*, int>)(lpVtbl[7]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pInfo, dwMaxInfoArraySize, pdwNumDevices);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMonitorConfig*, VMRMONITORINFO*, uint, uint*, int>)(lpVtbl[7]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pInfo, dwMaxInfoArraySize, pdwNumDevices);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const VMRGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VMRGUID*, int> SetMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VMRGUID*, int> SetMonitor;
 
         [NativeTypeName("HRESULT (VMRGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VMRGUID*, int> GetMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VMRGUID*, int> GetMonitor;
 
         [NativeTypeName("HRESULT (const VMRGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VMRGUID*, int> SetDefaultMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VMRGUID*, int> SetDefaultMonitor;
 
         [NativeTypeName("HRESULT (VMRGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VMRGUID*, int> GetDefaultMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VMRGUID*, int> GetDefaultMonitor;
 
         [NativeTypeName("HRESULT (VMRMONITORINFO *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VMRMONITORINFO*, uint, uint*, int> GetAvailableMonitors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VMRMONITORINFO*, uint, uint*, int> GetAvailableMonitors;
     }
 }

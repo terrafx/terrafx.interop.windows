@@ -101,7 +101,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
             public byte NoDomainAccounting
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous.NoDomainAccounting;
                 }
@@ -117,7 +117,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
             public byte IncreasePolicy
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous.IncreasePolicy;
                 }
@@ -133,7 +133,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
             public byte DecreasePolicy
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous.DecreasePolicy;
                 }
@@ -149,7 +149,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
             public byte Reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous.Reserved;
                 }
@@ -171,7 +171,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
                 public byte NoDomainAccounting
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
+                    readonly get
                     {
                         return (byte)(_bitfield & 0x1u);
                     }
@@ -188,7 +188,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
                 public byte IncreasePolicy
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
+                    readonly get
                     {
                         return (byte)((_bitfield >> 1) & 0x3u);
                     }
@@ -205,7 +205,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
                 public byte DecreasePolicy
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
+                    readonly get
                     {
                         return (byte)((_bitfield >> 3) & 0x3u);
                     }
@@ -222,7 +222,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
                 public byte Reserved
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
+                    readonly get
                     {
                         return (byte)((_bitfield >> 5) & 0x7u);
                     }

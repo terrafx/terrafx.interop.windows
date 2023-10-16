@@ -18,7 +18,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x37, 0x46, 0x4D, 0x07,
                 0xAE, 0xB5,
                 0x5D, 0x46,
@@ -31,7 +31,7 @@ public static partial class MFPKEY
                 0x59,
                 0xDD,
                 0x02, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -44,7 +44,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x0F, 0x27, 0xCD, 0xB4,
                 0x4D, 0x24,
                 0x69, 0x49,
@@ -57,7 +57,7 @@ public static partial class MFPKEY
                 0x6F,
                 0x10,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -70,7 +70,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDC, 0x65, 0x0B, 0x17,
                 0x4E, 0x4A,
                 0x7A, 0x40,
@@ -83,7 +83,7 @@ public static partial class MFPKEY
                 0xA3,
                 0x7C,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -96,7 +96,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDC, 0x65, 0x0B, 0x17,
                 0x4E, 0x4A,
                 0x7A, 0x40,
@@ -109,7 +109,7 @@ public static partial class MFPKEY
                 0xA3,
                 0x7C,
                 0x02, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -122,7 +122,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDC, 0x65, 0x0B, 0x17,
                 0x4E, 0x4A,
                 0x7A, 0x40,
@@ -135,7 +135,7 @@ public static partial class MFPKEY
                 0xA3,
                 0x7C,
                 0x03, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -148,7 +148,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x45, 0x1B, 0xA3, 0xCF,
                 0x5D, 0x52,
                 0x98, 0x49,
@@ -161,7 +161,7 @@ public static partial class MFPKEY
                 0x2F,
                 0xA4,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -174,7 +174,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x14, 0x6C, 0x36, 0x26,
                 0xBF, 0xC5,
                 0x76, 0x4C,
@@ -187,7 +187,7 @@ public static partial class MFPKEY
                 0x5F,
                 0x09,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -200,7 +200,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xBB, 0x10, 0xAE, 0x3F,
                 0x59, 0xF8,
                 0x92, 0x41,
@@ -213,7 +213,7 @@ public static partial class MFPKEY
                 0x3A,
                 0x02,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -226,7 +226,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xE2, 0x4D, 0xBB, 0x28,
                 0xA2, 0x26,
                 0x70, 0x48,
@@ -239,7 +239,7 @@ public static partial class MFPKEY
                 0x49,
                 0x42,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -252,7 +252,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDF, 0xAF, 0xA8, 0xED,
                 0x71, 0xC1,
                 0x7F, 0x41,
@@ -265,7 +265,7 @@ public static partial class MFPKEY
                 0x32,
                 0x92,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -278,7 +278,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDF, 0xAF, 0xA8, 0xED,
                 0x71, 0xC1,
                 0x7F, 0x41,
@@ -291,7 +291,7 @@ public static partial class MFPKEY
                 0x32,
                 0x92,
                 0x02, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -304,7 +304,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDF, 0xAF, 0xA8, 0xED,
                 0x71, 0xC1,
                 0x7F, 0x41,
@@ -317,7 +317,7 @@ public static partial class MFPKEY
                 0x32,
                 0x92,
                 0x03, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -330,7 +330,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDF, 0xAF, 0xA8, 0xED,
                 0x71, 0xC1,
                 0x7F, 0x41,
@@ -343,7 +343,7 @@ public static partial class MFPKEY
                 0x32,
                 0x92,
                 0x04, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -356,7 +356,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDF, 0xAF, 0xA8, 0xED,
                 0x71, 0xC1,
                 0x7F, 0x41,
@@ -369,7 +369,7 @@ public static partial class MFPKEY
                 0x32,
                 0x92,
                 0x05, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -382,7 +382,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x1D, 0x27, 0x6B, 0x63,
                 0xC7, 0xDD,
                 0xE9, 0x49,
@@ -395,7 +395,7 @@ public static partial class MFPKEY
                 0xE5,
                 0xBD,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -408,7 +408,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x1D, 0x27, 0x6B, 0x63,
                 0xC7, 0xDD,
                 0xE9, 0x49,
@@ -421,7 +421,7 @@ public static partial class MFPKEY
                 0xE5,
                 0xBD,
                 0x02, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -434,7 +434,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x1D, 0x27, 0x6B, 0x63,
                 0xC7, 0xDD,
                 0xE9, 0x49,
@@ -447,7 +447,7 @@ public static partial class MFPKEY
                 0xE5,
                 0xBD,
                 0x03, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -460,7 +460,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x7C, 0x3D, 0xAF, 0x42,
                 0xCF, 0x00,
                 0x0F, 0x4A,
@@ -473,7 +473,7 @@ public static partial class MFPKEY
                 0xA5,
                 0xB5,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -486,7 +486,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x92, 0xB0, 0x54, 0x44,
                 0xDA, 0xD3,
                 0xB0, 0x49,
@@ -499,7 +499,7 @@ public static partial class MFPKEY
                 0x76,
                 0x4D,
                 0x03, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -512,7 +512,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB7, 0x11, 0x7F, 0x81,
                 0x82, 0xA9,
                 0xEC, 0x46,
@@ -525,7 +525,7 @@ public static partial class MFPKEY
                 0x3C,
                 0xA8,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -538,7 +538,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x3E, 0x40, 0xA2, 0x86,
                 0x8B, 0xC7,
                 0xD7, 0x44,
@@ -551,7 +551,7 @@ public static partial class MFPKEY
                 0x75,
                 0x08,
                 0x01, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
@@ -564,7 +564,7 @@ public static partial class MFPKEY
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x3E, 0x40, 0xA2, 0x86,
                 0x8B, 0xC7,
                 0xD7, 0x44,
@@ -577,7 +577,7 @@ public static partial class MFPKEY
                 0x75,
                 0x08,
                 0x02, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
             return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));

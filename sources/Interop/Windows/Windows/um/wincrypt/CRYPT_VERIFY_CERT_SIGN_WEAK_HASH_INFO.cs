@@ -14,7 +14,7 @@ public unsafe partial struct CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO
 
     /// <include file='CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO.xml' path='doc/member[@name="CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO.rgpwszCNGHashAlgid"]/*' />
     [NativeTypeName("PCWSTR *")]
-    public ushort** rgpwszCNGHashAlgid;
+    public char** rgpwszCNGHashAlgid;
 
     /// <include file='CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO.xml' path='doc/member[@name="CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO.dwWeakIndex"]/*' />
     [NativeTypeName("DWORD")]

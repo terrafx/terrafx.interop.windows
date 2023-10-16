@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FILE_REGION_INFO" /> struct.</summary>
 public static unsafe partial class FILE_REGION_INFOTests
 {
-    /// <summary>Validates that the <see cref="FILE_REGION_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FILE_REGION_INFO>(), Is.EqualTo(sizeof(FILE_REGION_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="FILE_REGION_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FILE_REGION_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FILE_REGION_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FILE_REGION_INFO), Is.EqualTo(24));
-    }
 }

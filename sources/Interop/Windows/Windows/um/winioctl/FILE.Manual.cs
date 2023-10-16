@@ -28,28 +28,26 @@ public static unsafe partial class FILE
     }
 
     [NativeTypeName("#define FILE_REGION_USAGE_QUERY_ALIGNMENT (FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT   |\\\r\n                                                 FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT)")]
-    public static int FILE_REGION_USAGE_QUERY_ALIGNMENT = FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT | FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT;
-
-
+    public static readonly int FILE_REGION_USAGE_QUERY_ALIGNMENT = FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT | FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT;
 
     public static ref readonly Guid FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
-                    0xA1, 0x64, 0x0A, 0x0D,
-                    0xFC, 0x38,
-                    0xB8, 0x4D,
-                    0x9F,
-                    0xE7,
-                    0x3F,
-                    0x43,
-                    0x52,
-                    0xCD,
-                    0x7C,
-                    0x5C
-                };
+            ReadOnlySpan<byte> data = [
+                0xA1, 0x64, 0x0A, 0x0D,
+                0xFC, 0x38,
+                0xB8, 0x4D,
+                0x9F,
+                0xE7,
+                0x3F,
+                0x43,
+                0x52,
+                0xCD,
+                0x7C,
+                0x5C
+            ];
 
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -60,19 +58,19 @@ public static unsafe partial class FILE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
-                    0x64, 0x4D, 0x62, 0xB7,
-                    0xA3, 0xB9,
-                    0xF8, 0x4C,
-                    0x80,
-                    0x11,
-                    0x5B,
-                    0x86,
-                    0xC9,
-                    0x40,
-                    0xE7,
-                    0xB7
-                };
+            ReadOnlySpan<byte> data = [
+                0x64, 0x4D, 0x62, 0xB7,
+                0xA3, 0xB9,
+                0xF8, 0x4C,
+                0x80,
+                0x11,
+                0x5B,
+                0x86,
+                0xC9,
+                0x40,
+                0xE7,
+                0xB7
+            ];
 
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
@@ -83,19 +81,19 @@ public static unsafe partial class FILE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
-                    0xB7, 0x3E, 0x45, 0x9D,
-                    0xA6, 0xD2,
-                    0xBD, 0x4D,
-                    0xA2,
-                    0xE3,
-                    0xFB,
-                    0xD0,
-                    0xED,
-                    0x91,
-                    0x09,
-                    0xA9
-                };
+            ReadOnlySpan<byte> data = [
+                0xB7, 0x3E, 0x45, 0x9D,
+                0xA6, 0xD2,
+                0xBD, 0x4D,
+                0xA2,
+                0xE3,
+                0xFB,
+                0xD0,
+                0xED,
+                0x91,
+                0x09,
+                0xA9
+            ];
 
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }

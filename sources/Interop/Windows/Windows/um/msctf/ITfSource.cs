@@ -25,7 +25,7 @@ public unsafe partial struct ITfSource : ITfSource.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfSource*, Guid*, void**, int>)(lpVtbl[0]))((ITfSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfSource*, Guid*, void**, int>)(lpVtbl[0]))((ITfSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfSource : ITfSource.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfSource*, uint>)(lpVtbl[1]))((ITfSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSource*, uint>)(lpVtbl[1]))((ITfSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfSource : ITfSource.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfSource*, uint>)(lpVtbl[2]))((ITfSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSource*, uint>)(lpVtbl[2]))((ITfSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfSource.xml' path='doc/member[@name="ITfSource.AdviseSink"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfSource : ITfSource.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT AdviseSink([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<ITfSource*, Guid*, IUnknown*, uint*, int>)(lpVtbl[3]))((ITfSource*)Unsafe.AsPointer(ref this), riid, punk, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<ITfSource*, Guid*, IUnknown*, uint*, int>)(lpVtbl[3]))((ITfSource*)Unsafe.AsPointer(ref this), riid, punk, pdwCookie);
     }
 
     /// <include file='ITfSource.xml' path='doc/member[@name="ITfSource.UnadviseSink"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfSource : ITfSource.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT UnadviseSink([NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<ITfSource*, uint, int>)(lpVtbl[4]))((ITfSource*)Unsafe.AsPointer(ref this), dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<ITfSource*, uint, int>)(lpVtbl[4]))((ITfSource*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfSource : ITfSource.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, uint*, int> AdviseSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, uint*, int> AdviseSink;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> UnadviseSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> UnadviseSink;
     }
 }

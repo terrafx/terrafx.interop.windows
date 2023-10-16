@@ -3,10 +3,7 @@
 // Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
@@ -23,23 +20,9 @@ public partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS
     public RECT TargetRectangle;
 
     /// <include file='_OutputStream_e__FixedBuffer.xml' path='doc/member[@name="_OutputStream_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
     public partial struct _OutputStream_e__FixedBuffer
     {
         public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e0;
-        public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e1;
-
-        [UnscopedRef]
-        public ref D3D12_VIDEO_PROCESS_OUTPUT_STREAM this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<D3D12_VIDEO_PROCESS_OUTPUT_STREAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

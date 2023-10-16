@@ -25,7 +25,7 @@ public unsafe partial struct IInternalDocWrap : IInternalDocWrap.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInternalDocWrap*, Guid*, void**, int>)(lpVtbl[0]))((IInternalDocWrap*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInternalDocWrap*, Guid*, void**, int>)(lpVtbl[0]))((IInternalDocWrap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInternalDocWrap : IInternalDocWrap.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInternalDocWrap*, uint>)(lpVtbl[1]))((IInternalDocWrap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternalDocWrap*, uint>)(lpVtbl[1]))((IInternalDocWrap*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInternalDocWrap : IInternalDocWrap.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInternalDocWrap*, uint>)(lpVtbl[2]))((IInternalDocWrap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternalDocWrap*, uint>)(lpVtbl[2]))((IInternalDocWrap*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInternalDocWrap.xml' path='doc/member[@name="IInternalDocWrap.NotifyRevoke"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IInternalDocWrap : IInternalDocWrap.Interface, INat
     [VtblIndex(3)]
     public HRESULT NotifyRevoke()
     {
-        return ((delegate* unmanaged<IInternalDocWrap*, int>)(lpVtbl[3]))((IInternalDocWrap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternalDocWrap*, int>)(lpVtbl[3]))((IInternalDocWrap*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IInternalDocWrap : IInternalDocWrap.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> NotifyRevoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> NotifyRevoke;
     }
 }

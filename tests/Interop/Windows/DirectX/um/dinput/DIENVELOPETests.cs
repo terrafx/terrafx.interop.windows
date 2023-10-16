@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DIENVELOPE" /> struct.</summary>
 public static unsafe partial class DIENVELOPETests
 {
-    /// <summary>Validates that the <see cref="DIENVELOPE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DIENVELOPE>(), Is.EqualTo(sizeof(DIENVELOPE)));
-    }
-
-    /// <summary>Validates that the <see cref="DIENVELOPE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DIENVELOPE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DIENVELOPE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DIENVELOPE), Is.EqualTo(20));
-    }
 }

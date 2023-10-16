@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLChangePlaybackTests
     {
         Assert.That(typeof(IHTMLChangePlayback).GUID, Is.EqualTo(IID_IHTMLChangePlayback));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLChangePlayback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLChangePlayback>(), Is.EqualTo(sizeof(IHTMLChangePlayback)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLChangePlayback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLChangePlayback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLChangePlayback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLChangePlayback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLChangePlayback), Is.EqualTo(4));
-        }
-    }
 }

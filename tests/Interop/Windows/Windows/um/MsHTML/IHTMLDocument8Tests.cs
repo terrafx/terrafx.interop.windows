@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLDocument8Tests
     {
         Assert.That(typeof(IHTMLDocument8).GUID, Is.EqualTo(IID_IHTMLDocument8));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLDocument8" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLDocument8>(), Is.EqualTo(sizeof(IHTMLDocument8)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLDocument8" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLDocument8).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLDocument8" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLDocument8), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLDocument8), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IParentAndItemTests
     {
         Assert.That(typeof(IParentAndItem).GUID, Is.EqualTo(IID_IParentAndItem));
     }
-
-    /// <summary>Validates that the <see cref="IParentAndItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IParentAndItem>(), Is.EqualTo(sizeof(IParentAndItem)));
-    }
-
-    /// <summary>Validates that the <see cref="IParentAndItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IParentAndItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IParentAndItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IParentAndItem), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IParentAndItem), Is.EqualTo(4));
-        }
-    }
 }

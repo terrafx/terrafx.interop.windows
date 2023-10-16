@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EMRCREATEPALETTE" /> struct.</summary>
 public static unsafe partial class EMRCREATEPALETTETests
 {
-    /// <summary>Validates that the <see cref="EMRCREATEPALETTE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EMRCREATEPALETTE>(), Is.EqualTo(sizeof(EMRCREATEPALETTE)));
-    }
-
-    /// <summary>Validates that the <see cref="EMRCREATEPALETTE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EMRCREATEPALETTE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EMRCREATEPALETTE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EMRCREATEPALETTE), Is.EqualTo(20));
-    }
 }

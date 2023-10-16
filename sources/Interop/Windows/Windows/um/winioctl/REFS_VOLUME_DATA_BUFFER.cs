@@ -3,10 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -72,30 +69,9 @@ public partial struct REFS_VOLUME_DATA_BUFFER
     public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(9)]
     public partial struct _Reserved_e__FixedBuffer
     {
         public LARGE_INTEGER e0;
-        public LARGE_INTEGER e1;
-        public LARGE_INTEGER e2;
-        public LARGE_INTEGER e3;
-        public LARGE_INTEGER e4;
-        public LARGE_INTEGER e5;
-        public LARGE_INTEGER e6;
-        public LARGE_INTEGER e7;
-        public LARGE_INTEGER e8;
-
-        [UnscopedRef]
-        public ref LARGE_INTEGER this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<LARGE_INTEGER> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 9);
     }
 }

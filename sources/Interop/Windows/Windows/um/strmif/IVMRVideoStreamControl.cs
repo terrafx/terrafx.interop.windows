@@ -26,7 +26,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRVideoStreamControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRVideoStreamControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRVideoStreamControl*, uint>)(lpVtbl[1]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRVideoStreamControl*, uint>)(lpVtbl[1]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRVideoStreamControl*, uint>)(lpVtbl[2]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRVideoStreamControl*, uint>)(lpVtbl[2]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRVideoStreamControl.xml' path='doc/member[@name="IVMRVideoStreamControl.SetColorKey"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
     [VtblIndex(3)]
     public HRESULT SetColorKey([NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* lpClrKey)
     {
-        return ((delegate* unmanaged<IVMRVideoStreamControl*, DDCOLORKEY*, int>)(lpVtbl[3]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpClrKey);
+        return ((delegate* unmanaged[MemberFunction]<IVMRVideoStreamControl*, DDCOLORKEY*, int>)(lpVtbl[3]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpClrKey);
     }
 
     /// <include file='IVMRVideoStreamControl.xml' path='doc/member[@name="IVMRVideoStreamControl.GetColorKey"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
     [VtblIndex(4)]
     public HRESULT GetColorKey([NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* lpClrKey)
     {
-        return ((delegate* unmanaged<IVMRVideoStreamControl*, DDCOLORKEY*, int>)(lpVtbl[4]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpClrKey);
+        return ((delegate* unmanaged[MemberFunction]<IVMRVideoStreamControl*, DDCOLORKEY*, int>)(lpVtbl[4]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpClrKey);
     }
 
     /// <include file='IVMRVideoStreamControl.xml' path='doc/member[@name="IVMRVideoStreamControl.SetStreamActiveState"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
     [VtblIndex(5)]
     public HRESULT SetStreamActiveState(BOOL fActive)
     {
-        return ((delegate* unmanaged<IVMRVideoStreamControl*, BOOL, int>)(lpVtbl[5]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), fActive);
+        return ((delegate* unmanaged[MemberFunction]<IVMRVideoStreamControl*, BOOL, int>)(lpVtbl[5]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), fActive);
     }
 
     /// <include file='IVMRVideoStreamControl.xml' path='doc/member[@name="IVMRVideoStreamControl.GetStreamActiveState"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
     [VtblIndex(6)]
     public HRESULT GetStreamActiveState(BOOL* lpfActive)
     {
-        return ((delegate* unmanaged<IVMRVideoStreamControl*, BOOL*, int>)(lpVtbl[6]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpfActive);
+        return ((delegate* unmanaged[MemberFunction]<IVMRVideoStreamControl*, BOOL*, int>)(lpVtbl[6]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpfActive);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,24 +98,24 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDDCOLORKEY) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DDCOLORKEY*, int> SetColorKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DDCOLORKEY*, int> SetColorKey;
 
         [NativeTypeName("HRESULT (LPDDCOLORKEY) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DDCOLORKEY*, int> GetColorKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DDCOLORKEY*, int> GetColorKey;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetStreamActiveState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetStreamActiveState;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetStreamActiveState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetStreamActiveState;
     }
 }

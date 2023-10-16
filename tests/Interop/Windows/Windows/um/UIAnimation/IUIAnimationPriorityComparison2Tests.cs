@@ -19,32 +19,4 @@ public static unsafe partial class IUIAnimationPriorityComparison2Tests
     {
         Assert.That(typeof(IUIAnimationPriorityComparison2).GUID, Is.EqualTo(IID_IUIAnimationPriorityComparison2));
     }
-
-    /// <summary>Validates that the <see cref="IUIAnimationPriorityComparison2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUIAnimationPriorityComparison2>(), Is.EqualTo(sizeof(IUIAnimationPriorityComparison2)));
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationPriorityComparison2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUIAnimationPriorityComparison2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationPriorityComparison2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUIAnimationPriorityComparison2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUIAnimationPriorityComparison2), Is.EqualTo(4));
-        }
-    }
 }

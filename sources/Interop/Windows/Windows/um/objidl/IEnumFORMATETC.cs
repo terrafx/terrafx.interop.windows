@@ -25,7 +25,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumFORMATETC*, Guid*, void**, int>)(lpVtbl[0]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumFORMATETC*, Guid*, void**, int>)(lpVtbl[0]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumFORMATETC*, uint>)(lpVtbl[1]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumFORMATETC*, uint>)(lpVtbl[1]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumFORMATETC*, uint>)(lpVtbl[2]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumFORMATETC*, uint>)(lpVtbl[2]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumFORMATETC.xml' path='doc/member[@name="IEnumFORMATETC.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, FORMATETC* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumFORMATETC*, uint, FORMATETC*, uint*, int>)(lpVtbl[3]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumFORMATETC*, uint, FORMATETC*, uint*, int>)(lpVtbl[3]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IEnumFORMATETC.xml' path='doc/member[@name="IEnumFORMATETC.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IEnumFORMATETC*, uint, int>)(lpVtbl[4]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IEnumFORMATETC*, uint, int>)(lpVtbl[4]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IEnumFORMATETC.xml' path='doc/member[@name="IEnumFORMATETC.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumFORMATETC*, int>)(lpVtbl[5]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumFORMATETC*, int>)(lpVtbl[5]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumFORMATETC.xml' path='doc/member[@name="IEnumFORMATETC.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Clone(IEnumFORMATETC** ppenum)
     {
-        return ((delegate* unmanaged<IEnumFORMATETC*, IEnumFORMATETC**, int>)(lpVtbl[6]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumFORMATETC*, IEnumFORMATETC**, int>)(lpVtbl[6]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, FORMATETC *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, FORMATETC*, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, FORMATETC*, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumFORMATETC **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumFORMATETC**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumFORMATETC**, int> Clone;
     }
 }

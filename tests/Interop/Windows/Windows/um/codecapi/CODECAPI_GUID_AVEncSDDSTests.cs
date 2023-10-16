@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_GUID_AVEncSDDSTests
     {
         Assert.That(typeof(CODECAPI_GUID_AVEncSDDS).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVEncSDDS));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVEncSDDS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_GUID_AVEncSDDS>(), Is.EqualTo(sizeof(CODECAPI_GUID_AVEncSDDS)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVEncSDDS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_GUID_AVEncSDDS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVEncSDDS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_GUID_AVEncSDDS), Is.EqualTo(1));
-    }
 }

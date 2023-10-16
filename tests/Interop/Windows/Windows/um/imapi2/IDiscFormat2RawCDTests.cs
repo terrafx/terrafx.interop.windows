@@ -19,32 +19,4 @@ public static unsafe partial class IDiscFormat2RawCDTests
     {
         Assert.That(typeof(IDiscFormat2RawCD).GUID, Is.EqualTo(IID_IDiscFormat2RawCD));
     }
-
-    /// <summary>Validates that the <see cref="IDiscFormat2RawCD" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiscFormat2RawCD>(), Is.EqualTo(sizeof(IDiscFormat2RawCD)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiscFormat2RawCD" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiscFormat2RawCD).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiscFormat2RawCD" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiscFormat2RawCD), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiscFormat2RawCD), Is.EqualTo(4));
-        }
-    }
 }

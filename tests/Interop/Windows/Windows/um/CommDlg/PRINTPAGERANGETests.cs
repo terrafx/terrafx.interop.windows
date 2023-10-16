@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PRINTPAGERANGE" /> struct.</summary>
 public static unsafe partial class PRINTPAGERANGETests
 {
-    /// <summary>Validates that the <see cref="PRINTPAGERANGE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PRINTPAGERANGE>(), Is.EqualTo(sizeof(PRINTPAGERANGE)));
-    }
-
-    /// <summary>Validates that the <see cref="PRINTPAGERANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PRINTPAGERANGE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PRINTPAGERANGE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PRINTPAGERANGE), Is.EqualTo(8));
-    }
 }

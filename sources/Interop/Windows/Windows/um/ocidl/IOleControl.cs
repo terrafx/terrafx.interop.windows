@@ -25,7 +25,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleControl*, Guid*, void**, int>)(lpVtbl[0]))((IOleControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleControl*, Guid*, void**, int>)(lpVtbl[0]))((IOleControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleControl*, uint>)(lpVtbl[1]))((IOleControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleControl*, uint>)(lpVtbl[1]))((IOleControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleControl*, uint>)(lpVtbl[2]))((IOleControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleControl*, uint>)(lpVtbl[2]))((IOleControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleControl.xml' path='doc/member[@name="IOleControl.GetControlInfo"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetControlInfo(CONTROLINFO* pCI)
     {
-        return ((delegate* unmanaged<IOleControl*, CONTROLINFO*, int>)(lpVtbl[3]))((IOleControl*)Unsafe.AsPointer(ref this), pCI);
+        return ((delegate* unmanaged[MemberFunction]<IOleControl*, CONTROLINFO*, int>)(lpVtbl[3]))((IOleControl*)Unsafe.AsPointer(ref this), pCI);
     }
 
     /// <include file='IOleControl.xml' path='doc/member[@name="IOleControl.OnMnemonic"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT OnMnemonic(MSG* pMsg)
     {
-        return ((delegate* unmanaged<IOleControl*, MSG*, int>)(lpVtbl[4]))((IOleControl*)Unsafe.AsPointer(ref this), pMsg);
+        return ((delegate* unmanaged[MemberFunction]<IOleControl*, MSG*, int>)(lpVtbl[4]))((IOleControl*)Unsafe.AsPointer(ref this), pMsg);
     }
 
     /// <include file='IOleControl.xml' path='doc/member[@name="IOleControl.OnAmbientPropertyChange"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT OnAmbientPropertyChange([NativeTypeName("DISPID")] int dispID)
     {
-        return ((delegate* unmanaged<IOleControl*, int, int>)(lpVtbl[5]))((IOleControl*)Unsafe.AsPointer(ref this), dispID);
+        return ((delegate* unmanaged[MemberFunction]<IOleControl*, int, int>)(lpVtbl[5]))((IOleControl*)Unsafe.AsPointer(ref this), dispID);
     }
 
     /// <include file='IOleControl.xml' path='doc/member[@name="IOleControl.FreezeEvents"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT FreezeEvents(BOOL bFreeze)
     {
-        return ((delegate* unmanaged<IOleControl*, BOOL, int>)(lpVtbl[6]))((IOleControl*)Unsafe.AsPointer(ref this), bFreeze);
+        return ((delegate* unmanaged[MemberFunction]<IOleControl*, BOOL, int>)(lpVtbl[6]))((IOleControl*)Unsafe.AsPointer(ref this), bFreeze);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IOleControl : IOleControl.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CONTROLINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CONTROLINFO*, int> GetControlInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CONTROLINFO*, int> GetControlInfo;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, int> OnMnemonic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, int> OnMnemonic;
 
         [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> OnAmbientPropertyChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> OnAmbientPropertyChange;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> FreezeEvents;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> FreezeEvents;
     }
 }

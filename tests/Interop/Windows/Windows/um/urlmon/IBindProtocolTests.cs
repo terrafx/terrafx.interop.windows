@@ -19,32 +19,4 @@ public static unsafe partial class IBindProtocolTests
     {
         Assert.That(typeof(IBindProtocol).GUID, Is.EqualTo(IID_IBindProtocol));
     }
-
-    /// <summary>Validates that the <see cref="IBindProtocol" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBindProtocol>(), Is.EqualTo(sizeof(IBindProtocol)));
-    }
-
-    /// <summary>Validates that the <see cref="IBindProtocol" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBindProtocol).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBindProtocol" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBindProtocol), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBindProtocol), Is.EqualTo(4));
-        }
-    }
 }

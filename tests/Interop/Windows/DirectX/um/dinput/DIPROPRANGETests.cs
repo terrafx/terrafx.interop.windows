@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DIPROPRANGE" /> struct.</summary>
 public static unsafe partial class DIPROPRANGETests
 {
-    /// <summary>Validates that the <see cref="DIPROPRANGE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DIPROPRANGE>(), Is.EqualTo(sizeof(DIPROPRANGE)));
-    }
-
-    /// <summary>Validates that the <see cref="DIPROPRANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DIPROPRANGE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DIPROPRANGE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DIPROPRANGE), Is.EqualTo(24));
-    }
 }

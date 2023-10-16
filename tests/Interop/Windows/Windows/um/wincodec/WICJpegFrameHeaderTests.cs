@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WICJpegFrameHeader" /> struct.</summary>
 public static unsafe partial class WICJpegFrameHeaderTests
 {
-    /// <summary>Validates that the <see cref="WICJpegFrameHeader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WICJpegFrameHeader>(), Is.EqualTo(sizeof(WICJpegFrameHeader)));
-    }
-
-    /// <summary>Validates that the <see cref="WICJpegFrameHeader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WICJpegFrameHeader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WICJpegFrameHeader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WICJpegFrameHeader), Is.EqualTo(32));
-    }
 }

@@ -50,7 +50,7 @@ public unsafe partial struct PAGESETUPDLGW
 
     /// <include file='PAGESETUPDLGW.xml' path='doc/member[@name="PAGESETUPDLGW.lpPageSetupTemplateName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpPageSetupTemplateName;
+    public char* lpPageSetupTemplateName;
 
     /// <include file='PAGESETUPDLGW.xml' path='doc/member[@name="PAGESETUPDLGW.hPageSetupTemplate"]/*' />
     public HGLOBAL hPageSetupTemplate;

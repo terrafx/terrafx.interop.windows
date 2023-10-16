@@ -31,5 +31,5 @@ public unsafe partial struct KCRM_TRANSACTION_BLOB
 
     /// <include file='KCRM_TRANSACTION_BLOB.xml' path='doc/member[@name="KCRM_TRANSACTION_BLOB.Description"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort Description[64];
+    public fixed char Description[64];
 }

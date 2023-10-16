@@ -19,7 +19,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x80, 0xDB, 0x14, 0x6C,
                 0x33, 0xA7,
                 0xCE, 0x11,
@@ -31,7 +31,7 @@ public static partial class IID
                 0x0B,
                 0xE5,
                 0x60
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -44,7 +44,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xE0, 0xF3, 0xA6, 0xB3,
                 0x43, 0x2B,
                 0xCF, 0x11,
@@ -56,7 +56,7 @@ public static partial class IID
                 0xB9,
                 0x33,
                 0x56
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -69,7 +69,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x9A, 0x50, 0x59, 0x9C,
                 0xBD, 0x39,
                 0xD1, 0x11,
@@ -81,7 +81,7 @@ public static partial class IID
                 0xD9,
                 0x30,
                 0xC5
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -94,7 +94,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC0, 0x5E, 0xE6, 0x15,
                 0x9C, 0x3B,
                 0xD2, 0x11,
@@ -106,7 +106,7 @@ public static partial class IID
                 0x97,
                 0xEA,
                 0x5B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -119,7 +119,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x81, 0xDB, 0x14, 0x6C,
                 0x33, 0xA7,
                 0xCE, 0x11,
@@ -131,7 +131,7 @@ public static partial class IID
                 0x0B,
                 0xE5,
                 0x60
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -144,7 +144,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x85, 0x58, 0x80, 0x57,
                 0xEC, 0x6E,
                 0xCF, 0x11,
@@ -156,7 +156,7 @@ public static partial class IID
                 0xC1,
                 0x0E,
                 0x27
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -169,7 +169,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x00, 0x4E, 0x04, 0xDA,
                 0xB2, 0x69,
                 0xD0, 0x11,
@@ -181,7 +181,7 @@ public static partial class IID
                 0xB8,
                 0xDF,
                 0xBB
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -194,7 +194,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x30, 0x86, 0x2B, 0x0B,
                 0x35, 0xAD,
                 0xD0, 0x11,
@@ -206,7 +206,7 @@ public static partial class IID
                 0x97,
                 0xEA,
                 0x5B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -219,7 +219,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x80, 0x5A, 0x67, 0x06,
                 0x9B, 0x3B,
                 0xD2, 0x11,
@@ -231,7 +231,7 @@ public static partial class IID
                 0x97,
                 0xEA,
                 0x5B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -244,7 +244,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x84, 0xDB, 0x14, 0x6C,
                 0x33, 0xA7,
                 0xCE, 0x11,
@@ -256,7 +256,7 @@ public static partial class IID
                 0x0B,
                 0xE5,
                 0x60
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -269,7 +269,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x85, 0xDB, 0x14, 0x6C,
                 0x33, 0xA7,
                 0xCE, 0x11,
@@ -281,7 +281,7 @@ public static partial class IID
                 0x0B,
                 0xE5,
                 0x60
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -294,7 +294,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xE0, 0x0E, 0x9F, 0x4B,
                 0x7E, 0x0D,
                 0xD0, 0x11,
@@ -306,7 +306,7 @@ public static partial class IID
                 0x03,
                 0xA3,
                 0xB8
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -319,7 +319,7 @@ public static partial class IID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x3E, 0x1C, 0xC1, 0x69,
                 0x6B, 0xB4,
                 0xD1, 0x11,
@@ -331,7 +331,7 @@ public static partial class IID
                 0xC2,
                 0x9B,
                 0x4E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

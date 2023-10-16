@@ -26,7 +26,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMLOperatorKernelContext*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMLOperatorKernelContext*, uint>)(lpVtbl[1]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, uint>)(lpVtbl[1]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMLOperatorKernelContext*, uint>)(lpVtbl[2]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, uint>)(lpVtbl[2]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetInputTensor"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
     [VtblIndex(3)]
     public HRESULT GetInputTensor([NativeTypeName("uint32_t")] uint inputIndex, IMLOperatorTensor** tensor)
     {
-        return ((delegate* unmanaged<IMLOperatorKernelContext*, uint, IMLOperatorTensor**, int>)(lpVtbl[3]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), inputIndex, tensor);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, uint, IMLOperatorTensor**, int>)(lpVtbl[3]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), inputIndex, tensor);
     }
 
     /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetOutputTensor"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
     [VtblIndex(4)]
     public HRESULT GetOutputTensor([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("const uint32_t *")] uint* dimensionSizes, IMLOperatorTensor** tensor)
     {
-        return ((delegate* unmanaged<IMLOperatorKernelContext*, uint, uint, uint*, IMLOperatorTensor**, int>)(lpVtbl[4]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount, dimensionSizes, tensor);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, uint, uint, uint*, IMLOperatorTensor**, int>)(lpVtbl[4]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount, dimensionSizes, tensor);
     }
 
     /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetOutputTensor"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
     [VtblIndex(5)]
     public HRESULT GetOutputTensor([NativeTypeName("uint32_t")] uint outputIndex, IMLOperatorTensor** tensor)
     {
-        return ((delegate* unmanaged<IMLOperatorKernelContext*, uint, IMLOperatorTensor**, int>)(lpVtbl[5]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), outputIndex, tensor);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, uint, IMLOperatorTensor**, int>)(lpVtbl[5]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), outputIndex, tensor);
     }
 
     /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.AllocateTemporaryData"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
     [VtblIndex(6)]
     public HRESULT AllocateTemporaryData([NativeTypeName("size_t")] nuint size, IUnknown** data)
     {
-        return ((delegate* unmanaged<IMLOperatorKernelContext*, nuint, IUnknown**, int>)(lpVtbl[6]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), size, data);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, nuint, IUnknown**, int>)(lpVtbl[6]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), size, data);
     }
 
     /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetExecutionInterface"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
     [VtblIndex(7)]
     public void GetExecutionInterface(IUnknown** executionObject)
     {
-        ((delegate* unmanaged<IMLOperatorKernelContext*, IUnknown**, void>)(lpVtbl[7]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), executionObject);
+        ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, IUnknown**, void>)(lpVtbl[7]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), executionObject);
     }
 
     public interface Interface : IUnknown.Interface
@@ -109,27 +109,27 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (uint32_t, IMLOperatorTensor **) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMLOperatorTensor**, int> GetInputTensor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMLOperatorTensor**, int> GetInputTensor;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t, const uint32_t *, IMLOperatorTensor **) noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint*, IMLOperatorTensor**, int> GetOutputTensor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint*, IMLOperatorTensor**, int> GetOutputTensor;
 
         [NativeTypeName("HRESULT (uint32_t, IMLOperatorTensor **) noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMLOperatorTensor**, int> GetOutputTensor1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMLOperatorTensor**, int> GetOutputTensor1;
 
         [NativeTypeName("HRESULT (size_t, IUnknown **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, IUnknown**, int> AllocateTemporaryData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, IUnknown**, int> AllocateTemporaryData;
 
         [NativeTypeName("void (IUnknown **) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, void> GetExecutionInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, void> GetExecutionInterface;
     }
 }

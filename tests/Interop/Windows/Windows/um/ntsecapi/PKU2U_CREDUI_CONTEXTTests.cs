@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PKU2U_CREDUI_CONTEXT" /> struct.</summary>
 public static unsafe partial class PKU2U_CREDUI_CONTEXTTests
 {
-    /// <summary>Validates that the <see cref="PKU2U_CREDUI_CONTEXT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PKU2U_CREDUI_CONTEXT>(), Is.EqualTo(sizeof(PKU2U_CREDUI_CONTEXT)));
-    }
-
-    /// <summary>Validates that the <see cref="PKU2U_CREDUI_CONTEXT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PKU2U_CREDUI_CONTEXT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PKU2U_CREDUI_CONTEXT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PKU2U_CREDUI_CONTEXT), Is.EqualTo(24));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ISegmentListIteratorTests
     {
         Assert.That(typeof(ISegmentListIterator).GUID, Is.EqualTo(IID_ISegmentListIterator));
     }
-
-    /// <summary>Validates that the <see cref="ISegmentListIterator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISegmentListIterator>(), Is.EqualTo(sizeof(ISegmentListIterator)));
-    }
-
-    /// <summary>Validates that the <see cref="ISegmentListIterator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISegmentListIterator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISegmentListIterator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISegmentListIterator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISegmentListIterator), Is.EqualTo(4));
-        }
-    }
 }

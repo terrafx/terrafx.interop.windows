@@ -19,32 +19,4 @@ public static unsafe partial class IRegTreeItemTests
     {
         Assert.That(typeof(IRegTreeItem).GUID, Is.EqualTo(IID_IRegTreeItem));
     }
-
-    /// <summary>Validates that the <see cref="IRegTreeItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRegTreeItem>(), Is.EqualTo(sizeof(IRegTreeItem)));
-    }
-
-    /// <summary>Validates that the <see cref="IRegTreeItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRegTreeItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRegTreeItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRegTreeItem), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRegTreeItem), Is.EqualTo(4));
-        }
-    }
 }

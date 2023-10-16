@@ -27,7 +27,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSourceBufferNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSourceBufferNotify*, uint>)(lpVtbl[1]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferNotify*, uint>)(lpVtbl[1]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSourceBufferNotify*, uint>)(lpVtbl[2]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferNotify*, uint>)(lpVtbl[2]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify.OnUpdateStart"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
     [VtblIndex(3)]
     public void OnUpdateStart()
     {
-        ((delegate* unmanaged<IMFSourceBufferNotify*, void>)(lpVtbl[3]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IMFSourceBufferNotify*, void>)(lpVtbl[3]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify.OnAbort"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
     [VtblIndex(4)]
     public void OnAbort()
     {
-        ((delegate* unmanaged<IMFSourceBufferNotify*, void>)(lpVtbl[4]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IMFSourceBufferNotify*, void>)(lpVtbl[4]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify.OnError"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
     [VtblIndex(5)]
     public void OnError(HRESULT hr)
     {
-        ((delegate* unmanaged<IMFSourceBufferNotify*, HRESULT, void>)(lpVtbl[5]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this), hr);
+        ((delegate* unmanaged[MemberFunction]<IMFSourceBufferNotify*, HRESULT, void>)(lpVtbl[5]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this), hr);
     }
 
     /// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify.OnUpdate"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
     [VtblIndex(6)]
     public void OnUpdate()
     {
-        ((delegate* unmanaged<IMFSourceBufferNotify*, void>)(lpVtbl[6]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IMFSourceBufferNotify*, void>)(lpVtbl[6]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBufferNotify.xml' path='doc/member[@name="IMFSourceBufferNotify.OnUpdateEnd"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
     [VtblIndex(7)]
     public void OnUpdateEnd()
     {
-        ((delegate* unmanaged<IMFSourceBufferNotify*, void>)(lpVtbl[7]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IMFSourceBufferNotify*, void>)(lpVtbl[7]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -110,27 +110,27 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> OnUpdateStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> OnUpdateStart;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> OnAbort;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> OnAbort;
 
         [NativeTypeName("void (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, void> OnError;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, void> OnError;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> OnUpdate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> OnUpdate;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> OnUpdateEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> OnUpdateEnd;
     }
 }

@@ -28,7 +28,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectManipulationCompositor2*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationCompositor2*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectManipulationCompositor2*, uint>)(lpVtbl[1]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationCompositor2*, uint>)(lpVtbl[1]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectManipulationCompositor2*, uint>)(lpVtbl[2]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationCompositor2*, uint>)(lpVtbl[2]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDirectManipulationCompositor.AddContent" />
@@ -54,7 +54,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
     [VtblIndex(3)]
     public HRESULT AddContent(IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual)
     {
-        return ((delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), content, device, parentVisual, childVisual);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationCompositor2*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), content, device, parentVisual, childVisual);
     }
 
     /// <inheritdoc cref="IDirectManipulationCompositor.RemoveContent" />
@@ -62,7 +62,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
     [VtblIndex(4)]
     public HRESULT RemoveContent(IDirectManipulationContent* content)
     {
-        return ((delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationContent*, int>)(lpVtbl[4]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), content);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationCompositor2*, IDirectManipulationContent*, int>)(lpVtbl[4]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), content);
     }
 
     /// <inheritdoc cref="IDirectManipulationCompositor.SetUpdateManager" />
@@ -70,7 +70,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
     [VtblIndex(5)]
     public HRESULT SetUpdateManager(IDirectManipulationUpdateManager* updateManager)
     {
-        return ((delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationUpdateManager*, int>)(lpVtbl[5]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), updateManager);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationCompositor2*, IDirectManipulationUpdateManager*, int>)(lpVtbl[5]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), updateManager);
     }
 
     /// <inheritdoc cref="IDirectManipulationCompositor.Flush" />
@@ -78,7 +78,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
     [VtblIndex(6)]
     public HRESULT Flush()
     {
-        return ((delegate* unmanaged<IDirectManipulationCompositor2*, int>)(lpVtbl[6]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationCompositor2*, int>)(lpVtbl[6]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectManipulationCompositor2.xml' path='doc/member[@name="IDirectManipulationCompositor2.AddContentWithCrossProcessChaining"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
     [VtblIndex(7)]
     public HRESULT AddContentWithCrossProcessChaining(IDirectManipulationPrimaryContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual)
     {
-        return ((delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationPrimaryContent*, IUnknown*, IUnknown*, IUnknown*, int>)(lpVtbl[7]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), content, device, parentVisual, childVisual);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationCompositor2*, IDirectManipulationPrimaryContent*, IUnknown*, IUnknown*, IUnknown*, int>)(lpVtbl[7]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), content, device, parentVisual, childVisual);
     }
 
     public interface Interface : IDirectManipulationCompositor.Interface
@@ -99,27 +99,27 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDirectManipulationContent *, IUnknown *, IUnknown *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int> AddContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int> AddContent;
 
         [NativeTypeName("HRESULT (IDirectManipulationContent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectManipulationContent*, int> RemoveContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectManipulationContent*, int> RemoveContent;
 
         [NativeTypeName("HRESULT (IDirectManipulationUpdateManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectManipulationUpdateManager*, int> SetUpdateManager;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectManipulationUpdateManager*, int> SetUpdateManager;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Flush;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Flush;
 
         [NativeTypeName("HRESULT (IDirectManipulationPrimaryContent *, IUnknown *, IUnknown *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectManipulationPrimaryContent*, IUnknown*, IUnknown*, IUnknown*, int> AddContentWithCrossProcessChaining;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectManipulationPrimaryContent*, IUnknown*, IUnknown*, IUnknown*, int> AddContentWithCrossProcessChaining;
     }
 }

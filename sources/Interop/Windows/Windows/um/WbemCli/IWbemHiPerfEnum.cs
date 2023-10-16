@@ -25,7 +25,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWbemHiPerfEnum*, Guid*, void**, int>)(lpVtbl[0]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWbemHiPerfEnum*, Guid*, void**, int>)(lpVtbl[0]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWbemHiPerfEnum*, uint>)(lpVtbl[1]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemHiPerfEnum*, uint>)(lpVtbl[1]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWbemHiPerfEnum*, uint>)(lpVtbl[2]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemHiPerfEnum*, uint>)(lpVtbl[2]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWbemHiPerfEnum.xml' path='doc/member[@name="IWbemHiPerfEnum.AddObjects"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface, INativ
     [VtblIndex(3)]
     public HRESULT AddObjects([NativeTypeName("long")] int lFlags, [NativeTypeName("ULONG")] uint uNumObjects, [NativeTypeName("long *")] int* apIds, IWbemObjectAccess** apObj)
     {
-        return ((delegate* unmanaged<IWbemHiPerfEnum*, int, uint, int*, IWbemObjectAccess**, int>)(lpVtbl[3]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags, uNumObjects, apIds, apObj);
+        return ((delegate* unmanaged[MemberFunction]<IWbemHiPerfEnum*, int, uint, int*, IWbemObjectAccess**, int>)(lpVtbl[3]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags, uNumObjects, apIds, apObj);
     }
 
     /// <include file='IWbemHiPerfEnum.xml' path='doc/member[@name="IWbemHiPerfEnum.RemoveObjects"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface, INativ
     [VtblIndex(4)]
     public HRESULT RemoveObjects([NativeTypeName("long")] int lFlags, [NativeTypeName("ULONG")] uint uNumObjects, [NativeTypeName("long *")] int* apIds)
     {
-        return ((delegate* unmanaged<IWbemHiPerfEnum*, int, uint, int*, int>)(lpVtbl[4]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags, uNumObjects, apIds);
+        return ((delegate* unmanaged[MemberFunction]<IWbemHiPerfEnum*, int, uint, int*, int>)(lpVtbl[4]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags, uNumObjects, apIds);
     }
 
     /// <include file='IWbemHiPerfEnum.xml' path='doc/member[@name="IWbemHiPerfEnum.GetObjects"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetObjects([NativeTypeName("long")] int lFlags, [NativeTypeName("ULONG")] uint uNumObjects, IWbemObjectAccess** apObj, [NativeTypeName("ULONG *")] uint* puReturned)
     {
-        return ((delegate* unmanaged<IWbemHiPerfEnum*, int, uint, IWbemObjectAccess**, uint*, int>)(lpVtbl[5]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags, uNumObjects, apObj, puReturned);
+        return ((delegate* unmanaged[MemberFunction]<IWbemHiPerfEnum*, int, uint, IWbemObjectAccess**, uint*, int>)(lpVtbl[5]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags, uNumObjects, apObj, puReturned);
     }
 
     /// <include file='IWbemHiPerfEnum.xml' path='doc/member[@name="IWbemHiPerfEnum.RemoveAll"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface, INativ
     [VtblIndex(6)]
     public HRESULT RemoveAll([NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemHiPerfEnum*, int, int>)(lpVtbl[6]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags);
+        return ((delegate* unmanaged[MemberFunction]<IWbemHiPerfEnum*, int, int>)(lpVtbl[6]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, ULONG, long *, IWbemObjectAccess **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint, int*, IWbemObjectAccess**, int> AddObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, uint, int*, IWbemObjectAccess**, int> AddObjects;
 
         [NativeTypeName("HRESULT (long, ULONG, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint, int*, int> RemoveObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, uint, int*, int> RemoveObjects;
 
         [NativeTypeName("HRESULT (long, ULONG, IWbemObjectAccess **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint, IWbemObjectAccess**, uint*, int> GetObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, uint, IWbemObjectAccess**, uint*, int> GetObjects;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> RemoveAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> RemoveAll;
     }
 }

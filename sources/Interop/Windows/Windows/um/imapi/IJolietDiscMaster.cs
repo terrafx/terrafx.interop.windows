@@ -25,7 +25,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IJolietDiscMaster*, Guid*, void**, int>)(lpVtbl[0]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IJolietDiscMaster*, Guid*, void**, int>)(lpVtbl[0]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IJolietDiscMaster*, uint>)(lpVtbl[1]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IJolietDiscMaster*, uint>)(lpVtbl[1]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IJolietDiscMaster*, uint>)(lpVtbl[2]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IJolietDiscMaster*, uint>)(lpVtbl[2]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.GetTotalDataBlocks"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTotalDataBlocks([NativeTypeName("long *")] int* pnBlocks)
     {
-        return ((delegate* unmanaged<IJolietDiscMaster*, int*, int>)(lpVtbl[3]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
+        return ((delegate* unmanaged[MemberFunction]<IJolietDiscMaster*, int*, int>)(lpVtbl[3]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
     }
 
     /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.GetUsedDataBlocks"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetUsedDataBlocks([NativeTypeName("long *")] int* pnBlocks)
     {
-        return ((delegate* unmanaged<IJolietDiscMaster*, int*, int>)(lpVtbl[4]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
+        return ((delegate* unmanaged[MemberFunction]<IJolietDiscMaster*, int*, int>)(lpVtbl[4]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
     }
 
     /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.GetDataBlockSize"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetDataBlockSize([NativeTypeName("long *")] int* pnBlockBytes)
     {
-        return ((delegate* unmanaged<IJolietDiscMaster*, int*, int>)(lpVtbl[5]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlockBytes);
+        return ((delegate* unmanaged[MemberFunction]<IJolietDiscMaster*, int*, int>)(lpVtbl[5]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlockBytes);
     }
 
     /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.AddData"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, IN
     [VtblIndex(6)]
     public HRESULT AddData(IStorage* pStorage, [NativeTypeName("long")] int lFileOverwrite)
     {
-        return ((delegate* unmanaged<IJolietDiscMaster*, IStorage*, int, int>)(lpVtbl[6]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pStorage, lFileOverwrite);
+        return ((delegate* unmanaged[MemberFunction]<IJolietDiscMaster*, IStorage*, int, int>)(lpVtbl[6]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pStorage, lFileOverwrite);
     }
 
     /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.GetJolietProperties"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, IN
     [VtblIndex(7)]
     public HRESULT GetJolietProperties(IPropertyStorage** ppPropStg)
     {
-        return ((delegate* unmanaged<IJolietDiscMaster*, IPropertyStorage**, int>)(lpVtbl[7]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), ppPropStg);
+        return ((delegate* unmanaged[MemberFunction]<IJolietDiscMaster*, IPropertyStorage**, int>)(lpVtbl[7]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), ppPropStg);
     }
 
     /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.SetJolietProperties"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, IN
     [VtblIndex(8)]
     public HRESULT SetJolietProperties(IPropertyStorage* pPropStg)
     {
-        return ((delegate* unmanaged<IJolietDiscMaster*, IPropertyStorage*, int>)(lpVtbl[8]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pPropStg);
+        return ((delegate* unmanaged[MemberFunction]<IJolietDiscMaster*, IPropertyStorage*, int>)(lpVtbl[8]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pPropStg);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetTotalDataBlocks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetTotalDataBlocks;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetUsedDataBlocks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetUsedDataBlocks;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetDataBlockSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetDataBlockSize;
 
         [NativeTypeName("HRESULT (IStorage *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStorage*, int, int> AddData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorage*, int, int> AddData;
 
         [NativeTypeName("HRESULT (IPropertyStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyStorage**, int> GetJolietProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyStorage**, int> GetJolietProperties;
 
         [NativeTypeName("HRESULT (IPropertyStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyStorage*, int> SetJolietProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyStorage*, int> SetJolietProperties;
     }
 }

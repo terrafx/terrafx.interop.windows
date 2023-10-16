@@ -25,7 +25,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFrameworkInputPane*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPane*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFrameworkInputPane*, uint>)(lpVtbl[1]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPane*, uint>)(lpVtbl[1]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFrameworkInputPane*, uint>)(lpVtbl[2]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPane*, uint>)(lpVtbl[2]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFrameworkInputPane.xml' path='doc/member[@name="IFrameworkInputPane.Advise"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
     [VtblIndex(3)]
     public HRESULT Advise(IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[3]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), pWindow, pHandler, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[3]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), pWindow, pHandler, pdwCookie);
     }
 
     /// <include file='IFrameworkInputPane.xml' path='doc/member[@name="IFrameworkInputPane.AdviseWithHWND"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
     [VtblIndex(4)]
     public HRESULT AdviseWithHWND(HWND hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<IFrameworkInputPane*, HWND, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[4]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), hwnd, pHandler, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPane*, HWND, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[4]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), hwnd, pHandler, pdwCookie);
     }
 
     /// <include file='IFrameworkInputPane.xml' path='doc/member[@name="IFrameworkInputPane.Unadvise"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
     [VtblIndex(5)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<IFrameworkInputPane*, uint, int>)(lpVtbl[5]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPane*, uint, int>)(lpVtbl[5]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
     /// <include file='IFrameworkInputPane.xml' path='doc/member[@name="IFrameworkInputPane.Location"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
     [VtblIndex(6)]
     public HRESULT Location(RECT* prcInputPaneScreenLocation)
     {
-        return ((delegate* unmanaged<IFrameworkInputPane*, RECT*, int>)(lpVtbl[6]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation);
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPane*, RECT*, int>)(lpVtbl[6]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, IFrameworkInputPaneHandler *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int> Advise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (HWND, IFrameworkInputPaneHandler *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, IFrameworkInputPaneHandler*, uint*, int> AdviseWithHWND;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, IFrameworkInputPaneHandler*, uint*, int> AdviseWithHWND;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> Location;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> Location;
     }
 }

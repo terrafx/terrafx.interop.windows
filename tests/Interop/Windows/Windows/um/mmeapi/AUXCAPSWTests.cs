@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AUXCAPSW" /> struct.</summary>
 public static unsafe partial class AUXCAPSWTests
 {
-    /// <summary>Validates that the <see cref="AUXCAPSW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AUXCAPSW>(), Is.EqualTo(sizeof(AUXCAPSW)));
-    }
-
-    /// <summary>Validates that the <see cref="AUXCAPSW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AUXCAPSW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AUXCAPSW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AUXCAPSW), Is.EqualTo(80));
-    }
 }

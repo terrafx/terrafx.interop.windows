@@ -25,7 +25,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMediaObjectInPlace*, Guid*, void**, int>)(lpVtbl[0]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObjectInPlace*, Guid*, void**, int>)(lpVtbl[0]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMediaObjectInPlace*, uint>)(lpVtbl[1]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaObjectInPlace*, uint>)(lpVtbl[1]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMediaObjectInPlace*, uint>)(lpVtbl[2]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaObjectInPlace*, uint>)(lpVtbl[2]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaObjectInPlace.xml' path='doc/member[@name="IMediaObjectInPlace.Process"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
     [VtblIndex(3)]
     public HRESULT Process([NativeTypeName("ULONG")] uint ulSize, byte* pData, [NativeTypeName("REFERENCE_TIME")] long refTimeStart, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IMediaObjectInPlace*, uint, byte*, long, uint, int>)(lpVtbl[3]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), ulSize, pData, refTimeStart, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObjectInPlace*, uint, byte*, long, uint, int>)(lpVtbl[3]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), ulSize, pData, refTimeStart, dwFlags);
     }
 
     /// <include file='IMediaObjectInPlace.xml' path='doc/member[@name="IMediaObjectInPlace.Clone"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
     [VtblIndex(4)]
     public HRESULT Clone(IMediaObjectInPlace** ppMediaObject)
     {
-        return ((delegate* unmanaged<IMediaObjectInPlace*, IMediaObjectInPlace**, int>)(lpVtbl[4]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), ppMediaObject);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObjectInPlace*, IMediaObjectInPlace**, int>)(lpVtbl[4]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), ppMediaObject);
     }
 
     /// <include file='IMediaObjectInPlace.xml' path='doc/member[@name="IMediaObjectInPlace.GetLatency"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
     [VtblIndex(5)]
     public HRESULT GetLatency([NativeTypeName("REFERENCE_TIME *")] long* pLatencyTime)
     {
-        return ((delegate* unmanaged<IMediaObjectInPlace*, long*, int>)(lpVtbl[5]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), pLatencyTime);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObjectInPlace*, long*, int>)(lpVtbl[5]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), pLatencyTime);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, BYTE *, REFERENCE_TIME, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte*, long, uint, int> Process;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte*, long, uint, int> Process;
 
         [NativeTypeName("HRESULT (IMediaObjectInPlace **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMediaObjectInPlace**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaObjectInPlace**, int> Clone;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, int> GetLatency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, int> GetLatency;
     }
 }

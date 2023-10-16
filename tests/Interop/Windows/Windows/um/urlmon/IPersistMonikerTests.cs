@@ -19,32 +19,4 @@ public static unsafe partial class IPersistMonikerTests
     {
         Assert.That(typeof(IPersistMoniker).GUID, Is.EqualTo(IID_IPersistMoniker));
     }
-
-    /// <summary>Validates that the <see cref="IPersistMoniker" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPersistMoniker>(), Is.EqualTo(sizeof(IPersistMoniker)));
-    }
-
-    /// <summary>Validates that the <see cref="IPersistMoniker" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPersistMoniker).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPersistMoniker" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPersistMoniker), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPersistMoniker), Is.EqualTo(4));
-        }
-    }
 }

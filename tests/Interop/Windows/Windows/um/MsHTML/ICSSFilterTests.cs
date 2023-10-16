@@ -19,32 +19,4 @@ public static unsafe partial class ICSSFilterTests
     {
         Assert.That(typeof(ICSSFilter).GUID, Is.EqualTo(IID_ICSSFilter));
     }
-
-    /// <summary>Validates that the <see cref="ICSSFilter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICSSFilter>(), Is.EqualTo(sizeof(ICSSFilter)));
-    }
-
-    /// <summary>Validates that the <see cref="ICSSFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICSSFilter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICSSFilter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICSSFilter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICSSFilter), Is.EqualTo(4));
-        }
-    }
 }

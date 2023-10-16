@@ -22,5 +22,5 @@ public unsafe partial struct SI_COPYFILE
 
     /// <include file='SI_COPYFILE.xml' path='doc/member[@name="SI_COPYFILE.FileNameBuffer"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort FileNameBuffer[1];
+    public fixed char FileNameBuffer[1];
 }

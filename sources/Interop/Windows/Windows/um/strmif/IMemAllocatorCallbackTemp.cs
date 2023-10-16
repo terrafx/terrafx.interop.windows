@@ -25,7 +25,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, Guid*, void**, int>)(lpVtbl[0]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, Guid*, void**, int>)(lpVtbl[0]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, uint>)(lpVtbl[1]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, uint>)(lpVtbl[1]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, uint>)(lpVtbl[2]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, uint>)(lpVtbl[2]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMemAllocator.SetProperties" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [VtblIndex(3)]
     public HRESULT SetProperties(ALLOCATOR_PROPERTIES* pRequest, ALLOCATOR_PROPERTIES* pActual)
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, ALLOCATOR_PROPERTIES*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[3]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pRequest, pActual);
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, ALLOCATOR_PROPERTIES*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[3]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pRequest, pActual);
     }
 
     /// <inheritdoc cref="IMemAllocator.GetProperties" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [VtblIndex(4)]
     public HRESULT GetProperties(ALLOCATOR_PROPERTIES* pProps)
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[4]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pProps);
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[4]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pProps);
     }
 
     /// <inheritdoc cref="IMemAllocator.Commit" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [VtblIndex(5)]
     public HRESULT Commit()
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, int>)(lpVtbl[5]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, int>)(lpVtbl[5]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMemAllocator.Decommit" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [VtblIndex(6)]
     public HRESULT Decommit()
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, int>)(lpVtbl[6]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, int>)(lpVtbl[6]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMemAllocator.GetBuffer" />
@@ -83,7 +83,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [VtblIndex(7)]
     public HRESULT GetBuffer(IMediaSample** ppBuffer, [NativeTypeName("REFERENCE_TIME *")] long* pStartTime, [NativeTypeName("REFERENCE_TIME *")] long* pEndTime, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, IMediaSample**, long*, long*, uint, int>)(lpVtbl[7]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), ppBuffer, pStartTime, pEndTime, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, IMediaSample**, long*, long*, uint, int>)(lpVtbl[7]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), ppBuffer, pStartTime, pEndTime, dwFlags);
     }
 
     /// <inheritdoc cref="IMemAllocator.ReleaseBuffer" />
@@ -91,7 +91,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [VtblIndex(8)]
     public HRESULT ReleaseBuffer(IMediaSample* pBuffer)
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, IMediaSample*, int>)(lpVtbl[8]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, IMediaSample*, int>)(lpVtbl[8]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pBuffer);
     }
 
     /// <include file='IMemAllocatorCallbackTemp.xml' path='doc/member[@name="IMemAllocatorCallbackTemp.SetNotify"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [VtblIndex(9)]
     public HRESULT SetNotify(IMemAllocatorNotifyCallbackTemp* pNotify)
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, IMemAllocatorNotifyCallbackTemp*, int>)(lpVtbl[9]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pNotify);
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, IMemAllocatorNotifyCallbackTemp*, int>)(lpVtbl[9]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pNotify);
     }
 
     /// <include file='IMemAllocatorCallbackTemp.xml' path='doc/member[@name="IMemAllocatorCallbackTemp.GetFreeCount"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
     [VtblIndex(10)]
     public HRESULT GetFreeCount([NativeTypeName("LONG *")] int* plBuffersFree)
     {
-        return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, int*, int>)(lpVtbl[10]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), plBuffersFree);
+        return ((delegate* unmanaged[MemberFunction]<IMemAllocatorCallbackTemp*, int*, int>)(lpVtbl[10]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), plBuffersFree);
     }
 
     public interface Interface : IMemAllocator.Interface
@@ -123,36 +123,36 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *, ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ALLOCATOR_PROPERTIES*, ALLOCATOR_PROPERTIES*, int> SetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ALLOCATOR_PROPERTIES*, ALLOCATOR_PROPERTIES*, int> SetProperties;
 
         [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ALLOCATOR_PROPERTIES*, int> GetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ALLOCATOR_PROPERTIES*, int> GetProperties;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Decommit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Decommit;
 
         [NativeTypeName("HRESULT (IMediaSample **, REFERENCE_TIME *, REFERENCE_TIME *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMediaSample**, long*, long*, uint, int> GetBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSample**, long*, long*, uint, int> GetBuffer;
 
         [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMediaSample*, int> ReleaseBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSample*, int> ReleaseBuffer;
 
         [NativeTypeName("HRESULT (IMemAllocatorNotifyCallbackTemp *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMemAllocatorNotifyCallbackTemp*, int> SetNotify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMemAllocatorNotifyCallbackTemp*, int> SetNotify;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetFreeCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetFreeCount;
     }
 }

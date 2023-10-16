@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="NEWTEXTMETRICEXA" /> struct.</summary>
 public static unsafe partial class NEWTEXTMETRICEXATests
 {
-    /// <summary>Validates that the <see cref="NEWTEXTMETRICEXA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NEWTEXTMETRICEXA>(), Is.EqualTo(sizeof(NEWTEXTMETRICEXA)));
-    }
-
-    /// <summary>Validates that the <see cref="NEWTEXTMETRICEXA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NEWTEXTMETRICEXA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NEWTEXTMETRICEXA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NEWTEXTMETRICEXA), Is.EqualTo(96));
-    }
 }

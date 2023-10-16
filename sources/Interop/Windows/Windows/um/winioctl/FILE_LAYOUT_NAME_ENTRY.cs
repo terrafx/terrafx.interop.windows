@@ -30,5 +30,5 @@ public unsafe partial struct FILE_LAYOUT_NAME_ENTRY
 
     /// <include file='FILE_LAYOUT_NAME_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_NAME_ENTRY.FileName"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort FileName[1];
+    public fixed char FileName[1];
 }

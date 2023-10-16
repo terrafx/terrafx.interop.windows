@@ -19,25 +19,4 @@ public static unsafe partial class DOMUIEventTests
     {
         Assert.That(typeof(DOMUIEvent).GUID, Is.EqualTo(IID_DOMUIEvent));
     }
-
-    /// <summary>Validates that the <see cref="DOMUIEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMUIEvent>(), Is.EqualTo(sizeof(DOMUIEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMUIEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMUIEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMUIEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMUIEvent), Is.EqualTo(1));
-    }
 }

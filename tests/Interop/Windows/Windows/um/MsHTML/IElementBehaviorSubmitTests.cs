@@ -19,32 +19,4 @@ public static unsafe partial class IElementBehaviorSubmitTests
     {
         Assert.That(typeof(IElementBehaviorSubmit).GUID, Is.EqualTo(IID_IElementBehaviorSubmit));
     }
-
-    /// <summary>Validates that the <see cref="IElementBehaviorSubmit" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IElementBehaviorSubmit>(), Is.EqualTo(sizeof(IElementBehaviorSubmit)));
-    }
-
-    /// <summary>Validates that the <see cref="IElementBehaviorSubmit" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IElementBehaviorSubmit).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IElementBehaviorSubmit" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IElementBehaviorSubmit), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IElementBehaviorSubmit), Is.EqualTo(4));
-        }
-    }
 }

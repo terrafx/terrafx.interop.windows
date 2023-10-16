@@ -19,25 +19,4 @@ public static unsafe partial class MsftRawCDImageCreatorTests
     {
         Assert.That(typeof(MsftRawCDImageCreator).GUID, Is.EqualTo(CLSID_MsftRawCDImageCreator));
     }
-
-    /// <summary>Validates that the <see cref="MsftRawCDImageCreator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MsftRawCDImageCreator>(), Is.EqualTo(sizeof(MsftRawCDImageCreator)));
-    }
-
-    /// <summary>Validates that the <see cref="MsftRawCDImageCreator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MsftRawCDImageCreator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MsftRawCDImageCreator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MsftRawCDImageCreator), Is.EqualTo(1));
-    }
 }

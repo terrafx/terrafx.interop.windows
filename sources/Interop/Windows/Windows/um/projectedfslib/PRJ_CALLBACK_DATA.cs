@@ -34,7 +34,7 @@ public unsafe partial struct PRJ_CALLBACK_DATA
 
     /// <include file='PRJ_CALLBACK_DATA.xml' path='doc/member[@name="PRJ_CALLBACK_DATA.FilePathName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* FilePathName;
+    public char* FilePathName;
 
     /// <include file='PRJ_CALLBACK_DATA.xml' path='doc/member[@name="PRJ_CALLBACK_DATA.VersionInfo"]/*' />
     public PRJ_PLACEHOLDER_VERSION_INFO* VersionInfo;
@@ -45,7 +45,7 @@ public unsafe partial struct PRJ_CALLBACK_DATA
 
     /// <include file='PRJ_CALLBACK_DATA.xml' path='doc/member[@name="PRJ_CALLBACK_DATA.TriggeringProcessImageFileName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* TriggeringProcessImageFileName;
+    public char* TriggeringProcessImageFileName;
 
     /// <include file='PRJ_CALLBACK_DATA.xml' path='doc/member[@name="PRJ_CALLBACK_DATA.InstanceContext"]/*' />
     public void* InstanceContext;

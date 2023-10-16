@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class CERT_STRONG_SIGN_PARATests
 {
-    /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_PARA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CERT_STRONG_SIGN_PARA>(), Is.EqualTo(sizeof(CERT_STRONG_SIGN_PARA)));
-    }
-
-    /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CERT_STRONG_SIGN_PARA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_PARA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(CERT_STRONG_SIGN_PARA), Is.EqualTo(16));
-        }
-        else
-        {
-            Assert.That(sizeof(CERT_STRONG_SIGN_PARA), Is.EqualTo(12));
-        }
-    }
 }

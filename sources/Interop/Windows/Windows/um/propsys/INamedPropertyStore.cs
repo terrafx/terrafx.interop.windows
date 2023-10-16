@@ -25,7 +25,7 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INamedPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INamedPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INamedPropertyStore*, uint>)(lpVtbl[1]))((INamedPropertyStore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INamedPropertyStore*, uint>)(lpVtbl[1]))((INamedPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,23 +43,23 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INamedPropertyStore*, uint>)(lpVtbl[2]))((INamedPropertyStore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INamedPropertyStore*, uint>)(lpVtbl[2]))((INamedPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INamedPropertyStore.xml' path='doc/member[@name="INamedPropertyStore.GetNamedValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetNamedValue([NativeTypeName("LPCWSTR")] ushort* pszName, PROPVARIANT* ppropvar)
+    public HRESULT GetNamedValue([NativeTypeName("LPCWSTR")] char* pszName, PROPVARIANT* ppropvar)
     {
-        return ((delegate* unmanaged<INamedPropertyStore*, ushort*, PROPVARIANT*, int>)(lpVtbl[3]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), pszName, ppropvar);
+        return ((delegate* unmanaged[MemberFunction]<INamedPropertyStore*, char*, PROPVARIANT*, int>)(lpVtbl[3]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), pszName, ppropvar);
     }
 
     /// <include file='INamedPropertyStore.xml' path='doc/member[@name="INamedPropertyStore.SetNamedValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetNamedValue([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar)
+    public HRESULT SetNamedValue([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar)
     {
-        return ((delegate* unmanaged<INamedPropertyStore*, ushort*, PROPVARIANT*, int>)(lpVtbl[4]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), pszName, propvar);
+        return ((delegate* unmanaged[MemberFunction]<INamedPropertyStore*, char*, PROPVARIANT*, int>)(lpVtbl[4]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), pszName, propvar);
     }
 
     /// <include file='INamedPropertyStore.xml' path='doc/member[@name="INamedPropertyStore.GetNameCount"]/*' />
@@ -67,54 +67,54 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
     [VtblIndex(5)]
     public HRESULT GetNameCount([NativeTypeName("DWORD *")] uint* pdwCount)
     {
-        return ((delegate* unmanaged<INamedPropertyStore*, uint*, int>)(lpVtbl[5]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), pdwCount);
+        return ((delegate* unmanaged[MemberFunction]<INamedPropertyStore*, uint*, int>)(lpVtbl[5]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
     /// <include file='INamedPropertyStore.xml' path='doc/member[@name="INamedPropertyStore.GetNameAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetNameAt([NativeTypeName("DWORD")] uint iProp, [NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetNameAt([NativeTypeName("DWORD")] uint iProp, [NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<INamedPropertyStore*, uint, ushort**, int>)(lpVtbl[6]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), iProp, pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<INamedPropertyStore*, uint, char**, int>)(lpVtbl[6]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), iProp, pbstrName);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetNamedValue([NativeTypeName("LPCWSTR")] ushort* pszName, PROPVARIANT* ppropvar);
+        HRESULT GetNamedValue([NativeTypeName("LPCWSTR")] char* pszName, PROPVARIANT* ppropvar);
 
         [VtblIndex(4)]
-        HRESULT SetNamedValue([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar);
+        HRESULT SetNamedValue([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar);
 
         [VtblIndex(5)]
         HRESULT GetNameCount([NativeTypeName("DWORD *")] uint* pdwCount);
 
         [VtblIndex(6)]
-        HRESULT GetNameAt([NativeTypeName("DWORD")] uint iProp, [NativeTypeName("BSTR *")] ushort** pbstrName);
+        HRESULT GetNameAt([NativeTypeName("DWORD")] uint iProp, [NativeTypeName("BSTR *")] char** pbstrName);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> GetNamedValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, PROPVARIANT*, int> GetNamedValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, const PROPVARIANT &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> SetNamedValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, PROPVARIANT*, int> SetNamedValue;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetNameCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetNameCount;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetNameAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> GetNameAt;
     }
 }

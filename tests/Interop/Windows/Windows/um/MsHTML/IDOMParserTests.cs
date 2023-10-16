@@ -19,32 +19,4 @@ public static unsafe partial class IDOMParserTests
     {
         Assert.That(typeof(IDOMParser).GUID, Is.EqualTo(IID_IDOMParser));
     }
-
-    /// <summary>Validates that the <see cref="IDOMParser" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDOMParser>(), Is.EqualTo(sizeof(IDOMParser)));
-    }
-
-    /// <summary>Validates that the <see cref="IDOMParser" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDOMParser).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDOMParser" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDOMParser), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDOMParser), Is.EqualTo(4));
-        }
-    }
 }

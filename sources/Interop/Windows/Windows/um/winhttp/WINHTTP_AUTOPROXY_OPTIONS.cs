@@ -18,7 +18,7 @@ public unsafe partial struct WINHTTP_AUTOPROXY_OPTIONS
 
     /// <include file='WINHTTP_AUTOPROXY_OPTIONS.xml' path='doc/member[@name="WINHTTP_AUTOPROXY_OPTIONS.lpszAutoConfigUrl"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszAutoConfigUrl;
+    public char* lpszAutoConfigUrl;
 
     /// <include file='WINHTTP_AUTOPROXY_OPTIONS.xml' path='doc/member[@name="WINHTTP_AUTOPROXY_OPTIONS.lpvReserved"]/*' />
     [NativeTypeName("LPVOID")]

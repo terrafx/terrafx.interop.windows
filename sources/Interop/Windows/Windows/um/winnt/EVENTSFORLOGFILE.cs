@@ -19,7 +19,7 @@ public unsafe partial struct EVENTSFORLOGFILE
 
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.szLogicalLogFile"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort szLogicalLogFile[256];
+    public fixed char szLogicalLogFile[256];
 
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.ulNumRecords"]/*' />
     [NativeTypeName("DWORD")]

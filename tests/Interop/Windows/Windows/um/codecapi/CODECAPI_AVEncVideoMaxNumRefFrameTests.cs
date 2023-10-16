@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoMaxNumRefFrameTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoMaxNumRefFrame).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoMaxNumRefFrame));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoMaxNumRefFrame" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoMaxNumRefFrame>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoMaxNumRefFrame)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoMaxNumRefFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoMaxNumRefFrame).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoMaxNumRefFrame" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoMaxNumRefFrame), Is.EqualTo(1));
-    }
 }

@@ -19,5 +19,5 @@ public unsafe partial struct RESOURCEMANAGER_BASIC_INFORMATION
 
     /// <include file='RESOURCEMANAGER_BASIC_INFORMATION.xml' path='doc/member[@name="RESOURCEMANAGER_BASIC_INFORMATION.Description"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort Description[1];
+    public fixed char Description[1];
 }

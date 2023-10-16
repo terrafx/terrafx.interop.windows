@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MFCLOCK_PROPERTIES" /> struct.</summary>
 public static unsafe partial class MFCLOCK_PROPERTIESTests
 {
-    /// <summary>Validates that the <see cref="MFCLOCK_PROPERTIES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MFCLOCK_PROPERTIES>(), Is.EqualTo(sizeof(MFCLOCK_PROPERTIES)));
-    }
-
-    /// <summary>Validates that the <see cref="MFCLOCK_PROPERTIES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MFCLOCK_PROPERTIES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MFCLOCK_PROPERTIES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MFCLOCK_PROPERTIES), Is.EqualTo(48));
-    }
 }

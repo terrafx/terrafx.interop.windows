@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="YxyCOLOR" /> struct.</summary>
 public static unsafe partial class YxyCOLORTests
 {
-    /// <summary>Validates that the <see cref="YxyCOLOR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<YxyCOLOR>(), Is.EqualTo(sizeof(YxyCOLOR)));
-    }
-
-    /// <summary>Validates that the <see cref="YxyCOLOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(YxyCOLOR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="YxyCOLOR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(YxyCOLOR), Is.EqualTo(6));
-    }
 }

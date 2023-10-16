@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DIGISTDWAVEFORMAT" /> struct.</summary>
 public static unsafe partial class DIGISTDWAVEFORMATTests
 {
-    /// <summary>Validates that the <see cref="DIGISTDWAVEFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DIGISTDWAVEFORMAT>(), Is.EqualTo(sizeof(DIGISTDWAVEFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="DIGISTDWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DIGISTDWAVEFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DIGISTDWAVEFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DIGISTDWAVEFORMAT), Is.EqualTo(18));
-    }
 }

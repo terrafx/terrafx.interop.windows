@@ -22,15 +22,15 @@ public unsafe partial struct SOFTDISTINFO
 
     /// <include file='SOFTDISTINFO.xml' path='doc/member[@name="SOFTDISTINFO.szTitle"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szTitle;
+    public char* szTitle;
 
     /// <include file='SOFTDISTINFO.xml' path='doc/member[@name="SOFTDISTINFO.szAbstract"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szAbstract;
+    public char* szAbstract;
 
     /// <include file='SOFTDISTINFO.xml' path='doc/member[@name="SOFTDISTINFO.szHREF"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szHREF;
+    public char* szHREF;
 
     /// <include file='SOFTDISTINFO.xml' path='doc/member[@name="SOFTDISTINFO.dwInstalledVersionMS"]/*' />
     [NativeTypeName("DWORD")]

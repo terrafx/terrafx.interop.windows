@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LMR_QUERY_INFO_PARAM" /> struct.</summary>
 public static unsafe partial class LMR_QUERY_INFO_PARAMTests
 {
-    /// <summary>Validates that the <see cref="LMR_QUERY_INFO_PARAM" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LMR_QUERY_INFO_PARAM>(), Is.EqualTo(sizeof(LMR_QUERY_INFO_PARAM)));
-    }
-
-    /// <summary>Validates that the <see cref="LMR_QUERY_INFO_PARAM" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LMR_QUERY_INFO_PARAM).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LMR_QUERY_INFO_PARAM" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(LMR_QUERY_INFO_PARAM), Is.EqualTo(4));
-    }
 }

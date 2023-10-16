@@ -25,7 +25,7 @@ public unsafe partial struct ITfMenu : ITfMenu.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfMenu*, Guid*, void**, int>)(lpVtbl[0]))((ITfMenu*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfMenu*, Guid*, void**, int>)(lpVtbl[0]))((ITfMenu*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfMenu : ITfMenu.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfMenu*, uint>)(lpVtbl[1]))((ITfMenu*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfMenu*, uint>)(lpVtbl[1]))((ITfMenu*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct ITfMenu : ITfMenu.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfMenu*, uint>)(lpVtbl[2]))((ITfMenu*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfMenu*, uint>)(lpVtbl[2]))((ITfMenu*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfMenu.xml' path='doc/member[@name="ITfMenu.AddMenuItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddMenuItem(uint uId, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch, ITfMenu** ppMenu)
+    public HRESULT AddMenuItem(uint uId, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, [NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch, ITfMenu** ppMenu)
     {
-        return ((delegate* unmanaged<ITfMenu*, uint, uint, HBITMAP, HBITMAP, ushort*, uint, ITfMenu**, int>)(lpVtbl[3]))((ITfMenu*)Unsafe.AsPointer(ref this), uId, dwFlags, hbmp, hbmpMask, pch, cch, ppMenu);
+        return ((delegate* unmanaged[MemberFunction]<ITfMenu*, uint, uint, HBITMAP, HBITMAP, char*, uint, ITfMenu**, int>)(lpVtbl[3]))((ITfMenu*)Unsafe.AsPointer(ref this), uId, dwFlags, hbmp, hbmpMask, pch, cch, ppMenu);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddMenuItem(uint uId, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch, ITfMenu** ppMenu);
+        HRESULT AddMenuItem(uint uId, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, [NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch, ITfMenu** ppMenu);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, DWORD, HBITMAP, HBITMAP, const WCHAR *, ULONG, ITfMenu **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, HBITMAP, HBITMAP, ushort*, uint, ITfMenu**, int> AddMenuItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, HBITMAP, HBITMAP, char*, uint, ITfMenu**, int> AddMenuItem;
     }
 }

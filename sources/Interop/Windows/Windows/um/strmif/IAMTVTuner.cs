@@ -25,7 +25,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, Guid*, void**, int>)(lpVtbl[0]))((IAMTVTuner*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, Guid*, void**, int>)(lpVtbl[0]))((IAMTVTuner*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMTVTuner*, uint>)(lpVtbl[1]))((IAMTVTuner*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, uint>)(lpVtbl[1]))((IAMTVTuner*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMTVTuner*, uint>)(lpVtbl[2]))((IAMTVTuner*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, uint>)(lpVtbl[2]))((IAMTVTuner*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IAMTuner.put_Channel" />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT put_Channel([NativeTypeName("long")] int lChannel, [NativeTypeName("long")] int lVideoSubChannel, [NativeTypeName("long")] int lAudioSubChannel)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int, int, int, int>)(lpVtbl[3]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lChannel, lVideoSubChannel, lAudioSubChannel);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int, int, int, int>)(lpVtbl[3]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lChannel, lVideoSubChannel, lAudioSubChannel);
     }
 
     /// <inheritdoc cref="IAMTuner.get_Channel" />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT get_Channel([NativeTypeName("long *")] int* plChannel, [NativeTypeName("long *")] int* plVideoSubChannel, [NativeTypeName("long *")] int* plAudioSubChannel)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int*, int*, int>)(lpVtbl[4]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plChannel, plVideoSubChannel, plAudioSubChannel);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int*, int*, int>)(lpVtbl[4]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plChannel, plVideoSubChannel, plAudioSubChannel);
     }
 
     /// <inheritdoc cref="IAMTuner.ChannelMinMax" />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT ChannelMinMax([NativeTypeName("long *")] int* lChannelMin, [NativeTypeName("long *")] int* lChannelMax)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int*, int>)(lpVtbl[5]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lChannelMin, lChannelMax);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int*, int>)(lpVtbl[5]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lChannelMin, lChannelMax);
     }
 
     /// <inheritdoc cref="IAMTuner.put_CountryCode" />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT put_CountryCode([NativeTypeName("long")] int lCountryCode)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int, int>)(lpVtbl[6]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lCountryCode);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int, int>)(lpVtbl[6]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lCountryCode);
     }
 
     /// <inheritdoc cref="IAMTuner.get_CountryCode" />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_CountryCode([NativeTypeName("long *")] int* plCountryCode)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int>)(lpVtbl[7]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plCountryCode);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int>)(lpVtbl[7]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plCountryCode);
     }
 
     /// <inheritdoc cref="IAMTuner.put_TuningSpace" />
@@ -91,7 +91,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT put_TuningSpace([NativeTypeName("long")] int lTuningSpace)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int, int>)(lpVtbl[8]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lTuningSpace);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int, int>)(lpVtbl[8]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lTuningSpace);
     }
 
     /// <inheritdoc cref="IAMTuner.get_TuningSpace" />
@@ -99,7 +99,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT get_TuningSpace([NativeTypeName("long *")] int* plTuningSpace)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int>)(lpVtbl[9]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plTuningSpace);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int>)(lpVtbl[9]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plTuningSpace);
     }
 
     /// <inheritdoc cref="IAMTuner.Logon" />
@@ -107,7 +107,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT Logon(HANDLE hCurrentUser)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, HANDLE, int>)(lpVtbl[10]))((IAMTVTuner*)Unsafe.AsPointer(ref this), hCurrentUser);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, HANDLE, int>)(lpVtbl[10]))((IAMTVTuner*)Unsafe.AsPointer(ref this), hCurrentUser);
     }
 
     /// <inheritdoc cref="IAMTuner.Logout" />
@@ -115,7 +115,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT Logout()
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int>)(lpVtbl[11]))((IAMTVTuner*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int>)(lpVtbl[11]))((IAMTVTuner*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IAMTuner.SignalPresent" />
@@ -123,7 +123,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT SignalPresent([NativeTypeName("long *")] int* plSignalStrength)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int>)(lpVtbl[12]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plSignalStrength);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int>)(lpVtbl[12]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plSignalStrength);
     }
 
     /// <inheritdoc cref="IAMTuner.put_Mode" />
@@ -131,7 +131,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT put_Mode(AMTunerModeType lMode)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, AMTunerModeType, int>)(lpVtbl[13]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lMode);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, AMTunerModeType, int>)(lpVtbl[13]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lMode);
     }
 
     /// <inheritdoc cref="IAMTuner.get_Mode" />
@@ -139,7 +139,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT get_Mode(AMTunerModeType* plMode)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, AMTunerModeType*, int>)(lpVtbl[14]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plMode);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, AMTunerModeType*, int>)(lpVtbl[14]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plMode);
     }
 
     /// <inheritdoc cref="IAMTuner.GetAvailableModes" />
@@ -147,7 +147,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT GetAvailableModes([NativeTypeName("long *")] int* plModes)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int>)(lpVtbl[15]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plModes);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int>)(lpVtbl[15]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plModes);
     }
 
     /// <inheritdoc cref="IAMTuner.RegisterNotificationCallBack" />
@@ -155,7 +155,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT RegisterNotificationCallBack(IAMTunerNotification* pNotify, [NativeTypeName("long")] int lEvents)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, IAMTunerNotification*, int, int>)(lpVtbl[16]))((IAMTVTuner*)Unsafe.AsPointer(ref this), pNotify, lEvents);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, IAMTunerNotification*, int, int>)(lpVtbl[16]))((IAMTVTuner*)Unsafe.AsPointer(ref this), pNotify, lEvents);
     }
 
     /// <inheritdoc cref="IAMTuner.UnRegisterNotificationCallBack" />
@@ -163,7 +163,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, IAMTunerNotification*, int>)(lpVtbl[17]))((IAMTVTuner*)Unsafe.AsPointer(ref this), pNotify);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, IAMTunerNotification*, int>)(lpVtbl[17]))((IAMTVTuner*)Unsafe.AsPointer(ref this), pNotify);
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.get_AvailableTVFormats"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT get_AvailableTVFormats([NativeTypeName("long *")] int* lAnalogVideoStandard)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int>)(lpVtbl[18]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lAnalogVideoStandard);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int>)(lpVtbl[18]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lAnalogVideoStandard);
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.get_TVFormat"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT get_TVFormat([NativeTypeName("long *")] int* plAnalogVideoStandard)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int>)(lpVtbl[19]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plAnalogVideoStandard);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int>)(lpVtbl[19]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plAnalogVideoStandard);
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.AutoTune"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT AutoTune([NativeTypeName("long")] int lChannel, [NativeTypeName("long *")] int* plFoundSignal)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int, int*, int>)(lpVtbl[20]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lChannel, plFoundSignal);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int, int*, int>)(lpVtbl[20]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lChannel, plFoundSignal);
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.StoreAutoTune"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT StoreAutoTune()
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int>)(lpVtbl[21]))((IAMTVTuner*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int>)(lpVtbl[21]))((IAMTVTuner*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.get_NumInputConnections"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT get_NumInputConnections([NativeTypeName("long *")] int* plNumInputConnections)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int>)(lpVtbl[22]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plNumInputConnections);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int>)(lpVtbl[22]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plNumInputConnections);
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.put_InputType"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT put_InputType([NativeTypeName("long")] int lIndex, TunerInputType InputType)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int, TunerInputType, int>)(lpVtbl[23]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lIndex, InputType);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int, TunerInputType, int>)(lpVtbl[23]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lIndex, InputType);
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.get_InputType"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT get_InputType([NativeTypeName("long")] int lIndex, TunerInputType* pInputType)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int, TunerInputType*, int>)(lpVtbl[24]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lIndex, pInputType);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int, TunerInputType*, int>)(lpVtbl[24]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lIndex, pInputType);
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.put_ConnectInput"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT put_ConnectInput([NativeTypeName("long")] int lIndex)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int, int>)(lpVtbl[25]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lIndex);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int, int>)(lpVtbl[25]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lIndex);
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.get_ConnectInput"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT get_ConnectInput([NativeTypeName("long *")] int* plIndex)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int>)(lpVtbl[26]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plIndex);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int>)(lpVtbl[26]))((IAMTVTuner*)Unsafe.AsPointer(ref this), plIndex);
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.get_VideoFrequency"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(27)]
     public HRESULT get_VideoFrequency([NativeTypeName("long *")] int* lFreq)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int>)(lpVtbl[27]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lFreq);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int>)(lpVtbl[27]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lFreq);
     }
 
     /// <include file='IAMTVTuner.xml' path='doc/member[@name="IAMTVTuner.get_AudioFrequency"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
     [VtblIndex(28)]
     public HRESULT get_AudioFrequency([NativeTypeName("long *")] int* lFreq)
     {
-        return ((delegate* unmanaged<IAMTVTuner*, int*, int>)(lpVtbl[28]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lFreq);
+        return ((delegate* unmanaged[MemberFunction]<IAMTVTuner*, int*, int>)(lpVtbl[28]))((IAMTVTuner*)Unsafe.AsPointer(ref this), lFreq);
     }
 
     public interface Interface : IAMTuner.Interface
@@ -294,90 +294,90 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int, int> put_Channel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int, int> put_Channel;
 
         [NativeTypeName("HRESULT (long *, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int*, int> get_Channel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int*, int> get_Channel;
 
         [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> ChannelMinMax;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> ChannelMinMax;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_CountryCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_CountryCode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_CountryCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_CountryCode;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_TuningSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_TuningSpace;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_TuningSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_TuningSpace;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, int> Logon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, int> Logon;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Logout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Logout;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> SignalPresent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> SignalPresent;
 
         [NativeTypeName("HRESULT (AMTunerModeType) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AMTunerModeType, int> put_Mode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AMTunerModeType, int> put_Mode;
 
         [NativeTypeName("HRESULT (AMTunerModeType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AMTunerModeType*, int> get_Mode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AMTunerModeType*, int> get_Mode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetAvailableModes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetAvailableModes;
 
         [NativeTypeName("HRESULT (IAMTunerNotification *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
 
         [NativeTypeName("HRESULT (IAMTunerNotification *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_AvailableTVFormats;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_AvailableTVFormats;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_TVFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_TVFormat;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> AutoTune;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> AutoTune;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StoreAutoTune;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StoreAutoTune;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_NumInputConnections;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_NumInputConnections;
 
         [NativeTypeName("HRESULT (long, TunerInputType) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, TunerInputType, int> put_InputType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, TunerInputType, int> put_InputType;
 
         [NativeTypeName("HRESULT (long, TunerInputType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, TunerInputType*, int> get_InputType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, TunerInputType*, int> get_InputType;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_ConnectInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_ConnectInput;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_ConnectInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_ConnectInput;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_VideoFrequency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_VideoFrequency;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_AudioFrequency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_AudioFrequency;
     }
 }

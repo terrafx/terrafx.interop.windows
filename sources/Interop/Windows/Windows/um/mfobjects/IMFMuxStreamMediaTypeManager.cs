@@ -27,7 +27,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamMediaTypeManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint>)(lpVtbl[1]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamMediaTypeManager*, uint>)(lpVtbl[1]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint>)(lpVtbl[2]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamMediaTypeManager*, uint>)(lpVtbl[2]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.GetStreamCount"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
     [VtblIndex(3)]
     public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount)
     {
-        return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint*, int>)(lpVtbl[3]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), pdwMuxStreamCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamMediaTypeManager*, uint*, int>)(lpVtbl[3]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), pdwMuxStreamCount);
     }
 
     /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.GetMediaType"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
     [VtblIndex(4)]
     public HRESULT GetMediaType([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFMediaType** ppMediaType)
     {
-        return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint, IMFMediaType**, int>)(lpVtbl[4]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), dwMuxStreamIndex, ppMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamMediaTypeManager*, uint, IMFMediaType**, int>)(lpVtbl[4]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), dwMuxStreamIndex, ppMediaType);
     }
 
     /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.GetStreamConfigurationCount"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
     [VtblIndex(5)]
     public HRESULT GetStreamConfigurationCount([NativeTypeName("DWORD *")] uint* pdwCount)
     {
-        return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint*, int>)(lpVtbl[5]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), pdwCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamMediaTypeManager*, uint*, int>)(lpVtbl[5]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
     /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.AddStreamConfiguration"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
     [VtblIndex(6)]
     public HRESULT AddStreamConfiguration([NativeTypeName("ULONGLONG")] ulong ullStreamMask)
     {
-        return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, ulong, int>)(lpVtbl[6]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), ullStreamMask);
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamMediaTypeManager*, ulong, int>)(lpVtbl[6]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), ullStreamMask);
     }
 
     /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.RemoveStreamConfiguration"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
     [VtblIndex(7)]
     public HRESULT RemoveStreamConfiguration([NativeTypeName("ULONGLONG")] ulong ullStreamMask)
     {
-        return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, ulong, int>)(lpVtbl[7]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), ullStreamMask);
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamMediaTypeManager*, ulong, int>)(lpVtbl[7]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), ullStreamMask);
     }
 
     /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.GetStreamConfiguration"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
     [VtblIndex(8)]
     public HRESULT GetStreamConfiguration([NativeTypeName("DWORD")] uint ulIndex, [NativeTypeName("ULONGLONG *")] ulong* pullStreamMask)
     {
-        return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint, ulong*, int>)(lpVtbl[8]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), ulIndex, pullStreamMask);
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamMediaTypeManager*, uint, ulong*, int>)(lpVtbl[8]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), ulIndex, pullStreamMask);
     }
 
     public interface Interface : IUnknown.Interface
@@ -121,30 +121,30 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStreamCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStreamCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType**, int> GetMediaType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStreamConfigurationCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStreamConfigurationCount;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, int> AddStreamConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, int> AddStreamConfiguration;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, int> RemoveStreamConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, int> RemoveStreamConfiguration;
 
         [NativeTypeName("HRESULT (DWORD, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ulong*, int> GetStreamConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ulong*, int> GetStreamConfiguration;
     }
 }

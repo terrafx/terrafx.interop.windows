@@ -25,7 +25,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFTimecodeTranslate*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimecodeTranslate*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFTimecodeTranslate*, uint>)(lpVtbl[1]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimecodeTranslate*, uint>)(lpVtbl[1]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFTimecodeTranslate*, uint>)(lpVtbl[2]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimecodeTranslate*, uint>)(lpVtbl[2]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimecodeTranslate.xml' path='doc/member[@name="IMFTimecodeTranslate.BeginConvertTimecodeToHNS"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
     [VtblIndex(3)]
     public HRESULT BeginConvertTimecodeToHNS([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pPropVarTimecode, IMFAsyncCallback* pCallback, IUnknown* punkState)
     {
-        return ((delegate* unmanaged<IMFTimecodeTranslate*, PROPVARIANT*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), pPropVarTimecode, pCallback, punkState);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimecodeTranslate*, PROPVARIANT*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), pPropVarTimecode, pCallback, punkState);
     }
 
     /// <include file='IMFTimecodeTranslate.xml' path='doc/member[@name="IMFTimecodeTranslate.EndConvertTimecodeToHNS"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
     [VtblIndex(4)]
     public HRESULT EndConvertTimecodeToHNS(IMFAsyncResult* pResult, [NativeTypeName("MFTIME *")] long* phnsTime)
     {
-        return ((delegate* unmanaged<IMFTimecodeTranslate*, IMFAsyncResult*, long*, int>)(lpVtbl[4]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), pResult, phnsTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimecodeTranslate*, IMFAsyncResult*, long*, int>)(lpVtbl[4]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), pResult, phnsTime);
     }
 
     /// <include file='IMFTimecodeTranslate.xml' path='doc/member[@name="IMFTimecodeTranslate.BeginConvertHNSToTimecode"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
     [VtblIndex(5)]
     public HRESULT BeginConvertHNSToTimecode([NativeTypeName("MFTIME")] long hnsTime, IMFAsyncCallback* pCallback, IUnknown* punkState)
     {
-        return ((delegate* unmanaged<IMFTimecodeTranslate*, long, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[5]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), hnsTime, pCallback, punkState);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimecodeTranslate*, long, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[5]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), hnsTime, pCallback, punkState);
     }
 
     /// <include file='IMFTimecodeTranslate.xml' path='doc/member[@name="IMFTimecodeTranslate.EndConvertHNSToTimecode"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
     [VtblIndex(6)]
     public HRESULT EndConvertHNSToTimecode(IMFAsyncResult* pResult, PROPVARIANT* pPropVarTimecode)
     {
-        return ((delegate* unmanaged<IMFTimecodeTranslate*, IMFAsyncResult*, PROPVARIANT*, int>)(lpVtbl[6]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), pResult, pPropVarTimecode);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimecodeTranslate*, IMFAsyncResult*, PROPVARIANT*, int>)(lpVtbl[6]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), pResult, pPropVarTimecode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const PROPVARIANT *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, IMFAsyncCallback*, IUnknown*, int> BeginConvertTimecodeToHNS;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, IMFAsyncCallback*, IUnknown*, int> BeginConvertTimecodeToHNS;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, MFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, long*, int> EndConvertTimecodeToHNS;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, long*, int> EndConvertTimecodeToHNS;
 
         [NativeTypeName("HRESULT (MFTIME, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, IMFAsyncCallback*, IUnknown*, int> BeginConvertHNSToTimecode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, IMFAsyncCallback*, IUnknown*, int> BeginConvertHNSToTimecode;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, PROPVARIANT*, int> EndConvertHNSToTimecode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, PROPVARIANT*, int> EndConvertHNSToTimecode;
     }
 }

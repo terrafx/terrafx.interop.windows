@@ -36,7 +36,7 @@ public unsafe partial struct FILE_IN_CABINET_INFO_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* NameInCabinet
+    public ref char* NameInCabinet
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

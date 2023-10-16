@@ -34,7 +34,7 @@ public partial struct REASON_CONTEXT
         /// <include file='_Reason_e__Union.xml' path='doc/member[@name="_Reason_e__Union.SimpleReasonString"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* SimpleReasonString;
+        public char* SimpleReasonString;
 
         /// <include file='_Detailed_e__Struct.xml' path='doc/member[@name="_Detailed_e__Struct"]/*' />
         public unsafe partial struct _Detailed_e__Struct
@@ -52,7 +52,7 @@ public partial struct REASON_CONTEXT
 
             /// <include file='_Detailed_e__Struct.xml' path='doc/member[@name="_Detailed_e__Struct.ReasonStrings"]/*' />
             [NativeTypeName("LPWSTR *")]
-            public ushort** ReasonStrings;
+            public char** ReasonStrings;
         }
     }
 }

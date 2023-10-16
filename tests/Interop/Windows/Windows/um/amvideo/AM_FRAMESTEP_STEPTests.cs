@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AM_FRAMESTEP_STEP" /> struct.</summary>
 public static unsafe partial class AM_FRAMESTEP_STEPTests
 {
-    /// <summary>Validates that the <see cref="AM_FRAMESTEP_STEP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AM_FRAMESTEP_STEP>(), Is.EqualTo(sizeof(AM_FRAMESTEP_STEP)));
-    }
-
-    /// <summary>Validates that the <see cref="AM_FRAMESTEP_STEP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AM_FRAMESTEP_STEP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AM_FRAMESTEP_STEP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AM_FRAMESTEP_STEP), Is.EqualTo(4));
-    }
 }

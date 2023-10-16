@@ -25,7 +25,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfTransitoryExtensionUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, uint>)(lpVtbl[1]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfTransitoryExtensionUIElement*, uint>)(lpVtbl[1]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, uint>)(lpVtbl[2]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfTransitoryExtensionUIElement*, uint>)(lpVtbl[2]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfUIElement.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDescription)
     {
-        return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, ushort**, int>)(lpVtbl[3]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
+        return ((delegate* unmanaged[MemberFunction]<ITfTransitoryExtensionUIElement*, char**, int>)(lpVtbl[3]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
     /// <inheritdoc cref="ITfUIElement.GetGUID" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
     [VtblIndex(4)]
     public HRESULT GetGUID(Guid* pguid)
     {
-        return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, Guid*, int>)(lpVtbl[4]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfTransitoryExtensionUIElement*, Guid*, int>)(lpVtbl[4]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pguid);
     }
 
     /// <inheritdoc cref="ITfUIElement.Show" />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
     [VtblIndex(5)]
     public HRESULT Show(BOOL bShow)
     {
-        return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, BOOL, int>)(lpVtbl[5]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), bShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfTransitoryExtensionUIElement*, BOOL, int>)(lpVtbl[5]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), bShow);
     }
 
     /// <inheritdoc cref="ITfUIElement.IsShown" />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
     [VtblIndex(6)]
     public HRESULT IsShown(BOOL* pbShow)
     {
-        return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pbShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfTransitoryExtensionUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pbShow);
     }
 
     /// <include file='ITfTransitoryExtensionUIElement.xml' path='doc/member[@name="ITfTransitoryExtensionUIElement.GetDocumentMgr"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
     [VtblIndex(7)]
     public HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim)
     {
-        return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, ITfDocumentMgr**, int>)(lpVtbl[7]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), ppdim);
+        return ((delegate* unmanaged[MemberFunction]<ITfTransitoryExtensionUIElement*, ITfDocumentMgr**, int>)(lpVtbl[7]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), ppdim);
     }
 
     public interface Interface : ITfUIElement.Interface
@@ -96,27 +96,27 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsShown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsShown;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> GetDocumentMgr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfDocumentMgr**, int> GetDocumentMgr;
     }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDDrawExclModeVideo*, Guid*, void**, int>)(lpVtbl[0]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDDrawExclModeVideo*, Guid*, void**, int>)(lpVtbl[0]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDDrawExclModeVideo*, uint>)(lpVtbl[1]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDDrawExclModeVideo*, uint>)(lpVtbl[1]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDDrawExclModeVideo*, uint>)(lpVtbl[2]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDDrawExclModeVideo*, uint>)(lpVtbl[2]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.SetDDrawObject"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
     [VtblIndex(3)]
     public HRESULT SetDDrawObject(IDirectDraw* pDDrawObject)
     {
-        return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDraw*, int>)(lpVtbl[3]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pDDrawObject);
+        return ((delegate* unmanaged[MemberFunction]<IDDrawExclModeVideo*, IDirectDraw*, int>)(lpVtbl[3]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pDDrawObject);
     }
 
     /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.GetDDrawObject"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
     [VtblIndex(4)]
     public HRESULT GetDDrawObject(IDirectDraw** ppDDrawObject, BOOL* pbUsingExternal)
     {
-        return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDraw**, BOOL*, int>)(lpVtbl[4]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), ppDDrawObject, pbUsingExternal);
+        return ((delegate* unmanaged[MemberFunction]<IDDrawExclModeVideo*, IDirectDraw**, BOOL*, int>)(lpVtbl[4]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), ppDDrawObject, pbUsingExternal);
     }
 
     /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.SetDDrawSurface"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
     [VtblIndex(5)]
     public HRESULT SetDDrawSurface(IDirectDrawSurface* pDDrawSurface)
     {
-        return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDrawSurface*, int>)(lpVtbl[5]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pDDrawSurface);
+        return ((delegate* unmanaged[MemberFunction]<IDDrawExclModeVideo*, IDirectDrawSurface*, int>)(lpVtbl[5]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pDDrawSurface);
     }
 
     /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.GetDDrawSurface"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
     [VtblIndex(6)]
     public HRESULT GetDDrawSurface(IDirectDrawSurface** ppDDrawSurface, BOOL* pbUsingExternal)
     {
-        return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDrawSurface**, BOOL*, int>)(lpVtbl[6]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), ppDDrawSurface, pbUsingExternal);
+        return ((delegate* unmanaged[MemberFunction]<IDDrawExclModeVideo*, IDirectDrawSurface**, BOOL*, int>)(lpVtbl[6]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), ppDDrawSurface, pbUsingExternal);
     }
 
     /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.SetDrawParameters"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
     [VtblIndex(7)]
     public HRESULT SetDrawParameters([NativeTypeName("const RECT *")] RECT* prcSource, [NativeTypeName("const RECT *")] RECT* prcTarget)
     {
-        return ((delegate* unmanaged<IDDrawExclModeVideo*, RECT*, RECT*, int>)(lpVtbl[7]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), prcSource, prcTarget);
+        return ((delegate* unmanaged[MemberFunction]<IDDrawExclModeVideo*, RECT*, RECT*, int>)(lpVtbl[7]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), prcSource, prcTarget);
     }
 
     /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.GetNativeVideoProps"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
     [VtblIndex(8)]
     public HRESULT GetNativeVideoProps([NativeTypeName("DWORD *")] uint* pdwVideoWidth, [NativeTypeName("DWORD *")] uint* pdwVideoHeight, [NativeTypeName("DWORD *")] uint* pdwPictAspectRatioX, [NativeTypeName("DWORD *")] uint* pdwPictAspectRatioY)
     {
-        return ((delegate* unmanaged<IDDrawExclModeVideo*, uint*, uint*, uint*, uint*, int>)(lpVtbl[8]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pdwVideoWidth, pdwVideoHeight, pdwPictAspectRatioX, pdwPictAspectRatioY);
+        return ((delegate* unmanaged[MemberFunction]<IDDrawExclModeVideo*, uint*, uint*, uint*, uint*, int>)(lpVtbl[8]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pdwVideoWidth, pdwVideoHeight, pdwPictAspectRatioX, pdwPictAspectRatioY);
     }
 
     /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.SetCallbackInterface"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
     [VtblIndex(9)]
     public HRESULT SetCallbackInterface(IDDrawExclModeVideoCallback* pCallback, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IDDrawExclModeVideo*, IDDrawExclModeVideoCallback*, uint, int>)(lpVtbl[9]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pCallback, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IDDrawExclModeVideo*, IDDrawExclModeVideoCallback*, uint, int>)(lpVtbl[9]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pCallback, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -131,33 +131,33 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDirectDraw *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDraw*, int> SetDDrawObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDraw*, int> SetDDrawObject;
 
         [NativeTypeName("HRESULT (IDirectDraw **, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDraw**, BOOL*, int> GetDDrawObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDraw**, BOOL*, int> GetDDrawObject;
 
         [NativeTypeName("HRESULT (IDirectDrawSurface *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDrawSurface*, int> SetDDrawSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDrawSurface*, int> SetDDrawSurface;
 
         [NativeTypeName("HRESULT (IDirectDrawSurface **, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDrawSurface**, BOOL*, int> GetDDrawSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDrawSurface**, BOOL*, int> GetDDrawSurface;
 
         [NativeTypeName("HRESULT (const RECT *, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> SetDrawParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, RECT*, int> SetDrawParameters;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, uint*, uint*, int> GetNativeVideoProps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, uint*, uint*, int> GetNativeVideoProps;
 
         [NativeTypeName("HRESULT (IDDrawExclModeVideoCallback *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDDrawExclModeVideoCallback*, uint, int> SetCallbackInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDDrawExclModeVideoCallback*, uint, int> SetCallbackInterface;
     }
 }

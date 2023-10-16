@@ -19,25 +19,4 @@ public static unsafe partial class XMLDSOControlTests
     {
         Assert.That(typeof(XMLDSOControl).GUID, Is.EqualTo(CLSID_XMLDSOControl));
     }
-
-    /// <summary>Validates that the <see cref="XMLDSOControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<XMLDSOControl>(), Is.EqualTo(sizeof(XMLDSOControl)));
-    }
-
-    /// <summary>Validates that the <see cref="XMLDSOControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(XMLDSOControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="XMLDSOControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(XMLDSOControl), Is.EqualTo(1));
-    }
 }

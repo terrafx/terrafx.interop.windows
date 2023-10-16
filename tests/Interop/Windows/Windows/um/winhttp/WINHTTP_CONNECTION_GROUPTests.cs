@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WINHTTP_CONNECTION_GROUP" /> struct.</summary>
 public static unsafe partial class WINHTTP_CONNECTION_GROUPTests
 {
-    /// <summary>Validates that the <see cref="WINHTTP_CONNECTION_GROUP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WINHTTP_CONNECTION_GROUP>(), Is.EqualTo(sizeof(WINHTTP_CONNECTION_GROUP)));
-    }
-
-    /// <summary>Validates that the <see cref="WINHTTP_CONNECTION_GROUP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WINHTTP_CONNECTION_GROUP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WINHTTP_CONNECTION_GROUP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WINHTTP_CONNECTION_GROUP), Is.EqualTo(20));
-    }
 }

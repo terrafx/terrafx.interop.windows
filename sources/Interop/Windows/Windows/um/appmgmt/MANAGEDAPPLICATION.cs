@@ -12,11 +12,11 @@ public unsafe partial struct MANAGEDAPPLICATION
 {
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.pszPackageName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszPackageName;
+    public char* pszPackageName;
 
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.pszPublisher"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszPublisher;
+    public char* pszPublisher;
 
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.dwVersionHi"]/*' />
     [NativeTypeName("DWORD")]
@@ -35,7 +35,7 @@ public unsafe partial struct MANAGEDAPPLICATION
 
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.pszPolicyName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszPolicyName;
+    public char* pszPolicyName;
 
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.ProductId"]/*' />
     public Guid ProductId;
@@ -46,23 +46,23 @@ public unsafe partial struct MANAGEDAPPLICATION
 
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.pszOwner"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszOwner;
+    public char* pszOwner;
 
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.pszCompany"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszCompany;
+    public char* pszCompany;
 
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.pszComments"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszComments;
+    public char* pszComments;
 
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.pszContact"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszContact;
+    public char* pszContact;
 
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.pszSupportUrl"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszSupportUrl;
+    public char* pszSupportUrl;
 
     /// <include file='MANAGEDAPPLICATION.xml' path='doc/member[@name="MANAGEDAPPLICATION.dwPathType"]/*' />
     [NativeTypeName("DWORD")]

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MOUSEKEYS" /> struct.</summary>
 public static unsafe partial class MOUSEKEYSTests
 {
-    /// <summary>Validates that the <see cref="MOUSEKEYS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MOUSEKEYS>(), Is.EqualTo(sizeof(MOUSEKEYS)));
-    }
-
-    /// <summary>Validates that the <see cref="MOUSEKEYS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MOUSEKEYS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MOUSEKEYS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MOUSEKEYS), Is.EqualTo(28));
-    }
 }

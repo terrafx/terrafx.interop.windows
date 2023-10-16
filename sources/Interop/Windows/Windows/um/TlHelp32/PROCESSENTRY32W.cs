@@ -46,5 +46,5 @@ public unsafe partial struct PROCESSENTRY32W
 
     /// <include file='PROCESSENTRY32W.xml' path='doc/member[@name="PROCESSENTRY32W.szExeFile"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szExeFile[260];
+    public fixed char szExeFile[260];
 }

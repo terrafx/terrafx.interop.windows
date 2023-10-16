@@ -25,7 +25,7 @@ public unsafe partial struct IDelayedPropertyStoreFactory : IDelayedPropertyStor
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDelayedPropertyStoreFactory*, Guid*, void**, int>)(lpVtbl[0]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDelayedPropertyStoreFactory*, Guid*, void**, int>)(lpVtbl[0]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDelayedPropertyStoreFactory : IDelayedPropertyStor
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDelayedPropertyStoreFactory*, uint>)(lpVtbl[1]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDelayedPropertyStoreFactory*, uint>)(lpVtbl[1]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDelayedPropertyStoreFactory : IDelayedPropertyStor
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDelayedPropertyStoreFactory*, uint>)(lpVtbl[2]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDelayedPropertyStoreFactory*, uint>)(lpVtbl[2]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPropertyStoreFactory.GetPropertyStore" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDelayedPropertyStoreFactory : IDelayedPropertyStor
     [VtblIndex(3)]
     public HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, IUnknown* pUnkFactory, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDelayedPropertyStoreFactory*, GETPROPERTYSTOREFLAGS, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this), flags, pUnkFactory, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDelayedPropertyStoreFactory*, GETPROPERTYSTOREFLAGS, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this), flags, pUnkFactory, riid, ppv);
     }
 
     /// <inheritdoc cref="IPropertyStoreFactory.GetPropertyStoreForKeys" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDelayedPropertyStoreFactory : IDelayedPropertyStor
     [VtblIndex(4)]
     public HRESULT GetPropertyStoreForKeys([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgKeys, uint cKeys, GETPROPERTYSTOREFLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDelayedPropertyStoreFactory*, PROPERTYKEY*, uint, GETPROPERTYSTOREFLAGS, Guid*, void**, int>)(lpVtbl[4]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this), rgKeys, cKeys, flags, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDelayedPropertyStoreFactory*, PROPERTYKEY*, uint, GETPROPERTYSTOREFLAGS, Guid*, void**, int>)(lpVtbl[4]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this), rgKeys, cKeys, flags, riid, ppv);
     }
 
     /// <include file='IDelayedPropertyStoreFactory.xml' path='doc/member[@name="IDelayedPropertyStoreFactory.GetDelayedPropertyStore"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDelayedPropertyStoreFactory : IDelayedPropertyStor
     [VtblIndex(5)]
     public HRESULT GetDelayedPropertyStore(GETPROPERTYSTOREFLAGS flags, [NativeTypeName("DWORD")] uint dwStoreId, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDelayedPropertyStoreFactory*, GETPROPERTYSTOREFLAGS, uint, Guid*, void**, int>)(lpVtbl[5]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this), flags, dwStoreId, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDelayedPropertyStoreFactory*, GETPROPERTYSTOREFLAGS, uint, Guid*, void**, int>)(lpVtbl[5]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this), flags, dwStoreId, riid, ppv);
     }
 
     public interface Interface : IPropertyStoreFactory.Interface
@@ -80,21 +80,21 @@ public unsafe partial struct IDelayedPropertyStoreFactory : IDelayedPropertyStor
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GETPROPERTYSTOREFLAGS, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, GETPROPERTYSTOREFLAGS, IUnknown*, Guid*, void**, int> GetPropertyStore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, GETPROPERTYSTOREFLAGS, IUnknown*, Guid*, void**, int> GetPropertyStore;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY *, UINT, GETPROPERTYSTOREFLAGS, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, uint, GETPROPERTYSTOREFLAGS, Guid*, void**, int> GetPropertyStoreForKeys;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, uint, GETPROPERTYSTOREFLAGS, Guid*, void**, int> GetPropertyStoreForKeys;
 
         [NativeTypeName("HRESULT (GETPROPERTYSTOREFLAGS, DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, GETPROPERTYSTOREFLAGS, uint, Guid*, void**, int> GetDelayedPropertyStore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, GETPROPERTYSTOREFLAGS, uint, Guid*, void**, int> GetDelayedPropertyStore;
     }
 }

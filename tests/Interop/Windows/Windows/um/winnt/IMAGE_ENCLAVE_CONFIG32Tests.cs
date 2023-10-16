@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0.16299.0")]
 public static unsafe partial class IMAGE_ENCLAVE_CONFIG32Tests
 {
-    /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_CONFIG32" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_ENCLAVE_CONFIG32>(), Is.EqualTo(sizeof(IMAGE_ENCLAVE_CONFIG32)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_CONFIG32" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGE_ENCLAVE_CONFIG32).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_CONFIG32" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_ENCLAVE_CONFIG32), Is.EqualTo(76));
-    }
 }

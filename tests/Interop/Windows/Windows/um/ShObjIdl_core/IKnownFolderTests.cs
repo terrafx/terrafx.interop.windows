@@ -19,32 +19,4 @@ public static unsafe partial class IKnownFolderTests
     {
         Assert.That(typeof(IKnownFolder).GUID, Is.EqualTo(IID_IKnownFolder));
     }
-
-    /// <summary>Validates that the <see cref="IKnownFolder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IKnownFolder>(), Is.EqualTo(sizeof(IKnownFolder)));
-    }
-
-    /// <summary>Validates that the <see cref="IKnownFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IKnownFolder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IKnownFolder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IKnownFolder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IKnownFolder), Is.EqualTo(4));
-        }
-    }
 }

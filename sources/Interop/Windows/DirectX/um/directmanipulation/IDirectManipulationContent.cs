@@ -28,7 +28,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, uint>)(lpVtbl[1]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, uint>)(lpVtbl[1]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, uint>)(lpVtbl[2]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, uint>)(lpVtbl[2]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.GetContentRect"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [VtblIndex(3)]
     public HRESULT GetContentRect(RECT* contentSize)
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, RECT*, int>)(lpVtbl[3]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), contentSize);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, RECT*, int>)(lpVtbl[3]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), contentSize);
     }
 
     /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.SetContentRect"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [VtblIndex(4)]
     public HRESULT SetContentRect([NativeTypeName("const RECT *")] RECT* contentSize)
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, RECT*, int>)(lpVtbl[4]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), contentSize);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, RECT*, int>)(lpVtbl[4]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), contentSize);
     }
 
     /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.GetViewport"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [VtblIndex(5)]
     public HRESULT GetViewport([NativeTypeName("const IID &")] Guid* riid, void** @object)
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int>)(lpVtbl[5]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, @object);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, Guid*, void**, int>)(lpVtbl[5]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, @object);
     }
 
     /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.GetTag"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [VtblIndex(6)]
     public HRESULT GetTag([NativeTypeName("const IID &")] Guid* riid, void** @object, [NativeTypeName("UINT32 *")] uint* id)
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, uint*, int>)(lpVtbl[6]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, @object, id);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, Guid*, void**, uint*, int>)(lpVtbl[6]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, @object, id);
     }
 
     /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.SetTag"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [VtblIndex(7)]
     public HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, IUnknown*, uint, int>)(lpVtbl[7]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), @object, id);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, IUnknown*, uint, int>)(lpVtbl[7]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), @object, id);
     }
 
     /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.GetOutputTransform"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [VtblIndex(8)]
     public HRESULT GetOutputTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[8]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[8]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
     /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.GetContentTransform"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [VtblIndex(9)]
     public HRESULT GetContentTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[9]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[9]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
     /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.SyncContentTransform"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
     [VtblIndex(10)]
     public HRESULT SyncContentTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount)
     {
-        return ((delegate* unmanaged<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[10]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[10]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -144,36 +144,36 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> GetContentRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> GetContentRect;
 
         [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetContentRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetContentRect;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetViewport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetViewport;
 
         [NativeTypeName("HRESULT (const IID &, void **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, uint*, int> GetTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, uint*, int> GetTag;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, int> SetTag;
 
         [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, int> GetOutputTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, int> GetOutputTransform;
 
         [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, int> GetContentTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, int> GetContentTransform;
 
         [NativeTypeName("HRESULT (const float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, int> SyncContentTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, int> SyncContentTransform;
     }
 }

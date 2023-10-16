@@ -19,32 +19,4 @@ public static unsafe partial class IRedbookDiscMasterTests
     {
         Assert.That(typeof(IRedbookDiscMaster).GUID, Is.EqualTo(IID_IRedbookDiscMaster));
     }
-
-    /// <summary>Validates that the <see cref="IRedbookDiscMaster" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRedbookDiscMaster>(), Is.EqualTo(sizeof(IRedbookDiscMaster)));
-    }
-
-    /// <summary>Validates that the <see cref="IRedbookDiscMaster" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRedbookDiscMaster).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRedbookDiscMaster" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRedbookDiscMaster), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRedbookDiscMaster), Is.EqualTo(4));
-        }
-    }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, uint>)(lpVtbl[1]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, uint>)(lpVtbl[1]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, uint>)(lpVtbl[2]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, uint>)(lpVtbl[2]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDCompositionFilterEffect.SetInput" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(3)]
     public HRESULT SetInput(uint index, IUnknown* input, uint flags)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), index, input, flags);
     }
 
     /// <include file='IDCompositionBrightnessEffect.xml' path='doc/member[@name="IDCompositionBrightnessEffect.SetWhitePoint"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(4)]
     public HRESULT SetWhitePoint([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* whitePoint)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, D2D_VECTOR_2F*, int>)(lpVtbl[4]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), whitePoint);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, D2D_VECTOR_2F*, int>)(lpVtbl[4]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), whitePoint);
     }
 
     /// <include file='IDCompositionBrightnessEffect.xml' path='doc/member[@name="IDCompositionBrightnessEffect.SetBlackPoint"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(5)]
     public HRESULT SetBlackPoint([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* blackPoint)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, D2D_VECTOR_2F*, int>)(lpVtbl[5]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), blackPoint);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, D2D_VECTOR_2F*, int>)(lpVtbl[5]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), blackPoint);
     }
 
     /// <include file='IDCompositionBrightnessEffect.xml' path='doc/member[@name="IDCompositionBrightnessEffect.SetWhitePointX"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(6)]
     public HRESULT SetWhitePointX(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionBrightnessEffect.xml' path='doc/member[@name="IDCompositionBrightnessEffect.SetWhitePointX"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(7)]
     public HRESULT SetWhitePointX(float whitePointX)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, float, int>)(lpVtbl[7]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), whitePointX);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, float, int>)(lpVtbl[7]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), whitePointX);
     }
 
     /// <include file='IDCompositionBrightnessEffect.xml' path='doc/member[@name="IDCompositionBrightnessEffect.SetWhitePointY"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(8)]
     public HRESULT SetWhitePointY(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int>)(lpVtbl[8]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int>)(lpVtbl[8]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionBrightnessEffect.xml' path='doc/member[@name="IDCompositionBrightnessEffect.SetWhitePointY"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(9)]
     public HRESULT SetWhitePointY(float whitePointY)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, float, int>)(lpVtbl[9]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), whitePointY);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, float, int>)(lpVtbl[9]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), whitePointY);
     }
 
     /// <include file='IDCompositionBrightnessEffect.xml' path='doc/member[@name="IDCompositionBrightnessEffect.SetBlackPointX"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(10)]
     public HRESULT SetBlackPointX(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int>)(lpVtbl[10]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int>)(lpVtbl[10]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionBrightnessEffect.xml' path='doc/member[@name="IDCompositionBrightnessEffect.SetBlackPointX"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(11)]
     public HRESULT SetBlackPointX(float blackPointX)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, float, int>)(lpVtbl[11]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), blackPointX);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, float, int>)(lpVtbl[11]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), blackPointX);
     }
 
     /// <include file='IDCompositionBrightnessEffect.xml' path='doc/member[@name="IDCompositionBrightnessEffect.SetBlackPointY"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(12)]
     public HRESULT SetBlackPointY(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int>)(lpVtbl[12]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int>)(lpVtbl[12]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionBrightnessEffect.xml' path='doc/member[@name="IDCompositionBrightnessEffect.SetBlackPointY"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
     [VtblIndex(13)]
     public HRESULT SetBlackPointY(float blackPointY)
     {
-        return ((delegate* unmanaged<IDCompositionBrightnessEffect*, float, int>)(lpVtbl[13]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), blackPointY);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionBrightnessEffect*, float, int>)(lpVtbl[13]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), blackPointY);
     }
 
     public interface Interface : IDCompositionFilterEffect.Interface
@@ -172,45 +172,45 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_VECTOR_2F*, int> SetWhitePoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_VECTOR_2F*, int> SetWhitePoint;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_VECTOR_2F*, int> SetBlackPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_VECTOR_2F*, int> SetBlackPoint;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetWhitePointX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetWhitePointX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetWhitePointX1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetWhitePointX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetWhitePointY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetWhitePointY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetWhitePointY1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetWhitePointY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBlackPointX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetBlackPointX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetBlackPointX1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetBlackPointX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBlackPointY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetBlackPointY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetBlackPointY1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetBlackPointY1;
     }
 }

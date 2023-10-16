@@ -19,41 +19,41 @@ public unsafe partial struct SIP_ADD_NEWPROVIDER
 
     /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER.pwszDLLFileName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszDLLFileName;
+    public char* pwszDLLFileName;
 
     /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER.pwszMagicNumber"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszMagicNumber;
+    public char* pwszMagicNumber;
 
     /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER.pwszIsFunctionName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszIsFunctionName;
+    public char* pwszIsFunctionName;
 
     /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER.pwszGetFuncName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszGetFuncName;
+    public char* pwszGetFuncName;
 
     /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER.pwszPutFuncName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszPutFuncName;
+    public char* pwszPutFuncName;
 
     /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER.pwszCreateFuncName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszCreateFuncName;
+    public char* pwszCreateFuncName;
 
     /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER.pwszVerifyFuncName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszVerifyFuncName;
+    public char* pwszVerifyFuncName;
 
     /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER.pwszRemoveFuncName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszRemoveFuncName;
+    public char* pwszRemoveFuncName;
 
     /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER.pwszIsFunctionNameFmt2"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszIsFunctionNameFmt2;
+    public char* pwszIsFunctionNameFmt2;
 
     /// <include file='SIP_ADD_NEWPROVIDER.xml' path='doc/member[@name="SIP_ADD_NEWPROVIDER.pwszGetCapFuncName"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pwszGetCapFuncName;
+    public char* pwszGetCapFuncName;
 }

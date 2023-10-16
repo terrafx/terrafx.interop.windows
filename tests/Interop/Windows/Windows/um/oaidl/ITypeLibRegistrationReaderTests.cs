@@ -19,32 +19,4 @@ public static unsafe partial class ITypeLibRegistrationReaderTests
     {
         Assert.That(typeof(ITypeLibRegistrationReader).GUID, Is.EqualTo(IID_ITypeLibRegistrationReader));
     }
-
-    /// <summary>Validates that the <see cref="ITypeLibRegistrationReader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITypeLibRegistrationReader>(), Is.EqualTo(sizeof(ITypeLibRegistrationReader)));
-    }
-
-    /// <summary>Validates that the <see cref="ITypeLibRegistrationReader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITypeLibRegistrationReader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITypeLibRegistrationReader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITypeLibRegistrationReader), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITypeLibRegistrationReader), Is.EqualTo(4));
-        }
-    }
 }

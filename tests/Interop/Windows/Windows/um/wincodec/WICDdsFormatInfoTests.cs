@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class WICDdsFormatInfoTests
 {
-    /// <summary>Validates that the <see cref="WICDdsFormatInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WICDdsFormatInfo>(), Is.EqualTo(sizeof(WICDdsFormatInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="WICDdsFormatInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WICDdsFormatInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WICDdsFormatInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WICDdsFormatInfo), Is.EqualTo(16));
-    }
 }

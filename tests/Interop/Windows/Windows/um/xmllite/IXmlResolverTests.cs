@@ -19,32 +19,4 @@ public static unsafe partial class IXmlResolverTests
     {
         Assert.That(typeof(IXmlResolver).GUID, Is.EqualTo(IID_IXmlResolver));
     }
-
-    /// <summary>Validates that the <see cref="IXmlResolver" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IXmlResolver>(), Is.EqualTo(sizeof(IXmlResolver)));
-    }
-
-    /// <summary>Validates that the <see cref="IXmlResolver" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IXmlResolver).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IXmlResolver" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IXmlResolver), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IXmlResolver), Is.EqualTo(4));
-        }
-    }
 }

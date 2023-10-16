@@ -38,7 +38,7 @@ public unsafe partial struct MENUITEMINFOW
 
     /// <include file='MENUITEMINFOW.xml' path='doc/member[@name="MENUITEMINFOW.dwTypeData"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* dwTypeData;
+    public char* dwTypeData;
 
     /// <include file='MENUITEMINFOW.xml' path='doc/member[@name="MENUITEMINFOW.cch"]/*' />
     public uint cch;

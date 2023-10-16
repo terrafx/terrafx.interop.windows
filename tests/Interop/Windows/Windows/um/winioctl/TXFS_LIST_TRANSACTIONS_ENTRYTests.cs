@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TXFS_LIST_TRANSACTIONS_ENTRY" /> struct.</summary>
 public static unsafe partial class TXFS_LIST_TRANSACTIONS_ENTRYTests
 {
-    /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTIONS_ENTRY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TXFS_LIST_TRANSACTIONS_ENTRY>(), Is.EqualTo(sizeof(TXFS_LIST_TRANSACTIONS_ENTRY)));
-    }
-
-    /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTIONS_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TXFS_LIST_TRANSACTIONS_ENTRY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTIONS_ENTRY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TXFS_LIST_TRANSACTIONS_ENTRY), Is.EqualTo(40));
-    }
 }

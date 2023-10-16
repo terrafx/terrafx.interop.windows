@@ -19,32 +19,4 @@ public static unsafe partial class ITfSystemLangBarItemTests
     {
         Assert.That(typeof(ITfSystemLangBarItem).GUID, Is.EqualTo(IID_ITfSystemLangBarItem));
     }
-
-    /// <summary>Validates that the <see cref="ITfSystemLangBarItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfSystemLangBarItem>(), Is.EqualTo(sizeof(ITfSystemLangBarItem)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfSystemLangBarItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfSystemLangBarItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfSystemLangBarItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfSystemLangBarItem), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfSystemLangBarItem), Is.EqualTo(4));
-        }
-    }
 }

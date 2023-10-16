@@ -13,7 +13,7 @@ public unsafe partial struct SPRECOCONTEXTSTATUS
 
     /// <include file='SPRECOCONTEXTSTATUS.xml' path='doc/member[@name="SPRECOCONTEXTSTATUS.szRequestTypeOfUI"]/*' />
     [NativeTypeName("WCHAR[255]")]
-    public fixed ushort szRequestTypeOfUI[255];
+    public fixed char szRequestTypeOfUI[255];
 
     /// <include file='SPRECOCONTEXTSTATUS.xml' path='doc/member[@name="SPRECOCONTEXTSTATUS.dwReserved1"]/*' />
     [NativeTypeName("DWORD")]

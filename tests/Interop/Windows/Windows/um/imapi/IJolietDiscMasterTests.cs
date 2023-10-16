@@ -19,32 +19,4 @@ public static unsafe partial class IJolietDiscMasterTests
     {
         Assert.That(typeof(IJolietDiscMaster).GUID, Is.EqualTo(IID_IJolietDiscMaster));
     }
-
-    /// <summary>Validates that the <see cref="IJolietDiscMaster" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IJolietDiscMaster>(), Is.EqualTo(sizeof(IJolietDiscMaster)));
-    }
-
-    /// <summary>Validates that the <see cref="IJolietDiscMaster" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IJolietDiscMaster).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IJolietDiscMaster" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IJolietDiscMaster), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IJolietDiscMaster), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ISoftwareBitmapNativeFactoryTests
     {
         Assert.That(typeof(ISoftwareBitmapNativeFactory).GUID, Is.EqualTo(IID_ISoftwareBitmapNativeFactory));
     }
-
-    /// <summary>Validates that the <see cref="ISoftwareBitmapNativeFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISoftwareBitmapNativeFactory>(), Is.EqualTo(sizeof(ISoftwareBitmapNativeFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="ISoftwareBitmapNativeFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISoftwareBitmapNativeFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISoftwareBitmapNativeFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISoftwareBitmapNativeFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISoftwareBitmapNativeFactory), Is.EqualTo(4));
-        }
-    }
 }

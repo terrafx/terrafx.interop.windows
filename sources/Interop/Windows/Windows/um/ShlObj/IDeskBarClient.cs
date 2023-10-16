@@ -25,7 +25,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDeskBarClient*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBarClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBarClient*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBarClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDeskBarClient*, uint>)(lpVtbl[1]))((IDeskBarClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeskBarClient*, uint>)(lpVtbl[1]))((IDeskBarClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDeskBarClient*, uint>)(lpVtbl[2]))((IDeskBarClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeskBarClient*, uint>)(lpVtbl[2]))((IDeskBarClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleWindow.GetWindow" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IDeskBarClient*, HWND*, int>)(lpVtbl[3]))((IDeskBarClient*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBarClient*, HWND*, int>)(lpVtbl[3]))((IDeskBarClient*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
     {
-        return ((delegate* unmanaged<IDeskBarClient*, BOOL, int>)(lpVtbl[4]))((IDeskBarClient*)Unsafe.AsPointer(ref this), fEnterMode);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBarClient*, BOOL, int>)(lpVtbl[4]))((IDeskBarClient*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
     /// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient.SetDeskBarSite"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT SetDeskBarSite(IUnknown* punkSite)
     {
-        return ((delegate* unmanaged<IDeskBarClient*, IUnknown*, int>)(lpVtbl[5]))((IDeskBarClient*)Unsafe.AsPointer(ref this), punkSite);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBarClient*, IUnknown*, int>)(lpVtbl[5]))((IDeskBarClient*)Unsafe.AsPointer(ref this), punkSite);
     }
 
     /// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient.SetModeDBC"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT SetModeDBC([NativeTypeName("DWORD")] uint dwMode)
     {
-        return ((delegate* unmanaged<IDeskBarClient*, uint, int>)(lpVtbl[6]))((IDeskBarClient*)Unsafe.AsPointer(ref this), dwMode);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBarClient*, uint, int>)(lpVtbl[6]))((IDeskBarClient*)Unsafe.AsPointer(ref this), dwMode);
     }
 
     /// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient.UIActivateDBC"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT UIActivateDBC([NativeTypeName("DWORD")] uint dwState)
     {
-        return ((delegate* unmanaged<IDeskBarClient*, uint, int>)(lpVtbl[7]))((IDeskBarClient*)Unsafe.AsPointer(ref this), dwState);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBarClient*, uint, int>)(lpVtbl[7]))((IDeskBarClient*)Unsafe.AsPointer(ref this), dwState);
     }
 
     /// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient.GetSize"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT GetSize([NativeTypeName("DWORD")] uint dwWhich, [NativeTypeName("LPRECT")] RECT* prc)
     {
-        return ((delegate* unmanaged<IDeskBarClient*, uint, RECT*, int>)(lpVtbl[8]))((IDeskBarClient*)Unsafe.AsPointer(ref this), dwWhich, prc);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBarClient*, uint, RECT*, int>)(lpVtbl[8]))((IDeskBarClient*)Unsafe.AsPointer(ref this), dwWhich, prc);
     }
 
     public interface Interface : IOleWindow.Interface
@@ -113,30 +113,30 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetDeskBarSite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetDeskBarSite;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetModeDBC;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetModeDBC;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> UIActivateDBC;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> UIActivateDBC;
 
         [NativeTypeName("HRESULT (DWORD, LPRECT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, RECT*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, RECT*, int> GetSize;
     }
 }

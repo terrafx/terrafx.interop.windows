@@ -25,7 +25,7 @@ public unsafe partial struct ITfMSAAControl : ITfMSAAControl.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfMSAAControl*, Guid*, void**, int>)(lpVtbl[0]))((ITfMSAAControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfMSAAControl*, Guid*, void**, int>)(lpVtbl[0]))((ITfMSAAControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfMSAAControl : ITfMSAAControl.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfMSAAControl*, uint>)(lpVtbl[1]))((ITfMSAAControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfMSAAControl*, uint>)(lpVtbl[1]))((ITfMSAAControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfMSAAControl : ITfMSAAControl.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfMSAAControl*, uint>)(lpVtbl[2]))((ITfMSAAControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfMSAAControl*, uint>)(lpVtbl[2]))((ITfMSAAControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfMSAAControl.xml' path='doc/member[@name="ITfMSAAControl.SystemEnableMSAA"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfMSAAControl : ITfMSAAControl.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT SystemEnableMSAA()
     {
-        return ((delegate* unmanaged<ITfMSAAControl*, int>)(lpVtbl[3]))((ITfMSAAControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfMSAAControl*, int>)(lpVtbl[3]))((ITfMSAAControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfMSAAControl.xml' path='doc/member[@name="ITfMSAAControl.SystemDisableMSAA"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfMSAAControl : ITfMSAAControl.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT SystemDisableMSAA()
     {
-        return ((delegate* unmanaged<ITfMSAAControl*, int>)(lpVtbl[4]))((ITfMSAAControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfMSAAControl*, int>)(lpVtbl[4]))((ITfMSAAControl*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfMSAAControl : ITfMSAAControl.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SystemEnableMSAA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SystemEnableMSAA;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SystemDisableMSAA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SystemDisableMSAA;
     }
 }

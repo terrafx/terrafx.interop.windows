@@ -32,7 +32,7 @@ public static unsafe partial class DirectX
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.XInputGetAudioDeviceIds"]/*' />
     [DllImport("xinput1_4", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint XInputGetAudioDeviceIds([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("LPWSTR")] ushort* pRenderDeviceId, uint* pRenderCount, [NativeTypeName("LPWSTR")] ushort* pCaptureDeviceId, uint* pCaptureCount);
+    public static extern uint XInputGetAudioDeviceIds([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("LPWSTR")] char* pRenderDeviceId, uint* pRenderCount, [NativeTypeName("LPWSTR")] char* pCaptureDeviceId, uint* pCaptureCount);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.XInputGetBatteryInformation"]/*' />
     [DllImport("xinput1_4", ExactSpelling = true)]

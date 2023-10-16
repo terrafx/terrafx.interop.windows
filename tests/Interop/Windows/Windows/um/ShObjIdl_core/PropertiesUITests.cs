@@ -19,25 +19,4 @@ public static unsafe partial class PropertiesUITests
     {
         Assert.That(typeof(PropertiesUI).GUID, Is.EqualTo(IID_PropertiesUI));
     }
-
-    /// <summary>Validates that the <see cref="PropertiesUI" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PropertiesUI>(), Is.EqualTo(sizeof(PropertiesUI)));
-    }
-
-    /// <summary>Validates that the <see cref="PropertiesUI" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PropertiesUI).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PropertiesUI" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PropertiesUI), Is.EqualTo(1));
-    }
 }

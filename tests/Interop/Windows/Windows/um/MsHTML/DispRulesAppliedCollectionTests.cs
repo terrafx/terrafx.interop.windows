@@ -19,32 +19,4 @@ public static unsafe partial class DispRulesAppliedCollectionTests
     {
         Assert.That(typeof(DispRulesAppliedCollection).GUID, Is.EqualTo(IID_DispRulesAppliedCollection));
     }
-
-    /// <summary>Validates that the <see cref="DispRulesAppliedCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispRulesAppliedCollection>(), Is.EqualTo(sizeof(DispRulesAppliedCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="DispRulesAppliedCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispRulesAppliedCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispRulesAppliedCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispRulesAppliedCollection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispRulesAppliedCollection), Is.EqualTo(4));
-        }
-    }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct IWeakReference : IWeakReference.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWeakReference*, Guid*, void**, int>)(lpVtbl[0]))((IWeakReference*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWeakReference*, Guid*, void**, int>)(lpVtbl[0]))((IWeakReference*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IWeakReference : IWeakReference.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWeakReference*, uint>)(lpVtbl[1]))((IWeakReference*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWeakReference*, uint>)(lpVtbl[1]))((IWeakReference*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IWeakReference : IWeakReference.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWeakReference*, uint>)(lpVtbl[2]))((IWeakReference*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWeakReference*, uint>)(lpVtbl[2]))((IWeakReference*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWeakReference.xml' path='doc/member[@name="IWeakReference.Resolve"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IWeakReference : IWeakReference.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT Resolve([NativeTypeName("const IID &")] Guid* riid, IInspectable** objectReference)
     {
-        return ((delegate* unmanaged<IWeakReference*, Guid*, IInspectable**, int>)(lpVtbl[3]))((IWeakReference*)Unsafe.AsPointer(ref this), riid, objectReference);
+        return ((delegate* unmanaged[MemberFunction]<IWeakReference*, Guid*, IInspectable**, int>)(lpVtbl[3]))((IWeakReference*)Unsafe.AsPointer(ref this), riid, objectReference);
     }
 
     public interface Interface : IUnknown.Interface
@@ -65,15 +65,15 @@ public unsafe partial struct IWeakReference : IWeakReference.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IInspectable**, int> Resolve;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IInspectable**, int> Resolve;
     }
 }

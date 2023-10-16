@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class NTFS_STATISTICS_EXTests
 {
-    /// <summary>Validates that the <see cref="NTFS_STATISTICS_EX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NTFS_STATISTICS_EX>(), Is.EqualTo(sizeof(NTFS_STATISTICS_EX)));
-    }
-
-    /// <summary>Validates that the <see cref="NTFS_STATISTICS_EX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NTFS_STATISTICS_EX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NTFS_STATISTICS_EX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NTFS_STATISTICS_EX), Is.EqualTo(496));
-    }
 }

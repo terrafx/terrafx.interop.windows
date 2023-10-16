@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DWRITE_LINE_METRICS1" /> struct.</summary>
 public static unsafe partial class DWRITE_LINE_METRICS1Tests
 {
-    /// <summary>Validates that the <see cref="DWRITE_LINE_METRICS1" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DWRITE_LINE_METRICS1>(), Is.EqualTo(sizeof(DWRITE_LINE_METRICS1)));
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_LINE_METRICS1" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DWRITE_LINE_METRICS1).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_LINE_METRICS1" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DWRITE_LINE_METRICS1), Is.EqualTo(32));
-    }
 }

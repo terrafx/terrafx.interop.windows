@@ -60,7 +60,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
     public uint desktopModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.desktopModeInfoIdx;
         }
@@ -76,7 +76,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
     public uint targetModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.targetModeInfoIdx;
         }
@@ -112,7 +112,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
             public uint desktopModeInfoIdx
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0xFFFFu;
                 }
@@ -129,7 +129,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
             public uint targetModeInfoIdx
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0xFFFFu;
                 }

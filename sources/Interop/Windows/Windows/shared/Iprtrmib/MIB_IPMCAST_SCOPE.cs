@@ -18,7 +18,7 @@ public unsafe partial struct MIB_IPMCAST_SCOPE
 
     /// <include file='MIB_IPMCAST_SCOPE.xml' path='doc/member[@name="MIB_IPMCAST_SCOPE.snNameBuffer"]/*' />
     [NativeTypeName("SCOPE_NAME_BUFFER")]
-    public fixed ushort snNameBuffer[256];
+    public fixed char snNameBuffer[256];
 
     /// <include file='MIB_IPMCAST_SCOPE.xml' path='doc/member[@name="MIB_IPMCAST_SCOPE.dwStatus"]/*' />
     [NativeTypeName("DWORD")]

@@ -19,32 +19,4 @@ public static unsafe partial class IMLOperatorKernelContextTests
     {
         Assert.That(typeof(IMLOperatorKernelContext).GUID, Is.EqualTo(IID_IMLOperatorKernelContext));
     }
-
-    /// <summary>Validates that the <see cref="IMLOperatorKernelContext" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMLOperatorKernelContext>(), Is.EqualTo(sizeof(IMLOperatorKernelContext)));
-    }
-
-    /// <summary>Validates that the <see cref="IMLOperatorKernelContext" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMLOperatorKernelContext).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMLOperatorKernelContext" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMLOperatorKernelContext), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMLOperatorKernelContext), Is.EqualTo(4));
-        }
-    }
 }

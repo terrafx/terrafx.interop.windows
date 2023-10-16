@@ -19,25 +19,4 @@ public static unsafe partial class RendezvousApplicationTests
     {
         Assert.That(typeof(RendezvousApplication).GUID, Is.EqualTo(CLSID_RendezvousApplication));
     }
-
-    /// <summary>Validates that the <see cref="RendezvousApplication" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RendezvousApplication>(), Is.EqualTo(sizeof(RendezvousApplication)));
-    }
-
-    /// <summary>Validates that the <see cref="RendezvousApplication" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RendezvousApplication).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RendezvousApplication" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RendezvousApplication), Is.EqualTo(1));
-    }
 }

@@ -81,7 +81,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemDirectoryW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern uint GetSystemDirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, uint uSize);
+    public static extern uint GetSystemDirectoryW([NativeTypeName("LPWSTR")] char* lpBuffer, uint uSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowsDirectoryA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -91,7 +91,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowsDirectoryW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern uint GetWindowsDirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, uint uSize);
+    public static extern uint GetWindowsDirectoryW([NativeTypeName("LPWSTR")] char* lpBuffer, uint uSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemWindowsDirectoryA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -101,7 +101,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemWindowsDirectoryW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern uint GetSystemWindowsDirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, uint uSize);
+    public static extern uint GetSystemWindowsDirectoryW([NativeTypeName("LPWSTR")] char* lpBuffer, uint uSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetComputerNameExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -111,12 +111,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetComputerNameExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetComputerNameExW(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPDWORD")] uint* nSize);
+    public static extern BOOL GetComputerNameExW(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("LPWSTR")] char* lpBuffer, [NativeTypeName("LPDWORD")] uint* nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetComputerNameExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL SetComputerNameExW(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("LPCWSTR")] ushort* lpBuffer);
+    public static extern BOOL SetComputerNameExW(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("LPCWSTR")] char* lpBuffer);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetSystemTime"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -179,7 +179,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DnsHostnameToComputerNameExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    public static extern BOOL DnsHostnameToComputerNameExW([NativeTypeName("LPCWSTR")] ushort* Hostname, [NativeTypeName("LPWSTR")] ushort* ComputerName, [NativeTypeName("LPDWORD")] uint* nSize);
+    public static extern BOOL DnsHostnameToComputerNameExW([NativeTypeName("LPCWSTR")] char* Hostname, [NativeTypeName("LPWSTR")] char* ComputerName, [NativeTypeName("LPDWORD")] uint* nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPhysicallyInstalledSystemMemory"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -188,7 +188,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetComputerNameEx2W"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    public static extern BOOL SetComputerNameEx2W(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPCWSTR")] ushort* lpBuffer);
+    public static extern BOOL SetComputerNameEx2W(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPCWSTR")] char* lpBuffer);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetSystemTimeAdjustment"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -229,7 +229,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetComputerNameW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL SetComputerNameW([NativeTypeName("LPCWSTR")] ushort* lpComputerName);
+    public static extern BOOL SetComputerNameW([NativeTypeName("LPCWSTR")] char* lpComputerName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetComputerNameExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -249,19 +249,19 @@ public static unsafe partial class Windows
     public const int USER_CET_ENVIRONMENT_VBS_BASIC_ENCLAVE = 0x00000011;
 
     [NativeTypeName("#define GetSystemDirectory GetSystemDirectoryW")]
-    public static delegate*<ushort*, uint, uint> GetSystemDirectory => &GetSystemDirectoryW;
+    public static delegate*<char*, uint, uint> GetSystemDirectory => &GetSystemDirectoryW;
 
     [NativeTypeName("#define GetWindowsDirectory GetWindowsDirectoryW")]
-    public static delegate*<ushort*, uint, uint> GetWindowsDirectory => &GetWindowsDirectoryW;
+    public static delegate*<char*, uint, uint> GetWindowsDirectory => &GetWindowsDirectoryW;
 
     [NativeTypeName("#define GetSystemWindowsDirectory GetSystemWindowsDirectoryW")]
-    public static delegate*<ushort*, uint, uint> GetSystemWindowsDirectory => &GetSystemWindowsDirectoryW;
+    public static delegate*<char*, uint, uint> GetSystemWindowsDirectory => &GetSystemWindowsDirectoryW;
 
     [NativeTypeName("#define GetComputerNameEx GetComputerNameExW")]
-    public static delegate*<COMPUTER_NAME_FORMAT, ushort*, uint*, BOOL> GetComputerNameEx => &GetComputerNameExW;
+    public static delegate*<COMPUTER_NAME_FORMAT, char*, uint*, BOOL> GetComputerNameEx => &GetComputerNameExW;
 
     [NativeTypeName("#define SetComputerNameEx SetComputerNameExW")]
-    public static delegate*<COMPUTER_NAME_FORMAT, ushort*, BOOL> SetComputerNameEx => &SetComputerNameExW;
+    public static delegate*<COMPUTER_NAME_FORMAT, char*, BOOL> SetComputerNameEx => &SetComputerNameExW;
 
     [NativeTypeName("#define GetVersionEx GetVersionExW")]
     [Obsolete]
@@ -271,8 +271,8 @@ public static unsafe partial class Windows
     public const int SCEX2_ALT_NETBIOS_NAME = 0x00000001;
 
     [NativeTypeName("#define SetComputerNameEx2 SetComputerNameEx2W")]
-    public static delegate*<COMPUTER_NAME_FORMAT, uint, ushort*, BOOL> SetComputerNameEx2 => &SetComputerNameEx2W;
+    public static delegate*<COMPUTER_NAME_FORMAT, uint, char*, BOOL> SetComputerNameEx2 => &SetComputerNameEx2W;
 
     [NativeTypeName("#define SetComputerName SetComputerNameW")]
-    public static delegate*<ushort*, BOOL> SetComputerName => &SetComputerNameW;
+    public static delegate*<char*, BOOL> SetComputerName => &SetComputerNameW;
 }

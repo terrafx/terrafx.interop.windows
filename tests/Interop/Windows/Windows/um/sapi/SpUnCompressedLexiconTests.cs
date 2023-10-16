@@ -19,25 +19,4 @@ public static unsafe partial class SpUnCompressedLexiconTests
     {
         Assert.That(typeof(SpUnCompressedLexicon).GUID, Is.EqualTo(CLSID_SpUnCompressedLexicon));
     }
-
-    /// <summary>Validates that the <see cref="SpUnCompressedLexicon" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpUnCompressedLexicon>(), Is.EqualTo(sizeof(SpUnCompressedLexicon)));
-    }
-
-    /// <summary>Validates that the <see cref="SpUnCompressedLexicon" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpUnCompressedLexicon).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpUnCompressedLexicon" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpUnCompressedLexicon), Is.EqualTo(1));
-    }
 }

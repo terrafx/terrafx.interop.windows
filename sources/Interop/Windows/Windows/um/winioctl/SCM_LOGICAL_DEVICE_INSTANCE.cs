@@ -23,5 +23,5 @@ public unsafe partial struct SCM_LOGICAL_DEVICE_INSTANCE
 
     /// <include file='SCM_LOGICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_LOGICAL_DEVICE_INSTANCE.SymbolicLink"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort SymbolicLink[256];
+    public fixed char SymbolicLink[256];
 }

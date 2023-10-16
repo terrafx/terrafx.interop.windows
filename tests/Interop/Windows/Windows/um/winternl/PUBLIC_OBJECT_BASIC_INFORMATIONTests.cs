@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PUBLIC_OBJECT_BASIC_INFORMATION" /> struct.</summary>
 public static unsafe partial class PUBLIC_OBJECT_BASIC_INFORMATIONTests
 {
-    /// <summary>Validates that the <see cref="PUBLIC_OBJECT_BASIC_INFORMATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PUBLIC_OBJECT_BASIC_INFORMATION>(), Is.EqualTo(sizeof(PUBLIC_OBJECT_BASIC_INFORMATION)));
-    }
-
-    /// <summary>Validates that the <see cref="PUBLIC_OBJECT_BASIC_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PUBLIC_OBJECT_BASIC_INFORMATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PUBLIC_OBJECT_BASIC_INFORMATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PUBLIC_OBJECT_BASIC_INFORMATION), Is.EqualTo(56));
-    }
 }

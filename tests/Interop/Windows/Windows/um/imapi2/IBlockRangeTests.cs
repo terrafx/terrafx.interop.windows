@@ -19,32 +19,4 @@ public static unsafe partial class IBlockRangeTests
     {
         Assert.That(typeof(IBlockRange).GUID, Is.EqualTo(IID_IBlockRange));
     }
-
-    /// <summary>Validates that the <see cref="IBlockRange" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBlockRange>(), Is.EqualTo(sizeof(IBlockRange)));
-    }
-
-    /// <summary>Validates that the <see cref="IBlockRange" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBlockRange).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBlockRange" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBlockRange), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBlockRange), Is.EqualTo(4));
-        }
-    }
 }

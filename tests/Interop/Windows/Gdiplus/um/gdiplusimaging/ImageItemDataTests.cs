@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Gdiplus.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="ImageItemData" /> struct.</summary>
 public static unsafe partial class ImageItemDataTests
 {
-    /// <summary>Validates that the <see cref="ImageItemData" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ImageItemData>(), Is.EqualTo(sizeof(ImageItemData)));
-    }
-
-    /// <summary>Validates that the <see cref="ImageItemData" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ImageItemData).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ImageItemData" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ImageItemData), Is.EqualTo(40));
-        }
-        else
-        {
-            Assert.That(sizeof(ImageItemData), Is.EqualTo(28));
-        }
-    }
 }

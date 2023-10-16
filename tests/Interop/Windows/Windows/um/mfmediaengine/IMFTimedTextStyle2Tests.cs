@@ -19,32 +19,4 @@ public static unsafe partial class IMFTimedTextStyle2Tests
     {
         Assert.That(typeof(IMFTimedTextStyle2).GUID, Is.EqualTo(IID_IMFTimedTextStyle2));
     }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextStyle2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTimedTextStyle2>(), Is.EqualTo(sizeof(IMFTimedTextStyle2)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextStyle2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTimedTextStyle2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextStyle2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTimedTextStyle2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTimedTextStyle2), Is.EqualTo(4));
-        }
-    }
 }

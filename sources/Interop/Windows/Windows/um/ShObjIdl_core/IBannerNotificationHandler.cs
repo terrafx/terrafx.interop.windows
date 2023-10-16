@@ -25,7 +25,7 @@ public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHan
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBannerNotificationHandler*, Guid*, void**, int>)(lpVtbl[0]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBannerNotificationHandler*, Guid*, void**, int>)(lpVtbl[0]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHan
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBannerNotificationHandler*, uint>)(lpVtbl[1]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBannerNotificationHandler*, uint>)(lpVtbl[1]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHan
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBannerNotificationHandler*, uint>)(lpVtbl[2]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBannerNotificationHandler*, uint>)(lpVtbl[2]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBannerNotificationHandler.xml' path='doc/member[@name="IBannerNotificationHandler.OnBannerEvent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHan
     [VtblIndex(3)]
     public HRESULT OnBannerEvent([NativeTypeName("const BANNER_NOTIFICATION *")] BANNER_NOTIFICATION* notification)
     {
-        return ((delegate* unmanaged<IBannerNotificationHandler*, BANNER_NOTIFICATION*, int>)(lpVtbl[3]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this), notification);
+        return ((delegate* unmanaged[MemberFunction]<IBannerNotificationHandler*, BANNER_NOTIFICATION*, int>)(lpVtbl[3]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this), notification);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHan
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const BANNER_NOTIFICATION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BANNER_NOTIFICATION*, int> OnBannerEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BANNER_NOTIFICATION*, int> OnBannerEvent;
     }
 }

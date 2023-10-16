@@ -17,5 +17,5 @@ public unsafe partial struct OFNOTIFYW
 
     /// <include file='OFNOTIFYW.xml' path='doc/member[@name="OFNOTIFYW.pszFile"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszFile;
+    public char* pszFile;
 }

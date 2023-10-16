@@ -25,7 +25,7 @@ public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, Guid*, void**, int>)(lpVtbl[0]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpContainerLexicon*, Guid*, void**, int>)(lpVtbl[0]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, uint>)(lpVtbl[1]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpContainerLexicon*, uint>)(lpVtbl[1]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,31 +43,31 @@ public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, uint>)(lpVtbl[2]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpContainerLexicon*, uint>)(lpVtbl[2]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISpLexicon.GetPronunciations" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("DWORD")] uint dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList)
+    public HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("DWORD")] uint dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, ushort*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[3]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, dwFlags, pWordPronunciationList);
+        return ((delegate* unmanaged[MemberFunction]<ISpContainerLexicon*, char*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[3]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, dwFlags, pWordPronunciationList);
     }
 
     /// <inheritdoc cref="ISpLexicon.AddPronunciation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AddPronunciation([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] ushort* pszPronunciation)
+    public HRESULT AddPronunciation([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] char* pszPronunciation)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int>)(lpVtbl[4]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
+        return ((delegate* unmanaged[MemberFunction]<ISpContainerLexicon*, char*, ushort, SPPARTOFSPEECH, char*, int>)(lpVtbl[4]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
     }
 
     /// <inheritdoc cref="ISpLexicon.RemovePronunciation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT RemovePronunciation([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] ushort* pszPronunciation)
+    public HRESULT RemovePronunciation([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] char* pszPronunciation)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int>)(lpVtbl[5]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
+        return ((delegate* unmanaged[MemberFunction]<ISpContainerLexicon*, char*, ushort, SPPARTOFSPEECH, char*, int>)(lpVtbl[5]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
     }
 
     /// <inheritdoc cref="ISpLexicon.GetGeneration" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
     [VtblIndex(6)]
     public HRESULT GetGeneration([NativeTypeName("DWORD *")] uint* pdwGeneration)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, uint*, int>)(lpVtbl[6]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pdwGeneration);
+        return ((delegate* unmanaged[MemberFunction]<ISpContainerLexicon*, uint*, int>)(lpVtbl[6]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pdwGeneration);
     }
 
     /// <inheritdoc cref="ISpLexicon.GetGenerationChange" />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
     [VtblIndex(7)]
     public HRESULT GetGenerationChange([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwGeneration, SPWORDLIST* pWordList)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, uint, uint*, SPWORDLIST*, int>)(lpVtbl[7]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), dwFlags, pdwGeneration, pWordList);
+        return ((delegate* unmanaged[MemberFunction]<ISpContainerLexicon*, uint, uint*, SPWORDLIST*, int>)(lpVtbl[7]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), dwFlags, pdwGeneration, pWordList);
     }
 
     /// <inheritdoc cref="ISpLexicon.GetWords" />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
     [VtblIndex(8)]
     public HRESULT GetWords([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwGeneration, [NativeTypeName("DWORD *")] uint* pdwCookie, SPWORDLIST* pWordList)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, uint, uint*, uint*, SPWORDLIST*, int>)(lpVtbl[8]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), dwFlags, pdwGeneration, pdwCookie, pWordList);
+        return ((delegate* unmanaged[MemberFunction]<ISpContainerLexicon*, uint, uint*, uint*, SPWORDLIST*, int>)(lpVtbl[8]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), dwFlags, pdwGeneration, pdwCookie, pWordList);
     }
 
     /// <include file='ISpContainerLexicon.xml' path='doc/member[@name="ISpContainerLexicon.AddLexicon"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
     [VtblIndex(9)]
     public HRESULT AddLexicon(ISpLexicon* pAddLexicon, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, ISpLexicon*, uint, int>)(lpVtbl[9]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pAddLexicon, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ISpContainerLexicon*, ISpLexicon*, uint, int>)(lpVtbl[9]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pAddLexicon, dwFlags);
     }
 
     public interface Interface : ISpLexicon.Interface
@@ -112,33 +112,33 @@ public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, DWORD, SPWORDPRONUNCIATIONLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int> GetPronunciations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int> GetPronunciations;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, SPPARTOFSPEECH, PCSPPHONEID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int> AddPronunciation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ushort, SPPARTOFSPEECH, char*, int> AddPronunciation;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, SPPARTOFSPEECH, PCSPPHONEID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int> RemovePronunciation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ushort, SPPARTOFSPEECH, char*, int> RemovePronunciation;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetGeneration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetGeneration;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, SPWORDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, SPWORDLIST*, int> GetGenerationChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, SPWORDLIST*, int> GetGenerationChange;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *, SPWORDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint*, SPWORDLIST*, int> GetWords;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint*, SPWORDLIST*, int> GetWords;
 
         [NativeTypeName("HRESULT (ISpLexicon *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpLexicon*, uint, int> AddLexicon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpLexicon*, uint, int> AddLexicon;
     }
 }

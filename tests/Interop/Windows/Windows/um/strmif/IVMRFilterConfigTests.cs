@@ -19,32 +19,4 @@ public static unsafe partial class IVMRFilterConfigTests
     {
         Assert.That(typeof(IVMRFilterConfig).GUID, Is.EqualTo(IID_IVMRFilterConfig));
     }
-
-    /// <summary>Validates that the <see cref="IVMRFilterConfig" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVMRFilterConfig>(), Is.EqualTo(sizeof(IVMRFilterConfig)));
-    }
-
-    /// <summary>Validates that the <see cref="IVMRFilterConfig" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVMRFilterConfig).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVMRFilterConfig" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVMRFilterConfig), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVMRFilterConfig), Is.EqualTo(4));
-        }
-    }
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IMFSourceBufferList : IMFSourceBufferList.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSourceBufferList*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferList*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSourceBufferList : IMFSourceBufferList.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSourceBufferList*, uint>)(lpVtbl[1]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferList*, uint>)(lpVtbl[1]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSourceBufferList : IMFSourceBufferList.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSourceBufferList*, uint>)(lpVtbl[2]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferList*, uint>)(lpVtbl[2]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBufferList.xml' path='doc/member[@name="IMFSourceBufferList.GetLength"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IMFSourceBufferList : IMFSourceBufferList.Interface
     [return: NativeTypeName("DWORD")]
     public uint GetLength()
     {
-        return ((delegate* unmanaged<IMFSourceBufferList*, uint>)(lpVtbl[3]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferList*, uint>)(lpVtbl[3]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBufferList.xml' path='doc/member[@name="IMFSourceBufferList.GetSourceBuffer"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IMFSourceBufferList : IMFSourceBufferList.Interface
     [VtblIndex(4)]
     public IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint index)
     {
-        return ((delegate* unmanaged<IMFSourceBufferList*, uint, IMFSourceBuffer*>)(lpVtbl[4]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this), index);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferList*, uint, IMFSourceBuffer*>)(lpVtbl[4]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this), index);
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,18 +79,18 @@ public unsafe partial struct IMFSourceBufferList : IMFSourceBufferList.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetLength;
 
         [NativeTypeName("IMFSourceBuffer *(DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFSourceBuffer*> GetSourceBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFSourceBuffer*> GetSourceBuffer;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBaseFilter*, Guid*, void**, int>)(lpVtbl[0]))((IBaseFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, Guid*, void**, int>)(lpVtbl[0]))((IBaseFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBaseFilter*, uint>)(lpVtbl[1]))((IBaseFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, uint>)(lpVtbl[1]))((IBaseFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBaseFilter*, uint>)(lpVtbl[2]))((IBaseFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, uint>)(lpVtbl[2]))((IBaseFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPersist.GetClassID" />
@@ -51,7 +51,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
     {
-        return ((delegate* unmanaged<IBaseFilter*, Guid*, int>)(lpVtbl[3]))((IBaseFilter*)Unsafe.AsPointer(ref this), pClassID);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, Guid*, int>)(lpVtbl[3]))((IBaseFilter*)Unsafe.AsPointer(ref this), pClassID);
     }
 
     /// <inheritdoc cref="IMediaFilter.Stop" />
@@ -59,7 +59,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IBaseFilter*, int>)(lpVtbl[4]))((IBaseFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, int>)(lpVtbl[4]))((IBaseFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMediaFilter.Pause" />
@@ -67,7 +67,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT Pause()
     {
-        return ((delegate* unmanaged<IBaseFilter*, int>)(lpVtbl[5]))((IBaseFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, int>)(lpVtbl[5]))((IBaseFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMediaFilter.Run" />
@@ -75,7 +75,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart)
     {
-        return ((delegate* unmanaged<IBaseFilter*, long, int>)(lpVtbl[6]))((IBaseFilter*)Unsafe.AsPointer(ref this), tStart);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, long, int>)(lpVtbl[6]))((IBaseFilter*)Unsafe.AsPointer(ref this), tStart);
     }
 
     /// <inheritdoc cref="IMediaFilter.GetState" />
@@ -83,7 +83,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetState([NativeTypeName("DWORD")] uint dwMilliSecsTimeout, FILTER_STATE* State)
     {
-        return ((delegate* unmanaged<IBaseFilter*, uint, FILTER_STATE*, int>)(lpVtbl[7]))((IBaseFilter*)Unsafe.AsPointer(ref this), dwMilliSecsTimeout, State);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, uint, FILTER_STATE*, int>)(lpVtbl[7]))((IBaseFilter*)Unsafe.AsPointer(ref this), dwMilliSecsTimeout, State);
     }
 
     /// <inheritdoc cref="IMediaFilter.SetSyncSource" />
@@ -91,7 +91,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT SetSyncSource(IReferenceClock* pClock)
     {
-        return ((delegate* unmanaged<IBaseFilter*, IReferenceClock*, int>)(lpVtbl[8]))((IBaseFilter*)Unsafe.AsPointer(ref this), pClock);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, IReferenceClock*, int>)(lpVtbl[8]))((IBaseFilter*)Unsafe.AsPointer(ref this), pClock);
     }
 
     /// <inheritdoc cref="IMediaFilter.GetSyncSource" />
@@ -99,7 +99,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetSyncSource(IReferenceClock** pClock)
     {
-        return ((delegate* unmanaged<IBaseFilter*, IReferenceClock**, int>)(lpVtbl[9]))((IBaseFilter*)Unsafe.AsPointer(ref this), pClock);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, IReferenceClock**, int>)(lpVtbl[9]))((IBaseFilter*)Unsafe.AsPointer(ref this), pClock);
     }
 
     /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.EnumPins"]/*' />
@@ -107,15 +107,15 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT EnumPins(IEnumPins** ppEnum)
     {
-        return ((delegate* unmanaged<IBaseFilter*, IEnumPins**, int>)(lpVtbl[10]))((IBaseFilter*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, IEnumPins**, int>)(lpVtbl[10]))((IBaseFilter*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.FindPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT FindPin([NativeTypeName("LPCWSTR")] ushort* Id, IPin** ppPin)
+    public HRESULT FindPin([NativeTypeName("LPCWSTR")] char* Id, IPin** ppPin)
     {
-        return ((delegate* unmanaged<IBaseFilter*, ushort*, IPin**, int>)(lpVtbl[11]))((IBaseFilter*)Unsafe.AsPointer(ref this), Id, ppPin);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, char*, IPin**, int>)(lpVtbl[11]))((IBaseFilter*)Unsafe.AsPointer(ref this), Id, ppPin);
     }
 
     /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.QueryFilterInfo"]/*' />
@@ -123,23 +123,23 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT QueryFilterInfo(FILTER_INFO* pInfo)
     {
-        return ((delegate* unmanaged<IBaseFilter*, FILTER_INFO*, int>)(lpVtbl[12]))((IBaseFilter*)Unsafe.AsPointer(ref this), pInfo);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, FILTER_INFO*, int>)(lpVtbl[12]))((IBaseFilter*)Unsafe.AsPointer(ref this), pInfo);
     }
 
     /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.JoinFilterGraph"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] ushort* pName)
+    public HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] char* pName)
     {
-        return ((delegate* unmanaged<IBaseFilter*, IFilterGraph*, ushort*, int>)(lpVtbl[13]))((IBaseFilter*)Unsafe.AsPointer(ref this), pGraph, pName);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, IFilterGraph*, char*, int>)(lpVtbl[13]))((IBaseFilter*)Unsafe.AsPointer(ref this), pGraph, pName);
     }
 
     /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.QueryVendorInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] ushort** pVendorInfo)
+    public HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] char** pVendorInfo)
     {
-        return ((delegate* unmanaged<IBaseFilter*, ushort**, int>)(lpVtbl[14]))((IBaseFilter*)Unsafe.AsPointer(ref this), pVendorInfo);
+        return ((delegate* unmanaged[MemberFunction]<IBaseFilter*, char**, int>)(lpVtbl[14]))((IBaseFilter*)Unsafe.AsPointer(ref this), pVendorInfo);
     }
 
     public interface Interface : IMediaFilter.Interface
@@ -148,64 +148,64 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
         HRESULT EnumPins(IEnumPins** ppEnum);
 
         [VtblIndex(11)]
-        HRESULT FindPin([NativeTypeName("LPCWSTR")] ushort* Id, IPin** ppPin);
+        HRESULT FindPin([NativeTypeName("LPCWSTR")] char* Id, IPin** ppPin);
 
         [VtblIndex(12)]
         HRESULT QueryFilterInfo(FILTER_INFO* pInfo);
 
         [VtblIndex(13)]
-        HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] ushort* pName);
+        HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] char* pName);
 
         [VtblIndex(14)]
-        HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] ushort** pVendorInfo);
+        HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] char** pVendorInfo);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Pause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> Run;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> Run;
 
         [NativeTypeName("HRESULT (DWORD, FILTER_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, FILTER_STATE*, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, FILTER_STATE*, int> GetState;
 
         [NativeTypeName("HRESULT (IReferenceClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IReferenceClock*, int> SetSyncSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IReferenceClock*, int> SetSyncSource;
 
         [NativeTypeName("HRESULT (IReferenceClock **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IReferenceClock**, int> GetSyncSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IReferenceClock**, int> GetSyncSource;
 
         [NativeTypeName("HRESULT (IEnumPins **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumPins**, int> EnumPins;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumPins**, int> EnumPins;
 
         [NativeTypeName("HRESULT (LPCWSTR, IPin **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IPin**, int> FindPin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IPin**, int> FindPin;
 
         [NativeTypeName("HRESULT (FILTER_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FILTER_INFO*, int> QueryFilterInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FILTER_INFO*, int> QueryFilterInfo;
 
         [NativeTypeName("HRESULT (IFilterGraph *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IFilterGraph*, ushort*, int> JoinFilterGraph;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IFilterGraph*, char*, int> JoinFilterGraph;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> QueryVendorInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> QueryVendorInfo;
     }
 }

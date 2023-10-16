@@ -19,32 +19,4 @@ public static unsafe partial class IShellUIHelper5Tests
     {
         Assert.That(typeof(IShellUIHelper5).GUID, Is.EqualTo(IID_IShellUIHelper5));
     }
-
-    /// <summary>Validates that the <see cref="IShellUIHelper5" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellUIHelper5>(), Is.EqualTo(sizeof(IShellUIHelper5)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellUIHelper5" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellUIHelper5).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellUIHelper5" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellUIHelper5), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellUIHelper5), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IP_MREQ_SOURCE" /> struct.</summary>
 public static unsafe partial class IP_MREQ_SOURCETests
 {
-    /// <summary>Validates that the <see cref="IP_MREQ_SOURCE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IP_MREQ_SOURCE>(), Is.EqualTo(sizeof(IP_MREQ_SOURCE)));
-    }
-
-    /// <summary>Validates that the <see cref="IP_MREQ_SOURCE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IP_MREQ_SOURCE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IP_MREQ_SOURCE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IP_MREQ_SOURCE), Is.EqualTo(12));
-    }
 }

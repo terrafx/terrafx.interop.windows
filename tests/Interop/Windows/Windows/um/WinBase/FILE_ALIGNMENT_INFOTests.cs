@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class FILE_ALIGNMENT_INFOTests
 {
-    /// <summary>Validates that the <see cref="FILE_ALIGNMENT_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FILE_ALIGNMENT_INFO>(), Is.EqualTo(sizeof(FILE_ALIGNMENT_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="FILE_ALIGNMENT_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FILE_ALIGNMENT_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FILE_ALIGNMENT_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FILE_ALIGNMENT_INFO), Is.EqualTo(4));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="GETCLIPBMETADATA" /> struct.</summary>
 public static unsafe partial class GETCLIPBMETADATATests
 {
-    /// <summary>Validates that the <see cref="GETCLIPBMETADATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<GETCLIPBMETADATA>(), Is.EqualTo(sizeof(GETCLIPBMETADATA)));
-    }
-
-    /// <summary>Validates that the <see cref="GETCLIPBMETADATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(GETCLIPBMETADATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="GETCLIPBMETADATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(GETCLIPBMETADATA), Is.EqualTo(12));
-    }
 }

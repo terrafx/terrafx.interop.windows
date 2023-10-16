@@ -25,7 +25,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMediaObject*, Guid*, void**, int>)(lpVtbl[0]))((IMediaObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, Guid*, void**, int>)(lpVtbl[0]))((IMediaObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMediaObject*, uint>)(lpVtbl[1]))((IMediaObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint>)(lpVtbl[1]))((IMediaObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMediaObject*, uint>)(lpVtbl[2]))((IMediaObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint>)(lpVtbl[2]))((IMediaObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetStreamCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pcInputStreams, [NativeTypeName("DWORD *")] uint* pcOutputStreams)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint*, uint*, int>)(lpVtbl[3]))((IMediaObject*)Unsafe.AsPointer(ref this), pcInputStreams, pcOutputStreams);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint*, uint*, int>)(lpVtbl[3]))((IMediaObject*)Unsafe.AsPointer(ref this), pcInputStreams, pcOutputStreams);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputStreamInfo"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetInputStreamInfo([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, uint*, int>)(lpVtbl[4]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, uint*, int>)(lpVtbl[4]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pdwFlags);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetOutputStreamInfo"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetOutputStreamInfo([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, uint*, int>)(lpVtbl[5]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, uint*, int>)(lpVtbl[5]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pdwFlags);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputType"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, DMO_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[6]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, dwTypeIndex, pmt);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[6]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, dwTypeIndex, pmt);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetOutputType"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, DMO_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[7]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, dwTypeIndex, pmt);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[7]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, dwTypeIndex, pmt);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.SetInputType"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT SetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int>)(lpVtbl[8]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int>)(lpVtbl[8]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt, dwFlags);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.SetOutputType"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT SetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int>)(lpVtbl[9]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int>)(lpVtbl[9]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt, dwFlags);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputCurrentType"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetInputCurrentType([NativeTypeName("DWORD")] uint dwInputStreamIndex, DMO_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[10]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[10]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetOutputCurrentType"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetOutputCurrentType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[11]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[11]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputSizeInfo"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT GetInputSizeInfo([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* pcbSize, [NativeTypeName("DWORD *")] uint* pcbMaxLookahead, [NativeTypeName("DWORD *")] uint* pcbAlignment)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, uint*, uint*, uint*, int>)(lpVtbl[12]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pcbSize, pcbMaxLookahead, pcbAlignment);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, uint*, uint*, uint*, int>)(lpVtbl[12]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pcbSize, pcbMaxLookahead, pcbAlignment);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetOutputSizeInfo"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT GetOutputSizeInfo([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pcbSize, [NativeTypeName("DWORD *")] uint* pcbAlignment)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, uint*, uint*, int>)(lpVtbl[13]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pcbSize, pcbAlignment);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, uint*, uint*, int>)(lpVtbl[13]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pcbSize, pcbAlignment);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputMaxLatency"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT GetInputMaxLatency([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("REFERENCE_TIME *")] long* prtMaxLatency)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, long*, int>)(lpVtbl[14]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, prtMaxLatency);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, long*, int>)(lpVtbl[14]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, prtMaxLatency);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.SetInputMaxLatency"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT SetInputMaxLatency([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("REFERENCE_TIME")] long rtMaxLatency)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, long, int>)(lpVtbl[15]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, rtMaxLatency);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, long, int>)(lpVtbl[15]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, rtMaxLatency);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.Flush"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT Flush()
     {
-        return ((delegate* unmanaged<IMediaObject*, int>)(lpVtbl[16]))((IMediaObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, int>)(lpVtbl[16]))((IMediaObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.Discontinuity"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT Discontinuity([NativeTypeName("DWORD")] uint dwInputStreamIndex)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, int>)(lpVtbl[17]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, int>)(lpVtbl[17]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.AllocateStreamingResources"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT AllocateStreamingResources()
     {
-        return ((delegate* unmanaged<IMediaObject*, int>)(lpVtbl[18]))((IMediaObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, int>)(lpVtbl[18]))((IMediaObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.FreeStreamingResources"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT FreeStreamingResources()
     {
-        return ((delegate* unmanaged<IMediaObject*, int>)(lpVtbl[19]))((IMediaObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, int>)(lpVtbl[19]))((IMediaObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputStatus"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT GetInputStatus([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* dwFlags)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, uint*, int>)(lpVtbl[20]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, uint*, int>)(lpVtbl[20]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, dwFlags);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.ProcessInput"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT ProcessInput([NativeTypeName("DWORD")] uint dwInputStreamIndex, IMediaBuffer* pBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("REFERENCE_TIME")] long rtTimestamp, [NativeTypeName("REFERENCE_TIME")] long rtTimelength)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, IMediaBuffer*, uint, long, long, int>)(lpVtbl[21]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pBuffer, dwFlags, rtTimestamp, rtTimelength);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, IMediaBuffer*, uint, long, long, int>)(lpVtbl[21]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pBuffer, dwFlags, rtTimestamp, rtTimelength);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.ProcessOutput"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT ProcessOutput([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, [NativeTypeName("DWORD *")] uint* pdwStatus)
     {
-        return ((delegate* unmanaged<IMediaObject*, uint, uint, DMO_OUTPUT_DATA_BUFFER*, uint*, int>)(lpVtbl[22]))((IMediaObject*)Unsafe.AsPointer(ref this), dwFlags, cOutputBufferCount, pOutputBuffers, pdwStatus);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, uint, uint, DMO_OUTPUT_DATA_BUFFER*, uint*, int>)(lpVtbl[22]))((IMediaObject*)Unsafe.AsPointer(ref this), dwFlags, cOutputBufferCount, pOutputBuffers, pdwStatus);
     }
 
     /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.Lock"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT Lock([NativeTypeName("LONG")] int bLock)
     {
-        return ((delegate* unmanaged<IMediaObject*, int, int>)(lpVtbl[23]))((IMediaObject*)Unsafe.AsPointer(ref this), bLock);
+        return ((delegate* unmanaged[MemberFunction]<IMediaObject*, int, int>)(lpVtbl[23]))((IMediaObject*)Unsafe.AsPointer(ref this), bLock);
     }
 
     public interface Interface : IUnknown.Interface
@@ -284,75 +284,75 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetStreamCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetStreamCount;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetInputStreamInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetInputStreamInfo;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetOutputStreamInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetOutputStreamInfo;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, DMO_MEDIA_TYPE*, int> GetInputType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, DMO_MEDIA_TYPE*, int> GetInputType;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, DMO_MEDIA_TYPE*, int> GetOutputType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, DMO_MEDIA_TYPE*, int> GetOutputType;
 
         [NativeTypeName("HRESULT (DWORD, const DMO_MEDIA_TYPE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DMO_MEDIA_TYPE*, uint, int> SetInputType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DMO_MEDIA_TYPE*, uint, int> SetInputType;
 
         [NativeTypeName("HRESULT (DWORD, const DMO_MEDIA_TYPE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DMO_MEDIA_TYPE*, uint, int> SetOutputType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DMO_MEDIA_TYPE*, uint, int> SetOutputType;
 
         [NativeTypeName("HRESULT (DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DMO_MEDIA_TYPE*, int> GetInputCurrentType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DMO_MEDIA_TYPE*, int> GetInputCurrentType;
 
         [NativeTypeName("HRESULT (DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DMO_MEDIA_TYPE*, int> GetOutputCurrentType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DMO_MEDIA_TYPE*, int> GetOutputCurrentType;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint*, uint*, int> GetInputSizeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint*, uint*, int> GetInputSizeInfo;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> GetOutputSizeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint*, int> GetOutputSizeInfo;
 
         [NativeTypeName("HRESULT (DWORD, REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, long*, int> GetInputMaxLatency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, long*, int> GetInputMaxLatency;
 
         [NativeTypeName("HRESULT (DWORD, REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, long, int> SetInputMaxLatency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, long, int> SetInputMaxLatency;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Flush;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Flush;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Discontinuity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Discontinuity;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> AllocateStreamingResources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> AllocateStreamingResources;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> FreeStreamingResources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> FreeStreamingResources;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetInputStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetInputStatus;
 
         [NativeTypeName("HRESULT (DWORD, IMediaBuffer *, DWORD, REFERENCE_TIME, REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMediaBuffer*, uint, long, long, int> ProcessInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMediaBuffer*, uint, long, long, int> ProcessInput;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DMO_OUTPUT_DATA_BUFFER *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, DMO_OUTPUT_DATA_BUFFER*, uint*, int> ProcessOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, DMO_OUTPUT_DATA_BUFFER*, uint*, int> ProcessOutput;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> Lock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> Lock;
     }
 }

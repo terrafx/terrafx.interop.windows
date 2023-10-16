@@ -31,7 +31,7 @@ public unsafe partial struct TYPEATTR
 
     /// <include file='TYPEATTR.xml' path='doc/member[@name="TYPEATTR.lpstrSchema"]/*' />
     [NativeTypeName("LPOLESTR")]
-    public ushort* lpstrSchema;
+    public char* lpstrSchema;
 
     /// <include file='TYPEATTR.xml' path='doc/member[@name="TYPEATTR.cbSizeInstance"]/*' />
     [NativeTypeName("ULONG")]

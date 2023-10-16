@@ -25,7 +25,7 @@ public unsafe partial struct IShellDetails : IShellDetails.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellDetails*, Guid*, void**, int>)(lpVtbl[0]))((IShellDetails*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellDetails*, Guid*, void**, int>)(lpVtbl[0]))((IShellDetails*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellDetails : IShellDetails.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellDetails*, uint>)(lpVtbl[1]))((IShellDetails*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellDetails*, uint>)(lpVtbl[1]))((IShellDetails*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellDetails : IShellDetails.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellDetails*, uint>)(lpVtbl[2]))((IShellDetails*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellDetails*, uint>)(lpVtbl[2]))((IShellDetails*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellDetails.xml' path='doc/member[@name="IShellDetails.GetDetailsOf"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellDetails : IShellDetails.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetDetailsOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint iColumn, SHELLDETAILS* pDetails)
     {
-        return ((delegate* unmanaged<IShellDetails*, ITEMIDLIST*, uint, SHELLDETAILS*, int>)(lpVtbl[3]))((IShellDetails*)Unsafe.AsPointer(ref this), pidl, iColumn, pDetails);
+        return ((delegate* unmanaged[MemberFunction]<IShellDetails*, ITEMIDLIST*, uint, SHELLDETAILS*, int>)(lpVtbl[3]))((IShellDetails*)Unsafe.AsPointer(ref this), pidl, iColumn, pDetails);
     }
 
     /// <include file='IShellDetails.xml' path='doc/member[@name="IShellDetails.ColumnClick"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellDetails : IShellDetails.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT ColumnClick(uint iColumn)
     {
-        return ((delegate* unmanaged<IShellDetails*, uint, int>)(lpVtbl[4]))((IShellDetails*)Unsafe.AsPointer(ref this), iColumn);
+        return ((delegate* unmanaged[MemberFunction]<IShellDetails*, uint, int>)(lpVtbl[4]))((IShellDetails*)Unsafe.AsPointer(ref this), iColumn);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IShellDetails : IShellDetails.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT, SHELLDETAILS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, SHELLDETAILS*, int> GetDetailsOf;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, uint, SHELLDETAILS*, int> GetDetailsOf;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> ColumnClick;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> ColumnClick;
     }
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter2 : IAppxEncryptedBundleW
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxEncryptedBundleWriter2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptedBundleWriter2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter2 : IAppxEncryptedBundleW
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxEncryptedBundleWriter2*, uint>)(lpVtbl[1]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptedBundleWriter2*, uint>)(lpVtbl[1]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,36 +45,36 @@ public unsafe partial struct IAppxEncryptedBundleWriter2 : IAppxEncryptedBundleW
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxEncryptedBundleWriter2*, uint>)(lpVtbl[2]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptedBundleWriter2*, uint>)(lpVtbl[2]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxEncryptedBundleWriter2.xml' path='doc/member[@name="IAppxEncryptedBundleWriter2.AddExternalPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream)
+    public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream)
     {
-        return ((delegate* unmanaged<IAppxEncryptedBundleWriter2*, ushort*, IStream*, int>)(lpVtbl[3]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this), fileName, inputStream);
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptedBundleWriter2*, char*, IStream*, int>)(lpVtbl[3]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this), fileName, inputStream);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream);
+        HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, int> AddExternalPackageReference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IStream*, int> AddExternalPackageReference;
     }
 }

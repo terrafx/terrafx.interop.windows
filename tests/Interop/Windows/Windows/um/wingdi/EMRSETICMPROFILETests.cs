@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EMRSETICMPROFILE" /> struct.</summary>
 public static unsafe partial class EMRSETICMPROFILETests
 {
-    /// <summary>Validates that the <see cref="EMRSETICMPROFILE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EMRSETICMPROFILE>(), Is.EqualTo(sizeof(EMRSETICMPROFILE)));
-    }
-
-    /// <summary>Validates that the <see cref="EMRSETICMPROFILE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EMRSETICMPROFILE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EMRSETICMPROFILE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EMRSETICMPROFILE), Is.EqualTo(24));
-    }
 }

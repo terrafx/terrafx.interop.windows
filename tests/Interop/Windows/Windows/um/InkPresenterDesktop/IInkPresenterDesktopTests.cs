@@ -21,32 +21,4 @@ public static unsafe partial class IInkPresenterDesktopTests
     {
         Assert.That(typeof(IInkPresenterDesktop).GUID, Is.EqualTo(IID_IInkPresenterDesktop));
     }
-
-    /// <summary>Validates that the <see cref="IInkPresenterDesktop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInkPresenterDesktop>(), Is.EqualTo(sizeof(IInkPresenterDesktop)));
-    }
-
-    /// <summary>Validates that the <see cref="IInkPresenterDesktop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInkPresenterDesktop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInkPresenterDesktop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInkPresenterDesktop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInkPresenterDesktop), Is.EqualTo(4));
-        }
-    }
 }

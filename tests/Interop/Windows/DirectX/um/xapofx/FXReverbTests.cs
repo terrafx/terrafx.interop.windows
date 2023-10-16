@@ -19,25 +19,4 @@ public static unsafe partial class FXReverbTests
     {
         Assert.That(typeof(FXReverb).GUID, Is.EqualTo(CLSID_FXReverb));
     }
-
-    /// <summary>Validates that the <see cref="FXReverb" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FXReverb>(), Is.EqualTo(sizeof(FXReverb)));
-    }
-
-    /// <summary>Validates that the <see cref="FXReverb" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FXReverb).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FXReverb" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FXReverb), Is.EqualTo(1));
-    }
 }

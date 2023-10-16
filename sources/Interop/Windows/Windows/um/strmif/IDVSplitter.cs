@@ -25,7 +25,7 @@ public unsafe partial struct IDVSplitter : IDVSplitter.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDVSplitter*, Guid*, void**, int>)(lpVtbl[0]))((IDVSplitter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDVSplitter*, Guid*, void**, int>)(lpVtbl[0]))((IDVSplitter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDVSplitter : IDVSplitter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDVSplitter*, uint>)(lpVtbl[1]))((IDVSplitter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDVSplitter*, uint>)(lpVtbl[1]))((IDVSplitter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDVSplitter : IDVSplitter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDVSplitter*, uint>)(lpVtbl[2]))((IDVSplitter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDVSplitter*, uint>)(lpVtbl[2]))((IDVSplitter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDVSplitter.xml' path='doc/member[@name="IDVSplitter.DiscardAlternateVideoFrames"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDVSplitter : IDVSplitter.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT DiscardAlternateVideoFrames(int nDiscard)
     {
-        return ((delegate* unmanaged<IDVSplitter*, int, int>)(lpVtbl[3]))((IDVSplitter*)Unsafe.AsPointer(ref this), nDiscard);
+        return ((delegate* unmanaged[MemberFunction]<IDVSplitter*, int, int>)(lpVtbl[3]))((IDVSplitter*)Unsafe.AsPointer(ref this), nDiscard);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IDVSplitter : IDVSplitter.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> DiscardAlternateVideoFrames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> DiscardAlternateVideoFrames;
     }
 }

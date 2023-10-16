@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="userHBITMAP" /> struct.</summary>
 public static unsafe partial class userHBITMAPTests
 {
-    /// <summary>Validates that the <see cref="userHBITMAP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<userHBITMAP>(), Is.EqualTo(sizeof(userHBITMAP)));
-    }
-
-    /// <summary>Validates that the <see cref="userHBITMAP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(userHBITMAP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="userHBITMAP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(userHBITMAP), Is.EqualTo(16));
-    }
 }

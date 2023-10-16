@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SET_PARTITION_INFORMATION" /> struct.</summary>
 public static unsafe partial class SET_PARTITION_INFORMATIONTests
 {
-    /// <summary>Validates that the <see cref="SET_PARTITION_INFORMATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SET_PARTITION_INFORMATION>(), Is.EqualTo(sizeof(SET_PARTITION_INFORMATION)));
-    }
-
-    /// <summary>Validates that the <see cref="SET_PARTITION_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SET_PARTITION_INFORMATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SET_PARTITION_INFORMATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SET_PARTITION_INFORMATION), Is.EqualTo(1));
-    }
 }

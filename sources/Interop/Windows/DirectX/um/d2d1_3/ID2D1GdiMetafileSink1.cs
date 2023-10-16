@@ -28,7 +28,7 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1GdiMetafileSink1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1GdiMetafileSink1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1GdiMetafileSink1*, uint>)(lpVtbl[1]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1GdiMetafileSink1*, uint>)(lpVtbl[1]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1GdiMetafileSink1*, uint>)(lpVtbl[2]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1GdiMetafileSink1*, uint>)(lpVtbl[2]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1GdiMetafileSink.ProcessRecord" />
@@ -54,7 +54,7 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
     [VtblIndex(3)]
     public HRESULT ProcessRecord([NativeTypeName("DWORD")] uint recordType, [NativeTypeName("const void *")] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize)
     {
-        return ((delegate* unmanaged<ID2D1GdiMetafileSink1*, uint, void*, uint, int>)(lpVtbl[3]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this), recordType, recordData, recordDataSize);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1GdiMetafileSink1*, uint, void*, uint, int>)(lpVtbl[3]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this), recordType, recordData, recordDataSize);
     }
 
     /// <include file='ID2D1GdiMetafileSink1.xml' path='doc/member[@name="ID2D1GdiMetafileSink1.ProcessRecord"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
     [VtblIndex(4)]
     public HRESULT ProcessRecord([NativeTypeName("DWORD")] uint recordType, [NativeTypeName("const void *")] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize, [NativeTypeName("UINT32")] uint flags)
     {
-        return ((delegate* unmanaged<ID2D1GdiMetafileSink1*, uint, void*, uint, uint, int>)(lpVtbl[4]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this), recordType, recordData, recordDataSize, flags);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1GdiMetafileSink1*, uint, void*, uint, uint, int>)(lpVtbl[4]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this), recordType, recordData, recordDataSize, flags);
     }
 
     public interface Interface : ID2D1GdiMetafileSink.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const void *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, uint, int> ProcessRecord;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, uint, int> ProcessRecord;
 
         [NativeTypeName("HRESULT (DWORD, const void *, DWORD, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, uint, uint, int> ProcessRecord1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, uint, uint, int> ProcessRecord1;
     }
 }

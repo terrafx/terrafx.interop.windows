@@ -35,7 +35,7 @@ public unsafe partial struct SHNAMEMAPPINGW
 
     [NativeTypeName("LPWSTR")]
     [UnscopedRef]
-    public ref ushort* pszOldPath
+    public ref char* pszOldPath
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -53,7 +53,7 @@ public unsafe partial struct SHNAMEMAPPINGW
 
     [NativeTypeName("LPWSTR")]
     [UnscopedRef]
-    public ref ushort* pszNewPath
+    public ref char* pszNewPath
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

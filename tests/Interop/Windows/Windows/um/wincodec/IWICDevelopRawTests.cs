@@ -19,32 +19,4 @@ public static unsafe partial class IWICDevelopRawTests
     {
         Assert.That(typeof(IWICDevelopRaw).GUID, Is.EqualTo(IID_IWICDevelopRaw));
     }
-
-    /// <summary>Validates that the <see cref="IWICDevelopRaw" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICDevelopRaw>(), Is.EqualTo(sizeof(IWICDevelopRaw)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICDevelopRaw" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICDevelopRaw).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICDevelopRaw" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICDevelopRaw), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICDevelopRaw), Is.EqualTo(4));
-        }
-    }
 }

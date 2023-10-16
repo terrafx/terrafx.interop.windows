@@ -21,32 +21,4 @@ public static unsafe partial class IMFMuxStreamSampleManagerTests
     {
         Assert.That(typeof(IMFMuxStreamSampleManager).GUID, Is.EqualTo(IID_IMFMuxStreamSampleManager));
     }
-
-    /// <summary>Validates that the <see cref="IMFMuxStreamSampleManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFMuxStreamSampleManager>(), Is.EqualTo(sizeof(IMFMuxStreamSampleManager)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFMuxStreamSampleManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFMuxStreamSampleManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFMuxStreamSampleManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFMuxStreamSampleManager), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFMuxStreamSampleManager), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IWICFastMetadataEncoder : IWICFastMetadataEncoder.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICFastMetadataEncoder*, Guid*, void**, int>)(lpVtbl[0]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICFastMetadataEncoder*, Guid*, void**, int>)(lpVtbl[0]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICFastMetadataEncoder : IWICFastMetadataEncoder.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICFastMetadataEncoder*, uint>)(lpVtbl[1]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICFastMetadataEncoder*, uint>)(lpVtbl[1]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICFastMetadataEncoder : IWICFastMetadataEncoder.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICFastMetadataEncoder*, uint>)(lpVtbl[2]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICFastMetadataEncoder*, uint>)(lpVtbl[2]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICFastMetadataEncoder.xml' path='doc/member[@name="IWICFastMetadataEncoder.Commit"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICFastMetadataEncoder : IWICFastMetadataEncoder.I
     [VtblIndex(3)]
     public HRESULT Commit()
     {
-        return ((delegate* unmanaged<IWICFastMetadataEncoder*, int>)(lpVtbl[3]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICFastMetadataEncoder*, int>)(lpVtbl[3]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICFastMetadataEncoder.xml' path='doc/member[@name="IWICFastMetadataEncoder.GetMetadataQueryWriter"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICFastMetadataEncoder : IWICFastMetadataEncoder.I
     [VtblIndex(4)]
     public HRESULT GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter)
     {
-        return ((delegate* unmanaged<IWICFastMetadataEncoder*, IWICMetadataQueryWriter**, int>)(lpVtbl[4]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this), ppIMetadataQueryWriter);
+        return ((delegate* unmanaged[MemberFunction]<IWICFastMetadataEncoder*, IWICMetadataQueryWriter**, int>)(lpVtbl[4]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this), ppIMetadataQueryWriter);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IWICFastMetadataEncoder : IWICFastMetadataEncoder.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT (IWICMetadataQueryWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICMetadataQueryWriter**, int> GetMetadataQueryWriter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICMetadataQueryWriter**, int> GetMetadataQueryWriter;
     }
 }

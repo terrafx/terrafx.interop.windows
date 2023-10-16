@@ -25,7 +25,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpEventSource2*, Guid*, void**, int>)(lpVtbl[0]))((ISpEventSource2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, Guid*, void**, int>)(lpVtbl[0]))((ISpEventSource2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpEventSource2*, uint>)(lpVtbl[1]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, uint>)(lpVtbl[1]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpEventSource2*, uint>)(lpVtbl[2]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, uint>)(lpVtbl[2]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISpNotifySource.SetNotifySink" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetNotifySink(ISpNotifySink* pNotifySink)
     {
-        return ((delegate* unmanaged<ISpEventSource2*, ISpNotifySink*, int>)(lpVtbl[3]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pNotifySink);
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, ISpNotifySink*, int>)(lpVtbl[3]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pNotifySink);
     }
 
     /// <inheritdoc cref="ISpNotifySource.SetNotifyWindowMessage" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(4)]
     public HRESULT SetNotifyWindowMessage(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
     {
-        return ((delegate* unmanaged<ISpEventSource2*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[4]))((ISpEventSource2*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[4]))((ISpEventSource2*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
     }
 
     /// <inheritdoc cref="ISpNotifySource.SetNotifyCallbackFunction" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(5)]
     public HRESULT SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<WPARAM, LPARAM, void> pfnCallback, WPARAM wParam, LPARAM lParam)
     {
-        return ((delegate* unmanaged<ISpEventSource2*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int>)(lpVtbl[5]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int>)(lpVtbl[5]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
     }
 
     /// <inheritdoc cref="ISpNotifySource.SetNotifyCallbackInterface" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(6)]
     public HRESULT SetNotifyCallbackInterface(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam)
     {
-        return ((delegate* unmanaged<ISpEventSource2*, ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[6]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[6]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
     }
 
     /// <inheritdoc cref="ISpNotifySource.SetNotifyWin32Event" />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(7)]
     public HRESULT SetNotifyWin32Event()
     {
-        return ((delegate* unmanaged<ISpEventSource2*, int>)(lpVtbl[7]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, int>)(lpVtbl[7]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISpNotifySource.WaitForNotifyEvent" />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(8)]
     public HRESULT WaitForNotifyEvent([NativeTypeName("DWORD")] uint dwMilliseconds)
     {
-        return ((delegate* unmanaged<ISpEventSource2*, uint, int>)(lpVtbl[8]))((ISpEventSource2*)Unsafe.AsPointer(ref this), dwMilliseconds);
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, uint, int>)(lpVtbl[8]))((ISpEventSource2*)Unsafe.AsPointer(ref this), dwMilliseconds);
     }
 
     /// <inheritdoc cref="ISpNotifySource.GetNotifyEventHandle" />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(9)]
     public HANDLE GetNotifyEventHandle()
     {
-        return ((HANDLE)(((delegate* unmanaged<ISpEventSource2*, void*>)(lpVtbl[9]))((ISpEventSource2*)Unsafe.AsPointer(ref this))));
+        return ((HANDLE)(((delegate* unmanaged[MemberFunction]<ISpEventSource2*, void*>)(lpVtbl[9]))((ISpEventSource2*)Unsafe.AsPointer(ref this))));
     }
 
     /// <inheritdoc cref="ISpEventSource.SetInterest" />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(10)]
     public HRESULT SetInterest([NativeTypeName("ULONGLONG")] ulong ullEventInterest, [NativeTypeName("ULONGLONG")] ulong ullQueuedInterest)
     {
-        return ((delegate* unmanaged<ISpEventSource2*, ulong, ulong, int>)(lpVtbl[10]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ullEventInterest, ullQueuedInterest);
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, ulong, ulong, int>)(lpVtbl[10]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ullEventInterest, ullQueuedInterest);
     }
 
     /// <inheritdoc cref="ISpEventSource.GetEvents" />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(11)]
     public HRESULT GetEvents([NativeTypeName("ULONG")] uint ulCount, SPEVENT* pEventArray, [NativeTypeName("ULONG *")] uint* pulFetched)
     {
-        return ((delegate* unmanaged<ISpEventSource2*, uint, SPEVENT*, uint*, int>)(lpVtbl[11]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, uint, SPEVENT*, uint*, int>)(lpVtbl[11]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
     }
 
     /// <inheritdoc cref="ISpEventSource.GetInfo" />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(12)]
     public HRESULT GetInfo(SPEVENTSOURCEINFO* pInfo)
     {
-        return ((delegate* unmanaged<ISpEventSource2*, SPEVENTSOURCEINFO*, int>)(lpVtbl[12]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, SPEVENTSOURCEINFO*, int>)(lpVtbl[12]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pInfo);
     }
 
     /// <include file='ISpEventSource2.xml' path='doc/member[@name="ISpEventSource2.GetEventsEx"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
     [VtblIndex(13)]
     public HRESULT GetEventsEx([NativeTypeName("ULONG")] uint ulCount, SPEVENTEX* pEventArray, [NativeTypeName("ULONG *")] uint* pulFetched)
     {
-        return ((delegate* unmanaged<ISpEventSource2*, uint, SPEVENTEX*, uint*, int>)(lpVtbl[13]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
+        return ((delegate* unmanaged[MemberFunction]<ISpEventSource2*, uint, SPEVENTEX*, uint*, int>)(lpVtbl[13]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
     }
 
     public interface Interface : ISpEventSource.Interface
@@ -144,45 +144,45 @@ public unsafe partial struct ISpEventSource2 : ISpEventSource2.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpNotifySink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpNotifySink*, int> SetNotifySink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpNotifySink*, int> SetNotifySink;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
 
         [NativeTypeName("HRESULT (SPNOTIFYCALLBACK *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
 
         [NativeTypeName("HRESULT (ISpNotifyCallback *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SetNotifyWin32Event;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SetNotifyWin32Event;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> WaitForNotifyEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> WaitForNotifyEvent;
 
         [NativeTypeName("HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> GetNotifyEventHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> GetNotifyEventHandle;
 
         [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, ulong, int> SetInterest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, ulong, int> SetInterest;
 
         [NativeTypeName("HRESULT (ULONG, SPEVENT *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, SPEVENT*, uint*, int> GetEvents;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, SPEVENT*, uint*, int> GetEvents;
 
         [NativeTypeName("HRESULT (SPEVENTSOURCEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPEVENTSOURCEINFO*, int> GetInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPEVENTSOURCEINFO*, int> GetInfo;
 
         [NativeTypeName("HRESULT (ULONG, SPEVENTEX *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, SPEVENTEX*, uint*, int> GetEventsEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, SPEVENTEX*, uint*, int> GetEventsEx;
     }
 }

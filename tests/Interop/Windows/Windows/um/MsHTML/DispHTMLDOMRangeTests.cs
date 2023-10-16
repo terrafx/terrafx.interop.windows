@@ -19,32 +19,4 @@ public static unsafe partial class DispHTMLDOMRangeTests
     {
         Assert.That(typeof(DispHTMLDOMRange).GUID, Is.EqualTo(IID_DispHTMLDOMRange));
     }
-
-    /// <summary>Validates that the <see cref="DispHTMLDOMRange" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispHTMLDOMRange>(), Is.EqualTo(sizeof(DispHTMLDOMRange)));
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLDOMRange" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispHTMLDOMRange).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLDOMRange" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispHTMLDOMRange), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispHTMLDOMRange), Is.EqualTo(4));
-        }
-    }
 }

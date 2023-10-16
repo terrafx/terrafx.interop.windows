@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLMapElementTests
     {
         Assert.That(typeof(IHTMLMapElement).GUID, Is.EqualTo(IID_IHTMLMapElement));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLMapElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLMapElement>(), Is.EqualTo(sizeof(IHTMLMapElement)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLMapElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLMapElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLMapElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLMapElement), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLMapElement), Is.EqualTo(4));
-        }
-    }
 }

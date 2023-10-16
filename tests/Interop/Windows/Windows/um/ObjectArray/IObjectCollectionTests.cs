@@ -19,32 +19,4 @@ public static unsafe partial class IObjectCollectionTests
     {
         Assert.That(typeof(IObjectCollection).GUID, Is.EqualTo(IID_IObjectCollection));
     }
-
-    /// <summary>Validates that the <see cref="IObjectCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IObjectCollection>(), Is.EqualTo(sizeof(IObjectCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="IObjectCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IObjectCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IObjectCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IObjectCollection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IObjectCollection), Is.EqualTo(4));
-        }
-    }
 }

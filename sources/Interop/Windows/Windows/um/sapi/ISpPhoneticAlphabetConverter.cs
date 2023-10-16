@@ -25,7 +25,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpPhoneticAlphabetConverter*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint>)(lpVtbl[1]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpPhoneticAlphabetConverter*, uint>)(lpVtbl[1]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint>)(lpVtbl[2]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpPhoneticAlphabetConverter*, uint>)(lpVtbl[2]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.GetLangId"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
     [VtblIndex(3)]
     public HRESULT GetLangId([NativeTypeName("WORD *")] ushort* pLangID)
     {
-        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, int>)(lpVtbl[3]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pLangID);
+        return ((delegate* unmanaged[MemberFunction]<ISpPhoneticAlphabetConverter*, ushort*, int>)(lpVtbl[3]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pLangID);
     }
 
     /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.SetLangId"]/*' />
@@ -59,23 +59,23 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
     [VtblIndex(4)]
     public HRESULT SetLangId([NativeTypeName("WORD")] ushort LangID)
     {
-        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort, int>)(lpVtbl[4]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), LangID);
+        return ((delegate* unmanaged[MemberFunction]<ISpPhoneticAlphabetConverter*, ushort, int>)(lpVtbl[4]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), LangID);
     }
 
     /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.SAPI2UPS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SAPI2UPS([NativeTypeName("const SPPHONEID *")] ushort* pszSAPIId, [NativeTypeName("SPPHONEID *")] ushort* pszUPSId, [NativeTypeName("DWORD")] uint cMaxLength)
+    public HRESULT SAPI2UPS([NativeTypeName("const SPPHONEID *")] char* pszSAPIId, [NativeTypeName("SPPHONEID *")] char* pszUPSId, [NativeTypeName("DWORD")] uint cMaxLength)
     {
-        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, ushort*, uint, int>)(lpVtbl[5]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pszSAPIId, pszUPSId, cMaxLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpPhoneticAlphabetConverter*, char*, char*, uint, int>)(lpVtbl[5]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pszSAPIId, pszUPSId, cMaxLength);
     }
 
     /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.UPS2SAPI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT UPS2SAPI([NativeTypeName("const SPPHONEID *")] ushort* pszUPSId, [NativeTypeName("SPPHONEID *")] ushort* pszSAPIId, [NativeTypeName("DWORD")] uint cMaxLength)
+    public HRESULT UPS2SAPI([NativeTypeName("const SPPHONEID *")] char* pszUPSId, [NativeTypeName("SPPHONEID *")] char* pszSAPIId, [NativeTypeName("DWORD")] uint cMaxLength)
     {
-        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, ushort*, uint, int>)(lpVtbl[6]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pszUPSId, pszSAPIId, cMaxLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpPhoneticAlphabetConverter*, char*, char*, uint, int>)(lpVtbl[6]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pszUPSId, pszSAPIId, cMaxLength);
     }
 
     /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.GetMaxConvertLength"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
     [VtblIndex(7)]
     public HRESULT GetMaxConvertLength([NativeTypeName("DWORD")] uint cSrcLength, BOOL bSAPI2UPS, [NativeTypeName("DWORD *")] uint* pcMaxDestLength)
     {
-        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint, BOOL, uint*, int>)(lpVtbl[7]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), cSrcLength, bSAPI2UPS, pcMaxDestLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpPhoneticAlphabetConverter*, uint, BOOL, uint*, int>)(lpVtbl[7]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), cSrcLength, bSAPI2UPS, pcMaxDestLength);
     }
 
     public interface Interface : IUnknown.Interface
@@ -95,10 +95,10 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         HRESULT SetLangId([NativeTypeName("WORD")] ushort LangID);
 
         [VtblIndex(5)]
-        HRESULT SAPI2UPS([NativeTypeName("const SPPHONEID *")] ushort* pszSAPIId, [NativeTypeName("SPPHONEID *")] ushort* pszUPSId, [NativeTypeName("DWORD")] uint cMaxLength);
+        HRESULT SAPI2UPS([NativeTypeName("const SPPHONEID *")] char* pszSAPIId, [NativeTypeName("SPPHONEID *")] char* pszUPSId, [NativeTypeName("DWORD")] uint cMaxLength);
 
         [VtblIndex(6)]
-        HRESULT UPS2SAPI([NativeTypeName("const SPPHONEID *")] ushort* pszUPSId, [NativeTypeName("SPPHONEID *")] ushort* pszSAPIId, [NativeTypeName("DWORD")] uint cMaxLength);
+        HRESULT UPS2SAPI([NativeTypeName("const SPPHONEID *")] char* pszUPSId, [NativeTypeName("SPPHONEID *")] char* pszSAPIId, [NativeTypeName("DWORD")] uint cMaxLength);
 
         [VtblIndex(7)]
         HRESULT GetMaxConvertLength([NativeTypeName("DWORD")] uint cSrcLength, BOOL bSAPI2UPS, [NativeTypeName("DWORD *")] uint* pcMaxDestLength);
@@ -108,27 +108,27 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> GetLangId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> GetLangId;
 
         [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, int> SetLangId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, int> SetLangId;
 
         [NativeTypeName("HRESULT (const SPPHONEID *, SPPHONEID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, int> SAPI2UPS;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, uint, int> SAPI2UPS;
 
         [NativeTypeName("HRESULT (const SPPHONEID *, SPPHONEID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, int> UPS2SAPI;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, uint, int> UPS2SAPI;
 
         [NativeTypeName("HRESULT (DWORD, BOOL, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL, uint*, int> GetMaxConvertLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL, uint*, int> GetMaxConvertLength;
     }
 }

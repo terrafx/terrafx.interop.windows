@@ -25,7 +25,7 @@ public unsafe partial struct IElementBehaviorLayout2 : IElementBehaviorLayout2.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout2*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorLayout2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout2*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorLayout2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IElementBehaviorLayout2 : IElementBehaviorLayout2.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout2*, uint>)(lpVtbl[1]))((IElementBehaviorLayout2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout2*, uint>)(lpVtbl[1]))((IElementBehaviorLayout2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IElementBehaviorLayout2 : IElementBehaviorLayout2.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout2*, uint>)(lpVtbl[2]))((IElementBehaviorLayout2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout2*, uint>)(lpVtbl[2]))((IElementBehaviorLayout2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IElementBehaviorLayout2.xml' path='doc/member[@name="IElementBehaviorLayout2.GetTextDescent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IElementBehaviorLayout2 : IElementBehaviorLayout2.I
     [VtblIndex(3)]
     public HRESULT GetTextDescent([NativeTypeName("LONG *")] int* plDescent)
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout2*, int*, int>)(lpVtbl[3]))((IElementBehaviorLayout2*)Unsafe.AsPointer(ref this), plDescent);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout2*, int*, int>)(lpVtbl[3]))((IElementBehaviorLayout2*)Unsafe.AsPointer(ref this), plDescent);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IElementBehaviorLayout2 : IElementBehaviorLayout2.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetTextDescent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetTextDescent;
     }
 }

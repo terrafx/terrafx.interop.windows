@@ -19,32 +19,4 @@ public static unsafe partial class DispDOMChildrenCollectionTests
     {
         Assert.That(typeof(DispDOMChildrenCollection).GUID, Is.EqualTo(IID_DispDOMChildrenCollection));
     }
-
-    /// <summary>Validates that the <see cref="DispDOMChildrenCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispDOMChildrenCollection>(), Is.EqualTo(sizeof(DispDOMChildrenCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="DispDOMChildrenCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispDOMChildrenCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispDOMChildrenCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispDOMChildrenCollection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispDOMChildrenCollection), Is.EqualTo(4));
-        }
-    }
 }

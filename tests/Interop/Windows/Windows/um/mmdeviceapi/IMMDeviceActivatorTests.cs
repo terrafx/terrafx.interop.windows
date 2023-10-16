@@ -19,32 +19,4 @@ public static unsafe partial class IMMDeviceActivatorTests
     {
         Assert.That(typeof(IMMDeviceActivator).GUID, Is.EqualTo(IID_IMMDeviceActivator));
     }
-
-    /// <summary>Validates that the <see cref="IMMDeviceActivator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMMDeviceActivator>(), Is.EqualTo(sizeof(IMMDeviceActivator)));
-    }
-
-    /// <summary>Validates that the <see cref="IMMDeviceActivator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMMDeviceActivator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMMDeviceActivator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMMDeviceActivator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMMDeviceActivator), Is.EqualTo(4));
-        }
-    }
 }

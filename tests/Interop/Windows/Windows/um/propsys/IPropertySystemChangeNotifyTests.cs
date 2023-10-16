@@ -19,32 +19,4 @@ public static unsafe partial class IPropertySystemChangeNotifyTests
     {
         Assert.That(typeof(IPropertySystemChangeNotify).GUID, Is.EqualTo(IID_IPropertySystemChangeNotify));
     }
-
-    /// <summary>Validates that the <see cref="IPropertySystemChangeNotify" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPropertySystemChangeNotify>(), Is.EqualTo(sizeof(IPropertySystemChangeNotify)));
-    }
-
-    /// <summary>Validates that the <see cref="IPropertySystemChangeNotify" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPropertySystemChangeNotify).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPropertySystemChangeNotify" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPropertySystemChangeNotify), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPropertySystemChangeNotify), Is.EqualTo(4));
-        }
-    }
 }

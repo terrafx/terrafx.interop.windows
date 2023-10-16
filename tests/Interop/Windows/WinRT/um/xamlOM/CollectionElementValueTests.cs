@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.WinRT.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class CollectionElementValueTests
 {
-    /// <summary>Validates that the <see cref="CollectionElementValue" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CollectionElementValue>(), Is.EqualTo(sizeof(CollectionElementValue)));
-    }
-
-    /// <summary>Validates that the <see cref="CollectionElementValue" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CollectionElementValue).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CollectionElementValue" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(CollectionElementValue), Is.EqualTo(32));
-        }
-        else
-        {
-            Assert.That(sizeof(CollectionElementValue), Is.EqualTo(24));
-        }
-    }
 }

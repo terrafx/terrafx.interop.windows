@@ -19,32 +19,4 @@ public static unsafe partial class IFolderBandPrivTests
     {
         Assert.That(typeof(IFolderBandPriv).GUID, Is.EqualTo(IID_IFolderBandPriv));
     }
-
-    /// <summary>Validates that the <see cref="IFolderBandPriv" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFolderBandPriv>(), Is.EqualTo(sizeof(IFolderBandPriv)));
-    }
-
-    /// <summary>Validates that the <see cref="IFolderBandPriv" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFolderBandPriv).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFolderBandPriv" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFolderBandPriv), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFolderBandPriv), Is.EqualTo(4));
-        }
-    }
 }

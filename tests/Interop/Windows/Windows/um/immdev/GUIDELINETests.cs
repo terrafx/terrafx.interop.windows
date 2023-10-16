@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="GUIDELINE" /> struct.</summary>
 public static unsafe partial class GUIDELINETests
 {
-    /// <summary>Validates that the <see cref="GUIDELINE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<GUIDELINE>(), Is.EqualTo(sizeof(GUIDELINE)));
-    }
-
-    /// <summary>Validates that the <see cref="GUIDELINE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(GUIDELINE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="GUIDELINE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(GUIDELINE), Is.EqualTo(28));
-    }
 }

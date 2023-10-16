@@ -19,25 +19,4 @@ public static unsafe partial class HTMLPerformanceNavigationTests
     {
         Assert.That(typeof(HTMLPerformanceNavigation).GUID, Is.EqualTo(IID_HTMLPerformanceNavigation));
     }
-
-    /// <summary>Validates that the <see cref="HTMLPerformanceNavigation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLPerformanceNavigation>(), Is.EqualTo(sizeof(HTMLPerformanceNavigation)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLPerformanceNavigation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLPerformanceNavigation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLPerformanceNavigation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLPerformanceNavigation), Is.EqualTo(1));
-    }
 }

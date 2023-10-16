@@ -10,7 +10,7 @@ public unsafe partial struct DAV_CALLBACK_AUTH_UNP
 {
     /// <include file='DAV_CALLBACK_AUTH_UNP.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_UNP.pszUserName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszUserName;
+    public char* pszUserName;
 
     /// <include file='DAV_CALLBACK_AUTH_UNP.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_UNP.ulUserNameLength"]/*' />
     [NativeTypeName("ULONG")]
@@ -18,7 +18,7 @@ public unsafe partial struct DAV_CALLBACK_AUTH_UNP
 
     /// <include file='DAV_CALLBACK_AUTH_UNP.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_UNP.pszPassword"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszPassword;
+    public char* pszPassword;
 
     /// <include file='DAV_CALLBACK_AUTH_UNP.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_UNP.ulPasswordLength"]/*' />
     [NativeTypeName("ULONG")]

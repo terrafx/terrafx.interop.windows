@@ -25,7 +25,7 @@ public unsafe partial struct IDesktopGadget : IDesktopGadget.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDesktopGadget*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopGadget*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDesktopGadget*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopGadget*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDesktopGadget : IDesktopGadget.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDesktopGadget*, uint>)(lpVtbl[1]))((IDesktopGadget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDesktopGadget*, uint>)(lpVtbl[1]))((IDesktopGadget*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct IDesktopGadget : IDesktopGadget.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDesktopGadget*, uint>)(lpVtbl[2]))((IDesktopGadget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDesktopGadget*, uint>)(lpVtbl[2]))((IDesktopGadget*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDesktopGadget.xml' path='doc/member[@name="IDesktopGadget.RunGadget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RunGadget([NativeTypeName("LPCWSTR")] ushort* gadgetPath)
+    public HRESULT RunGadget([NativeTypeName("LPCWSTR")] char* gadgetPath)
     {
-        return ((delegate* unmanaged<IDesktopGadget*, ushort*, int>)(lpVtbl[3]))((IDesktopGadget*)Unsafe.AsPointer(ref this), gadgetPath);
+        return ((delegate* unmanaged[MemberFunction]<IDesktopGadget*, char*, int>)(lpVtbl[3]))((IDesktopGadget*)Unsafe.AsPointer(ref this), gadgetPath);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RunGadget([NativeTypeName("LPCWSTR")] ushort* gadgetPath);
+        HRESULT RunGadget([NativeTypeName("LPCWSTR")] char* gadgetPath);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RunGadget;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> RunGadget;
     }
 }

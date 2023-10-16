@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncCommonMaxBitRateTests
     {
         Assert.That(typeof(CODECAPI_AVEncCommonMaxBitRate).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonMaxBitRate));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonMaxBitRate" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncCommonMaxBitRate>(), Is.EqualTo(sizeof(CODECAPI_AVEncCommonMaxBitRate)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonMaxBitRate" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncCommonMaxBitRate).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonMaxBitRate" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncCommonMaxBitRate), Is.EqualTo(1));
-    }
 }

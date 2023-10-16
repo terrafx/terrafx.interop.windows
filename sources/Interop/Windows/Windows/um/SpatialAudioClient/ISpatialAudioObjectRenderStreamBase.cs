@@ -25,7 +25,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObjectRenderStreamBase*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, uint>)(lpVtbl[1]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObjectRenderStreamBase*, uint>)(lpVtbl[1]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, uint>)(lpVtbl[2]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObjectRenderStreamBase*, uint>)(lpVtbl[2]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpatialAudioObjectRenderStreamBase.xml' path='doc/member[@name="ISpatialAudioObjectRenderStreamBase.GetAvailableDynamicObjectCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
     [VtblIndex(3)]
     public HRESULT GetAvailableDynamicObjectCount([NativeTypeName("UINT32 *")] uint* value)
     {
-        return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, uint*, int>)(lpVtbl[3]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObjectRenderStreamBase*, uint*, int>)(lpVtbl[3]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISpatialAudioObjectRenderStreamBase.xml' path='doc/member[@name="ISpatialAudioObjectRenderStreamBase.GetService"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
     [VtblIndex(4)]
     public HRESULT GetService([NativeTypeName("const IID &")] Guid* riid, void** service)
     {
-        return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, Guid*, void**, int>)(lpVtbl[4]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this), riid, service);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObjectRenderStreamBase*, Guid*, void**, int>)(lpVtbl[4]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this), riid, service);
     }
 
     /// <include file='ISpatialAudioObjectRenderStreamBase.xml' path='doc/member[@name="ISpatialAudioObjectRenderStreamBase.Start"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
     [VtblIndex(5)]
     public HRESULT Start()
     {
-        return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, int>)(lpVtbl[5]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObjectRenderStreamBase*, int>)(lpVtbl[5]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpatialAudioObjectRenderStreamBase.xml' path='doc/member[@name="ISpatialAudioObjectRenderStreamBase.Stop"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
     [VtblIndex(6)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, int>)(lpVtbl[6]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObjectRenderStreamBase*, int>)(lpVtbl[6]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpatialAudioObjectRenderStreamBase.xml' path='doc/member[@name="ISpatialAudioObjectRenderStreamBase.Reset"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
     [VtblIndex(7)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, int>)(lpVtbl[7]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObjectRenderStreamBase*, int>)(lpVtbl[7]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpatialAudioObjectRenderStreamBase.xml' path='doc/member[@name="ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
     [VtblIndex(8)]
     public HRESULT BeginUpdatingAudioObjects([NativeTypeName("UINT32 *")] uint* availableDynamicObjectCount, [NativeTypeName("UINT32 *")] uint* frameCountPerBuffer)
     {
-        return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, uint*, uint*, int>)(lpVtbl[8]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this), availableDynamicObjectCount, frameCountPerBuffer);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObjectRenderStreamBase*, uint*, uint*, int>)(lpVtbl[8]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this), availableDynamicObjectCount, frameCountPerBuffer);
     }
 
     /// <include file='ISpatialAudioObjectRenderStreamBase.xml' path='doc/member[@name="ISpatialAudioObjectRenderStreamBase.EndUpdatingAudioObjects"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
     [VtblIndex(9)]
     public HRESULT EndUpdatingAudioObjects()
     {
-        return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, int>)(lpVtbl[9]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObjectRenderStreamBase*, int>)(lpVtbl[9]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudio
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetAvailableDynamicObjectCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetAvailableDynamicObjectCount;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetService;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetService;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Start;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Start;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (UINT32 *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> BeginUpdatingAudioObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> BeginUpdatingAudioObjects;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EndUpdatingAudioObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EndUpdatingAudioObjects;
     }
 }

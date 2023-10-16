@@ -25,7 +25,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFilterChain*, Guid*, void**, int>)(lpVtbl[0]))((IFilterChain*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFilterChain*, Guid*, void**, int>)(lpVtbl[0]))((IFilterChain*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFilterChain*, uint>)(lpVtbl[1]))((IFilterChain*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFilterChain*, uint>)(lpVtbl[1]))((IFilterChain*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFilterChain*, uint>)(lpVtbl[2]))((IFilterChain*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFilterChain*, uint>)(lpVtbl[2]))((IFilterChain*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFilterChain.xml' path='doc/member[@name="IFilterChain.StartChain"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT StartChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
     {
-        return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[3]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
+        return ((delegate* unmanaged[MemberFunction]<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[3]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
     }
 
     /// <include file='IFilterChain.xml' path='doc/member[@name="IFilterChain.PauseChain"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT PauseChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
     {
-        return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[4]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
+        return ((delegate* unmanaged[MemberFunction]<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[4]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
     }
 
     /// <include file='IFilterChain.xml' path='doc/member[@name="IFilterChain.StopChain"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT StopChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
     {
-        return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[5]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
+        return ((delegate* unmanaged[MemberFunction]<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[5]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
     }
 
     /// <include file='IFilterChain.xml' path='doc/member[@name="IFilterChain.RemoveChain"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT RemoveChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
     {
-        return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[6]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
+        return ((delegate* unmanaged[MemberFunction]<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[6]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, IBaseFilter*, int> StartChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, IBaseFilter*, int> StartChain;
 
         [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, IBaseFilter*, int> PauseChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, IBaseFilter*, int> PauseChain;
 
         [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, IBaseFilter*, int> StopChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, IBaseFilter*, int> StopChain;
 
         [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, IBaseFilter*, int> RemoveChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, IBaseFilter*, int> RemoveChain;
     }
 }

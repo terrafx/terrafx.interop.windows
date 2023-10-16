@@ -19,32 +19,4 @@ public static unsafe partial class IQueryAssociationsTests
     {
         Assert.That(typeof(IQueryAssociations).GUID, Is.EqualTo(IID_IQueryAssociations));
     }
-
-    /// <summary>Validates that the <see cref="IQueryAssociations" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IQueryAssociations>(), Is.EqualTo(sizeof(IQueryAssociations)));
-    }
-
-    /// <summary>Validates that the <see cref="IQueryAssociations" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IQueryAssociations).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IQueryAssociations" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IQueryAssociations), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IQueryAssociations), Is.EqualTo(4));
-        }
-    }
 }

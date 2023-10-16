@@ -19,32 +19,4 @@ public static unsafe partial class HTMLInputFileElementEvents2Tests
     {
         Assert.That(typeof(HTMLInputFileElementEvents2).GUID, Is.EqualTo(IID_HTMLInputFileElementEvents2));
     }
-
-    /// <summary>Validates that the <see cref="HTMLInputFileElementEvents2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLInputFileElementEvents2>(), Is.EqualTo(sizeof(HTMLInputFileElementEvents2)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLInputFileElementEvents2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLInputFileElementEvents2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLInputFileElementEvents2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(HTMLInputFileElementEvents2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(HTMLInputFileElementEvents2), Is.EqualTo(4));
-        }
-    }
 }

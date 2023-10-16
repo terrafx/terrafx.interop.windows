@@ -25,7 +25,7 @@ public unsafe partial struct IProcessLock : IProcessLock.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IProcessLock*, Guid*, void**, int>)(lpVtbl[0]))((IProcessLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IProcessLock*, Guid*, void**, int>)(lpVtbl[0]))((IProcessLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IProcessLock : IProcessLock.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[1]))((IProcessLock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProcessLock*, uint>)(lpVtbl[1]))((IProcessLock*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IProcessLock : IProcessLock.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[2]))((IProcessLock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProcessLock*, uint>)(lpVtbl[2]))((IProcessLock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IProcessLock.xml' path='doc/member[@name="IProcessLock.AddRefOnProcess"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IProcessLock : IProcessLock.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRefOnProcess()
     {
-        return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[3]))((IProcessLock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProcessLock*, uint>)(lpVtbl[3]))((IProcessLock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IProcessLock.xml' path='doc/member[@name="IProcessLock.ReleaseRefOnProcess"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IProcessLock : IProcessLock.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint ReleaseRefOnProcess()
     {
-        return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[4]))((IProcessLock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProcessLock*, uint>)(lpVtbl[4]))((IProcessLock*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,18 +79,18 @@ public unsafe partial struct IProcessLock : IProcessLock.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRefOnProcess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRefOnProcess;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> ReleaseRefOnProcess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> ReleaseRefOnProcess;
     }
 }

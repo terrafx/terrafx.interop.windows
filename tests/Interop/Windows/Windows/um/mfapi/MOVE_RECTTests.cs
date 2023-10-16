@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MOVE_RECT" /> struct.</summary>
 public static unsafe partial class MOVE_RECTTests
 {
-    /// <summary>Validates that the <see cref="MOVE_RECT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MOVE_RECT>(), Is.EqualTo(sizeof(MOVE_RECT)));
-    }
-
-    /// <summary>Validates that the <see cref="MOVE_RECT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MOVE_RECT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MOVE_RECT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MOVE_RECT), Is.EqualTo(24));
-    }
 }

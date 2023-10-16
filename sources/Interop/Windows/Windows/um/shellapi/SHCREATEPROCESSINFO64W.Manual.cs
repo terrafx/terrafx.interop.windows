@@ -16,13 +16,13 @@ public unsafe partial struct SHCREATEPROCESSINFO64W
     public HWND hwnd;
 
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszFile;
+    public char* pszFile;
 
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszParameters;
+    public char* pszParameters;
 
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszCurrentDirectory;
+    public char* pszCurrentDirectory;
 
     public HANDLE hUserToken;
 

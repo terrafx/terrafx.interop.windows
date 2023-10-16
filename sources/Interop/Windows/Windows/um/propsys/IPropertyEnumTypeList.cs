@@ -25,7 +25,7 @@ public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertyEnumTypeList*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumTypeList*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertyEnumTypeList*, uint>)(lpVtbl[1]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumTypeList*, uint>)(lpVtbl[1]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertyEnumTypeList*, uint>)(lpVtbl[2]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumTypeList*, uint>)(lpVtbl[2]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyEnumTypeList.xml' path='doc/member[@name="IPropertyEnumTypeList.GetCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Inter
     [VtblIndex(3)]
     public HRESULT GetCount(uint* pctypes)
     {
-        return ((delegate* unmanaged<IPropertyEnumTypeList*, uint*, int>)(lpVtbl[3]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), pctypes);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumTypeList*, uint*, int>)(lpVtbl[3]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), pctypes);
     }
 
     /// <include file='IPropertyEnumTypeList.xml' path='doc/member[@name="IPropertyEnumTypeList.GetAt"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Inter
     [VtblIndex(4)]
     public HRESULT GetAt(uint itype, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IPropertyEnumTypeList*, uint, Guid*, void**, int>)(lpVtbl[4]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), itype, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumTypeList*, uint, Guid*, void**, int>)(lpVtbl[4]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), itype, riid, ppv);
     }
 
     /// <include file='IPropertyEnumTypeList.xml' path='doc/member[@name="IPropertyEnumTypeList.GetConditionAt"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Inter
     [VtblIndex(5)]
     public HRESULT GetConditionAt(uint nIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IPropertyEnumTypeList*, uint, Guid*, void**, int>)(lpVtbl[5]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), nIndex, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumTypeList*, uint, Guid*, void**, int>)(lpVtbl[5]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), nIndex, riid, ppv);
     }
 
     /// <include file='IPropertyEnumTypeList.xml' path='doc/member[@name="IPropertyEnumTypeList.FindMatchingIndex"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Inter
     [VtblIndex(6)]
     public HRESULT FindMatchingIndex([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarCmp, uint* pnIndex)
     {
-        return ((delegate* unmanaged<IPropertyEnumTypeList*, PROPVARIANT*, uint*, int>)(lpVtbl[6]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), propvarCmp, pnIndex);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyEnumTypeList*, PROPVARIANT*, uint*, int>)(lpVtbl[6]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), propvarCmp, pnIndex);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void**, int> GetAt;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetConditionAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void**, int> GetConditionAt;
 
         [NativeTypeName("HRESULT (const PROPVARIANT &, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, uint*, int> FindMatchingIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, uint*, int> FindMatchingIndex;
     }
 }

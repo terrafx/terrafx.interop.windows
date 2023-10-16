@@ -26,7 +26,7 @@ public abstract unsafe class DX11Sample : DXSample
     private D3D11_VIEWPORT _viewport;
     private RECT _scissorRect;
 
-    public DX11Sample(string name) : base(name)
+    protected DX11Sample(string name) : base(name)
     {
     }
 

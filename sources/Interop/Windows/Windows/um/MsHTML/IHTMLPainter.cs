@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLPainter*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPainter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainter*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPainter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLPainter*, uint>)(lpVtbl[1]))((IHTMLPainter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainter*, uint>)(lpVtbl[1]))((IHTMLPainter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLPainter*, uint>)(lpVtbl[2]))((IHTMLPainter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainter*, uint>)(lpVtbl[2]))((IHTMLPainter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLPainter.xml' path='doc/member[@name="IHTMLPainter.Draw"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Draw(RECT rcBounds, RECT rcUpdate, [NativeTypeName("LONG")] int lDrawFlags, HDC hdc, [NativeTypeName("LPVOID")] void* pvDrawObject)
     {
-        return ((delegate* unmanaged<IHTMLPainter*, RECT, RECT, int, HDC, void*, int>)(lpVtbl[3]))((IHTMLPainter*)Unsafe.AsPointer(ref this), rcBounds, rcUpdate, lDrawFlags, hdc, pvDrawObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainter*, RECT, RECT, int, HDC, void*, int>)(lpVtbl[3]))((IHTMLPainter*)Unsafe.AsPointer(ref this), rcBounds, rcUpdate, lDrawFlags, hdc, pvDrawObject);
     }
 
     /// <include file='IHTMLPainter.xml' path='doc/member[@name="IHTMLPainter.OnResize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT OnResize(SIZE size)
     {
-        return ((delegate* unmanaged<IHTMLPainter*, SIZE, int>)(lpVtbl[4]))((IHTMLPainter*)Unsafe.AsPointer(ref this), size);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainter*, SIZE, int>)(lpVtbl[4]))((IHTMLPainter*)Unsafe.AsPointer(ref this), size);
     }
 
     /// <include file='IHTMLPainter.xml' path='doc/member[@name="IHTMLPainter.GetPainterInfo"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetPainterInfo(HTML_PAINTER_INFO* pInfo)
     {
-        return ((delegate* unmanaged<IHTMLPainter*, HTML_PAINTER_INFO*, int>)(lpVtbl[5]))((IHTMLPainter*)Unsafe.AsPointer(ref this), pInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainter*, HTML_PAINTER_INFO*, int>)(lpVtbl[5]))((IHTMLPainter*)Unsafe.AsPointer(ref this), pInfo);
     }
 
     /// <include file='IHTMLPainter.xml' path='doc/member[@name="IHTMLPainter.HitTestPoint"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT HitTestPoint(POINT pt, BOOL* pbHit, [NativeTypeName("LONG *")] int* plPartID)
     {
-        return ((delegate* unmanaged<IHTMLPainter*, POINT, BOOL*, int*, int>)(lpVtbl[6]))((IHTMLPainter*)Unsafe.AsPointer(ref this), pt, pbHit, plPartID);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainter*, POINT, BOOL*, int*, int>)(lpVtbl[6]))((IHTMLPainter*)Unsafe.AsPointer(ref this), pt, pbHit, plPartID);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RECT, RECT, LONG, HDC, LPVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT, RECT, int, HDC, void*, int> Draw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT, RECT, int, HDC, void*, int> Draw;
 
         [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE, int> OnResize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE, int> OnResize;
 
         [NativeTypeName("HRESULT (HTML_PAINTER_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HTML_PAINTER_INFO*, int> GetPainterInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HTML_PAINTER_INFO*, int> GetPainterInfo;
 
         [NativeTypeName("HRESULT (POINT, BOOL *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT, BOOL*, int*, int> HitTestPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT, BOOL*, int*, int> HitTestPoint;
     }
 }

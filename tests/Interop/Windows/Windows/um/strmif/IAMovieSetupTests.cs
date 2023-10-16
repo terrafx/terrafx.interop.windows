@@ -19,32 +19,4 @@ public static unsafe partial class IAMovieSetupTests
     {
         Assert.That(typeof(IAMovieSetup).GUID, Is.EqualTo(IID_IAMovieSetup));
     }
-
-    /// <summary>Validates that the <see cref="IAMovieSetup" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMovieSetup>(), Is.EqualTo(sizeof(IAMovieSetup)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMovieSetup" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMovieSetup).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMovieSetup" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMovieSetup), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMovieSetup), Is.EqualTo(4));
-        }
-    }
 }

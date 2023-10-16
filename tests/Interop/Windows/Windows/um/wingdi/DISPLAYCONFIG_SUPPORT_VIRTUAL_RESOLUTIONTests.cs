@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0.17763.0")]
 public static unsafe partial class DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTIONTests
 {
-    /// <summary>Validates that the <see cref="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION>(), Is.EqualTo(sizeof(DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION)));
-    }
-
-    /// <summary>Validates that the <see cref="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION), Is.EqualTo(24));
-    }
 }

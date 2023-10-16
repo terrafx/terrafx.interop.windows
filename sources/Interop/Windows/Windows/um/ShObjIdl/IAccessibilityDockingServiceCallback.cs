@@ -25,7 +25,7 @@ public unsafe partial struct IAccessibilityDockingServiceCallback : IAccessibili
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAccessibilityDockingServiceCallback*, Guid*, void**, int>)(lpVtbl[0]))((IAccessibilityDockingServiceCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAccessibilityDockingServiceCallback*, Guid*, void**, int>)(lpVtbl[0]))((IAccessibilityDockingServiceCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAccessibilityDockingServiceCallback : IAccessibili
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAccessibilityDockingServiceCallback*, uint>)(lpVtbl[1]))((IAccessibilityDockingServiceCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAccessibilityDockingServiceCallback*, uint>)(lpVtbl[1]))((IAccessibilityDockingServiceCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAccessibilityDockingServiceCallback : IAccessibili
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAccessibilityDockingServiceCallback*, uint>)(lpVtbl[2]))((IAccessibilityDockingServiceCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAccessibilityDockingServiceCallback*, uint>)(lpVtbl[2]))((IAccessibilityDockingServiceCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAccessibilityDockingServiceCallback.xml' path='doc/member[@name="IAccessibilityDockingServiceCallback.Undocked"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAccessibilityDockingServiceCallback : IAccessibili
     [VtblIndex(3)]
     public HRESULT Undocked(UNDOCK_REASON undockReason)
     {
-        return ((delegate* unmanaged<IAccessibilityDockingServiceCallback*, UNDOCK_REASON, int>)(lpVtbl[3]))((IAccessibilityDockingServiceCallback*)Unsafe.AsPointer(ref this), undockReason);
+        return ((delegate* unmanaged[MemberFunction]<IAccessibilityDockingServiceCallback*, UNDOCK_REASON, int>)(lpVtbl[3]))((IAccessibilityDockingServiceCallback*)Unsafe.AsPointer(ref this), undockReason);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IAccessibilityDockingServiceCallback : IAccessibili
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UNDOCK_REASON) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UNDOCK_REASON, int> Undocked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UNDOCK_REASON, int> Undocked;
     }
 }

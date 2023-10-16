@@ -21,16 +21,16 @@ public unsafe partial struct SHELLEXECUTEINFO32W
     public HWND hwnd;
 
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpVerb;
+    public char* lpVerb;
 
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpFile;
+    public char* lpFile;
 
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpParameters;
+    public char* lpParameters;
 
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpDirectory;
+    public char* lpDirectory;
 
     public int nShow;
 
@@ -39,7 +39,7 @@ public unsafe partial struct SHELLEXECUTEINFO32W
     public void* lpIDList;
 
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpClass;
+    public char* lpClass;
 
     public HKEY hkeyClass;
 

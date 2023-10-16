@@ -25,7 +25,7 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDecimateVideoImage*, Guid*, void**, int>)(lpVtbl[0]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDecimateVideoImage*, Guid*, void**, int>)(lpVtbl[0]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDecimateVideoImage*, uint>)(lpVtbl[1]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDecimateVideoImage*, uint>)(lpVtbl[1]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDecimateVideoImage*, uint>)(lpVtbl[2]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDecimateVideoImage*, uint>)(lpVtbl[2]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDecimateVideoImage.xml' path='doc/member[@name="IDecimateVideoImage.SetDecimationImageSize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
     [VtblIndex(3)]
     public HRESULT SetDecimationImageSize([NativeTypeName("long")] int lWidth, [NativeTypeName("long")] int lHeight)
     {
-        return ((delegate* unmanaged<IDecimateVideoImage*, int, int, int>)(lpVtbl[3]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this), lWidth, lHeight);
+        return ((delegate* unmanaged[MemberFunction]<IDecimateVideoImage*, int, int, int>)(lpVtbl[3]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this), lWidth, lHeight);
     }
 
     /// <include file='IDecimateVideoImage.xml' path='doc/member[@name="IDecimateVideoImage.ResetDecimationImageSize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
     [VtblIndex(4)]
     public HRESULT ResetDecimationImageSize()
     {
-        return ((delegate* unmanaged<IDecimateVideoImage*, int>)(lpVtbl[4]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDecimateVideoImage*, int>)(lpVtbl[4]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetDecimationImageSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetDecimationImageSize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResetDecimationImageSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResetDecimationImageSize;
     }
 }

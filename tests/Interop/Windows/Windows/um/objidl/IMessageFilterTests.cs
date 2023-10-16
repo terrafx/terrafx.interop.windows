@@ -19,32 +19,4 @@ public static unsafe partial class IMessageFilterTests
     {
         Assert.That(typeof(IMessageFilter).GUID, Is.EqualTo(IID_IMessageFilter));
     }
-
-    /// <summary>Validates that the <see cref="IMessageFilter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMessageFilter>(), Is.EqualTo(sizeof(IMessageFilter)));
-    }
-
-    /// <summary>Validates that the <see cref="IMessageFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMessageFilter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMessageFilter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMessageFilter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMessageFilter), Is.EqualTo(4));
-        }
-    }
 }

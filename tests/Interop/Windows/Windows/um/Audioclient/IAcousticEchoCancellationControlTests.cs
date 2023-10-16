@@ -19,32 +19,4 @@ public static unsafe partial class IAcousticEchoCancellationControlTests
     {
         Assert.That(typeof(IAcousticEchoCancellationControl).GUID, Is.EqualTo(IID_IAcousticEchoCancellationControl));
     }
-
-    /// <summary>Validates that the <see cref="IAcousticEchoCancellationControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAcousticEchoCancellationControl>(), Is.EqualTo(sizeof(IAcousticEchoCancellationControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IAcousticEchoCancellationControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAcousticEchoCancellationControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAcousticEchoCancellationControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAcousticEchoCancellationControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAcousticEchoCancellationControl), Is.EqualTo(4));
-        }
-    }
 }

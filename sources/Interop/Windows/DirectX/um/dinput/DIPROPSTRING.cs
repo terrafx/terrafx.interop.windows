@@ -13,5 +13,5 @@ public unsafe partial struct DIPROPSTRING
 
     /// <include file='DIPROPSTRING.xml' path='doc/member[@name="DIPROPSTRING.wsz"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort wsz[260];
+    public fixed char wsz[260];
 }

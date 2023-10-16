@@ -36,7 +36,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
         public uint ForcedByRegistry
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x1u;
             }
@@ -53,7 +53,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
         public uint Initialized
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 1) & 0x1u;
             }
@@ -70,7 +70,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 2) & 0x3FFFFFFFu;
             }

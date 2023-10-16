@@ -22,7 +22,7 @@ public unsafe partial struct SPC_LINK
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszUrl"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszUrl
+    public ref char* pwszUrl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -44,7 +44,7 @@ public unsafe partial struct SPC_LINK
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszFile"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszFile
+    public ref char* pwszFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -60,7 +60,7 @@ public unsafe partial struct SPC_LINK
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszUrl"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* pwszUrl;
+        public char* pwszUrl;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Moniker"]/*' />
         [FieldOffset(0)]
@@ -69,6 +69,6 @@ public unsafe partial struct SPC_LINK
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszFile"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* pwszFile;
+        public char* pwszFile;
     }
 }

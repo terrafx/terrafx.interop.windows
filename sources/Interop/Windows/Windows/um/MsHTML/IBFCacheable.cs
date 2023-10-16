@@ -25,7 +25,7 @@ public unsafe partial struct IBFCacheable : IBFCacheable.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBFCacheable*, Guid*, void**, int>)(lpVtbl[0]))((IBFCacheable*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBFCacheable*, Guid*, void**, int>)(lpVtbl[0]))((IBFCacheable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBFCacheable : IBFCacheable.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBFCacheable*, uint>)(lpVtbl[1]))((IBFCacheable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBFCacheable*, uint>)(lpVtbl[1]))((IBFCacheable*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBFCacheable : IBFCacheable.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBFCacheable*, uint>)(lpVtbl[2]))((IBFCacheable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBFCacheable*, uint>)(lpVtbl[2]))((IBFCacheable*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBFCacheable.xml' path='doc/member[@name="IBFCacheable.EnterBFCache"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBFCacheable : IBFCacheable.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT EnterBFCache()
     {
-        return ((delegate* unmanaged<IBFCacheable*, int>)(lpVtbl[3]))((IBFCacheable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBFCacheable*, int>)(lpVtbl[3]))((IBFCacheable*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBFCacheable.xml' path='doc/member[@name="IBFCacheable.ExitBFCache"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IBFCacheable : IBFCacheable.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT ExitBFCache()
     {
-        return ((delegate* unmanaged<IBFCacheable*, int>)(lpVtbl[4]))((IBFCacheable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBFCacheable*, int>)(lpVtbl[4]))((IBFCacheable*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IBFCacheable : IBFCacheable.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EnterBFCache;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EnterBFCache;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ExitBFCache;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ExitBFCache;
     }
 }

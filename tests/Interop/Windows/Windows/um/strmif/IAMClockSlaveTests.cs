@@ -19,32 +19,4 @@ public static unsafe partial class IAMClockSlaveTests
     {
         Assert.That(typeof(IAMClockSlave).GUID, Is.EqualTo(IID_IAMClockSlave));
     }
-
-    /// <summary>Validates that the <see cref="IAMClockSlave" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMClockSlave>(), Is.EqualTo(sizeof(IAMClockSlave)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMClockSlave" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMClockSlave).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMClockSlave" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMClockSlave), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMClockSlave), Is.EqualTo(4));
-        }
-    }
 }

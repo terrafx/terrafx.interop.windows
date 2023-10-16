@@ -25,7 +25,7 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IParentAndItem*, Guid*, void**, int>)(lpVtbl[0]))((IParentAndItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IParentAndItem*, Guid*, void**, int>)(lpVtbl[0]))((IParentAndItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IParentAndItem*, uint>)(lpVtbl[1]))((IParentAndItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IParentAndItem*, uint>)(lpVtbl[1]))((IParentAndItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IParentAndItem*, uint>)(lpVtbl[2]))((IParentAndItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IParentAndItem*, uint>)(lpVtbl[2]))((IParentAndItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IParentAndItem.xml' path='doc/member[@name="IParentAndItem.SetParentAndItem"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT SetParentAndItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlParent, IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlChild)
     {
-        return ((delegate* unmanaged<IParentAndItem*, ITEMIDLIST*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((IParentAndItem*)Unsafe.AsPointer(ref this), pidlParent, psf, pidlChild);
+        return ((delegate* unmanaged[MemberFunction]<IParentAndItem*, ITEMIDLIST*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((IParentAndItem*)Unsafe.AsPointer(ref this), pidlParent, psf, pidlChild);
     }
 
     /// <include file='IParentAndItem.xml' path='doc/member[@name="IParentAndItem.GetParentAndItem"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetParentAndItem([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlParent, IShellFolder** ppsf, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlChild)
     {
-        return ((delegate* unmanaged<IParentAndItem*, ITEMIDLIST**, IShellFolder**, ITEMIDLIST**, int>)(lpVtbl[4]))((IParentAndItem*)Unsafe.AsPointer(ref this), ppidlParent, ppsf, ppidlChild);
+        return ((delegate* unmanaged[MemberFunction]<IParentAndItem*, ITEMIDLIST**, IShellFolder**, ITEMIDLIST**, int>)(lpVtbl[4]))((IParentAndItem*)Unsafe.AsPointer(ref this), ppidlParent, ppsf, ppidlChild);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IParentAndItem : IParentAndItem.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, IShellFolder*, ITEMIDLIST*, int> SetParentAndItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, IShellFolder*, ITEMIDLIST*, int> SetParentAndItem;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *, IShellFolder **, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST**, IShellFolder**, ITEMIDLIST**, int> GetParentAndItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST**, IShellFolder**, ITEMIDLIST**, int> GetParentAndItem;
     }
 }

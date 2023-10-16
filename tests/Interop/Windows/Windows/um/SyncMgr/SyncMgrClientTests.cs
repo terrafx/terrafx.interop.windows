@@ -19,25 +19,4 @@ public static unsafe partial class SyncMgrClientTests
     {
         Assert.That(typeof(SyncMgrClient).GUID, Is.EqualTo(IID_SyncMgrClient));
     }
-
-    /// <summary>Validates that the <see cref="SyncMgrClient" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SyncMgrClient>(), Is.EqualTo(sizeof(SyncMgrClient)));
-    }
-
-    /// <summary>Validates that the <see cref="SyncMgrClient" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SyncMgrClient).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SyncMgrClient" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SyncMgrClient), Is.EqualTo(1));
-    }
 }

@@ -28,13 +28,13 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
 
     /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.specializationApplicationName"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort specializationApplicationName[128];
+    public fixed char specializationApplicationName[128];
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.isSpecializationEnabled"]/*' />
     public uint isSpecializationEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.isSpecializationEnabled;
         }
@@ -50,7 +50,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -97,7 +97,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
             public uint isSpecializationEnabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -114,7 +114,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

@@ -25,7 +25,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMenuPopup*, Guid*, void**, int>)(lpVtbl[0]))((IMenuPopup*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, Guid*, void**, int>)(lpVtbl[0]))((IMenuPopup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMenuPopup*, uint>)(lpVtbl[1]))((IMenuPopup*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, uint>)(lpVtbl[1]))((IMenuPopup*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMenuPopup*, uint>)(lpVtbl[2]))((IMenuPopup*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, uint>)(lpVtbl[2]))((IMenuPopup*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleWindow.GetWindow" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IMenuPopup*, HWND*, int>)(lpVtbl[3]))((IMenuPopup*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, HWND*, int>)(lpVtbl[3]))((IMenuPopup*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
     {
-        return ((delegate* unmanaged<IMenuPopup*, BOOL, int>)(lpVtbl[4]))((IMenuPopup*)Unsafe.AsPointer(ref this), fEnterMode);
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, BOOL, int>)(lpVtbl[4]))((IMenuPopup*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
     /// <inheritdoc cref="IDeskBar.SetClient" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetClient(IUnknown* punkClient)
     {
-        return ((delegate* unmanaged<IMenuPopup*, IUnknown*, int>)(lpVtbl[5]))((IMenuPopup*)Unsafe.AsPointer(ref this), punkClient);
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, IUnknown*, int>)(lpVtbl[5]))((IMenuPopup*)Unsafe.AsPointer(ref this), punkClient);
     }
 
     /// <inheritdoc cref="IDeskBar.GetClient" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetClient(IUnknown** ppunkClient)
     {
-        return ((delegate* unmanaged<IMenuPopup*, IUnknown**, int>)(lpVtbl[6]))((IMenuPopup*)Unsafe.AsPointer(ref this), ppunkClient);
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, IUnknown**, int>)(lpVtbl[6]))((IMenuPopup*)Unsafe.AsPointer(ref this), ppunkClient);
     }
 
     /// <inheritdoc cref="IDeskBar.OnPosRectChangeDB" />
@@ -83,7 +83,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT OnPosRectChangeDB(RECT* prc)
     {
-        return ((delegate* unmanaged<IMenuPopup*, RECT*, int>)(lpVtbl[7]))((IMenuPopup*)Unsafe.AsPointer(ref this), prc);
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, RECT*, int>)(lpVtbl[7]))((IMenuPopup*)Unsafe.AsPointer(ref this), prc);
     }
 
     /// <include file='IMenuPopup.xml' path='doc/member[@name="IMenuPopup.Popup"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT Popup(POINTL* ppt, RECTL* prcExclude, [NativeTypeName("MP_POPUPFLAGS")] int dwFlags)
     {
-        return ((delegate* unmanaged<IMenuPopup*, POINTL*, RECTL*, int, int>)(lpVtbl[8]))((IMenuPopup*)Unsafe.AsPointer(ref this), ppt, prcExclude, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, POINTL*, RECTL*, int, int>)(lpVtbl[8]))((IMenuPopup*)Unsafe.AsPointer(ref this), ppt, prcExclude, dwFlags);
     }
 
     /// <include file='IMenuPopup.xml' path='doc/member[@name="IMenuPopup.OnSelect"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT OnSelect([NativeTypeName("DWORD")] uint dwSelectType)
     {
-        return ((delegate* unmanaged<IMenuPopup*, uint, int>)(lpVtbl[9]))((IMenuPopup*)Unsafe.AsPointer(ref this), dwSelectType);
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, uint, int>)(lpVtbl[9]))((IMenuPopup*)Unsafe.AsPointer(ref this), dwSelectType);
     }
 
     /// <include file='IMenuPopup.xml' path='doc/member[@name="IMenuPopup.SetSubMenu"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT SetSubMenu(IMenuPopup* pmp, BOOL fSet)
     {
-        return ((delegate* unmanaged<IMenuPopup*, IMenuPopup*, BOOL, int>)(lpVtbl[10]))((IMenuPopup*)Unsafe.AsPointer(ref this), pmp, fSet);
+        return ((delegate* unmanaged[MemberFunction]<IMenuPopup*, IMenuPopup*, BOOL, int>)(lpVtbl[10]))((IMenuPopup*)Unsafe.AsPointer(ref this), pmp, fSet);
     }
 
     public interface Interface : IDeskBar.Interface
@@ -126,36 +126,36 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetClient;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetClient;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> GetClient;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> GetClient;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> OnPosRectChangeDB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> OnPosRectChangeDB;
 
         [NativeTypeName("HRESULT (POINTL *, RECTL *, MP_POPUPFLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINTL*, RECTL*, int, int> Popup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINTL*, RECTL*, int, int> Popup;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnSelect;
 
         [NativeTypeName("HRESULT (IMenuPopup *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMenuPopup*, BOOL, int> SetSubMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMenuPopup*, BOOL, int> SetSubMenu;
     }
 }

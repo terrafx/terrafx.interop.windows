@@ -25,7 +25,7 @@ public unsafe partial struct IAccDictionary : IAccDictionary.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAccDictionary*, Guid*, void**, int>)(lpVtbl[0]))((IAccDictionary*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAccDictionary*, Guid*, void**, int>)(lpVtbl[0]))((IAccDictionary*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAccDictionary : IAccDictionary.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAccDictionary*, uint>)(lpVtbl[1]))((IAccDictionary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAccDictionary*, uint>)(lpVtbl[1]))((IAccDictionary*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IAccDictionary : IAccDictionary.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAccDictionary*, uint>)(lpVtbl[2]))((IAccDictionary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAccDictionary*, uint>)(lpVtbl[2]))((IAccDictionary*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAccDictionary.xml' path='doc/member[@name="IAccDictionary.GetLocalizedString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetLocalizedString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pResult, [NativeTypeName("LCID *")] uint* plcid)
+    public HRESULT GetLocalizedString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] char** pResult, [NativeTypeName("LCID *")] uint* plcid)
     {
-        return ((delegate* unmanaged<IAccDictionary*, Guid*, uint, ushort**, uint*, int>)(lpVtbl[3]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, lcid, pResult, plcid);
+        return ((delegate* unmanaged[MemberFunction]<IAccDictionary*, Guid*, uint, char**, uint*, int>)(lpVtbl[3]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, lcid, pResult, plcid);
     }
 
     /// <include file='IAccDictionary.xml' path='doc/member[@name="IAccDictionary.GetParentTerm"]/*' />
@@ -59,76 +59,76 @@ public unsafe partial struct IAccDictionary : IAccDictionary.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetParentTerm([NativeTypeName("const GUID &")] Guid* Term, Guid* pParentTerm)
     {
-        return ((delegate* unmanaged<IAccDictionary*, Guid*, Guid*, int>)(lpVtbl[4]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, pParentTerm);
+        return ((delegate* unmanaged[MemberFunction]<IAccDictionary*, Guid*, Guid*, int>)(lpVtbl[4]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, pParentTerm);
     }
 
     /// <include file='IAccDictionary.xml' path='doc/member[@name="IAccDictionary.GetMnemonicString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetMnemonicString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetMnemonicString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<IAccDictionary*, Guid*, ushort**, int>)(lpVtbl[5]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, pResult);
+        return ((delegate* unmanaged[MemberFunction]<IAccDictionary*, Guid*, char**, int>)(lpVtbl[5]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, pResult);
     }
 
     /// <include file='IAccDictionary.xml' path='doc/member[@name="IAccDictionary.LookupMnemonicTerm"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT LookupMnemonicTerm([NativeTypeName("BSTR")] ushort* bstrMnemonic, Guid* pTerm)
+    public HRESULT LookupMnemonicTerm([NativeTypeName("BSTR")] char* bstrMnemonic, Guid* pTerm)
     {
-        return ((delegate* unmanaged<IAccDictionary*, ushort*, Guid*, int>)(lpVtbl[6]))((IAccDictionary*)Unsafe.AsPointer(ref this), bstrMnemonic, pTerm);
+        return ((delegate* unmanaged[MemberFunction]<IAccDictionary*, char*, Guid*, int>)(lpVtbl[6]))((IAccDictionary*)Unsafe.AsPointer(ref this), bstrMnemonic, pTerm);
     }
 
     /// <include file='IAccDictionary.xml' path='doc/member[@name="IAccDictionary.ConvertValueToString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT ConvertValueToString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, VARIANT varValue, [NativeTypeName("BSTR *")] ushort** pbstrResult, [NativeTypeName("LCID *")] uint* plcid)
+    public HRESULT ConvertValueToString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, VARIANT varValue, [NativeTypeName("BSTR *")] char** pbstrResult, [NativeTypeName("LCID *")] uint* plcid)
     {
-        return ((delegate* unmanaged<IAccDictionary*, Guid*, uint, VARIANT, ushort**, uint*, int>)(lpVtbl[7]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, lcid, varValue, pbstrResult, plcid);
+        return ((delegate* unmanaged[MemberFunction]<IAccDictionary*, Guid*, uint, VARIANT, char**, uint*, int>)(lpVtbl[7]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, lcid, varValue, pbstrResult, plcid);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetLocalizedString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pResult, [NativeTypeName("LCID *")] uint* plcid);
+        HRESULT GetLocalizedString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] char** pResult, [NativeTypeName("LCID *")] uint* plcid);
 
         [VtblIndex(4)]
         HRESULT GetParentTerm([NativeTypeName("const GUID &")] Guid* Term, Guid* pParentTerm);
 
         [VtblIndex(5)]
-        HRESULT GetMnemonicString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetMnemonicString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(6)]
-        HRESULT LookupMnemonicTerm([NativeTypeName("BSTR")] ushort* bstrMnemonic, Guid* pTerm);
+        HRESULT LookupMnemonicTerm([NativeTypeName("BSTR")] char* bstrMnemonic, Guid* pTerm);
 
         [VtblIndex(7)]
-        HRESULT ConvertValueToString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, VARIANT varValue, [NativeTypeName("BSTR *")] ushort** pbstrResult, [NativeTypeName("LCID *")] uint* plcid);
+        HRESULT ConvertValueToString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, VARIANT varValue, [NativeTypeName("BSTR *")] char** pbstrResult, [NativeTypeName("LCID *")] uint* plcid);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, LCID, BSTR *, LCID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, ushort**, uint*, int> GetLocalizedString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, char**, uint*, int> GetLocalizedString;
 
         [NativeTypeName("HRESULT (const GUID &, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> GetParentTerm;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, int> GetParentTerm;
 
         [NativeTypeName("HRESULT (const GUID &, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, int> GetMnemonicString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, int> GetMnemonicString;
 
         [NativeTypeName("HRESULT (BSTR, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> LookupMnemonicTerm;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, Guid*, int> LookupMnemonicTerm;
 
         [NativeTypeName("HRESULT (const GUID &, LCID, VARIANT, BSTR *, LCID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, VARIANT, ushort**, uint*, int> ConvertValueToString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, VARIANT, char**, uint*, int> ConvertValueToString;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleDocument*, Guid*, void**, int>)(lpVtbl[0]))((IOleDocument*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocument*, Guid*, void**, int>)(lpVtbl[0]))((IOleDocument*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleDocument*, uint>)(lpVtbl[1]))((IOleDocument*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleDocument*, uint>)(lpVtbl[1]))((IOleDocument*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleDocument*, uint>)(lpVtbl[2]))((IOleDocument*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleDocument*, uint>)(lpVtbl[2]))((IOleDocument*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleDocument.xml' path='doc/member[@name="IOleDocument.CreateView"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT CreateView(IOleInPlaceSite* pIPSite, IStream* pstm, [NativeTypeName("DWORD")] uint dwReserved, IOleDocumentView** ppView)
     {
-        return ((delegate* unmanaged<IOleDocument*, IOleInPlaceSite*, IStream*, uint, IOleDocumentView**, int>)(lpVtbl[3]))((IOleDocument*)Unsafe.AsPointer(ref this), pIPSite, pstm, dwReserved, ppView);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocument*, IOleInPlaceSite*, IStream*, uint, IOleDocumentView**, int>)(lpVtbl[3]))((IOleDocument*)Unsafe.AsPointer(ref this), pIPSite, pstm, dwReserved, ppView);
     }
 
     /// <include file='IOleDocument.xml' path='doc/member[@name="IOleDocument.GetDocMiscStatus"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetDocMiscStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
     {
-        return ((delegate* unmanaged<IOleDocument*, uint*, int>)(lpVtbl[4]))((IOleDocument*)Unsafe.AsPointer(ref this), pdwStatus);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocument*, uint*, int>)(lpVtbl[4]))((IOleDocument*)Unsafe.AsPointer(ref this), pdwStatus);
     }
 
     /// <include file='IOleDocument.xml' path='doc/member[@name="IOleDocument.EnumViews"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT EnumViews(IEnumOleDocumentViews** ppEnum, IOleDocumentView** ppView)
     {
-        return ((delegate* unmanaged<IOleDocument*, IEnumOleDocumentViews**, IOleDocumentView**, int>)(lpVtbl[5]))((IOleDocument*)Unsafe.AsPointer(ref this), ppEnum, ppView);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocument*, IEnumOleDocumentViews**, IOleDocumentView**, int>)(lpVtbl[5]))((IOleDocument*)Unsafe.AsPointer(ref this), ppEnum, ppView);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IOleInPlaceSite *, IStream *, DWORD, IOleDocumentView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleInPlaceSite*, IStream*, uint, IOleDocumentView**, int> CreateView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleInPlaceSite*, IStream*, uint, IOleDocumentView**, int> CreateView;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetDocMiscStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetDocMiscStatus;
 
         [NativeTypeName("HRESULT (IEnumOleDocumentViews **, IOleDocumentView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumOleDocumentViews**, IOleDocumentView**, int> EnumViews;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumOleDocumentViews**, IOleDocumentView**, int> EnumViews;
     }
 }

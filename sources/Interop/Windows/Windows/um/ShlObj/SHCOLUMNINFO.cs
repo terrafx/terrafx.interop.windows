@@ -32,9 +32,9 @@ public unsafe partial struct SHCOLUMNINFO
 
     /// <include file='SHCOLUMNINFO.xml' path='doc/member[@name="SHCOLUMNINFO.wszTitle"]/*' />
     [NativeTypeName("WCHAR[80]")]
-    public fixed ushort wszTitle[80];
+    public fixed char wszTitle[80];
 
     /// <include file='SHCOLUMNINFO.xml' path='doc/member[@name="SHCOLUMNINFO.wszDescription"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort wszDescription[128];
+    public fixed char wszDescription[128];
 }

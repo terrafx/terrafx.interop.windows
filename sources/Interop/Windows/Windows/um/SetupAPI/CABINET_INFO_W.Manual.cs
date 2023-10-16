@@ -35,7 +35,7 @@ public unsafe partial struct CABINET_INFO_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* CabinetPath
+    public ref char* CabinetPath
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -53,7 +53,7 @@ public unsafe partial struct CABINET_INFO_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* CabinetFile
+    public ref char* CabinetFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -71,7 +71,7 @@ public unsafe partial struct CABINET_INFO_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* DiskName
+    public ref char* DiskName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

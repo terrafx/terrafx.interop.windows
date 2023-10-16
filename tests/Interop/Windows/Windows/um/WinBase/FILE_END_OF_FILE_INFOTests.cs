@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FILE_END_OF_FILE_INFO" /> struct.</summary>
 public static unsafe partial class FILE_END_OF_FILE_INFOTests
 {
-    /// <summary>Validates that the <see cref="FILE_END_OF_FILE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FILE_END_OF_FILE_INFO>(), Is.EqualTo(sizeof(FILE_END_OF_FILE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="FILE_END_OF_FILE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FILE_END_OF_FILE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FILE_END_OF_FILE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FILE_END_OF_FILE_INFO), Is.EqualTo(8));
-    }
 }

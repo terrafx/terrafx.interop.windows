@@ -19,32 +19,4 @@ public static unsafe partial class ISearchContextTests
     {
         Assert.That(typeof(ISearchContext).GUID, Is.EqualTo(IID_ISearchContext));
     }
-
-    /// <summary>Validates that the <see cref="ISearchContext" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISearchContext>(), Is.EqualTo(sizeof(ISearchContext)));
-    }
-
-    /// <summary>Validates that the <see cref="ISearchContext" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISearchContext).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISearchContext" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISearchContext), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISearchContext), Is.EqualTo(4));
-        }
-    }
 }

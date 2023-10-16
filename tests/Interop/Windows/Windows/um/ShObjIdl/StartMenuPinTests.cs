@@ -19,25 +19,4 @@ public static unsafe partial class StartMenuPinTests
     {
         Assert.That(typeof(StartMenuPin).GUID, Is.EqualTo(IID_StartMenuPin));
     }
-
-    /// <summary>Validates that the <see cref="StartMenuPin" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<StartMenuPin>(), Is.EqualTo(sizeof(StartMenuPin)));
-    }
-
-    /// <summary>Validates that the <see cref="StartMenuPin" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(StartMenuPin).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="StartMenuPin" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(StartMenuPin), Is.EqualTo(1));
-    }
 }

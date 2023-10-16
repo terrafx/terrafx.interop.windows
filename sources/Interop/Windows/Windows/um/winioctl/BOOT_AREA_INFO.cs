@@ -3,10 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -29,23 +26,9 @@ public partial struct BOOT_AREA_INFO
     }
 
     /// <include file='_BootSectors_e__FixedBuffer.xml' path='doc/member[@name="_BootSectors_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
     public partial struct _BootSectors_e__FixedBuffer
     {
         public _Anonymous_e__Struct e0;
-        public _Anonymous_e__Struct e1;
-
-        [UnscopedRef]
-        public ref _Anonymous_e__Struct this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<_Anonymous_e__Struct> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

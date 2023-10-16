@@ -53,7 +53,7 @@ public unsafe partial struct OPEN_PRINTER_PROPS_INFOW
 
     [NativeTypeName("LPWSTR")]
     [UnscopedRef]
-    public ref ushort* pszSheetName
+    public ref char* pszSheetName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

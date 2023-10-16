@@ -19,32 +19,4 @@ public static unsafe partial class IFileOperationTests
     {
         Assert.That(typeof(IFileOperation).GUID, Is.EqualTo(IID_IFileOperation));
     }
-
-    /// <summary>Validates that the <see cref="IFileOperation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFileOperation>(), Is.EqualTo(sizeof(IFileOperation)));
-    }
-
-    /// <summary>Validates that the <see cref="IFileOperation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFileOperation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFileOperation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFileOperation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFileOperation), Is.EqualTo(4));
-        }
-    }
 }

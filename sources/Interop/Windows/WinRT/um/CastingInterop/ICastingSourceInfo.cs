@@ -26,7 +26,7 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICastingSourceInfo*, Guid*, void**, int>)(lpVtbl[0]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICastingSourceInfo*, Guid*, void**, int>)(lpVtbl[0]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICastingSourceInfo*, uint>)(lpVtbl[1]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICastingSourceInfo*, uint>)(lpVtbl[1]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICastingSourceInfo*, uint>)(lpVtbl[2]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICastingSourceInfo*, uint>)(lpVtbl[2]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICastingSourceInfo.xml' path='doc/member[@name="ICastingSourceInfo.GetController"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface, 
     [VtblIndex(3)]
     public HRESULT GetController(ICastingController** controller)
     {
-        return ((delegate* unmanaged<ICastingSourceInfo*, ICastingController**, int>)(lpVtbl[3]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this), controller);
+        return ((delegate* unmanaged[MemberFunction]<ICastingSourceInfo*, ICastingController**, int>)(lpVtbl[3]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this), controller);
     }
 
     /// <include file='ICastingSourceInfo.xml' path='doc/member[@name="ICastingSourceInfo.GetProperties"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface, 
     [VtblIndex(4)]
     public HRESULT GetProperties(INamedPropertyStore** props)
     {
-        return ((delegate* unmanaged<ICastingSourceInfo*, INamedPropertyStore**, int>)(lpVtbl[4]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this), props);
+        return ((delegate* unmanaged[MemberFunction]<ICastingSourceInfo*, INamedPropertyStore**, int>)(lpVtbl[4]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this), props);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ICastingController **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICastingController**, int> GetController;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICastingController**, int> GetController;
 
         [NativeTypeName("HRESULT (INamedPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, INamedPropertyStore**, int> GetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, INamedPropertyStore**, int> GetProperties;
     }
 }

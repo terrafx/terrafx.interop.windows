@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0.17763.0")]
 public static unsafe partial class PRJ_STARTVIRTUALIZING_OPTIONSTests
 {
-    /// <summary>Validates that the <see cref="PRJ_STARTVIRTUALIZING_OPTIONS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PRJ_STARTVIRTUALIZING_OPTIONS>(), Is.EqualTo(sizeof(PRJ_STARTVIRTUALIZING_OPTIONS)));
-    }
-
-    /// <summary>Validates that the <see cref="PRJ_STARTVIRTUALIZING_OPTIONS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PRJ_STARTVIRTUALIZING_OPTIONS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PRJ_STARTVIRTUALIZING_OPTIONS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(PRJ_STARTVIRTUALIZING_OPTIONS), Is.EqualTo(32));
-        }
-        else
-        {
-            Assert.That(sizeof(PRJ_STARTVIRTUALIZING_OPTIONS), Is.EqualTo(20));
-        }
-    }
 }

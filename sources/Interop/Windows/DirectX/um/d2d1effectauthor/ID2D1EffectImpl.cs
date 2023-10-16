@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1EffectImpl : ID2D1EffectImpl.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1EffectImpl*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectImpl*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1EffectImpl : ID2D1EffectImpl.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1EffectImpl*, uint>)(lpVtbl[1]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectImpl*, uint>)(lpVtbl[1]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1EffectImpl : ID2D1EffectImpl.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1EffectImpl*, uint>)(lpVtbl[2]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectImpl*, uint>)(lpVtbl[2]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1EffectImpl.xml' path='doc/member[@name="ID2D1EffectImpl.Initialize"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1EffectImpl : ID2D1EffectImpl.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Initialize(ID2D1EffectContext* effectContext, ID2D1TransformGraph* transformGraph)
     {
-        return ((delegate* unmanaged<ID2D1EffectImpl*, ID2D1EffectContext*, ID2D1TransformGraph*, int>)(lpVtbl[3]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), effectContext, transformGraph);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectImpl*, ID2D1EffectContext*, ID2D1TransformGraph*, int>)(lpVtbl[3]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), effectContext, transformGraph);
     }
 
     /// <include file='ID2D1EffectImpl.xml' path='doc/member[@name="ID2D1EffectImpl.PrepareForRender"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1EffectImpl : ID2D1EffectImpl.Interface, INativ
     [VtblIndex(4)]
     public HRESULT PrepareForRender(D2D1_CHANGE_TYPE changeType)
     {
-        return ((delegate* unmanaged<ID2D1EffectImpl*, D2D1_CHANGE_TYPE, int>)(lpVtbl[4]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), changeType);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectImpl*, D2D1_CHANGE_TYPE, int>)(lpVtbl[4]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), changeType);
     }
 
     /// <include file='ID2D1EffectImpl.xml' path='doc/member[@name="ID2D1EffectImpl.SetGraph"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID2D1EffectImpl : ID2D1EffectImpl.Interface, INativ
     [VtblIndex(5)]
     public HRESULT SetGraph(ID2D1TransformGraph* transformGraph)
     {
-        return ((delegate* unmanaged<ID2D1EffectImpl*, ID2D1TransformGraph*, int>)(lpVtbl[5]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), transformGraph);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectImpl*, ID2D1TransformGraph*, int>)(lpVtbl[5]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), transformGraph);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,21 +87,21 @@ public unsafe partial struct ID2D1EffectImpl : ID2D1EffectImpl.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ID2D1EffectContext *, ID2D1TransformGraph *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1EffectContext*, ID2D1TransformGraph*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1EffectContext*, ID2D1TransformGraph*, int> Initialize;
 
         [NativeTypeName("HRESULT (D2D1_CHANGE_TYPE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_CHANGE_TYPE, int> PrepareForRender;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_CHANGE_TYPE, int> PrepareForRender;
 
         [NativeTypeName("HRESULT (ID2D1TransformGraph *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1TransformGraph*, int> SetGraph;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1TransformGraph*, int> SetGraph;
     }
 }

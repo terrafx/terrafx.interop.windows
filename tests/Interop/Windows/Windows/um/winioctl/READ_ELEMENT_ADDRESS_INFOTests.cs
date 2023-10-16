@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="READ_ELEMENT_ADDRESS_INFO" /> struct.</summary>
 public static unsafe partial class READ_ELEMENT_ADDRESS_INFOTests
 {
-    /// <summary>Validates that the <see cref="READ_ELEMENT_ADDRESS_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<READ_ELEMENT_ADDRESS_INFO>(), Is.EqualTo(sizeof(READ_ELEMENT_ADDRESS_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="READ_ELEMENT_ADDRESS_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(READ_ELEMENT_ADDRESS_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="READ_ELEMENT_ADDRESS_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(READ_ELEMENT_ADDRESS_INFO), Is.EqualTo(104));
-    }
 }

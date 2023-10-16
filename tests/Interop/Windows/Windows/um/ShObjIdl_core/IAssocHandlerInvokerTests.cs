@@ -19,32 +19,4 @@ public static unsafe partial class IAssocHandlerInvokerTests
     {
         Assert.That(typeof(IAssocHandlerInvoker).GUID, Is.EqualTo(IID_IAssocHandlerInvoker));
     }
-
-    /// <summary>Validates that the <see cref="IAssocHandlerInvoker" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAssocHandlerInvoker>(), Is.EqualTo(sizeof(IAssocHandlerInvoker)));
-    }
-
-    /// <summary>Validates that the <see cref="IAssocHandlerInvoker" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAssocHandlerInvoker).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAssocHandlerInvoker" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAssocHandlerInvoker), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAssocHandlerInvoker), Is.EqualTo(4));
-        }
-    }
 }

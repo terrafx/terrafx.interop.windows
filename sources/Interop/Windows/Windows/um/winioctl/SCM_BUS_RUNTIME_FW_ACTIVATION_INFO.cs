@@ -55,7 +55,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
         public uint FwManagedIoQuiesceFwActivationSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x1u;
             }
@@ -72,7 +72,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
         public uint OsManagedIoQuiesceFwActivationSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 1) & 0x1u;
             }
@@ -89,7 +89,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
         public uint WarmResetBasedFwActivationSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 2) & 0x1u;
             }
@@ -106,7 +106,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 3) & 0x1FFFFFFFu;
             }

@@ -19,25 +19,4 @@ public static unsafe partial class ShellTests
     {
         Assert.That(typeof(Shell).GUID, Is.EqualTo(IID_Shell));
     }
-
-    /// <summary>Validates that the <see cref="Shell" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<Shell>(), Is.EqualTo(sizeof(Shell)));
-    }
-
-    /// <summary>Validates that the <see cref="Shell" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(Shell).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="Shell" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(Shell), Is.EqualTo(1));
-    }
 }

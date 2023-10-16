@@ -25,7 +25,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITrayDeskBand*, Guid*, void**, int>)(lpVtbl[0]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITrayDeskBand*, Guid*, void**, int>)(lpVtbl[0]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITrayDeskBand*, uint>)(lpVtbl[1]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITrayDeskBand*, uint>)(lpVtbl[1]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITrayDeskBand*, uint>)(lpVtbl[2]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITrayDeskBand*, uint>)(lpVtbl[2]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITrayDeskBand.xml' path='doc/member[@name="ITrayDeskBand.ShowDeskBand"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT ShowDeskBand([NativeTypeName("const IID &")] Guid* clsid)
     {
-        return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[3]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
+        return ((delegate* unmanaged[MemberFunction]<ITrayDeskBand*, Guid*, int>)(lpVtbl[3]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
     }
 
     /// <include file='ITrayDeskBand.xml' path='doc/member[@name="ITrayDeskBand.HideDeskBand"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT HideDeskBand([NativeTypeName("const IID &")] Guid* clsid)
     {
-        return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[4]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
+        return ((delegate* unmanaged[MemberFunction]<ITrayDeskBand*, Guid*, int>)(lpVtbl[4]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
     }
 
     /// <include file='ITrayDeskBand.xml' path='doc/member[@name="ITrayDeskBand.IsDeskBandShown"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT IsDeskBandShown([NativeTypeName("const IID &")] Guid* clsid)
     {
-        return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[5]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
+        return ((delegate* unmanaged[MemberFunction]<ITrayDeskBand*, Guid*, int>)(lpVtbl[5]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
     }
 
     /// <include file='ITrayDeskBand.xml' path='doc/member[@name="ITrayDeskBand.DeskBandRegistrationChanged"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT DeskBandRegistrationChanged()
     {
-        return ((delegate* unmanaged<ITrayDeskBand*, int>)(lpVtbl[6]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITrayDeskBand*, int>)(lpVtbl[6]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> ShowDeskBand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> ShowDeskBand;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> HideDeskBand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> HideDeskBand;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> IsDeskBandShown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> IsDeskBandShown;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DeskBandRegistrationChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DeskBandRegistrationChanged;
     }
 }

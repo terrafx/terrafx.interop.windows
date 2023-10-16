@@ -25,7 +25,7 @@ public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMCrossbar*, Guid*, void**, int>)(lpVtbl[0]))((IAMCrossbar*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMCrossbar*, Guid*, void**, int>)(lpVtbl[0]))((IAMCrossbar*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMCrossbar*, uint>)(lpVtbl[1]))((IAMCrossbar*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMCrossbar*, uint>)(lpVtbl[1]))((IAMCrossbar*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMCrossbar*, uint>)(lpVtbl[2]))((IAMCrossbar*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMCrossbar*, uint>)(lpVtbl[2]))((IAMCrossbar*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMCrossbar.xml' path='doc/member[@name="IAMCrossbar.get_PinCounts"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT get_PinCounts([NativeTypeName("long *")] int* OutputPinCount, [NativeTypeName("long *")] int* InputPinCount)
     {
-        return ((delegate* unmanaged<IAMCrossbar*, int*, int*, int>)(lpVtbl[3]))((IAMCrossbar*)Unsafe.AsPointer(ref this), OutputPinCount, InputPinCount);
+        return ((delegate* unmanaged[MemberFunction]<IAMCrossbar*, int*, int*, int>)(lpVtbl[3]))((IAMCrossbar*)Unsafe.AsPointer(ref this), OutputPinCount, InputPinCount);
     }
 
     /// <include file='IAMCrossbar.xml' path='doc/member[@name="IAMCrossbar.CanRoute"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT CanRoute([NativeTypeName("long")] int OutputPinIndex, [NativeTypeName("long")] int InputPinIndex)
     {
-        return ((delegate* unmanaged<IAMCrossbar*, int, int, int>)(lpVtbl[4]))((IAMCrossbar*)Unsafe.AsPointer(ref this), OutputPinIndex, InputPinIndex);
+        return ((delegate* unmanaged[MemberFunction]<IAMCrossbar*, int, int, int>)(lpVtbl[4]))((IAMCrossbar*)Unsafe.AsPointer(ref this), OutputPinIndex, InputPinIndex);
     }
 
     /// <include file='IAMCrossbar.xml' path='doc/member[@name="IAMCrossbar.Route"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT Route([NativeTypeName("long")] int OutputPinIndex, [NativeTypeName("long")] int InputPinIndex)
     {
-        return ((delegate* unmanaged<IAMCrossbar*, int, int, int>)(lpVtbl[5]))((IAMCrossbar*)Unsafe.AsPointer(ref this), OutputPinIndex, InputPinIndex);
+        return ((delegate* unmanaged[MemberFunction]<IAMCrossbar*, int, int, int>)(lpVtbl[5]))((IAMCrossbar*)Unsafe.AsPointer(ref this), OutputPinIndex, InputPinIndex);
     }
 
     /// <include file='IAMCrossbar.xml' path='doc/member[@name="IAMCrossbar.get_IsRoutedTo"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT get_IsRoutedTo([NativeTypeName("long")] int OutputPinIndex, [NativeTypeName("long *")] int* InputPinIndex)
     {
-        return ((delegate* unmanaged<IAMCrossbar*, int, int*, int>)(lpVtbl[6]))((IAMCrossbar*)Unsafe.AsPointer(ref this), OutputPinIndex, InputPinIndex);
+        return ((delegate* unmanaged[MemberFunction]<IAMCrossbar*, int, int*, int>)(lpVtbl[6]))((IAMCrossbar*)Unsafe.AsPointer(ref this), OutputPinIndex, InputPinIndex);
     }
 
     /// <include file='IAMCrossbar.xml' path='doc/member[@name="IAMCrossbar.get_CrossbarPinInfo"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_CrossbarPinInfo(BOOL IsInputPin, [NativeTypeName("long")] int PinIndex, [NativeTypeName("long *")] int* PinIndexRelated, [NativeTypeName("long *")] int* PhysicalType)
     {
-        return ((delegate* unmanaged<IAMCrossbar*, BOOL, int, int*, int*, int>)(lpVtbl[7]))((IAMCrossbar*)Unsafe.AsPointer(ref this), IsInputPin, PinIndex, PinIndexRelated, PhysicalType);
+        return ((delegate* unmanaged[MemberFunction]<IAMCrossbar*, BOOL, int, int*, int*, int>)(lpVtbl[7]))((IAMCrossbar*)Unsafe.AsPointer(ref this), IsInputPin, PinIndex, PinIndexRelated, PhysicalType);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> get_PinCounts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> get_PinCounts;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> CanRoute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> CanRoute;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> Route;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> Route;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> get_IsRoutedTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> get_IsRoutedTo;
 
         [NativeTypeName("HRESULT (BOOL, long, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int, int*, int*, int> get_CrossbarPinInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int, int*, int*, int> get_CrossbarPinInfo;
     }
 }

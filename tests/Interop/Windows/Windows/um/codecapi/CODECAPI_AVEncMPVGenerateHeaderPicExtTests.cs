@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMPVGenerateHeaderPicExtTests
     {
         Assert.That(typeof(CODECAPI_AVEncMPVGenerateHeaderPicExt).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVGenerateHeaderPicExt));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicExt" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPVGenerateHeaderPicExt>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPVGenerateHeaderPicExt)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicExt" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMPVGenerateHeaderPicExt).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicExt" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMPVGenerateHeaderPicExt), Is.EqualTo(1));
-    }
 }

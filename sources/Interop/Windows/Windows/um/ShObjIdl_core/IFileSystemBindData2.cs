@@ -25,7 +25,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFileSystemBindData2*, uint>)(lpVtbl[1]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData2*, uint>)(lpVtbl[1]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFileSystemBindData2*, uint>)(lpVtbl[2]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData2*, uint>)(lpVtbl[2]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IFileSystemBindData.SetFindData" />
@@ -51,7 +51,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
     [VtblIndex(3)]
     public HRESULT SetFindData([NativeTypeName("const WIN32_FIND_DATAW *")] WIN32_FIND_DATAW* pfd)
     {
-        return ((delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int>)(lpVtbl[3]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pfd);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData2*, WIN32_FIND_DATAW*, int>)(lpVtbl[3]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pfd);
     }
 
     /// <inheritdoc cref="IFileSystemBindData.GetFindData" />
@@ -59,7 +59,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
     [VtblIndex(4)]
     public HRESULT GetFindData(WIN32_FIND_DATAW* pfd)
     {
-        return ((delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int>)(lpVtbl[4]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pfd);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData2*, WIN32_FIND_DATAW*, int>)(lpVtbl[4]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pfd);
     }
 
     /// <include file='IFileSystemBindData2.xml' path='doc/member[@name="IFileSystemBindData2.SetFileID"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
     [VtblIndex(5)]
     public HRESULT SetFileID(LARGE_INTEGER liFileID)
     {
-        return ((delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER, int>)(lpVtbl[5]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), liFileID);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData2*, LARGE_INTEGER, int>)(lpVtbl[5]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), liFileID);
     }
 
     /// <include file='IFileSystemBindData2.xml' path='doc/member[@name="IFileSystemBindData2.GetFileID"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
     [VtblIndex(6)]
     public HRESULT GetFileID(LARGE_INTEGER* pliFileID)
     {
-        return ((delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER*, int>)(lpVtbl[6]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pliFileID);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData2*, LARGE_INTEGER*, int>)(lpVtbl[6]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pliFileID);
     }
 
     /// <include file='IFileSystemBindData2.xml' path='doc/member[@name="IFileSystemBindData2.SetJunctionCLSID"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
     [VtblIndex(7)]
     public HRESULT SetJunctionCLSID([NativeTypeName("const IID &")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, int>)(lpVtbl[7]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), clsid);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData2*, Guid*, int>)(lpVtbl[7]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), clsid);
     }
 
     /// <include file='IFileSystemBindData2.xml' path='doc/member[@name="IFileSystemBindData2.GetJunctionCLSID"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
     [VtblIndex(8)]
     public HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
     {
-        return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, int>)(lpVtbl[8]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pclsid);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemBindData2*, Guid*, int>)(lpVtbl[8]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pclsid);
     }
 
     public interface Interface : IFileSystemBindData.Interface
@@ -113,30 +113,30 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const WIN32_FIND_DATAW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WIN32_FIND_DATAW*, int> SetFindData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WIN32_FIND_DATAW*, int> SetFindData;
 
         [NativeTypeName("HRESULT (WIN32_FIND_DATAW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WIN32_FIND_DATAW*, int> GetFindData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WIN32_FIND_DATAW*, int> GetFindData;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LARGE_INTEGER, int> SetFileID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LARGE_INTEGER, int> SetFileID;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LARGE_INTEGER*, int> GetFileID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LARGE_INTEGER*, int> GetFileID;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetJunctionCLSID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetJunctionCLSID;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetJunctionCLSID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetJunctionCLSID;
     }
 }

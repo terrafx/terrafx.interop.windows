@@ -19,14 +19,14 @@ public unsafe partial struct PACKAGE_ID
     public PACKAGE_VERSION version;
 
     [NativeTypeName("PWSTR")]
-    public ushort* name;
+    public char* name;
 
     [NativeTypeName("PWSTR")]
-    public ushort* publisher;
+    public char* publisher;
 
     [NativeTypeName("PWSTR")]
-    public ushort* resourceId;
+    public char* resourceId;
 
     [NativeTypeName("PWSTR")]
-    public ushort* publisherId;
+    public char* publisherId;
 }

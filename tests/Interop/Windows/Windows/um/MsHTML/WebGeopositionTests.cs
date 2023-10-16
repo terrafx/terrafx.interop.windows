@@ -19,25 +19,4 @@ public static unsafe partial class WebGeopositionTests
     {
         Assert.That(typeof(WebGeoposition).GUID, Is.EqualTo(IID_WebGeoposition));
     }
-
-    /// <summary>Validates that the <see cref="WebGeoposition" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WebGeoposition>(), Is.EqualTo(sizeof(WebGeoposition)));
-    }
-
-    /// <summary>Validates that the <see cref="WebGeoposition" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WebGeoposition).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WebGeoposition" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WebGeoposition), Is.EqualTo(1));
-    }
 }

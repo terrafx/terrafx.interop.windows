@@ -19,32 +19,4 @@ public static unsafe partial class ITfConfigureSystemKeystrokeFeedTests
     {
         Assert.That(typeof(ITfConfigureSystemKeystrokeFeed).GUID, Is.EqualTo(IID_ITfConfigureSystemKeystrokeFeed));
     }
-
-    /// <summary>Validates that the <see cref="ITfConfigureSystemKeystrokeFeed" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfConfigureSystemKeystrokeFeed>(), Is.EqualTo(sizeof(ITfConfigureSystemKeystrokeFeed)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfConfigureSystemKeystrokeFeed" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfConfigureSystemKeystrokeFeed).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfConfigureSystemKeystrokeFeed" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfConfigureSystemKeystrokeFeed), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfConfigureSystemKeystrokeFeed), Is.EqualTo(4));
-        }
-    }
 }

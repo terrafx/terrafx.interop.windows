@@ -18,7 +18,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x7F, 0x41, 0x27, 0xEE,
                 0x28, 0x5E,
                 0x65, 0x4E,
@@ -30,7 +30,7 @@ public static partial class D3D12
                 0x08,
                 0xAD,
                 0xC9
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x12, 0x5F, 0x69, 0x86,
                 0x0E, 0x34,
                 0x04, 0x4F,
@@ -55,7 +55,7 @@ public static partial class D3D12
                 0x32,
                 0x74,
                 0x60
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -68,7 +68,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x68, 0xBE, 0x81, 0x1B,
                 0xC7, 0xA0,
                 0xD3, 0x11,
@@ -80,7 +80,7 @@ public static partial class D3D12
                 0x2E,
                 0x73,
                 0xC5
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -93,7 +93,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDA, 0xE8, 0x9B, 0xD7,
                 0xF1, 0x0C,
                 0x81, 0x4C,
@@ -105,7 +105,7 @@ public static partial class D3D12
                 0x36,
                 0xF4,
                 0x3D
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -118,7 +118,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xBB, 0xCC, 0xAA, 0xF9,
                 0xB6, 0xC2,
                 0xFC, 0x4C,
@@ -130,7 +130,7 @@ public static partial class D3D12
                 0x76,
                 0x05,
                 0x52
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -143,7 +143,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x82, 0x9D, 0x5B, 0x70,
                 0xCF, 0x76,
                 0xD6, 0x49,
@@ -155,7 +155,7 @@ public static partial class D3D12
                 0xDB,
                 0x01,
                 0x3C
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -168,7 +168,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA3, 0xBE, 0x81, 0x1B,
                 0xC7, 0xA0,
                 0xD3, 0x11,
@@ -180,7 +180,7 @@ public static partial class D3D12
                 0x2E,
                 0x73,
                 0xC5
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -193,7 +193,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA4, 0xBE, 0x81, 0x1B,
                 0xC7, 0xA0,
                 0xD3, 0x11,
@@ -205,7 +205,7 @@ public static partial class D3D12
                 0x2E,
                 0x73,
                 0xC5
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -218,7 +218,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x74, 0x4D, 0xD6, 0xEF,
                 0xE8, 0xC9,
                 0xD7, 0x41,
@@ -230,7 +230,7 @@ public static partial class D3D12
                 0x9F,
                 0xA3,
                 0x19
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -243,7 +243,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x9F, 0x8A, 0x41, 0xED,
                 0x0D, 0x01,
                 0xDA, 0x4E,
@@ -255,7 +255,7 @@ public static partial class D3D12
                 0x8D,
                 0x8D,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -268,7 +268,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x1B, 0xD5, 0x11, 0x5B,
                 0x4C, 0x2F,
                 0x52, 0x44,
@@ -280,7 +280,7 @@ public static partial class D3D12
                 0x16,
                 0x0C,
                 0xC0
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -293,7 +293,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xE0, 0xF0, 0x7A, 0x10,
                 0x1A, 0xEF,
                 0x19, 0x4D,
@@ -305,7 +305,7 @@ public static partial class D3D12
                 0x07,
                 0x3D,
                 0x13
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -318,7 +318,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xF8, 0x07, 0x37, 0x46,
                 0xD0, 0xA1,
                 0x85, 0x45,
@@ -330,7 +330,7 @@ public static partial class D3D12
                 0x60,
                 0xB8,
                 0x9E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -343,7 +343,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xEF, 0x49, 0xC7, 0xA4,
                 0xCF, 0x6E,
                 0xAA, 0x48,
@@ -355,7 +355,7 @@ public static partial class D3D12
                 0x16,
                 0x5F,
                 0xF7
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -368,7 +368,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xEA, 0x99, 0xB8, 0x90,
                 0x62, 0x3A,
                 0x05, 0x47,
@@ -380,7 +380,7 @@ public static partial class D3D12
                 0x27,
                 0x44,
                 0xE7
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -393,7 +393,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xCB, 0x4C, 0xBE, 0xB8,
                 0x53, 0xCF,
                 0xBA, 0x46,
@@ -405,7 +405,7 @@ public static partial class D3D12
                 0xDA,
                 0x5D,
                 0x2A
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -418,7 +418,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x0F, 0xFF, 0x36, 0x69,
                 0xB1, 0x45,
                 0x63, 0x41,
@@ -430,7 +430,7 @@ public static partial class D3D12
                 0x94,
                 0x61,
                 0x08
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -443,7 +443,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA1, 0x2A, 0x5F, 0x0C,
                 0x41, 0xE5,
                 0x89, 0x40,
@@ -455,7 +455,7 @@ public static partial class D3D12
                 0x19,
                 0xD7,
                 0xC8
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -468,7 +468,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x09, 0x70, 0x12, 0x17,
                 0x0F, 0xA0,
                 0xE1, 0x4C,
@@ -480,7 +480,7 @@ public static partial class D3D12
                 0xF6,
                 0xF3,
                 0xF0
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -493,7 +493,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xD6, 0xBE, 0x80, 0x2D,
                 0xAC, 0x9C,
                 0x35, 0x48,
@@ -505,7 +505,7 @@ public static partial class D3D12
                 0x4F,
                 0x9E,
                 0xE8
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

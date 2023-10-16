@@ -27,7 +27,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaError*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaError*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaError*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaError*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaError*, uint>)(lpVtbl[1]))((IMFMediaError*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaError*, uint>)(lpVtbl[1]))((IMFMediaError*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaError*, uint>)(lpVtbl[2]))((IMFMediaError*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaError*, uint>)(lpVtbl[2]))((IMFMediaError*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaError.xml' path='doc/member[@name="IMFMediaError.GetErrorCode"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface, INativeGui
     [VtblIndex(3)]
     public ushort GetErrorCode()
     {
-        return ((delegate* unmanaged<IMFMediaError*, ushort>)(lpVtbl[3]))((IMFMediaError*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaError*, ushort>)(lpVtbl[3]))((IMFMediaError*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaError.xml' path='doc/member[@name="IMFMediaError.GetExtendedErrorCode"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetExtendedErrorCode()
     {
-        return ((delegate* unmanaged<IMFMediaError*, int>)(lpVtbl[4]))((IMFMediaError*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaError*, int>)(lpVtbl[4]))((IMFMediaError*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaError.xml' path='doc/member[@name="IMFMediaError.SetErrorCode"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error)
     {
-        return ((delegate* unmanaged<IMFMediaError*, MF_MEDIA_ENGINE_ERR, int>)(lpVtbl[5]))((IMFMediaError*)Unsafe.AsPointer(ref this), error);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaError*, MF_MEDIA_ENGINE_ERR, int>)(lpVtbl[5]))((IMFMediaError*)Unsafe.AsPointer(ref this), error);
     }
 
     /// <include file='IMFMediaError.xml' path='doc/member[@name="IMFMediaError.SetExtendedErrorCode"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT SetExtendedErrorCode(HRESULT error)
     {
-        return ((delegate* unmanaged<IMFMediaError*, HRESULT, int>)(lpVtbl[6]))((IMFMediaError*)Unsafe.AsPointer(ref this), error);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaError*, HRESULT, int>)(lpVtbl[6]))((IMFMediaError*)Unsafe.AsPointer(ref this), error);
     }
 
     public interface Interface : IUnknown.Interface
@@ -99,24 +99,24 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort> GetErrorCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort> GetErrorCode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetExtendedErrorCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetExtendedErrorCode;
 
         [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_ERR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MEDIA_ENGINE_ERR, int> SetErrorCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MEDIA_ENGINE_ERR, int> SetErrorCode;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, int> SetExtendedErrorCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, int> SetExtendedErrorCode;
     }
 }

@@ -16,7 +16,7 @@ public unsafe partial struct NMCUSTOMTEXT
 
     /// <include file='NMCUSTOMTEXT.xml' path='doc/member[@name="NMCUSTOMTEXT.lpString"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpString;
+    public char* lpString;
 
     /// <include file='NMCUSTOMTEXT.xml' path='doc/member[@name="NMCUSTOMTEXT.nCount"]/*' />
     public int nCount;

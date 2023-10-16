@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="BANDSITEINFO" /> struct.</summary>
 public static unsafe partial class BANDSITEINFOTests
 {
-    /// <summary>Validates that the <see cref="BANDSITEINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BANDSITEINFO>(), Is.EqualTo(sizeof(BANDSITEINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="BANDSITEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BANDSITEINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BANDSITEINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BANDSITEINFO), Is.EqualTo(12));
-    }
 }

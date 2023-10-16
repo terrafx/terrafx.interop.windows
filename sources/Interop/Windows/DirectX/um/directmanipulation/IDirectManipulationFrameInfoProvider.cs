@@ -28,7 +28,7 @@ public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManip
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectManipulationFrameInfoProvider*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationFrameInfoProvider*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManip
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectManipulationFrameInfoProvider*, uint>)(lpVtbl[1]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationFrameInfoProvider*, uint>)(lpVtbl[1]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManip
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectManipulationFrameInfoProvider*, uint>)(lpVtbl[2]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationFrameInfoProvider*, uint>)(lpVtbl[2]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectManipulationFrameInfoProvider.xml' path='doc/member[@name="IDirectManipulationFrameInfoProvider.GetNextFrameInfo"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManip
     [VtblIndex(3)]
     public HRESULT GetNextFrameInfo([NativeTypeName("ULONGLONG *")] ulong* time, [NativeTypeName("ULONGLONG *")] ulong* processTime, [NativeTypeName("ULONGLONG *")] ulong* compositionTime)
     {
-        return ((delegate* unmanaged<IDirectManipulationFrameInfoProvider*, ulong*, ulong*, ulong*, int>)(lpVtbl[3]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this), time, processTime, compositionTime);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationFrameInfoProvider*, ulong*, ulong*, ulong*, int>)(lpVtbl[3]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this), time, processTime, compositionTime);
     }
 
     public interface Interface : IUnknown.Interface
@@ -67,15 +67,15 @@ public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManip
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONGLONG *, ULONGLONG *, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, ulong*, ulong*, int> GetNextFrameInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, ulong*, ulong*, int> GetNextFrameInfo;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ITextStoreACPSinkExTests
     {
         Assert.That(typeof(ITextStoreACPSinkEx).GUID, Is.EqualTo(IID_ITextStoreACPSinkEx));
     }
-
-    /// <summary>Validates that the <see cref="ITextStoreACPSinkEx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITextStoreACPSinkEx>(), Is.EqualTo(sizeof(ITextStoreACPSinkEx)));
-    }
-
-    /// <summary>Validates that the <see cref="ITextStoreACPSinkEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITextStoreACPSinkEx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITextStoreACPSinkEx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITextStoreACPSinkEx), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITextStoreACPSinkEx), Is.EqualTo(4));
-        }
-    }
 }

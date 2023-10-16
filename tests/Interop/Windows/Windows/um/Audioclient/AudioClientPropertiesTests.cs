@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0.22621.0")]
 public static unsafe partial class AudioClientPropertiesTests
 {
-    /// <summary>Validates that the <see cref="AudioClientProperties" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AudioClientProperties>(), Is.EqualTo(sizeof(AudioClientProperties)));
-    }
-
-    /// <summary>Validates that the <see cref="AudioClientProperties" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AudioClientProperties).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AudioClientProperties" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AudioClientProperties), Is.EqualTo(16));
-    }
 }

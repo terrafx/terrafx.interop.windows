@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationTransition : IUIAnimationTransition.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationTransition*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransition*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationTransition : IUIAnimationTransition.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationTransition*, uint>)(lpVtbl[1]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransition*, uint>)(lpVtbl[1]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationTransition : IUIAnimationTransition.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationTransition*, uint>)(lpVtbl[2]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransition*, uint>)(lpVtbl[2]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTransition.xml' path='doc/member[@name="IUIAnimationTransition.SetInitialValue"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationTransition : IUIAnimationTransition.Int
     [VtblIndex(3)]
     public HRESULT SetInitialValue(double value)
     {
-        return ((delegate* unmanaged<IUIAnimationTransition*, double, int>)(lpVtbl[3]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransition*, double, int>)(lpVtbl[3]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IUIAnimationTransition.xml' path='doc/member[@name="IUIAnimationTransition.SetInitialVelocity"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUIAnimationTransition : IUIAnimationTransition.Int
     [VtblIndex(4)]
     public HRESULT SetInitialVelocity(double velocity)
     {
-        return ((delegate* unmanaged<IUIAnimationTransition*, double, int>)(lpVtbl[4]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), velocity);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransition*, double, int>)(lpVtbl[4]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), velocity);
     }
 
     /// <include file='IUIAnimationTransition.xml' path='doc/member[@name="IUIAnimationTransition.IsDurationKnown"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IUIAnimationTransition : IUIAnimationTransition.Int
     [VtblIndex(5)]
     public HRESULT IsDurationKnown()
     {
-        return ((delegate* unmanaged<IUIAnimationTransition*, int>)(lpVtbl[5]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransition*, int>)(lpVtbl[5]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTransition.xml' path='doc/member[@name="IUIAnimationTransition.GetDuration"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IUIAnimationTransition : IUIAnimationTransition.Int
     [VtblIndex(6)]
     public HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration)
     {
-        return ((delegate* unmanaged<IUIAnimationTransition*, double*, int>)(lpVtbl[6]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), duration);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransition*, double*, int>)(lpVtbl[6]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), duration);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IUIAnimationTransition : IUIAnimationTransition.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetInitialValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetInitialValue;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetInitialVelocity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetInitialVelocity;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsDurationKnown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsDurationKnown;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetDuration;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpac
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlFolderCapabilities*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpac
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, uint>)(lpVtbl[1]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlFolderCapabilities*, uint>)(lpVtbl[1]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpac
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, uint>)(lpVtbl[2]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlFolderCapabilities*, uint>)(lpVtbl[2]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INameSpaceTreeControlFolderCapabilities.xml' path='doc/member[@name="INameSpaceTreeControlFolderCapabilities.GetFolderCapabilities"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpac
     [VtblIndex(3)]
     public HRESULT GetFolderCapabilities(NSTCFOLDERCAPABILITIES nfcMask, NSTCFOLDERCAPABILITIES* pnfcValue)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES*, int>)(lpVtbl[3]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this), nfcMask, pnfcValue);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlFolderCapabilities*, NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES*, int>)(lpVtbl[3]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this), nfcMask, pnfcValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpac
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES*, int> GetFolderCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES*, int> GetFolderCapabilities;
     }
 }

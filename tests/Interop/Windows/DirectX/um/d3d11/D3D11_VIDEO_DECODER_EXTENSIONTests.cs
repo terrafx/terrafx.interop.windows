@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class D3D11_VIDEO_DECODER_EXTENSIONTests
 {
-    /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_EXTENSION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D11_VIDEO_DECODER_EXTENSION>(), Is.EqualTo(sizeof(D3D11_VIDEO_DECODER_EXTENSION)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_EXTENSION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D11_VIDEO_DECODER_EXTENSION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_EXTENSION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(D3D11_VIDEO_DECODER_EXTENSION), Is.EqualTo(48));
-        }
-        else
-        {
-            Assert.That(sizeof(D3D11_VIDEO_DECODER_EXTENSION), Is.EqualTo(28));
-        }
-    }
 }

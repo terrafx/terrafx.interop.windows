@@ -28,7 +28,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, uint>)(lpVtbl[1]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, uint>)(lpVtbl[1]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, uint>)(lpVtbl[2]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, uint>)(lpVtbl[2]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
@@ -54,7 +54,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
@@ -62,7 +62,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, pUnknown);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
@@ -70,7 +70,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetParent" />
@@ -78,7 +78,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), riid, ppParent);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
     /// <include file='IDXGIOutputDuplication.xml' path='doc/member[@name="IDXGIOutputDuplication.GetDesc"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(7)]
     public void GetDesc(DXGI_OUTDUPL_DESC* pDesc)
     {
-        ((delegate* unmanaged<IDXGIOutputDuplication*, DXGI_OUTDUPL_DESC*, void>)(lpVtbl[7]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), pDesc);
+        ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, DXGI_OUTDUPL_DESC*, void>)(lpVtbl[7]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='IDXGIOutputDuplication.xml' path='doc/member[@name="IDXGIOutputDuplication.AcquireNextFrame"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(8)]
     public HRESULT AcquireNextFrame(uint TimeoutInMilliseconds, DXGI_OUTDUPL_FRAME_INFO* pFrameInfo, IDXGIResource** ppDesktopResource)
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, uint, DXGI_OUTDUPL_FRAME_INFO*, IDXGIResource**, int>)(lpVtbl[8]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), TimeoutInMilliseconds, pFrameInfo, ppDesktopResource);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, uint, DXGI_OUTDUPL_FRAME_INFO*, IDXGIResource**, int>)(lpVtbl[8]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), TimeoutInMilliseconds, pFrameInfo, ppDesktopResource);
     }
 
     /// <include file='IDXGIOutputDuplication.xml' path='doc/member[@name="IDXGIOutputDuplication.GetFrameDirtyRects"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(9)]
     public HRESULT GetFrameDirtyRects(uint DirtyRectsBufferSize, RECT* pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, uint, RECT*, uint*, int>)(lpVtbl[9]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, uint, RECT*, uint*, int>)(lpVtbl[9]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
     }
 
     /// <include file='IDXGIOutputDuplication.xml' path='doc/member[@name="IDXGIOutputDuplication.GetFrameMoveRects"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(10)]
     public HRESULT GetFrameMoveRects(uint MoveRectsBufferSize, DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer, uint* pMoveRectsBufferSizeRequired)
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, uint, DXGI_OUTDUPL_MOVE_RECT*, uint*, int>)(lpVtbl[10]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), MoveRectsBufferSize, pMoveRectBuffer, pMoveRectsBufferSizeRequired);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, uint, DXGI_OUTDUPL_MOVE_RECT*, uint*, int>)(lpVtbl[10]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), MoveRectsBufferSize, pMoveRectBuffer, pMoveRectsBufferSizeRequired);
     }
 
     /// <include file='IDXGIOutputDuplication.xml' path='doc/member[@name="IDXGIOutputDuplication.GetFramePointerShape"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(11)]
     public HRESULT GetFramePointerShape(uint PointerShapeBufferSize, void* pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, DXGI_OUTDUPL_POINTER_SHAPE_INFO* pPointerShapeInfo)
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, uint, void*, uint*, DXGI_OUTDUPL_POINTER_SHAPE_INFO*, int>)(lpVtbl[11]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequired, pPointerShapeInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, uint, void*, uint*, DXGI_OUTDUPL_POINTER_SHAPE_INFO*, int>)(lpVtbl[11]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequired, pPointerShapeInfo);
     }
 
     /// <include file='IDXGIOutputDuplication.xml' path='doc/member[@name="IDXGIOutputDuplication.MapDesktopSurface"]/*' />
@@ -126,7 +126,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(12)]
     public HRESULT MapDesktopSurface(DXGI_MAPPED_RECT* pLockedRect)
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, DXGI_MAPPED_RECT*, int>)(lpVtbl[12]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), pLockedRect);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, DXGI_MAPPED_RECT*, int>)(lpVtbl[12]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), pLockedRect);
     }
 
     /// <include file='IDXGIOutputDuplication.xml' path='doc/member[@name="IDXGIOutputDuplication.UnMapDesktopSurface"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(13)]
     public HRESULT UnMapDesktopSurface()
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, int>)(lpVtbl[13]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, int>)(lpVtbl[13]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXGIOutputDuplication.xml' path='doc/member[@name="IDXGIOutputDuplication.ReleaseFrame"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(14)]
     public HRESULT ReleaseFrame()
     {
-        return ((delegate* unmanaged<IDXGIOutputDuplication*, int>)(lpVtbl[14]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutputDuplication*, int>)(lpVtbl[14]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDXGIObject.Interface
@@ -176,48 +176,48 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("void (DXGI_OUTDUPL_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_OUTDUPL_DESC*, void> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_OUTDUPL_DESC*, void> GetDesc;
 
         [NativeTypeName("HRESULT (UINT, DXGI_OUTDUPL_FRAME_INFO *, IDXGIResource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DXGI_OUTDUPL_FRAME_INFO*, IDXGIResource**, int> AcquireNextFrame;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DXGI_OUTDUPL_FRAME_INFO*, IDXGIResource**, int> AcquireNextFrame;
 
         [NativeTypeName("HRESULT (UINT, RECT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, RECT*, uint*, int> GetFrameDirtyRects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, RECT*, uint*, int> GetFrameDirtyRects;
 
         [NativeTypeName("HRESULT (UINT, DXGI_OUTDUPL_MOVE_RECT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DXGI_OUTDUPL_MOVE_RECT*, uint*, int> GetFrameMoveRects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DXGI_OUTDUPL_MOVE_RECT*, uint*, int> GetFrameMoveRects;
 
         [NativeTypeName("HRESULT (UINT, void *, UINT *, DXGI_OUTDUPL_POINTER_SHAPE_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, uint*, DXGI_OUTDUPL_POINTER_SHAPE_INFO*, int> GetFramePointerShape;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, uint*, DXGI_OUTDUPL_POINTER_SHAPE_INFO*, int> GetFramePointerShape;
 
         [NativeTypeName("HRESULT (DXGI_MAPPED_RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_MAPPED_RECT*, int> MapDesktopSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_MAPPED_RECT*, int> MapDesktopSurface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UnMapDesktopSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UnMapDesktopSurface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ReleaseFrame;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ReleaseFrame;
     }
 }

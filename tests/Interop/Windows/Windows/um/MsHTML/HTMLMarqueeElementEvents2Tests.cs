@@ -19,32 +19,4 @@ public static unsafe partial class HTMLMarqueeElementEvents2Tests
     {
         Assert.That(typeof(HTMLMarqueeElementEvents2).GUID, Is.EqualTo(IID_HTMLMarqueeElementEvents2));
     }
-
-    /// <summary>Validates that the <see cref="HTMLMarqueeElementEvents2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLMarqueeElementEvents2>(), Is.EqualTo(sizeof(HTMLMarqueeElementEvents2)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMarqueeElementEvents2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLMarqueeElementEvents2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMarqueeElementEvents2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(HTMLMarqueeElementEvents2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(HTMLMarqueeElementEvents2), Is.EqualTo(4));
-        }
-    }
 }

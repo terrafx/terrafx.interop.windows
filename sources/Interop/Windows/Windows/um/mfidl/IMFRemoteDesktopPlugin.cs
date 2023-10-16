@@ -25,7 +25,7 @@ public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFRemoteDesktopPlugin*, Guid*, void**, int>)(lpVtbl[0]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFRemoteDesktopPlugin*, Guid*, void**, int>)(lpVtbl[0]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFRemoteDesktopPlugin*, uint>)(lpVtbl[1]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRemoteDesktopPlugin*, uint>)(lpVtbl[1]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFRemoteDesktopPlugin*, uint>)(lpVtbl[2]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRemoteDesktopPlugin*, uint>)(lpVtbl[2]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFRemoteDesktopPlugin.xml' path='doc/member[@name="IMFRemoteDesktopPlugin.UpdateTopology"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Int
     [VtblIndex(3)]
     public HRESULT UpdateTopology(IMFTopology* pTopology)
     {
-        return ((delegate* unmanaged<IMFRemoteDesktopPlugin*, IMFTopology*, int>)(lpVtbl[3]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this), pTopology);
+        return ((delegate* unmanaged[MemberFunction]<IMFRemoteDesktopPlugin*, IMFTopology*, int>)(lpVtbl[3]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this), pTopology);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFTopology *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFTopology*, int> UpdateTopology;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFTopology*, int> UpdateTopology;
     }
 }

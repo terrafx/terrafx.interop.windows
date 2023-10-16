@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MS_ADDINFO_FLAT" /> struct.</summary>
 public static unsafe partial class MS_ADDINFO_FLATTests
 {
-    /// <summary>Validates that the <see cref="MS_ADDINFO_FLAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MS_ADDINFO_FLAT>(), Is.EqualTo(sizeof(MS_ADDINFO_FLAT)));
-    }
-
-    /// <summary>Validates that the <see cref="MS_ADDINFO_FLAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MS_ADDINFO_FLAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MS_ADDINFO_FLAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(MS_ADDINFO_FLAT), Is.EqualTo(16));
-        }
-        else
-        {
-            Assert.That(sizeof(MS_ADDINFO_FLAT), Is.EqualTo(8));
-        }
-    }
 }

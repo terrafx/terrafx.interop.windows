@@ -25,7 +25,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMDevMemoryControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMDevMemoryControl*, uint>)(lpVtbl[1]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryControl*, uint>)(lpVtbl[1]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMDevMemoryControl*, uint>)(lpVtbl[2]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryControl*, uint>)(lpVtbl[2]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMDevMemoryControl.xml' path='doc/member[@name="IAMDevMemoryControl.QueryWriteSync"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
     [VtblIndex(3)]
     public HRESULT QueryWriteSync()
     {
-        return ((delegate* unmanaged<IAMDevMemoryControl*, int>)(lpVtbl[3]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryControl*, int>)(lpVtbl[3]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMDevMemoryControl.xml' path='doc/member[@name="IAMDevMemoryControl.WriteSync"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
     [VtblIndex(4)]
     public HRESULT WriteSync()
     {
-        return ((delegate* unmanaged<IAMDevMemoryControl*, int>)(lpVtbl[4]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryControl*, int>)(lpVtbl[4]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMDevMemoryControl.xml' path='doc/member[@name="IAMDevMemoryControl.GetDevId"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
     [VtblIndex(5)]
     public HRESULT GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId)
     {
-        return ((delegate* unmanaged<IAMDevMemoryControl*, uint*, int>)(lpVtbl[5]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), pdwDevId);
+        return ((delegate* unmanaged[MemberFunction]<IAMDevMemoryControl*, uint*, int>)(lpVtbl[5]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), pdwDevId);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> QueryWriteSync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> QueryWriteSync;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> WriteSync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> WriteSync;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetDevId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetDevId;
     }
 }

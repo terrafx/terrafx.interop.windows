@@ -19,32 +19,4 @@ public static unsafe partial class ITfTextLayoutSinkTests
     {
         Assert.That(typeof(ITfTextLayoutSink).GUID, Is.EqualTo(IID_ITfTextLayoutSink));
     }
-
-    /// <summary>Validates that the <see cref="ITfTextLayoutSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfTextLayoutSink>(), Is.EqualTo(sizeof(ITfTextLayoutSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfTextLayoutSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfTextLayoutSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfTextLayoutSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfTextLayoutSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfTextLayoutSink), Is.EqualTo(4));
-        }
-    }
 }

@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DIDEVICEIMAGEINFOHEADERW" /> struct.</summary>
 public static unsafe partial class DIDEVICEIMAGEINFOHEADERWTests
 {
-    /// <summary>Validates that the <see cref="DIDEVICEIMAGEINFOHEADERW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DIDEVICEIMAGEINFOHEADERW>(), Is.EqualTo(sizeof(DIDEVICEIMAGEINFOHEADERW)));
-    }
-
-    /// <summary>Validates that the <see cref="DIDEVICEIMAGEINFOHEADERW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DIDEVICEIMAGEINFOHEADERW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DIDEVICEIMAGEINFOHEADERW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DIDEVICEIMAGEINFOHEADERW), Is.EqualTo(40));
-        }
-        else
-        {
-            Assert.That(sizeof(DIDEVICEIMAGEINFOHEADERW), Is.EqualTo(36));
-        }
-    }
 }

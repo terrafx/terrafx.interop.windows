@@ -19,32 +19,4 @@ public static unsafe partial class IRendezvousApplicationTests
     {
         Assert.That(typeof(IRendezvousApplication).GUID, Is.EqualTo(IID_IRendezvousApplication));
     }
-
-    /// <summary>Validates that the <see cref="IRendezvousApplication" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRendezvousApplication>(), Is.EqualTo(sizeof(IRendezvousApplication)));
-    }
-
-    /// <summary>Validates that the <see cref="IRendezvousApplication" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRendezvousApplication).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRendezvousApplication" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRendezvousApplication), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRendezvousApplication), Is.EqualTo(4));
-        }
-    }
 }

@@ -8,10 +8,10 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FILEPATHS_SIGNERINFO64_W
 {
     [NativeTypeName("PCWSTR")]
-    public ushort* Target;
+    public char* Target;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* Source;
+    public char* Source;
 
     public uint Win32Error;
 
@@ -19,11 +19,11 @@ public unsafe partial struct FILEPATHS_SIGNERINFO64_W
     public uint Flags;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* DigitalSigner;
+    public char* DigitalSigner;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* Version;
+    public char* Version;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* CatalogFile;
+    public char* CatalogFile;
 }

@@ -13,7 +13,7 @@ public unsafe partial struct SPPHRASEREPLACEMENT
 
     /// <include file='SPPHRASEREPLACEMENT.xml' path='doc/member[@name="SPPHRASEREPLACEMENT.pszReplacementText"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszReplacementText;
+    public char* pszReplacementText;
 
     /// <include file='SPPHRASEREPLACEMENT.xml' path='doc/member[@name="SPPHRASEREPLACEMENT.ulFirstElement"]/*' />
     [NativeTypeName("ULONG")]

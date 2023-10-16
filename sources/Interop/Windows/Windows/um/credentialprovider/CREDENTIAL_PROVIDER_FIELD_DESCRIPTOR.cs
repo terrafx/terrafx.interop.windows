@@ -19,7 +19,7 @@ public unsafe partial struct CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR
 
     /// <include file='CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR.pszLabel"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszLabel;
+    public char* pszLabel;
 
     /// <include file='CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR.guidFieldType"]/*' />
     public Guid guidFieldType;

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PPM_WMI_LEGACY_PERFSTATE" /> struct.</summary>
 public static unsafe partial class PPM_WMI_LEGACY_PERFSTATETests
 {
-    /// <summary>Validates that the <see cref="PPM_WMI_LEGACY_PERFSTATE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PPM_WMI_LEGACY_PERFSTATE>(), Is.EqualTo(sizeof(PPM_WMI_LEGACY_PERFSTATE)));
-    }
-
-    /// <summary>Validates that the <see cref="PPM_WMI_LEGACY_PERFSTATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PPM_WMI_LEGACY_PERFSTATE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PPM_WMI_LEGACY_PERFSTATE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PPM_WMI_LEGACY_PERFSTATE), Is.EqualTo(12));
-    }
 }

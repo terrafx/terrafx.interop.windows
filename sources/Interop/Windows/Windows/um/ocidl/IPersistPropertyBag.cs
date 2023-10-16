@@ -25,7 +25,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPersistPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPersistPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPersistPropertyBag*, uint>)(lpVtbl[1]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistPropertyBag*, uint>)(lpVtbl[1]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPersistPropertyBag*, uint>)(lpVtbl[2]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistPropertyBag*, uint>)(lpVtbl[2]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPersist.GetClassID" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
     {
-        return ((delegate* unmanaged<IPersistPropertyBag*, Guid*, int>)(lpVtbl[3]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pClassID);
+        return ((delegate* unmanaged[MemberFunction]<IPersistPropertyBag*, Guid*, int>)(lpVtbl[3]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pClassID);
     }
 
     /// <include file='IPersistPropertyBag.xml' path='doc/member[@name="IPersistPropertyBag.InitNew"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
     [VtblIndex(4)]
     public HRESULT InitNew()
     {
-        return ((delegate* unmanaged<IPersistPropertyBag*, int>)(lpVtbl[4]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistPropertyBag*, int>)(lpVtbl[4]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPersistPropertyBag.xml' path='doc/member[@name="IPersistPropertyBag.Load"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
     [VtblIndex(5)]
     public HRESULT Load(IPropertyBag* pPropBag, IErrorLog* pErrorLog)
     {
-        return ((delegate* unmanaged<IPersistPropertyBag*, IPropertyBag*, IErrorLog*, int>)(lpVtbl[5]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, pErrorLog);
+        return ((delegate* unmanaged[MemberFunction]<IPersistPropertyBag*, IPropertyBag*, IErrorLog*, int>)(lpVtbl[5]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, pErrorLog);
     }
 
     /// <include file='IPersistPropertyBag.xml' path='doc/member[@name="IPersistPropertyBag.Save"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
     [VtblIndex(6)]
     public HRESULT Save(IPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)
     {
-        return ((delegate* unmanaged<IPersistPropertyBag*, IPropertyBag*, BOOL, BOOL, int>)(lpVtbl[6]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
+        return ((delegate* unmanaged[MemberFunction]<IPersistPropertyBag*, IPropertyBag*, BOOL, BOOL, int>)(lpVtbl[6]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
     }
 
     public interface Interface : IPersist.Interface
@@ -94,24 +94,24 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> InitNew;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> InitNew;
 
         [NativeTypeName("HRESULT (IPropertyBag *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyBag*, IErrorLog*, int> Load;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyBag*, IErrorLog*, int> Load;
 
         [NativeTypeName("HRESULT (IPropertyBag *, BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyBag*, BOOL, BOOL, int> Save;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyBag*, BOOL, BOOL, int> Save;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IMFLocalMFTRegistration : IMFLocalMFTRegistration.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFLocalMFTRegistration*, Guid*, void**, int>)(lpVtbl[0]))((IMFLocalMFTRegistration*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFLocalMFTRegistration*, Guid*, void**, int>)(lpVtbl[0]))((IMFLocalMFTRegistration*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFLocalMFTRegistration : IMFLocalMFTRegistration.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFLocalMFTRegistration*, uint>)(lpVtbl[1]))((IMFLocalMFTRegistration*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFLocalMFTRegistration*, uint>)(lpVtbl[1]))((IMFLocalMFTRegistration*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFLocalMFTRegistration : IMFLocalMFTRegistration.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFLocalMFTRegistration*, uint>)(lpVtbl[2]))((IMFLocalMFTRegistration*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFLocalMFTRegistration*, uint>)(lpVtbl[2]))((IMFLocalMFTRegistration*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFLocalMFTRegistration.xml' path='doc/member[@name="IMFLocalMFTRegistration.RegisterMFTs"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFLocalMFTRegistration : IMFLocalMFTRegistration.I
     [VtblIndex(3)]
     public HRESULT RegisterMFTs(MFT_REGISTRATION_INFO* pMFTs, [NativeTypeName("DWORD")] uint cMFTs)
     {
-        return ((delegate* unmanaged<IMFLocalMFTRegistration*, MFT_REGISTRATION_INFO*, uint, int>)(lpVtbl[3]))((IMFLocalMFTRegistration*)Unsafe.AsPointer(ref this), pMFTs, cMFTs);
+        return ((delegate* unmanaged[MemberFunction]<IMFLocalMFTRegistration*, MFT_REGISTRATION_INFO*, uint, int>)(lpVtbl[3]))((IMFLocalMFTRegistration*)Unsafe.AsPointer(ref this), pMFTs, cMFTs);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFLocalMFTRegistration : IMFLocalMFTRegistration.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFT_REGISTRATION_INFO *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFT_REGISTRATION_INFO*, uint, int> RegisterMFTs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFT_REGISTRATION_INFO*, uint, int> RegisterMFTs;
     }
 }

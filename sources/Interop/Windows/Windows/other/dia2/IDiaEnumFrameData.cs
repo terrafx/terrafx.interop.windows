@@ -25,7 +25,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, uint>)(lpVtbl[1]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, uint>)(lpVtbl[1]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, uint>)(lpVtbl[2]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, uint>)(lpVtbl[2]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaEnumFrameData.xml' path='doc/member[@name="IDiaEnumFrameData.get__NewEnum"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [VtblIndex(3)]
     public HRESULT get__NewEnum(IUnknown** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaEnumFrameData.xml' path='doc/member[@name="IDiaEnumFrameData.get_Count"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [VtblIndex(4)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, int*, int>)(lpVtbl[4]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, int*, int>)(lpVtbl[4]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaEnumFrameData.xml' path='doc/member[@name="IDiaEnumFrameData.Item"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [VtblIndex(5)]
     public HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaFrameData** frame)
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, uint, IDiaFrameData**, int>)(lpVtbl[5]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), index, frame);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, uint, IDiaFrameData**, int>)(lpVtbl[5]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), index, frame);
     }
 
     /// <include file='IDiaEnumFrameData.xml' path='doc/member[@name="IDiaEnumFrameData.Next"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaFrameData** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, uint, IDiaFrameData**, uint*, int>)(lpVtbl[6]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, uint, IDiaFrameData**, uint*, int>)(lpVtbl[6]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IDiaEnumFrameData.xml' path='doc/member[@name="IDiaEnumFrameData.Skip"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [VtblIndex(7)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, uint, int>)(lpVtbl[7]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, uint, int>)(lpVtbl[7]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IDiaEnumFrameData.xml' path='doc/member[@name="IDiaEnumFrameData.Reset"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [VtblIndex(8)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, int>)(lpVtbl[8]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, int>)(lpVtbl[8]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaEnumFrameData.xml' path='doc/member[@name="IDiaEnumFrameData.Clone"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [VtblIndex(9)]
     public HRESULT Clone(IDiaEnumFrameData** ppenum)
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, IDiaEnumFrameData**, int>)(lpVtbl[9]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, IDiaEnumFrameData**, int>)(lpVtbl[9]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     /// <include file='IDiaEnumFrameData.xml' path='doc/member[@name="IDiaEnumFrameData.frameByRVA"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [VtblIndex(10)]
     public HRESULT frameByRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, IDiaFrameData** frame)
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, uint, IDiaFrameData**, int>)(lpVtbl[10]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), relativeVirtualAddress, frame);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, uint, IDiaFrameData**, int>)(lpVtbl[10]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), relativeVirtualAddress, frame);
     }
 
     /// <include file='IDiaEnumFrameData.xml' path='doc/member[@name="IDiaEnumFrameData.frameByVA"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
     [VtblIndex(11)]
     public HRESULT frameByVA([NativeTypeName("ULONGLONG")] ulong virtualAddress, IDiaFrameData** frame)
     {
-        return ((delegate* unmanaged<IDiaEnumFrameData*, ulong, IDiaFrameData**, int>)(lpVtbl[11]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), virtualAddress, frame);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumFrameData*, ulong, IDiaFrameData**, int>)(lpVtbl[11]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), virtualAddress, frame);
     }
 
     public interface Interface : IUnknown.Interface
@@ -152,39 +152,39 @@ public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Count;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (DWORD, IDiaFrameData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaFrameData**, int> Item;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaFrameData**, int> Item;
 
         [NativeTypeName("HRESULT (ULONG, IDiaFrameData **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaFrameData**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaFrameData**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IDiaEnumFrameData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaEnumFrameData**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaEnumFrameData**, int> Clone;
 
         [NativeTypeName("HRESULT (DWORD, IDiaFrameData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaFrameData**, int> frameByRVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaFrameData**, int> frameByRVA;
 
         [NativeTypeName("HRESULT (ULONGLONG, IDiaFrameData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, IDiaFrameData**, int> frameByVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, IDiaFrameData**, int> frameByVA;
     }
 }

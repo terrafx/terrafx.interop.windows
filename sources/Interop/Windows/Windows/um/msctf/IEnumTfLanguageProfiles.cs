@@ -25,7 +25,7 @@ public unsafe partial struct IEnumTfLanguageProfiles : IEnumTfLanguageProfiles.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumTfLanguageProfiles*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLanguageProfiles*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumTfLanguageProfiles : IEnumTfLanguageProfiles.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumTfLanguageProfiles*, uint>)(lpVtbl[1]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLanguageProfiles*, uint>)(lpVtbl[1]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumTfLanguageProfiles : IEnumTfLanguageProfiles.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumTfLanguageProfiles*, uint>)(lpVtbl[2]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLanguageProfiles*, uint>)(lpVtbl[2]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfLanguageProfiles.xml' path='doc/member[@name="IEnumTfLanguageProfiles.Clone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumTfLanguageProfiles : IEnumTfLanguageProfiles.I
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfLanguageProfiles** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumTfLanguageProfiles*, IEnumTfLanguageProfiles**, int>)(lpVtbl[3]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLanguageProfiles*, IEnumTfLanguageProfiles**, int>)(lpVtbl[3]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IEnumTfLanguageProfiles.xml' path='doc/member[@name="IEnumTfLanguageProfiles.Next"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumTfLanguageProfiles : IEnumTfLanguageProfiles.I
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_LANGUAGEPROFILE* pProfile, [NativeTypeName("ULONG *")] uint* pcFetch)
     {
-        return ((delegate* unmanaged<IEnumTfLanguageProfiles*, uint, TF_LANGUAGEPROFILE*, uint*, int>)(lpVtbl[4]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this), ulCount, pProfile, pcFetch);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLanguageProfiles*, uint, TF_LANGUAGEPROFILE*, uint*, int>)(lpVtbl[4]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this), ulCount, pProfile, pcFetch);
     }
 
     /// <include file='IEnumTfLanguageProfiles.xml' path='doc/member[@name="IEnumTfLanguageProfiles.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumTfLanguageProfiles : IEnumTfLanguageProfiles.I
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumTfLanguageProfiles*, int>)(lpVtbl[5]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLanguageProfiles*, int>)(lpVtbl[5]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfLanguageProfiles.xml' path='doc/member[@name="IEnumTfLanguageProfiles.Skip"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumTfLanguageProfiles : IEnumTfLanguageProfiles.I
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
     {
-        return ((delegate* unmanaged<IEnumTfLanguageProfiles*, uint, int>)(lpVtbl[6]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this), ulCount);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLanguageProfiles*, uint, int>)(lpVtbl[6]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this), ulCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumTfLanguageProfiles : IEnumTfLanguageProfiles.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfLanguageProfiles **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfLanguageProfiles**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfLanguageProfiles**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, TF_LANGUAGEPROFILE *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, TF_LANGUAGEPROFILE*, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, TF_LANGUAGEPROFILE*, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
     }
 }

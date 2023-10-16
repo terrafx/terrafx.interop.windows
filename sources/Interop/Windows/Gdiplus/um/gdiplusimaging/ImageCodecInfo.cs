@@ -19,23 +19,23 @@ public unsafe partial struct ImageCodecInfo
 
     /// <include file='ImageCodecInfo.xml' path='doc/member[@name="ImageCodecInfo.CodecName"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* CodecName;
+    public char* CodecName;
 
     /// <include file='ImageCodecInfo.xml' path='doc/member[@name="ImageCodecInfo.DllName"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* DllName;
+    public char* DllName;
 
     /// <include file='ImageCodecInfo.xml' path='doc/member[@name="ImageCodecInfo.FormatDescription"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* FormatDescription;
+    public char* FormatDescription;
 
     /// <include file='ImageCodecInfo.xml' path='doc/member[@name="ImageCodecInfo.FilenameExtension"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* FilenameExtension;
+    public char* FilenameExtension;
 
     /// <include file='ImageCodecInfo.xml' path='doc/member[@name="ImageCodecInfo.MimeType"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* MimeType;
+    public char* MimeType;
 
     /// <include file='ImageCodecInfo.xml' path='doc/member[@name="ImageCodecInfo.Flags"]/*' />
     [NativeTypeName("DWORD")]

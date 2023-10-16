@@ -21,32 +21,4 @@ public static unsafe partial class IMarshalingStreamTests
     {
         Assert.That(typeof(IMarshalingStream).GUID, Is.EqualTo(IID_IMarshalingStream));
     }
-
-    /// <summary>Validates that the <see cref="IMarshalingStream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMarshalingStream>(), Is.EqualTo(sizeof(IMarshalingStream)));
-    }
-
-    /// <summary>Validates that the <see cref="IMarshalingStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMarshalingStream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMarshalingStream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMarshalingStream), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMarshalingStream), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IMFOutputSchemaTests
     {
         Assert.That(typeof(IMFOutputSchema).GUID, Is.EqualTo(IID_IMFOutputSchema));
     }
-
-    /// <summary>Validates that the <see cref="IMFOutputSchema" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFOutputSchema>(), Is.EqualTo(sizeof(IMFOutputSchema)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFOutputSchema" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFOutputSchema).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFOutputSchema" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFOutputSchema), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFOutputSchema), Is.EqualTo(4));
-        }
-    }
 }

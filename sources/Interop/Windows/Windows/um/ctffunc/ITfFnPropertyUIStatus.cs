@@ -25,7 +25,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPropertyUIStatus*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfFnPropertyUIStatus*, uint>)(lpVtbl[1]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPropertyUIStatus*, uint>)(lpVtbl[1]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfFnPropertyUIStatus*, uint>)(lpVtbl[2]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPropertyUIStatus*, uint>)(lpVtbl[2]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnPropertyUIStatus*, ushort**, int>)(lpVtbl[3]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPropertyUIStatus*, char**, int>)(lpVtbl[3]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnPropertyUIStatus.xml' path='doc/member[@name="ITfFnPropertyUIStatus.GetStatus"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
     [VtblIndex(4)]
     public HRESULT GetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD *")] uint* pdw)
     {
-        return ((delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint*, int>)(lpVtbl[4]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), refguidProp, pdw);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPropertyUIStatus*, Guid*, uint*, int>)(lpVtbl[4]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), refguidProp, pdw);
     }
 
     /// <include file='ITfFnPropertyUIStatus.xml' path='doc/member[@name="ITfFnPropertyUIStatus.SetStatus"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
     [VtblIndex(5)]
     public HRESULT SetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD")] uint dw)
     {
-        return ((delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint, int>)(lpVtbl[5]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), refguidProp, dw);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPropertyUIStatus*, Guid*, uint, int>)(lpVtbl[5]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), refguidProp, dw);
     }
 
     public interface Interface : ITfFunction.Interface
@@ -83,21 +83,21 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, int> GetStatus;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, int> SetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, int> SetStatus;
     }
 }

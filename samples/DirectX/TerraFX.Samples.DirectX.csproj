@@ -3,8 +3,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- CA1303: Do not pass literals as localized parameters -->
+    <NoWarn>$(NoWarn);CA1303</NoWarn>
+  </PropertyGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\..\sources\Interop\Windows\TerraFX.Interop.Windows.csproj" />
   </ItemGroup>

@@ -3,8 +3,6 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -47,7 +45,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         public ushort AllowScaling
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return Anonymous.AllowScaling;
             }
@@ -63,7 +61,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         public ushort Disabled
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return Anonymous.Disabled;
             }
@@ -79,7 +77,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         public ushort Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return Anonymous.Reserved;
             }
@@ -101,7 +99,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
             public ushort AllowScaling
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (ushort)(_bitfield & 0x1u);
                 }
@@ -118,7 +116,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
             public ushort Disabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (ushort)((_bitfield >> 1) & 0x1u);
                 }
@@ -135,7 +133,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
             public ushort Reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (ushort)((_bitfield >> 2) & 0x3FFFu);
                 }
@@ -150,24 +148,9 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
     }
 
     /// <include file='_Policy_e__FixedBuffer.xml' path='doc/member[@name="_Policy_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
     public partial struct _Policy_e__FixedBuffer
     {
         public PROCESSOR_IDLESTATE_INFO e0;
-        public PROCESSOR_IDLESTATE_INFO e1;
-        public PROCESSOR_IDLESTATE_INFO e2;
-
-        [UnscopedRef]
-        public ref PROCESSOR_IDLESTATE_INFO this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<PROCESSOR_IDLESTATE_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

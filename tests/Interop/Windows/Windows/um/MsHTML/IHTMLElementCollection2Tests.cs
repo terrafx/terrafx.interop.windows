@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLElementCollection2Tests
     {
         Assert.That(typeof(IHTMLElementCollection2).GUID, Is.EqualTo(IID_IHTMLElementCollection2));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLElementCollection2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLElementCollection2>(), Is.EqualTo(sizeof(IHTMLElementCollection2)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLElementCollection2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLElementCollection2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLElementCollection2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLElementCollection2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLElementCollection2), Is.EqualTo(4));
-        }
-    }
 }

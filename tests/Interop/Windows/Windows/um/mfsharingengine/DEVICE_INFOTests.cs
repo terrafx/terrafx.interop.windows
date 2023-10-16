@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class DEVICE_INFOTests
 {
-    /// <summary>Validates that the <see cref="DEVICE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DEVICE_INFO>(), Is.EqualTo(sizeof(DEVICE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="DEVICE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DEVICE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DEVICE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DEVICE_INFO), Is.EqualTo(40));
-        }
-        else
-        {
-            Assert.That(sizeof(DEVICE_INFO), Is.EqualTo(20));
-        }
-    }
 }

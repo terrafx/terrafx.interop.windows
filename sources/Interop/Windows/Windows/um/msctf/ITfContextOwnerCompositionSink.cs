@@ -25,7 +25,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, uint>)(lpVtbl[1]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionSink*, uint>)(lpVtbl[1]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, uint>)(lpVtbl[2]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionSink*, uint>)(lpVtbl[2]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfContextOwnerCompositionSink.xml' path='doc/member[@name="ITfContextOwnerCompositionSink.OnStartComposition"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
     [VtblIndex(3)]
     public HRESULT OnStartComposition(ITfCompositionView* pComposition, BOOL* pfOk)
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, BOOL*, int>)(lpVtbl[3]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition, pfOk);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionSink*, ITfCompositionView*, BOOL*, int>)(lpVtbl[3]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition, pfOk);
     }
 
     /// <include file='ITfContextOwnerCompositionSink.xml' path='doc/member[@name="ITfContextOwnerCompositionSink.OnUpdateComposition"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
     [VtblIndex(4)]
     public HRESULT OnUpdateComposition(ITfCompositionView* pComposition, ITfRange* pRangeNew)
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, ITfRange*, int>)(lpVtbl[4]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition, pRangeNew);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionSink*, ITfCompositionView*, ITfRange*, int>)(lpVtbl[4]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition, pRangeNew);
     }
 
     /// <include file='ITfContextOwnerCompositionSink.xml' path='doc/member[@name="ITfContextOwnerCompositionSink.OnEndComposition"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
     [VtblIndex(5)]
     public HRESULT OnEndComposition(ITfCompositionView* pComposition)
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, int>)(lpVtbl[5]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionSink*, ITfCompositionView*, int>)(lpVtbl[5]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfCompositionView *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfCompositionView*, BOOL*, int> OnStartComposition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfCompositionView*, BOOL*, int> OnStartComposition;
 
         [NativeTypeName("HRESULT (ITfCompositionView *, ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfCompositionView*, ITfRange*, int> OnUpdateComposition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfCompositionView*, ITfRange*, int> OnUpdateComposition;
 
         [NativeTypeName("HRESULT (ITfCompositionView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfCompositionView*, int> OnEndComposition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfCompositionView*, int> OnEndComposition;
     }
 }

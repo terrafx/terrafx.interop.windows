@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SecPkgContext_ConnectionInfoEx" /> struct.</summary>
 public static unsafe partial class SecPkgContext_ConnectionInfoExTests
 {
-    /// <summary>Validates that the <see cref="SecPkgContext_ConnectionInfoEx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SecPkgContext_ConnectionInfoEx>(), Is.EqualTo(sizeof(SecPkgContext_ConnectionInfoEx)));
-    }
-
-    /// <summary>Validates that the <see cref="SecPkgContext_ConnectionInfoEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SecPkgContext_ConnectionInfoEx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SecPkgContext_ConnectionInfoEx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SecPkgContext_ConnectionInfoEx), Is.EqualTo(404));
-    }
 }

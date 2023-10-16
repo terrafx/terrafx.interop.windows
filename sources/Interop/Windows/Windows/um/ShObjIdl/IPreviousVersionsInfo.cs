@@ -25,7 +25,7 @@ public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPreviousVersionsInfo*, Guid*, void**, int>)(lpVtbl[0]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPreviousVersionsInfo*, Guid*, void**, int>)(lpVtbl[0]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPreviousVersionsInfo*, uint>)(lpVtbl[1]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPreviousVersionsInfo*, uint>)(lpVtbl[1]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPreviousVersionsInfo*, uint>)(lpVtbl[2]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPreviousVersionsInfo*, uint>)(lpVtbl[2]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPreviousVersionsInfo.xml' path='doc/member[@name="IPreviousVersionsInfo.AreSnapshotsAvailable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable)
+    public HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] char* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable)
     {
-        return ((delegate* unmanaged<IPreviousVersionsInfo*, ushort*, BOOL, BOOL*, int>)(lpVtbl[3]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this), pszPath, fOkToBeSlow, pfAvailable);
+        return ((delegate* unmanaged[MemberFunction]<IPreviousVersionsInfo*, char*, BOOL, BOOL*, int>)(lpVtbl[3]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this), pszPath, fOkToBeSlow, pfAvailable);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable);
+        HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] char* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL, BOOL*, int> AreSnapshotsAvailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, BOOL, BOOL*, int> AreSnapshotsAvailable;
     }
 }

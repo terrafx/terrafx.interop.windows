@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PBRANGE" /> struct.</summary>
 public static unsafe partial class PBRANGETests
 {
-    /// <summary>Validates that the <see cref="PBRANGE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PBRANGE>(), Is.EqualTo(sizeof(PBRANGE)));
-    }
-
-    /// <summary>Validates that the <see cref="PBRANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PBRANGE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PBRANGE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PBRANGE), Is.EqualTo(8));
-    }
 }

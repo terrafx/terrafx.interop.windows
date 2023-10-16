@@ -19,7 +19,7 @@ public unsafe partial struct TCITEMHEADERW
 
     /// <include file='TCITEMHEADERW.xml' path='doc/member[@name="TCITEMHEADERW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='TCITEMHEADERW.xml' path='doc/member[@name="TCITEMHEADERW.cchTextMax"]/*' />
     public int cchTextMax;

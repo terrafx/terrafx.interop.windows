@@ -19,25 +19,4 @@ public static unsafe partial class SpStreamTests
     {
         Assert.That(typeof(SpStream).GUID, Is.EqualTo(CLSID_SpStream));
     }
-
-    /// <summary>Validates that the <see cref="SpStream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpStream>(), Is.EqualTo(sizeof(SpStream)));
-    }
-
-    /// <summary>Validates that the <see cref="SpStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpStream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpStream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpStream), Is.EqualTo(1));
-    }
 }

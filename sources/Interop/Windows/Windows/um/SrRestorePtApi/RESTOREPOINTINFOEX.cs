@@ -28,5 +28,5 @@ public unsafe partial struct RESTOREPOINTINFOEX
 
     /// <include file='RESTOREPOINTINFOEX.xml' path='doc/member[@name="RESTOREPOINTINFOEX.szDescription"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort szDescription[256];
+    public fixed char szDescription[256];
 }

@@ -29,7 +29,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -38,7 +38,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, uint>)(lpVtbl[1]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, uint>)(lpVtbl[1]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -47,7 +47,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, uint>)(lpVtbl[2]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, uint>)(lpVtbl[2]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -55,7 +55,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -63,7 +63,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, HSTRING*, int>)(lpVtbl[4]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, HSTRING*, int>)(lpVtbl[4]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -71,7 +71,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop.CreateDirect3D12ContentBufferResource"]/*' />
@@ -79,7 +79,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [VtblIndex(6)]
     public HRESULT CreateDirect3D12ContentBufferResource(ID3D12Device* pDevice, D3D12_RESOURCE_DESC* pTexture2DDesc, ID3D12Resource** ppTexture2DResource)
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12Resource**, int>)(lpVtbl[6]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pDevice, pTexture2DDesc, ppTexture2DResource);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12Resource**, int>)(lpVtbl[6]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pDevice, pTexture2DDesc, ppTexture2DResource);
     }
 
     /// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop.CreateDirect3D12HardwareProtectedContentBufferResource"]/*' />
@@ -87,7 +87,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [VtblIndex(7)]
     public HRESULT CreateDirect3D12HardwareProtectedContentBufferResource(ID3D12Device* pDevice, D3D12_RESOURCE_DESC* pTexture2DDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ID3D12Resource** ppCreatedTexture2DResource)
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12ProtectedResourceSession*, ID3D12Resource**, int>)(lpVtbl[7]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pDevice, pTexture2DDesc, pProtectedResourceSession, ppCreatedTexture2DResource);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12ProtectedResourceSession*, ID3D12Resource**, int>)(lpVtbl[7]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pDevice, pTexture2DDesc, pProtectedResourceSession, ppCreatedTexture2DResource);
     }
 
     /// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop.AcquireDirect3D12BufferResource"]/*' />
@@ -95,7 +95,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [VtblIndex(8)]
     public HRESULT AcquireDirect3D12BufferResource(ID3D12Resource* pResourceToAcquire, ID3D12CommandQueue* pCommandQueue)
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, ID3D12Resource*, ID3D12CommandQueue*, int>)(lpVtbl[8]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pResourceToAcquire, pCommandQueue);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, ID3D12Resource*, ID3D12CommandQueue*, int>)(lpVtbl[8]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pResourceToAcquire, pCommandQueue);
     }
 
     /// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop.AcquireDirect3D12BufferResourceWithTimeout"]/*' />
@@ -103,7 +103,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [VtblIndex(9)]
     public HRESULT AcquireDirect3D12BufferResourceWithTimeout(ID3D12Resource* pResourceToAcquire, ID3D12CommandQueue* pCommandQueue, [NativeTypeName("UINT64")] ulong duration)
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, ID3D12Resource*, ID3D12CommandQueue*, ulong, int>)(lpVtbl[9]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pResourceToAcquire, pCommandQueue, duration);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, ID3D12Resource*, ID3D12CommandQueue*, ulong, int>)(lpVtbl[9]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pResourceToAcquire, pCommandQueue, duration);
     }
 
     /// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop.UnacquireDirect3D12BufferResource"]/*' />
@@ -111,7 +111,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
     [VtblIndex(10)]
     public HRESULT UnacquireDirect3D12BufferResource(ID3D12Resource* pResourceToUnacquire)
     {
-        return ((delegate* unmanaged<IHolographicQuadLayerInterop*, ID3D12Resource*, int>)(lpVtbl[10]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pResourceToUnacquire);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicQuadLayerInterop*, ID3D12Resource*, int>)(lpVtbl[10]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pResourceToUnacquire);
     }
 
     public interface Interface : IInspectable.Interface
@@ -136,36 +136,36 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ID3D12Device *, D3D12_RESOURCE_DESC *, ID3D12Resource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12Resource**, int> CreateDirect3D12ContentBufferResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12Resource**, int> CreateDirect3D12ContentBufferResource;
 
         [NativeTypeName("HRESULT (ID3D12Device *, D3D12_RESOURCE_DESC *, ID3D12ProtectedResourceSession *, ID3D12Resource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12ProtectedResourceSession*, ID3D12Resource**, int> CreateDirect3D12HardwareProtectedContentBufferResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12ProtectedResourceSession*, ID3D12Resource**, int> CreateDirect3D12HardwareProtectedContentBufferResource;
 
         [NativeTypeName("HRESULT (ID3D12Resource *, ID3D12CommandQueue *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, ID3D12CommandQueue*, int> AcquireDirect3D12BufferResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, ID3D12CommandQueue*, int> AcquireDirect3D12BufferResource;
 
         [NativeTypeName("HRESULT (ID3D12Resource *, ID3D12CommandQueue *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, ID3D12CommandQueue*, ulong, int> AcquireDirect3D12BufferResourceWithTimeout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, ID3D12CommandQueue*, ulong, int> AcquireDirect3D12BufferResourceWithTimeout;
 
         [NativeTypeName("HRESULT (ID3D12Resource *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, int> UnacquireDirect3D12BufferResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, int> UnacquireDirect3D12BufferResource;
     }
 }

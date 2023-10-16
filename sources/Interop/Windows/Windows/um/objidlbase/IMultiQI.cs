@@ -25,7 +25,7 @@ public unsafe partial struct IMultiQI : IMultiQI.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMultiQI*, Guid*, void**, int>)(lpVtbl[0]))((IMultiQI*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMultiQI*, Guid*, void**, int>)(lpVtbl[0]))((IMultiQI*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMultiQI : IMultiQI.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMultiQI*, uint>)(lpVtbl[1]))((IMultiQI*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMultiQI*, uint>)(lpVtbl[1]))((IMultiQI*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMultiQI : IMultiQI.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMultiQI*, uint>)(lpVtbl[2]))((IMultiQI*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMultiQI*, uint>)(lpVtbl[2]))((IMultiQI*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMultiQI.xml' path='doc/member[@name="IMultiQI.QueryMultipleInterfaces"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMultiQI : IMultiQI.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT QueryMultipleInterfaces([NativeTypeName("ULONG")] uint cMQIs, MULTI_QI* pMQIs)
     {
-        return ((delegate* unmanaged<IMultiQI*, uint, MULTI_QI*, int>)(lpVtbl[3]))((IMultiQI*)Unsafe.AsPointer(ref this), cMQIs, pMQIs);
+        return ((delegate* unmanaged[MemberFunction]<IMultiQI*, uint, MULTI_QI*, int>)(lpVtbl[3]))((IMultiQI*)Unsafe.AsPointer(ref this), cMQIs, pMQIs);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMultiQI : IMultiQI.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, MULTI_QI *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, MULTI_QI*, int> QueryMultipleInterfaces;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, MULTI_QI*, int> QueryMultipleInterfaces;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfSourceSingle*, Guid*, void**, int>)(lpVtbl[0]))((ITfSourceSingle*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfSourceSingle*, Guid*, void**, int>)(lpVtbl[0]))((ITfSourceSingle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfSourceSingle*, uint>)(lpVtbl[1]))((ITfSourceSingle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSourceSingle*, uint>)(lpVtbl[1]))((ITfSourceSingle*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfSourceSingle*, uint>)(lpVtbl[2]))((ITfSourceSingle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSourceSingle*, uint>)(lpVtbl[2]))((ITfSourceSingle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfSourceSingle.xml' path='doc/member[@name="ITfSourceSingle.AdviseSingleSink"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface, INativ
     [VtblIndex(3)]
     public HRESULT AdviseSingleSink([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
     {
-        return ((delegate* unmanaged<ITfSourceSingle*, uint, Guid*, IUnknown*, int>)(lpVtbl[3]))((ITfSourceSingle*)Unsafe.AsPointer(ref this), tid, riid, punk);
+        return ((delegate* unmanaged[MemberFunction]<ITfSourceSingle*, uint, Guid*, IUnknown*, int>)(lpVtbl[3]))((ITfSourceSingle*)Unsafe.AsPointer(ref this), tid, riid, punk);
     }
 
     /// <include file='ITfSourceSingle.xml' path='doc/member[@name="ITfSourceSingle.UnadviseSingleSink"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface, INativ
     [VtblIndex(4)]
     public HRESULT UnadviseSingleSink([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const IID &")] Guid* riid)
     {
-        return ((delegate* unmanaged<ITfSourceSingle*, uint, Guid*, int>)(lpVtbl[4]))((ITfSourceSingle*)Unsafe.AsPointer(ref this), tid, riid);
+        return ((delegate* unmanaged[MemberFunction]<ITfSourceSingle*, uint, Guid*, int>)(lpVtbl[4]))((ITfSourceSingle*)Unsafe.AsPointer(ref this), tid, riid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId, const IID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, IUnknown*, int> AdviseSingleSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, IUnknown*, int> AdviseSingleSink;
 
         [NativeTypeName("HRESULT (TfClientId, const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, int> UnadviseSingleSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, int> UnadviseSingleSink;
     }
 }

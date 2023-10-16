@@ -19,32 +19,4 @@ public static unsafe partial class IXmlWriterTests
     {
         Assert.That(typeof(IXmlWriter).GUID, Is.EqualTo(IID_IXmlWriter));
     }
-
-    /// <summary>Validates that the <see cref="IXmlWriter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IXmlWriter>(), Is.EqualTo(sizeof(IXmlWriter)));
-    }
-
-    /// <summary>Validates that the <see cref="IXmlWriter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IXmlWriter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IXmlWriter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IXmlWriter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IXmlWriter), Is.EqualTo(4));
-        }
-    }
 }

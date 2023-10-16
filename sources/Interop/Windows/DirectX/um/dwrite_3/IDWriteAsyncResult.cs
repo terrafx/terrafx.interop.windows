@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteAsyncResult : IDWriteAsyncResult.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteAsyncResult*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteAsyncResult*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteAsyncResult : IDWriteAsyncResult.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteAsyncResult*, uint>)(lpVtbl[1]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteAsyncResult*, uint>)(lpVtbl[1]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteAsyncResult : IDWriteAsyncResult.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteAsyncResult*, uint>)(lpVtbl[2]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteAsyncResult*, uint>)(lpVtbl[2]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteAsyncResult.xml' path='doc/member[@name="IDWriteAsyncResult.GetWaitHandle"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteAsyncResult : IDWriteAsyncResult.Interface, 
     [VtblIndex(3)]
     public HANDLE GetWaitHandle()
     {
-        return ((HANDLE)(((delegate* unmanaged<IDWriteAsyncResult*, void*>)(lpVtbl[3]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this))));
+        return ((HANDLE)(((delegate* unmanaged[MemberFunction]<IDWriteAsyncResult*, void*>)(lpVtbl[3]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this))));
     }
 
     /// <include file='IDWriteAsyncResult.xml' path='doc/member[@name="IDWriteAsyncResult.GetResult"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteAsyncResult : IDWriteAsyncResult.Interface, 
     [VtblIndex(4)]
     public HRESULT GetResult()
     {
-        return ((delegate* unmanaged<IDWriteAsyncResult*, int>)(lpVtbl[4]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteAsyncResult*, int>)(lpVtbl[4]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct IDWriteAsyncResult : IDWriteAsyncResult.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HANDLE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> GetWaitHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> GetWaitHandle;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetResult;
     }
 }

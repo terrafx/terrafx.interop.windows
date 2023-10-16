@@ -19,32 +19,4 @@ public static unsafe partial class IWinInetHttpTimeoutsTests
     {
         Assert.That(typeof(IWinInetHttpTimeouts).GUID, Is.EqualTo(IID_IWinInetHttpTimeouts));
     }
-
-    /// <summary>Validates that the <see cref="IWinInetHttpTimeouts" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWinInetHttpTimeouts>(), Is.EqualTo(sizeof(IWinInetHttpTimeouts)));
-    }
-
-    /// <summary>Validates that the <see cref="IWinInetHttpTimeouts" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWinInetHttpTimeouts).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWinInetHttpTimeouts" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWinInetHttpTimeouts), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWinInetHttpTimeouts), Is.EqualTo(4));
-        }
-    }
 }

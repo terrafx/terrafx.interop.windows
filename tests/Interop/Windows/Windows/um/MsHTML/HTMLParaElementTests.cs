@@ -19,25 +19,4 @@ public static unsafe partial class HTMLParaElementTests
     {
         Assert.That(typeof(HTMLParaElement).GUID, Is.EqualTo(IID_HTMLParaElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLParaElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLParaElement>(), Is.EqualTo(sizeof(HTMLParaElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLParaElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLParaElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLParaElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLParaElement), Is.EqualTo(1));
-    }
 }

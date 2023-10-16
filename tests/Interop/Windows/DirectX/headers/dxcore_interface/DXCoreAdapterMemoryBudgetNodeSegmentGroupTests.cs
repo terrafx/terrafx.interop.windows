@@ -13,24 +13,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public static unsafe partial class DXCoreAdapterMemoryBudgetNodeSegmentGroupTests
 {
-    /// <summary>Validates that the <see cref="DXCoreAdapterMemoryBudgetNodeSegmentGroup" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DXCoreAdapterMemoryBudgetNodeSegmentGroup>(), Is.EqualTo(sizeof(DXCoreAdapterMemoryBudgetNodeSegmentGroup)));
-    }
-
-    /// <summary>Validates that the <see cref="DXCoreAdapterMemoryBudgetNodeSegmentGroup" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DXCoreAdapterMemoryBudgetNodeSegmentGroup).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DXCoreAdapterMemoryBudgetNodeSegmentGroup" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DXCoreAdapterMemoryBudgetNodeSegmentGroup), Is.EqualTo(8));
-    }
 }

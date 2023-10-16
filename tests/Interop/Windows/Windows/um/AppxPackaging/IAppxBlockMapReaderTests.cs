@@ -21,32 +21,4 @@ public static unsafe partial class IAppxBlockMapReaderTests
     {
         Assert.That(typeof(IAppxBlockMapReader).GUID, Is.EqualTo(IID_IAppxBlockMapReader));
     }
-
-    /// <summary>Validates that the <see cref="IAppxBlockMapReader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxBlockMapReader>(), Is.EqualTo(sizeof(IAppxBlockMapReader)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBlockMapReader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxBlockMapReader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBlockMapReader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxBlockMapReader), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxBlockMapReader), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DXGI_GAMMA_CONTROL" /> struct.</summary>
 public static unsafe partial class DXGI_GAMMA_CONTROLTests
 {
-    /// <summary>Validates that the <see cref="DXGI_GAMMA_CONTROL" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DXGI_GAMMA_CONTROL>(), Is.EqualTo(sizeof(DXGI_GAMMA_CONTROL)));
-    }
-
-    /// <summary>Validates that the <see cref="DXGI_GAMMA_CONTROL" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DXGI_GAMMA_CONTROL).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DXGI_GAMMA_CONTROL" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DXGI_GAMMA_CONTROL), Is.EqualTo(12324));
-    }
 }

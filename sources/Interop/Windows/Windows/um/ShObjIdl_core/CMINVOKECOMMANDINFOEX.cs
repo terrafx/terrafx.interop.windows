@@ -47,19 +47,19 @@ public unsafe partial struct CMINVOKECOMMANDINFOEX
 
     /// <include file='CMINVOKECOMMANDINFOEX.xml' path='doc/member[@name="CMINVOKECOMMANDINFOEX.lpVerbW"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpVerbW;
+    public char* lpVerbW;
 
     /// <include file='CMINVOKECOMMANDINFOEX.xml' path='doc/member[@name="CMINVOKECOMMANDINFOEX.lpParametersW"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpParametersW;
+    public char* lpParametersW;
 
     /// <include file='CMINVOKECOMMANDINFOEX.xml' path='doc/member[@name="CMINVOKECOMMANDINFOEX.lpDirectoryW"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpDirectoryW;
+    public char* lpDirectoryW;
 
     /// <include file='CMINVOKECOMMANDINFOEX.xml' path='doc/member[@name="CMINVOKECOMMANDINFOEX.lpTitleW"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpTitleW;
+    public char* lpTitleW;
 
     /// <include file='CMINVOKECOMMANDINFOEX.xml' path='doc/member[@name="CMINVOKECOMMANDINFOEX.ptInvoke"]/*' />
     public POINT ptInvoke;

@@ -17,7 +17,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
     public uint EnabledByPolicy
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }
@@ -34,7 +34,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
     public uint AsRepCallbackPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 1) & 0x1u;
         }
@@ -51,7 +51,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
     public uint AsRepCallbackUsed
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 2) & 0x1u;
         }
@@ -68,7 +68,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
     public uint CloudReferralTgtAvailable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 3) & 0x1u;
         }
@@ -85,7 +85,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
     public uint SpnOracleConfigured
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 4) & 0x1u;
         }
@@ -102,7 +102,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
     public uint KdcProxyPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 5) & 0x1u;
         }
@@ -119,7 +119,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
     public uint PublicKeyCredsPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 6) & 0x1u;
         }
@@ -136,7 +136,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
     public uint PasswordKeysPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 7) & 0x1u;
         }
@@ -153,7 +153,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
     public uint PasswordPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 8) & 0x1u;
         }
@@ -170,7 +170,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA
     public uint AsRepSourceCred
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 9) & 0xFFu;
         }

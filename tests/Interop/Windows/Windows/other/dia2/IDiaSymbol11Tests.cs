@@ -19,32 +19,4 @@ public static unsafe partial class IDiaSymbol11Tests
     {
         Assert.That(typeof(IDiaSymbol11).GUID, Is.EqualTo(IID_IDiaSymbol11));
     }
-
-    /// <summary>Validates that the <see cref="IDiaSymbol11" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaSymbol11>(), Is.EqualTo(sizeof(IDiaSymbol11)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaSymbol11" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaSymbol11).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaSymbol11" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaSymbol11), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaSymbol11), Is.EqualTo(4));
-        }
-    }
 }

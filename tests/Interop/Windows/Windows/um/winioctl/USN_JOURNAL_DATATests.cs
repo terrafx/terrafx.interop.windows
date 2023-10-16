@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="USN_JOURNAL_DATA" /> struct.</summary>
 public static unsafe partial class USN_JOURNAL_DATATests
 {
-    /// <summary>Validates that the <see cref="USN_JOURNAL_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<USN_JOURNAL_DATA>(), Is.EqualTo(sizeof(USN_JOURNAL_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="USN_JOURNAL_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(USN_JOURNAL_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="USN_JOURNAL_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(USN_JOURNAL_DATA), Is.EqualTo(64));
-    }
 }

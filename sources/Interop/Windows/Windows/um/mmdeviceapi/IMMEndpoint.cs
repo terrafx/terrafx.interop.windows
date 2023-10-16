@@ -25,7 +25,7 @@ public unsafe partial struct IMMEndpoint : IMMEndpoint.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMMEndpoint*, Guid*, void**, int>)(lpVtbl[0]))((IMMEndpoint*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMMEndpoint*, Guid*, void**, int>)(lpVtbl[0]))((IMMEndpoint*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMMEndpoint : IMMEndpoint.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMMEndpoint*, uint>)(lpVtbl[1]))((IMMEndpoint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMMEndpoint*, uint>)(lpVtbl[1]))((IMMEndpoint*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMMEndpoint : IMMEndpoint.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMMEndpoint*, uint>)(lpVtbl[2]))((IMMEndpoint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMMEndpoint*, uint>)(lpVtbl[2]))((IMMEndpoint*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMMEndpoint.xml' path='doc/member[@name="IMMEndpoint.GetDataFlow"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMMEndpoint : IMMEndpoint.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetDataFlow(EDataFlow* pDataFlow)
     {
-        return ((delegate* unmanaged<IMMEndpoint*, EDataFlow*, int>)(lpVtbl[3]))((IMMEndpoint*)Unsafe.AsPointer(ref this), pDataFlow);
+        return ((delegate* unmanaged[MemberFunction]<IMMEndpoint*, EDataFlow*, int>)(lpVtbl[3]))((IMMEndpoint*)Unsafe.AsPointer(ref this), pDataFlow);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMMEndpoint : IMMEndpoint.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (EDataFlow *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, EDataFlow*, int> GetDataFlow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, EDataFlow*, int> GetDataFlow;
     }
 }

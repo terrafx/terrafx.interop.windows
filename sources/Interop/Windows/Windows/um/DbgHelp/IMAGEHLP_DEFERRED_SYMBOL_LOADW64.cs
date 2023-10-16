@@ -26,7 +26,7 @@ public unsafe partial struct IMAGEHLP_DEFERRED_SYMBOL_LOADW64
 
     /// <include file='IMAGEHLP_DEFERRED_SYMBOL_LOADW64.xml' path='doc/member[@name="IMAGEHLP_DEFERRED_SYMBOL_LOADW64.FileName"]/*' />
     [NativeTypeName("WCHAR[261]")]
-    public fixed ushort FileName[261];
+    public fixed char FileName[261];
 
     /// <include file='IMAGEHLP_DEFERRED_SYMBOL_LOADW64.xml' path='doc/member[@name="IMAGEHLP_DEFERRED_SYMBOL_LOADW64.Reparse"]/*' />
     [NativeTypeName("BOOLEAN")]

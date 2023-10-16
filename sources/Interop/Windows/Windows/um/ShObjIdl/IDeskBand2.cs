@@ -25,7 +25,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDeskBand2*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBand2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBand2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDeskBand2*, uint>)(lpVtbl[1]))((IDeskBand2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, uint>)(lpVtbl[1]))((IDeskBand2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDeskBand2*, uint>)(lpVtbl[2]))((IDeskBand2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, uint>)(lpVtbl[2]))((IDeskBand2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleWindow.GetWindow" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IDeskBand2*, HWND*, int>)(lpVtbl[3]))((IDeskBand2*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, HWND*, int>)(lpVtbl[3]))((IDeskBand2*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
     {
-        return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[4]))((IDeskBand2*)Unsafe.AsPointer(ref this), fEnterMode);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, BOOL, int>)(lpVtbl[4]))((IDeskBand2*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
     /// <inheritdoc cref="IDockingWindow.ShowDW" />
@@ -67,7 +67,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT ShowDW(BOOL fShow)
     {
-        return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[5]))((IDeskBand2*)Unsafe.AsPointer(ref this), fShow);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, BOOL, int>)(lpVtbl[5]))((IDeskBand2*)Unsafe.AsPointer(ref this), fShow);
     }
 
     /// <inheritdoc cref="IDockingWindow.CloseDW" />
@@ -75,7 +75,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT CloseDW([NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IDeskBand2*, uint, int>)(lpVtbl[6]))((IDeskBand2*)Unsafe.AsPointer(ref this), dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, uint, int>)(lpVtbl[6]))((IDeskBand2*)Unsafe.AsPointer(ref this), dwReserved);
     }
 
     /// <inheritdoc cref="IDockingWindow.ResizeBorderDW" />
@@ -83,7 +83,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved)
     {
-        return ((delegate* unmanaged<IDeskBand2*, RECT*, IUnknown*, BOOL, int>)(lpVtbl[7]))((IDeskBand2*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, RECT*, IUnknown*, BOOL, int>)(lpVtbl[7]))((IDeskBand2*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
     }
 
     /// <inheritdoc cref="IDeskBand.GetBandInfo" />
@@ -91,7 +91,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetBandInfo([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwViewMode, DESKBANDINFO* pdbi)
     {
-        return ((delegate* unmanaged<IDeskBand2*, uint, uint, DESKBANDINFO*, int>)(lpVtbl[8]))((IDeskBand2*)Unsafe.AsPointer(ref this), dwBandID, dwViewMode, pdbi);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, uint, uint, DESKBANDINFO*, int>)(lpVtbl[8]))((IDeskBand2*)Unsafe.AsPointer(ref this), dwBandID, dwViewMode, pdbi);
     }
 
     /// <include file='IDeskBand2.xml' path='doc/member[@name="IDeskBand2.CanRenderComposited"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT CanRenderComposited(BOOL* pfCanRenderComposited)
     {
-        return ((delegate* unmanaged<IDeskBand2*, BOOL*, int>)(lpVtbl[9]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCanRenderComposited);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, BOOL*, int>)(lpVtbl[9]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCanRenderComposited);
     }
 
     /// <include file='IDeskBand2.xml' path='doc/member[@name="IDeskBand2.SetCompositionState"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT SetCompositionState(BOOL fCompositionEnabled)
     {
-        return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[10]))((IDeskBand2*)Unsafe.AsPointer(ref this), fCompositionEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, BOOL, int>)(lpVtbl[10]))((IDeskBand2*)Unsafe.AsPointer(ref this), fCompositionEnabled);
     }
 
     /// <include file='IDeskBand2.xml' path='doc/member[@name="IDeskBand2.GetCompositionState"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetCompositionState(BOOL* pfCompositionEnabled)
     {
-        return ((delegate* unmanaged<IDeskBand2*, BOOL*, int>)(lpVtbl[11]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCompositionEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBand2*, BOOL*, int>)(lpVtbl[11]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCompositionEnabled);
     }
 
     public interface Interface : IDeskBand.Interface
@@ -134,39 +134,39 @@ public unsafe partial struct IDeskBand2 : IDeskBand2.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ShowDW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ShowDW;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> CloseDW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> CloseDW;
 
         [NativeTypeName("HRESULT (LPCRECT, IUnknown *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, IUnknown*, BOOL, int> ResizeBorderDW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, IUnknown*, BOOL, int> ResizeBorderDW;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DESKBANDINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, DESKBANDINFO*, int> GetBandInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, DESKBANDINFO*, int> GetBandInfo;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> CanRenderComposited;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> CanRenderComposited;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetCompositionState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetCompositionState;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetCompositionState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetCompositionState;
     }
 }

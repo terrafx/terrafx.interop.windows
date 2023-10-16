@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DEVICE_DATA_SET_SCRUB_EX_OUTPUT" /> struct.</summary>
 public static unsafe partial class DEVICE_DATA_SET_SCRUB_EX_OUTPUTTests
 {
-    /// <summary>Validates that the <see cref="DEVICE_DATA_SET_SCRUB_EX_OUTPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DEVICE_DATA_SET_SCRUB_EX_OUTPUT>(), Is.EqualTo(sizeof(DEVICE_DATA_SET_SCRUB_EX_OUTPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="DEVICE_DATA_SET_SCRUB_EX_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DEVICE_DATA_SET_SCRUB_EX_OUTPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DEVICE_DATA_SET_SCRUB_EX_OUTPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DEVICE_DATA_SET_SCRUB_EX_OUTPUT), Is.EqualTo(48));
-    }
 }

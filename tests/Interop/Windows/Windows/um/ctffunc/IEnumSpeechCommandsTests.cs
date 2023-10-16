@@ -19,32 +19,4 @@ public static unsafe partial class IEnumSpeechCommandsTests
     {
         Assert.That(typeof(IEnumSpeechCommands).GUID, Is.EqualTo(IID_IEnumSpeechCommands));
     }
-
-    /// <summary>Validates that the <see cref="IEnumSpeechCommands" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEnumSpeechCommands>(), Is.EqualTo(sizeof(IEnumSpeechCommands)));
-    }
-
-    /// <summary>Validates that the <see cref="IEnumSpeechCommands" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEnumSpeechCommands).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEnumSpeechCommands" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEnumSpeechCommands), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEnumSpeechCommands), Is.EqualTo(4));
-        }
-    }
 }

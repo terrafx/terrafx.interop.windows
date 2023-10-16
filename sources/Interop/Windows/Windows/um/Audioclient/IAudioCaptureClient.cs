@@ -25,7 +25,7 @@ public unsafe partial struct IAudioCaptureClient : IAudioCaptureClient.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioCaptureClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioCaptureClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioCaptureClient : IAudioCaptureClient.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioCaptureClient*, uint>)(lpVtbl[1]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioCaptureClient*, uint>)(lpVtbl[1]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioCaptureClient : IAudioCaptureClient.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioCaptureClient*, uint>)(lpVtbl[2]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioCaptureClient*, uint>)(lpVtbl[2]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioCaptureClient.xml' path='doc/member[@name="IAudioCaptureClient.GetBuffer"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioCaptureClient : IAudioCaptureClient.Interface
     [VtblIndex(3)]
     public HRESULT GetBuffer(byte** ppData, [NativeTypeName("UINT32 *")] uint* pNumFramesToRead, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("UINT64 *")] ulong* pu64DevicePosition, [NativeTypeName("UINT64 *")] ulong* pu64QPCPosition)
     {
-        return ((delegate* unmanaged<IAudioCaptureClient*, byte**, uint*, uint*, ulong*, ulong*, int>)(lpVtbl[3]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), ppData, pNumFramesToRead, pdwFlags, pu64DevicePosition, pu64QPCPosition);
+        return ((delegate* unmanaged[MemberFunction]<IAudioCaptureClient*, byte**, uint*, uint*, ulong*, ulong*, int>)(lpVtbl[3]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), ppData, pNumFramesToRead, pdwFlags, pu64DevicePosition, pu64QPCPosition);
     }
 
     /// <include file='IAudioCaptureClient.xml' path='doc/member[@name="IAudioCaptureClient.ReleaseBuffer"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioCaptureClient : IAudioCaptureClient.Interface
     [VtblIndex(4)]
     public HRESULT ReleaseBuffer([NativeTypeName("UINT32")] uint NumFramesRead)
     {
-        return ((delegate* unmanaged<IAudioCaptureClient*, uint, int>)(lpVtbl[4]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), NumFramesRead);
+        return ((delegate* unmanaged[MemberFunction]<IAudioCaptureClient*, uint, int>)(lpVtbl[4]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), NumFramesRead);
     }
 
     /// <include file='IAudioCaptureClient.xml' path='doc/member[@name="IAudioCaptureClient.GetNextPacketSize"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAudioCaptureClient : IAudioCaptureClient.Interface
     [VtblIndex(5)]
     public HRESULT GetNextPacketSize([NativeTypeName("UINT32 *")] uint* pNumFramesInNextPacket)
     {
-        return ((delegate* unmanaged<IAudioCaptureClient*, uint*, int>)(lpVtbl[5]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), pNumFramesInNextPacket);
+        return ((delegate* unmanaged[MemberFunction]<IAudioCaptureClient*, uint*, int>)(lpVtbl[5]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), pNumFramesInNextPacket);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IAudioCaptureClient : IAudioCaptureClient.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, UINT32 *, DWORD *, UINT64 *, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, uint*, ulong*, ulong*, int> GetBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, uint*, ulong*, ulong*, int> GetBuffer;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> ReleaseBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> ReleaseBuffer;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetNextPacketSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetNextPacketSize;
     }
 }

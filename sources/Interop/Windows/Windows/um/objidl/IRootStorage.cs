@@ -25,7 +25,7 @@ public unsafe partial struct IRootStorage : IRootStorage.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRootStorage*, Guid*, void**, int>)(lpVtbl[0]))((IRootStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRootStorage*, Guid*, void**, int>)(lpVtbl[0]))((IRootStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRootStorage : IRootStorage.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRootStorage*, uint>)(lpVtbl[1]))((IRootStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRootStorage*, uint>)(lpVtbl[1]))((IRootStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct IRootStorage : IRootStorage.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRootStorage*, uint>)(lpVtbl[2]))((IRootStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRootStorage*, uint>)(lpVtbl[2]))((IRootStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRootStorage.xml' path='doc/member[@name="IRootStorage.SwitchToFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SwitchToFile([NativeTypeName("LPOLESTR")] ushort* pszFile)
+    public HRESULT SwitchToFile([NativeTypeName("LPOLESTR")] char* pszFile)
     {
-        return ((delegate* unmanaged<IRootStorage*, ushort*, int>)(lpVtbl[3]))((IRootStorage*)Unsafe.AsPointer(ref this), pszFile);
+        return ((delegate* unmanaged[MemberFunction]<IRootStorage*, char*, int>)(lpVtbl[3]))((IRootStorage*)Unsafe.AsPointer(ref this), pszFile);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SwitchToFile([NativeTypeName("LPOLESTR")] ushort* pszFile);
+        HRESULT SwitchToFile([NativeTypeName("LPOLESTR")] char* pszFile);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SwitchToFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SwitchToFile;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IEnumSyncMgrConflict : IEnumSyncMgrConflict.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumSyncMgrConflict*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrConflict*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumSyncMgrConflict : IEnumSyncMgrConflict.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumSyncMgrConflict*, uint>)(lpVtbl[1]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrConflict*, uint>)(lpVtbl[1]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumSyncMgrConflict : IEnumSyncMgrConflict.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumSyncMgrConflict*, uint>)(lpVtbl[2]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrConflict*, uint>)(lpVtbl[2]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumSyncMgrConflict.xml' path='doc/member[@name="IEnumSyncMgrConflict.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumSyncMgrConflict : IEnumSyncMgrConflict.Interfa
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, ISyncMgrConflict** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumSyncMgrConflict*, uint, ISyncMgrConflict**, uint*, int>)(lpVtbl[3]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrConflict*, uint, ISyncMgrConflict**, uint*, int>)(lpVtbl[3]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IEnumSyncMgrConflict.xml' path='doc/member[@name="IEnumSyncMgrConflict.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumSyncMgrConflict : IEnumSyncMgrConflict.Interfa
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IEnumSyncMgrConflict*, uint, int>)(lpVtbl[4]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrConflict*, uint, int>)(lpVtbl[4]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IEnumSyncMgrConflict.xml' path='doc/member[@name="IEnumSyncMgrConflict.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumSyncMgrConflict : IEnumSyncMgrConflict.Interfa
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumSyncMgrConflict*, int>)(lpVtbl[5]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrConflict*, int>)(lpVtbl[5]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumSyncMgrConflict.xml' path='doc/member[@name="IEnumSyncMgrConflict.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumSyncMgrConflict : IEnumSyncMgrConflict.Interfa
     [VtblIndex(6)]
     public HRESULT Clone(IEnumSyncMgrConflict** ppenum)
     {
-        return ((delegate* unmanaged<IEnumSyncMgrConflict*, IEnumSyncMgrConflict**, int>)(lpVtbl[6]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrConflict*, IEnumSyncMgrConflict**, int>)(lpVtbl[6]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumSyncMgrConflict : IEnumSyncMgrConflict.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, ISyncMgrConflict **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ISyncMgrConflict**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ISyncMgrConflict**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumSyncMgrConflict **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumSyncMgrConflict**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumSyncMgrConflict**, int> Clone;
     }
 }

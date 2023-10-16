@@ -10,7 +10,7 @@ public unsafe partial struct WINHTTP_HOST_CONNECTION_GROUP
 {
     /// <include file='WINHTTP_HOST_CONNECTION_GROUP.xml' path='doc/member[@name="WINHTTP_HOST_CONNECTION_GROUP.pwszHost"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pwszHost;
+    public char* pwszHost;
 
     /// <include file='WINHTTP_HOST_CONNECTION_GROUP.xml' path='doc/member[@name="WINHTTP_HOST_CONNECTION_GROUP.cConnectionGroups"]/*' />
     [NativeTypeName("ULONG")]

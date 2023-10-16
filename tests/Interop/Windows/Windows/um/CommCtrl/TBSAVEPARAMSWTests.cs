@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TBSAVEPARAMSW" /> struct.</summary>
 public static unsafe partial class TBSAVEPARAMSWTests
 {
-    /// <summary>Validates that the <see cref="TBSAVEPARAMSW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TBSAVEPARAMSW>(), Is.EqualTo(sizeof(TBSAVEPARAMSW)));
-    }
-
-    /// <summary>Validates that the <see cref="TBSAVEPARAMSW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TBSAVEPARAMSW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TBSAVEPARAMSW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(TBSAVEPARAMSW), Is.EqualTo(24));
-        }
-        else
-        {
-            Assert.That(sizeof(TBSAVEPARAMSW), Is.EqualTo(12));
-        }
-    }
 }

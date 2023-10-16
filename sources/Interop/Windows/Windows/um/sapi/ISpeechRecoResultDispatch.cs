@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, uint>)(lpVtbl[1]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, uint>)(lpVtbl[1]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, uint>)(lpVtbl[2]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, uint>)(lpVtbl[2]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, uint*, int>)(lpVtbl[3]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, uint*, int>)(lpVtbl[3]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.get_RecoContext"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(7)]
     public HRESULT get_RecoContext(ISpeechRecoContext** RecoContext)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, ISpeechRecoContext**, int>)(lpVtbl[7]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), RecoContext);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, ISpeechRecoContext**, int>)(lpVtbl[7]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), RecoContext);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.get_Times"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(8)]
     public HRESULT get_Times(ISpeechRecoResultTimes** Times)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, ISpeechRecoResultTimes**, int>)(lpVtbl[8]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Times);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, ISpeechRecoResultTimes**, int>)(lpVtbl[8]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Times);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.putref_AudioFormat"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(9)]
     public HRESULT putref_AudioFormat(ISpeechAudioFormat* Format)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, ISpeechAudioFormat*, int>)(lpVtbl[9]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Format);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, ISpeechAudioFormat*, int>)(lpVtbl[9]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Format);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.get_AudioFormat"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(10)]
     public HRESULT get_AudioFormat(ISpeechAudioFormat** Format)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, ISpeechAudioFormat**, int>)(lpVtbl[10]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Format);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, ISpeechAudioFormat**, int>)(lpVtbl[10]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Format);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.get_PhraseInfo"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(11)]
     public HRESULT get_PhraseInfo(ISpeechPhraseInfo** PhraseInfo)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, ISpeechPhraseInfo**, int>)(lpVtbl[11]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), PhraseInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, ISpeechPhraseInfo**, int>)(lpVtbl[11]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), PhraseInfo);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.Alternates"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(12)]
     public HRESULT Alternates([NativeTypeName("long")] int RequestCount, [NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, ISpeechPhraseAlternates** Alternates)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, int, int, int, ISpeechPhraseAlternates**, int>)(lpVtbl[12]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), RequestCount, StartElement, Elements, Alternates);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, int, int, int, ISpeechPhraseAlternates**, int>)(lpVtbl[12]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), RequestCount, StartElement, Elements, Alternates);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.Audio"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(13)]
     public HRESULT Audio([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, ISpeechMemoryStream** Stream)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, int, int, ISpeechMemoryStream**, int>)(lpVtbl[13]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), StartElement, Elements, Stream);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, int, int, ISpeechMemoryStream**, int>)(lpVtbl[13]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), StartElement, Elements, Stream);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.SpeakAudio"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(14)]
     public HRESULT SpeakAudio([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, SpeechVoiceSpeakFlags Flags, [NativeTypeName("long *")] int* StreamNumber)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, int, int, SpeechVoiceSpeakFlags, int*, int>)(lpVtbl[14]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), StartElement, Elements, Flags, StreamNumber);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, int, int, SpeechVoiceSpeakFlags, int*, int>)(lpVtbl[14]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), StartElement, Elements, Flags, StreamNumber);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.SaveToMemory"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(15)]
     public HRESULT SaveToMemory(VARIANT* ResultBlock)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, VARIANT*, int>)(lpVtbl[15]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), ResultBlock);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, VARIANT*, int>)(lpVtbl[15]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), ResultBlock);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.DiscardResultInfo"]/*' />
@@ -155,31 +155,31 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
     [VtblIndex(16)]
     public HRESULT DiscardResultInfo(SpeechDiscardType ValueTypes)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, SpeechDiscardType, int>)(lpVtbl[16]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), ValueTypes);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, SpeechDiscardType, int>)(lpVtbl[16]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), ValueTypes);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.GetXMLResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, [NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, [NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, SPXMLRESULTOPTIONS, ushort**, int>)(lpVtbl[17]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Options, pResult);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, SPXMLRESULTOPTIONS, char**, int>)(lpVtbl[17]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Options, pResult);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.GetXMLErrorInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] ushort** ScriptLine, [NativeTypeName("BSTR *")] ushort** Source, [NativeTypeName("BSTR *")] ushort** Description, HRESULT* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError)
+    public HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] char** ScriptLine, [NativeTypeName("BSTR *")] char** Source, [NativeTypeName("BSTR *")] char** Description, HRESULT* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, int*, ushort**, ushort**, ushort**, HRESULT*, short*, int>)(lpVtbl[18]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), LineNumber, ScriptLine, Source, Description, ResultCode, IsError);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, int*, char**, char**, char**, HRESULT*, short*, int>)(lpVtbl[18]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), LineNumber, ScriptLine, Source, Description, ResultCode, IsError);
     }
 
     /// <include file='ISpeechRecoResultDispatch.xml' path='doc/member[@name="ISpeechRecoResultDispatch.SetTextFeedback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT SetTextFeedback([NativeTypeName("BSTR")] ushort* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful)
+    public HRESULT SetTextFeedback([NativeTypeName("BSTR")] char* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful)
     {
-        return ((delegate* unmanaged<ISpeechRecoResultDispatch*, ushort*, short, int>)(lpVtbl[19]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Feedback, WasSuccessful);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoResultDispatch*, char*, short, int>)(lpVtbl[19]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Feedback, WasSuccessful);
     }
 
     public interface Interface : IDispatch.Interface
@@ -215,76 +215,76 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
         HRESULT DiscardResultInfo(SpeechDiscardType ValueTypes);
 
         [VtblIndex(17)]
-        HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, [NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, [NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(18)]
-        HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] ushort** ScriptLine, [NativeTypeName("BSTR *")] ushort** Source, [NativeTypeName("BSTR *")] ushort** Description, HRESULT* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError);
+        HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] char** ScriptLine, [NativeTypeName("BSTR *")] char** Source, [NativeTypeName("BSTR *")] char** Description, HRESULT* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError);
 
         [VtblIndex(19)]
-        HRESULT SetTextFeedback([NativeTypeName("BSTR")] ushort* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful);
+        HRESULT SetTextFeedback([NativeTypeName("BSTR")] char* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISpeechRecoContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechRecoContext**, int> get_RecoContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechRecoContext**, int> get_RecoContext;
 
         [NativeTypeName("HRESULT (ISpeechRecoResultTimes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechRecoResultTimes**, int> get_Times;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechRecoResultTimes**, int> get_Times;
 
         [NativeTypeName("HRESULT (ISpeechAudioFormat *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechAudioFormat*, int> putref_AudioFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechAudioFormat*, int> putref_AudioFormat;
 
         [NativeTypeName("HRESULT (ISpeechAudioFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechAudioFormat**, int> get_AudioFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechAudioFormat**, int> get_AudioFormat;
 
         [NativeTypeName("HRESULT (ISpeechPhraseInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechPhraseInfo**, int> get_PhraseInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechPhraseInfo**, int> get_PhraseInfo;
 
         [NativeTypeName("HRESULT (long, long, long, ISpeechPhraseAlternates **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int, ISpeechPhraseAlternates**, int> Alternates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int, ISpeechPhraseAlternates**, int> Alternates;
 
         [NativeTypeName("HRESULT (long, long, ISpeechMemoryStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, ISpeechMemoryStream**, int> Audio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, ISpeechMemoryStream**, int> Audio;
 
         [NativeTypeName("HRESULT (long, long, SpeechVoiceSpeakFlags, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, SpeechVoiceSpeakFlags, int*, int> SpeakAudio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, SpeechVoiceSpeakFlags, int*, int> SpeakAudio;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> SaveToMemory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> SaveToMemory;
 
         [NativeTypeName("HRESULT (SpeechDiscardType) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechDiscardType, int> DiscardResultInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechDiscardType, int> DiscardResultInfo;
 
         [NativeTypeName("HRESULT (SPXMLRESULTOPTIONS, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPXMLRESULTOPTIONS, ushort**, int> GetXMLResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPXMLRESULTOPTIONS, char**, int> GetXMLResult;
 
         [NativeTypeName("HRESULT (long *, BSTR *, BSTR *, BSTR *, HRESULT *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, ushort**, ushort**, ushort**, HRESULT*, short*, int> GetXMLErrorInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, char**, char**, char**, HRESULT*, short*, int> GetXMLErrorInfo;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, int> SetTextFeedback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short, int> SetTextFeedback;
     }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, uint>)(lpVtbl[1]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, uint>)(lpVtbl[1]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, uint>)(lpVtbl[2]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, uint>)(lpVtbl[2]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D11ModuleInstance.xml' path='doc/member[@name="ID3D11ModuleInstance.BindConstantBuffer"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(3)]
     public HRESULT BindConstantBuffer(uint uSrcSlot, uint uDstSlot, uint cbDstOffset)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int>)(lpVtbl[3]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), uSrcSlot, uDstSlot, cbDstOffset);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, uint, uint, uint, int>)(lpVtbl[3]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), uSrcSlot, uDstSlot, cbDstOffset);
     }
 
     /// <include file='ID3D11ModuleInstance.xml' path='doc/member[@name="ID3D11ModuleInstance.BindConstantBufferByName"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(4)]
     public HRESULT BindConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* pName, uint uDstSlot, uint cbDstOffset)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[4]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pName, uDstSlot, cbDstOffset);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[4]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pName, uDstSlot, cbDstOffset);
     }
 
     /// <include file='ID3D11ModuleInstance.xml' path='doc/member[@name="ID3D11ModuleInstance.BindResource"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(5)]
     public HRESULT BindResource(uint uSrcSlot, uint uDstSlot, uint uCount)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int>)(lpVtbl[5]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), uSrcSlot, uDstSlot, uCount);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, uint, uint, uint, int>)(lpVtbl[5]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), uSrcSlot, uDstSlot, uCount);
     }
 
     /// <include file='ID3D11ModuleInstance.xml' path='doc/member[@name="ID3D11ModuleInstance.BindResourceByName"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(6)]
     public HRESULT BindResourceByName([NativeTypeName("LPCSTR")] sbyte* pName, uint uDstSlot, uint uCount)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[6]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pName, uDstSlot, uCount);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[6]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pName, uDstSlot, uCount);
     }
 
     /// <include file='ID3D11ModuleInstance.xml' path='doc/member[@name="ID3D11ModuleInstance.BindSampler"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(7)]
     public HRESULT BindSampler(uint uSrcSlot, uint uDstSlot, uint uCount)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int>)(lpVtbl[7]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), uSrcSlot, uDstSlot, uCount);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, uint, uint, uint, int>)(lpVtbl[7]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), uSrcSlot, uDstSlot, uCount);
     }
 
     /// <include file='ID3D11ModuleInstance.xml' path='doc/member[@name="ID3D11ModuleInstance.BindSamplerByName"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(8)]
     public HRESULT BindSamplerByName([NativeTypeName("LPCSTR")] sbyte* pName, uint uDstSlot, uint uCount)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[8]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pName, uDstSlot, uCount);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[8]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pName, uDstSlot, uCount);
     }
 
     /// <include file='ID3D11ModuleInstance.xml' path='doc/member[@name="ID3D11ModuleInstance.BindUnorderedAccessView"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(9)]
     public HRESULT BindUnorderedAccessView(uint uSrcSlot, uint uDstSlot, uint uCount)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int>)(lpVtbl[9]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), uSrcSlot, uDstSlot, uCount);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, uint, uint, uint, int>)(lpVtbl[9]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), uSrcSlot, uDstSlot, uCount);
     }
 
     /// <include file='ID3D11ModuleInstance.xml' path='doc/member[@name="ID3D11ModuleInstance.BindUnorderedAccessViewByName"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(10)]
     public HRESULT BindUnorderedAccessViewByName([NativeTypeName("LPCSTR")] sbyte* pName, uint uDstSlot, uint uCount)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[10]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pName, uDstSlot, uCount);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[10]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pName, uDstSlot, uCount);
     }
 
     /// <include file='ID3D11ModuleInstance.xml' path='doc/member[@name="ID3D11ModuleInstance.BindResourceAsUnorderedAccessView"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(11)]
     public HRESULT BindResourceAsUnorderedAccessView(uint uSrcSrvSlot, uint uDstUavSlot, uint uCount)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int>)(lpVtbl[11]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), uSrcSrvSlot, uDstUavSlot, uCount);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, uint, uint, uint, int>)(lpVtbl[11]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), uSrcSrvSlot, uDstUavSlot, uCount);
     }
 
     /// <include file='ID3D11ModuleInstance.xml' path='doc/member[@name="ID3D11ModuleInstance.BindResourceAsUnorderedAccessViewByName"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
     [VtblIndex(12)]
     public HRESULT BindResourceAsUnorderedAccessViewByName([NativeTypeName("LPCSTR")] sbyte* pSrvName, uint uDstUavSlot, uint uCount)
     {
-        return ((delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[12]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pSrvName, uDstUavSlot, uCount);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[12]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pSrvName, uDstUavSlot, uCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -164,42 +164,42 @@ public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> BindConstantBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> BindConstantBuffer;
 
         [NativeTypeName("HRESULT (LPCSTR, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, uint, uint, int> BindConstantBufferByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, uint, uint, int> BindConstantBufferByName;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> BindResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> BindResource;
 
         [NativeTypeName("HRESULT (LPCSTR, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, uint, uint, int> BindResourceByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, uint, uint, int> BindResourceByName;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> BindSampler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> BindSampler;
 
         [NativeTypeName("HRESULT (LPCSTR, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, uint, uint, int> BindSamplerByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, uint, uint, int> BindSamplerByName;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> BindUnorderedAccessView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> BindUnorderedAccessView;
 
         [NativeTypeName("HRESULT (LPCSTR, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, uint, uint, int> BindUnorderedAccessViewByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, uint, uint, int> BindUnorderedAccessViewByName;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> BindResourceAsUnorderedAccessView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> BindResourceAsUnorderedAccessView;
 
         [NativeTypeName("HRESULT (LPCSTR, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, uint, uint, int> BindResourceAsUnorderedAccessViewByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, uint, uint, int> BindResourceAsUnorderedAccessViewByName;
     }
 }

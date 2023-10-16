@@ -25,7 +25,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFCollection*, Guid*, void**, int>)(lpVtbl[0]))((IMFCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFCollection*, Guid*, void**, int>)(lpVtbl[0]))((IMFCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFCollection*, uint>)(lpVtbl[1]))((IMFCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCollection*, uint>)(lpVtbl[1]))((IMFCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFCollection*, uint>)(lpVtbl[2]))((IMFCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCollection*, uint>)(lpVtbl[2]))((IMFCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.GetElementCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetElementCount([NativeTypeName("DWORD *")] uint* pcElements)
     {
-        return ((delegate* unmanaged<IMFCollection*, uint*, int>)(lpVtbl[3]))((IMFCollection*)Unsafe.AsPointer(ref this), pcElements);
+        return ((delegate* unmanaged[MemberFunction]<IMFCollection*, uint*, int>)(lpVtbl[3]))((IMFCollection*)Unsafe.AsPointer(ref this), pcElements);
     }
 
     /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.GetElement"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetElement([NativeTypeName("DWORD")] uint dwElementIndex, IUnknown** ppUnkElement)
     {
-        return ((delegate* unmanaged<IMFCollection*, uint, IUnknown**, int>)(lpVtbl[4]))((IMFCollection*)Unsafe.AsPointer(ref this), dwElementIndex, ppUnkElement);
+        return ((delegate* unmanaged[MemberFunction]<IMFCollection*, uint, IUnknown**, int>)(lpVtbl[4]))((IMFCollection*)Unsafe.AsPointer(ref this), dwElementIndex, ppUnkElement);
     }
 
     /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.AddElement"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT AddElement(IUnknown* pUnkElement)
     {
-        return ((delegate* unmanaged<IMFCollection*, IUnknown*, int>)(lpVtbl[5]))((IMFCollection*)Unsafe.AsPointer(ref this), pUnkElement);
+        return ((delegate* unmanaged[MemberFunction]<IMFCollection*, IUnknown*, int>)(lpVtbl[5]))((IMFCollection*)Unsafe.AsPointer(ref this), pUnkElement);
     }
 
     /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.RemoveElement"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT RemoveElement([NativeTypeName("DWORD")] uint dwElementIndex, IUnknown** ppUnkElement)
     {
-        return ((delegate* unmanaged<IMFCollection*, uint, IUnknown**, int>)(lpVtbl[6]))((IMFCollection*)Unsafe.AsPointer(ref this), dwElementIndex, ppUnkElement);
+        return ((delegate* unmanaged[MemberFunction]<IMFCollection*, uint, IUnknown**, int>)(lpVtbl[6]))((IMFCollection*)Unsafe.AsPointer(ref this), dwElementIndex, ppUnkElement);
     }
 
     /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.InsertElementAt"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT InsertElementAt([NativeTypeName("DWORD")] uint dwIndex, IUnknown* pUnknown)
     {
-        return ((delegate* unmanaged<IMFCollection*, uint, IUnknown*, int>)(lpVtbl[7]))((IMFCollection*)Unsafe.AsPointer(ref this), dwIndex, pUnknown);
+        return ((delegate* unmanaged[MemberFunction]<IMFCollection*, uint, IUnknown*, int>)(lpVtbl[7]))((IMFCollection*)Unsafe.AsPointer(ref this), dwIndex, pUnknown);
     }
 
     /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.RemoveAllElements"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT RemoveAllElements()
     {
-        return ((delegate* unmanaged<IMFCollection*, int>)(lpVtbl[8]))((IMFCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCollection*, int>)(lpVtbl[8]))((IMFCollection*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetElementCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetElementCount;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown**, int> GetElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown**, int> GetElement;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> AddElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> AddElement;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown**, int> RemoveElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown**, int> RemoveElement;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, int> InsertElementAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, int> InsertElementAt;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RemoveAllElements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RemoveAllElements;
     }
 }

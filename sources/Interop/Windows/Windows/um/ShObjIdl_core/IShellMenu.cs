@@ -25,7 +25,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellMenu*, Guid*, void**, int>)(lpVtbl[0]))((IShellMenu*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, Guid*, void**, int>)(lpVtbl[0]))((IShellMenu*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellMenu*, uint>)(lpVtbl[1]))((IShellMenu*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, uint>)(lpVtbl[1]))((IShellMenu*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellMenu*, uint>)(lpVtbl[2]))((IShellMenu*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, uint>)(lpVtbl[2]))((IShellMenu*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellMenu.xml' path='doc/member[@name="IShellMenu.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Initialize(IShellMenuCallback* psmc, uint uId, uint uIdAncestor, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IShellMenu*, IShellMenuCallback*, uint, uint, uint, int>)(lpVtbl[3]))((IShellMenu*)Unsafe.AsPointer(ref this), psmc, uId, uIdAncestor, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, IShellMenuCallback*, uint, uint, uint, int>)(lpVtbl[3]))((IShellMenu*)Unsafe.AsPointer(ref this), psmc, uId, uIdAncestor, dwFlags);
     }
 
     /// <include file='IShellMenu.xml' path='doc/member[@name="IShellMenu.GetMenuInfo"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetMenuInfo(IShellMenuCallback** ppsmc, uint* puId, uint* puIdAncestor, [NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IShellMenu*, IShellMenuCallback**, uint*, uint*, uint*, int>)(lpVtbl[4]))((IShellMenu*)Unsafe.AsPointer(ref this), ppsmc, puId, puIdAncestor, pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, IShellMenuCallback**, uint*, uint*, uint*, int>)(lpVtbl[4]))((IShellMenu*)Unsafe.AsPointer(ref this), ppsmc, puId, puIdAncestor, pdwFlags);
     }
 
     /// <include file='IShellMenu.xml' path='doc/member[@name="IShellMenu.SetShellFolder"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetShellFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, HKEY hKey, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IShellMenu*, IShellFolder*, ITEMIDLIST*, HKEY, uint, int>)(lpVtbl[5]))((IShellMenu*)Unsafe.AsPointer(ref this), psf, pidlFolder, hKey, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, IShellFolder*, ITEMIDLIST*, HKEY, uint, int>)(lpVtbl[5]))((IShellMenu*)Unsafe.AsPointer(ref this), psf, pidlFolder, hKey, dwFlags);
     }
 
     /// <include file='IShellMenu.xml' path='doc/member[@name="IShellMenu.GetShellFolder"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetShellFolder([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellMenu*, uint*, ITEMIDLIST**, Guid*, void**, int>)(lpVtbl[6]))((IShellMenu*)Unsafe.AsPointer(ref this), pdwFlags, ppidl, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, uint*, ITEMIDLIST**, Guid*, void**, int>)(lpVtbl[6]))((IShellMenu*)Unsafe.AsPointer(ref this), pdwFlags, ppidl, riid, ppv);
     }
 
     /// <include file='IShellMenu.xml' path='doc/member[@name="IShellMenu.SetMenu"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT SetMenu(HMENU hmenu, HWND hwnd, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IShellMenu*, HMENU, HWND, uint, int>)(lpVtbl[7]))((IShellMenu*)Unsafe.AsPointer(ref this), hmenu, hwnd, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, HMENU, HWND, uint, int>)(lpVtbl[7]))((IShellMenu*)Unsafe.AsPointer(ref this), hmenu, hwnd, dwFlags);
     }
 
     /// <include file='IShellMenu.xml' path='doc/member[@name="IShellMenu.GetMenu"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetMenu(HMENU* phmenu, HWND* phwnd, [NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IShellMenu*, HMENU*, HWND*, uint*, int>)(lpVtbl[8]))((IShellMenu*)Unsafe.AsPointer(ref this), phmenu, phwnd, pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, HMENU*, HWND*, uint*, int>)(lpVtbl[8]))((IShellMenu*)Unsafe.AsPointer(ref this), phmenu, phwnd, pdwFlags);
     }
 
     /// <include file='IShellMenu.xml' path='doc/member[@name="IShellMenu.InvalidateItem"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT InvalidateItem([NativeTypeName("LPSMDATA")] SMDATA* psmd, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IShellMenu*, SMDATA*, uint, int>)(lpVtbl[9]))((IShellMenu*)Unsafe.AsPointer(ref this), psmd, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, SMDATA*, uint, int>)(lpVtbl[9]))((IShellMenu*)Unsafe.AsPointer(ref this), psmd, dwFlags);
     }
 
     /// <include file='IShellMenu.xml' path='doc/member[@name="IShellMenu.GetState"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetState([NativeTypeName("LPSMDATA")] SMDATA* psmd)
     {
-        return ((delegate* unmanaged<IShellMenu*, SMDATA*, int>)(lpVtbl[10]))((IShellMenu*)Unsafe.AsPointer(ref this), psmd);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, SMDATA*, int>)(lpVtbl[10]))((IShellMenu*)Unsafe.AsPointer(ref this), psmd);
     }
 
     /// <include file='IShellMenu.xml' path='doc/member[@name="IShellMenu.SetMenuToolbar"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT SetMenuToolbar(IUnknown* punk, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IShellMenu*, IUnknown*, uint, int>)(lpVtbl[11]))((IShellMenu*)Unsafe.AsPointer(ref this), punk, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenu*, IUnknown*, uint, int>)(lpVtbl[11]))((IShellMenu*)Unsafe.AsPointer(ref this), punk, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -152,39 +152,39 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellMenuCallback *, UINT, UINT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellMenuCallback*, uint, uint, uint, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellMenuCallback*, uint, uint, uint, int> Initialize;
 
         [NativeTypeName("HRESULT (IShellMenuCallback **, UINT *, UINT *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellMenuCallback**, uint*, uint*, uint*, int> GetMenuInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellMenuCallback**, uint*, uint*, uint*, int> GetMenuInfo;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST, HKEY, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, HKEY, uint, int> SetShellFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellFolder*, ITEMIDLIST*, HKEY, uint, int> SetShellFolder;
 
         [NativeTypeName("HRESULT (DWORD *, LPITEMIDLIST *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ITEMIDLIST**, Guid*, void**, int> GetShellFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, ITEMIDLIST**, Guid*, void**, int> GetShellFolder;
 
         [NativeTypeName("HRESULT (HMENU, HWND, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMENU, HWND, uint, int> SetMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMENU, HWND, uint, int> SetMenu;
 
         [NativeTypeName("HRESULT (HMENU *, HWND *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMENU*, HWND*, uint*, int> GetMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMENU*, HWND*, uint*, int> GetMenu;
 
         [NativeTypeName("HRESULT (LPSMDATA, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SMDATA*, uint, int> InvalidateItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SMDATA*, uint, int> InvalidateItem;
 
         [NativeTypeName("HRESULT (LPSMDATA) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SMDATA*, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SMDATA*, int> GetState;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetMenuToolbar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, int> SetMenuToolbar;
     }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class WebGeolocationTests
     {
         Assert.That(typeof(WebGeolocation).GUID, Is.EqualTo(IID_WebGeolocation));
     }
-
-    /// <summary>Validates that the <see cref="WebGeolocation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WebGeolocation>(), Is.EqualTo(sizeof(WebGeolocation)));
-    }
-
-    /// <summary>Validates that the <see cref="WebGeolocation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WebGeolocation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WebGeolocation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WebGeolocation), Is.EqualTo(1));
-    }
 }

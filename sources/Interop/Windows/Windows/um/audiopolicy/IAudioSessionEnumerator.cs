@@ -25,7 +25,7 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioSessionEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioSessionEnumerator*, uint>)(lpVtbl[1]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEnumerator*, uint>)(lpVtbl[1]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioSessionEnumerator*, uint>)(lpVtbl[2]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEnumerator*, uint>)(lpVtbl[2]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioSessionEnumerator.xml' path='doc/member[@name="IAudioSessionEnumerator.GetCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
     [VtblIndex(3)]
     public HRESULT GetCount(int* SessionCount)
     {
-        return ((delegate* unmanaged<IAudioSessionEnumerator*, int*, int>)(lpVtbl[3]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), SessionCount);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEnumerator*, int*, int>)(lpVtbl[3]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), SessionCount);
     }
 
     /// <include file='IAudioSessionEnumerator.xml' path='doc/member[@name="IAudioSessionEnumerator.GetSession"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
     [VtblIndex(4)]
     public HRESULT GetSession(int SessionCount, IAudioSessionControl** Session)
     {
-        return ((delegate* unmanaged<IAudioSessionEnumerator*, int, IAudioSessionControl**, int>)(lpVtbl[4]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), SessionCount, Session);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEnumerator*, int, IAudioSessionControl**, int>)(lpVtbl[4]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), SessionCount, Session);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetCount;
 
         [NativeTypeName("HRESULT (int, IAudioSessionControl **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IAudioSessionControl**, int> GetSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IAudioSessionControl**, int> GetSession;
     }
 }

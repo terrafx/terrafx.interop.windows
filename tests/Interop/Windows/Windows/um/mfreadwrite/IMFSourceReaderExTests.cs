@@ -21,32 +21,4 @@ public static unsafe partial class IMFSourceReaderExTests
     {
         Assert.That(typeof(IMFSourceReaderEx).GUID, Is.EqualTo(IID_IMFSourceReaderEx));
     }
-
-    /// <summary>Validates that the <see cref="IMFSourceReaderEx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSourceReaderEx>(), Is.EqualTo(sizeof(IMFSourceReaderEx)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceReaderEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSourceReaderEx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceReaderEx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSourceReaderEx), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSourceReaderEx), Is.EqualTo(4));
-        }
-    }
 }

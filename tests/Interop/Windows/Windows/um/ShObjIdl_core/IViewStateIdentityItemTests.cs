@@ -19,32 +19,4 @@ public static unsafe partial class IViewStateIdentityItemTests
     {
         Assert.That(typeof(IViewStateIdentityItem).GUID, Is.EqualTo(IID_IViewStateIdentityItem));
     }
-
-    /// <summary>Validates that the <see cref="IViewStateIdentityItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IViewStateIdentityItem>(), Is.EqualTo(sizeof(IViewStateIdentityItem)));
-    }
-
-    /// <summary>Validates that the <see cref="IViewStateIdentityItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IViewStateIdentityItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IViewStateIdentityItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IViewStateIdentityItem), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IViewStateIdentityItem), Is.EqualTo(4));
-        }
-    }
 }

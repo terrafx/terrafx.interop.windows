@@ -17,7 +17,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
     public byte NlChecksumSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield & 0x1u);
         }
@@ -34,7 +34,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
     public byte NlOptionsSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 1) & 0x1u);
         }
@@ -51,7 +51,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
     public byte TlDatagramChecksumSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 2) & 0x1u);
         }
@@ -68,7 +68,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
     public byte TlStreamChecksumSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 3) & 0x1u);
         }
@@ -85,7 +85,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
     public byte TlStreamOptionsSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 4) & 0x1u);
         }
@@ -102,7 +102,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
     public byte FastPathCompatible
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 5) & 0x1u);
         }
@@ -119,7 +119,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
     public byte TlLargeSendOffloadSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 6) & 0x1u);
         }
@@ -136,7 +136,7 @@ public partial struct NL_INTERFACE_OFFLOAD_ROD
     public byte TlGiantSendOffloadSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 7) & 0x1u);
         }

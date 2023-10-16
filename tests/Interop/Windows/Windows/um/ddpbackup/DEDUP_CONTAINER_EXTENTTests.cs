@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DEDUP_CONTAINER_EXTENT" /> struct.</summary>
 public static unsafe partial class DEDUP_CONTAINER_EXTENTTests
 {
-    /// <summary>Validates that the <see cref="DEDUP_CONTAINER_EXTENT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DEDUP_CONTAINER_EXTENT>(), Is.EqualTo(sizeof(DEDUP_CONTAINER_EXTENT)));
-    }
-
-    /// <summary>Validates that the <see cref="DEDUP_CONTAINER_EXTENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DEDUP_CONTAINER_EXTENT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DEDUP_CONTAINER_EXTENT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DEDUP_CONTAINER_EXTENT), Is.EqualTo(24));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EMREXTTEXTOUTA" /> struct.</summary>
 public static unsafe partial class EMREXTTEXTOUTATests
 {
-    /// <summary>Validates that the <see cref="EMREXTTEXTOUTA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EMREXTTEXTOUTA>(), Is.EqualTo(sizeof(EMREXTTEXTOUTA)));
-    }
-
-    /// <summary>Validates that the <see cref="EMREXTTEXTOUTA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EMREXTTEXTOUTA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EMREXTTEXTOUTA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EMREXTTEXTOUTA), Is.EqualTo(76));
-    }
 }

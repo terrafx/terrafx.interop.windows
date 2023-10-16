@@ -20,7 +20,7 @@ public unsafe partial struct DICONFIGUREDEVICESPARAMSW
 
     /// <include file='DICONFIGUREDEVICESPARAMSW.xml' path='doc/member[@name="DICONFIGUREDEVICESPARAMSW.lptszUserNames"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lptszUserNames;
+    public char* lptszUserNames;
 
     /// <include file='DICONFIGUREDEVICESPARAMSW.xml' path='doc/member[@name="DICONFIGUREDEVICESPARAMSW.dwcFormats"]/*' />
     [NativeTypeName("DWORD")]

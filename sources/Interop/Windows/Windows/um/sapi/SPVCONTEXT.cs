@@ -10,13 +10,13 @@ public unsafe partial struct SPVCONTEXT
 {
     /// <include file='SPVCONTEXT.xml' path='doc/member[@name="SPVCONTEXT.pCategory"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pCategory;
+    public char* pCategory;
 
     /// <include file='SPVCONTEXT.xml' path='doc/member[@name="SPVCONTEXT.pBefore"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pBefore;
+    public char* pBefore;
 
     /// <include file='SPVCONTEXT.xml' path='doc/member[@name="SPVCONTEXT.pAfter"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pAfter;
+    public char* pAfter;
 }

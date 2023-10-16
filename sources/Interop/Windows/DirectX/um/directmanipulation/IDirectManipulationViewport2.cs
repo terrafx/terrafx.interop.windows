@@ -28,7 +28,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, uint>)(lpVtbl[1]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, uint>)(lpVtbl[1]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, uint>)(lpVtbl[2]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, uint>)(lpVtbl[2]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.Enable" />
@@ -54,7 +54,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(3)]
     public HRESULT Enable()
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, int>)(lpVtbl[3]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, int>)(lpVtbl[3]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.Disable" />
@@ -62,7 +62,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(4)]
     public HRESULT Disable()
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, int>)(lpVtbl[4]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, int>)(lpVtbl[4]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.SetContact" />
@@ -70,7 +70,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(5)]
     public HRESULT SetContact([NativeTypeName("UINT32")] uint pointerId)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, uint, int>)(lpVtbl[5]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), pointerId);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, uint, int>)(lpVtbl[5]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), pointerId);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.ReleaseContact" />
@@ -78,7 +78,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(6)]
     public HRESULT ReleaseContact([NativeTypeName("UINT32")] uint pointerId)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, uint, int>)(lpVtbl[6]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), pointerId);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, uint, int>)(lpVtbl[6]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), pointerId);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.ReleaseAllContacts" />
@@ -86,7 +86,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(7)]
     public HRESULT ReleaseAllContacts()
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, int>)(lpVtbl[7]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, int>)(lpVtbl[7]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.GetStatus" />
@@ -94,7 +94,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(8)]
     public HRESULT GetStatus(DIRECTMANIPULATION_STATUS* status)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, DIRECTMANIPULATION_STATUS*, int>)(lpVtbl[8]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), status);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, DIRECTMANIPULATION_STATUS*, int>)(lpVtbl[8]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), status);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.GetTag" />
@@ -102,7 +102,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(9)]
     public HRESULT GetTag([NativeTypeName("const IID &")] Guid* riid, void** @object, [NativeTypeName("UINT32 *")] uint* id)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, Guid*, void**, uint*, int>)(lpVtbl[9]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), riid, @object, id);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, Guid*, void**, uint*, int>)(lpVtbl[9]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), riid, @object, id);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.SetTag" />
@@ -110,7 +110,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(10)]
     public HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, IUnknown*, uint, int>)(lpVtbl[10]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), @object, id);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, IUnknown*, uint, int>)(lpVtbl[10]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), @object, id);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.GetViewportRect" />
@@ -118,7 +118,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(11)]
     public HRESULT GetViewportRect(RECT* viewport)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, RECT*, int>)(lpVtbl[11]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), viewport);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, RECT*, int>)(lpVtbl[11]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), viewport);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.SetViewportRect" />
@@ -126,7 +126,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(12)]
     public HRESULT SetViewportRect([NativeTypeName("const RECT *")] RECT* viewport)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, RECT*, int>)(lpVtbl[12]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), viewport);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, RECT*, int>)(lpVtbl[12]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), viewport);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.ZoomToRect" />
@@ -134,7 +134,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(13)]
     public HRESULT ZoomToRect([NativeTypeName("const float")] float left, [NativeTypeName("const float")] float top, [NativeTypeName("const float")] float right, [NativeTypeName("const float")] float bottom, BOOL animate)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, float, float, float, float, BOOL, int>)(lpVtbl[13]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), left, top, right, bottom, animate);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, float, float, float, float, BOOL, int>)(lpVtbl[13]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), left, top, right, bottom, animate);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.SetViewportTransform" />
@@ -142,7 +142,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(14)]
     public HRESULT SetViewportTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, float*, uint, int>)(lpVtbl[14]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), matrix, pointCount);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, float*, uint, int>)(lpVtbl[14]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.SyncDisplayTransform" />
@@ -150,7 +150,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(15)]
     public HRESULT SyncDisplayTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, float*, uint, int>)(lpVtbl[15]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), matrix, pointCount);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, float*, uint, int>)(lpVtbl[15]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.GetPrimaryContent" />
@@ -158,7 +158,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(16)]
     public HRESULT GetPrimaryContent([NativeTypeName("const IID &")] Guid* riid, void** @object)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, Guid*, void**, int>)(lpVtbl[16]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), riid, @object);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, Guid*, void**, int>)(lpVtbl[16]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), riid, @object);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.AddContent" />
@@ -166,7 +166,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(17)]
     public HRESULT AddContent(IDirectManipulationContent* content)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, IDirectManipulationContent*, int>)(lpVtbl[17]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), content);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, IDirectManipulationContent*, int>)(lpVtbl[17]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), content);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.RemoveContent" />
@@ -174,7 +174,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(18)]
     public HRESULT RemoveContent(IDirectManipulationContent* content)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, IDirectManipulationContent*, int>)(lpVtbl[18]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), content);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, IDirectManipulationContent*, int>)(lpVtbl[18]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), content);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.SetViewportOptions" />
@@ -182,7 +182,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(19)]
     public HRESULT SetViewportOptions(DIRECTMANIPULATION_VIEWPORT_OPTIONS options)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, DIRECTMANIPULATION_VIEWPORT_OPTIONS, int>)(lpVtbl[19]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), options);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, DIRECTMANIPULATION_VIEWPORT_OPTIONS, int>)(lpVtbl[19]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), options);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.AddConfiguration" />
@@ -190,7 +190,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(20)]
     public HRESULT AddConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, DIRECTMANIPULATION_CONFIGURATION, int>)(lpVtbl[20]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), configuration);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, DIRECTMANIPULATION_CONFIGURATION, int>)(lpVtbl[20]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), configuration);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.RemoveConfiguration" />
@@ -198,7 +198,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(21)]
     public HRESULT RemoveConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, DIRECTMANIPULATION_CONFIGURATION, int>)(lpVtbl[21]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), configuration);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, DIRECTMANIPULATION_CONFIGURATION, int>)(lpVtbl[21]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), configuration);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.ActivateConfiguration" />
@@ -206,7 +206,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(22)]
     public HRESULT ActivateConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, DIRECTMANIPULATION_CONFIGURATION, int>)(lpVtbl[22]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), configuration);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, DIRECTMANIPULATION_CONFIGURATION, int>)(lpVtbl[22]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), configuration);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.SetManualGesture" />
@@ -214,7 +214,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(23)]
     public HRESULT SetManualGesture(DIRECTMANIPULATION_GESTURE_CONFIGURATION configuration)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, DIRECTMANIPULATION_GESTURE_CONFIGURATION, int>)(lpVtbl[23]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), configuration);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, DIRECTMANIPULATION_GESTURE_CONFIGURATION, int>)(lpVtbl[23]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), configuration);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.SetChaining" />
@@ -222,7 +222,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(24)]
     public HRESULT SetChaining(DIRECTMANIPULATION_MOTION_TYPES enabledTypes)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, DIRECTMANIPULATION_MOTION_TYPES, int>)(lpVtbl[24]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), enabledTypes);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, DIRECTMANIPULATION_MOTION_TYPES, int>)(lpVtbl[24]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), enabledTypes);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.AddEventHandler" />
@@ -230,7 +230,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(25)]
     public HRESULT AddEventHandler(HWND window, IDirectManipulationViewportEventHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, HWND, IDirectManipulationViewportEventHandler*, uint*, int>)(lpVtbl[25]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), window, eventHandler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, HWND, IDirectManipulationViewportEventHandler*, uint*, int>)(lpVtbl[25]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), window, eventHandler, cookie);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.RemoveEventHandler" />
@@ -238,7 +238,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(26)]
     public HRESULT RemoveEventHandler([NativeTypeName("DWORD")] uint cookie)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, uint, int>)(lpVtbl[26]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), cookie);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, uint, int>)(lpVtbl[26]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), cookie);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.SetInputMode" />
@@ -246,7 +246,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(27)]
     public HRESULT SetInputMode(DIRECTMANIPULATION_INPUT_MODE mode)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, DIRECTMANIPULATION_INPUT_MODE, int>)(lpVtbl[27]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), mode);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, DIRECTMANIPULATION_INPUT_MODE, int>)(lpVtbl[27]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), mode);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.SetUpdateMode" />
@@ -254,7 +254,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(28)]
     public HRESULT SetUpdateMode(DIRECTMANIPULATION_INPUT_MODE mode)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, DIRECTMANIPULATION_INPUT_MODE, int>)(lpVtbl[28]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), mode);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, DIRECTMANIPULATION_INPUT_MODE, int>)(lpVtbl[28]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), mode);
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.Stop" />
@@ -262,7 +262,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(29)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, int>)(lpVtbl[29]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, int>)(lpVtbl[29]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDirectManipulationViewport.Abandon" />
@@ -270,7 +270,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(30)]
     public HRESULT Abandon()
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, int>)(lpVtbl[30]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, int>)(lpVtbl[30]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectManipulationViewport2.xml' path='doc/member[@name="IDirectManipulationViewport2.AddBehavior"]/*' />
@@ -278,7 +278,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(31)]
     public HRESULT AddBehavior(IUnknown* behavior, [NativeTypeName("DWORD *")] uint* cookie)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, IUnknown*, uint*, int>)(lpVtbl[31]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), behavior, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, IUnknown*, uint*, int>)(lpVtbl[31]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), behavior, cookie);
     }
 
     /// <include file='IDirectManipulationViewport2.xml' path='doc/member[@name="IDirectManipulationViewport2.RemoveBehavior"]/*' />
@@ -286,7 +286,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(32)]
     public HRESULT RemoveBehavior([NativeTypeName("DWORD")] uint cookie)
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, uint, int>)(lpVtbl[32]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), cookie);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, uint, int>)(lpVtbl[32]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this), cookie);
     }
 
     /// <include file='IDirectManipulationViewport2.xml' path='doc/member[@name="IDirectManipulationViewport2.RemoveAllBehaviors"]/*' />
@@ -294,7 +294,7 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
     [VtblIndex(33)]
     public HRESULT RemoveAllBehaviors()
     {
-        return ((delegate* unmanaged<IDirectManipulationViewport2*, int>)(lpVtbl[33]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationViewport2*, int>)(lpVtbl[33]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDirectManipulationViewport.Interface
@@ -313,105 +313,105 @@ public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationV
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Enable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Enable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Disable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Disable;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetContact;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetContact;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> ReleaseContact;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> ReleaseContact;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ReleaseAllContacts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ReleaseAllContacts;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_STATUS*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (const IID &, void **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, uint*, int> GetTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, uint*, int> GetTag;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, int> SetTag;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> GetViewportRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> GetViewportRect;
 
         [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetViewportRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetViewportRect;
 
         [NativeTypeName("HRESULT (const float, const float, const float, const float, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, BOOL, int> ZoomToRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, BOOL, int> ZoomToRect;
 
         [NativeTypeName("HRESULT (const float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, int> SetViewportTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, int> SetViewportTransform;
 
         [NativeTypeName("HRESULT (const float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, int> SyncDisplayTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, int> SyncDisplayTransform;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetPrimaryContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetPrimaryContent;
 
         [NativeTypeName("HRESULT (IDirectManipulationContent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectManipulationContent*, int> AddContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectManipulationContent*, int> AddContent;
 
         [NativeTypeName("HRESULT (IDirectManipulationContent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectManipulationContent*, int> RemoveContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectManipulationContent*, int> RemoveContent;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_VIEWPORT_OPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_VIEWPORT_OPTIONS, int> SetViewportOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_VIEWPORT_OPTIONS, int> SetViewportOptions;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_CONFIGURATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_CONFIGURATION, int> AddConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_CONFIGURATION, int> AddConfiguration;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_CONFIGURATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_CONFIGURATION, int> RemoveConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_CONFIGURATION, int> RemoveConfiguration;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_CONFIGURATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_CONFIGURATION, int> ActivateConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_CONFIGURATION, int> ActivateConfiguration;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_GESTURE_CONFIGURATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_GESTURE_CONFIGURATION, int> SetManualGesture;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_GESTURE_CONFIGURATION, int> SetManualGesture;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, int> SetChaining;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, int> SetChaining;
 
         [NativeTypeName("HRESULT (HWND, IDirectManipulationViewportEventHandler *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, IDirectManipulationViewportEventHandler*, uint*, int> AddEventHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, IDirectManipulationViewportEventHandler*, uint*, int> AddEventHandler;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveEventHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveEventHandler;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_INPUT_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_INPUT_MODE, int> SetInputMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_INPUT_MODE, int> SetInputMode;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_INPUT_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_INPUT_MODE, int> SetUpdateMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_INPUT_MODE, int> SetUpdateMode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Abandon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Abandon;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint*, int> AddBehavior;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint*, int> AddBehavior;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveBehavior;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveBehavior;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RemoveAllBehaviors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RemoveAllBehaviors;
     }
 }

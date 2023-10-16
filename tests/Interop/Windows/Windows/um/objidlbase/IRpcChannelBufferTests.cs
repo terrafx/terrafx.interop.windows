@@ -19,32 +19,4 @@ public static unsafe partial class IRpcChannelBufferTests
     {
         Assert.That(typeof(IRpcChannelBuffer).GUID, Is.EqualTo(IID_IRpcChannelBuffer));
     }
-
-    /// <summary>Validates that the <see cref="IRpcChannelBuffer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRpcChannelBuffer>(), Is.EqualTo(sizeof(IRpcChannelBuffer)));
-    }
-
-    /// <summary>Validates that the <see cref="IRpcChannelBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRpcChannelBuffer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRpcChannelBuffer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRpcChannelBuffer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRpcChannelBuffer), Is.EqualTo(4));
-        }
-    }
 }

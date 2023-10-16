@@ -44,7 +44,8 @@ public unsafe class HelloTriangle12 : HelloWindow12
 
     protected virtual void CreateBuffers()
     {
-        _vertexBuffer = CreateVertexBuffer(out _vertexBufferView);
+        var vertexBuffers = CreateVertexBuffer(out _vertexBufferView);
+        _vertexBuffer = vertexBuffers;
     }
 
     protected override unsafe ID3D12PipelineState* CreatePipelineState()
@@ -62,11 +63,11 @@ public unsafe class HelloTriangle12 : HelloWindow12
         {
             var entryPoint = 0x00006E69614D5356;    // VSMain
             var target = 0x0000305F355F7376;        // vs_5_0
-            ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
+            ThrowIfFailed(D3DCompileFromFile(fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
 
             entryPoint = 0x00006E69614D5350;        // PSMain
             target = 0x0000305F355F7370;            // ps_5_0
-            ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
+            ThrowIfFailed(D3DCompileFromFile(fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
         }
 
         // Define the vertex input layout.
@@ -194,10 +195,7 @@ public unsafe class HelloTriangle12 : HelloWindow12
         return vertexBuffer;
     }
 
-    protected override void DestroyAssets()
-    {
-        DestroyBuffers();
-    }
+    protected override void DestroyAssets() => DestroyBuffers();
 
     protected virtual void DestroyBuffers()
     {
@@ -227,7 +225,7 @@ public unsafe class HelloTriangle12 : HelloWindow12
         GraphicsCommandList->DrawInstanced(VertexCountPerInstance: 3, InstanceCount: 1, StartVertexLocation: 0, StartInstanceLocation: 0);
     }
 
-    public struct Vertex
+    internal struct Vertex
     {
         public Vector3 Position;
 

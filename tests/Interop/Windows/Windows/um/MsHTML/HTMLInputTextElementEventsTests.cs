@@ -19,32 +19,4 @@ public static unsafe partial class HTMLInputTextElementEventsTests
     {
         Assert.That(typeof(HTMLInputTextElementEvents).GUID, Is.EqualTo(IID_HTMLInputTextElementEvents));
     }
-
-    /// <summary>Validates that the <see cref="HTMLInputTextElementEvents" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLInputTextElementEvents>(), Is.EqualTo(sizeof(HTMLInputTextElementEvents)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLInputTextElementEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLInputTextElementEvents).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLInputTextElementEvents" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(HTMLInputTextElementEvents), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(HTMLInputTextElementEvents), Is.EqualTo(4));
-        }
-    }
 }

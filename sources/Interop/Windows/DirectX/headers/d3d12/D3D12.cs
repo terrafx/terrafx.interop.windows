@@ -18,7 +18,7 @@ public static partial class D3D12
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x4E, 0x08, 0xB0, 0x62,
                 0x0E, 0xC7,
                 0xAA, 0x4D,
@@ -30,7 +30,7 @@ public static partial class D3D12
                 0x5A,
                 0x04,
                 0x82
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

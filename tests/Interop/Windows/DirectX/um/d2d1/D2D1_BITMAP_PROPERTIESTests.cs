@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D2D1_BITMAP_PROPERTIES" /> struct.</summary>
 public static unsafe partial class D2D1_BITMAP_PROPERTIESTests
 {
-    /// <summary>Validates that the <see cref="D2D1_BITMAP_PROPERTIES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D2D1_BITMAP_PROPERTIES>(), Is.EqualTo(sizeof(D2D1_BITMAP_PROPERTIES)));
-    }
-
-    /// <summary>Validates that the <see cref="D2D1_BITMAP_PROPERTIES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D2D1_BITMAP_PROPERTIES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D2D1_BITMAP_PROPERTIES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D2D1_BITMAP_PROPERTIES), Is.EqualTo(16));
-    }
 }

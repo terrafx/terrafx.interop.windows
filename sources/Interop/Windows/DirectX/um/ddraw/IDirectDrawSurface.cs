@@ -26,7 +26,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint>)(lpVtbl[1]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint>)(lpVtbl[1]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint>)(lpVtbl[2]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint>)(lpVtbl[2]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.AddAttachedSurface"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(3)]
     public HRESULT AddAttachedSurface([NativeTypeName("LPDIRECTDRAWSURFACE")] IDirectDrawSurface* param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, IDirectDrawSurface*, int>)(lpVtbl[3]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, IDirectDrawSurface*, int>)(lpVtbl[3]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.AddOverlayDirtyRect"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(4)]
     public HRESULT AddOverlayDirtyRect([NativeTypeName("LPRECT")] RECT* param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, RECT*, int>)(lpVtbl[4]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, RECT*, int>)(lpVtbl[4]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.Blt"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(5)]
     public HRESULT Blt([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE")] IDirectDrawSurface* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDBLTFX")] DDBLTFX* param4)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, RECT*, IDirectDrawSurface*, RECT*, uint, DDBLTFX*, int>)(lpVtbl[5]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, RECT*, IDirectDrawSurface*, RECT*, uint, DDBLTFX*, int>)(lpVtbl[5]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.BltBatch"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(6)]
     public HRESULT BltBatch([NativeTypeName("LPDDBLTBATCH")] DDBLTBATCH* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, DDBLTBATCH*, uint, uint, int>)(lpVtbl[6]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, DDBLTBATCH*, uint, uint, int>)(lpVtbl[6]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.BltFast"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(7)]
     public HRESULT BltFast([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIRECTDRAWSURFACE")] IDirectDrawSurface* param2, [NativeTypeName("LPRECT")] RECT* param3, [NativeTypeName("DWORD")] uint param4)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint, uint, IDirectDrawSurface*, RECT*, uint, int>)(lpVtbl[7]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint, uint, IDirectDrawSurface*, RECT*, uint, int>)(lpVtbl[7]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.DeleteAttachedSurface"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(8)]
     public HRESULT DeleteAttachedSurface([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE")] IDirectDrawSurface* param1)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint, IDirectDrawSurface*, int>)(lpVtbl[8]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint, IDirectDrawSurface*, int>)(lpVtbl[8]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.EnumAttachedSurfaces"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(9)]
     public HRESULT EnumAttachedSurfaces([NativeTypeName("LPVOID")] void* param0, [NativeTypeName("LPDDENUMSURFACESCALLBACK")] delegate* unmanaged<IDirectDrawSurface*, DDSURFACEDESC*, void*, HRESULT> param1)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, void*, delegate* unmanaged<IDirectDrawSurface*, DDSURFACEDESC*, void*, HRESULT>, int>)(lpVtbl[9]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, void*, delegate* unmanaged<IDirectDrawSurface*, DDSURFACEDESC*, void*, HRESULT>, int>)(lpVtbl[9]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.EnumOverlayZOrders"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(10)]
     public HRESULT EnumOverlayZOrders([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDDENUMSURFACESCALLBACK")] delegate* unmanaged<IDirectDrawSurface*, DDSURFACEDESC*, void*, HRESULT> param2)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint, void*, delegate* unmanaged<IDirectDrawSurface*, DDSURFACEDESC*, void*, HRESULT>, int>)(lpVtbl[10]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint, void*, delegate* unmanaged<IDirectDrawSurface*, DDSURFACEDESC*, void*, HRESULT>, int>)(lpVtbl[10]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.Flip"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(11)]
     public HRESULT Flip([NativeTypeName("LPDIRECTDRAWSURFACE")] IDirectDrawSurface* param0, [NativeTypeName("DWORD")] uint param1)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, IDirectDrawSurface*, uint, int>)(lpVtbl[11]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, IDirectDrawSurface*, uint, int>)(lpVtbl[11]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetAttachedSurface"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(12)]
     public HRESULT GetAttachedSurface([NativeTypeName("LPDDSCAPS")] DDSCAPS* param0, [NativeTypeName("LPDIRECTDRAWSURFACE *")] IDirectDrawSurface** param1)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, DDSCAPS*, IDirectDrawSurface**, int>)(lpVtbl[12]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, DDSCAPS*, IDirectDrawSurface**, int>)(lpVtbl[12]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetBltStatus"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(13)]
     public HRESULT GetBltStatus([NativeTypeName("DWORD")] uint param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint, int>)(lpVtbl[13]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint, int>)(lpVtbl[13]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetCaps"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(14)]
     public HRESULT GetCaps([NativeTypeName("LPDDSCAPS")] DDSCAPS* param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, DDSCAPS*, int>)(lpVtbl[14]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, DDSCAPS*, int>)(lpVtbl[14]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetClipper"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(15)]
     public HRESULT GetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, IDirectDrawClipper**, int>)(lpVtbl[15]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, IDirectDrawClipper**, int>)(lpVtbl[15]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetColorKey"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(16)]
     public HRESULT GetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint, DDCOLORKEY*, int>)(lpVtbl[16]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint, DDCOLORKEY*, int>)(lpVtbl[16]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetDC"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(17)]
     public HRESULT GetDC(HDC* param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, HDC*, int>)(lpVtbl[17]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, HDC*, int>)(lpVtbl[17]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetFlipStatus"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(18)]
     public HRESULT GetFlipStatus([NativeTypeName("DWORD")] uint param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint, int>)(lpVtbl[18]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint, int>)(lpVtbl[18]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetOverlayPosition"]/*' />
@@ -180,7 +180,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(19)]
     public HRESULT GetOverlayPosition([NativeTypeName("LPLONG")] int* param0, [NativeTypeName("LPLONG")] int* param1)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, int*, int*, int>)(lpVtbl[19]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, int*, int*, int>)(lpVtbl[19]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetPalette"]/*' />
@@ -188,7 +188,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(20)]
     public HRESULT GetPalette([NativeTypeName("LPDIRECTDRAWPALETTE *")] IDirectDrawPalette** param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, IDirectDrawPalette**, int>)(lpVtbl[20]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, IDirectDrawPalette**, int>)(lpVtbl[20]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetPixelFormat"]/*' />
@@ -196,7 +196,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(21)]
     public HRESULT GetPixelFormat([NativeTypeName("LPDDPIXELFORMAT")] DDPIXELFORMAT* param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, DDPIXELFORMAT*, int>)(lpVtbl[21]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, DDPIXELFORMAT*, int>)(lpVtbl[21]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.GetSurfaceDesc"]/*' />
@@ -204,7 +204,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(22)]
     public HRESULT GetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC")] DDSURFACEDESC* param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, DDSURFACEDESC*, int>)(lpVtbl[22]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, DDSURFACEDESC*, int>)(lpVtbl[22]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.Initialize"]/*' />
@@ -212,7 +212,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(23)]
     public HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("LPDDSURFACEDESC")] DDSURFACEDESC* param1)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, IDirectDraw*, DDSURFACEDESC*, int>)(lpVtbl[23]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, IDirectDraw*, DDSURFACEDESC*, int>)(lpVtbl[23]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.IsLost"]/*' />
@@ -220,7 +220,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(24)]
     public HRESULT IsLost()
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, int>)(lpVtbl[24]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, int>)(lpVtbl[24]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.Lock"]/*' />
@@ -228,7 +228,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(25)]
     public HRESULT Lock([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDDSURFACEDESC")] DDSURFACEDESC* param1, [NativeTypeName("DWORD")] uint param2, HANDLE param3)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, RECT*, DDSURFACEDESC*, uint, HANDLE, int>)(lpVtbl[25]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, RECT*, DDSURFACEDESC*, uint, HANDLE, int>)(lpVtbl[25]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.ReleaseDC"]/*' />
@@ -236,7 +236,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(26)]
     public HRESULT ReleaseDC(HDC param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, HDC, int>)(lpVtbl[26]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, HDC, int>)(lpVtbl[26]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.Restore"]/*' />
@@ -244,7 +244,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(27)]
     public HRESULT Restore()
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, int>)(lpVtbl[27]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, int>)(lpVtbl[27]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.SetClipper"]/*' />
@@ -252,7 +252,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(28)]
     public HRESULT SetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER")] IDirectDrawClipper* param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, IDirectDrawClipper*, int>)(lpVtbl[28]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, IDirectDrawClipper*, int>)(lpVtbl[28]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.SetColorKey"]/*' />
@@ -260,7 +260,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(29)]
     public HRESULT SetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint, DDCOLORKEY*, int>)(lpVtbl[29]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint, DDCOLORKEY*, int>)(lpVtbl[29]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.SetOverlayPosition"]/*' />
@@ -268,7 +268,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(30)]
     public HRESULT SetOverlayPosition([NativeTypeName("LONG")] int param0, [NativeTypeName("LONG")] int param1)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, int, int, int>)(lpVtbl[30]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, int, int, int>)(lpVtbl[30]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.SetPalette"]/*' />
@@ -276,7 +276,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(31)]
     public HRESULT SetPalette([NativeTypeName("LPDIRECTDRAWPALETTE")] IDirectDrawPalette* param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, IDirectDrawPalette*, int>)(lpVtbl[31]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, IDirectDrawPalette*, int>)(lpVtbl[31]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.Unlock"]/*' />
@@ -284,7 +284,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(32)]
     public HRESULT Unlock([NativeTypeName("LPVOID")] void* param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, void*, int>)(lpVtbl[32]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, void*, int>)(lpVtbl[32]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.UpdateOverlay"]/*' />
@@ -292,7 +292,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(33)]
     public HRESULT UpdateOverlay([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE")] IDirectDrawSurface* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDOVERLAYFX")] DDOVERLAYFX* param4)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, RECT*, IDirectDrawSurface*, RECT*, uint, DDOVERLAYFX*, int>)(lpVtbl[33]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, RECT*, IDirectDrawSurface*, RECT*, uint, DDOVERLAYFX*, int>)(lpVtbl[33]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.UpdateOverlayDisplay"]/*' />
@@ -300,7 +300,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(34)]
     public HRESULT UpdateOverlayDisplay([NativeTypeName("DWORD")] uint param0)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint, int>)(lpVtbl[34]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint, int>)(lpVtbl[34]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface.UpdateOverlayZOrder"]/*' />
@@ -308,7 +308,7 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
     [VtblIndex(35)]
     public HRESULT UpdateOverlayZOrder([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE")] IDirectDrawSurface* param1)
     {
-        return ((delegate* unmanaged<IDirectDrawSurface*, uint, IDirectDrawSurface*, int>)(lpVtbl[35]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawSurface*, uint, IDirectDrawSurface*, int>)(lpVtbl[35]))((IDirectDrawSurface*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     public interface Interface : IUnknown.Interface
@@ -411,111 +411,111 @@ public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDrawSurface*, int> AddAttachedSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDrawSurface*, int> AddAttachedSurface;
 
         [NativeTypeName("HRESULT (LPRECT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> AddOverlayDirtyRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> AddOverlayDirtyRect;
 
         [NativeTypeName("HRESULT (LPRECT, LPDIRECTDRAWSURFACE, LPRECT, DWORD, LPDDBLTFX) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, IDirectDrawSurface*, RECT*, uint, DDBLTFX*, int> Blt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, IDirectDrawSurface*, RECT*, uint, DDBLTFX*, int> Blt;
 
         [NativeTypeName("HRESULT (LPDDBLTBATCH, DWORD, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DDBLTBATCH*, uint, uint, int> BltBatch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DDBLTBATCH*, uint, uint, int> BltBatch;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, LPDIRECTDRAWSURFACE, LPRECT, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IDirectDrawSurface*, RECT*, uint, int> BltFast;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IDirectDrawSurface*, RECT*, uint, int> BltFast;
 
         [NativeTypeName("HRESULT (DWORD, LPDIRECTDRAWSURFACE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDirectDrawSurface*, int> DeleteAttachedSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDirectDrawSurface*, int> DeleteAttachedSurface;
 
         [NativeTypeName("HRESULT (LPVOID, LPDDENUMSURFACESCALLBACK) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, delegate* unmanaged<TSelf*, DDSURFACEDESC*, void*, HRESULT>, int> EnumAttachedSurfaces;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, delegate* unmanaged<TSelf*, DDSURFACEDESC*, void*, HRESULT>, int> EnumAttachedSurfaces;
 
         [NativeTypeName("HRESULT (DWORD, LPVOID, LPDDENUMSURFACESCALLBACK) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, delegate* unmanaged<TSelf*, DDSURFACEDESC*, void*, HRESULT>, int> EnumOverlayZOrders;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, delegate* unmanaged<TSelf*, DDSURFACEDESC*, void*, HRESULT>, int> EnumOverlayZOrders;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDrawSurface*, uint, int> Flip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDrawSurface*, uint, int> Flip;
 
         [NativeTypeName("HRESULT (LPDDSCAPS, LPDIRECTDRAWSURFACE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DDSCAPS*, IDirectDrawSurface**, int> GetAttachedSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DDSCAPS*, IDirectDrawSurface**, int> GetAttachedSurface;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> GetBltStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> GetBltStatus;
 
         [NativeTypeName("HRESULT (LPDDSCAPS) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DDSCAPS*, int> GetCaps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DDSCAPS*, int> GetCaps;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWCLIPPER *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDrawClipper**, int> GetClipper;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDrawClipper**, int> GetClipper;
 
         [NativeTypeName("HRESULT (DWORD, LPDDCOLORKEY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DDCOLORKEY*, int> GetColorKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DDCOLORKEY*, int> GetColorKey;
 
         [NativeTypeName("HRESULT (HDC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC*, int> GetDC;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC*, int> GetDC;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> GetFlipStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> GetFlipStatus;
 
         [NativeTypeName("HRESULT (LPLONG, LPLONG) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> GetOverlayPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> GetOverlayPosition;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWPALETTE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDrawPalette**, int> GetPalette;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDrawPalette**, int> GetPalette;
 
         [NativeTypeName("HRESULT (LPDDPIXELFORMAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DDPIXELFORMAT*, int> GetPixelFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DDPIXELFORMAT*, int> GetPixelFormat;
 
         [NativeTypeName("HRESULT (LPDDSURFACEDESC) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DDSURFACEDESC*, int> GetSurfaceDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DDSURFACEDESC*, int> GetSurfaceDesc;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW, LPDDSURFACEDESC) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDraw*, DDSURFACEDESC*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDraw*, DDSURFACEDESC*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsLost;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsLost;
 
         [NativeTypeName("HRESULT (LPRECT, LPDDSURFACEDESC, DWORD, HANDLE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, DDSURFACEDESC*, uint, HANDLE, int> Lock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, DDSURFACEDESC*, uint, HANDLE, int> Lock;
 
         [NativeTypeName("HRESULT (HDC) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, int> ReleaseDC;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, int> ReleaseDC;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Restore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Restore;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWCLIPPER) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDrawClipper*, int> SetClipper;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDrawClipper*, int> SetClipper;
 
         [NativeTypeName("HRESULT (DWORD, LPDDCOLORKEY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DDCOLORKEY*, int> SetColorKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DDCOLORKEY*, int> SetColorKey;
 
         [NativeTypeName("HRESULT (LONG, LONG) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetOverlayPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetOverlayPosition;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWPALETTE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDrawPalette*, int> SetPalette;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDrawPalette*, int> SetPalette;
 
         [NativeTypeName("HRESULT (LPVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, int> Unlock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, int> Unlock;
 
         [NativeTypeName("HRESULT (LPRECT, LPDIRECTDRAWSURFACE, LPRECT, DWORD, LPDDOVERLAYFX) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, IDirectDrawSurface*, RECT*, uint, DDOVERLAYFX*, int> UpdateOverlay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, IDirectDrawSurface*, RECT*, uint, DDOVERLAYFX*, int> UpdateOverlay;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> UpdateOverlayDisplay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> UpdateOverlayDisplay;
 
         [NativeTypeName("HRESULT (DWORD, LPDIRECTDRAWSURFACE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDirectDrawSurface*, int> UpdateOverlayZOrder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDirectDrawSurface*, int> UpdateOverlayZOrder;
     }
 }

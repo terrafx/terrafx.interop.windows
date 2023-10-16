@@ -25,7 +25,7 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMenuBand*, Guid*, void**, int>)(lpVtbl[0]))((IMenuBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMenuBand*, Guid*, void**, int>)(lpVtbl[0]))((IMenuBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMenuBand*, uint>)(lpVtbl[1]))((IMenuBand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMenuBand*, uint>)(lpVtbl[1]))((IMenuBand*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMenuBand*, uint>)(lpVtbl[2]))((IMenuBand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMenuBand*, uint>)(lpVtbl[2]))((IMenuBand*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMenuBand.xml' path='doc/member[@name="IMenuBand.IsMenuMessage"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT IsMenuMessage(MSG* pmsg)
     {
-        return ((delegate* unmanaged<IMenuBand*, MSG*, int>)(lpVtbl[3]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg);
+        return ((delegate* unmanaged[MemberFunction]<IMenuBand*, MSG*, int>)(lpVtbl[3]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg);
     }
 
     /// <include file='IMenuBand.xml' path='doc/member[@name="IMenuBand.TranslateMenuMessage"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT TranslateMenuMessage(MSG* pmsg, LRESULT* plRet)
     {
-        return ((delegate* unmanaged<IMenuBand*, MSG*, LRESULT*, int>)(lpVtbl[4]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg, plRet);
+        return ((delegate* unmanaged[MemberFunction]<IMenuBand*, MSG*, LRESULT*, int>)(lpVtbl[4]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg, plRet);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, int> IsMenuMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, int> IsMenuMessage;
 
         [NativeTypeName("HRESULT (MSG *, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, LRESULT*, int> TranslateMenuMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, LRESULT*, int> TranslateMenuMessage;
     }
 }

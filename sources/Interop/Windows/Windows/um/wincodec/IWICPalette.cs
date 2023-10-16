@@ -25,7 +25,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICPalette*, Guid*, void**, int>)(lpVtbl[0]))((IWICPalette*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, Guid*, void**, int>)(lpVtbl[0]))((IWICPalette*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICPalette*, uint>)(lpVtbl[1]))((IWICPalette*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, uint>)(lpVtbl[1]))((IWICPalette*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICPalette*, uint>)(lpVtbl[2]))((IWICPalette*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, uint>)(lpVtbl[2]))((IWICPalette*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.InitializePredefined"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT InitializePredefined(WICBitmapPaletteType ePaletteType, BOOL fAddTransparentColor)
     {
-        return ((delegate* unmanaged<IWICPalette*, WICBitmapPaletteType, BOOL, int>)(lpVtbl[3]))((IWICPalette*)Unsafe.AsPointer(ref this), ePaletteType, fAddTransparentColor);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, WICBitmapPaletteType, BOOL, int>)(lpVtbl[3]))((IWICPalette*)Unsafe.AsPointer(ref this), ePaletteType, fAddTransparentColor);
     }
 
     /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.InitializeCustom"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT InitializeCustom([NativeTypeName("WICColor *")] uint* pColors, uint cCount)
     {
-        return ((delegate* unmanaged<IWICPalette*, uint*, uint, int>)(lpVtbl[4]))((IWICPalette*)Unsafe.AsPointer(ref this), pColors, cCount);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, uint*, uint, int>)(lpVtbl[4]))((IWICPalette*)Unsafe.AsPointer(ref this), pColors, cCount);
     }
 
     /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.InitializeFromBitmap"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT InitializeFromBitmap(IWICBitmapSource* pISurface, uint cCount, BOOL fAddTransparentColor)
     {
-        return ((delegate* unmanaged<IWICPalette*, IWICBitmapSource*, uint, BOOL, int>)(lpVtbl[5]))((IWICPalette*)Unsafe.AsPointer(ref this), pISurface, cCount, fAddTransparentColor);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, IWICBitmapSource*, uint, BOOL, int>)(lpVtbl[5]))((IWICPalette*)Unsafe.AsPointer(ref this), pISurface, cCount, fAddTransparentColor);
     }
 
     /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.InitializeFromPalette"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT InitializeFromPalette(IWICPalette* pIPalette)
     {
-        return ((delegate* unmanaged<IWICPalette*, IWICPalette*, int>)(lpVtbl[6]))((IWICPalette*)Unsafe.AsPointer(ref this), pIPalette);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, IWICPalette*, int>)(lpVtbl[6]))((IWICPalette*)Unsafe.AsPointer(ref this), pIPalette);
     }
 
     /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.GetType"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetType(WICBitmapPaletteType* pePaletteType)
     {
-        return ((delegate* unmanaged<IWICPalette*, WICBitmapPaletteType*, int>)(lpVtbl[7]))((IWICPalette*)Unsafe.AsPointer(ref this), pePaletteType);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, WICBitmapPaletteType*, int>)(lpVtbl[7]))((IWICPalette*)Unsafe.AsPointer(ref this), pePaletteType);
     }
 
     /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.GetColorCount"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetColorCount(uint* pcCount)
     {
-        return ((delegate* unmanaged<IWICPalette*, uint*, int>)(lpVtbl[8]))((IWICPalette*)Unsafe.AsPointer(ref this), pcCount);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, uint*, int>)(lpVtbl[8]))((IWICPalette*)Unsafe.AsPointer(ref this), pcCount);
     }
 
     /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.GetColors"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetColors(uint cCount, [NativeTypeName("WICColor *")] uint* pColors, uint* pcActualColors)
     {
-        return ((delegate* unmanaged<IWICPalette*, uint, uint*, uint*, int>)(lpVtbl[9]))((IWICPalette*)Unsafe.AsPointer(ref this), cCount, pColors, pcActualColors);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, uint, uint*, uint*, int>)(lpVtbl[9]))((IWICPalette*)Unsafe.AsPointer(ref this), cCount, pColors, pcActualColors);
     }
 
     /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.IsBlackWhite"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT IsBlackWhite(BOOL* pfIsBlackWhite)
     {
-        return ((delegate* unmanaged<IWICPalette*, BOOL*, int>)(lpVtbl[10]))((IWICPalette*)Unsafe.AsPointer(ref this), pfIsBlackWhite);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, BOOL*, int>)(lpVtbl[10]))((IWICPalette*)Unsafe.AsPointer(ref this), pfIsBlackWhite);
     }
 
     /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.IsGrayscale"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT IsGrayscale(BOOL* pfIsGrayscale)
     {
-        return ((delegate* unmanaged<IWICPalette*, BOOL*, int>)(lpVtbl[11]))((IWICPalette*)Unsafe.AsPointer(ref this), pfIsGrayscale);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, BOOL*, int>)(lpVtbl[11]))((IWICPalette*)Unsafe.AsPointer(ref this), pfIsGrayscale);
     }
 
     /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.HasAlpha"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT HasAlpha(BOOL* pfHasAlpha)
     {
-        return ((delegate* unmanaged<IWICPalette*, BOOL*, int>)(lpVtbl[12]))((IWICPalette*)Unsafe.AsPointer(ref this), pfHasAlpha);
+        return ((delegate* unmanaged[MemberFunction]<IWICPalette*, BOOL*, int>)(lpVtbl[12]))((IWICPalette*)Unsafe.AsPointer(ref this), pfHasAlpha);
     }
 
     public interface Interface : IUnknown.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WICBitmapPaletteType, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WICBitmapPaletteType, BOOL, int> InitializePredefined;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WICBitmapPaletteType, BOOL, int> InitializePredefined;
 
         [NativeTypeName("HRESULT (WICColor *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint, int> InitializeCustom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint, int> InitializeCustom;
 
         [NativeTypeName("HRESULT (IWICBitmapSource *, UINT, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICBitmapSource*, uint, BOOL, int> InitializeFromBitmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICBitmapSource*, uint, BOOL, int> InitializeFromBitmap;
 
         [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICPalette*, int> InitializeFromPalette;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICPalette*, int> InitializeFromPalette;
 
         [NativeTypeName("HRESULT (WICBitmapPaletteType *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, WICBitmapPaletteType*, int> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, WICBitmapPaletteType*, int> GetType;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetColorCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetColorCount;
 
         [NativeTypeName("HRESULT (UINT, WICColor *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> GetColors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint*, int> GetColors;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsBlackWhite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsBlackWhite;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsGrayscale;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsGrayscale;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> HasAlpha;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> HasAlpha;
     }
 }

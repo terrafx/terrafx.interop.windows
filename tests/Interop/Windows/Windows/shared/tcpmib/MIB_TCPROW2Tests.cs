@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIB_TCPROW2" /> struct.</summary>
 public static unsafe partial class MIB_TCPROW2Tests
 {
-    /// <summary>Validates that the <see cref="MIB_TCPROW2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIB_TCPROW2>(), Is.EqualTo(sizeof(MIB_TCPROW2)));
-    }
-
-    /// <summary>Validates that the <see cref="MIB_TCPROW2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIB_TCPROW2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIB_TCPROW2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIB_TCPROW2), Is.EqualTo(28));
-    }
 }

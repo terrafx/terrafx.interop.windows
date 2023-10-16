@@ -29,7 +29,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXAudio2*, Guid*, void**, int>)(lpVtbl[0]))((IXAudio2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2*, Guid*, void**, int>)(lpVtbl[0]))((IXAudio2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -38,7 +38,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXAudio2*, uint>)(lpVtbl[1]))((IXAudio2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2*, uint>)(lpVtbl[1]))((IXAudio2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -47,7 +47,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXAudio2*, uint>)(lpVtbl[2]))((IXAudio2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2*, uint>)(lpVtbl[2]))((IXAudio2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2.RegisterForCallbacks"]/*' />
@@ -55,7 +55,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT RegisterForCallbacks(IXAudio2EngineCallback* pCallback)
     {
-        return ((delegate* unmanaged<IXAudio2*, IXAudio2EngineCallback*, int>)(lpVtbl[3]))((IXAudio2*)Unsafe.AsPointer(ref this), pCallback);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2*, IXAudio2EngineCallback*, int>)(lpVtbl[3]))((IXAudio2*)Unsafe.AsPointer(ref this), pCallback);
     }
 
     /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2.UnregisterForCallbacks"]/*' />
@@ -63,7 +63,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [VtblIndex(4)]
     public void UnregisterForCallbacks(IXAudio2EngineCallback* pCallback)
     {
-        ((delegate* unmanaged<IXAudio2*, IXAudio2EngineCallback*, void>)(lpVtbl[4]))((IXAudio2*)Unsafe.AsPointer(ref this), pCallback);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2*, IXAudio2EngineCallback*, void>)(lpVtbl[4]))((IXAudio2*)Unsafe.AsPointer(ref this), pCallback);
     }
 
     /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2.CreateSourceVoice"]/*' />
@@ -71,7 +71,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pSourceFormat, [NativeTypeName("UINT32")] uint Flags = 0, float MaxFrequencyRatio = 2.0f, IXAudio2VoiceCallback* pCallback = null, [NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null)
     {
-        return ((delegate* unmanaged<IXAudio2*, IXAudio2SourceVoice**, WAVEFORMATEX*, uint, float, IXAudio2VoiceCallback*, XAUDIO2_VOICE_SENDS*, XAUDIO2_EFFECT_CHAIN*, int>)(lpVtbl[5]))((IXAudio2*)Unsafe.AsPointer(ref this), ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, pSendList, pEffectChain);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2*, IXAudio2SourceVoice**, WAVEFORMATEX*, uint, float, IXAudio2VoiceCallback*, XAUDIO2_VOICE_SENDS*, XAUDIO2_EFFECT_CHAIN*, int>)(lpVtbl[5]))((IXAudio2*)Unsafe.AsPointer(ref this), ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, pSendList, pEffectChain);
     }
 
     /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2.CreateSubmixVoice"]/*' />
@@ -79,15 +79,15 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice, [NativeTypeName("UINT32")] uint InputChannels, [NativeTypeName("UINT32")] uint InputSampleRate, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint ProcessingStage = 0, [NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null)
     {
-        return ((delegate* unmanaged<IXAudio2*, IXAudio2SubmixVoice**, uint, uint, uint, uint, XAUDIO2_VOICE_SENDS*, XAUDIO2_EFFECT_CHAIN*, int>)(lpVtbl[6]))((IXAudio2*)Unsafe.AsPointer(ref this), ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, pSendList, pEffectChain);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2*, IXAudio2SubmixVoice**, uint, uint, uint, uint, XAUDIO2_VOICE_SENDS*, XAUDIO2_EFFECT_CHAIN*, int>)(lpVtbl[6]))((IXAudio2*)Unsafe.AsPointer(ref this), ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, pSendList, pEffectChain);
     }
 
     /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2.CreateMasteringVoice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, [NativeTypeName("UINT32")] uint InputChannels = 0, [NativeTypeName("UINT32")] uint InputSampleRate = 0, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("LPCWSTR")] ushort* szDeviceId = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null, AUDIO_STREAM_CATEGORY StreamCategory = AudioCategory_GameEffects)
+    public HRESULT CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, [NativeTypeName("UINT32")] uint InputChannels = 0, [NativeTypeName("UINT32")] uint InputSampleRate = 0, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("LPCWSTR")] char* szDeviceId = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null, AUDIO_STREAM_CATEGORY StreamCategory = AudioCategory_GameEffects)
     {
-        return ((delegate* unmanaged<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, ushort*, XAUDIO2_EFFECT_CHAIN*, AUDIO_STREAM_CATEGORY, int>)(lpVtbl[7]))((IXAudio2*)Unsafe.AsPointer(ref this), ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, XAUDIO2_EFFECT_CHAIN*, AUDIO_STREAM_CATEGORY, int>)(lpVtbl[7]))((IXAudio2*)Unsafe.AsPointer(ref this), ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
     }
 
     /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2.StartEngine"]/*' />
@@ -95,7 +95,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT StartEngine()
     {
-        return ((delegate* unmanaged<IXAudio2*, int>)(lpVtbl[8]))((IXAudio2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2*, int>)(lpVtbl[8]))((IXAudio2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2.StopEngine"]/*' />
@@ -103,7 +103,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [VtblIndex(9)]
     public void StopEngine()
     {
-        ((delegate* unmanaged<IXAudio2*, void>)(lpVtbl[9]))((IXAudio2*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IXAudio2*, void>)(lpVtbl[9]))((IXAudio2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2.CommitChanges"]/*' />
@@ -111,7 +111,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT CommitChanges([NativeTypeName("UINT32")] uint OperationSet)
     {
-        return ((delegate* unmanaged<IXAudio2*, uint, int>)(lpVtbl[10]))((IXAudio2*)Unsafe.AsPointer(ref this), OperationSet);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2*, uint, int>)(lpVtbl[10]))((IXAudio2*)Unsafe.AsPointer(ref this), OperationSet);
     }
 
     /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2.GetPerformanceData"]/*' />
@@ -119,7 +119,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [VtblIndex(11)]
     public void GetPerformanceData(XAUDIO2_PERFORMANCE_DATA* pPerfData)
     {
-        ((delegate* unmanaged<IXAudio2*, XAUDIO2_PERFORMANCE_DATA*, void>)(lpVtbl[11]))((IXAudio2*)Unsafe.AsPointer(ref this), pPerfData);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2*, XAUDIO2_PERFORMANCE_DATA*, void>)(lpVtbl[11]))((IXAudio2*)Unsafe.AsPointer(ref this), pPerfData);
     }
 
     /// <include file='IXAudio2.xml' path='doc/member[@name="IXAudio2.SetDebugConfiguration"]/*' />
@@ -127,7 +127,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
     [VtblIndex(12)]
     public void SetDebugConfiguration([NativeTypeName("const XAUDIO2_DEBUG_CONFIGURATION *")] XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration, void* pReserved = null)
     {
-        ((delegate* unmanaged<IXAudio2*, XAUDIO2_DEBUG_CONFIGURATION*, void*, void>)(lpVtbl[12]))((IXAudio2*)Unsafe.AsPointer(ref this), pDebugConfiguration, pReserved);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2*, XAUDIO2_DEBUG_CONFIGURATION*, void*, void>)(lpVtbl[12]))((IXAudio2*)Unsafe.AsPointer(ref this), pDebugConfiguration, pReserved);
     }
 
     public interface Interface : IUnknown.Interface
@@ -145,7 +145,7 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
         HRESULT CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice, [NativeTypeName("UINT32")] uint InputChannels, [NativeTypeName("UINT32")] uint InputSampleRate, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint ProcessingStage = 0, [NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null);
 
         [VtblIndex(7)]
-        HRESULT CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, [NativeTypeName("UINT32")] uint InputChannels = 0, [NativeTypeName("UINT32")] uint InputSampleRate = 0, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("LPCWSTR")] ushort* szDeviceId = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null, AUDIO_STREAM_CATEGORY StreamCategory = AudioCategory_GameEffects);
+        HRESULT CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, [NativeTypeName("UINT32")] uint InputChannels = 0, [NativeTypeName("UINT32")] uint InputSampleRate = 0, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("LPCWSTR")] char* szDeviceId = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null, AUDIO_STREAM_CATEGORY StreamCategory = AudioCategory_GameEffects);
 
         [VtblIndex(8)]
         HRESULT StartEngine();
@@ -167,42 +167,42 @@ public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IXAudio2EngineCallback *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXAudio2EngineCallback*, int> RegisterForCallbacks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXAudio2EngineCallback*, int> RegisterForCallbacks;
 
         [NativeTypeName("void (IXAudio2EngineCallback *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXAudio2EngineCallback*, void> UnregisterForCallbacks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXAudio2EngineCallback*, void> UnregisterForCallbacks;
 
         [NativeTypeName("HRESULT (IXAudio2SourceVoice **, const WAVEFORMATEX *, UINT32, float, IXAudio2VoiceCallback *, const XAUDIO2_VOICE_SENDS *, const XAUDIO2_EFFECT_CHAIN *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXAudio2SourceVoice**, WAVEFORMATEX*, uint, float, IXAudio2VoiceCallback*, XAUDIO2_VOICE_SENDS*, XAUDIO2_EFFECT_CHAIN*, int> CreateSourceVoice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXAudio2SourceVoice**, WAVEFORMATEX*, uint, float, IXAudio2VoiceCallback*, XAUDIO2_VOICE_SENDS*, XAUDIO2_EFFECT_CHAIN*, int> CreateSourceVoice;
 
         [NativeTypeName("HRESULT (IXAudio2SubmixVoice **, UINT32, UINT32, UINT32, UINT32, const XAUDIO2_VOICE_SENDS *, const XAUDIO2_EFFECT_CHAIN *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXAudio2SubmixVoice**, uint, uint, uint, uint, XAUDIO2_VOICE_SENDS*, XAUDIO2_EFFECT_CHAIN*, int> CreateSubmixVoice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXAudio2SubmixVoice**, uint, uint, uint, uint, XAUDIO2_VOICE_SENDS*, XAUDIO2_EFFECT_CHAIN*, int> CreateSubmixVoice;
 
         [NativeTypeName("HRESULT (IXAudio2MasteringVoice **, UINT32, UINT32, UINT32, LPCWSTR, const XAUDIO2_EFFECT_CHAIN *, AUDIO_STREAM_CATEGORY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXAudio2MasteringVoice**, uint, uint, uint, ushort*, XAUDIO2_EFFECT_CHAIN*, AUDIO_STREAM_CATEGORY, int> CreateMasteringVoice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXAudio2MasteringVoice**, uint, uint, uint, char*, XAUDIO2_EFFECT_CHAIN*, AUDIO_STREAM_CATEGORY, int> CreateMasteringVoice;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StartEngine;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StartEngine;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> StopEngine;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> StopEngine;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> CommitChanges;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> CommitChanges;
 
         [NativeTypeName("void (XAUDIO2_PERFORMANCE_DATA *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XAUDIO2_PERFORMANCE_DATA*, void> GetPerformanceData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XAUDIO2_PERFORMANCE_DATA*, void> GetPerformanceData;
 
         [NativeTypeName("void (const XAUDIO2_DEBUG_CONFIGURATION *, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XAUDIO2_DEBUG_CONFIGURATION*, void*, void> SetDebugConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XAUDIO2_DEBUG_CONFIGURATION*, void*, void> SetDebugConfiguration;
     }
 }

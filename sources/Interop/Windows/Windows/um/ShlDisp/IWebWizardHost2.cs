@@ -25,7 +25,7 @@ public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, Guid*, void**, int>)(lpVtbl[0]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, Guid*, void**, int>)(lpVtbl[0]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, uint>)(lpVtbl[1]))((IWebWizardHost2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, uint>)(lpVtbl[1]))((IWebWizardHost2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, uint>)(lpVtbl[2]))((IWebWizardHost2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, uint>)(lpVtbl[2]))((IWebWizardHost2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, uint*, int>)(lpVtbl[3]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, uint*, int>)(lpVtbl[3]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativ
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="IWebWizardHost.FinalBack" />
@@ -83,7 +83,7 @@ public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativ
     [VtblIndex(7)]
     public HRESULT FinalBack()
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, int>)(lpVtbl[7]))((IWebWizardHost2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, int>)(lpVtbl[7]))((IWebWizardHost2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IWebWizardHost.FinalNext" />
@@ -91,7 +91,7 @@ public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativ
     [VtblIndex(8)]
     public HRESULT FinalNext()
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, int>)(lpVtbl[8]))((IWebWizardHost2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, int>)(lpVtbl[8]))((IWebWizardHost2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IWebWizardHost.Cancel" />
@@ -99,39 +99,39 @@ public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativ
     [VtblIndex(9)]
     public HRESULT Cancel()
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, int>)(lpVtbl[9]))((IWebWizardHost2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, int>)(lpVtbl[9]))((IWebWizardHost2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IWebWizardHost.put_Caption" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT put_Caption([NativeTypeName("BSTR")] ushort* bstrCaption)
+    public HRESULT put_Caption([NativeTypeName("BSTR")] char* bstrCaption)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, ushort*, int>)(lpVtbl[10]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), bstrCaption);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, char*, int>)(lpVtbl[10]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), bstrCaption);
     }
 
     /// <inheritdoc cref="IWebWizardHost.get_Caption" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_Caption([NativeTypeName("BSTR *")] ushort** pbstrCaption)
+    public HRESULT get_Caption([NativeTypeName("BSTR *")] char** pbstrCaption)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, ushort**, int>)(lpVtbl[11]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), pbstrCaption);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, char**, int>)(lpVtbl[11]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), pbstrCaption);
     }
 
     /// <inheritdoc cref="IWebWizardHost.put_Property" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT put_Property([NativeTypeName("BSTR")] ushort* bstrPropertyName, VARIANT* pvProperty)
+    public HRESULT put_Property([NativeTypeName("BSTR")] char* bstrPropertyName, VARIANT* pvProperty)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, ushort*, VARIANT*, int>)(lpVtbl[12]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), bstrPropertyName, pvProperty);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, char*, VARIANT*, int>)(lpVtbl[12]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), bstrPropertyName, pvProperty);
     }
 
     /// <inheritdoc cref="IWebWizardHost.get_Property" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_Property([NativeTypeName("BSTR")] ushort* bstrPropertyName, VARIANT* pvProperty)
+    public HRESULT get_Property([NativeTypeName("BSTR")] char* bstrPropertyName, VARIANT* pvProperty)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, ushort*, VARIANT*, int>)(lpVtbl[13]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), bstrPropertyName, pvProperty);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, char*, VARIANT*, int>)(lpVtbl[13]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), bstrPropertyName, pvProperty);
     }
 
     /// <inheritdoc cref="IWebWizardHost.SetWizardButtons" />
@@ -139,83 +139,83 @@ public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativ
     [VtblIndex(14)]
     public HRESULT SetWizardButtons([NativeTypeName("VARIANT_BOOL")] short vfEnableBack, [NativeTypeName("VARIANT_BOOL")] short vfEnableNext, [NativeTypeName("VARIANT_BOOL")] short vfLastPage)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, short, short, short, int>)(lpVtbl[14]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), vfEnableBack, vfEnableNext, vfLastPage);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, short, short, short, int>)(lpVtbl[14]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), vfEnableBack, vfEnableNext, vfLastPage);
     }
 
     /// <inheritdoc cref="IWebWizardHost.SetHeaderText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT SetHeaderText([NativeTypeName("BSTR")] ushort* bstrHeaderTitle, [NativeTypeName("BSTR")] ushort* bstrHeaderSubtitle)
+    public HRESULT SetHeaderText([NativeTypeName("BSTR")] char* bstrHeaderTitle, [NativeTypeName("BSTR")] char* bstrHeaderSubtitle)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, ushort*, ushort*, int>)(lpVtbl[15]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), bstrHeaderTitle, bstrHeaderSubtitle);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, char*, char*, int>)(lpVtbl[15]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), bstrHeaderTitle, bstrHeaderSubtitle);
     }
 
     /// <include file='IWebWizardHost2.xml' path='doc/member[@name="IWebWizardHost2.SignString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT SignString([NativeTypeName("BSTR")] ushort* value, [NativeTypeName("BSTR *")] ushort** signedValue)
+    public HRESULT SignString([NativeTypeName("BSTR")] char* value, [NativeTypeName("BSTR *")] char** signedValue)
     {
-        return ((delegate* unmanaged<IWebWizardHost2*, ushort*, ushort**, int>)(lpVtbl[16]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), value, signedValue);
+        return ((delegate* unmanaged[MemberFunction]<IWebWizardHost2*, char*, char**, int>)(lpVtbl[16]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), value, signedValue);
     }
 
     public interface Interface : IWebWizardHost.Interface
     {
         [VtblIndex(16)]
-        HRESULT SignString([NativeTypeName("BSTR")] ushort* value, [NativeTypeName("BSTR *")] ushort** signedValue);
+        HRESULT SignString([NativeTypeName("BSTR")] char* value, [NativeTypeName("BSTR *")] char** signedValue);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> FinalBack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> FinalBack;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> FinalNext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> FinalNext;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Cancel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Cancel;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Caption;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_Caption;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Caption;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Caption;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> put_Property;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, int> put_Property;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> get_Property;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, int> get_Property;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, short, short, int> SetWizardButtons;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, short, short, int> SetWizardButtons;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetHeaderText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> SetHeaderText;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> SignString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char**, int> SignString;
     }
 }

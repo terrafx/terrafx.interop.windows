@@ -33,7 +33,7 @@ public unsafe partial struct PROPSHEETPAGEW
 
     /// <include file='PROPSHEETPAGEW.xml' path='doc/member[@name="PROPSHEETPAGEW.pszTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszTitle;
+    public char* pszTitle;
 
     /// <include file='PROPSHEETPAGEW.xml' path='doc/member[@name="PROPSHEETPAGEW.pfnDlgProc"]/*' />
     [NativeTypeName("DLGPROC")]
@@ -51,11 +51,11 @@ public unsafe partial struct PROPSHEETPAGEW
 
     /// <include file='PROPSHEETPAGEW.xml' path='doc/member[@name="PROPSHEETPAGEW.pszHeaderTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszHeaderTitle;
+    public char* pszHeaderTitle;
 
     /// <include file='PROPSHEETPAGEW.xml' path='doc/member[@name="PROPSHEETPAGEW.pszHeaderSubTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszHeaderSubTitle;
+    public char* pszHeaderSubTitle;
 
     /// <include file='PROPSHEETPAGEW.xml' path='doc/member[@name="PROPSHEETPAGEW.hActCtx"]/*' />
     public HANDLE hActCtx;
@@ -66,7 +66,7 @@ public unsafe partial struct PROPSHEETPAGEW
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszTemplate"]/*' />
     [UnscopedRef]
-    public ref ushort* pszTemplate
+    public ref char* pszTemplate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -99,7 +99,7 @@ public unsafe partial struct PROPSHEETPAGEW
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszIcon"]/*' />
     [UnscopedRef]
-    public ref ushort* pszIcon
+    public ref char* pszIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -121,7 +121,7 @@ public unsafe partial struct PROPSHEETPAGEW
 
     /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.pszbmHeader"]/*' />
     [UnscopedRef]
-    public ref ushort* pszbmHeader
+    public ref char* pszbmHeader
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -137,7 +137,7 @@ public unsafe partial struct PROPSHEETPAGEW
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszTemplate"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pszTemplate;
+        public char* pszTemplate;
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pResource"]/*' />
         [FieldOffset(0)]
@@ -156,7 +156,7 @@ public unsafe partial struct PROPSHEETPAGEW
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszIcon"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pszIcon;
+        public char* pszIcon;
     }
 
     /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union"]/*' />
@@ -170,6 +170,6 @@ public unsafe partial struct PROPSHEETPAGEW
         /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.pszbmHeader"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pszbmHeader;
+        public char* pszbmHeader;
     }
 }

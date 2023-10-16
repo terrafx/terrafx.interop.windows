@@ -17,7 +17,7 @@ public unsafe partial struct SYNCMGRPROGRESSITEM
 
     /// <include file='SYNCMGRPROGRESSITEM.xml' path='doc/member[@name="SYNCMGRPROGRESSITEM.lpcStatusText"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpcStatusText;
+    public char* lpcStatusText;
 
     /// <include file='SYNCMGRPROGRESSITEM.xml' path='doc/member[@name="SYNCMGRPROGRESSITEM.dwStatusType"]/*' />
     [NativeTypeName("DWORD")]

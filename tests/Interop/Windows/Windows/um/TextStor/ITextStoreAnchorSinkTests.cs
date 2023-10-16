@@ -19,32 +19,4 @@ public static unsafe partial class ITextStoreAnchorSinkTests
     {
         Assert.That(typeof(ITextStoreAnchorSink).GUID, Is.EqualTo(IID_ITextStoreAnchorSink));
     }
-
-    /// <summary>Validates that the <see cref="ITextStoreAnchorSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITextStoreAnchorSink>(), Is.EqualTo(sizeof(ITextStoreAnchorSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITextStoreAnchorSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITextStoreAnchorSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITextStoreAnchorSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITextStoreAnchorSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITextStoreAnchorSink), Is.EqualTo(4));
-        }
-    }
 }

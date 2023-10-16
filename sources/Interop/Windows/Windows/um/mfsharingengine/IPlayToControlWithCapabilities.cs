@@ -27,7 +27,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPlayToControlWithCapabilities*, Guid*, void**, int>)(lpVtbl[0]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPlayToControlWithCapabilities*, Guid*, void**, int>)(lpVtbl[0]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPlayToControlWithCapabilities*, uint>)(lpVtbl[1]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPlayToControlWithCapabilities*, uint>)(lpVtbl[1]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPlayToControlWithCapabilities*, uint>)(lpVtbl[2]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPlayToControlWithCapabilities*, uint>)(lpVtbl[2]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPlayToControl.Connect" />
@@ -53,7 +53,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
     [VtblIndex(3)]
     public HRESULT Connect(IMFSharingEngineClassFactory* pFactory)
     {
-        return ((delegate* unmanaged<IPlayToControlWithCapabilities*, IMFSharingEngineClassFactory*, int>)(lpVtbl[3]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this), pFactory);
+        return ((delegate* unmanaged[MemberFunction]<IPlayToControlWithCapabilities*, IMFSharingEngineClassFactory*, int>)(lpVtbl[3]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this), pFactory);
     }
 
     /// <inheritdoc cref="IPlayToControl.Disconnect" />
@@ -61,7 +61,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
     [VtblIndex(4)]
     public HRESULT Disconnect()
     {
-        return ((delegate* unmanaged<IPlayToControlWithCapabilities*, int>)(lpVtbl[4]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPlayToControlWithCapabilities*, int>)(lpVtbl[4]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPlayToControlWithCapabilities.xml' path='doc/member[@name="IPlayToControlWithCapabilities.GetCapabilities"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
     [VtblIndex(5)]
     public HRESULT GetCapabilities(PLAYTO_SOURCE_CREATEFLAGS* pCapabilities)
     {
-        return ((delegate* unmanaged<IPlayToControlWithCapabilities*, PLAYTO_SOURCE_CREATEFLAGS*, int>)(lpVtbl[5]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this), pCapabilities);
+        return ((delegate* unmanaged[MemberFunction]<IPlayToControlWithCapabilities*, PLAYTO_SOURCE_CREATEFLAGS*, int>)(lpVtbl[5]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this), pCapabilities);
     }
 
     public interface Interface : IPlayToControl.Interface
@@ -82,21 +82,21 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFSharingEngineClassFactory *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFSharingEngineClassFactory*, int> Connect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFSharingEngineClassFactory*, int> Connect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Disconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Disconnect;
 
         [NativeTypeName("HRESULT (PLAYTO_SOURCE_CREATEFLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PLAYTO_SOURCE_CREATEFLAGS*, int> GetCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PLAYTO_SOURCE_CREATEFLAGS*, int> GetCapabilities;
     }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="BYTE_BLOB" /> struct.</summary>
 public static unsafe partial class BYTE_BLOBTests
 {
-    /// <summary>Validates that the <see cref="BYTE_BLOB" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BYTE_BLOB>(), Is.EqualTo(sizeof(BYTE_BLOB)));
-    }
-
-    /// <summary>Validates that the <see cref="BYTE_BLOB" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BYTE_BLOB).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BYTE_BLOB" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BYTE_BLOB), Is.EqualTo(8));
-    }
 }

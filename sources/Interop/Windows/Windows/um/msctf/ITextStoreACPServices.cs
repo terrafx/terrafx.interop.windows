@@ -25,7 +25,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITextStoreACPServices*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPServices*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITextStoreACPServices*, uint>)(lpVtbl[1]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPServices*, uint>)(lpVtbl[1]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITextStoreACPServices*, uint>)(lpVtbl[2]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPServices*, uint>)(lpVtbl[2]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITextStoreACPServices.xml' path='doc/member[@name="ITextStoreACPServices.Serialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
     [VtblIndex(3)]
     public HRESULT Serialize(ITfProperty* pProp, ITfRange* pRange, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream)
     {
-        return ((delegate* unmanaged<ITextStoreACPServices*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int>)(lpVtbl[3]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), pProp, pRange, pHdr, pStream);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPServices*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int>)(lpVtbl[3]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), pProp, pRange, pHdr, pStream);
     }
 
     /// <include file='ITextStoreACPServices.xml' path='doc/member[@name="ITextStoreACPServices.Unserialize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
     [VtblIndex(4)]
     public HRESULT Unserialize(ITfProperty* pProp, [NativeTypeName("const TF_PERSISTENT_PROPERTY_HEADER_ACP *")] TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream, ITfPersistentPropertyLoaderACP* pLoader)
     {
-        return ((delegate* unmanaged<ITextStoreACPServices*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int>)(lpVtbl[4]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), pProp, pHdr, pStream, pLoader);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPServices*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int>)(lpVtbl[4]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), pProp, pHdr, pStream, pLoader);
     }
 
     /// <include file='ITextStoreACPServices.xml' path='doc/member[@name="ITextStoreACPServices.ForceLoadProperty"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
     [VtblIndex(5)]
     public HRESULT ForceLoadProperty(ITfProperty* pProp)
     {
-        return ((delegate* unmanaged<ITextStoreACPServices*, ITfProperty*, int>)(lpVtbl[5]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), pProp);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPServices*, ITfProperty*, int>)(lpVtbl[5]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), pProp);
     }
 
     /// <include file='ITextStoreACPServices.xml' path='doc/member[@name="ITextStoreACPServices.CreateRange"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
     [VtblIndex(6)]
     public HRESULT CreateRange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, ITfRangeACP** ppRange)
     {
-        return ((delegate* unmanaged<ITextStoreACPServices*, int, int, ITfRangeACP**, int>)(lpVtbl[6]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), acpStart, acpEnd, ppRange);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPServices*, int, int, ITfRangeACP**, int>)(lpVtbl[6]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), acpStart, acpEnd, ppRange);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfProperty *, ITfRange *, TF_PERSISTENT_PROPERTY_HEADER_ACP *, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int> Serialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int> Serialize;
 
         [NativeTypeName("HRESULT (ITfProperty *, const TF_PERSISTENT_PROPERTY_HEADER_ACP *, IStream *, ITfPersistentPropertyLoaderACP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int> Unserialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int> Unserialize;
 
         [NativeTypeName("HRESULT (ITfProperty *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfProperty*, int> ForceLoadProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfProperty*, int> ForceLoadProperty;
 
         [NativeTypeName("HRESULT (LONG, LONG, ITfRangeACP **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, ITfRangeACP**, int> CreateRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, ITfRangeACP**, int> CreateRange;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IUserActivityRequestManagerInteropTests
     {
         Assert.That(typeof(IUserActivityRequestManagerInterop).GUID, Is.EqualTo(IID_IUserActivityRequestManagerInterop));
     }
-
-    /// <summary>Validates that the <see cref="IUserActivityRequestManagerInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUserActivityRequestManagerInterop>(), Is.EqualTo(sizeof(IUserActivityRequestManagerInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IUserActivityRequestManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUserActivityRequestManagerInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUserActivityRequestManagerInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUserActivityRequestManagerInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUserActivityRequestManagerInterop), Is.EqualTo(4));
-        }
-    }
 }

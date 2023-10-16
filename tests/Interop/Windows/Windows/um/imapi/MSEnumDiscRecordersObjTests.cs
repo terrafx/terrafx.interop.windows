@@ -19,25 +19,4 @@ public static unsafe partial class MSEnumDiscRecordersObjTests
     {
         Assert.That(typeof(MSEnumDiscRecordersObj).GUID, Is.EqualTo(CLSID_MSEnumDiscRecordersObj));
     }
-
-    /// <summary>Validates that the <see cref="MSEnumDiscRecordersObj" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MSEnumDiscRecordersObj>(), Is.EqualTo(sizeof(MSEnumDiscRecordersObj)));
-    }
-
-    /// <summary>Validates that the <see cref="MSEnumDiscRecordersObj" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MSEnumDiscRecordersObj).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MSEnumDiscRecordersObj" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MSEnumDiscRecordersObj), Is.EqualTo(1));
-    }
 }

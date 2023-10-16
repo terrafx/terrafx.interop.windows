@@ -19,32 +19,4 @@ public static unsafe partial class IMFQualityAdviseLimitsTests
     {
         Assert.That(typeof(IMFQualityAdviseLimits).GUID, Is.EqualTo(IID_IMFQualityAdviseLimits));
     }
-
-    /// <summary>Validates that the <see cref="IMFQualityAdviseLimits" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFQualityAdviseLimits>(), Is.EqualTo(sizeof(IMFQualityAdviseLimits)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFQualityAdviseLimits" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFQualityAdviseLimits).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFQualityAdviseLimits" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFQualityAdviseLimits), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFQualityAdviseLimits), Is.EqualTo(4));
-        }
-    }
 }

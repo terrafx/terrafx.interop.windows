@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LSA_LAST_INTER_LOGON_INFO" /> struct.</summary>
 public static unsafe partial class LSA_LAST_INTER_LOGON_INFOTests
 {
-    /// <summary>Validates that the <see cref="LSA_LAST_INTER_LOGON_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LSA_LAST_INTER_LOGON_INFO>(), Is.EqualTo(sizeof(LSA_LAST_INTER_LOGON_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="LSA_LAST_INTER_LOGON_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LSA_LAST_INTER_LOGON_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LSA_LAST_INTER_LOGON_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(LSA_LAST_INTER_LOGON_INFO), Is.EqualTo(24));
-    }
 }

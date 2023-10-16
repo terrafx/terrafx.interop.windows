@@ -25,7 +25,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((IErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((IErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IErrorInfo*, uint>)(lpVtbl[1]))((IErrorInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IErrorInfo*, uint>)(lpVtbl[1]))((IErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IErrorInfo*, uint>)(lpVtbl[2]))((IErrorInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IErrorInfo*, uint>)(lpVtbl[2]))((IErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo.GetGUID"]/*' />
@@ -51,31 +51,31 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetGUID(Guid* pGUID)
     {
-        return ((delegate* unmanaged<IErrorInfo*, Guid*, int>)(lpVtbl[3]))((IErrorInfo*)Unsafe.AsPointer(ref this), pGUID);
+        return ((delegate* unmanaged[MemberFunction]<IErrorInfo*, Guid*, int>)(lpVtbl[3]))((IErrorInfo*)Unsafe.AsPointer(ref this), pGUID);
     }
 
     /// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo.GetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetSource([NativeTypeName("BSTR *")] ushort** pBstrSource)
+    public HRESULT GetSource([NativeTypeName("BSTR *")] char** pBstrSource)
     {
-        return ((delegate* unmanaged<IErrorInfo*, ushort**, int>)(lpVtbl[4]))((IErrorInfo*)Unsafe.AsPointer(ref this), pBstrSource);
+        return ((delegate* unmanaged[MemberFunction]<IErrorInfo*, char**, int>)(lpVtbl[4]))((IErrorInfo*)Unsafe.AsPointer(ref this), pBstrSource);
     }
 
     /// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstrDescription)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pBstrDescription)
     {
-        return ((delegate* unmanaged<IErrorInfo*, ushort**, int>)(lpVtbl[5]))((IErrorInfo*)Unsafe.AsPointer(ref this), pBstrDescription);
+        return ((delegate* unmanaged[MemberFunction]<IErrorInfo*, char**, int>)(lpVtbl[5]))((IErrorInfo*)Unsafe.AsPointer(ref this), pBstrDescription);
     }
 
     /// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo.GetHelpFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetHelpFile([NativeTypeName("BSTR *")] ushort** pBstrHelpFile)
+    public HRESULT GetHelpFile([NativeTypeName("BSTR *")] char** pBstrHelpFile)
     {
-        return ((delegate* unmanaged<IErrorInfo*, ushort**, int>)(lpVtbl[6]))((IErrorInfo*)Unsafe.AsPointer(ref this), pBstrHelpFile);
+        return ((delegate* unmanaged[MemberFunction]<IErrorInfo*, char**, int>)(lpVtbl[6]))((IErrorInfo*)Unsafe.AsPointer(ref this), pBstrHelpFile);
     }
 
     /// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo.GetHelpContext"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetHelpContext([NativeTypeName("DWORD *")] uint* pdwHelpContext)
     {
-        return ((delegate* unmanaged<IErrorInfo*, uint*, int>)(lpVtbl[7]))((IErrorInfo*)Unsafe.AsPointer(ref this), pdwHelpContext);
+        return ((delegate* unmanaged[MemberFunction]<IErrorInfo*, uint*, int>)(lpVtbl[7]))((IErrorInfo*)Unsafe.AsPointer(ref this), pdwHelpContext);
     }
 
     public interface Interface : IUnknown.Interface
@@ -92,13 +92,13 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface, INativeGuid
         HRESULT GetGUID(Guid* pGUID);
 
         [VtblIndex(4)]
-        HRESULT GetSource([NativeTypeName("BSTR *")] ushort** pBstrSource);
+        HRESULT GetSource([NativeTypeName("BSTR *")] char** pBstrSource);
 
         [VtblIndex(5)]
-        HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstrDescription);
+        HRESULT GetDescription([NativeTypeName("BSTR *")] char** pBstrDescription);
 
         [VtblIndex(6)]
-        HRESULT GetHelpFile([NativeTypeName("BSTR *")] ushort** pBstrHelpFile);
+        HRESULT GetHelpFile([NativeTypeName("BSTR *")] char** pBstrHelpFile);
 
         [VtblIndex(7)]
         HRESULT GetHelpContext([NativeTypeName("DWORD *")] uint* pdwHelpContext);
@@ -108,27 +108,27 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetHelpFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetHelpFile;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetHelpContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetHelpContext;
     }
 }

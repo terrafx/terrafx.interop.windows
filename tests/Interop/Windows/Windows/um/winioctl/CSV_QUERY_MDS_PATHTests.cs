@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CSV_QUERY_MDS_PATH" /> struct.</summary>
 public static unsafe partial class CSV_QUERY_MDS_PATHTests
 {
-    /// <summary>Validates that the <see cref="CSV_QUERY_MDS_PATH" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CSV_QUERY_MDS_PATH>(), Is.EqualTo(sizeof(CSV_QUERY_MDS_PATH)));
-    }
-
-    /// <summary>Validates that the <see cref="CSV_QUERY_MDS_PATH" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CSV_QUERY_MDS_PATH).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CSV_QUERY_MDS_PATH" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CSV_QUERY_MDS_PATH), Is.EqualTo(16));
-    }
 }

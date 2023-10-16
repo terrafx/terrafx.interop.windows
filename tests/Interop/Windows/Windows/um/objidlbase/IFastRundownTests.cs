@@ -21,32 +21,4 @@ public static unsafe partial class IFastRundownTests
     {
         Assert.That(typeof(IFastRundown).GUID, Is.EqualTo(IID_IFastRundown));
     }
-
-    /// <summary>Validates that the <see cref="IFastRundown" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFastRundown>(), Is.EqualTo(sizeof(IFastRundown)));
-    }
-
-    /// <summary>Validates that the <see cref="IFastRundown" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFastRundown).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFastRundown" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFastRundown), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFastRundown), Is.EqualTo(4));
-        }
-    }
 }

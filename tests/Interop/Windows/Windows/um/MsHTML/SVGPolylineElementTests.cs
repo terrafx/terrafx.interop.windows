@@ -19,25 +19,4 @@ public static unsafe partial class SVGPolylineElementTests
     {
         Assert.That(typeof(SVGPolylineElement).GUID, Is.EqualTo(IID_SVGPolylineElement));
     }
-
-    /// <summary>Validates that the <see cref="SVGPolylineElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGPolylineElement>(), Is.EqualTo(sizeof(SVGPolylineElement)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGPolylineElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGPolylineElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGPolylineElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGPolylineElement), Is.EqualTo(1));
-    }
 }

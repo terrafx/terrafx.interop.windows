@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ECHOWAVEFILTER" /> struct.</summary>
 public static unsafe partial class ECHOWAVEFILTERTests
 {
-    /// <summary>Validates that the <see cref="ECHOWAVEFILTER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ECHOWAVEFILTER>(), Is.EqualTo(sizeof(ECHOWAVEFILTER)));
-    }
-
-    /// <summary>Validates that the <see cref="ECHOWAVEFILTER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ECHOWAVEFILTER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ECHOWAVEFILTER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ECHOWAVEFILTER), Is.EqualTo(40));
-    }
 }

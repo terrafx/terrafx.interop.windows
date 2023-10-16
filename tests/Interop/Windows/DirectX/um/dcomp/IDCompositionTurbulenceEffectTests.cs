@@ -19,32 +19,4 @@ public static unsafe partial class IDCompositionTurbulenceEffectTests
     {
         Assert.That(typeof(IDCompositionTurbulenceEffect).GUID, Is.EqualTo(IID_IDCompositionTurbulenceEffect));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionTurbulenceEffect" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionTurbulenceEffect>(), Is.EqualTo(sizeof(IDCompositionTurbulenceEffect)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionTurbulenceEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionTurbulenceEffect).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionTurbulenceEffect" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionTurbulenceEffect), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionTurbulenceEffect), Is.EqualTo(4));
-        }
-    }
 }

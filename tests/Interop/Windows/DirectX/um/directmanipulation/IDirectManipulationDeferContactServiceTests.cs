@@ -21,32 +21,4 @@ public static unsafe partial class IDirectManipulationDeferContactServiceTests
     {
         Assert.That(typeof(IDirectManipulationDeferContactService).GUID, Is.EqualTo(IID_IDirectManipulationDeferContactService));
     }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationDeferContactService" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDirectManipulationDeferContactService>(), Is.EqualTo(sizeof(IDirectManipulationDeferContactService)));
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationDeferContactService" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDirectManipulationDeferContactService).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationDeferContactService" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDirectManipulationDeferContactService), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDirectManipulationDeferContactService), Is.EqualTo(4));
-        }
-    }
 }

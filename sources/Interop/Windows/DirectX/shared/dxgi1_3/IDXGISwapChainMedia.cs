@@ -28,7 +28,7 @@ public unsafe partial struct IDXGISwapChainMedia : IDXGISwapChainMedia.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGISwapChainMedia*, Guid*, void**, int>)(lpVtbl[0]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChainMedia*, Guid*, void**, int>)(lpVtbl[0]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDXGISwapChainMedia : IDXGISwapChainMedia.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGISwapChainMedia*, uint>)(lpVtbl[1]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChainMedia*, uint>)(lpVtbl[1]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDXGISwapChainMedia : IDXGISwapChainMedia.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGISwapChainMedia*, uint>)(lpVtbl[2]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChainMedia*, uint>)(lpVtbl[2]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXGISwapChainMedia.xml' path='doc/member[@name="IDXGISwapChainMedia.GetFrameStatisticsMedia"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDXGISwapChainMedia : IDXGISwapChainMedia.Interface
     [VtblIndex(3)]
     public HRESULT GetFrameStatisticsMedia(DXGI_FRAME_STATISTICS_MEDIA* pStats)
     {
-        return ((delegate* unmanaged<IDXGISwapChainMedia*, DXGI_FRAME_STATISTICS_MEDIA*, int>)(lpVtbl[3]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), pStats);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChainMedia*, DXGI_FRAME_STATISTICS_MEDIA*, int>)(lpVtbl[3]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), pStats);
     }
 
     /// <include file='IDXGISwapChainMedia.xml' path='doc/member[@name="IDXGISwapChainMedia.SetPresentDuration"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDXGISwapChainMedia : IDXGISwapChainMedia.Interface
     [VtblIndex(4)]
     public HRESULT SetPresentDuration(uint Duration)
     {
-        return ((delegate* unmanaged<IDXGISwapChainMedia*, uint, int>)(lpVtbl[4]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), Duration);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChainMedia*, uint, int>)(lpVtbl[4]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), Duration);
     }
 
     /// <include file='IDXGISwapChainMedia.xml' path='doc/member[@name="IDXGISwapChainMedia.CheckPresentDurationSupport"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDXGISwapChainMedia : IDXGISwapChainMedia.Interface
     [VtblIndex(5)]
     public HRESULT CheckPresentDurationSupport(uint DesiredPresentDuration, uint* pClosestSmallerPresentDuration, uint* pClosestLargerPresentDuration)
     {
-        return ((delegate* unmanaged<IDXGISwapChainMedia*, uint, uint*, uint*, int>)(lpVtbl[5]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), DesiredPresentDuration, pClosestSmallerPresentDuration, pClosestLargerPresentDuration);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISwapChainMedia*, uint, uint*, uint*, int>)(lpVtbl[5]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), DesiredPresentDuration, pClosestSmallerPresentDuration, pClosestLargerPresentDuration);
     }
 
     public interface Interface : IUnknown.Interface
@@ -89,21 +89,21 @@ public unsafe partial struct IDXGISwapChainMedia : IDXGISwapChainMedia.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DXGI_FRAME_STATISTICS_MEDIA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_FRAME_STATISTICS_MEDIA*, int> GetFrameStatisticsMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_FRAME_STATISTICS_MEDIA*, int> GetFrameStatisticsMedia;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetPresentDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetPresentDuration;
 
         [NativeTypeName("HRESULT (UINT, UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> CheckPresentDurationSupport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint*, int> CheckPresentDurationSupport;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ISyncMgrSyncItemInfoTests
     {
         Assert.That(typeof(ISyncMgrSyncItemInfo).GUID, Is.EqualTo(IID_ISyncMgrSyncItemInfo));
     }
-
-    /// <summary>Validates that the <see cref="ISyncMgrSyncItemInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISyncMgrSyncItemInfo>(), Is.EqualTo(sizeof(ISyncMgrSyncItemInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="ISyncMgrSyncItemInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISyncMgrSyncItemInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISyncMgrSyncItemInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISyncMgrSyncItemInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISyncMgrSyncItemInfo), Is.EqualTo(4));
-        }
-    }
 }

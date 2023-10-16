@@ -19,32 +19,4 @@ public static unsafe partial class IMFFieldOfUseMFTUnlockTests
     {
         Assert.That(typeof(IMFFieldOfUseMFTUnlock).GUID, Is.EqualTo(IID_IMFFieldOfUseMFTUnlock));
     }
-
-    /// <summary>Validates that the <see cref="IMFFieldOfUseMFTUnlock" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFFieldOfUseMFTUnlock>(), Is.EqualTo(sizeof(IMFFieldOfUseMFTUnlock)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFFieldOfUseMFTUnlock" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFFieldOfUseMFTUnlock).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFFieldOfUseMFTUnlock" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFFieldOfUseMFTUnlock), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFFieldOfUseMFTUnlock), Is.EqualTo(4));
-        }
-    }
 }

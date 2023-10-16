@@ -19,32 +19,4 @@ public static unsafe partial class IDOMXmlSerializerFactoryTests
     {
         Assert.That(typeof(IDOMXmlSerializerFactory).GUID, Is.EqualTo(IID_IDOMXmlSerializerFactory));
     }
-
-    /// <summary>Validates that the <see cref="IDOMXmlSerializerFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDOMXmlSerializerFactory>(), Is.EqualTo(sizeof(IDOMXmlSerializerFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IDOMXmlSerializerFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDOMXmlSerializerFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDOMXmlSerializerFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDOMXmlSerializerFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDOMXmlSerializerFactory), Is.EqualTo(4));
-        }
-    }
 }

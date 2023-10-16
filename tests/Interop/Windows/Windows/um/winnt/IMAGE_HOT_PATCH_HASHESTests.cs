@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGE_HOT_PATCH_HASHES" /> struct.</summary>
 public static unsafe partial class IMAGE_HOT_PATCH_HASHESTests
 {
-    /// <summary>Validates that the <see cref="IMAGE_HOT_PATCH_HASHES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_HOT_PATCH_HASHES>(), Is.EqualTo(sizeof(IMAGE_HOT_PATCH_HASHES)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_HOT_PATCH_HASHES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGE_HOT_PATCH_HASHES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_HOT_PATCH_HASHES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_HOT_PATCH_HASHES), Is.EqualTo(52));
-    }
 }

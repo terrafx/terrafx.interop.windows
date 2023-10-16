@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncWMVInterlacedEncodingTests
     {
         Assert.That(typeof(CODECAPI_AVEncWMVInterlacedEncoding).GUID, Is.EqualTo(IID_CODECAPI_AVEncWMVInterlacedEncoding));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncWMVInterlacedEncoding" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncWMVInterlacedEncoding>(), Is.EqualTo(sizeof(CODECAPI_AVEncWMVInterlacedEncoding)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncWMVInterlacedEncoding" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncWMVInterlacedEncoding).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncWMVInterlacedEncoding" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncWMVInterlacedEncoding), Is.EqualTo(1));
-    }
 }

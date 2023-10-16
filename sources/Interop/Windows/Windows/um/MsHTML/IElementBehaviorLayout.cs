@@ -25,7 +25,7 @@ public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout*, uint>)(lpVtbl[1]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout*, uint>)(lpVtbl[1]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout*, uint>)(lpVtbl[2]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout*, uint>)(lpVtbl[2]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IElementBehaviorLayout.xml' path='doc/member[@name="IElementBehaviorLayout.GetSize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Int
     [VtblIndex(3)]
     public HRESULT GetSize([NativeTypeName("LONG")] int dwFlags, SIZE sizeContent, POINT* pptTranslateBy, POINT* pptTopLeft, SIZE* psizeProposed)
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout*, int, SIZE, POINT*, POINT*, SIZE*, int>)(lpVtbl[3]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), dwFlags, sizeContent, pptTranslateBy, pptTopLeft, psizeProposed);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout*, int, SIZE, POINT*, POINT*, SIZE*, int>)(lpVtbl[3]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), dwFlags, sizeContent, pptTranslateBy, pptTopLeft, psizeProposed);
     }
 
     /// <include file='IElementBehaviorLayout.xml' path='doc/member[@name="IElementBehaviorLayout.GetLayoutInfo"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Int
     [VtblIndex(4)]
     public HRESULT GetLayoutInfo([NativeTypeName("LONG *")] int* plLayoutInfo)
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout*, int*, int>)(lpVtbl[4]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), plLayoutInfo);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout*, int*, int>)(lpVtbl[4]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), plLayoutInfo);
     }
 
     /// <include file='IElementBehaviorLayout.xml' path='doc/member[@name="IElementBehaviorLayout.GetPosition"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Int
     [VtblIndex(5)]
     public HRESULT GetPosition([NativeTypeName("LONG")] int lFlags, POINT* pptTopLeft)
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout*, int, POINT*, int>)(lpVtbl[5]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), lFlags, pptTopLeft);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout*, int, POINT*, int>)(lpVtbl[5]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), lFlags, pptTopLeft);
     }
 
     /// <include file='IElementBehaviorLayout.xml' path='doc/member[@name="IElementBehaviorLayout.MapSize"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Int
     [VtblIndex(6)]
     public HRESULT MapSize(SIZE* psizeIn, RECT* prcOut)
     {
-        return ((delegate* unmanaged<IElementBehaviorLayout*, SIZE*, RECT*, int>)(lpVtbl[6]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), psizeIn, prcOut);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorLayout*, SIZE*, RECT*, int>)(lpVtbl[6]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), psizeIn, prcOut);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG, SIZE, POINT *, POINT *, SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, SIZE, POINT*, POINT*, SIZE*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, SIZE, POINT*, POINT*, SIZE*, int> GetSize;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetLayoutInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetLayoutInfo;
 
         [NativeTypeName("HRESULT (LONG, POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, POINT*, int> GetPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, POINT*, int> GetPosition;
 
         [NativeTypeName("HRESULT (SIZE *, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, RECT*, int> MapSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, RECT*, int> MapSize;
     }
 }

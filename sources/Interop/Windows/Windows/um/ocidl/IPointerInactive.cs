@@ -25,7 +25,7 @@ public unsafe partial struct IPointerInactive : IPointerInactive.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPointerInactive*, Guid*, void**, int>)(lpVtbl[0]))((IPointerInactive*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPointerInactive*, Guid*, void**, int>)(lpVtbl[0]))((IPointerInactive*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPointerInactive : IPointerInactive.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPointerInactive*, uint>)(lpVtbl[1]))((IPointerInactive*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPointerInactive*, uint>)(lpVtbl[1]))((IPointerInactive*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPointerInactive : IPointerInactive.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPointerInactive*, uint>)(lpVtbl[2]))((IPointerInactive*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPointerInactive*, uint>)(lpVtbl[2]))((IPointerInactive*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPointerInactive.xml' path='doc/member[@name="IPointerInactive.GetActivationPolicy"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPointerInactive : IPointerInactive.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetActivationPolicy([NativeTypeName("DWORD *")] uint* pdwPolicy)
     {
-        return ((delegate* unmanaged<IPointerInactive*, uint*, int>)(lpVtbl[3]))((IPointerInactive*)Unsafe.AsPointer(ref this), pdwPolicy);
+        return ((delegate* unmanaged[MemberFunction]<IPointerInactive*, uint*, int>)(lpVtbl[3]))((IPointerInactive*)Unsafe.AsPointer(ref this), pdwPolicy);
     }
 
     /// <include file='IPointerInactive.xml' path='doc/member[@name="IPointerInactive.OnInactiveMouseMove"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPointerInactive : IPointerInactive.Interface, INat
     [VtblIndex(4)]
     public HRESULT OnInactiveMouseMove([NativeTypeName("LPCRECT")] RECT* pRectBounds, [NativeTypeName("LONG")] int x, [NativeTypeName("LONG")] int y, [NativeTypeName("DWORD")] uint grfKeyState)
     {
-        return ((delegate* unmanaged<IPointerInactive*, RECT*, int, int, uint, int>)(lpVtbl[4]))((IPointerInactive*)Unsafe.AsPointer(ref this), pRectBounds, x, y, grfKeyState);
+        return ((delegate* unmanaged[MemberFunction]<IPointerInactive*, RECT*, int, int, uint, int>)(lpVtbl[4]))((IPointerInactive*)Unsafe.AsPointer(ref this), pRectBounds, x, y, grfKeyState);
     }
 
     /// <include file='IPointerInactive.xml' path='doc/member[@name="IPointerInactive.OnInactiveSetCursor"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPointerInactive : IPointerInactive.Interface, INat
     [VtblIndex(5)]
     public HRESULT OnInactiveSetCursor([NativeTypeName("LPCRECT")] RECT* pRectBounds, [NativeTypeName("LONG")] int x, [NativeTypeName("LONG")] int y, [NativeTypeName("DWORD")] uint dwMouseMsg, BOOL fSetAlways)
     {
-        return ((delegate* unmanaged<IPointerInactive*, RECT*, int, int, uint, BOOL, int>)(lpVtbl[5]))((IPointerInactive*)Unsafe.AsPointer(ref this), pRectBounds, x, y, dwMouseMsg, fSetAlways);
+        return ((delegate* unmanaged[MemberFunction]<IPointerInactive*, RECT*, int, int, uint, BOOL, int>)(lpVtbl[5]))((IPointerInactive*)Unsafe.AsPointer(ref this), pRectBounds, x, y, dwMouseMsg, fSetAlways);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IPointerInactive : IPointerInactive.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetActivationPolicy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetActivationPolicy;
 
         [NativeTypeName("HRESULT (LPCRECT, LONG, LONG, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int, int, uint, int> OnInactiveMouseMove;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int, int, uint, int> OnInactiveMouseMove;
 
         [NativeTypeName("HRESULT (LPCRECT, LONG, LONG, DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int, int, uint, BOOL, int> OnInactiveSetCursor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int, int, uint, BOOL, int> OnInactiveSetCursor;
     }
 }

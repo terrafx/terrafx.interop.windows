@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationTimer*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimer*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationTimer*, uint>)(lpVtbl[1]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimer*, uint>)(lpVtbl[1]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationTimer*, uint>)(lpVtbl[2]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimer*, uint>)(lpVtbl[2]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTimer.xml' path='doc/member[@name="IUIAnimationTimer.SetTimerUpdateHandler"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
     [VtblIndex(3)]
     public HRESULT SetTimerUpdateHandler(IUIAnimationTimerUpdateHandler* updateHandler, UI_ANIMATION_IDLE_BEHAVIOR idleBehavior)
     {
-        return ((delegate* unmanaged<IUIAnimationTimer*, IUIAnimationTimerUpdateHandler*, UI_ANIMATION_IDLE_BEHAVIOR, int>)(lpVtbl[3]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), updateHandler, idleBehavior);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimer*, IUIAnimationTimerUpdateHandler*, UI_ANIMATION_IDLE_BEHAVIOR, int>)(lpVtbl[3]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), updateHandler, idleBehavior);
     }
 
     /// <include file='IUIAnimationTimer.xml' path='doc/member[@name="IUIAnimationTimer.SetTimerEventHandler"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
     [VtblIndex(4)]
     public HRESULT SetTimerEventHandler(IUIAnimationTimerEventHandler* handler)
     {
-        return ((delegate* unmanaged<IUIAnimationTimer*, IUIAnimationTimerEventHandler*, int>)(lpVtbl[4]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), handler);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimer*, IUIAnimationTimerEventHandler*, int>)(lpVtbl[4]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), handler);
     }
 
     /// <include file='IUIAnimationTimer.xml' path='doc/member[@name="IUIAnimationTimer.Enable"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
     [VtblIndex(5)]
     public HRESULT Enable()
     {
-        return ((delegate* unmanaged<IUIAnimationTimer*, int>)(lpVtbl[5]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimer*, int>)(lpVtbl[5]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTimer.xml' path='doc/member[@name="IUIAnimationTimer.Disable"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
     [VtblIndex(6)]
     public HRESULT Disable()
     {
-        return ((delegate* unmanaged<IUIAnimationTimer*, int>)(lpVtbl[6]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimer*, int>)(lpVtbl[6]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTimer.xml' path='doc/member[@name="IUIAnimationTimer.IsEnabled"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
     [VtblIndex(7)]
     public HRESULT IsEnabled()
     {
-        return ((delegate* unmanaged<IUIAnimationTimer*, int>)(lpVtbl[7]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimer*, int>)(lpVtbl[7]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTimer.xml' path='doc/member[@name="IUIAnimationTimer.GetTime"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
     [VtblIndex(8)]
     public HRESULT GetTime([NativeTypeName("UI_ANIMATION_SECONDS *")] double* seconds)
     {
-        return ((delegate* unmanaged<IUIAnimationTimer*, double*, int>)(lpVtbl[8]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), seconds);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimer*, double*, int>)(lpVtbl[8]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), seconds);
     }
 
     /// <include file='IUIAnimationTimer.xml' path='doc/member[@name="IUIAnimationTimer.SetFrameRateThreshold"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
     [VtblIndex(9)]
     public HRESULT SetFrameRateThreshold([NativeTypeName("UINT32")] uint framesPerSecond)
     {
-        return ((delegate* unmanaged<IUIAnimationTimer*, uint, int>)(lpVtbl[9]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), framesPerSecond);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimer*, uint, int>)(lpVtbl[9]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), framesPerSecond);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationTimerUpdateHandler *, UI_ANIMATION_IDLE_BEHAVIOR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationTimerUpdateHandler*, UI_ANIMATION_IDLE_BEHAVIOR, int> SetTimerUpdateHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationTimerUpdateHandler*, UI_ANIMATION_IDLE_BEHAVIOR, int> SetTimerUpdateHandler;
 
         [NativeTypeName("HRESULT (IUIAnimationTimerEventHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationTimerEventHandler*, int> SetTimerEventHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationTimerEventHandler*, int> SetTimerEventHandler;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Enable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Enable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Disable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Disable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsEnabled;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetTime;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetFrameRateThreshold;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetFrameRateThreshold;
     }
 }

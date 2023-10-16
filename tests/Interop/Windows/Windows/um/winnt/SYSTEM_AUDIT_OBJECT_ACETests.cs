@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SYSTEM_AUDIT_OBJECT_ACE" /> struct.</summary>
 public static unsafe partial class SYSTEM_AUDIT_OBJECT_ACETests
 {
-    /// <summary>Validates that the <see cref="SYSTEM_AUDIT_OBJECT_ACE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SYSTEM_AUDIT_OBJECT_ACE>(), Is.EqualTo(sizeof(SYSTEM_AUDIT_OBJECT_ACE)));
-    }
-
-    /// <summary>Validates that the <see cref="SYSTEM_AUDIT_OBJECT_ACE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SYSTEM_AUDIT_OBJECT_ACE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SYSTEM_AUDIT_OBJECT_ACE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SYSTEM_AUDIT_OBJECT_ACE), Is.EqualTo(48));
-    }
 }

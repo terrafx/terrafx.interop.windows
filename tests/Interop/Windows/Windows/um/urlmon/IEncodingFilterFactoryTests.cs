@@ -19,32 +19,4 @@ public static unsafe partial class IEncodingFilterFactoryTests
     {
         Assert.That(typeof(IEncodingFilterFactory).GUID, Is.EqualTo(IID_IEncodingFilterFactory));
     }
-
-    /// <summary>Validates that the <see cref="IEncodingFilterFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEncodingFilterFactory>(), Is.EqualTo(sizeof(IEncodingFilterFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IEncodingFilterFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEncodingFilterFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEncodingFilterFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEncodingFilterFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEncodingFilterFactory), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMPAEnableRedundancyProtectionTe
     {
         Assert.That(typeof(CODECAPI_AVEncMPAEnableRedundancyProtection).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPAEnableRedundancyProtection));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAEnableRedundancyProtection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPAEnableRedundancyProtection>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPAEnableRedundancyProtection)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAEnableRedundancyProtection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMPAEnableRedundancyProtection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAEnableRedundancyProtection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMPAEnableRedundancyProtection), Is.EqualTo(1));
-    }
 }

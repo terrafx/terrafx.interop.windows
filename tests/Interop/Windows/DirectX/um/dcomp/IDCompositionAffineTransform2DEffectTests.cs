@@ -19,32 +19,4 @@ public static unsafe partial class IDCompositionAffineTransform2DEffectTests
     {
         Assert.That(typeof(IDCompositionAffineTransform2DEffect).GUID, Is.EqualTo(IID_IDCompositionAffineTransform2DEffect));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionAffineTransform2DEffect" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionAffineTransform2DEffect>(), Is.EqualTo(sizeof(IDCompositionAffineTransform2DEffect)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionAffineTransform2DEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionAffineTransform2DEffect).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionAffineTransform2DEffect" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionAffineTransform2DEffect), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionAffineTransform2DEffect), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertyChangeArray*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChangeArray*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertyChangeArray*, uint>)(lpVtbl[1]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChangeArray*, uint>)(lpVtbl[1]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertyChangeArray*, uint>)(lpVtbl[2]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChangeArray*, uint>)(lpVtbl[2]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyChangeArray.xml' path='doc/member[@name="IPropertyChangeArray.GetCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
     [VtblIndex(3)]
     public HRESULT GetCount(uint* pcOperations)
     {
-        return ((delegate* unmanaged<IPropertyChangeArray*, uint*, int>)(lpVtbl[3]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), pcOperations);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChangeArray*, uint*, int>)(lpVtbl[3]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), pcOperations);
     }
 
     /// <include file='IPropertyChangeArray.xml' path='doc/member[@name="IPropertyChangeArray.GetAt"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
     [VtblIndex(4)]
     public HRESULT GetAt(uint iIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IPropertyChangeArray*, uint, Guid*, void**, int>)(lpVtbl[4]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), iIndex, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChangeArray*, uint, Guid*, void**, int>)(lpVtbl[4]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), iIndex, riid, ppv);
     }
 
     /// <include file='IPropertyChangeArray.xml' path='doc/member[@name="IPropertyChangeArray.InsertAt"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
     [VtblIndex(5)]
     public HRESULT InsertAt(uint iIndex, IPropertyChange* ppropChange)
     {
-        return ((delegate* unmanaged<IPropertyChangeArray*, uint, IPropertyChange*, int>)(lpVtbl[5]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), iIndex, ppropChange);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChangeArray*, uint, IPropertyChange*, int>)(lpVtbl[5]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), iIndex, ppropChange);
     }
 
     /// <include file='IPropertyChangeArray.xml' path='doc/member[@name="IPropertyChangeArray.Append"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
     [VtblIndex(6)]
     public HRESULT Append(IPropertyChange* ppropChange)
     {
-        return ((delegate* unmanaged<IPropertyChangeArray*, IPropertyChange*, int>)(lpVtbl[6]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), ppropChange);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChangeArray*, IPropertyChange*, int>)(lpVtbl[6]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), ppropChange);
     }
 
     /// <include file='IPropertyChangeArray.xml' path='doc/member[@name="IPropertyChangeArray.AppendOrReplace"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
     [VtblIndex(7)]
     public HRESULT AppendOrReplace(IPropertyChange* ppropChange)
     {
-        return ((delegate* unmanaged<IPropertyChangeArray*, IPropertyChange*, int>)(lpVtbl[7]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), ppropChange);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChangeArray*, IPropertyChange*, int>)(lpVtbl[7]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), ppropChange);
     }
 
     /// <include file='IPropertyChangeArray.xml' path='doc/member[@name="IPropertyChangeArray.RemoveAt"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
     [VtblIndex(8)]
     public HRESULT RemoveAt(uint iIndex)
     {
-        return ((delegate* unmanaged<IPropertyChangeArray*, uint, int>)(lpVtbl[8]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), iIndex);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChangeArray*, uint, int>)(lpVtbl[8]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), iIndex);
     }
 
     /// <include file='IPropertyChangeArray.xml' path='doc/member[@name="IPropertyChangeArray.IsKeyInArray"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
     [VtblIndex(9)]
     public HRESULT IsKeyInArray([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
     {
-        return ((delegate* unmanaged<IPropertyChangeArray*, PROPERTYKEY*, int>)(lpVtbl[9]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), key);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChangeArray*, PROPERTYKEY*, int>)(lpVtbl[9]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), key);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void**, int> GetAt;
 
         [NativeTypeName("HRESULT (UINT, IPropertyChange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IPropertyChange*, int> InsertAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPropertyChange*, int> InsertAt;
 
         [NativeTypeName("HRESULT (IPropertyChange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyChange*, int> Append;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyChange*, int> Append;
 
         [NativeTypeName("HRESULT (IPropertyChange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyChange*, int> AppendOrReplace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyChange*, int> AppendOrReplace;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveAt;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> IsKeyInArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, int> IsKeyInArray;
     }
 }

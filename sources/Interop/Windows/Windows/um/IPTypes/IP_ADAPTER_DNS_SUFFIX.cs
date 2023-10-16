@@ -14,5 +14,5 @@ public unsafe partial struct IP_ADAPTER_DNS_SUFFIX
 
     /// <include file='IP_ADAPTER_DNS_SUFFIX.xml' path='doc/member[@name="IP_ADAPTER_DNS_SUFFIX.String"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort String[256];
+    public fixed char String[256];
 }

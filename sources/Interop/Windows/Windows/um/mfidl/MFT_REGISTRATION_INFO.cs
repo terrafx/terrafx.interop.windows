@@ -23,7 +23,7 @@ public unsafe partial struct MFT_REGISTRATION_INFO
 
     /// <include file='MFT_REGISTRATION_INFO.xml' path='doc/member[@name="MFT_REGISTRATION_INFO.pszName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszName;
+    public char* pszName;
 
     /// <include file='MFT_REGISTRATION_INFO.xml' path='doc/member[@name="MFT_REGISTRATION_INFO.cInTypes"]/*' />
     [NativeTypeName("DWORD")]

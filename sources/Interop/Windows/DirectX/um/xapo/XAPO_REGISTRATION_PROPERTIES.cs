@@ -18,11 +18,11 @@ public unsafe partial struct XAPO_REGISTRATION_PROPERTIES
 
     /// <include file='XAPO_REGISTRATION_PROPERTIES.xml' path='doc/member[@name="XAPO_REGISTRATION_PROPERTIES.FriendlyName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort FriendlyName[256];
+    public fixed char FriendlyName[256];
 
     /// <include file='XAPO_REGISTRATION_PROPERTIES.xml' path='doc/member[@name="XAPO_REGISTRATION_PROPERTIES.CopyrightInfo"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort CopyrightInfo[256];
+    public fixed char CopyrightInfo[256];
 
     /// <include file='XAPO_REGISTRATION_PROPERTIES.xml' path='doc/member[@name="XAPO_REGISTRATION_PROPERTIES.MajorVersion"]/*' />
     [NativeTypeName("UINT32")]

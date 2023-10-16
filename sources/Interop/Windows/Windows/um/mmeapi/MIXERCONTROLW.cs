@@ -35,11 +35,11 @@ public unsafe partial struct MIXERCONTROLW
 
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.szShortName"]/*' />
     [NativeTypeName("WCHAR[16]")]
-    public fixed ushort szShortName[16];
+    public fixed char szShortName[16];
 
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.szName"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szName[64];
+    public fixed char szName[64];
 
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.Bounds"]/*' />
     [NativeTypeName("__AnonymousRecord_mmeapi_L2081_C5")]

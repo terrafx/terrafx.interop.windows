@@ -19,32 +19,4 @@ public static unsafe partial class IDiaEnumDebugStreamsTests
     {
         Assert.That(typeof(IDiaEnumDebugStreams).GUID, Is.EqualTo(IID_IDiaEnumDebugStreams));
     }
-
-    /// <summary>Validates that the <see cref="IDiaEnumDebugStreams" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaEnumDebugStreams>(), Is.EqualTo(sizeof(IDiaEnumDebugStreams)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaEnumDebugStreams" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaEnumDebugStreams).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaEnumDebugStreams" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaEnumDebugStreams), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaEnumDebugStreams), Is.EqualTo(4));
-        }
-    }
 }

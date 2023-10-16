@@ -21,32 +21,4 @@ public static unsafe partial class ISpatialInteractionManagerInteropTests
     {
         Assert.That(typeof(ISpatialInteractionManagerInterop).GUID, Is.EqualTo(IID_ISpatialInteractionManagerInterop));
     }
-
-    /// <summary>Validates that the <see cref="ISpatialInteractionManagerInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpatialInteractionManagerInterop>(), Is.EqualTo(sizeof(ISpatialInteractionManagerInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpatialInteractionManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpatialInteractionManagerInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpatialInteractionManagerInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpatialInteractionManagerInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpatialInteractionManagerInterop), Is.EqualTo(4));
-        }
-    }
 }

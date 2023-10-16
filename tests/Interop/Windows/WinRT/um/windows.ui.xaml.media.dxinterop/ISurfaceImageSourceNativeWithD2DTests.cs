@@ -21,32 +21,4 @@ public static unsafe partial class ISurfaceImageSourceNativeWithD2DTests
     {
         Assert.That(typeof(ISurfaceImageSourceNativeWithD2D).GUID, Is.EqualTo(IID_ISurfaceImageSourceNativeWithD2D));
     }
-
-    /// <summary>Validates that the <see cref="ISurfaceImageSourceNativeWithD2D" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISurfaceImageSourceNativeWithD2D>(), Is.EqualTo(sizeof(ISurfaceImageSourceNativeWithD2D)));
-    }
-
-    /// <summary>Validates that the <see cref="ISurfaceImageSourceNativeWithD2D" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISurfaceImageSourceNativeWithD2D).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISurfaceImageSourceNativeWithD2D" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISurfaceImageSourceNativeWithD2D), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISurfaceImageSourceNativeWithD2D), Is.EqualTo(4));
-        }
-    }
 }

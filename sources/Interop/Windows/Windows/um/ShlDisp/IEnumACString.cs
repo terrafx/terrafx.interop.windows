@@ -25,7 +25,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumACString*, Guid*, void**, int>)(lpVtbl[0]))((IEnumACString*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumACString*, Guid*, void**, int>)(lpVtbl[0]))((IEnumACString*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumACString*, uint>)(lpVtbl[1]))((IEnumACString*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumACString*, uint>)(lpVtbl[1]))((IEnumACString*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumACString*, uint>)(lpVtbl[2]))((IEnumACString*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumACString*, uint>)(lpVtbl[2]))((IEnumACString*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IEnumString.Next" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR *")] ushort** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+    public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR *")] char** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumACString*, uint, ushort**, uint*, int>)(lpVtbl[3]))((IEnumACString*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumACString*, uint, char**, uint*, int>)(lpVtbl[3]))((IEnumACString*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <inheritdoc cref="IEnumString.Skip" />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IEnumACString*, uint, int>)(lpVtbl[4]))((IEnumACString*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IEnumACString*, uint, int>)(lpVtbl[4]))((IEnumACString*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <inheritdoc cref="IEnumString.Reset" />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumACString*, int>)(lpVtbl[5]))((IEnumACString*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumACString*, int>)(lpVtbl[5]))((IEnumACString*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IEnumString.Clone" />
@@ -75,15 +75,15 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT Clone(IEnumString** ppenum)
     {
-        return ((delegate* unmanaged<IEnumACString*, IEnumString**, int>)(lpVtbl[6]))((IEnumACString*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumACString*, IEnumString**, int>)(lpVtbl[6]))((IEnumACString*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     /// <include file='IEnumACString.xml' path='doc/member[@name="IEnumACString.NextItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT NextItem([NativeTypeName("LPWSTR")] ushort* pszUrl, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pulSortIndex)
+    public HRESULT NextItem([NativeTypeName("LPWSTR")] char* pszUrl, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pulSortIndex)
     {
-        return ((delegate* unmanaged<IEnumACString*, ushort*, uint, uint*, int>)(lpVtbl[7]))((IEnumACString*)Unsafe.AsPointer(ref this), pszUrl, cchMax, pulSortIndex);
+        return ((delegate* unmanaged[MemberFunction]<IEnumACString*, char*, uint, uint*, int>)(lpVtbl[7]))((IEnumACString*)Unsafe.AsPointer(ref this), pszUrl, cchMax, pulSortIndex);
     }
 
     /// <include file='IEnumACString.xml' path='doc/member[@name="IEnumACString.SetEnumOptions"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT SetEnumOptions([NativeTypeName("DWORD")] uint dwOptions)
     {
-        return ((delegate* unmanaged<IEnumACString*, uint, int>)(lpVtbl[8]))((IEnumACString*)Unsafe.AsPointer(ref this), dwOptions);
+        return ((delegate* unmanaged[MemberFunction]<IEnumACString*, uint, int>)(lpVtbl[8]))((IEnumACString*)Unsafe.AsPointer(ref this), dwOptions);
     }
 
     /// <include file='IEnumACString.xml' path='doc/member[@name="IEnumACString.GetEnumOptions"]/*' />
@@ -99,13 +99,13 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT GetEnumOptions([NativeTypeName("DWORD *")] uint* pdwOptions)
     {
-        return ((delegate* unmanaged<IEnumACString*, uint*, int>)(lpVtbl[9]))((IEnumACString*)Unsafe.AsPointer(ref this), pdwOptions);
+        return ((delegate* unmanaged[MemberFunction]<IEnumACString*, uint*, int>)(lpVtbl[9]))((IEnumACString*)Unsafe.AsPointer(ref this), pdwOptions);
     }
 
     public interface Interface : IEnumString.Interface
     {
         [VtblIndex(7)]
-        HRESULT NextItem([NativeTypeName("LPWSTR")] ushort* pszUrl, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pulSortIndex);
+        HRESULT NextItem([NativeTypeName("LPWSTR")] char* pszUrl, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pulSortIndex);
 
         [VtblIndex(8)]
         HRESULT SetEnumOptions([NativeTypeName("DWORD")] uint dwOptions);
@@ -118,33 +118,33 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, LPOLESTR *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumString**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumString**, int> Clone;
 
         [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> NextItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint*, int> NextItem;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetEnumOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetEnumOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetEnumOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetEnumOptions;
     }
 }

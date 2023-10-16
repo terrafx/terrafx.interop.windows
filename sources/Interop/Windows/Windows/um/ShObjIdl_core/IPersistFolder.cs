@@ -25,7 +25,7 @@ public unsafe partial struct IPersistFolder : IPersistFolder.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPersistFolder*, Guid*, void**, int>)(lpVtbl[0]))((IPersistFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPersistFolder*, Guid*, void**, int>)(lpVtbl[0]))((IPersistFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPersistFolder : IPersistFolder.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPersistFolder*, uint>)(lpVtbl[1]))((IPersistFolder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistFolder*, uint>)(lpVtbl[1]))((IPersistFolder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPersistFolder : IPersistFolder.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPersistFolder*, uint>)(lpVtbl[2]))((IPersistFolder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistFolder*, uint>)(lpVtbl[2]))((IPersistFolder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPersist.GetClassID" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPersistFolder : IPersistFolder.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
     {
-        return ((delegate* unmanaged<IPersistFolder*, Guid*, int>)(lpVtbl[3]))((IPersistFolder*)Unsafe.AsPointer(ref this), pClassID);
+        return ((delegate* unmanaged[MemberFunction]<IPersistFolder*, Guid*, int>)(lpVtbl[3]))((IPersistFolder*)Unsafe.AsPointer(ref this), pClassID);
     }
 
     /// <include file='IPersistFolder.xml' path='doc/member[@name="IPersistFolder.Initialize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPersistFolder : IPersistFolder.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
     {
-        return ((delegate* unmanaged<IPersistFolder*, ITEMIDLIST*, int>)(lpVtbl[4]))((IPersistFolder*)Unsafe.AsPointer(ref this), pidl);
+        return ((delegate* unmanaged[MemberFunction]<IPersistFolder*, ITEMIDLIST*, int>)(lpVtbl[4]))((IPersistFolder*)Unsafe.AsPointer(ref this), pidl);
     }
 
     public interface Interface : IPersist.Interface
@@ -72,18 +72,18 @@ public unsafe partial struct IPersistFolder : IPersistFolder.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, int> Initialize;
     }
 }

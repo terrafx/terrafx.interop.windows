@@ -21,32 +21,4 @@ public static unsafe partial class ILanguageExceptionStackBackTraceTests
     {
         Assert.That(typeof(ILanguageExceptionStackBackTrace).GUID, Is.EqualTo(IID_ILanguageExceptionStackBackTrace));
     }
-
-    /// <summary>Validates that the <see cref="ILanguageExceptionStackBackTrace" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ILanguageExceptionStackBackTrace>(), Is.EqualTo(sizeof(ILanguageExceptionStackBackTrace)));
-    }
-
-    /// <summary>Validates that the <see cref="ILanguageExceptionStackBackTrace" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ILanguageExceptionStackBackTrace).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ILanguageExceptionStackBackTrace" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ILanguageExceptionStackBackTrace), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ILanguageExceptionStackBackTrace), Is.EqualTo(4));
-        }
-    }
 }

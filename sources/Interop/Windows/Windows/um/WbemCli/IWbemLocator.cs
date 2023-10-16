@@ -25,7 +25,7 @@ public unsafe partial struct IWbemLocator : IWbemLocator.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWbemLocator*, Guid*, void**, int>)(lpVtbl[0]))((IWbemLocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWbemLocator*, Guid*, void**, int>)(lpVtbl[0]))((IWbemLocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWbemLocator : IWbemLocator.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWbemLocator*, uint>)(lpVtbl[1]))((IWbemLocator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemLocator*, uint>)(lpVtbl[1]))((IWbemLocator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct IWbemLocator : IWbemLocator.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWbemLocator*, uint>)(lpVtbl[2]))((IWbemLocator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemLocator*, uint>)(lpVtbl[2]))((IWbemLocator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWbemLocator.xml' path='doc/member[@name="IWbemLocator.ConnectServer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ConnectServer([NativeTypeName("const BSTR")] ushort* strNetworkResource, [NativeTypeName("const BSTR")] ushort* strUser, [NativeTypeName("const BSTR")] ushort* strPassword, [NativeTypeName("const BSTR")] ushort* strLocale, [NativeTypeName("long")] int lSecurityFlags, [NativeTypeName("const BSTR")] ushort* strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace)
+    public HRESULT ConnectServer([NativeTypeName("const BSTR")] char* strNetworkResource, [NativeTypeName("const BSTR")] char* strUser, [NativeTypeName("const BSTR")] char* strPassword, [NativeTypeName("const BSTR")] char* strLocale, [NativeTypeName("long")] int lSecurityFlags, [NativeTypeName("const BSTR")] char* strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace)
     {
-        return ((delegate* unmanaged<IWbemLocator*, ushort*, ushort*, ushort*, ushort*, int, ushort*, IWbemContext*, IWbemServices**, int>)(lpVtbl[3]))((IWbemLocator*)Unsafe.AsPointer(ref this), strNetworkResource, strUser, strPassword, strLocale, lSecurityFlags, strAuthority, pCtx, ppNamespace);
+        return ((delegate* unmanaged[MemberFunction]<IWbemLocator*, char*, char*, char*, char*, int, char*, IWbemContext*, IWbemServices**, int>)(lpVtbl[3]))((IWbemLocator*)Unsafe.AsPointer(ref this), strNetworkResource, strUser, strPassword, strLocale, lSecurityFlags, strAuthority, pCtx, ppNamespace);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ConnectServer([NativeTypeName("const BSTR")] ushort* strNetworkResource, [NativeTypeName("const BSTR")] ushort* strUser, [NativeTypeName("const BSTR")] ushort* strPassword, [NativeTypeName("const BSTR")] ushort* strLocale, [NativeTypeName("long")] int lSecurityFlags, [NativeTypeName("const BSTR")] ushort* strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace);
+        HRESULT ConnectServer([NativeTypeName("const BSTR")] char* strNetworkResource, [NativeTypeName("const BSTR")] char* strUser, [NativeTypeName("const BSTR")] char* strPassword, [NativeTypeName("const BSTR")] char* strLocale, [NativeTypeName("long")] int lSecurityFlags, [NativeTypeName("const BSTR")] char* strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, const BSTR, const BSTR, long, const BSTR, IWbemContext *, IWbemServices **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort*, int, ushort*, IWbemContext*, IWbemServices**, int> ConnectServer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, char*, int, char*, IWbemContext*, IWbemServices**, int> ConnectServer;
     }
 }

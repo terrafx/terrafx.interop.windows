@@ -25,7 +25,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISharingConfigurationManager*, Guid*, void**, int>)(lpVtbl[0]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISharingConfigurationManager*, Guid*, void**, int>)(lpVtbl[0]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISharingConfigurationManager*, uint>)(lpVtbl[1]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISharingConfigurationManager*, uint>)(lpVtbl[1]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISharingConfigurationManager*, uint>)(lpVtbl[2]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISharingConfigurationManager*, uint>)(lpVtbl[2]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.CreateShare"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
     [VtblIndex(3)]
     public HRESULT CreateShare(DEF_SHARE_ID dsid, SHARE_ROLE role)
     {
-        return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE, int>)(lpVtbl[3]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid, role);
+        return ((delegate* unmanaged[MemberFunction]<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE, int>)(lpVtbl[3]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid, role);
     }
 
     /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.DeleteShare"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
     [VtblIndex(4)]
     public HRESULT DeleteShare(DEF_SHARE_ID dsid)
     {
-        return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int>)(lpVtbl[4]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid);
+        return ((delegate* unmanaged[MemberFunction]<ISharingConfigurationManager*, DEF_SHARE_ID, int>)(lpVtbl[4]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid);
     }
 
     /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.ShareExists"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
     [VtblIndex(5)]
     public HRESULT ShareExists(DEF_SHARE_ID dsid)
     {
-        return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int>)(lpVtbl[5]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid);
+        return ((delegate* unmanaged[MemberFunction]<ISharingConfigurationManager*, DEF_SHARE_ID, int>)(lpVtbl[5]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid);
     }
 
     /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.GetSharePermissions"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
     [VtblIndex(6)]
     public HRESULT GetSharePermissions(DEF_SHARE_ID dsid, SHARE_ROLE* pRole)
     {
-        return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE*, int>)(lpVtbl[6]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid, pRole);
+        return ((delegate* unmanaged[MemberFunction]<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE*, int>)(lpVtbl[6]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid, pRole);
     }
 
     /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.SharePrinters"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
     [VtblIndex(7)]
     public HRESULT SharePrinters()
     {
-        return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[7]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISharingConfigurationManager*, int>)(lpVtbl[7]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.StopSharingPrinters"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
     [VtblIndex(8)]
     public HRESULT StopSharingPrinters()
     {
-        return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[8]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISharingConfigurationManager*, int>)(lpVtbl[8]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.ArePrintersShared"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
     [VtblIndex(9)]
     public HRESULT ArePrintersShared()
     {
-        return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[9]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISharingConfigurationManager*, int>)(lpVtbl[9]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DEF_SHARE_ID, SHARE_ROLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEF_SHARE_ID, SHARE_ROLE, int> CreateShare;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEF_SHARE_ID, SHARE_ROLE, int> CreateShare;
 
         [NativeTypeName("HRESULT (DEF_SHARE_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEF_SHARE_ID, int> DeleteShare;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEF_SHARE_ID, int> DeleteShare;
 
         [NativeTypeName("HRESULT (DEF_SHARE_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEF_SHARE_ID, int> ShareExists;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEF_SHARE_ID, int> ShareExists;
 
         [NativeTypeName("HRESULT (DEF_SHARE_ID, SHARE_ROLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEF_SHARE_ID, SHARE_ROLE*, int> GetSharePermissions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEF_SHARE_ID, SHARE_ROLE*, int> GetSharePermissions;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SharePrinters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SharePrinters;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StopSharingPrinters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StopSharingPrinters;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ArePrintersShared;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ArePrintersShared;
     }
 }

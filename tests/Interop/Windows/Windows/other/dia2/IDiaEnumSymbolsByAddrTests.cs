@@ -19,32 +19,4 @@ public static unsafe partial class IDiaEnumSymbolsByAddrTests
     {
         Assert.That(typeof(IDiaEnumSymbolsByAddr).GUID, Is.EqualTo(IID_IDiaEnumSymbolsByAddr));
     }
-
-    /// <summary>Validates that the <see cref="IDiaEnumSymbolsByAddr" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaEnumSymbolsByAddr>(), Is.EqualTo(sizeof(IDiaEnumSymbolsByAddr)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaEnumSymbolsByAddr" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaEnumSymbolsByAddr).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaEnumSymbolsByAddr" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaEnumSymbolsByAddr), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaEnumSymbolsByAddr), Is.EqualTo(4));
-        }
-    }
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSinkWriterEncoderConfig*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterEncoderConfig*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSinkWriterEncoderConfig*, uint>)(lpVtbl[1]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterEncoderConfig*, uint>)(lpVtbl[1]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSinkWriterEncoderConfig*, uint>)(lpVtbl[2]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterEncoderConfig*, uint>)(lpVtbl[2]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSinkWriterEncoderConfig.xml' path='doc/member[@name="IMFSinkWriterEncoderConfig.SetTargetMediaType"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
     [VtblIndex(3)]
     public HRESULT SetTargetMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pTargetMediaType, IMFAttributes* pEncodingParameters)
     {
-        return ((delegate* unmanaged<IMFSinkWriterEncoderConfig*, uint, IMFMediaType*, IMFAttributes*, int>)(lpVtbl[3]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this), dwStreamIndex, pTargetMediaType, pEncodingParameters);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterEncoderConfig*, uint, IMFMediaType*, IMFAttributes*, int>)(lpVtbl[3]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this), dwStreamIndex, pTargetMediaType, pEncodingParameters);
     }
 
     /// <include file='IMFSinkWriterEncoderConfig.xml' path='doc/member[@name="IMFSinkWriterEncoderConfig.PlaceEncodingParameters"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
     [VtblIndex(4)]
     public HRESULT PlaceEncodingParameters([NativeTypeName("DWORD")] uint dwStreamIndex, IMFAttributes* pEncodingParameters)
     {
-        return ((delegate* unmanaged<IMFSinkWriterEncoderConfig*, uint, IMFAttributes*, int>)(lpVtbl[4]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this), dwStreamIndex, pEncodingParameters);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriterEncoderConfig*, uint, IMFAttributes*, int>)(lpVtbl[4]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this), dwStreamIndex, pEncodingParameters);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, IMFAttributes*, int> SetTargetMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType*, IMFAttributes*, int> SetTargetMediaType;
 
         [NativeTypeName("HRESULT (DWORD, IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFAttributes*, int> PlaceEncodingParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFAttributes*, int> PlaceEncodingParameters;
     }
 }

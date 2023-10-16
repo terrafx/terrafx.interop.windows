@@ -19,25 +19,4 @@ public static unsafe partial class FileSaveDialogTests
     {
         Assert.That(typeof(FileSaveDialog).GUID, Is.EqualTo(IID_FileSaveDialog));
     }
-
-    /// <summary>Validates that the <see cref="FileSaveDialog" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FileSaveDialog>(), Is.EqualTo(sizeof(FileSaveDialog)));
-    }
-
-    /// <summary>Validates that the <see cref="FileSaveDialog" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FileSaveDialog).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FileSaveDialog" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FileSaveDialog), Is.EqualTo(1));
-    }
 }

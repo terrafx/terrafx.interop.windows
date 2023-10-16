@@ -19,32 +19,4 @@ public static unsafe partial class ICompositorInteropTests
     {
         Assert.That(typeof(ICompositorInterop).GUID, Is.EqualTo(IID_ICompositorInterop));
     }
-
-    /// <summary>Validates that the <see cref="ICompositorInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICompositorInterop>(), Is.EqualTo(sizeof(ICompositorInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="ICompositorInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICompositorInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICompositorInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICompositorInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICompositorInterop), Is.EqualTo(4));
-        }
-    }
 }

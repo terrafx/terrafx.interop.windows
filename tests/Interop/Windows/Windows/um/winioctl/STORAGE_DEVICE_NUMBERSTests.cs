@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="STORAGE_DEVICE_NUMBERS" /> struct.</summary>
 public static unsafe partial class STORAGE_DEVICE_NUMBERSTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_DEVICE_NUMBERS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_DEVICE_NUMBERS>(), Is.EqualTo(sizeof(STORAGE_DEVICE_NUMBERS)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_DEVICE_NUMBERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_DEVICE_NUMBERS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_DEVICE_NUMBERS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_DEVICE_NUMBERS), Is.EqualTo(24));
-    }
 }

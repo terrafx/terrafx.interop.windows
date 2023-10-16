@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, uint>)(lpVtbl[1]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, uint>)(lpVtbl[1]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, uint>)(lpVtbl[2]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, uint>)(lpVtbl[2]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged<ID2D1Bitmap1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), factory);
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.GetSize" />
@@ -61,8 +61,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [return: NativeTypeName("D2D1_SIZE_F")]
     public D2D_SIZE_F GetSize()
     {
-        D2D_SIZE_F result;
-        return *((delegate* unmanaged<ID2D1Bitmap1*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[4]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), &result);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D_SIZE_F>)(lpVtbl[4]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.GetPixelSize" />
@@ -71,8 +70,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [return: NativeTypeName("D2D1_SIZE_U")]
     public D2D_SIZE_U GetPixelSize()
     {
-        D2D_SIZE_U result;
-        return *((delegate* unmanaged<ID2D1Bitmap1*, D2D_SIZE_U*, D2D_SIZE_U*>)(lpVtbl[5]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), &result);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D_SIZE_U>)(lpVtbl[5]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.GetPixelFormat" />
@@ -80,8 +78,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(6)]
     public D2D1_PIXEL_FORMAT GetPixelFormat()
     {
-        D2D1_PIXEL_FORMAT result;
-        return *((delegate* unmanaged<ID2D1Bitmap1*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*>)(lpVtbl[6]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), &result);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D1_PIXEL_FORMAT>)(lpVtbl[6]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.GetDpi" />
@@ -89,7 +86,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(7)]
     public void GetDpi(float* dpiX, float* dpiY)
     {
-        ((delegate* unmanaged<ID2D1Bitmap1*, float*, float*, void>)(lpVtbl[7]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), dpiX, dpiY);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, float*, float*, void>)(lpVtbl[7]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), dpiX, dpiY);
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.CopyFromBitmap" />
@@ -97,7 +94,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT CopyFromBitmap([NativeTypeName("const D2D1_POINT_2U *")] D2D_POINT_2U* destPoint, ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* srcRect)
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, D2D_POINT_2U*, ID2D1Bitmap*, D2D_RECT_U*, int>)(lpVtbl[8]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), destPoint, bitmap, srcRect);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D_POINT_2U*, ID2D1Bitmap*, D2D_RECT_U*, int>)(lpVtbl[8]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), destPoint, bitmap, srcRect);
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.CopyFromRenderTarget" />
@@ -105,7 +102,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT CopyFromRenderTarget([NativeTypeName("const D2D1_POINT_2U *")] D2D_POINT_2U* destPoint, ID2D1RenderTarget* renderTarget, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* srcRect)
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, D2D_POINT_2U*, ID2D1RenderTarget*, D2D_RECT_U*, int>)(lpVtbl[9]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), destPoint, renderTarget, srcRect);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D_POINT_2U*, ID2D1RenderTarget*, D2D_RECT_U*, int>)(lpVtbl[9]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), destPoint, renderTarget, srcRect);
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.CopyFromMemory" />
@@ -113,7 +110,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT CopyFromMemory([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* dstRect, [NativeTypeName("const void *")] void* srcData, [NativeTypeName("UINT32")] uint pitch)
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, D2D_RECT_U*, void*, uint, int>)(lpVtbl[10]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), dstRect, srcData, pitch);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D_RECT_U*, void*, uint, int>)(lpVtbl[10]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), dstRect, srcData, pitch);
     }
 
     /// <include file='ID2D1Bitmap1.xml' path='doc/member[@name="ID2D1Bitmap1.GetColorContext"]/*' />
@@ -121,7 +118,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(11)]
     public void GetColorContext(ID2D1ColorContext** colorContext)
     {
-        ((delegate* unmanaged<ID2D1Bitmap1*, ID2D1ColorContext**, void>)(lpVtbl[11]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), colorContext);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, ID2D1ColorContext**, void>)(lpVtbl[11]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), colorContext);
     }
 
     /// <include file='ID2D1Bitmap1.xml' path='doc/member[@name="ID2D1Bitmap1.GetOptions"]/*' />
@@ -129,7 +126,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(12)]
     public D2D1_BITMAP_OPTIONS GetOptions()
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, D2D1_BITMAP_OPTIONS>)(lpVtbl[12]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D1_BITMAP_OPTIONS>)(lpVtbl[12]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1Bitmap1.xml' path='doc/member[@name="ID2D1Bitmap1.GetSurface"]/*' />
@@ -137,7 +134,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT GetSurface(IDXGISurface** dxgiSurface)
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, IDXGISurface**, int>)(lpVtbl[13]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), dxgiSurface);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, IDXGISurface**, int>)(lpVtbl[13]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), dxgiSurface);
     }
 
     /// <include file='ID2D1Bitmap1.xml' path='doc/member[@name="ID2D1Bitmap1.Map"]/*' />
@@ -145,7 +142,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT Map(D2D1_MAP_OPTIONS options, D2D1_MAPPED_RECT* mappedRect)
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, D2D1_MAP_OPTIONS, D2D1_MAPPED_RECT*, int>)(lpVtbl[14]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), options, mappedRect);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D1_MAP_OPTIONS, D2D1_MAPPED_RECT*, int>)(lpVtbl[14]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), options, mappedRect);
     }
 
     /// <include file='ID2D1Bitmap1.xml' path='doc/member[@name="ID2D1Bitmap1.Unmap"]/*' />
@@ -153,7 +150,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT Unmap()
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, int>)(lpVtbl[15]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, int>)(lpVtbl[15]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1Bitmap.Interface
@@ -178,51 +175,51 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_SIZE_F> GetSize;
 
         [NativeTypeName("D2D1_SIZE_U () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_SIZE_U*, D2D_SIZE_U*> GetPixelSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_SIZE_U> GetPixelSize;
 
         [NativeTypeName("D2D1_PIXEL_FORMAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*> GetPixelFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_PIXEL_FORMAT> GetPixelFormat;
 
         [NativeTypeName("void (FLOAT *, FLOAT *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, float*, void> GetDpi;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, float*, void> GetDpi;
 
         [NativeTypeName("HRESULT (const D2D1_POINT_2U *, ID2D1Bitmap *, const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2U*, ID2D1Bitmap*, D2D_RECT_U*, int> CopyFromBitmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2U*, ID2D1Bitmap*, D2D_RECT_U*, int> CopyFromBitmap;
 
         [NativeTypeName("HRESULT (const D2D1_POINT_2U *, ID2D1RenderTarget *, const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2U*, ID2D1RenderTarget*, D2D_RECT_U*, int> CopyFromRenderTarget;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2U*, ID2D1RenderTarget*, D2D_RECT_U*, int> CopyFromRenderTarget;
 
         [NativeTypeName("HRESULT (const D2D1_RECT_U *, const void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_RECT_U*, void*, uint, int> CopyFromMemory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_RECT_U*, void*, uint, int> CopyFromMemory;
 
         [NativeTypeName("void (ID2D1ColorContext **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1ColorContext**, void> GetColorContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1ColorContext**, void> GetColorContext;
 
         [NativeTypeName("D2D1_BITMAP_OPTIONS () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_BITMAP_OPTIONS> GetOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_BITMAP_OPTIONS> GetOptions;
 
         [NativeTypeName("HRESULT (IDXGISurface **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDXGISurface**, int> GetSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDXGISurface**, int> GetSurface;
 
         [NativeTypeName("HRESULT (D2D1_MAP_OPTIONS, D2D1_MAPPED_RECT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_MAP_OPTIONS, D2D1_MAPPED_RECT*, int> Map;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_MAP_OPTIONS, D2D1_MAPPED_RECT*, int> Map;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Unmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Unmap;
     }
 }

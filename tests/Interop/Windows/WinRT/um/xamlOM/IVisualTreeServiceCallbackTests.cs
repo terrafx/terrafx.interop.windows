@@ -21,32 +21,4 @@ public static unsafe partial class IVisualTreeServiceCallbackTests
     {
         Assert.That(typeof(IVisualTreeServiceCallback).GUID, Is.EqualTo(IID_IVisualTreeServiceCallback));
     }
-
-    /// <summary>Validates that the <see cref="IVisualTreeServiceCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVisualTreeServiceCallback>(), Is.EqualTo(sizeof(IVisualTreeServiceCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IVisualTreeServiceCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVisualTreeServiceCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVisualTreeServiceCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVisualTreeServiceCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVisualTreeServiceCallback), Is.EqualTo(4));
-        }
-    }
 }

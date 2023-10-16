@@ -19,32 +19,4 @@ public static unsafe partial class IAMGraphBuilderCallbackTests
     {
         Assert.That(typeof(IAMGraphBuilderCallback).GUID, Is.EqualTo(IID_IAMGraphBuilderCallback));
     }
-
-    /// <summary>Validates that the <see cref="IAMGraphBuilderCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMGraphBuilderCallback>(), Is.EqualTo(sizeof(IAMGraphBuilderCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMGraphBuilderCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMGraphBuilderCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMGraphBuilderCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMGraphBuilderCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMGraphBuilderCallback), Is.EqualTo(4));
-        }
-    }
 }

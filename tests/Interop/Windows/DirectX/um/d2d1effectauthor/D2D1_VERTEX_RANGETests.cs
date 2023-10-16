@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D2D1_VERTEX_RANGE" /> struct.</summary>
 public static unsafe partial class D2D1_VERTEX_RANGETests
 {
-    /// <summary>Validates that the <see cref="D2D1_VERTEX_RANGE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D2D1_VERTEX_RANGE>(), Is.EqualTo(sizeof(D2D1_VERTEX_RANGE)));
-    }
-
-    /// <summary>Validates that the <see cref="D2D1_VERTEX_RANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D2D1_VERTEX_RANGE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D2D1_VERTEX_RANGE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D2D1_VERTEX_RANGE), Is.EqualTo(8));
-    }
 }

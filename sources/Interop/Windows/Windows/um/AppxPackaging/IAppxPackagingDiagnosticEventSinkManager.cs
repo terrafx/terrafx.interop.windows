@@ -25,7 +25,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPac
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackagingDiagnosticEventSinkManager*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPac
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, uint>)(lpVtbl[1]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackagingDiagnosticEventSinkManager*, uint>)(lpVtbl[1]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPac
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, uint>)(lpVtbl[2]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackagingDiagnosticEventSinkManager*, uint>)(lpVtbl[2]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxPackagingDiagnosticEventSinkManager.xml' path='doc/member[@name="IAppxPackagingDiagnosticEventSinkManager.SetSinkForProcess"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPac
     [VtblIndex(3)]
     public HRESULT SetSinkForProcess(IAppxPackagingDiagnosticEventSink* sink)
     {
-        return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, IAppxPackagingDiagnosticEventSink*, int>)(lpVtbl[3]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this), sink);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackagingDiagnosticEventSinkManager*, IAppxPackagingDiagnosticEventSink*, int>)(lpVtbl[3]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this), sink);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPac
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxPackagingDiagnosticEventSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxPackagingDiagnosticEventSink*, int> SetSinkForProcess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxPackagingDiagnosticEventSink*, int> SetSinkForProcess;
     }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IAppxManifestMainPackageDependencyTests
     {
         Assert.That(typeof(IAppxManifestMainPackageDependency).GUID, Is.EqualTo(IID_IAppxManifestMainPackageDependency));
     }
-
-    /// <summary>Validates that the <see cref="IAppxManifestMainPackageDependency" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxManifestMainPackageDependency>(), Is.EqualTo(sizeof(IAppxManifestMainPackageDependency)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestMainPackageDependency" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxManifestMainPackageDependency).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestMainPackageDependency" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxManifestMainPackageDependency), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxManifestMainPackageDependency), Is.EqualTo(4));
-        }
-    }
 }

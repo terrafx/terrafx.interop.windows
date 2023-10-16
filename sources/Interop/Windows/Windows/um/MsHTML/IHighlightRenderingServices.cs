@@ -25,7 +25,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHighlightRenderingServices*, Guid*, void**, int>)(lpVtbl[0]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHighlightRenderingServices*, Guid*, void**, int>)(lpVtbl[0]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHighlightRenderingServices*, uint>)(lpVtbl[1]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHighlightRenderingServices*, uint>)(lpVtbl[1]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHighlightRenderingServices*, uint>)(lpVtbl[2]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHighlightRenderingServices*, uint>)(lpVtbl[2]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHighlightRenderingServices.xml' path='doc/member[@name="IHighlightRenderingServices.AddSegment"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
     [VtblIndex(3)]
     public HRESULT AddSegment(IDisplayPointer* pDispPointerStart, IDisplayPointer* pDispPointerEnd, IHTMLRenderStyle* pIRenderStyle, IHighlightSegment** ppISegment)
     {
-        return ((delegate* unmanaged<IHighlightRenderingServices*, IDisplayPointer*, IDisplayPointer*, IHTMLRenderStyle*, IHighlightSegment**, int>)(lpVtbl[3]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), pDispPointerStart, pDispPointerEnd, pIRenderStyle, ppISegment);
+        return ((delegate* unmanaged[MemberFunction]<IHighlightRenderingServices*, IDisplayPointer*, IDisplayPointer*, IHTMLRenderStyle*, IHighlightSegment**, int>)(lpVtbl[3]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), pDispPointerStart, pDispPointerEnd, pIRenderStyle, ppISegment);
     }
 
     /// <include file='IHighlightRenderingServices.xml' path='doc/member[@name="IHighlightRenderingServices.MoveSegmentToPointers"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
     [VtblIndex(4)]
     public HRESULT MoveSegmentToPointers(IHighlightSegment* pISegment, IDisplayPointer* pDispPointerStart, IDisplayPointer* pDispPointerEnd)
     {
-        return ((delegate* unmanaged<IHighlightRenderingServices*, IHighlightSegment*, IDisplayPointer*, IDisplayPointer*, int>)(lpVtbl[4]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), pISegment, pDispPointerStart, pDispPointerEnd);
+        return ((delegate* unmanaged[MemberFunction]<IHighlightRenderingServices*, IHighlightSegment*, IDisplayPointer*, IDisplayPointer*, int>)(lpVtbl[4]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), pISegment, pDispPointerStart, pDispPointerEnd);
     }
 
     /// <include file='IHighlightRenderingServices.xml' path='doc/member[@name="IHighlightRenderingServices.RemoveSegment"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
     [VtblIndex(5)]
     public HRESULT RemoveSegment(IHighlightSegment* pISegment)
     {
-        return ((delegate* unmanaged<IHighlightRenderingServices*, IHighlightSegment*, int>)(lpVtbl[5]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), pISegment);
+        return ((delegate* unmanaged[MemberFunction]<IHighlightRenderingServices*, IHighlightSegment*, int>)(lpVtbl[5]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), pISegment);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDisplayPointer *, IDisplayPointer *, IHTMLRenderStyle *, IHighlightSegment **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDisplayPointer*, IDisplayPointer*, IHTMLRenderStyle*, IHighlightSegment**, int> AddSegment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDisplayPointer*, IDisplayPointer*, IHTMLRenderStyle*, IHighlightSegment**, int> AddSegment;
 
         [NativeTypeName("HRESULT (IHighlightSegment *, IDisplayPointer *, IDisplayPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHighlightSegment*, IDisplayPointer*, IDisplayPointer*, int> MoveSegmentToPointers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHighlightSegment*, IDisplayPointer*, IDisplayPointer*, int> MoveSegmentToPointers;
 
         [NativeTypeName("HRESULT (IHighlightSegment *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHighlightSegment*, int> RemoveSegment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHighlightSegment*, int> RemoveSegment;
     }
 }

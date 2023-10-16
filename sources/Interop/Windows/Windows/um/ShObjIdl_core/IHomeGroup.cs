@@ -25,7 +25,7 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHomeGroup*, Guid*, void**, int>)(lpVtbl[0]))((IHomeGroup*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHomeGroup*, Guid*, void**, int>)(lpVtbl[0]))((IHomeGroup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHomeGroup*, uint>)(lpVtbl[1]))((IHomeGroup*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHomeGroup*, uint>)(lpVtbl[1]))((IHomeGroup*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHomeGroup*, uint>)(lpVtbl[2]))((IHomeGroup*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHomeGroup*, uint>)(lpVtbl[2]))((IHomeGroup*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHomeGroup.xml' path='doc/member[@name="IHomeGroup.IsMember"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT IsMember(BOOL* member)
     {
-        return ((delegate* unmanaged<IHomeGroup*, BOOL*, int>)(lpVtbl[3]))((IHomeGroup*)Unsafe.AsPointer(ref this), member);
+        return ((delegate* unmanaged[MemberFunction]<IHomeGroup*, BOOL*, int>)(lpVtbl[3]))((IHomeGroup*)Unsafe.AsPointer(ref this), member);
     }
 
     /// <include file='IHomeGroup.xml' path='doc/member[@name="IHomeGroup.ShowSharingWizard"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT ShowSharingWizard(HWND owner, HOMEGROUPSHARINGCHOICES* sharingchoices)
     {
-        return ((delegate* unmanaged<IHomeGroup*, HWND, HOMEGROUPSHARINGCHOICES*, int>)(lpVtbl[4]))((IHomeGroup*)Unsafe.AsPointer(ref this), owner, sharingchoices);
+        return ((delegate* unmanaged[MemberFunction]<IHomeGroup*, HWND, HOMEGROUPSHARINGCHOICES*, int>)(lpVtbl[4]))((IHomeGroup*)Unsafe.AsPointer(ref this), owner, sharingchoices);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsMember;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsMember;
 
         [NativeTypeName("HRESULT (HWND, HOMEGROUPSHARINGCHOICES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, HOMEGROUPSHARINGCHOICES*, int> ShowSharingWizard;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, HOMEGROUPSHARINGCHOICES*, int> ShowSharingWizard;
     }
 }

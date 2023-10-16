@@ -54,5 +54,5 @@ public unsafe partial struct LOGFONTW
 
     /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfFaceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort lfFaceName[32];
+    public fixed char lfFaceName[32];
 }

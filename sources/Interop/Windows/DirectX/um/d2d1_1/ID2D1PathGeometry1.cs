@@ -91,7 +91,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -100,7 +100,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, uint>)(lpVtbl[1]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, uint>)(lpVtbl[1]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -109,7 +109,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, uint>)(lpVtbl[2]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, uint>)(lpVtbl[2]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
@@ -117,7 +117,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged<ID2D1PathGeometry1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), factory);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.GetBounds" />
@@ -125,7 +125,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(4)]
     public HRESULT GetBounds([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, D2D_MATRIX_3X2_F*, D2D_RECT_F*, int>)(lpVtbl[4]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), worldTransform, bounds);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, D2D_MATRIX_3X2_F*, D2D_RECT_F*, int>)(lpVtbl[4]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), worldTransform, bounds);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.GetWidenedBounds" />
@@ -133,7 +133,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(5)]
     public HRESULT GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, D2D_RECT_F*, int>)(lpVtbl[5]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), strokeWidth, strokeStyle, worldTransform, flatteningTolerance, bounds);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, D2D_RECT_F*, int>)(lpVtbl[5]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), strokeWidth, strokeStyle, worldTransform, flatteningTolerance, bounds);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.StrokeContainsPoint" />
@@ -141,7 +141,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(6)]
     public HRESULT StrokeContainsPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, BOOL* contains)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, D2D_POINT_2F, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, BOOL*, int>)(lpVtbl[6]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, contains);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, D2D_POINT_2F, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, BOOL*, int>)(lpVtbl[6]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, contains);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.FillContainsPoint" />
@@ -149,7 +149,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(7)]
     public HRESULT FillContainsPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, BOOL* contains)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, D2D_POINT_2F, D2D_MATRIX_3X2_F*, float, BOOL*, int>)(lpVtbl[7]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), point, worldTransform, flatteningTolerance, contains);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, D2D_POINT_2F, D2D_MATRIX_3X2_F*, float, BOOL*, int>)(lpVtbl[7]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), point, worldTransform, flatteningTolerance, contains);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.CompareWithGeometry" />
@@ -157,7 +157,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(8)]
     public HRESULT CompareWithGeometry(ID2D1Geometry* inputGeometry, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, D2D1_GEOMETRY_RELATION* relation)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, ID2D1Geometry*, D2D_MATRIX_3X2_F*, float, D2D1_GEOMETRY_RELATION*, int>)(lpVtbl[8]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), inputGeometry, inputGeometryTransform, flatteningTolerance, relation);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, ID2D1Geometry*, D2D_MATRIX_3X2_F*, float, D2D1_GEOMETRY_RELATION*, int>)(lpVtbl[8]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), inputGeometry, inputGeometryTransform, flatteningTolerance, relation);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.Simplify" />
@@ -165,7 +165,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(9)]
     public HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, D2D1_GEOMETRY_SIMPLIFICATION_OPTION, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[9]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), simplificationOption, worldTransform, flatteningTolerance, geometrySink);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, D2D1_GEOMETRY_SIMPLIFICATION_OPTION, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[9]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), simplificationOption, worldTransform, flatteningTolerance, geometrySink);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.Tessellate" />
@@ -173,7 +173,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(10)]
     public HRESULT Tessellate([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1TessellationSink* tessellationSink)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, D2D_MATRIX_3X2_F*, float, ID2D1TessellationSink*, int>)(lpVtbl[10]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), worldTransform, flatteningTolerance, tessellationSink);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, D2D_MATRIX_3X2_F*, float, ID2D1TessellationSink*, int>)(lpVtbl[10]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), worldTransform, flatteningTolerance, tessellationSink);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.CombineWithGeometry" />
@@ -181,7 +181,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(11)]
     public HRESULT CombineWithGeometry(ID2D1Geometry* inputGeometry, D2D1_COMBINE_MODE combineMode, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, ID2D1Geometry*, D2D1_COMBINE_MODE, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[11]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, geometrySink);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, ID2D1Geometry*, D2D1_COMBINE_MODE, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[11]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, geometrySink);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.Outline" />
@@ -189,7 +189,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(12)]
     public HRESULT Outline([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[12]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), worldTransform, flatteningTolerance, geometrySink);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[12]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), worldTransform, flatteningTolerance, geometrySink);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.ComputeArea" />
@@ -197,7 +197,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(13)]
     public HRESULT ComputeArea([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, float* area)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, D2D_MATRIX_3X2_F*, float, float*, int>)(lpVtbl[13]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), worldTransform, flatteningTolerance, area);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, D2D_MATRIX_3X2_F*, float, float*, int>)(lpVtbl[13]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), worldTransform, flatteningTolerance, area);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.ComputeLength" />
@@ -205,7 +205,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(14)]
     public HRESULT ComputeLength([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, float* length)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, D2D_MATRIX_3X2_F*, float, float*, int>)(lpVtbl[14]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), worldTransform, flatteningTolerance, length);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, D2D_MATRIX_3X2_F*, float, float*, int>)(lpVtbl[14]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), worldTransform, flatteningTolerance, length);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.ComputePointAtLength" />
@@ -213,7 +213,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(15)]
     public HRESULT ComputePointAtLength(float length, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* point, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* unitTangentVector)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, float, D2D_MATRIX_3X2_F*, float, D2D_POINT_2F*, D2D_POINT_2F*, int>)(lpVtbl[15]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), length, worldTransform, flatteningTolerance, point, unitTangentVector);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, float, D2D_MATRIX_3X2_F*, float, D2D_POINT_2F*, D2D_POINT_2F*, int>)(lpVtbl[15]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), length, worldTransform, flatteningTolerance, point, unitTangentVector);
     }
 
     /// <inheritdoc cref="ID2D1Geometry.Widen" />
@@ -221,7 +221,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(16)]
     public HRESULT Widen(float strokeWidth, ID2D1StrokeStyle* strokeStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[16]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), strokeWidth, strokeStyle, worldTransform, flatteningTolerance, geometrySink);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[16]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), strokeWidth, strokeStyle, worldTransform, flatteningTolerance, geometrySink);
     }
 
     /// <inheritdoc cref="ID2D1PathGeometry.Open" />
@@ -229,7 +229,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(17)]
     public HRESULT Open(ID2D1GeometrySink** geometrySink)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, ID2D1GeometrySink**, int>)(lpVtbl[17]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), geometrySink);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, ID2D1GeometrySink**, int>)(lpVtbl[17]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), geometrySink);
     }
 
     /// <inheritdoc cref="ID2D1PathGeometry.Stream" />
@@ -237,7 +237,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(18)]
     public HRESULT Stream(ID2D1GeometrySink* geometrySink)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, ID2D1GeometrySink*, int>)(lpVtbl[18]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), geometrySink);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, ID2D1GeometrySink*, int>)(lpVtbl[18]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), geometrySink);
     }
 
     /// <inheritdoc cref="ID2D1PathGeometry.GetSegmentCount" />
@@ -245,7 +245,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(19)]
     public HRESULT GetSegmentCount([NativeTypeName("UINT32 *")] uint* count)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, uint*, int>)(lpVtbl[19]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), count);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, uint*, int>)(lpVtbl[19]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), count);
     }
 
     /// <inheritdoc cref="ID2D1PathGeometry.GetFigureCount" />
@@ -253,7 +253,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(20)]
     public HRESULT GetFigureCount([NativeTypeName("UINT32 *")] uint* count)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, uint*, int>)(lpVtbl[20]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), count);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, uint*, int>)(lpVtbl[20]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), count);
     }
 
     /// <include file='ID2D1PathGeometry1.xml' path='doc/member[@name="ID2D1PathGeometry1.ComputePointAndSegmentAtLength"]/*' />
@@ -261,7 +261,7 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
     [VtblIndex(21)]
     public HRESULT ComputePointAndSegmentAtLength(float length, [NativeTypeName("UINT32")] uint startSegment, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D1_POINT_DESCRIPTION* pointDescription)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, float, uint, D2D_MATRIX_3X2_F*, float, D2D1_POINT_DESCRIPTION*, int>)(lpVtbl[21]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), length, startSegment, worldTransform, flatteningTolerance, pointDescription);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1PathGeometry1*, float, uint, D2D_MATRIX_3X2_F*, float, D2D1_POINT_DESCRIPTION*, int>)(lpVtbl[21]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), length, startSegment, worldTransform, flatteningTolerance, pointDescription);
     }
 
     public interface Interface : ID2D1PathGeometry.Interface
@@ -274,69 +274,69 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("HRESULT (const D2D1_MATRIX_3X2_F *, D2D1_RECT_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, D2D_RECT_F*, int> GetBounds;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_MATRIX_3X2_F*, D2D_RECT_F*, int> GetBounds;
 
         [NativeTypeName("HRESULT (FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F *, FLOAT, D2D1_RECT_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, D2D_RECT_F*, int> GetWidenedBounds1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, D2D_RECT_F*, int> GetWidenedBounds1;
 
         [NativeTypeName("HRESULT (D2D1_POINT_2F, FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F *, FLOAT, BOOL *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2F, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, BOOL*, int> StrokeContainsPoint1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2F, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, BOOL*, int> StrokeContainsPoint1;
 
         [NativeTypeName("HRESULT (D2D1_POINT_2F, const D2D1_MATRIX_3X2_F *, FLOAT, BOOL *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2F, D2D_MATRIX_3X2_F*, float, BOOL*, int> FillContainsPoint1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2F, D2D_MATRIX_3X2_F*, float, BOOL*, int> FillContainsPoint1;
 
         [NativeTypeName("HRESULT (ID2D1Geometry *, const D2D1_MATRIX_3X2_F *, FLOAT, D2D1_GEOMETRY_RELATION *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Geometry*, D2D_MATRIX_3X2_F*, float, D2D1_GEOMETRY_RELATION*, int> CompareWithGeometry1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Geometry*, D2D_MATRIX_3X2_F*, float, D2D1_GEOMETRY_RELATION*, int> CompareWithGeometry1;
 
         [NativeTypeName("HRESULT (D2D1_GEOMETRY_SIMPLIFICATION_OPTION, const D2D1_MATRIX_3X2_F *, FLOAT, ID2D1SimplifiedGeometrySink *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_GEOMETRY_SIMPLIFICATION_OPTION, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> Simplify1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_GEOMETRY_SIMPLIFICATION_OPTION, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> Simplify1;
 
         [NativeTypeName("HRESULT (const D2D1_MATRIX_3X2_F *, FLOAT, ID2D1TessellationSink *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, float, ID2D1TessellationSink*, int> Tessellate1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_MATRIX_3X2_F*, float, ID2D1TessellationSink*, int> Tessellate1;
 
         [NativeTypeName("HRESULT (ID2D1Geometry *, D2D1_COMBINE_MODE, const D2D1_MATRIX_3X2_F *, FLOAT, ID2D1SimplifiedGeometrySink *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Geometry*, D2D1_COMBINE_MODE, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> CombineWithGeometry1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Geometry*, D2D1_COMBINE_MODE, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> CombineWithGeometry1;
 
         [NativeTypeName("HRESULT (const D2D1_MATRIX_3X2_F *, FLOAT, ID2D1SimplifiedGeometrySink *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> Outline1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> Outline1;
 
         [NativeTypeName("HRESULT (const D2D1_MATRIX_3X2_F *, FLOAT, FLOAT *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, float, float*, int> ComputeArea1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_MATRIX_3X2_F*, float, float*, int> ComputeArea1;
 
         [NativeTypeName("HRESULT (const D2D1_MATRIX_3X2_F *, FLOAT, FLOAT *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, float, float*, int> ComputeLength1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_MATRIX_3X2_F*, float, float*, int> ComputeLength1;
 
         [NativeTypeName("HRESULT (FLOAT, const D2D1_MATRIX_3X2_F *, FLOAT, D2D1_POINT_2F *, D2D1_POINT_2F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, D2D_MATRIX_3X2_F*, float, D2D_POINT_2F*, D2D_POINT_2F*, int> ComputePointAtLength1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, D2D_MATRIX_3X2_F*, float, D2D_POINT_2F*, D2D_POINT_2F*, int> ComputePointAtLength1;
 
         [NativeTypeName("HRESULT (FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F *, FLOAT, ID2D1SimplifiedGeometrySink *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> Widen1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> Widen1;
 
         [NativeTypeName("HRESULT (ID2D1GeometrySink **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1GeometrySink**, int> Open;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1GeometrySink**, int> Open;
 
         [NativeTypeName("HRESULT (ID2D1GeometrySink *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1GeometrySink*, int> Stream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1GeometrySink*, int> Stream;
 
         [NativeTypeName("HRESULT (UINT32 *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSegmentCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSegmentCount;
 
         [NativeTypeName("HRESULT (UINT32 *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetFigureCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetFigureCount;
 
         [NativeTypeName("HRESULT (FLOAT, UINT32, const D2D1_MATRIX_3X2_F *, FLOAT, D2D1_POINT_DESCRIPTION *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, uint, D2D_MATRIX_3X2_F*, float, D2D1_POINT_DESCRIPTION*, int> ComputePointAndSegmentAtLength1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, uint, D2D_MATRIX_3X2_F*, float, D2D1_POINT_DESCRIPTION*, int> ComputePointAndSegmentAtLength1;
     }
 }

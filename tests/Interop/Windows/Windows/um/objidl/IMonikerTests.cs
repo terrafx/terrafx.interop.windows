@@ -19,32 +19,4 @@ public static unsafe partial class IMonikerTests
     {
         Assert.That(typeof(IMoniker).GUID, Is.EqualTo(IID_IMoniker));
     }
-
-    /// <summary>Validates that the <see cref="IMoniker" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMoniker>(), Is.EqualTo(sizeof(IMoniker)));
-    }
-
-    /// <summary>Validates that the <see cref="IMoniker" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMoniker).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMoniker" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMoniker), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMoniker), Is.EqualTo(4));
-        }
-    }
 }

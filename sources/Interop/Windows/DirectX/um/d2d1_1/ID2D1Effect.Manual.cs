@@ -9,13 +9,13 @@ namespace TerraFX.Interop.DirectX;
 
 public unsafe partial struct ID2D1Effect
 {
-    public HRESULT GetValueByName<T>([NativeTypeName("PCWSTR")] ushort* propertyName, [NativeTypeName("T *")] T* value)
+    public HRESULT GetValueByName<T>([NativeTypeName("PCWSTR")] char* propertyName, [NativeTypeName("T *")] T* value)
         where T : unmanaged
     {
         return GetValueByName(propertyName, (byte*)value, unchecked((uint)sizeof(T)));
     }
 
-    public T GetValueByName<T>([NativeTypeName("PCWSTR")] ushort* propertyName)
+    public T GetValueByName<T>([NativeTypeName("PCWSTR")] char* propertyName)
         where T : unmanaged
     {
         T value;
@@ -23,7 +23,7 @@ public unsafe partial struct ID2D1Effect
         return value;
     }
 
-    public HRESULT SetValueByName<T>([NativeTypeName("PCWSTR")] ushort* propertyName, [NativeTypeName("const T &")] T* value)
+    public HRESULT SetValueByName<T>([NativeTypeName("PCWSTR")] char* propertyName, [NativeTypeName("const T &")] T* value)
         where T : unmanaged
     {
         return SetValueByName(propertyName, (byte*)value, unchecked((uint)sizeof(T)));
@@ -64,7 +64,7 @@ public unsafe partial struct ID2D1Effect
         return SetValue((uint)(object)index, (byte*)value, unchecked((uint)sizeof(T)));
     }
 
-    public HRESULT GetPropertyName<U>(U index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
+    public HRESULT GetPropertyName<U>(U index, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount)
         where U : unmanaged
     {
         return GetPropertyName((uint)(object)index, name, nameCount);

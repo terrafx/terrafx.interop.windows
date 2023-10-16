@@ -19,25 +19,4 @@ public static unsafe partial class DiaSourceTests
     {
         Assert.That(typeof(DiaSource).GUID, Is.EqualTo(CLSID_DiaSource));
     }
-
-    /// <summary>Validates that the <see cref="DiaSource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DiaSource>(), Is.EqualTo(sizeof(DiaSource)));
-    }
-
-    /// <summary>Validates that the <see cref="DiaSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DiaSource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DiaSource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DiaSource), Is.EqualTo(1));
-    }
 }

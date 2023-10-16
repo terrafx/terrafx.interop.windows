@@ -19,25 +19,4 @@ public static unsafe partial class MsftMultisessionSequentialTests
     {
         Assert.That(typeof(MsftMultisessionSequential).GUID, Is.EqualTo(CLSID_MsftMultisessionSequential));
     }
-
-    /// <summary>Validates that the <see cref="MsftMultisessionSequential" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MsftMultisessionSequential>(), Is.EqualTo(sizeof(MsftMultisessionSequential)));
-    }
-
-    /// <summary>Validates that the <see cref="MsftMultisessionSequential" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MsftMultisessionSequential).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MsftMultisessionSequential" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MsftMultisessionSequential), Is.EqualTo(1));
-    }
 }

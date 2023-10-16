@@ -19,25 +19,4 @@ public static unsafe partial class HTMLImageElementFactoryTests
     {
         Assert.That(typeof(HTMLImageElementFactory).GUID, Is.EqualTo(IID_HTMLImageElementFactory));
     }
-
-    /// <summary>Validates that the <see cref="HTMLImageElementFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLImageElementFactory>(), Is.EqualTo(sizeof(HTMLImageElementFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLImageElementFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLImageElementFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLImageElementFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLImageElementFactory), Is.EqualTo(1));
-    }
 }

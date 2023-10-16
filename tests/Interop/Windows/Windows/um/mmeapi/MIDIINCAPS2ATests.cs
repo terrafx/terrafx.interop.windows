@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIDIINCAPS2A" /> struct.</summary>
 public static unsafe partial class MIDIINCAPS2ATests
 {
-    /// <summary>Validates that the <see cref="MIDIINCAPS2A" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIDIINCAPS2A>(), Is.EqualTo(sizeof(MIDIINCAPS2A)));
-    }
-
-    /// <summary>Validates that the <see cref="MIDIINCAPS2A" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIDIINCAPS2A).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIDIINCAPS2A" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIDIINCAPS2A), Is.EqualTo(92));
-    }
 }

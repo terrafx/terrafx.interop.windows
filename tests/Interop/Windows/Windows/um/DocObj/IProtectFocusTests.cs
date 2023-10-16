@@ -19,32 +19,4 @@ public static unsafe partial class IProtectFocusTests
     {
         Assert.That(typeof(IProtectFocus).GUID, Is.EqualTo(IID_IProtectFocus));
     }
-
-    /// <summary>Validates that the <see cref="IProtectFocus" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IProtectFocus>(), Is.EqualTo(sizeof(IProtectFocus)));
-    }
-
-    /// <summary>Validates that the <see cref="IProtectFocus" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IProtectFocus).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IProtectFocus" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IProtectFocus), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IProtectFocus), Is.EqualTo(4));
-        }
-    }
 }

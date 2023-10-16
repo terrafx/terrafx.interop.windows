@@ -25,7 +25,7 @@ public unsafe partial struct IProfferService : IProfferService.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IProfferService*, Guid*, void**, int>)(lpVtbl[0]))((IProfferService*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IProfferService*, Guid*, void**, int>)(lpVtbl[0]))((IProfferService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IProfferService : IProfferService.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IProfferService*, uint>)(lpVtbl[1]))((IProfferService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProfferService*, uint>)(lpVtbl[1]))((IProfferService*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IProfferService : IProfferService.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IProfferService*, uint>)(lpVtbl[2]))((IProfferService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProfferService*, uint>)(lpVtbl[2]))((IProfferService*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IProfferService.xml' path='doc/member[@name="IProfferService.ProfferService"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IProfferService : IProfferService.Interface, INativ
     [VtblIndex(3)]
     public HRESULT ProfferService([NativeTypeName("const GUID &")] Guid* serviceId, IServiceProvider* serviceProvider, [NativeTypeName("DWORD *")] uint* cookie)
     {
-        return ((delegate* unmanaged<IProfferService*, Guid*, IServiceProvider*, uint*, int>)(lpVtbl[3]))((IProfferService*)Unsafe.AsPointer(ref this), serviceId, serviceProvider, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IProfferService*, Guid*, IServiceProvider*, uint*, int>)(lpVtbl[3]))((IProfferService*)Unsafe.AsPointer(ref this), serviceId, serviceProvider, cookie);
     }
 
     /// <include file='IProfferService.xml' path='doc/member[@name="IProfferService.RevokeService"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IProfferService : IProfferService.Interface, INativ
     [VtblIndex(4)]
     public HRESULT RevokeService([NativeTypeName("DWORD")] uint cookie)
     {
-        return ((delegate* unmanaged<IProfferService*, uint, int>)(lpVtbl[4]))((IProfferService*)Unsafe.AsPointer(ref this), cookie);
+        return ((delegate* unmanaged[MemberFunction]<IProfferService*, uint, int>)(lpVtbl[4]))((IProfferService*)Unsafe.AsPointer(ref this), cookie);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IProfferService : IProfferService.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, IServiceProvider *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IServiceProvider*, uint*, int> ProfferService;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IServiceProvider*, uint*, int> ProfferService;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RevokeService;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RevokeService;
     }
 }

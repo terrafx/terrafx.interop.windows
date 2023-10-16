@@ -25,7 +25,7 @@ public unsafe partial struct IMFCameraControlMonitor : IMFCameraControlMonitor.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFCameraControlMonitor*, Guid*, void**, int>)(lpVtbl[0]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlMonitor*, Guid*, void**, int>)(lpVtbl[0]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFCameraControlMonitor : IMFCameraControlMonitor.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFCameraControlMonitor*, uint>)(lpVtbl[1]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlMonitor*, uint>)(lpVtbl[1]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFCameraControlMonitor : IMFCameraControlMonitor.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFCameraControlMonitor*, uint>)(lpVtbl[2]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlMonitor*, uint>)(lpVtbl[2]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCameraControlMonitor.xml' path='doc/member[@name="IMFCameraControlMonitor.Start"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFCameraControlMonitor : IMFCameraControlMonitor.I
     [VtblIndex(3)]
     public HRESULT Start()
     {
-        return ((delegate* unmanaged<IMFCameraControlMonitor*, int>)(lpVtbl[3]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlMonitor*, int>)(lpVtbl[3]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCameraControlMonitor.xml' path='doc/member[@name="IMFCameraControlMonitor.Stop"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFCameraControlMonitor : IMFCameraControlMonitor.I
     [VtblIndex(4)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IMFCameraControlMonitor*, int>)(lpVtbl[4]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlMonitor*, int>)(lpVtbl[4]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCameraControlMonitor.xml' path='doc/member[@name="IMFCameraControlMonitor.AddControlSubscription"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFCameraControlMonitor : IMFCameraControlMonitor.I
     [VtblIndex(5)]
     public HRESULT AddControlSubscription(Guid controlSet, [NativeTypeName("UINT32")] uint id)
     {
-        return ((delegate* unmanaged<IMFCameraControlMonitor*, Guid, uint, int>)(lpVtbl[5]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this), controlSet, id);
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlMonitor*, Guid, uint, int>)(lpVtbl[5]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this), controlSet, id);
     }
 
     /// <include file='IMFCameraControlMonitor.xml' path='doc/member[@name="IMFCameraControlMonitor.RemoveControlSubscription"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFCameraControlMonitor : IMFCameraControlMonitor.I
     [VtblIndex(6)]
     public HRESULT RemoveControlSubscription(Guid controlSet, [NativeTypeName("UINT32")] uint id)
     {
-        return ((delegate* unmanaged<IMFCameraControlMonitor*, Guid, uint, int>)(lpVtbl[6]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this), controlSet, id);
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlMonitor*, Guid, uint, int>)(lpVtbl[6]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this), controlSet, id);
     }
 
     /// <include file='IMFCameraControlMonitor.xml' path='doc/member[@name="IMFCameraControlMonitor.Shutdown"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFCameraControlMonitor : IMFCameraControlMonitor.I
     [VtblIndex(7)]
     public void Shutdown()
     {
-        ((delegate* unmanaged<IMFCameraControlMonitor*, void>)(lpVtbl[7]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IMFCameraControlMonitor*, void>)(lpVtbl[7]))((IMFCameraControlMonitor*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IMFCameraControlMonitor : IMFCameraControlMonitor.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Start;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Start;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (GUID, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, uint, int> AddControlSubscription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, uint, int> AddControlSubscription;
 
         [NativeTypeName("HRESULT (GUID, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, uint, int> RemoveControlSubscription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, uint, int> RemoveControlSubscription;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Shutdown;
     }
 }

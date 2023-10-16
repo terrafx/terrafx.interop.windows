@@ -31,5 +31,5 @@ public unsafe partial struct CM_COLUMNINFO
 
     /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.wszName"]/*' />
     [NativeTypeName("WCHAR[80]")]
-    public fixed ushort wszName[80];
+    public fixed char wszName[80];
 }

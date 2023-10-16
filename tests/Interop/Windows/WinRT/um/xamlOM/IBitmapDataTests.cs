@@ -21,32 +21,4 @@ public static unsafe partial class IBitmapDataTests
     {
         Assert.That(typeof(IBitmapData).GUID, Is.EqualTo(IID_IBitmapData));
     }
-
-    /// <summary>Validates that the <see cref="IBitmapData" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBitmapData>(), Is.EqualTo(sizeof(IBitmapData)));
-    }
-
-    /// <summary>Validates that the <see cref="IBitmapData" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBitmapData).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBitmapData" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBitmapData), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBitmapData), Is.EqualTo(4));
-        }
-    }
 }

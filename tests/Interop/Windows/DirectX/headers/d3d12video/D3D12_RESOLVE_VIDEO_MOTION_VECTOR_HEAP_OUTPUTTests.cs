@@ -13,24 +13,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public static unsafe partial class D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUTTests
 {
-    /// <summary>Validates that the <see cref="D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT>(), Is.EqualTo(sizeof(D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT), Is.EqualTo(32));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechRecognizerTests
     {
         Assert.That(typeof(ISpeechRecognizer).GUID, Is.EqualTo(IID_ISpeechRecognizer));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechRecognizer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechRecognizer>(), Is.EqualTo(sizeof(ISpeechRecognizer)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechRecognizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechRecognizer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechRecognizer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechRecognizer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechRecognizer), Is.EqualTo(4));
-        }
-    }
 }

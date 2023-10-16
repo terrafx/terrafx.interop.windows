@@ -19,7 +19,7 @@ public partial struct SID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xBC, 0x8E, 0x5F, 0xFB,
                 0xB6, 0xBB,
                 0x10, 0x4D,
@@ -31,7 +31,7 @@ public partial struct SID
                 0xA0,
                 0x90,
                 0x30
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -44,7 +44,7 @@ public partial struct SID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x92, 0x54, 0x60, 0x80,
                 0xD9, 0x67,
                 0x4F, 0x41,
@@ -56,7 +56,7 @@ public partial struct SID
                 0x24,
                 0x2B,
                 0xC1
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -69,7 +69,7 @@ public partial struct SID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x72, 0x24, 0xDB, 0x26,
                 0xB7, 0xB7,
                 0x6B, 0x40,
@@ -81,7 +81,7 @@ public partial struct SID
                 0x20,
                 0xD3,
                 0xBF
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -94,7 +94,7 @@ public partial struct SID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x10, 0x80, 0xE7, 0x2C,
                 0xDB, 0x74,
                 0xBC, 0x48,
@@ -106,7 +106,7 @@ public partial struct SID
                 0x49,
                 0x57,
                 0x23
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -119,7 +119,7 @@ public partial struct SID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA2, 0xAD, 0x84, 0xEB,
                 0xFF, 0x00,
                 0x92, 0x49,
@@ -131,7 +131,7 @@ public partial struct SID
                 0x61,
                 0xCB,
                 0x29
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

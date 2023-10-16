@@ -25,7 +25,7 @@ public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInput
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfInputProcessorProfileSubstituteLayout*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInput
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, uint>)(lpVtbl[1]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfInputProcessorProfileSubstituteLayout*, uint>)(lpVtbl[1]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInput
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, uint>)(lpVtbl[2]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfInputProcessorProfileSubstituteLayout*, uint>)(lpVtbl[2]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfInputProcessorProfileSubstituteLayout.xml' path='doc/member[@name="ITfInputProcessorProfileSubstituteLayout.GetSubstituteKeyboardLayout"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInput
     [VtblIndex(3)]
     public HRESULT GetSubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL* phKL)
     {
-        return ((delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, Guid*, ushort, Guid*, HKL*, int>)(lpVtbl[3]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, phKL);
+        return ((delegate* unmanaged[MemberFunction]<ITfInputProcessorProfileSubstituteLayout*, Guid*, ushort, Guid*, HKL*, int>)(lpVtbl[3]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, phKL);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInput
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, HKL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, HKL*, int> GetSubstituteKeyboardLayout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, ushort, Guid*, HKL*, int> GetSubstituteKeyboardLayout;
     }
 }

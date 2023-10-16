@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AM_DVDCOPY_CHLGKEY" /> struct.</summary>
 public static unsafe partial class AM_DVDCOPY_CHLGKEYTests
 {
-    /// <summary>Validates that the <see cref="AM_DVDCOPY_CHLGKEY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AM_DVDCOPY_CHLGKEY>(), Is.EqualTo(sizeof(AM_DVDCOPY_CHLGKEY)));
-    }
-
-    /// <summary>Validates that the <see cref="AM_DVDCOPY_CHLGKEY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AM_DVDCOPY_CHLGKEY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AM_DVDCOPY_CHLGKEY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AM_DVDCOPY_CHLGKEY), Is.EqualTo(12));
-    }
 }

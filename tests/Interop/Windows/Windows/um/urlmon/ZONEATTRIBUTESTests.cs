@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ZONEATTRIBUTES" /> struct.</summary>
 public static unsafe partial class ZONEATTRIBUTESTests
 {
-    /// <summary>Validates that the <see cref="ZONEATTRIBUTES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ZONEATTRIBUTES>(), Is.EqualTo(sizeof(ZONEATTRIBUTES)));
-    }
-
-    /// <summary>Validates that the <see cref="ZONEATTRIBUTES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ZONEATTRIBUTES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ZONEATTRIBUTES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ZONEATTRIBUTES), Is.EqualTo(1460));
-    }
 }

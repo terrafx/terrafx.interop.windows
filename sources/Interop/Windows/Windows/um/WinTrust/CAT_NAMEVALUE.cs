@@ -10,7 +10,7 @@ public unsafe partial struct CAT_NAMEVALUE
 {
     /// <include file='CAT_NAMEVALUE.xml' path='doc/member[@name="CAT_NAMEVALUE.pwszTag"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszTag;
+    public char* pwszTag;
 
     /// <include file='CAT_NAMEVALUE.xml' path='doc/member[@name="CAT_NAMEVALUE.fdwFlags"]/*' />
     [NativeTypeName("DWORD")]

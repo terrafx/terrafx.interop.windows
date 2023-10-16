@@ -13,5 +13,5 @@ public unsafe partial struct TF_LBBALLOONINFO
 
     /// <include file='TF_LBBALLOONINFO.xml' path='doc/member[@name="TF_LBBALLOONINFO.bstrText"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* bstrText;
+    public char* bstrText;
 }

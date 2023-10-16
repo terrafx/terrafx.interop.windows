@@ -25,7 +25,7 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IReferenceClockTimerControl*, Guid*, void**, int>)(lpVtbl[0]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClockTimerControl*, Guid*, void**, int>)(lpVtbl[0]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IReferenceClockTimerControl*, uint>)(lpVtbl[1]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClockTimerControl*, uint>)(lpVtbl[1]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IReferenceClockTimerControl*, uint>)(lpVtbl[2]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClockTimerControl*, uint>)(lpVtbl[2]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IReferenceClockTimerControl.xml' path='doc/member[@name="IReferenceClockTimerControl.SetDefaultTimerResolution"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
     [VtblIndex(3)]
     public HRESULT SetDefaultTimerResolution([NativeTypeName("REFERENCE_TIME")] long timerResolution)
     {
-        return ((delegate* unmanaged<IReferenceClockTimerControl*, long, int>)(lpVtbl[3]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this), timerResolution);
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClockTimerControl*, long, int>)(lpVtbl[3]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this), timerResolution);
     }
 
     /// <include file='IReferenceClockTimerControl.xml' path='doc/member[@name="IReferenceClockTimerControl.GetDefaultTimerResolution"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
     [VtblIndex(4)]
     public HRESULT GetDefaultTimerResolution([NativeTypeName("REFERENCE_TIME *")] long* pTimerResolution)
     {
-        return ((delegate* unmanaged<IReferenceClockTimerControl*, long*, int>)(lpVtbl[4]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this), pTimerResolution);
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClockTimerControl*, long*, int>)(lpVtbl[4]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this), pTimerResolution);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> SetDefaultTimerResolution;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> SetDefaultTimerResolution;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, int> GetDefaultTimerResolution;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, int> GetDefaultTimerResolution;
     }
 }

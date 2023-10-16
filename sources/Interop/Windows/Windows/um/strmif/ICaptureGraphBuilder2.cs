@@ -25,7 +25,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, void**, int>)(lpVtbl[0]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, Guid*, void**, int>)(lpVtbl[0]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, uint>)(lpVtbl[1]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, uint>)(lpVtbl[1]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, uint>)(lpVtbl[2]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, uint>)(lpVtbl[2]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.SetFiltergraph"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
     [VtblIndex(3)]
     public HRESULT SetFiltergraph(IGraphBuilder* pfg)
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, IGraphBuilder*, int>)(lpVtbl[3]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pfg);
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, IGraphBuilder*, int>)(lpVtbl[3]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pfg);
     }
 
     /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.GetFiltergraph"]/*' />
@@ -59,15 +59,15 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
     [VtblIndex(4)]
     public HRESULT GetFiltergraph(IGraphBuilder** ppfg)
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, IGraphBuilder**, int>)(lpVtbl[4]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), ppfg);
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, IGraphBuilder**, int>)(lpVtbl[4]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), ppfg);
     }
 
     /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.SetOutputFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetOutputFileName([NativeTypeName("const GUID *")] Guid* pType, [NativeTypeName("LPCOLESTR")] ushort* lpstrFile, IBaseFilter** ppf, IFileSinkFilter** ppSink)
+    public HRESULT SetOutputFileName([NativeTypeName("const GUID *")] Guid* pType, [NativeTypeName("LPCOLESTR")] char* lpstrFile, IBaseFilter** ppf, IFileSinkFilter** ppSink)
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, ushort*, IBaseFilter**, IFileSinkFilter**, int>)(lpVtbl[5]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pType, lpstrFile, ppf, ppSink);
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, Guid*, char*, IBaseFilter**, IFileSinkFilter**, int>)(lpVtbl[5]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pType, lpstrFile, ppf, ppSink);
     }
 
     /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.FindInterface"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
     [VtblIndex(6)]
     public HRESULT FindInterface([NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, IBaseFilter* pf, [NativeTypeName("const IID &")] Guid* riid, void** ppint)
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, Guid*, IBaseFilter*, Guid*, void**, int>)(lpVtbl[6]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pCategory, pType, pf, riid, ppint);
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, Guid*, Guid*, IBaseFilter*, Guid*, void**, int>)(lpVtbl[6]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pCategory, pType, pf, riid, ppint);
     }
 
     /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.RenderStream"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
     [VtblIndex(7)]
     public HRESULT RenderStream([NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, IUnknown* pSource, IBaseFilter* pfCompressor, IBaseFilter* pfRenderer)
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, Guid*, IUnknown*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[7]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pCategory, pType, pSource, pfCompressor, pfRenderer);
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, Guid*, Guid*, IUnknown*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[7]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pCategory, pType, pSource, pfCompressor, pfRenderer);
     }
 
     /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.ControlStream"]/*' />
@@ -91,23 +91,23 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
     [VtblIndex(8)]
     public HRESULT ControlStream([NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, IBaseFilter* pFilter, [NativeTypeName("REFERENCE_TIME *")] long* pstart, [NativeTypeName("REFERENCE_TIME *")] long* pstop, [NativeTypeName("WORD")] ushort wStartCookie, [NativeTypeName("WORD")] ushort wStopCookie)
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, Guid*, IBaseFilter*, long*, long*, ushort, ushort, int>)(lpVtbl[8]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pCategory, pType, pFilter, pstart, pstop, wStartCookie, wStopCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, Guid*, Guid*, IBaseFilter*, long*, long*, ushort, ushort, int>)(lpVtbl[8]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pCategory, pType, pFilter, pstart, pstop, wStartCookie, wStopCookie);
     }
 
     /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.AllocCapFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT AllocCapFile([NativeTypeName("LPCOLESTR")] ushort* lpstr, [NativeTypeName("DWORDLONG")] ulong dwlSize)
+    public HRESULT AllocCapFile([NativeTypeName("LPCOLESTR")] char* lpstr, [NativeTypeName("DWORDLONG")] ulong dwlSize)
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, ushort*, ulong, int>)(lpVtbl[9]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), lpstr, dwlSize);
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, char*, ulong, int>)(lpVtbl[9]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), lpstr, dwlSize);
     }
 
     /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.CopyCaptureFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT CopyCaptureFile([NativeTypeName("LPOLESTR")] ushort* lpwstrOld, [NativeTypeName("LPOLESTR")] ushort* lpwstrNew, int fAllowEscAbort, IAMCopyCaptureFileProgress* pCallback)
+    public HRESULT CopyCaptureFile([NativeTypeName("LPOLESTR")] char* lpwstrOld, [NativeTypeName("LPOLESTR")] char* lpwstrNew, int fAllowEscAbort, IAMCopyCaptureFileProgress* pCallback)
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, ushort*, ushort*, int, IAMCopyCaptureFileProgress*, int>)(lpVtbl[10]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), lpwstrOld, lpwstrNew, fAllowEscAbort, pCallback);
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, char*, char*, int, IAMCopyCaptureFileProgress*, int>)(lpVtbl[10]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), lpwstrOld, lpwstrNew, fAllowEscAbort, pCallback);
     }
 
     /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.FindPin"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
     [VtblIndex(11)]
     public HRESULT FindPin(IUnknown* pSource, PIN_DIRECTION pindir, [NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, BOOL fUnconnected, int num, IPin** ppPin)
     {
-        return ((delegate* unmanaged<ICaptureGraphBuilder2*, IUnknown*, PIN_DIRECTION, Guid*, Guid*, BOOL, int, IPin**, int>)(lpVtbl[11]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pSource, pindir, pCategory, pType, fUnconnected, num, ppPin);
+        return ((delegate* unmanaged[MemberFunction]<ICaptureGraphBuilder2*, IUnknown*, PIN_DIRECTION, Guid*, Guid*, BOOL, int, IPin**, int>)(lpVtbl[11]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pSource, pindir, pCategory, pType, fUnconnected, num, ppPin);
     }
 
     public interface Interface : IUnknown.Interface
@@ -127,7 +127,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         HRESULT GetFiltergraph(IGraphBuilder** ppfg);
 
         [VtblIndex(5)]
-        HRESULT SetOutputFileName([NativeTypeName("const GUID *")] Guid* pType, [NativeTypeName("LPCOLESTR")] ushort* lpstrFile, IBaseFilter** ppf, IFileSinkFilter** ppSink);
+        HRESULT SetOutputFileName([NativeTypeName("const GUID *")] Guid* pType, [NativeTypeName("LPCOLESTR")] char* lpstrFile, IBaseFilter** ppf, IFileSinkFilter** ppSink);
 
         [VtblIndex(6)]
         HRESULT FindInterface([NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, IBaseFilter* pf, [NativeTypeName("const IID &")] Guid* riid, void** ppint);
@@ -139,10 +139,10 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         HRESULT ControlStream([NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, IBaseFilter* pFilter, [NativeTypeName("REFERENCE_TIME *")] long* pstart, [NativeTypeName("REFERENCE_TIME *")] long* pstop, [NativeTypeName("WORD")] ushort wStartCookie, [NativeTypeName("WORD")] ushort wStopCookie);
 
         [VtblIndex(9)]
-        HRESULT AllocCapFile([NativeTypeName("LPCOLESTR")] ushort* lpstr, [NativeTypeName("DWORDLONG")] ulong dwlSize);
+        HRESULT AllocCapFile([NativeTypeName("LPCOLESTR")] char* lpstr, [NativeTypeName("DWORDLONG")] ulong dwlSize);
 
         [VtblIndex(10)]
-        HRESULT CopyCaptureFile([NativeTypeName("LPOLESTR")] ushort* lpwstrOld, [NativeTypeName("LPOLESTR")] ushort* lpwstrNew, int fAllowEscAbort, IAMCopyCaptureFileProgress* pCallback);
+        HRESULT CopyCaptureFile([NativeTypeName("LPOLESTR")] char* lpwstrOld, [NativeTypeName("LPOLESTR")] char* lpwstrNew, int fAllowEscAbort, IAMCopyCaptureFileProgress* pCallback);
 
         [VtblIndex(11)]
         HRESULT FindPin(IUnknown* pSource, PIN_DIRECTION pindir, [NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, BOOL fUnconnected, int num, IPin** ppPin);
@@ -152,39 +152,39 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IGraphBuilder *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IGraphBuilder*, int> SetFiltergraph;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IGraphBuilder*, int> SetFiltergraph;
 
         [NativeTypeName("HRESULT (IGraphBuilder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IGraphBuilder**, int> GetFiltergraph;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IGraphBuilder**, int> GetFiltergraph;
 
         [NativeTypeName("HRESULT (const GUID *, LPCOLESTR, IBaseFilter **, IFileSinkFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, IBaseFilter**, IFileSinkFilter**, int> SetOutputFileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char*, IBaseFilter**, IFileSinkFilter**, int> SetOutputFileName;
 
         [NativeTypeName("HRESULT (const GUID *, const GUID *, IBaseFilter *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, IBaseFilter*, Guid*, void**, int> FindInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, IBaseFilter*, Guid*, void**, int> FindInterface;
 
         [NativeTypeName("HRESULT (const GUID *, const GUID *, IUnknown *, IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, IUnknown*, IBaseFilter*, IBaseFilter*, int> RenderStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, IUnknown*, IBaseFilter*, IBaseFilter*, int> RenderStream;
 
         [NativeTypeName("HRESULT (const GUID *, const GUID *, IBaseFilter *, REFERENCE_TIME *, REFERENCE_TIME *, WORD, WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, IBaseFilter*, long*, long*, ushort, ushort, int> ControlStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, IBaseFilter*, long*, long*, ushort, ushort, int> ControlStream;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORDLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ulong, int> AllocCapFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ulong, int> AllocCapFile;
 
         [NativeTypeName("HRESULT (LPOLESTR, LPOLESTR, int, IAMCopyCaptureFileProgress *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int, IAMCopyCaptureFileProgress*, int> CopyCaptureFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int, IAMCopyCaptureFileProgress*, int> CopyCaptureFile;
 
         [NativeTypeName("HRESULT (IUnknown *, PIN_DIRECTION, const GUID *, const GUID *, BOOL, int, IPin **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, PIN_DIRECTION, Guid*, Guid*, BOOL, int, IPin**, int> FindPin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, PIN_DIRECTION, Guid*, Guid*, BOOL, int, IPin**, int> FindPin;
     }
 }

@@ -16,7 +16,7 @@ public static partial class CLSID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x17, 0x11, 0xE0, 0xF5,
                 0xC4, 0xD6,
                 0x5A, 0x48,
@@ -28,7 +28,7 @@ public static partial class CLSID
                 0xF3,
                 0xDB,
                 0xFA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -39,7 +39,7 @@ public static partial class CLSID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x16, 0x79, 0x13, 0xC4,
                 0xE1, 0x2B,
                 0xFD, 0x46,
@@ -51,7 +51,7 @@ public static partial class CLSID
                 0xF4,
                 0x98,
                 0x56
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -62,7 +62,7 @@ public static partial class CLSID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x56, 0xCA, 0x9A, 0x7D,
                 0x68, 0xCB,
                 0x07, 0x48,
@@ -74,7 +74,7 @@ public static partial class CLSID
                 0x2E,
                 0x85,
                 0x96
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -85,7 +85,7 @@ public static partial class CLSID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x40, 0xD7, 0x39, 0x50,
                 0x36, 0xF7,
                 0x9A, 0x44,
@@ -97,7 +97,7 @@ public static partial class CLSID
                 0x55,
                 0x7B,
                 0x87
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
