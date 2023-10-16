@@ -66,6 +66,7 @@ D3DX12ParsePipelineStream(const D3D12_PIPELINE_STATE_STREAM_DESC &, ID3DX12Pipel
 D3DX12SerializeVersionedRootSignature(const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *, D3D_ROOT_SIGNATURE_VERSION, ID3DBlob **, ID3DBlob **):HRESULT
 GetRequiredIntermediateSize(ID3D12Resource *, UINT, UINT):UINT64
 MemcpySubresource(const D3D12_MEMCPY_DEST *, const D3D12_SUBRESOURCE_DATA *, SIZE_T, UINT, UINT):void
+MemcpySubresource(const D3D12_MEMCPY_DEST *, const void *, const D3D12_SUBRESOURCE_INFO *, SIZE_T, UINT, UINT):void
 operator!=(const D3D12_BOX &, const D3D12_BOX &):bool
 operator!=(const D3D12_HEAP_DESC &, const D3D12_HEAP_DESC &):bool
 operator!=(const D3D12_HEAP_PROPERTIES &, const D3D12_HEAP_PROPERTIES &):bool
@@ -85,7 +86,9 @@ operator==(const D3D12_RENDER_PASS_RENDER_TARGET_DESC &, const D3D12_RENDER_PASS
 operator==(const D3D12_RESOURCE_DESC &, const D3D12_RESOURCE_DESC &):bool
 operator==(const D3D12_RESOURCE_DESC1 &, const D3D12_RESOURCE_DESC1 &):bool
 operator==(const D3D12_VIEWPORT &, const D3D12_VIEWPORT &):bool
+UpdateSubresources(ID3D12GraphicsCommandList *, ID3D12Resource *, ID3D12Resource *, UINT, UINT, UINT64, const D3D12_PLACED_SUBRESOURCE_FOOTPRINT *, const UINT *, const UINT64 *, const void *, const D3D12_SUBRESOURCE_INFO *):UINT64
 UpdateSubresources(ID3D12GraphicsCommandList *, ID3D12Resource *, ID3D12Resource *, UINT64, UINT, UINT, const D3D12_SUBRESOURCE_DATA *):UINT64
+UpdateSubresources(ID3D12GraphicsCommandList *, ID3D12Resource *, ID3D12Resource *, UINT64, UINT, UINT, const void *, const D3D12_SUBRESOURCE_INFO *):UINT64
 __noop():int
 --file
 headers-d3dx12.h

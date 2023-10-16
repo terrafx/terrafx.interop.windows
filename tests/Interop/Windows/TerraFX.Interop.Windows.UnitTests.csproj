@@ -7,6 +7,12 @@
     <TargetFrameworks>net8.0</TargetFrameworks>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- CA1707: Identifiers should not contain underscores -->
+    <!-- CA1708: Identifiers should differ by more than case -->
+    <NoWarn>$(NoWarn);CA1707;CA1708</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\..\sources\Interop\Windows\TerraFX.Interop.Windows.csproj" />
   </ItemGroup>

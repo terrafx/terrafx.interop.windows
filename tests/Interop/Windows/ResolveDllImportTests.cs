@@ -157,8 +157,7 @@ public static unsafe partial class ResolveDllImportTests
 
                 default:
                 {
-                    Assert.Fail($"Fail: {exception.Message}");
-                    break;
+                    throw;
                 }
             }
         }

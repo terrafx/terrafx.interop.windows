@@ -3,12 +3,10 @@
 // Ported from d3dx12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
-using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D3D12_FEATURE;
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.DirectX.D3D12_TEXTURE_LAYOUT;
-using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -24,7 +22,8 @@ public static unsafe partial class DirectX
     [return: NativeTypeName("UINT8")]
     public static byte D3D12GetFormatPlaneCount(ID3D12Device* pDevice, DXGI_FORMAT Format)
     {
-        D3D12_FEATURE_DATA_FORMAT_INFO formatInfo = new D3D12_FEATURE_DATA_FORMAT_INFO {
+        D3D12_FEATURE_DATA_FORMAT_INFO formatInfo = new D3D12_FEATURE_DATA_FORMAT_INFO
+        {
             Format = Format,
             PlaneCount = 0,
         };
@@ -64,7 +63,8 @@ public static unsafe partial class DirectX
                 return 0;
             }
 
-            D3D12_MEMCPY_DEST DestData = new D3D12_MEMCPY_DEST {
+            D3D12_MEMCPY_DEST DestData = new D3D12_MEMCPY_DEST
+            {
                 pData = pData + pLayouts[i].Offset,
                 RowPitch = pLayouts[i].Footprint.RowPitch,
                 SlicePitch = unchecked((nuint)(pLayouts[i].Footprint.RowPitch) * (nuint)(pNumRows[i])),

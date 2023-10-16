@@ -121,14 +121,6 @@ public unsafe partial struct GpRect
         Inflate(point->X, point->Y);
     }
 
-    public BOOL Intersect([NativeTypeName("const Rect &")] GpRect* rect)
-    {
-        fixed (GpRect* pThis = &this)
-        {
-            return Intersect(pThis, pThis, rect);
-        }
-    }
-
     public static BOOL Intersect([NativeTypeName("Gdiplus::Rect &")] GpRect* c, [NativeTypeName("const Rect &")] GpRect* a, [NativeTypeName("const Rect &")] GpRect* b)
     {
         int right = (((a->GetRight()) < (b->GetRight())) ? (a->GetRight()) : (b->GetRight()));

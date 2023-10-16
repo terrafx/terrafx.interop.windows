@@ -225,7 +225,7 @@ public unsafe class HelloTriangle12 : HelloWindow12
         GraphicsCommandList->DrawInstanced(VertexCountPerInstance: 3, InstanceCount: 1, StartVertexLocation: 0, StartInstanceLocation: 0);
     }
 
-    public struct Vertex
+    internal struct Vertex
     {
         public Vector3 Position;
 

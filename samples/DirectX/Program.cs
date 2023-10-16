@@ -11,6 +11,8 @@ public static unsafe class Program
 {
     public static void Main(string[] args)
     {
+        ArgumentNullException.ThrowIfNull(args);
+
         if ((args.Length == 0) || args.Any((arg) => Matches(arg, "?", "h", "help")))
         {
             PrintHelp();

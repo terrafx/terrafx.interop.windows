@@ -42,6 +42,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
         return GetValue(index, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
 
+#pragma warning disable CA1508
     public void SetInputEffect([NativeTypeName("UINT32")] uint index, ID2D1Effect* inputEffect, [Optional, DefaultParameterValue(1)] BOOL invalidate)
     {
         ID2D1Image* output = null;
@@ -57,6 +58,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
             _ = output->Release();
         }
     }
+#pragma warning restore CA1508
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

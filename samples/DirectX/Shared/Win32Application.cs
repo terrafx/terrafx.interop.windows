@@ -28,6 +28,8 @@ public static unsafe class Win32Application
 
     public static int Run(DXSample sample, HINSTANCE hInstance, int nCmdShow)
     {
+        ArgumentNullException.ThrowIfNull(sample);
+
         var useWarpDevice = false;
 
         // Parse the command line parameters

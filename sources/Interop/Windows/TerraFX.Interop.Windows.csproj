@@ -3,19 +3,51 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <NoWarn>$(NoWarn);CA1069;CA1401;CA2252;CS1591;CS8981;SYSLIB1054</NoWarn>
     <RootNamespace>TerraFX.Interop</RootNamespace>
     <TargetFrameworks>net8.0</TargetFrameworks>
   </PropertyGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Include="ILLink.Substitutions.xml" LogicalName="ILLink.Substitutions.xml" />
-  </ItemGroup>
+  <PropertyGroup>
+    <!-- CA1003: Use generic event handler instances -->
+    <!-- CA1008: Enums should have zero value -->
+    <!-- CA1024: Use properties where appropriate -->
+    <!-- CA1027: Mark enums with FlagsAttribute -->
+    <!-- CA1028: Enum storage should be Int32 -->
+    <!-- CA1030: Use events where appropriate -->
+    <!-- CA1034: Nested types should not be visible -->
+    <!-- CA1040: Avoid empty interfaces -->
+    <!-- CA1041: Provide ObsoleteAttribute message -->
+    <!-- CA1051: Do not declare visible instance fields -->
+    <!-- CA1069: Enums should not have duplicate values -->
+    <!-- CA1305: Specify IFormatProvider -->
+    <!-- CA1401: P/Invokes should not be visible -->
+    <!-- CA1700: Do not name enum values 'Reserved' -->
+    <!-- CA1707: Identifiers should not contain underscores -->
+    <!-- CA1708: Identifiers should differ by more than case -->
+    <!-- CA1711: Identifiers should not have incorrect suffix -->
+    <!-- CA1712: Do not prefix enum values with type name -->
+    <!-- CA1715: Identifiers should have correct prefix -->
+    <!-- CA1716: Identifiers should not match keywords -->
+    <!-- CA1720: Identifiers should not contain type names -->
+    <!-- CA1724: Type names should not match namespaces -->
+    <!-- CA1815: Override equals and operator equals on value types -->
+    <!-- CA2201: Do not raise reserved exception types -->
+    <!-- CA2217: Do not mark enums with FlagsAttribute -->
+    <!-- CA2225: Operator overloads have named alternates -->
+    <!-- CS1591: Missing XML comment for publicly visible type or member -->
+    <!-- CS8981: The type name only contains lower-cased ascii characters -->
+    <!-- SYSLIB1054: Use LibraryImportAttribute instead of DllImportAttribute to generate p/invoke marshalling code at compile time. -->
+    <NoWarn>$(NoWarn);CA1003;CA1008;CA1024;CA1027;CA1028;CA1030;CA1034;CA1040;CA1041;CA1051;CA1069;CA1305;CA1401;CA1700;CA1707;CA1708;CA1711;CA1712;CA1715;CA1716;CA1720;CA1724;CA1815;CA2201;CA2217;CA2225;CS1591;CS8981;SYSLIB1054</NoWarn>
+  </PropertyGroup>
 
   <PropertyGroup>
     <!-- Additional NoWarns for the *.xml files -->
     <NoWarn>$(NoWarn);CS0419;CS1571;CS1572;CS1573;CS1574;CS1580;CS1584;CS1589;CS1658</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="ILLink.Substitutions.xml" LogicalName="ILLink.Substitutions.xml" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="**/*.xml" DependentUpon="%(RecursiveDir)%(Filename).cs" />

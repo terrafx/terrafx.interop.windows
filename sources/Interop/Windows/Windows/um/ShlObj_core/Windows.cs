@@ -1003,15 +1003,6 @@ public static unsafe partial class Windows
     [NativeTypeName("#define SHELLSTATEVERSION_WIN2K 10")]
     public const int SHELLSTATEVERSION_WIN2K = 10;
 
-    [NativeTypeName("#define SHELLSTATE_SIZE_WIN95 FIELD_OFFSET(SHELLSTATE,lParamSort)")]
-    public static int SHELLSTATE_SIZE_WIN95 => ((int)(Marshal.OffsetOf<SHELLSTATEW>("lParamSort")));
-
-    [NativeTypeName("#define SHELLSTATE_SIZE_NT4 FIELD_OFFSET(SHELLSTATE,version)")]
-    public static int SHELLSTATE_SIZE_NT4 => ((int)(Marshal.OffsetOf<SHELLSTATEW>("version")));
-
-    [NativeTypeName("#define SHELLSTATE_SIZE_IE4 FIELD_OFFSET(SHELLSTATE,uNotUsed)")]
-    public static int SHELLSTATE_SIZE_IE4 => ((int)(Marshal.OffsetOf<SHELLSTATEW>("uNotUsed")));
-
     [NativeTypeName("#define SHELLSTATE_SIZE_WIN2K sizeof(SHELLSTATE)")]
     public const uint SHELLSTATE_SIZE_WIN2K = 32;
 

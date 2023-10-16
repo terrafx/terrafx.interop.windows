@@ -50,6 +50,9 @@ ILLoadFromStream
 ILNext
 ILSkip
 SHCreateFileExtractIconA
+SHELLSTATE_SIZE_WIN95
+SHELLSTATE_SIZE_NT4
+SHELLSTATE_SIZE_IE4
 Shell_GetCachedImageIndex(PCWSTR, int, UINT):int
 SHStartNetConnectionDialogA
 SHSTDDOCAPI_

@@ -153,18 +153,6 @@ public unsafe partial struct MetafileHeader
         return ((IsEmfPlus()) != 0 && ((EmfPlusFlags & 0x00000001) != 0)) ? 1 : 0;
     }
 
-    [UnscopedRef]
-    [return: NativeTypeName("const ENHMETAHEADER3 *")]
-    public ref readonly ENHMETAHEADER3 GetEmfHeader()
-    {
-        if ((_ = IsEmfOrEmfPlus()) != 0)
-        {
-            return ref Anonymous.EmfHeader;
-        }
-
-        return ref Unsafe.NullRef<ENHMETAHEADER3>();
-    }
-
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union

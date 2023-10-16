@@ -422,7 +422,7 @@ public unsafe class HelloTexture12 : HelloTriangle12
         GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _srvHeap->GetGPUDescriptorHandleForHeapStart());
     }
 
-    public new struct Vertex
+    internal new struct Vertex
     {
         public Vector3 Position;
 

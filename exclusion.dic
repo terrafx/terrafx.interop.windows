@@ -1,5 +1,6 @@
 abst
 amvideo
+antialias
 antialiased
 barycentrics
 cbr
@@ -33,6 +34,7 @@ noexcept
 nothrow
 nums
 offsetted
+pinnable
 postbuild
 rclsid
 rects
@@ -48,9 +50,11 @@ tessellator
 texels
 tilings
 unmap
+unknwnbase
 vtbl
 wchar
 winioctl
+winrt
 xffff
 xfffffff
 xfffffffe
