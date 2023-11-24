@@ -49,15 +49,15 @@ public partial struct JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2
     public ulong JobMemory;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.Anonymous1"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13000_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13002_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.Anonymous2"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13005_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13007_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.Anonymous3"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13010_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13012_C5")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.JobLowMemoryLimit"]/*' />

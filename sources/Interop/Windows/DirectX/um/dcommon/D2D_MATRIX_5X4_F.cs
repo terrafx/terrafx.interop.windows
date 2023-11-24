@@ -14,7 +14,7 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct D2D_MATRIX_5X4_F
 {
     /// <include file='D2D_MATRIX_5X4_F.xml' path='doc/member[@name="D2D_MATRIX_5X4_F.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_dcommon_L373_C5")]
+    [NativeTypeName("__AnonymousRecord_dcommon_L381_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct._11"]/*' />
@@ -254,7 +254,7 @@ public unsafe partial struct D2D_MATRIX_5X4_F
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_dcommon_L375_C9")]
+        [NativeTypeName("__AnonymousRecord_dcommon_L383_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />

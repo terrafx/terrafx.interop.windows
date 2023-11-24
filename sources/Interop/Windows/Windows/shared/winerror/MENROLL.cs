@@ -129,4 +129,7 @@ public static partial class MENROLL
 
     [NativeTypeName("#define MENROLL_E_MDM_NOT_CONFIGURED _HRESULT_TYPEDEF_(0x80180031L)")]
     public const int MENROLL_E_MDM_NOT_CONFIGURED = unchecked((int)(0x80180031));
+
+    [NativeTypeName("#define MENROLL_E_CUSTOMSERVERERROR _HRESULT_TYPEDEF_(0x80180032L)")]
+    public const int MENROLL_E_CUSTOMSERVERERROR = unchecked((int)(0x80180032));
 }

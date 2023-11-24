@@ -18,7 +18,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
     public fixed byte ObjectId[16];
 
     /// <include file='FILE_OBJECTID_BUFFER.xml' path='doc/member[@name="FILE_OBJECTID_BUFFER.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L12237_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L12250_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthVolumeId"]/*' />
@@ -71,7 +71,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L12238_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L12251_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ExtendedInfo"]/*' />

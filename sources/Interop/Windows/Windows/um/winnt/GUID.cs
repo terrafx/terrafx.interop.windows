@@ -1288,7 +1288,7 @@ public static partial class GUID
     }
 
     [NativeTypeName("const GUID")]
-    public static ref readonly Guid GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT
+    public static ref readonly Guid GUID_HUPR_ADAPTIVE_AWAY_DISPLAY_TIMEOUT
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1313,7 +1313,7 @@ public static partial class GUID
     }
 
     [NativeTypeName("const GUID")]
-    public static ref readonly Guid GUID_HUPR_ADAPTIVE_DIM_TIMEOUT
+    public static ref readonly Guid GUID_HUPR_ADAPTIVE_INATTENTIVE_DIM_TIMEOUT
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1330,6 +1330,56 @@ public static partial class GUID
                 0xE5,
                 0x20,
                 0x9D
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_HUPR_ADAPTIVE_INATTENTIVE_DISPLAY_TIMEOUT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x1E, 0x69, 0x16, 0xEE,
+                0xB3, 0x6A,
+                0x19, 0x46,
+                0xBB,
+                0x48,
+                0x1C,
+                0x77,
+                0xC9,
+                0x35,
+                0x7E,
+                0x5A
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_HUPR_ADAPTIVE_AWAY_DIM_TIMEOUT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x0E, 0x8E, 0x9C, 0xA7,
+                0x71, 0xF2,
+                0x2D, 0x48,
+                0x8F,
+                0x8A,
+                0x5D,
+                0xB9,
+                0xA1,
+                0x83,
+                0x12,
+                0xDE
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -5286,4 +5336,10 @@ public static partial class GUID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    [NativeTypeName("#define GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT GUID_HUPR_ADAPTIVE_AWAY_DISPLAY_TIMEOUT")]
+    public static ref readonly Guid GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT => ref GUID_HUPR_ADAPTIVE_AWAY_DISPLAY_TIMEOUT;
+
+    [NativeTypeName("#define GUID_HUPR_ADAPTIVE_DIM_TIMEOUT GUID_HUPR_ADAPTIVE_INATTENTIVE_DIM_TIMEOUT")]
+    public static ref readonly Guid GUID_HUPR_ADAPTIVE_DIM_TIMEOUT => ref GUID_HUPR_ADAPTIVE_INATTENTIVE_DIM_TIMEOUT;
 }

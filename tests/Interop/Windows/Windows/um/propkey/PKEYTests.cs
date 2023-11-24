@@ -2868,6 +2868,14 @@ public static partial class PKEYTests
         Assert.That(PKEY_StorageProviderFileChecksum.pid, Is.EqualTo(5));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFileCreatedBy" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderFileCreatedByTest()
+    {
+        Assert.That(PKEY_StorageProviderFileCreatedBy.fmtid, Is.EqualTo(new Guid(0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B)));
+        Assert.That(PKEY_StorageProviderFileCreatedBy.pid, Is.EqualTo(10));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFileFlags" /> property is correct.</summary>
     [Test]
     public static void PKEY_StorageProviderFileFlagsTest()
@@ -2890,6 +2898,14 @@ public static partial class PKEYTests
     {
         Assert.That(PKEY_StorageProviderFileIdentifier.fmtid, Is.EqualTo(new Guid(0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B)));
         Assert.That(PKEY_StorageProviderFileIdentifier.pid, Is.EqualTo(3));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFileModifiedBy" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderFileModifiedByTest()
+    {
+        Assert.That(PKEY_StorageProviderFileModifiedBy.fmtid, Is.EqualTo(new Guid(0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B)));
+        Assert.That(PKEY_StorageProviderFileModifiedBy.pid, Is.EqualTo(11));
     }
 
     /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFileRemoteUri" /> property is correct.</summary>
@@ -6372,6 +6388,62 @@ public static partial class PKEYTests
         Assert.That(PKEY_Message_ToName.pid, Is.EqualTo(17));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_MsGraph_CompositeId" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_MsGraph_CompositeIdTest()
+    {
+        Assert.That(PKEY_MsGraph_CompositeId.fmtid, Is.EqualTo(new Guid(0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29)));
+        Assert.That(PKEY_MsGraph_CompositeId.pid, Is.EqualTo(2));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_MsGraph_DriveId" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_MsGraph_DriveIdTest()
+    {
+        Assert.That(PKEY_MsGraph_DriveId.fmtid, Is.EqualTo(new Guid(0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29)));
+        Assert.That(PKEY_MsGraph_DriveId.pid, Is.EqualTo(3));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_MsGraph_ItemId" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_MsGraph_ItemIdTest()
+    {
+        Assert.That(PKEY_MsGraph_ItemId.fmtid, Is.EqualTo(new Guid(0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29)));
+        Assert.That(PKEY_MsGraph_ItemId.pid, Is.EqualTo(4));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_MsGraph_RecommendationReason" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_MsGraph_RecommendationReasonTest()
+    {
+        Assert.That(PKEY_MsGraph_RecommendationReason.fmtid, Is.EqualTo(new Guid(0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29)));
+        Assert.That(PKEY_MsGraph_RecommendationReason.pid, Is.EqualTo(8));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_MsGraph_RecommendationReferenceId" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_MsGraph_RecommendationReferenceIdTest()
+    {
+        Assert.That(PKEY_MsGraph_RecommendationReferenceId.fmtid, Is.EqualTo(new Guid(0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29)));
+        Assert.That(PKEY_MsGraph_RecommendationReferenceId.pid, Is.EqualTo(5));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_MsGraph_RecommendationResultSourceId" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_MsGraph_RecommendationResultSourceIdTest()
+    {
+        Assert.That(PKEY_MsGraph_RecommendationResultSourceId.fmtid, Is.EqualTo(new Guid(0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29)));
+        Assert.That(PKEY_MsGraph_RecommendationResultSourceId.pid, Is.EqualTo(7));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_MsGraph_WebAccountId" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_MsGraph_WebAccountIdTest()
+    {
+        Assert.That(PKEY_MsGraph_WebAccountId.fmtid, Is.EqualTo(new Guid(0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29)));
+        Assert.That(PKEY_MsGraph_WebAccountId.pid, Is.EqualTo(6));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_Music_AlbumArtist" /> property is correct.</summary>
     [Test]
     public static void PKEY_Music_AlbumArtistTest()
@@ -7644,6 +7716,14 @@ public static partial class PKEYTests
         Assert.That(PKEY_RecordedTV_StationName.pid, Is.EqualTo(100));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_LocationEmptyString" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_LocationEmptyStringTest()
+    {
+        Assert.That(PKEY_LocationEmptyString.fmtid, Is.EqualTo(new Guid(0x62D2D9AB, 0x8B64, 0x498D, 0xB8, 0x65, 0x40, 0x2D, 0x47, 0x96, 0xF8, 0x65)));
+        Assert.That(PKEY_LocationEmptyString.pid, Is.EqualTo(3));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_Search_AutoSummary" /> property is correct.</summary>
     [Test]
     public static void PKEY_Search_AutoSummaryTest()
@@ -7820,12 +7900,44 @@ public static partial class PKEYTests
         Assert.That(PKEY_Supplemental_Tag.pid, Is.EqualTo(4));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_ActivityInfo" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_ActivityInfoTest()
+    {
+        Assert.That(PKEY_ActivityInfo.fmtid, Is.EqualTo(new Guid(0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29)));
+        Assert.That(PKEY_ActivityInfo.pid, Is.EqualTo(17));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_DescriptionID" /> property is correct.</summary>
     [Test]
     public static void PKEY_DescriptionIDTest()
     {
         Assert.That(PKEY_DescriptionID.fmtid, Is.EqualTo(new Guid(0x28636AA6, 0x953D, 0x11D2, 0xB5, 0xD6, 0x00, 0xC0, 0x4F, 0xD9, 0x18, 0xD0)));
         Assert.That(PKEY_DescriptionID.pid, Is.EqualTo(2));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_Home_Grouping" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Home_GroupingTest()
+    {
+        Assert.That(PKEY_Home_Grouping.fmtid, Is.EqualTo(new Guid(0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29)));
+        Assert.That(PKEY_Home_Grouping.pid, Is.EqualTo(2));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_Home_IsPinned" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Home_IsPinnedTest()
+    {
+        Assert.That(PKEY_Home_IsPinned.fmtid, Is.EqualTo(new Guid(0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29)));
+        Assert.That(PKEY_Home_IsPinned.pid, Is.EqualTo(4));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_Home_ItemFolderPathDisplay" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Home_ItemFolderPathDisplayTest()
+    {
+        Assert.That(PKEY_Home_ItemFolderPathDisplay.fmtid, Is.EqualTo(new Guid(0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29)));
+        Assert.That(PKEY_Home_ItemFolderPathDisplay.pid, Is.EqualTo(6));
     }
 
     /// <summary>Validates that the value of the <see cref="PKEY_InternalName" /> property is correct.</summary>
@@ -7890,6 +8002,30 @@ public static partial class PKEYTests
     {
         Assert.That(PKEY_StatusBarViewItemCount.fmtid, Is.EqualTo(new Guid(0x26DC287C, 0x6E3D, 0x4BD3, 0xB2, 0xB0, 0x6A, 0x26, 0xBA, 0x2E, 0x34, 0x6D)));
         Assert.That(PKEY_StatusBarViewItemCount.pid, Is.EqualTo(2));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderState" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderStateTest()
+    {
+        Assert.That(PKEY_StorageProviderState.fmtid, Is.EqualTo(new Guid(0xE77E90DF, 0x6271, 0x4F5B, 0x83, 0x4F, 0x2D, 0xD1, 0xF2, 0x45, 0xDD, 0xA4)));
+        Assert.That(PKEY_StorageProviderState.pid, Is.EqualTo(3));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderTransferProgress" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderTransferProgressTest()
+    {
+        Assert.That(PKEY_StorageProviderTransferProgress.fmtid, Is.EqualTo(new Guid(0xE77E90DF, 0x6271, 0x4F5B, 0x83, 0x4F, 0x2D, 0xD1, 0xF2, 0x45, 0xDD, 0xA4)));
+        Assert.That(PKEY_StorageProviderTransferProgress.pid, Is.EqualTo(4));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderUIStatus" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderUIStatusTest()
+    {
+        Assert.That(PKEY_StorageProviderUIStatus.fmtid, Is.EqualTo(new Guid(0xE77E90DF, 0x6271, 0x4F5B, 0x83, 0x4F, 0x2D, 0xD1, 0xF2, 0x45, 0xDD, 0xA4)));
+        Assert.That(PKEY_StorageProviderUIStatus.pid, Is.EqualTo(2));
     }
 
     /// <summary>Validates that the value of the <see cref="PKEY_AppUserModel_ExcludeFromShowInNewInstall" /> property is correct.</summary>

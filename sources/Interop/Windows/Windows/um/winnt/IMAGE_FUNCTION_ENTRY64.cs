@@ -22,7 +22,7 @@ public partial struct IMAGE_FUNCTION_ENTRY64
     public ulong EndingAddress;
 
     /// <include file='IMAGE_FUNCTION_ENTRY64.xml' path='doc/member[@name="IMAGE_FUNCTION_ENTRY64.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L20470_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L20501_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EndOfPrologue"]/*' />

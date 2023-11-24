@@ -104,6 +104,52 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_ICompositorInterop2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x4C, 0xF3, 0xEE, 0xD3,
+                0x67, 0x06,
+                0xFC, 0x4A,
+                0x8D,
+                0x13,
+                0x86,
+                0x76,
+                0x07,
+                0xB0,
+                0xFE,
+                0x91
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ICompositionTextureInterop
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x65, 0xA2, 0x28, 0xD5,
+                0xA5, 0xF0,
+                0x2F, 0x42,
+                0xA3,
+                0x9D,
+                0xEF,
+                0x62,
+                0xD7,
+                0xCD,
+                0x1C,
+                0xC4
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IVisualInteractionSourceInterop
     {
         get

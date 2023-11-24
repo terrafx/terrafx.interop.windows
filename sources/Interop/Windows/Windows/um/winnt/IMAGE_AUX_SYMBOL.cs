@@ -13,17 +13,17 @@ public partial struct IMAGE_AUX_SYMBOL
 {
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.Sym"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L18914_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18945_C5")]
     public _Sym_e__Struct Sym;
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.File"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L18934_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18965_C5")]
     public _File_e__Struct File;
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.Section"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L18937_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18968_C5")]
     public _Section_e__Struct Section;
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.TokenDef"]/*' />
@@ -32,7 +32,7 @@ public partial struct IMAGE_AUX_SYMBOL
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.CRC"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L18948_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18979_C5")]
     public _CRC_e__Struct CRC;
 
     /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct"]/*' />
@@ -44,11 +44,11 @@ public partial struct IMAGE_AUX_SYMBOL
         public uint TagIndex;
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.Misc"]/*' />
-        [NativeTypeName("__AnonymousRecord_winnt_L18916_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L18947_C9")]
         public _Misc_e__Union Misc;
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.FcnAry"]/*' />
-        [NativeTypeName("__AnonymousRecord_winnt_L18923_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L18954_C9")]
         public _FcnAry_e__Union FcnAry;
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.TvIndex"]/*' />
@@ -61,7 +61,7 @@ public partial struct IMAGE_AUX_SYMBOL
         {
             /// <include file='_Misc_e__Union.xml' path='doc/member[@name="_Misc_e__Union.LnSz"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("__AnonymousRecord_winnt_L18917_C13")]
+            [NativeTypeName("__AnonymousRecord_winnt_L18948_C13")]
             public _LnSz_e__Struct LnSz;
 
             /// <include file='_Misc_e__Union.xml' path='doc/member[@name="_Misc_e__Union.TotalSize"]/*' />
@@ -88,12 +88,12 @@ public partial struct IMAGE_AUX_SYMBOL
         {
             /// <include file='_FcnAry_e__Union.xml' path='doc/member[@name="_FcnAry_e__Union.Function"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("__AnonymousRecord_winnt_L18924_C13")]
+            [NativeTypeName("__AnonymousRecord_winnt_L18955_C13")]
             public _Function_e__Struct Function;
 
             /// <include file='_FcnAry_e__Union.xml' path='doc/member[@name="_FcnAry_e__Union.Array"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("__AnonymousRecord_winnt_L18928_C13")]
+            [NativeTypeName("__AnonymousRecord_winnt_L18959_C13")]
             public _Array_e__Struct Array;
 
             /// <include file='_Function_e__Struct.xml' path='doc/member[@name="_Function_e__Struct"]/*' />

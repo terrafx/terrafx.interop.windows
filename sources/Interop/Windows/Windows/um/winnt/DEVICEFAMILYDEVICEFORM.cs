@@ -7,7 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DEVICEFAMILYDEVICEFORM
 {
-    [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_KEY L\"\\\\Registry\\\\Machine\\\\Software\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\OEM\"")]
+    [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_KEY L\"\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion\\OEM\"")]
     public const string DEVICEFAMILYDEVICEFORM_KEY = "\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion\\OEM";
 
     [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_VALUE L\"DeviceForm\"")]

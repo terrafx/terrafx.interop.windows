@@ -36,7 +36,7 @@ public partial struct NTFS_STATISTICS_EX
     public ulong MftWriteBytes;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.MftWritesUserLevel"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L12088_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L12101_C5")]
     public _MftWritesUserLevel_e__Struct MftWritesUserLevel;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.MftWritesFlushForLogFileFull"]/*' />
@@ -60,7 +60,7 @@ public partial struct NTFS_STATISTICS_EX
     public ulong Mft2WriteBytes;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.Mft2WritesUserLevel"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L12101_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L12114_C5")]
     public _Mft2WritesUserLevel_e__Struct Mft2WritesUserLevel;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.Mft2WritesFlushForLogFileFull"]/*' />
@@ -120,7 +120,7 @@ public partial struct NTFS_STATISTICS_EX
     public uint BitmapWritesUserRequest;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.BitmapWritesUserLevel"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L12126_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L12139_C5")]
     public _BitmapWritesUserLevel_e__Struct BitmapWritesUserLevel;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.MftBitmapReads"]/*' />
@@ -152,7 +152,7 @@ public partial struct NTFS_STATISTICS_EX
     public uint MftBitmapWritesUserRequest;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.MftBitmapWritesUserLevel"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L12142_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L12155_C5")]
     public _MftBitmapWritesUserLevel_e__Struct MftBitmapWritesUserLevel;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.UserIndexReads"]/*' />
@@ -188,7 +188,7 @@ public partial struct NTFS_STATISTICS_EX
     public ulong LogFileWriteBytes;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.Allocate"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L12163_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L12176_C5")]
     public _Allocate_e__Struct Allocate;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.DiskResourcesExhausted"]/*' />

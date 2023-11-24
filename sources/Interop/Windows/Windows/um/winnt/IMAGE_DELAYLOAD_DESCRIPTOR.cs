@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
 {
     /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.Attributes"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L19671_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19702_C5")]
     public _Attributes_e__Union Attributes;
 
     /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.DllNameRVA"]/*' />
@@ -54,7 +54,7 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
 
         /// <include file='_Attributes_e__Union.xml' path='doc/member[@name="_Attributes_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L19673_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L19704_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RvaBased"]/*' />

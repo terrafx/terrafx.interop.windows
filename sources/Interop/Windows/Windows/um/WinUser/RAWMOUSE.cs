@@ -16,7 +16,7 @@ public partial struct RAWMOUSE
     public ushort usFlags;
 
     /// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_WinUser_L14952_C5")]
+    [NativeTypeName("__AnonymousRecord_winuser_L14952_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE.ulRawButtons"]/*' />
@@ -79,7 +79,7 @@ public partial struct RAWMOUSE
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_WinUser_L14954_C9")]
+        [NativeTypeName("__AnonymousRecord_winuser_L14954_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

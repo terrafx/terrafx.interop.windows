@@ -21,7 +21,7 @@ public unsafe partial struct CMSG_SIGNER_ENCODE_INFO
     public CERT_INFO* pCertInfo;
 
     /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L6743_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L6747_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.dwKeySpec"]/*' />

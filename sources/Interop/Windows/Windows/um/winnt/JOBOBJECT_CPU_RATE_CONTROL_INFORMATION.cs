@@ -19,7 +19,7 @@ public partial struct JOBOBJECT_CPU_RATE_CONTROL_INFORMATION
     public uint ControlFlags;
 
     /// <include file='JOBOBJECT_CPU_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13027_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13029_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CpuRate"]/*' />
@@ -82,7 +82,7 @@ public partial struct JOBOBJECT_CPU_RATE_CONTROL_INFORMATION
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L13030_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L13032_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

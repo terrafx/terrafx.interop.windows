@@ -673,6 +673,21 @@ public static partial class Windows
     [NativeTypeName("#define PHOTO_WHITEBALANCE_MANUAL 1ul")]
     public const uint PHOTO_WHITEBALANCE_MANUAL = 1U;
 
+    [NativeTypeName("#define HOMEGROUPING_UNSPECIFIED 0ul")]
+    public const uint HOMEGROUPING_UNSPECIFIED = 0U;
+
+    [NativeTypeName("#define HOMEGROUPING_FREQUENT 1ul")]
+    public const uint HOMEGROUPING_FREQUENT = 1U;
+
+    [NativeTypeName("#define HOMEGROUPING_PINNED 2ul")]
+    public const uint HOMEGROUPING_PINNED = 2U;
+
+    [NativeTypeName("#define HOMEGROUPING_RECENT 3ul")]
+    public const uint HOMEGROUPING_RECENT = 3U;
+
+    [NativeTypeName("#define HOMEGROUPING_RECOMMENDATIONS 4ul")]
+    public const uint HOMEGROUPING_RECOMMENDATIONS = 4U;
+
     [NativeTypeName("#define SFGAOSTR_FILESYS L\"filesys\"")]
     public const string SFGAOSTR_FILESYS = "filesys";
 
@@ -708,6 +723,39 @@ public static partial class Windows
 
     [NativeTypeName("#define SFGAOSTR_PLACEHOLDER L\"placeholder\"")]
     public const string SFGAOSTR_PLACEHOLDER = "placeholder";
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_NONE 0ul")]
+    public const uint STORAGEPROVIDERSTATE_NONE = 0U;
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_SPARSE 1ul")]
+    public const uint STORAGEPROVIDERSTATE_SPARSE = 1U;
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_IN_SYNC 2ul")]
+    public const uint STORAGEPROVIDERSTATE_IN_SYNC = 2U;
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_PINNED 3ul")]
+    public const uint STORAGEPROVIDERSTATE_PINNED = 3U;
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_PENDING_UPLOAD 4ul")]
+    public const uint STORAGEPROVIDERSTATE_PENDING_UPLOAD = 4U;
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_PENDING_DOWNLOAD 5ul")]
+    public const uint STORAGEPROVIDERSTATE_PENDING_DOWNLOAD = 5U;
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_TRANSFERRING 6ul")]
+    public const uint STORAGEPROVIDERSTATE_TRANSFERRING = 6U;
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_ERROR 7ul")]
+    public const uint STORAGEPROVIDERSTATE_ERROR = 7U;
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_WARNING 8ul")]
+    public const uint STORAGEPROVIDERSTATE_WARNING = 8U;
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_EXCLUDED 9ul")]
+    public const uint STORAGEPROVIDERSTATE_EXCLUDED = 9U;
+
+    [NativeTypeName("#define STORAGEPROVIDERSTATE_PENDING_UNSPECIFIED 10ul")]
+    public const uint STORAGEPROVIDERSTATE_PENDING_UNSPECIFIED = 10U;
 
     [NativeTypeName("#define APPUSERMODEL_STARTPINOPTION_DEFAULT 0ul")]
     public const uint APPUSERMODEL_STARTPINOPTION_DEFAULT = 0U;

@@ -19,6 +19,9 @@ public static partial class IO
     [NativeTypeName("#define IO_REPARSE_TAG_RESERVED_RANGE IO_REPARSE_TAG_RESERVED_TWO")]
     public const int IO_REPARSE_TAG_RESERVED_RANGE = (2);
 
+    [NativeTypeName("#define IO_REPARSE_TAG_RESERVED_INVALID (0xC0008000L)")]
+    public const uint IO_REPARSE_TAG_RESERVED_INVALID = (0xC0008000);
+
     [NativeTypeName("#define IO_REPARSE_TAG_MOUNT_POINT (0xA0000003L)")]
     public const uint IO_REPARSE_TAG_MOUNT_POINT = (0xA0000003);
 

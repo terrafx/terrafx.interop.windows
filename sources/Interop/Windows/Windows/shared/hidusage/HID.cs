@@ -865,6 +865,12 @@ public static partial class HID
     [NativeTypeName("#define HID_USAGE_KEYBOARD_DELETE_FORWARD ((USAGE) 0x4C)")]
     public const ushort HID_USAGE_KEYBOARD_DELETE_FORWARD = ((ushort)(0x4C));
 
+    [NativeTypeName("#define HID_USAGE_KEYBOARD_KEYPAD_1_AND_END ((USAGE) 0x59)")]
+    public const ushort HID_USAGE_KEYBOARD_KEYPAD_1_AND_END = ((ushort)(0x59));
+
+    [NativeTypeName("#define HID_USAGE_KEYBOARD_KEYPAD_0_AND_INSERT ((USAGE) 0x62)")]
+    public const ushort HID_USAGE_KEYBOARD_KEYPAD_0_AND_INSERT = ((ushort)(0x62));
+
     [NativeTypeName("#define HID_USAGE_LED_NUM_LOCK ((USAGE) 0x01)")]
     public const ushort HID_USAGE_LED_NUM_LOCK = ((ushort)(0x01));
 

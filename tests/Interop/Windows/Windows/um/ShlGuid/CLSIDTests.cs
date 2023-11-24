@@ -103,6 +103,13 @@ public static partial class CLSIDTests
         Assert.That(CLSID_CUrlHistory, Is.EqualTo(new Guid(0x3C374A40, 0xBAE4, 0x11CF, 0xBF, 0x7D, 0x00, 0xAA, 0x00, 0x69, 0x46, 0xEE)));
     }
 
+    /// <summary>Validates that the value of the <see cref="CLSID_CUrlHistoryBoth" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_CUrlHistoryBothTest()
+    {
+        Assert.That(CLSID_CUrlHistoryBoth, Is.EqualTo(new Guid(0x6659983c, 0x8476, 0x4eb4, 0xb7, 0x8c, 0xe5, 0x96, 0x8f, 0x32, 0x6b, 0xa0)));
+    }
+
     /// <summary>Validates that the value of the <see cref="CLSID_CURLSearchHook" /> property is correct.</summary>
     [Test]
     public static void CLSID_CURLSearchHookTest()

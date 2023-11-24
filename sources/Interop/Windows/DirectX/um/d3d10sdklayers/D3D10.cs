@@ -19,7 +19,7 @@ public static partial class D3D10
     [NativeTypeName("#define D3D10_DEBUG_FEATURE_PRESENT_PER_RENDER_OP ( 0x4 )")]
     public const int D3D10_DEBUG_FEATURE_PRESENT_PER_RENDER_OP = (0x4);
 
-    [NativeTypeName("#define D3D10_REGKEY_PATH __TEXT(\"Software\\\\Microsoft\\\\Direct3D\")")]
+    [NativeTypeName("#define D3D10_REGKEY_PATH __TEXT(\"Software\\Microsoft\\Direct3D\")")]
     public const string D3D10_REGKEY_PATH = "Software\\Microsoft\\Direct3D";
 
     [NativeTypeName("#define D3D10_MUTE_DEBUG_OUTPUT __TEXT(\"MuteDebugOutput\")")]

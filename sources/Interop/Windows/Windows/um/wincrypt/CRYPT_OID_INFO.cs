@@ -29,7 +29,7 @@ public unsafe partial struct CRYPT_OID_INFO
     public uint dwGroupId;
 
     /// <include file='CRYPT_OID_INFO.xml' path='doc/member[@name="CRYPT_OID_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L6217_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L6221_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CRYPT_OID_INFO.xml' path='doc/member[@name="CRYPT_OID_INFO.ExtraInfo"]/*' />

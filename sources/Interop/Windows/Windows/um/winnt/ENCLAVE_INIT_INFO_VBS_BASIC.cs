@@ -33,7 +33,7 @@ public unsafe partial struct ENCLAVE_INIT_INFO_VBS_BASIC
     public uint Reserved;
 
     /// <include file='ENCLAVE_INIT_INFO_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_VBS_BASIC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14219_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14221_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.SignatureInfoHandle"]/*' />

@@ -9295,6 +9295,32 @@ public static partial class PKEY
     }
 
     [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_StorageProviderFileCreatedBy
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xD6, 0xB9, 0xF9, 0xB2,
+                0xC4, 0xFE,
+                0xD5, 0x4D,
+                0x94,
+                0xD7,
+                0x89,
+                0x57,
+                0x48,
+                0x8C,
+                0x80,
+                0x7B,
+                0x0A, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -9365,6 +9391,32 @@ public static partial class PKEY
                 0x80,
                 0x7B,
                 0x03, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_StorageProviderFileModifiedBy
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xD6, 0xB9, 0xF9, 0xB2,
+                0xC4, 0xFE,
+                0xD5, 0x4D,
+                0x94,
+                0xD7,
+                0x89,
+                0x57,
+                0x48,
+                0x8C,
+                0x80,
+                0x7B,
+                0x0B, 0x00, 0x00, 0x00
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
@@ -20683,6 +20735,188 @@ public static partial class PKEY
     }
 
     [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_MsGraph_CompositeId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x7E, 0x56, 0x85, 0x4F,
+                0xF0, 0xFF,
+                0xF5, 0x4D,
+                0xB1,
+                0xD9,
+                0x98,
+                0xB3,
+                0x14,
+                0xFF,
+                0x07,
+                0x29,
+                0x02, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_MsGraph_DriveId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x7E, 0x56, 0x85, 0x4F,
+                0xF0, 0xFF,
+                0xF5, 0x4D,
+                0xB1,
+                0xD9,
+                0x98,
+                0xB3,
+                0x14,
+                0xFF,
+                0x07,
+                0x29,
+                0x03, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_MsGraph_ItemId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x7E, 0x56, 0x85, 0x4F,
+                0xF0, 0xFF,
+                0xF5, 0x4D,
+                0xB1,
+                0xD9,
+                0x98,
+                0xB3,
+                0x14,
+                0xFF,
+                0x07,
+                0x29,
+                0x04, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_MsGraph_RecommendationReason
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x7E, 0x56, 0x85, 0x4F,
+                0xF0, 0xFF,
+                0xF5, 0x4D,
+                0xB1,
+                0xD9,
+                0x98,
+                0xB3,
+                0x14,
+                0xFF,
+                0x07,
+                0x29,
+                0x08, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_MsGraph_RecommendationReferenceId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x7E, 0x56, 0x85, 0x4F,
+                0xF0, 0xFF,
+                0xF5, 0x4D,
+                0xB1,
+                0xD9,
+                0x98,
+                0xB3,
+                0x14,
+                0xFF,
+                0x07,
+                0x29,
+                0x05, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_MsGraph_RecommendationResultSourceId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x7E, 0x56, 0x85, 0x4F,
+                0xF0, 0xFF,
+                0xF5, 0x4D,
+                0xB1,
+                0xD9,
+                0x98,
+                0xB3,
+                0x14,
+                0xFF,
+                0x07,
+                0x29,
+                0x07, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_MsGraph_WebAccountId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x7E, 0x56, 0x85, 0x4F,
+                0xF0, 0xFF,
+                0xF5, 0x4D,
+                0xB1,
+                0xD9,
+                0x98,
+                0xB3,
+                0x14,
+                0xFF,
+                0x07,
+                0x29,
+                0x06, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_AlbumArtist
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24817,6 +25051,32 @@ public static partial class PKEY
     }
 
     [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_LocationEmptyString
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xAB, 0xD9, 0xD2, 0x62,
+                0x64, 0x8B,
+                0x8D, 0x49,
+                0xB8,
+                0x65,
+                0x40,
+                0x2D,
+                0x47,
+                0x96,
+                0xF8,
+                0x65,
+                0x03, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_AutoSummary
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25389,6 +25649,32 @@ public static partial class PKEY
     }
 
     [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_ActivityInfo
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF4, 0xEE, 0xC8, 0x30,
+                0x32, 0xA8,
+                0xE2, 0x41,
+                0xAB,
+                0x32,
+                0xE3,
+                0xC3,
+                0xCA,
+                0x28,
+                0xFD,
+                0x29,
+                0x11, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DescriptionID
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25407,6 +25693,84 @@ public static partial class PKEY
                 0x18,
                 0xD0,
                 0x02, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_Home_Grouping
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF4, 0xEE, 0xC8, 0x30,
+                0x32, 0xA8,
+                0xE2, 0x41,
+                0xAB,
+                0x32,
+                0xE3,
+                0xC3,
+                0xCA,
+                0x28,
+                0xFD,
+                0x29,
+                0x02, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_Home_IsPinned
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF4, 0xEE, 0xC8, 0x30,
+                0x32, 0xA8,
+                0xE2, 0x41,
+                0xAB,
+                0x32,
+                0xE3,
+                0xC3,
+                0xCA,
+                0x28,
+                0xFD,
+                0x29,
+                0x04, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_Home_ItemFolderPathDisplay
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF4, 0xEE, 0xC8, 0x30,
+                0x32, 0xA8,
+                0xE2, 0x41,
+                0xAB,
+                0x32,
+                0xE3,
+                0xC3,
+                0xCA,
+                0x28,
+                0xFD,
+                0x29,
+                0x06, 0x00, 0x00, 0x00
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
@@ -25614,6 +25978,84 @@ public static partial class PKEY
                 0x2E,
                 0x34,
                 0x6D,
+                0x02, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_StorageProviderState
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xDF, 0x90, 0x7E, 0xE7,
+                0x71, 0x62,
+                0x5B, 0x4F,
+                0x83,
+                0x4F,
+                0x2D,
+                0xD1,
+                0xF2,
+                0x45,
+                0xDD,
+                0xA4,
+                0x03, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_StorageProviderTransferProgress
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xDF, 0x90, 0x7E, 0xE7,
+                0x71, 0x62,
+                0x5B, 0x4F,
+                0x83,
+                0x4F,
+                0x2D,
+                0xD1,
+                0xF2,
+                0x45,
+                0xDD,
+                0xA4,
+                0x04, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_StorageProviderUIStatus
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xDF, 0x90, 0x7E, 0xE7,
+                0x71, 0x62,
+                0x5B, 0x4F,
+                0x83,
+                0x4F,
+                0x2D,
+                0xD1,
+                0xF2,
+                0x45,
+                0xDD,
+                0xA4,
                 0x02, 0x00, 0x00, 0x00
             ];
 

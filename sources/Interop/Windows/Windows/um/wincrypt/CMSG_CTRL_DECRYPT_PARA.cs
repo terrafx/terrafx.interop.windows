@@ -17,7 +17,7 @@ public partial struct CMSG_CTRL_DECRYPT_PARA
     public uint cbSize;
 
     /// <include file='CMSG_CTRL_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_DECRYPT_PARA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L8016_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L8020_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CMSG_CTRL_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_DECRYPT_PARA.dwKeySpec"]/*' />

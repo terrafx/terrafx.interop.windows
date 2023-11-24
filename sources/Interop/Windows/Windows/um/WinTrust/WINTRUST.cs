@@ -7,7 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WINTRUST
 {
-    [NativeTypeName("#define WINTRUST_CONFIG_REGPATH L\"Software\\\\Microsoft\\\\Cryptography\\\\Wintrust\\\\Config\"")]
+    [NativeTypeName("#define WINTRUST_CONFIG_REGPATH L\"Software\\Microsoft\\Cryptography\\Wintrust\\Config\"")]
     public const string WINTRUST_CONFIG_REGPATH = "Software\\Microsoft\\Cryptography\\Wintrust\\Config";
 
     [NativeTypeName("#define WINTRUST_MAX_HEADER_BYTES_TO_MAP_VALUE_NAME L\"MaxHeaderBytesToMap\"")]

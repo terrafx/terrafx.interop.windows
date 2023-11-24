@@ -14,7 +14,7 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct D2D_MATRIX_3X2_F
 {
     /// <include file='D2D_MATRIX_3X2_F.xml' path='doc/member[@name="D2D_MATRIX_3X2_F.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_dcommon_L277_C5")]
+    [NativeTypeName("__AnonymousRecord_dcommon_L285_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.m11"]/*' />
@@ -166,12 +166,12 @@ public unsafe partial struct D2D_MATRIX_3X2_F
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_dcommon_L279_C9")]
+        [NativeTypeName("__AnonymousRecord_dcommon_L287_C9")]
         public _Anonymous1_e__Struct Anonymous1;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_dcommon_L312_C9")]
+        [NativeTypeName("__AnonymousRecord_dcommon_L320_C9")]
         public _Anonymous2_e__Struct Anonymous2;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />

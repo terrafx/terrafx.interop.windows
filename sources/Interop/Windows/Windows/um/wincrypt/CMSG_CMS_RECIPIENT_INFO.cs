@@ -17,7 +17,7 @@ public unsafe partial struct CMSG_CMS_RECIPIENT_INFO
     public uint dwRecipientChoice;
 
     /// <include file='CMSG_CMS_RECIPIENT_INFO.xml' path='doc/member[@name="CMSG_CMS_RECIPIENT_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L7840_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L7844_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pKeyTrans"]/*' />

@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY
 {
     /// <include file='PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L12612_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12614_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
@@ -72,7 +72,7 @@ public partial struct PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L12614_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L12616_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

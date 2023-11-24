@@ -68,6 +68,7 @@ SetSystemTime=kernel32
 SetSystemTimeAdjustment=kernel32
 VerSetConditionMask=kernel32
 --with-librarypath
+GetDeveloperDriveEnablementState=kernelbase
 GetIntegratedDisplaySize=kernelbase
 GetOsManufacturingMode=kernelbase
 GetOsSafeBootMode=kernelbase
