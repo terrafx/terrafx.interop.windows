@@ -71,6 +71,7 @@ public unsafe partial struct SP_INF_INFORMATION
     }
 
     [NativeTypeName("BYTE [1]")]
+    [UnscopedRef]
     public Span<byte> VersionData
     {
         get

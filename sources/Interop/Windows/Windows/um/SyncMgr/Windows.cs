@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -21,6 +22,6 @@ public static unsafe partial class Windows
         CoTaskMemFree(pcci->pszAlternateName);
         CoTaskMemFree(pcci->pszLocationShort);
         CoTaskMemFree(pcci->pszLocationFull);
-        Unsafe.InitBlockUnaligned((pcci), 0, ((uint)(sizeof(CONFIRM_CONFLICT_ITEM))));
+        NativeMemory.Fill((pcci), ((uint)(sizeof(CONFIRM_CONFLICT_ITEM))), 0);
     }
 }

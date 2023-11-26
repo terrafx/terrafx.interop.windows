@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -397,6 +397,20 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12Device11, Is.EqualTo(new Guid(0x5405c344, 0xd457, 0x444e, 0xb4, 0xdd, 0x23, 0x66, 0xe4, 0x5a, 0xee, 0x39)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12Device12" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12Device12Test()
+    {
+        Assert.That(IID_ID3D12Device12, Is.EqualTo(new Guid(0x5af5c532, 0x4c91, 0x4cd0, 0xb5, 0x41, 0x15, 0xa4, 0x05, 0x39, 0x5f, 0xc5)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12Device13" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12Device13Test()
+    {
+        Assert.That(IID_ID3D12Device13, Is.EqualTo(new Guid(0x14eecffc, 0x4df8, 0x40f7, 0xa1, 0x18, 0x5c, 0x81, 0x6f, 0x45, 0x69, 0x5e)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12VirtualizationGuestDevice" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12VirtualizationGuestDeviceTest()
@@ -465,5 +479,12 @@ public static partial class IIDTests
     public static void IID_ID3D12GraphicsCommandList8Test()
     {
         Assert.That(IID_ID3D12GraphicsCommandList8, Is.EqualTo(new Guid(0xee936ef9, 0x599d, 0x4d28, 0x93, 0x8e, 0x23, 0xc4, 0xad, 0x05, 0xce, 0x51)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12GraphicsCommandList9" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12GraphicsCommandList9Test()
+    {
+        Assert.That(IID_ID3D12GraphicsCommandList9, Is.EqualTo(new Guid(0x34ed2808, 0xffe6, 0x4c2b, 0xb1, 0x1a, 0xca, 0xbd, 0x2b, 0x0c, 0x59, 0xe1)));
     }
 }

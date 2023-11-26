@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.GUID;
 using static TerraFX.Interop.Windows.STORAGE_IDENTIFIER_TYPE;
@@ -32,7 +33,7 @@ public static unsafe partial class Windows
     {
         uint Bytes = 28;
 
-        Unsafe.InitBlockUnaligned((Input), 0, (InputLength));
+        NativeMemory.Fill((Input), (InputLength), 0);
         Input->Size = unchecked(Bytes);
         Input->Action = Definition->Action;
         Input->Flags = Flags;
@@ -49,7 +50,7 @@ public static unsafe partial class Windows
             goto Cleanup;
         }
 
-        Unsafe.CopyBlockUnaligned((DeviceDsmParameterBlock(Input)), (Parameters), (Input->ParameterBlockLength));
+        NativeMemory.Copy((DeviceDsmParameterBlock(Input)), (Parameters), (Input->ParameterBlockLength));
         Cleanup:
         return;
     }
@@ -197,7 +198,7 @@ public static unsafe partial class Windows
     {
         uint Bytes = 36;
 
-        Unsafe.InitBlockUnaligned((Output), 0, (OutputLength));
+        NativeMemory.Fill((Output), (OutputLength), 0);
         Output->Size = unchecked(Bytes);
         Output->Action = Definition->Action;
         Output->Flags = Flags;

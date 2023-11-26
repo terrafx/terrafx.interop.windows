@@ -194,18 +194,19 @@ public unsafe partial struct SP_DEVINSTALL_PARAMS_W
         }
     }
 
-    [NativeTypeName("WCHAR [260]")]
-    public Span<ushort> DriverPath
+    [NativeTypeName("WCHAR[260]")]
+    [UnscopedRef]
+    public Span<char> DriverPath
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.DriverPath[0], 260);
+                return _value32.DriverPath;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.DriverPath[0], 260);
+                return _value64.DriverPath;
             }
         }
     }

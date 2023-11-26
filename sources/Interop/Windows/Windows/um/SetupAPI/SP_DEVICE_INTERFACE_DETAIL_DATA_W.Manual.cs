@@ -52,8 +52,9 @@ public unsafe partial struct SP_DEVICE_INTERFACE_DETAIL_DATA_W
         }
     }
 
-    [NativeTypeName("WCHAR [1]")]
-    public Span<ushort> DevicePath
+    [NativeTypeName("WCHAR[1]")]
+    [UnscopedRef]
+    public Span<char> DevicePath
     {
         get
         {

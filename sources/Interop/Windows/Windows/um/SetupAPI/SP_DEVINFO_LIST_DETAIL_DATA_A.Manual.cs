@@ -86,18 +86,19 @@ public unsafe partial struct SP_DEVINFO_LIST_DETAIL_DATA_A
         }
     }
 
-    [NativeTypeName("CHAR [263]")]
+    [NativeTypeName("CHAR[263]")]
+    [UnscopedRef]
     public Span<sbyte> RemoteMachineName
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.RemoteMachineName[0], 263);
+                return _value32.RemoteMachineName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.RemoteMachineName[0], 263);
+                return _value64.RemoteMachineName;
             }
         }
     }

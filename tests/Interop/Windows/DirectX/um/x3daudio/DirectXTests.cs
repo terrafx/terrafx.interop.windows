@@ -12,12 +12,6 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DirectX" /> class.</summary>
 public static unsafe partial class DirectXTests
 {
-    /// <summary>Validates that the value of the <see cref="X3DAudioDefault_LinearCurvePoints" /> property is correct.</summary>
-    [Test]
-    public static void X3DAudioDefault_LinearCurvePointsTest()
-    {
-    }
-
     /// <summary>Validates that the value of the <see cref="X3DAudioDefault_DirectionalCone" /> property is correct.</summary>
     [Test]
     public static void X3DAudioDefault_DirectionalConeTest()

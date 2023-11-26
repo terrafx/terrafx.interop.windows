@@ -51,82 +51,87 @@ public unsafe partial struct SP_SELECTDEVICE_PARAMS_A
         }
     }
 
-    [NativeTypeName("CHAR [60]")]
+    [NativeTypeName("CHAR[60]")]
+    [UnscopedRef]
     public Span<sbyte> Title
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.Title[0], 60);
+                return _value32.Title;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.Title[0], 60);
+                return _value64.Title;
             }
         }
     }
 
-    [NativeTypeName("CHAR [256]")]
+    [NativeTypeName("CHAR[256]")]
+    [UnscopedRef]
     public Span<sbyte> Instructions
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.Instructions[0], 256);
+                return _value32.Instructions;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.Instructions[0], 256);
+                return _value64.Instructions;
             }
         }
     }
 
-    [NativeTypeName("CHAR [30]")]
+    [NativeTypeName("CHAR[30]")]
+    [UnscopedRef]
     public Span<sbyte> ListLabel
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.ListLabel[0], 30);
+                return _value32.ListLabel;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.ListLabel[0], 30);
+                return _value64.ListLabel;
             }
         }
     }
 
-    [NativeTypeName("CHAR [256]")]
+    [NativeTypeName("CHAR[256]")]
+    [UnscopedRef]
     public Span<sbyte> SubTitle
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.SubTitle[0], 256);
+                return _value32.SubTitle;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.SubTitle[0], 256);
+                return _value64.SubTitle;
             }
         }
     }
 
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
+    [UnscopedRef]
     public Span<byte> Reserved
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.Reserved[0], 2);
+                return _value32.Reserved;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.Reserved[0], 2);
+                return _value64.Reserved;
             }
         }
     }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -17,8 +17,8 @@ public enum D3D12_BARRIER_SYNC
     /// <include file='D3D12_BARRIER_SYNC.xml' path='doc/member[@name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_DRAW"]/*' />
     D3D12_BARRIER_SYNC_DRAW = 0x2,
 
-    /// <include file='D3D12_BARRIER_SYNC.xml' path='doc/member[@name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_INPUT_ASSEMBLER"]/*' />
-    D3D12_BARRIER_SYNC_INPUT_ASSEMBLER = 0x4,
+    /// <include file='D3D12_BARRIER_SYNC.xml' path='doc/member[@name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_INDEX_INPUT"]/*' />
+    D3D12_BARRIER_SYNC_INDEX_INPUT = 0x4,
 
     /// <include file='D3D12_BARRIER_SYNC.xml' path='doc/member[@name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_VERTEX_SHADING"]/*' />
     D3D12_BARRIER_SYNC_VERTEX_SHADING = 0x8,

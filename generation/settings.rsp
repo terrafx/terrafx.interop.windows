@@ -10,6 +10,7 @@
 -Wno-macro-redefined
 -Wno-nonportable-include-path
 -Wno-pragma-pack
+-Wno-switch
 --config
 exclude-com-proxies
 exclude-empty-records

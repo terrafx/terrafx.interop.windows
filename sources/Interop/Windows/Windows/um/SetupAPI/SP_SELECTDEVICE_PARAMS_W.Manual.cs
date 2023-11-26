@@ -51,66 +51,70 @@ public unsafe partial struct SP_SELECTDEVICE_PARAMS_W
         }
     }
 
-    [NativeTypeName("WCHAR [60]")]
-    public Span<ushort> Title
+    [NativeTypeName("WCHAR[60]")]
+    [UnscopedRef]
+    public Span<char> Title
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.Title[0], 60);
+                return _value32.Title;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.Title[0], 60);
+                return _value64.Title;
             }
         }
     }
 
-    [NativeTypeName("WCHAR [256]")]
-    public Span<ushort> Instructions
+    [NativeTypeName("WCHAR[256]")]
+    [UnscopedRef]
+    public Span<char> Instructions
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.Instructions[0], 256);
+                return _value32.Instructions;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.Instructions[0], 256);
+                return _value64.Instructions;
             }
         }
     }
 
-    [NativeTypeName("WCHAR [30]")]
-    public Span<ushort> ListLabel
+    [NativeTypeName("WCHAR[30]")]
+    [UnscopedRef]
+    public Span<char> ListLabel
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.ListLabel[0], 30);
+                return _value32.ListLabel;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.ListLabel[0], 30);
+                return _value64.ListLabel;
             }
         }
     }
 
-    [NativeTypeName("WCHAR [256]")]
-    public Span<ushort> SubTitle
+    [NativeTypeName("WCHAR[256]")]
+    [UnscopedRef]
+    public Span<char> SubTitle
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.SubTitle[0], 256);
+                return _value32.SubTitle;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.SubTitle[0], 256);
+                return _value64.SubTitle;
             }
         }
     }

@@ -142,18 +142,19 @@ public unsafe partial struct FILE_IN_CABINET_INFO_W
         }
     }
 
-    [NativeTypeName("WCHAR [260]")]
-    public Span<ushort> FullTargetName
+    [NativeTypeName("WCHAR[260]")]
+    [UnscopedRef]
+    public Span<char> FullTargetName
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.FullTargetName[0], 260);
+                return _value32.FullTargetName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.FullTargetName[0], 260);
+                return _value64.FullTargetName;
             }
         }
     }

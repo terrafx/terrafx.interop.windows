@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -22,7 +22,7 @@ public partial struct D3D12_SHADER_RESOURCE_VIEW_DESC
     public uint Shader4ComponentMapping;
 
     /// <include file='D3D12_SHADER_RESOURCE_VIEW_DESC.xml' path='doc/member[@name="D3D12_SHADER_RESOURCE_VIEW_DESC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L3213_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L3364_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />

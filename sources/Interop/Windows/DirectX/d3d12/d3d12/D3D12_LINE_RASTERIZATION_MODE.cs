@@ -1,0 +1,22 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
+// Original source is Copyright © Microsoft. Licensed under the MIT license
+
+namespace TerraFX.Interop.DirectX;
+
+/// <include file='D3D12_LINE_RASTERIZATION_MODE.xml' path='doc/member[@name="D3D12_LINE_RASTERIZATION_MODE"]/*' />
+public enum D3D12_LINE_RASTERIZATION_MODE
+{
+    /// <include file='D3D12_LINE_RASTERIZATION_MODE.xml' path='doc/member[@name="D3D12_LINE_RASTERIZATION_MODE.D3D12_LINE_RASTERIZATION_MODE_ALIASED"]/*' />
+    D3D12_LINE_RASTERIZATION_MODE_ALIASED = 0,
+
+    /// <include file='D3D12_LINE_RASTERIZATION_MODE.xml' path='doc/member[@name="D3D12_LINE_RASTERIZATION_MODE.D3D12_LINE_RASTERIZATION_MODE_ALPHA_ANTIALIASED"]/*' />
+    D3D12_LINE_RASTERIZATION_MODE_ALPHA_ANTIALIASED = (D3D12_LINE_RASTERIZATION_MODE_ALIASED + 1),
+
+    /// <include file='D3D12_LINE_RASTERIZATION_MODE.xml' path='doc/member[@name="D3D12_LINE_RASTERIZATION_MODE.D3D12_LINE_RASTERIZATION_MODE_QUADRILATERAL_WIDE"]/*' />
+    D3D12_LINE_RASTERIZATION_MODE_QUADRILATERAL_WIDE = (D3D12_LINE_RASTERIZATION_MODE_ALPHA_ANTIALIASED + 1),
+
+    /// <include file='D3D12_LINE_RASTERIZATION_MODE.xml' path='doc/member[@name="D3D12_LINE_RASTERIZATION_MODE.D3D12_LINE_RASTERIZATION_MODE_QUADRILATERAL_NARROW"]/*' />
+    D3D12_LINE_RASTERIZATION_MODE_QUADRILATERAL_NARROW = (D3D12_LINE_RASTERIZATION_MODE_QUADRILATERAL_WIDE + 1),
+}

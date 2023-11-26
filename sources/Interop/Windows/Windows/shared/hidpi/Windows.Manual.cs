@@ -16,16 +16,16 @@ public static unsafe partial class Windows
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool HidP_IsSameUsageAndPage(USAGE_AND_PAGE* u1, USAGE_AND_PAGE* u2) => *(uint*)u1 == *(uint*)u2;
 
-    public static int HidP_SetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
+    public static int HidP_SetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
         HidP_SetUsages(ReportType, UsagePage, LinkCollection, UsageList, UsageLength, PreparsedData, Report, ReportLength);
 
-    public static int HidP_UnsetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
+    public static int HidP_UnsetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
         HidP_UnsetUsages(ReportType, UsagePage, LinkCollection, UsageList, UsageLength, PreparsedData, Report, ReportLength);
 
-    public static int HidP_GetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
+    public static int HidP_GetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
         HidP_GetUsages(ReportType, UsagePage, LinkCollection, UsageList, UsageLength, PreparsedData, Report, ReportLength);
 
-    public static int HidP_GetButtonsEx(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* ButtonList, [NativeTypeName("ULONG *")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
+    public static int HidP_GetButtonsEx(HIDP_REPORT_TYPE ReportType, ushort LinkCollection, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* ButtonList, [NativeTypeName("ULONG *")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
         HidP_GetUsagesEx(ReportType, LinkCollection, ButtonList, UsageLength, PreparsedData, Report, ReportLength);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

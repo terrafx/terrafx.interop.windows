@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -16,6 +17,12 @@ public unsafe partial struct SP_DEVINFO_LIST_DETAIL_DATA64_W
 
     public HANDLE RemoteMachineHandle;
 
-    [NativeTypeName("WCHAR [263]")]
-    public fixed ushort RemoteMachineName[263];
+    [NativeTypeName("WCHAR[263]")]
+    public _RemoteMachineName_e__FixedBuffer RemoteMachineName;
+
+    [InlineArray(263)]
+    public partial struct _RemoteMachineName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

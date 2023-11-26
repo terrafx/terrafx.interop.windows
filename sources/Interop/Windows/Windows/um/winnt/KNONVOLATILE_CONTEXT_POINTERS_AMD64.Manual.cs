@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -16,387 +17,323 @@ public unsafe partial struct KNONVOLATILE_CONTEXT_POINTERS_AMD64
     [NativeTypeName("_KNONVOLATILE_CONTEXT_POINTERS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:4419:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
+    [UnscopedRef]
     public ref M128A* Xmm0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm0;
-            }
+            return ref Anonymous1.Anonymous.Xmm0;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm1;
-            }
+            return ref Anonymous1.Anonymous.Xmm1;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm2;
-            }
+            return ref Anonymous1.Anonymous.Xmm2;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm3
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm3;
-            }
+            return ref Anonymous1.Anonymous.Xmm3;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm4
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm4;
-            }
+            return ref Anonymous1.Anonymous.Xmm4;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm5
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm5;
-            }
+            return ref Anonymous1.Anonymous.Xmm5;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm6
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm6;
-            }
+            return ref Anonymous1.Anonymous.Xmm6;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm7
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm7;
-            }
+            return ref Anonymous1.Anonymous.Xmm7;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm8
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm8;
-            }
+            return ref Anonymous1.Anonymous.Xmm8;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm9
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm9;
-            }
+            return ref Anonymous1.Anonymous.Xmm9;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm10
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm10;
-            }
+            return ref Anonymous1.Anonymous.Xmm10;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm11
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm11;
-            }
+            return ref Anonymous1.Anonymous.Xmm11;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm12;
-            }
+            return ref Anonymous1.Anonymous.Xmm12;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm13
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm13;
-            }
+            return ref Anonymous1.Anonymous.Xmm13;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm14
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm14;
-            }
+            return ref Anonymous1.Anonymous.Xmm14;
         }
     }
 
+    [UnscopedRef]
     public ref M128A* Xmm15
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous1_e__Union._Anonymous_e__Struct* pField = &Anonymous1.Anonymous)
-            {
-                return ref pField->Xmm15;
-            }
+            return ref Anonymous1.Anonymous.Xmm15;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* Rax
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->Rax;
-            }
+            return ref Anonymous2.Anonymous.Rax;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* Rcx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->Rcx;
-            }
+            return ref Anonymous2.Anonymous.Rcx;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* Rdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->Rdx;
-            }
+            return ref Anonymous2.Anonymous.Rdx;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* Rbx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->Rbx;
-            }
+            return ref Anonymous2.Anonymous.Rbx;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* Rsp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->Rsp;
-            }
+            return ref Anonymous2.Anonymous.Rsp;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* Rbp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->Rbp;
-            }
+            return ref Anonymous2.Anonymous.Rbp;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* Rsi
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->Rsi;
-            }
+            return ref Anonymous2.Anonymous.Rsi;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* Rdi
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->Rdi;
-            }
+            return ref Anonymous2.Anonymous.Rdi;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* R8
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->R8;
-            }
+            return ref Anonymous2.Anonymous.R8;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* R9
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->R9;
-            }
+            return ref Anonymous2.Anonymous.R9;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* R10
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->R10;
-            }
+            return ref Anonymous2.Anonymous.R10;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* R11
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->R11;
-            }
+            return ref Anonymous2.Anonymous.R11;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* R12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->R12;
-            }
+            return ref Anonymous2.Anonymous.R12;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* R13
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->R13;
-            }
+            return ref Anonymous2.Anonymous.R13;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* R14
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->R14;
-            }
+            return ref Anonymous2.Anonymous.R14;
         }
     }
 
+    [UnscopedRef]
     public ref ulong* R15
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (_Anonymous2_e__Union._Anonymous_e__Struct* pField = &Anonymous2.Anonymous)
-            {
-                return ref pField->R15;
-            }
+            return ref Anonymous2.Anonymous.R15;
         }
     }
 
@@ -404,7 +341,7 @@ public unsafe partial struct KNONVOLATILE_CONTEXT_POINTERS_AMD64
     public unsafe partial struct _Anonymous1_e__Union
     {
         [FieldOffset(0)]
-        [NativeTypeName("PM128A [16]")]
+        [NativeTypeName("PM128A[16]")]
         public _FloatingContext_e__FixedBuffer FloatingContext;
 
         [FieldOffset(0)]
@@ -499,7 +436,7 @@ public unsafe partial struct KNONVOLATILE_CONTEXT_POINTERS_AMD64
     public unsafe partial struct _Anonymous2_e__Union
     {
         [FieldOffset(0)]
-        [NativeTypeName("PDWORD64 [16]")]
+        [NativeTypeName("PDWORD64[16]")]
         public _IntegerContext_e__FixedBuffer IntegerContext;
 
         [FieldOffset(0)]

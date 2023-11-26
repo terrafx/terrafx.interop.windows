@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -16,4 +16,7 @@ public enum D3D_ROOT_SIGNATURE_VERSION
 
     /// <include file='D3D_ROOT_SIGNATURE_VERSION.xml' path='doc/member[@name="D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1_1"]/*' />
     D3D_ROOT_SIGNATURE_VERSION_1_1 = 0x2,
+
+    /// <include file='D3D_ROOT_SIGNATURE_VERSION.xml' path='doc/member[@name="D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1_2"]/*' />
+    D3D_ROOT_SIGNATURE_VERSION_1_2 = 0x3,
 }

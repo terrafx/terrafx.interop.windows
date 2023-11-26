@@ -124,55 +124,59 @@ public unsafe partial struct SP_DRVINFO_DETAIL_DATA_W
     }
 
     [NativeTypeName("WCHAR [256]")]
-    public Span<ushort> SectionName
+    [UnscopedRef]
+    public Span<char> SectionName
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.SectionName[0], 256);
+                return _value32.SectionName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.SectionName[0], 256);
+                return _value64.SectionName;
             }
         }
     }
 
-    [NativeTypeName("WCHAR [260]")]
-    public Span<ushort> InfFileName
+    [NativeTypeName("WCHAR[260]")]
+    [UnscopedRef]
+    public Span<char> InfFileName
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.InfFileName[0], 260);
+                return _value32.InfFileName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.InfFileName[0], 260);
+                return _value64.InfFileName;
             }
         }
     }
 
-    [NativeTypeName("WCHAR [256]")]
-    public Span<ushort> DrvDescription
+    [NativeTypeName("WCHAR[256]")]
+    [UnscopedRef]
+    public Span<char> DrvDescription
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.DrvDescription[0], 256);
+                return _value32.DrvDescription;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.DrvDescription[0], 256);
+                return _value64.DrvDescription;
             }
         }
     }
 
-    [NativeTypeName("WCHAR [1]")]
-    public Span<ushort> HardwareID
+    [NativeTypeName("WCHAR[1]")]
+    [UnscopedRef]
+    public Span<char> HardwareID
     {
         get
         {

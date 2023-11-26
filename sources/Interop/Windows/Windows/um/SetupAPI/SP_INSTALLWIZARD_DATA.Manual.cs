@@ -69,7 +69,7 @@ public unsafe partial struct SP_INSTALLWIZARD_DATA
         }
     }
 
-    [NativeTypeName("HPROPSHEETPAGE [20]")]
+    [NativeTypeName("HPROPSHEETPAGE[20]")]
     [UnscopedRef]
     public Span<HPROPSHEETPAGE> DynamicPages
     {
@@ -78,11 +78,11 @@ public unsafe partial struct SP_INSTALLWIZARD_DATA
         {
             if (sizeof(nint) == 4)
             {
-                return _value32.DynamicPages.AsSpan();
+                return _value32.DynamicPages;
             }
             else
             {
-                return _value64.DynamicPages.AsSpan();
+                return _value64.DynamicPages;
             }
         }
     }

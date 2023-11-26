@@ -17,16 +17,12 @@ public unsafe partial struct HIDP_LINK_COLLECTION_NODE
     [NativeTypeName("USAGE")]
     public ushort LinkUsagePage;
 
-    [NativeTypeName("USHORT")]
     public ushort Parent;
 
-    [NativeTypeName("USHORT")]
     public ushort NumberOfChildren;
 
-    [NativeTypeName("USHORT")]
     public ushort NextSibling;
 
-    [NativeTypeName("USHORT")]
     public ushort FirstChild;
 
     public uint _bitfield;

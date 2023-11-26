@@ -3,12 +3,20 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct SP_POWERMESSAGEWAKE_PARAMS64_A
 {
     public SP_CLASSINSTALL_HEADER64 ClassInstallHeader;
 
-    [NativeTypeName("CHAR [512]")]
-    public fixed sbyte PowerMessageWake[512];
+    [NativeTypeName("CHAR[512]")]
+    public _PowerMessageWake_e__FixedBuffer PowerMessageWake;
+
+    [InlineArray(512)]
+    public partial struct _PowerMessageWake_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

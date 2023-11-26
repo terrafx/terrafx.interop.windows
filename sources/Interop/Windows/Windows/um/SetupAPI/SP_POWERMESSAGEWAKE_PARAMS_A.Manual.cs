@@ -51,18 +51,19 @@ public unsafe partial struct SP_POWERMESSAGEWAKE_PARAMS_A
         }
     }
 
-    [NativeTypeName("CHAR [512]")]
+    [NativeTypeName("CHAR[512]")]
+    [UnscopedRef]
     public Span<sbyte> PowerMessageWake
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.PowerMessageWake[0], 512);
+                return _value32.PowerMessageWake;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.PowerMessageWake[0], 512);
+                return _value64.PowerMessageWake;
             }
         }
     }

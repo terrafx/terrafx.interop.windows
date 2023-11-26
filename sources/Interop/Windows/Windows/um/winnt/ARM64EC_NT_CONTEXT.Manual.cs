@@ -851,7 +851,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return Anonymous.Anonymous.Anonymous.V.AsSpan();
+            return Anonymous.Anonymous.Anonymous.V;
         }
     }
 
@@ -871,7 +871,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return Anonymous.Anonymous.AMD64_VectorRegister.AsSpan();
+            return Anonymous.Anonymous.AMD64_VectorRegister;
         }
     }
 
@@ -1061,7 +1061,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
             [NativeTypeName("_ARM64EC_NT_CONTEXT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:7098:13)")]
             public _Anonymous1_e__Struct Anonymous;
 
-            [NativeTypeName("ARM64_NT_NEON128 [26]")]
+            [NativeTypeName("ARM64_NT_NEON128[26]")]
             public _AMD64_VectorRegister_e__FixedBuffer AMD64_VectorRegister;
 
             [NativeTypeName("DWORD64")]
@@ -1217,89 +1217,29 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
                 [NativeTypeName("DWORD")]
                 public uint AMD64_St7_Reserved2;
 
-                [NativeTypeName("ARM64_NT_NEON128 [16]")]
+                [NativeTypeName("ARM64_NT_NEON128[16]")]
                 public _V_e__FixedBuffer V;
 
-                [NativeTypeName("BYTE [96]")]
-                public fixed byte AMD64_XSAVE_FORMAT_Reserved4[96];
+                [NativeTypeName("BYTE[96]")]
+                public _AMD64_XSAVE_FORMAT_Reserved4_e__FixedBuffer AMD64_XSAVE_FORMAT_Reserved4;
 
+                [InlineArray(16)]
                 public partial struct _V_e__FixedBuffer
                 {
                     public ARM64_NT_NEON128 e0;
-                    public ARM64_NT_NEON128 e1;
-                    public ARM64_NT_NEON128 e2;
-                    public ARM64_NT_NEON128 e3;
-                    public ARM64_NT_NEON128 e4;
-                    public ARM64_NT_NEON128 e5;
-                    public ARM64_NT_NEON128 e6;
-                    public ARM64_NT_NEON128 e7;
-                    public ARM64_NT_NEON128 e8;
-                    public ARM64_NT_NEON128 e9;
-                    public ARM64_NT_NEON128 e10;
-                    public ARM64_NT_NEON128 e11;
-                    public ARM64_NT_NEON128 e12;
-                    public ARM64_NT_NEON128 e13;
-                    public ARM64_NT_NEON128 e14;
-                    public ARM64_NT_NEON128 e15;
+                }
 
-                    [UnscopedRef]
-                    public ref ARM64_NT_NEON128 this[int index]
-                    {
-                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
-                        {
-                            return ref AsSpan()[index];
-                        }
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    [UnscopedRef]
-                    public Span<ARM64_NT_NEON128> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+                [InlineArray(96)]
+                public partial struct _AMD64_XSAVE_FORMAT_Reserved4_e__FixedBuffer
+                {
+                    public byte e0;
                 }
             }
 
+            [InlineArray(26)]
             public partial struct _AMD64_VectorRegister_e__FixedBuffer
             {
                 public ARM64_NT_NEON128 e0;
-                public ARM64_NT_NEON128 e1;
-                public ARM64_NT_NEON128 e2;
-                public ARM64_NT_NEON128 e3;
-                public ARM64_NT_NEON128 e4;
-                public ARM64_NT_NEON128 e5;
-                public ARM64_NT_NEON128 e6;
-                public ARM64_NT_NEON128 e7;
-                public ARM64_NT_NEON128 e8;
-                public ARM64_NT_NEON128 e9;
-                public ARM64_NT_NEON128 e10;
-                public ARM64_NT_NEON128 e11;
-                public ARM64_NT_NEON128 e12;
-                public ARM64_NT_NEON128 e13;
-                public ARM64_NT_NEON128 e14;
-                public ARM64_NT_NEON128 e15;
-                public ARM64_NT_NEON128 e16;
-                public ARM64_NT_NEON128 e17;
-                public ARM64_NT_NEON128 e18;
-                public ARM64_NT_NEON128 e19;
-                public ARM64_NT_NEON128 e20;
-                public ARM64_NT_NEON128 e21;
-                public ARM64_NT_NEON128 e22;
-                public ARM64_NT_NEON128 e23;
-                public ARM64_NT_NEON128 e24;
-                public ARM64_NT_NEON128 e25;
-
-                [UnscopedRef]
-                public ref ARM64_NT_NEON128 this[int index]
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return ref AsSpan()[index];
-                    }
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                [UnscopedRef]
-                public Span<ARM64_NT_NEON128> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 26);
             }
         }
     }

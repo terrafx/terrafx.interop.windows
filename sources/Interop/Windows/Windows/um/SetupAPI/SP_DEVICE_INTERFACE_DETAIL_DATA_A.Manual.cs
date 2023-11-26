@@ -52,7 +52,8 @@ public unsafe partial struct SP_DEVICE_INTERFACE_DETAIL_DATA_A
         }
     }
 
-    [NativeTypeName("CHAR [1]")]
+    [NativeTypeName("CHAR[1]")]
+    [UnscopedRef]
     public Span<sbyte> DevicePath
     {
         get

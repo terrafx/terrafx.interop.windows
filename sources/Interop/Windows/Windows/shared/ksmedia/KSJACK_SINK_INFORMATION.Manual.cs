@@ -3,6 +3,8 @@
 // Ported from shared/ksmedia.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct KSJACK_SINK_INFORMATION
@@ -25,8 +27,14 @@ public unsafe partial struct KSJACK_SINK_INFORMATION
     [NativeTypeName("UCHAR")]
     public byte SinkDescriptionLength;
 
-    [NativeTypeName("WCHAR [32]")]
-    public fixed ushort SinkDescription[32];
+    [NativeTypeName("WCHAR[32]")]
+    public _SinkDescription_e__FixedBuffer SinkDescription;
 
     public LUID PortId;
+
+    [InlineArray(32)]
+    public partial struct _SinkDescription_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

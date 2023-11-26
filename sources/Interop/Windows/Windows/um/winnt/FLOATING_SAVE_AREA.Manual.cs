@@ -3,6 +3,8 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct FLOATING_SAVE_AREA
@@ -28,9 +30,15 @@ public unsafe partial struct FLOATING_SAVE_AREA
     [NativeTypeName("DWORD")]
     public uint DataSelector;
 
-    [NativeTypeName("BYTE [80]")]
-    public fixed byte RegisterArea[80];
+    [NativeTypeName("BYTE[80]")]
+    public _RegisterArea_e__FixedBuffer RegisterArea;
 
     [NativeTypeName("DWORD")]
     public uint Spare0;
+
+    [InlineArray(80)]
+    public partial struct _RegisterArea_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

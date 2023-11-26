@@ -3,6 +3,8 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct X86_NT_CONTEXT
@@ -78,6 +80,12 @@ public unsafe partial struct X86_NT_CONTEXT
     [NativeTypeName("DWORD")]
     public uint SegSs;
 
-    [NativeTypeName("BYTE [512]")]
-    public fixed byte ExtendedRegisters[512];
+    [NativeTypeName("BYTE[512]")]
+    public _ExtendedRegisters_e__FixedBuffer ExtendedRegisters;
+
+    [InlineArray(512)]
+    public partial struct _ExtendedRegisters_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

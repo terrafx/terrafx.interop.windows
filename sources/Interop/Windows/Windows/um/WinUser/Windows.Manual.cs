@@ -37,7 +37,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("LPWSTR")]
-    public static ushort* MAKEINTRESOURCE(ushort i) => (ushort*)(nuint)i;
+    public static char* MAKEINTRESOURCE(ushort i) => (char*)(nuint)i;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static POINT POINTSTOPOINT(POINTS pts)

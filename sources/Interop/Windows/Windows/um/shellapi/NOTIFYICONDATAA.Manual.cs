@@ -137,18 +137,19 @@ public unsafe partial struct NOTIFYICONDATAA
         }
     }
 
-    [NativeTypeName("CHAR [128]")]
+    [NativeTypeName("CHAR[128]")]
+    [UnscopedRef]
     public Span<sbyte> szTip
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szTip[0], 128);
+                return _value32.szTip;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szTip[0], 128);
+                return _value64.szTip;
             }
         }
     }
@@ -189,34 +190,36 @@ public unsafe partial struct NOTIFYICONDATAA
         }
     }
 
-    [NativeTypeName("CHAR [256]")]
+    [NativeTypeName("CHAR[256]")]
+    [UnscopedRef]
     public Span<sbyte> szInfo
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szInfo[0], 256);
+                return _value32.szInfo;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szInfo[0], 256);
+                return _value64.szInfo;
             }
         }
     }
 
-    [NativeTypeName("CHAR [64]")]
+    [NativeTypeName("CHAR[64]")]
+    [UnscopedRef]
     public Span<sbyte> szInfoTitle
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szInfoTitle[0], 64);
+                return _value32.szInfoTitle;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szInfoTitle[0], 64);
+                return _value64.szInfoTitle;
             }
         }
     }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -305,6 +305,256 @@ public static partial class D3D12
                 0x07,
                 0x3D,
                 0x13
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x93, 0xB9, 0x85, 0x06,
+                0x8C, 0x3D,
+                0xA0, 0x43,
+                0x8B,
+                0x28,
+                0xD7,
+                0x4C,
+                0x2D,
+                0x68,
+                0x99,
+                0xA4
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x0F, 0x1D, 0x2A, 0x14,
+                0xDD, 0x69,
+                0xC9, 0x4E,
+                0x85,
+                0x91,
+                0xB1,
+                0x2F,
+                0xFC,
+                0xB9,
+                0x1A,
+                0x29
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x5F, 0x92, 0x72, 0x1A,
+                0x2C, 0x0C,
+                0x15, 0x4F,
+                0x96,
+                0xFB,
+                0xB1,
+                0x7D,
+                0x14,
+                0x73,
+                0x60,
+                0x3F
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_422
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xE5, 0x4F, 0xAC, 0x0B,
+                0x32, 0x15,
+                0x29, 0x44,
+                0xA8,
+                0x54,
+                0xF8,
+                0x4D,
+                0xE0,
+                0x49,
+                0x53,
+                0xDB
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_422
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x81, 0xAC, 0xBC, 0x55,
+                0x11, 0xF3,
+                0x93, 0x40,
+                0xA7,
+                0xD0,
+                0x1C,
+                0xBC,
+                0x0B,
+                0x84,
+                0x9B,
+                0xEE
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN_444
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x8F, 0x01, 0x08, 0x40,
+                0x37, 0xF5,
+                0x36, 0x4B,
+                0x98,
+                0xCF,
+                0x61,
+                0xAF,
+                0x8A,
+                0x2C,
+                0x1A,
+                0x33
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_EXT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x90, 0x54, 0xC5, 0x9C,
+                0x7C, 0xE3,
+                0x32, 0x49,
+                0x86,
+                0x84,
+                0x49,
+                0x20,
+                0xF9,
+                0xF6,
+                0x40,
+                0x9C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_444
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xFA, 0xEF, 0xAB, 0x0D,
+                0x58, 0x44,
+                0x02, 0x46,
+                0xBC,
+                0x03,
+                0x07,
+                0x95,
+                0x65,
+                0x9D,
+                0x61,
+                0x7C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_444
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x4D, 0x63, 0x98, 0x97,
+                0x9D, 0xFE,
+                0xE5, 0x48,
+                0xB4,
+                0xDA,
+                0xDB,
+                0xEC,
+                0x45,
+                0xB3,
+                0xDF,
+                0x01
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN16
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB0, 0xDB, 0xFB, 0xA4,
+                0x13, 0xA1,
+                0x2B, 0x48,
+                0xA2,
+                0x32,
+                0x63,
+                0x5C,
+                0xC0,
+                0x69,
+                0x7F,
+                0x6D
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

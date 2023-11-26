@@ -3,6 +3,7 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -13,9 +14,21 @@ public unsafe partial struct SP_ORIGINAL_FILE_INFO32_A
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
-    [NativeTypeName("CHAR [260]")]
-    public fixed sbyte OriginalInfName[260];
+    [NativeTypeName("CHAR[260]")]
+    public _OriginalInfName_e__FixedBuffer OriginalInfName;
 
-    [NativeTypeName("CHAR [260]")]
-    public fixed sbyte OriginalCatalogName[260];
+    [NativeTypeName("CHAR[260]")]
+    public _OriginalCatalogName_e__FixedBuffer OriginalCatalogName;
+
+    [InlineArray(260)]
+    public partial struct _OriginalInfName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    [InlineArray(260)]
+    public partial struct _OriginalCatalogName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }
