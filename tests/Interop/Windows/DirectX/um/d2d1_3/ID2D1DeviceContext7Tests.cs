@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="ID2D1DeviceContext7" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
 public static unsafe partial class ID2D1DeviceContext7Tests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID2D1DeviceContext7" /> struct is correct.</summary>
