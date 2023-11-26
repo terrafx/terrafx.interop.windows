@@ -238,6 +238,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeveloperDriveEnablementState"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22631.0")]
     public static extern DEVELOPER_DRIVE_ENABLEMENT_STATE GetDeveloperDriveEnablementState();
 
     [NativeTypeName("#define USER_CET_ENVIRONMENT_WIN32_PROCESS 0x00000000")]
