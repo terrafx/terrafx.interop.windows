@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+shared-dxgicommon.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/shared/dxgicommon
+--test-output
+../../../../tests/Interop/Windows/DirectX/shared/dxgicommon
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/dxgicommon.h
+--with-attribute
+DXGI_COLOR_SPACE_TYPE=SupportedOSPlatform("windows10.0")

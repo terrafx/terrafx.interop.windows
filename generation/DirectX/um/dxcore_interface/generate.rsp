@@ -1,0 +1,38 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+MAKE_DXCORE_HRESULT
+IDXCoreAdapter.GetFactory<T>(T **):HRESULT
+IDXCoreAdapter.GetProperty<T>(DXCoreAdapterProperty, T *):HRESULT
+IDXCoreAdapter.QueryState<T1, T2>(DXCoreAdapterState, const T1 *, T2 *):HRESULT
+IDXCoreAdapter.QueryState<T>(DXCoreAdapterState, T *):HRESULT
+IDXCoreAdapter.SetState<T1, T2>(DXCoreAdapterState, const T1 *, const T2 *):HRESULT
+IDXCoreAdapterFactory.CreateAdapterList<T>(uint32_t, const GUID *, T **):HRESULT
+IDXCoreAdapterFactory.GetAdapterByLuid<T>(const LUID &, T **):HRESULT
+IDXCoreAdapterList.GetAdapter<T>(uint32_t, T **):HRESULT
+IDXCoreAdapterList.GetFactory<T>(T **):HRESULT
+--file
+um-dxcore_interface.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/um/dxcore_interface
+--test-output
+../../../../tests/Interop/Windows/DirectX/um/dxcore_interface
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dxcore_interface.h
+--with-attribute
+DXCoreAdapterMemoryBudget=SupportedOSPlatform("windows10.0.19041.0")
+DXCoreAdapterMemoryBudgetNodeSegmentGroup=SupportedOSPlatform("windows10.0.19041.0")
+DXCoreAdapterPreference=SupportedOSPlatform("windows10.0.19041.0")
+DXCoreAdapterProperty=SupportedOSPlatform("windows10.0.19041.0")
+DXCoreAdapterState=SupportedOSPlatform("windows10.0.19041.0")
+DXCoreHardwareID=SupportedOSPlatform("windows10.0.19041.0")
+DXCoreNotificationType=SupportedOSPlatform("windows10.0.19041.0")
+DXCoreSegmentGroup=SupportedOSPlatform("windows10.0.19041.0")
+IDXCoreAdapter=SupportedOSPlatform("windows10.0.19041.0")
+IDXCoreAdapterFactory=SupportedOSPlatform("windows10.0.19041.0")
+IDXCoreAdapterList=SupportedOSPlatform("windows10.0.19041.0")
+PFN_DXCORE_NOTIFICATION_CALLBACK=SupportedOSPlatform("windows10.0.19041.0")
