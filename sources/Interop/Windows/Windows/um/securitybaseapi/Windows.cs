@@ -550,4 +550,13 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define SetFileSecurity SetFileSecurityW")]
     public static delegate*<char*, uint, void*, BOOL> SetFileSecurity => &SetFileSecurityW;
+
+    [NativeTypeName("#define SIGNING_LEVEL_FILE_CACHE_FLAG_NOT_VALIDATED 0x01")]
+    public const int SIGNING_LEVEL_FILE_CACHE_FLAG_NOT_VALIDATED = 0x01;
+
+    [NativeTypeName("#define SIGNING_LEVEL_FILE_CACHE_FLAG_VALIDATE_ONLY 0x04")]
+    public const int SIGNING_LEVEL_FILE_CACHE_FLAG_VALIDATE_ONLY = 0x04;
+
+    [NativeTypeName("#define SIGNING_LEVEL_MICROSOFT 8")]
+    public const int SIGNING_LEVEL_MICROSOFT = 8;
 }

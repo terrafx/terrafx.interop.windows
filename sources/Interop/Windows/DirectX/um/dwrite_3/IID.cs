@@ -1000,4 +1000,119 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_IDWriteBitmapRenderTarget2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x42, 0xA7, 0x53, 0xC5,
+                0x01, 0xFC,
+                0xDA, 0x44,
+                0xA6,
+                0x6E,
+                0xB8,
+                0xB9,
+                0xED,
+                0x6C,
+                0x39,
+                0x95
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDWritePaintReader
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x12, 0xE9, 0x28, 0x81,
+                0x97, 0x3B,
+                0xA5, 0x42,
+                0xAB,
+                0x6C,
+                0x24,
+                0xAA,
+                0xD3,
+                0xA8,
+                0x6E,
+                0x54
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDWriteFontFace7
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x5B, 0xB8, 0x45, 0x39,
+                0x95, 0xBC,
+                0xF7, 0x40,
+                0xB7,
+                0x2C,
+                0x8B,
+                0x73,
+                0xBF,
+                0xC7,
+                0xE1,
+                0x3B
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDWriteFactory8
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB5, 0x7F, 0x0A, 0xEE,
+                0xF4, 0xDE,
+                0x23, 0x4C,
+                0xA4,
+                0x54,
+                0xC9,
+                0xC7,
+                0xDC,
+                0x87,
+                0x83,
+                0x98
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDWriteBitmapRenderTarget3
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xDB, 0x37, 0xEC, 0xAE,
+                0x37, 0xC3,
+                0xF1, 0x40,
+                0x8E,
+                0x2A,
+                0x9A,
+                0x41,
+                0xB1,
+                0x67,
+                0xB2,
+                0x38
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

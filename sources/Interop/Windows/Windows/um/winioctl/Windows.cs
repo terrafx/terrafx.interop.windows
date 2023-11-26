@@ -598,6 +598,9 @@ public static unsafe partial class Windows
     [NativeTypeName("#define REQUEST_OPLOCK_OUTPUT_FLAG_MODES_PROVIDED (0x00000002)")]
     public const int REQUEST_OPLOCK_OUTPUT_FLAG_MODES_PROVIDED = (0x00000002);
 
+    [NativeTypeName("#define REQUEST_OPLOCK_OUTPUT_FLAG_WRITABLE_SECTION_PRESENT (0x00000004)")]
+    public const int REQUEST_OPLOCK_OUTPUT_FLAG_WRITABLE_SECTION_PRESENT = (0x00000004);
+
     [NativeTypeName("#define SD_GLOBAL_CHANGE_TYPE_MACHINE_SID 1")]
     public const int SD_GLOBAL_CHANGE_TYPE_MACHINE_SID = 1;
 
@@ -652,8 +655,8 @@ public static unsafe partial class Windows
     [NativeTypeName("#define CSV_QUERY_MDS_PATH_FLAG_SMB_BYPASS_CSV_ENABLED 0x4")]
     public const int CSV_QUERY_MDS_PATH_FLAG_SMB_BYPASS_CSV_ENABLED = 0x4;
 
-    [NativeTypeName("#define CHECKSUM_TYPE_UNCHANGED (-1)")]
-    public const int CHECKSUM_TYPE_UNCHANGED = (-1);
+    [NativeTypeName("#define CHECKSUM_TYPE_UNCHANGED (WORD  )0xFFFF")]
+    public const ushort CHECKSUM_TYPE_UNCHANGED = (ushort)(0xFFFF);
 
     [NativeTypeName("#define CHECKSUM_TYPE_NONE (0)")]
     public const int CHECKSUM_TYPE_NONE = (0);
@@ -667,8 +670,11 @@ public static unsafe partial class Windows
     [NativeTypeName("#define CHECKSUM_TYPE_ECC (3)")]
     public const int CHECKSUM_TYPE_ECC = (3);
 
-    [NativeTypeName("#define CHECKSUM_TYPE_FIRST_UNUSED_TYPE (4)")]
-    public const int CHECKSUM_TYPE_FIRST_UNUSED_TYPE = (4);
+    [NativeTypeName("#define CHECKSUM_TYPE_SHA256 (4)")]
+    public const int CHECKSUM_TYPE_SHA256 = (4);
+
+    [NativeTypeName("#define CHECKSUM_TYPE_FIRST_UNUSED_TYPE (5)")]
+    public const int CHECKSUM_TYPE_FIRST_UNUSED_TYPE = (5);
 
     [NativeTypeName("#define OFFLOAD_READ_FLAG_ALL_ZERO_BEYOND_CURRENT_RANGE (1)")]
     public const int OFFLOAD_READ_FLAG_ALL_ZERO_BEYOND_CURRENT_RANGE = (1);

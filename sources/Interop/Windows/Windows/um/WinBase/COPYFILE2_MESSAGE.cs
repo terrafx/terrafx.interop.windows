@@ -20,7 +20,7 @@ public partial struct COPYFILE2_MESSAGE
     public uint dwPadding;
 
     /// <include file='COPYFILE2_MESSAGE.xml' path='doc/member[@name="COPYFILE2_MESSAGE.Info"]/*' />
-    [NativeTypeName("__AnonymousRecord_WinBase_L5797_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L5809_C5")]
     public _Info_e__Union Info;
 
     /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union"]/*' />
@@ -29,32 +29,32 @@ public partial struct COPYFILE2_MESSAGE
     {
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.ChunkStarted"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_WinBase_L5799_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5811_C9")]
         public _ChunkStarted_e__Struct ChunkStarted;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.ChunkFinished"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_WinBase_L5810_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5822_C9")]
         public _ChunkFinished_e__Struct ChunkFinished;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.StreamStarted"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_WinBase_L5823_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5835_C9")]
         public _StreamStarted_e__Struct StreamStarted;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.StreamFinished"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_WinBase_L5832_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5844_C9")]
         public _StreamFinished_e__Struct StreamFinished;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.PollContinue"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_WinBase_L5843_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5855_C9")]
         public _PollContinue_e__Struct PollContinue;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.Error"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_WinBase_L5847_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5859_C9")]
         public _Error_e__Struct Error;
 
         /// <include file='_ChunkStarted_e__Struct.xml' path='doc/member[@name="_ChunkStarted_e__Struct"]/*' />

@@ -724,4 +724,73 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_ID2D1DeviceContext7
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF7, 0x1C, 0x89, 0xEC,
+                0x69, 0x9B,
+                0x51, 0x48,
+                0x9D,
+                0xEF,
+                0x4E,
+                0x09,
+                0x15,
+                0x77,
+                0x1E,
+                0x62
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ID2D1Device7
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x68, 0x89, 0x7C, 0xF0,
+                0x4E, 0xDD,
+                0xA6, 0x4B,
+                0x9C,
+                0xBD,
+                0xEB,
+                0x6D,
+                0x37,
+                0x52,
+                0xDC,
+                0xBB
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ID2D1Factory8
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x11, 0x93, 0x7C, 0x67,
+                0x6D, 0xF3,
+                0x1F, 0x4B,
+                0xAE,
+                0x86,
+                0x86,
+                0xD1,
+                0x22,
+                0x3F,
+                0xFD,
+                0x3A
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

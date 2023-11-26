@@ -17,7 +17,7 @@ public unsafe partial struct PROPSPEC
     public uint ulKind;
 
     /// <include file='PROPSPEC.xml' path='doc/member[@name="PROPSPEC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_PropIdlBase_L452_C43")]
+    [NativeTypeName("__AnonymousRecord_propidlbase_L452_C43")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.propid"]/*' />

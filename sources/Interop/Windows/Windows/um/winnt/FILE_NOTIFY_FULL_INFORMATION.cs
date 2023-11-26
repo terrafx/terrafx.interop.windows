@@ -43,7 +43,7 @@ public unsafe partial struct FILE_NOTIFY_FULL_INFORMATION
     public uint FileAttributes;
 
     /// <include file='FILE_NOTIFY_FULL_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_FULL_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14487_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14489_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='FILE_NOTIFY_FULL_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_FULL_INFORMATION.FileId"]/*' />

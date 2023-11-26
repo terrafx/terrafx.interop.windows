@@ -16,7 +16,7 @@ public static partial class RESOURCE
     [NativeTypeName("#define RESOURCE_MANAGER_MAXIMUM_OPTION 0x00000003")]
     public const int RESOURCE_MANAGER_MAXIMUM_OPTION = 0x00000003;
 
-    [NativeTypeName("#define RESOURCE_MANAGER_OBJECT_PATH L\"\\\\ResourceManager\\\\\"")]
+    [NativeTypeName("#define RESOURCE_MANAGER_OBJECT_PATH L\"\\ResourceManager\"")]
     public const string RESOURCE_MANAGER_OBJECT_PATH = "\\ResourceManager\\";
 
     [NativeTypeName("#define RESOURCE_MANAGER_OBJECT_NAME_LENGTH_IN_BYTES (sizeof(RESOURCE_MANAGER_OBJECT_PATH)+(38*sizeof(WCHAR)))")]

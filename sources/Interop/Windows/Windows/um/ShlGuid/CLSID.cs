@@ -338,6 +338,31 @@ public static partial class CLSID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_CUrlHistoryBoth
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3C, 0x98, 0x59, 0x66,
+                0x76, 0x84,
+                0xB4, 0x4E,
+                0xB7,
+                0x8C,
+                0xE5,
+                0x96,
+                0x8F,
+                0x32,
+                0x6B,
+                0xA0
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CURLSearchHook
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -31,7 +31,7 @@ public static partial class D3D11
     [NativeTypeName("#define D3D11_DEBUG_FEATURE_DISABLE_TILED_RESOURCE_MAPPING_TRACKING_AND_VALIDATION ( 0x80 )")]
     public const int D3D11_DEBUG_FEATURE_DISABLE_TILED_RESOURCE_MAPPING_TRACKING_AND_VALIDATION = (0x80);
 
-    [NativeTypeName("#define D3D11_REGKEY_PATH __TEXT(\"Software\\\\Microsoft\\\\Direct3D\")")]
+    [NativeTypeName("#define D3D11_REGKEY_PATH __TEXT(\"Software\\Microsoft\\Direct3D\")")]
     public const string D3D11_REGKEY_PATH = "Software\\Microsoft\\Direct3D";
 
     [NativeTypeName("#define D3D11_MUTE_DEBUG_OUTPUT __TEXT(\"MuteDebugOutput\")")]

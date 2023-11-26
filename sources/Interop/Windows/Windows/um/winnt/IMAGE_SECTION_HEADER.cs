@@ -15,7 +15,7 @@ public unsafe partial struct IMAGE_SECTION_HEADER
     public fixed byte Name[8];
 
     /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER.Misc"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L18655_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18686_C5")]
     public _Misc_e__Union Misc;
 
     /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER.VirtualAddress"]/*' />

@@ -18,7 +18,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC
     public D3D11_VPOV_DIMENSION ViewDimension;
 
     /// <include file='D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d11_L12003_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d11_L12004_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2D"]/*' />

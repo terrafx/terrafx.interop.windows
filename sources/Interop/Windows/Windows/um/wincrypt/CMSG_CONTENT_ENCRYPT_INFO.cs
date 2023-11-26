@@ -46,7 +46,7 @@ public unsafe partial struct CMSG_CONTENT_ENCRYPT_INFO
     public uint dwEncryptFlags;
 
     /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L8453_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L8457_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.dwFlags"]/*' />

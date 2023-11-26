@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 public partial struct D3D11_VIDEO_COLOR
 {
     /// <include file='D3D11_VIDEO_COLOR.xml' path='doc/member[@name="D3D11_VIDEO_COLOR.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d11_L10762_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d11_L10763_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.YCbCr"]/*' />

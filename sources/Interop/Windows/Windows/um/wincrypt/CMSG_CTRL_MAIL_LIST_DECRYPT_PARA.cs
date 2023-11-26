@@ -32,7 +32,7 @@ public unsafe partial struct CMSG_CTRL_MAIL_LIST_DECRYPT_PARA
     public uint dwKeyChoice;
 
     /// <include file='CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L8146_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L8150_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hKeyEncryptionKey"]/*' />

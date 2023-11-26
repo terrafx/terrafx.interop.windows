@@ -40,6 +40,9 @@ public static partial class CONVERT10
     [NativeTypeName("#define CONVERT10_E_STG_DIB_TO_BITMAP _HRESULT_TYPEDEF_(0x800401C6L)")]
     public const int CONVERT10_E_STG_DIB_TO_BITMAP = unchecked((int)(0x800401C6));
 
+    [NativeTypeName("#define CONVERT10_E_OLELINK_DISABLED _HRESULT_TYPEDEF_(0x800401C7L)")]
+    public const int CONVERT10_E_OLELINK_DISABLED = unchecked((int)(0x800401C7));
+
     [NativeTypeName("#define CONVERT10_S_NO_PRESENTATION _HRESULT_TYPEDEF_(0x000401C0L)")]
     public const int CONVERT10_S_NO_PRESENTATION = ((int)(0x000401C0));
 }

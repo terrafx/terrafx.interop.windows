@@ -755,7 +755,7 @@ public static partial class Windows
     [NativeTypeName("#define PERFORMANCE_DATA_VERSION 1")]
     public const int PERFORMANCE_DATA_VERSION = 1;
 
-    [NativeTypeName("#define UNIFIEDBUILDREVISION_KEY L\"\\\\Registry\\\\Machine\\\\Software\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\"")]
+    [NativeTypeName("#define UNIFIEDBUILDREVISION_KEY L\"\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion\"")]
     public const string UNIFIEDBUILDREVISION_KEY = "\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion";
 
     [NativeTypeName("#define UNIFIEDBUILDREVISION_VALUE L\"UBR\"")]

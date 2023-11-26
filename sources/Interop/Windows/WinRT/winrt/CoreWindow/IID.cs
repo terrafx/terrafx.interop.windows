@@ -103,4 +103,27 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_ICoreInputInterop2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xD7, 0xAC, 0xA2, 0xB8,
+                0xF0, 0xA0,
+                0xEE, 0x40,
+                0x8E,
+                0xE7,
+                0xC8,
+                0x2F,
+                0x59,
+                0xCC,
+                0x5C,
+                0xD4
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

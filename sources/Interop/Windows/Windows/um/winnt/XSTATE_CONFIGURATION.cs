@@ -25,7 +25,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
     public uint Size;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13872_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13874_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Features"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L13874_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L13876_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

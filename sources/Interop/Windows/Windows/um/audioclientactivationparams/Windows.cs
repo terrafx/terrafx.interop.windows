@@ -7,6 +7,6 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
-    [NativeTypeName("#define VIRTUAL_AUDIO_DEVICE_PROCESS_LOOPBACK L\"VAD\\\\Process_Loopback\"")]
+    [NativeTypeName("#define VIRTUAL_AUDIO_DEVICE_PROCESS_LOOPBACK L\"VAD\\Process_Loopback\"")]
     public const string VIRTUAL_AUDIO_DEVICE_PROCESS_LOOPBACK = "VAD\\Process_Loopback";
 }

@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CONFIG_CI_PROV_INFO_RESULT.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO_RESULT"]/*' />
-public unsafe partial struct CONFIG_CI_PROV_INFO_RESULT
+public partial struct CONFIG_CI_PROV_INFO_RESULT
 {
     /// <include file='CONFIG_CI_PROV_INFO_RESULT.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO_RESULT.hr"]/*' />
     public HRESULT hr;
@@ -22,11 +22,4 @@ public unsafe partial struct CONFIG_CI_PROV_INFO_RESULT
     /// <include file='CONFIG_CI_PROV_INFO_RESULT.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO_RESULT.fIsExplicitDeny"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte fIsExplicitDeny;
-
-    /// <include file='CONFIG_CI_PROV_INFO_RESULT.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO_RESULT.pbCalculatedFileHash"]/*' />
-    public byte* pbCalculatedFileHash;
-
-    /// <include file='CONFIG_CI_PROV_INFO_RESULT.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO_RESULT.cbCalculatedFileHash"]/*' />
-    [NativeTypeName("DWORD")]
-    public uint cbCalculatedFileHash;
 }

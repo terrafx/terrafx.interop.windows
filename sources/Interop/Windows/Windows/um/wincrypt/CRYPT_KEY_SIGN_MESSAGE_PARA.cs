@@ -21,7 +21,7 @@ public unsafe partial struct CRYPT_KEY_SIGN_MESSAGE_PARA
     public uint dwMsgAndCertEncodingType;
 
     /// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L16172_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L16176_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA.dwKeySpec"]/*' />

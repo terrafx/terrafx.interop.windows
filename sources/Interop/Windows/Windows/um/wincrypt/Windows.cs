@@ -1372,7 +1372,7 @@ public static unsafe partial class Windows
     [NativeTypeName("#define EXPO_OFFLOAD_FUNC_NAME \"OffloadModExpo\"")]
     public static ReadOnlySpan<byte> EXPO_OFFLOAD_FUNC_NAME => "OffloadModExpo"u8;
 
-    [NativeTypeName("#define szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS \"Software\\\\Policies\\\\Microsoft\\\\Cryptography\"")]
+    [NativeTypeName("#define szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS \"Software\\Policies\\Microsoft\\Cryptography\"")]
     public static ReadOnlySpan<byte> szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS => "Software\\Policies\\Microsoft\\Cryptography"u8;
 
     [NativeTypeName("#define szKEY_CACHE_ENABLED \"CachePrivateKeys\"")]
@@ -1446,6 +1446,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define CMS_SIGNER_INFO ((LPCSTR) 501)")]
     public static sbyte* CMS_SIGNER_INFO => ((sbyte*)(501));
+
+    [NativeTypeName("#define wszURI_NTDS_OBJECTSID_PREFIX L\"tag:microsoft.com,2022-09-14:sid:\"")]
+    public const string wszURI_NTDS_OBJECTSID_PREFIX = "tag:microsoft.com,2022-09-14:sid:";
 
     [NativeTypeName("#define SITE_PIN_RULES_ALL_SUBDOMAINS_FLAG 0x1")]
     public const int SITE_PIN_RULES_ALL_SUBDOMAINS_FLAG = 0x1;

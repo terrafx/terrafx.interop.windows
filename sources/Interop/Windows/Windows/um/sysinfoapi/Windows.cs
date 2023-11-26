@@ -236,6 +236,11 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL SetComputerNameExA(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("LPCSTR")] sbyte* lpBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeveloperDriveEnablementState"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22631.0")]
+    public static extern DEVELOPER_DRIVE_ENABLEMENT_STATE GetDeveloperDriveEnablementState();
+
     [NativeTypeName("#define USER_CET_ENVIRONMENT_WIN32_PROCESS 0x00000000")]
     public const int USER_CET_ENVIRONMENT_WIN32_PROCESS = 0x00000000;
 

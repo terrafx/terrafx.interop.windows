@@ -1,5 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+DWRITE_PAINT_FEATURE_LEVEL
 --file
 um-d2d1_3.h
 --methodClassName

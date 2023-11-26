@@ -864,16 +864,16 @@ public static unsafe partial class CERT
     [NativeTypeName("#define CERT_SYSTEM_STORE_LOCAL_MACHINE_WCOS (CERT_SYSTEM_STORE_LOCAL_MACHINE_WCOS_ID << \\\r\n        CERT_SYSTEM_STORE_LOCATION_SHIFT)")]
     public const int CERT_SYSTEM_STORE_LOCAL_MACHINE_WCOS = (10 << 16);
 
-    [NativeTypeName("#define CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"Software\\\\Policies\\\\Microsoft\\\\SystemCertificates\"")]
+    [NativeTypeName("#define CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"Software\\Policies\\Microsoft\\SystemCertificates\"")]
     public const string CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH = "Software\\Policies\\Microsoft\\SystemCertificates";
 
-    [NativeTypeName("#define CERT_EFSBLOB_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\\\EFS\"")]
+    [NativeTypeName("#define CERT_EFSBLOB_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\EFS\"")]
     public const string CERT_EFSBLOB_REGPATH = "Software\\Policies\\Microsoft\\SystemCertificates\\EFS";
 
     [NativeTypeName("#define CERT_EFSBLOB_VALUE_NAME L\"EFSBlob\"")]
     public const string CERT_EFSBLOB_VALUE_NAME = "EFSBlob";
 
-    [NativeTypeName("#define CERT_PROT_ROOT_FLAGS_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\\\Root\\\\ProtectedRoots\"")]
+    [NativeTypeName("#define CERT_PROT_ROOT_FLAGS_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\Root\\ProtectedRoots\"")]
     public const string CERT_PROT_ROOT_FLAGS_REGPATH = "Software\\Policies\\Microsoft\\SystemCertificates\\Root\\ProtectedRoots";
 
     [NativeTypeName("#define CERT_PROT_ROOT_FLAGS_VALUE_NAME L\"Flags\"")]
@@ -909,16 +909,16 @@ public static unsafe partial class CERT
     [NativeTypeName("#define CERT_PROT_ROOT_PEER_USAGES_VALUE_NAME_A \"PeerUsages\"")]
     public static ReadOnlySpan<byte> CERT_PROT_ROOT_PEER_USAGES_VALUE_NAME_A => "PeerUsages"u8;
 
-    [NativeTypeName("#define CERT_PROT_ROOT_PEER_USAGES_DEFAULT_A szOID_PKIX_KP_CLIENT_AUTH \"\\0\"                  \\\r\n    szOID_PKIX_KP_EMAIL_PROTECTION \"\\0\"             \\\r\n    szOID_KP_EFS \"\\0\"")]
-    public static ReadOnlySpan<byte> CERT_PROT_ROOT_PEER_USAGES_DEFAULT_A => "1.3.6.1.5.5.7.3.2\\01.3.6.1.5.5.7.3.4\\01.3.6.1.4.1.311.10.3.4\\0"u8;
+    [NativeTypeName("#define CERT_PROT_ROOT_PEER_USAGES_DEFAULT_A szOID_PKIX_KP_CLIENT_AUTH \"\0\"                  \\\r\n    szOID_PKIX_KP_EMAIL_PROTECTION \"\0\"             \\\r\n    szOID_KP_EFS \"\0\"")]
+    public static ReadOnlySpan<byte> CERT_PROT_ROOT_PEER_USAGES_DEFAULT_A => "1.3.6.1.5.5.7.3.2\01.3.6.1.5.5.7.3.4\01.3.6.1.4.1.311.10.3.4\0"u8;
 
-    [NativeTypeName("#define CERT_TRUST_PUB_SAFER_GROUP_POLICY_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\\\TrustedPublisher\\\\Safer\"")]
+    [NativeTypeName("#define CERT_TRUST_PUB_SAFER_GROUP_POLICY_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\TrustedPublisher\\Safer\"")]
     public const string CERT_TRUST_PUB_SAFER_GROUP_POLICY_REGPATH = "Software\\Policies\\Microsoft\\SystemCertificates\\TrustedPublisher\\Safer";
 
-    [NativeTypeName("#define CERT_LOCAL_MACHINE_SYSTEM_STORE_REGPATH L\"Software\\\\Microsoft\\\\SystemCertificates\"")]
+    [NativeTypeName("#define CERT_LOCAL_MACHINE_SYSTEM_STORE_REGPATH L\"Software\\Microsoft\\SystemCertificates\"")]
     public const string CERT_LOCAL_MACHINE_SYSTEM_STORE_REGPATH = "Software\\Microsoft\\SystemCertificates";
 
-    [NativeTypeName("#define CERT_TRUST_PUB_SAFER_LOCAL_MACHINE_REGPATH CERT_LOCAL_MACHINE_SYSTEM_STORE_REGPATH L\"\\\\TrustedPublisher\\\\Safer\"")]
+    [NativeTypeName("#define CERT_TRUST_PUB_SAFER_LOCAL_MACHINE_REGPATH CERT_LOCAL_MACHINE_SYSTEM_STORE_REGPATH L\"\\TrustedPublisher\\Safer\"")]
     public const string CERT_TRUST_PUB_SAFER_LOCAL_MACHINE_REGPATH = "Software\\Microsoft\\SystemCertificates\\TrustedPublisher\\Safer";
 
     [NativeTypeName("#define CERT_TRUST_PUB_AUTHENTICODE_FLAGS_VALUE_NAME L\"AuthenticodeFlags\"")]
@@ -942,13 +942,13 @@ public static unsafe partial class CERT
     [NativeTypeName("#define CERT_TRUST_PUB_CHECK_TIMESTAMP_REV_FLAG 0x00000200")]
     public const int CERT_TRUST_PUB_CHECK_TIMESTAMP_REV_FLAG = 0x00000200;
 
-    [NativeTypeName("#define CERT_OCM_SUBCOMPONENTS_LOCAL_MACHINE_REGPATH L\"SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Setup\\\\OC Manager\\\\Subcomponents\"")]
+    [NativeTypeName("#define CERT_OCM_SUBCOMPONENTS_LOCAL_MACHINE_REGPATH L\"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\\OC Manager\\Subcomponents\"")]
     public const string CERT_OCM_SUBCOMPONENTS_LOCAL_MACHINE_REGPATH = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\\OC Manager\\Subcomponents";
 
     [NativeTypeName("#define CERT_OCM_SUBCOMPONENTS_ROOT_AUTO_UPDATE_VALUE_NAME L\"RootAutoUpdate\"")]
     public const string CERT_OCM_SUBCOMPONENTS_ROOT_AUTO_UPDATE_VALUE_NAME = "RootAutoUpdate";
 
-    [NativeTypeName("#define CERT_DISABLE_ROOT_AUTO_UPDATE_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\\\AuthRoot\"")]
+    [NativeTypeName("#define CERT_DISABLE_ROOT_AUTO_UPDATE_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\AuthRoot\"")]
     public const string CERT_DISABLE_ROOT_AUTO_UPDATE_REGPATH = "Software\\Policies\\Microsoft\\SystemCertificates\\AuthRoot";
 
     [NativeTypeName("#define CERT_DISABLE_ROOT_AUTO_UPDATE_VALUE_NAME L\"DisableRootAutoUpdate\"")]
@@ -960,7 +960,7 @@ public static unsafe partial class CERT
     [NativeTypeName("#define CERT_DISABLE_PIN_RULES_AUTO_UPDATE_VALUE_NAME L\"DisablePinRulesAutoUpdate\"")]
     public const string CERT_DISABLE_PIN_RULES_AUTO_UPDATE_VALUE_NAME = "DisablePinRulesAutoUpdate";
 
-    [NativeTypeName("#define CERT_AUTO_UPDATE_LOCAL_MACHINE_REGPATH CERT_LOCAL_MACHINE_SYSTEM_STORE_REGPATH L\"\\\\AuthRoot\\\\AutoUpdate\"")]
+    [NativeTypeName("#define CERT_AUTO_UPDATE_LOCAL_MACHINE_REGPATH CERT_LOCAL_MACHINE_SYSTEM_STORE_REGPATH L\"\\AuthRoot\\AutoUpdate\"")]
     public const string CERT_AUTO_UPDATE_LOCAL_MACHINE_REGPATH = "Software\\Microsoft\\SystemCertificates\\AuthRoot\\AutoUpdate";
 
     [NativeTypeName("#define CERT_AUTO_UPDATE_ROOT_DIR_URL_VALUE_NAME L\"RootDirUrl\"")]
@@ -1074,7 +1074,7 @@ public static unsafe partial class CERT
     [NativeTypeName("#define CERT_REGISTRY_STORE_EXTERNAL_FLAG 0x100000")]
     public const int CERT_REGISTRY_STORE_EXTERNAL_FLAG = 0x100000;
 
-    [NativeTypeName("#define CERT_IE_DIRTY_FLAGS_REGPATH L\"Software\\\\Microsoft\\\\Cryptography\\\\IEDirtyFlags\"")]
+    [NativeTypeName("#define CERT_IE_DIRTY_FLAGS_REGPATH L\"Software\\Microsoft\\Cryptography\\IEDirtyFlags\"")]
     public const string CERT_IE_DIRTY_FLAGS_REGPATH = "Software\\Microsoft\\Cryptography\\IEDirtyFlags";
 
     [NativeTypeName("#define CERT_FILE_STORE_COMMIT_ENABLE_FLAG 0x10000")]
@@ -1794,7 +1794,7 @@ public static unsafe partial class CERT
     [NativeTypeName("#define CERT_CREATE_SELFSIGN_NO_KEY_INFO 2")]
     public const int CERT_CREATE_SELFSIGN_NO_KEY_INFO = 2;
 
-    [NativeTypeName("#define CERT_CHAIN_CONFIG_REGPATH L\"Software\\\\Microsoft\\\\Cryptography\\\\OID\\\\EncodingType 0\\\\CertDllCreateCertificateChainEngine\\\\Config\"")]
+    [NativeTypeName("#define CERT_CHAIN_CONFIG_REGPATH L\"Software\\Microsoft\\Cryptography\\OID\\EncodingType 0\\CertDllCreateCertificateChainEngine\\Config\"")]
     public const string CERT_CHAIN_CONFIG_REGPATH = "Software\\Microsoft\\Cryptography\\OID\\EncodingType 0\\CertDllCreateCertificateChainEngine\\Config";
 
     [NativeTypeName("#define CERT_CHAIN_MAX_URL_RETRIEVAL_BYTE_COUNT_VALUE_NAME L\"MaxUrlRetrievalByteCount\"")]
@@ -2115,7 +2115,7 @@ public static unsafe partial class CERT
     [NativeTypeName("#define CERT_SRV_OCSP_RESP_MAX_SYNC_CERT_FILE_SECONDS_DEFAULT (1 * 60 * 60)")]
     public const int CERT_SRV_OCSP_RESP_MAX_SYNC_CERT_FILE_SECONDS_DEFAULT = (1 * 60 * 60);
 
-    [NativeTypeName("#define CERT_GROUP_POLICY_CHAIN_CONFIG_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\\\ChainEngine\\\\Config\"")]
+    [NativeTypeName("#define CERT_GROUP_POLICY_CHAIN_CONFIG_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\ChainEngine\\Config\"")]
     public const string CERT_GROUP_POLICY_CHAIN_CONFIG_REGPATH = "Software\\Policies\\Microsoft\\SystemCertificates\\ChainEngine\\Config";
 
     [NativeTypeName("#define CERT_CHAIN_URL_RETRIEVAL_TIMEOUT_MILLISECONDS_VALUE_NAME L\"ChainUrlRetrievalTimeoutMilliseconds\"")]

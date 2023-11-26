@@ -72,7 +72,7 @@ public static unsafe partial class DirectX
     [NativeTypeName("#define REGSTR_KEY_DDHW_DRIVERNAME \"DriverName\"")]
     public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DRIVERNAME => "DriverName"u8;
 
-    [NativeTypeName("#define REGSTR_PATH_DDHW \"Hardware\\\\DirectDrawDrivers\"")]
+    [NativeTypeName("#define REGSTR_PATH_DDHW \"Hardware\\DirectDrawDrivers\"")]
     public static ReadOnlySpan<byte> REGSTR_PATH_DDHW => "Hardware\\DirectDrawDrivers"u8;
 
     [NativeTypeName("#define DD_ROP_SPACE (256/32)")]

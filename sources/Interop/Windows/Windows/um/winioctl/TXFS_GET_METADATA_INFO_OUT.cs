@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct TXFS_GET_METADATA_INFO_OUT
 {
     /// <include file='TXFS_GET_METADATA_INFO_OUT.xml' path='doc/member[@name="TXFS_GET_METADATA_INFO_OUT.TxfFileId"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L13302_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L13315_C5")]
     public _TxfFileId_e__Struct TxfFileId;
 
     /// <include file='TXFS_GET_METADATA_INFO_OUT.xml' path='doc/member[@name="TXFS_GET_METADATA_INFO_OUT.LockingTransaction"]/*' />
