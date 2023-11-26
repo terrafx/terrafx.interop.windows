@@ -28,6 +28,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("EC891CF7-9B69-4851-9DEF-4E0915771E62")]
 [NativeTypeName("struct ID2D1DeviceContext7 : ID2D1DeviceContext6")]
 [NativeInheritance("ID2D1DeviceContext6")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct ID2D1DeviceContext7 : ID2D1DeviceContext7.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1DeviceContext7));
@@ -178,8 +179,6 @@ public unsafe partial struct ID2D1DeviceContext7 : ID2D1DeviceContext7.Interface
         return CreateImageSourceFromWic(wicBitmapSource, loadingOptions, D2D1_ALPHA_MODE_UNKNOWN, imageSource);
     }
 
-
-    [SupportedOSPlatform("windows10.0")]
     public HRESULT CreateImageSourceFromWic(IWICBitmapSource* wicBitmapSource, ID2D1ImageSourceFromWic** imageSource)
     {
         return CreateImageSourceFromWic(wicBitmapSource, D2D1_IMAGE_SOURCE_LOADING_OPTIONS_NONE, D2D1_ALPHA_MODE_UNKNOWN, imageSource);

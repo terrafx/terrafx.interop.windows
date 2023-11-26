@@ -121,7 +121,7 @@ public static unsafe partial class Windows
     public static extern HRESULT PathAllocCanonicalize([NativeTypeName("PCWSTR")] char* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] char** ppszPathOut);
 
     [NativeTypeName("#define VOLUME_PREFIX L\"\\\\?\\Volume\"")]
-    public const string VOLUME_PREFIX = "\\?\\Volume";
+    public const string VOLUME_PREFIX = "\\\\?\\Volume";
 
     [NativeTypeName("#define VOLUME_PREFIX_LEN (ARRAYSIZE(VOLUME_PREFIX) - 1)")]
     public const uint VOLUME_PREFIX_LEN = ((11) - 1);
