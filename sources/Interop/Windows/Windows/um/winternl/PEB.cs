@@ -3,7 +3,10 @@
 // Ported from um/winternl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -12,14 +15,14 @@ public unsafe partial struct PEB
 {
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved1"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte Reserved1[2];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.BeingDebugged"]/*' />
     public byte BeingDebugged;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved2"]/*' />
     [NativeTypeName("BYTE[1]")]
-    public fixed byte Reserved2[1];
+    public _Reserved2_e__FixedBuffer Reserved2;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved3"]/*' />
     [NativeTypeName("PVOID[2]")]
@@ -67,7 +70,7 @@ public unsafe partial struct PEB
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved10"]/*' />
     [NativeTypeName("BYTE[96]")]
-    public fixed byte Reserved10[96];
+    public _Reserved10_e__FixedBuffer Reserved10;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.PostProcessInitRoutine"]/*' />
     [NativeTypeName("PPS_POST_PROCESS_INIT_ROUTINE")]
@@ -75,7 +78,7 @@ public unsafe partial struct PEB
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved11"]/*' />
     [NativeTypeName("BYTE[128]")]
-    public fixed byte Reserved11[128];
+    public _Reserved11_e__FixedBuffer Reserved11;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved12"]/*' />
     [NativeTypeName("PVOID[1]")]
@@ -84,6 +87,33 @@ public unsafe partial struct PEB
     /// <include file='PEB.xml' path='doc/member[@name="PEB.SessionId"]/*' />
     [NativeTypeName("ULONG")]
     public uint SessionId;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*' />
+    public partial struct _Reserved2_e__FixedBuffer
+    {
+        public byte e0;
+
+        [UnscopedRef]
+        public ref byte this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 
     /// <include file='_Reserved3_e__FixedBuffer.xml' path='doc/member[@name="_Reserved3_e__FixedBuffer"]/*' />
     public unsafe partial struct _Reserved3_e__FixedBuffer
@@ -184,6 +214,20 @@ public unsafe partial struct PEB
                 }
             }
         }
+    }
+
+    /// <include file='_Reserved10_e__FixedBuffer.xml' path='doc/member[@name="_Reserved10_e__FixedBuffer"]/*' />
+    [InlineArray(96)]
+    public partial struct _Reserved10_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_Reserved11_e__FixedBuffer.xml' path='doc/member[@name="_Reserved11_e__FixedBuffer"]/*' />
+    [InlineArray(128)]
+    public partial struct _Reserved11_e__FixedBuffer
+    {
+        public byte e0;
     }
 
     /// <include file='_Reserved12_e__FixedBuffer.xml' path='doc/member[@name="_Reserved12_e__FixedBuffer"]/*' />

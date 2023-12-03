@@ -92,7 +92,7 @@ public partial struct MIB_IPMCAST_MFE_STATS
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

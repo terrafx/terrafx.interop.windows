@@ -3,13 +3,14 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DRIVERSTATUS.xml' path='doc/member[@name="DRIVERSTATUS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct DRIVERSTATUS
+public partial struct DRIVERSTATUS
 {
     /// <include file='DRIVERSTATUS.xml' path='doc/member[@name="DRIVERSTATUS.bDriverError"]/*' />
     public byte bDriverError;
@@ -19,9 +20,25 @@ public unsafe partial struct DRIVERSTATUS
 
     /// <include file='DRIVERSTATUS.xml' path='doc/member[@name="DRIVERSTATUS.bReserved"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte bReserved[2];
+    public _bReserved_e__FixedBuffer bReserved;
 
     /// <include file='DRIVERSTATUS.xml' path='doc/member[@name="DRIVERSTATUS.dwReserved"]/*' />
     [NativeTypeName("DWORD[2]")]
-    public fixed uint dwReserved[2];
+    public _dwReserved_e__FixedBuffer dwReserved;
+
+    /// <include file='_bReserved_e__FixedBuffer.xml' path='doc/member[@name="_bReserved_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(2)]
+    public partial struct _bReserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_dwReserved_e__FixedBuffer.xml' path='doc/member[@name="_dwReserved_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(2)]
+    public partial struct _dwReserved_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

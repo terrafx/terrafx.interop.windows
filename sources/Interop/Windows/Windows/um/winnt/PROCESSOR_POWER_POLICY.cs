@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY"]/*' />
-public unsafe partial struct PROCESSOR_POWER_POLICY
+public partial struct PROCESSOR_POWER_POLICY
 {
     /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Revision"]/*' />
     [NativeTypeName("DWORD")]
@@ -19,7 +19,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY
 
     /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Spare"]/*' />
     [NativeTypeName("BYTE[3]")]
-    public fixed byte Spare[3];
+    public _Spare_e__FixedBuffer Spare;
 
     public uint _bitfield;
 
@@ -64,6 +64,13 @@ public unsafe partial struct PROCESSOR_POWER_POLICY
     /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Policy"]/*' />
     [NativeTypeName("PROCESSOR_POWER_POLICY_INFO[3]")]
     public _Policy_e__FixedBuffer Policy;
+
+    /// <include file='_Spare_e__FixedBuffer.xml' path='doc/member[@name="_Spare_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _Spare_e__FixedBuffer
+    {
+        public byte e0;
+    }
 
     /// <include file='_Policy_e__FixedBuffer.xml' path='doc/member[@name="_Policy_e__FixedBuffer"]/*' />
     [InlineArray(3)]

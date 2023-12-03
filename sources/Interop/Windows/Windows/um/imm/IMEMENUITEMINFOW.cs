@@ -3,10 +3,12 @@
 // Ported from um/imm.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMEMENUITEMINFOW.xml' path='doc/member[@name="IMEMENUITEMINFOW"]/*' />
-public unsafe partial struct IMEMENUITEMINFOW
+public partial struct IMEMENUITEMINFOW
 {
     /// <include file='IMEMENUITEMINFOW.xml' path='doc/member[@name="IMEMENUITEMINFOW.cbSize"]/*' />
     public uint cbSize;
@@ -32,8 +34,15 @@ public unsafe partial struct IMEMENUITEMINFOW
 
     /// <include file='IMEMENUITEMINFOW.xml' path='doc/member[@name="IMEMENUITEMINFOW.szString"]/*' />
     [NativeTypeName("WCHAR[80]")]
-    public fixed char szString[80];
+    public _szString_e__FixedBuffer szString;
 
     /// <include file='IMEMENUITEMINFOW.xml' path='doc/member[@name="IMEMENUITEMINFOW.hbmpItem"]/*' />
     public HBITMAP hbmpItem;
+
+    /// <include file='_szString_e__FixedBuffer.xml' path='doc/member[@name="_szString_e__FixedBuffer"]/*' />
+    [InlineArray(80)]
+    public partial struct _szString_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

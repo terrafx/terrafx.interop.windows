@@ -3,13 +3,14 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIXERLINEA.xml' path='doc/member[@name="MIXERLINEA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct MIXERLINEA
+public partial struct MIXERLINEA
 {
     /// <include file='MIXERLINEA.xml' path='doc/member[@name="MIXERLINEA.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
@@ -53,11 +54,11 @@ public unsafe partial struct MIXERLINEA
 
     /// <include file='MIXERLINEA.xml' path='doc/member[@name="MIXERLINEA.szShortName"]/*' />
     [NativeTypeName("CHAR[16]")]
-    public fixed sbyte szShortName[16];
+    public _szShortName_e__FixedBuffer szShortName;
 
     /// <include file='MIXERLINEA.xml' path='doc/member[@name="MIXERLINEA.szName"]/*' />
     [NativeTypeName("CHAR[64]")]
-    public fixed sbyte szName[64];
+    public _szName_e__FixedBuffer szName;
 
     /// <include file='MIXERLINEA.xml' path='doc/member[@name="MIXERLINEA.Target"]/*' />
     [NativeTypeName("__AnonymousRecord_mmeapi_L1879_C5")]
@@ -65,7 +66,7 @@ public unsafe partial struct MIXERLINEA
 
     /// <include file='_Target_e__Struct.xml' path='doc/member[@name="_Target_e__Struct"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct _Target_e__Struct
+    public partial struct _Target_e__Struct
     {
         /// <include file='_Target_e__Struct.xml' path='doc/member[@name="_Target_e__Struct.dwType"]/*' />
         [NativeTypeName("DWORD")]
@@ -89,6 +90,30 @@ public unsafe partial struct MIXERLINEA
 
         /// <include file='_Target_e__Struct.xml' path='doc/member[@name="_Target_e__Struct.szPname"]/*' />
         [NativeTypeName("CHAR[32]")]
-        public fixed sbyte szPname[32];
+        public _szPname_e__FixedBuffer szPname;
+
+        /// <include file='_szPname_e__FixedBuffer.xml' path='doc/member[@name="_szPname_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        [InlineArray(32)]
+        public partial struct _szPname_e__FixedBuffer
+        {
+            public sbyte e0;
+        }
+    }
+
+    /// <include file='_szShortName_e__FixedBuffer.xml' path='doc/member[@name="_szShortName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(16)]
+    public partial struct _szShortName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(64)]
+    public partial struct _szName_e__FixedBuffer
+    {
+        public sbyte e0;
     }
 }

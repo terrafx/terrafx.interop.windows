@@ -40,7 +40,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

@@ -3,12 +3,13 @@
 // Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC"]/*' />
-public unsafe partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC
+public partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC
 {
     /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.Format"]/*' />
     public DXGI_FORMAT Format;
@@ -24,11 +25,18 @@ public unsafe partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC
 
     /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.BackgroundColor"]/*' />
     [NativeTypeName("FLOAT[4]")]
-    public fixed float BackgroundColor[4];
+    public _BackgroundColor_e__FixedBuffer BackgroundColor;
 
     /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.FrameRate"]/*' />
     public DXGI_RATIONAL FrameRate;
 
     /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.EnableStereo"]/*' />
     public BOOL EnableStereo;
+
+    /// <include file='_BackgroundColor_e__FixedBuffer.xml' path='doc/member[@name="_BackgroundColor_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _BackgroundColor_e__FixedBuffer
+    {
+        public float e0;
+    }
 }

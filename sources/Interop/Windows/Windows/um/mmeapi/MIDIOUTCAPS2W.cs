@@ -4,13 +4,14 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIDIOUTCAPS2W.xml' path='doc/member[@name="MIDIOUTCAPS2W"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct MIDIOUTCAPS2W
+public partial struct MIDIOUTCAPS2W
 {
     /// <include file='MIDIOUTCAPS2W.xml' path='doc/member[@name="MIDIOUTCAPS2W.wMid"]/*' />
     [NativeTypeName("WORD")]
@@ -26,7 +27,7 @@ public unsafe partial struct MIDIOUTCAPS2W
 
     /// <include file='MIDIOUTCAPS2W.xml' path='doc/member[@name="MIDIOUTCAPS2W.szPname"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed char szPname[32];
+    public _szPname_e__FixedBuffer szPname;
 
     /// <include file='MIDIOUTCAPS2W.xml' path='doc/member[@name="MIDIOUTCAPS2W.wTechnology"]/*' />
     [NativeTypeName("WORD")]
@@ -56,4 +57,12 @@ public unsafe partial struct MIDIOUTCAPS2W
 
     /// <include file='MIDIOUTCAPS2W.xml' path='doc/member[@name="MIDIOUTCAPS2W.NameGuid"]/*' />
     public Guid NameGuid;
+
+    /// <include file='_szPname_e__FixedBuffer.xml' path='doc/member[@name="_szPname_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(32)]
+    public partial struct _szPname_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

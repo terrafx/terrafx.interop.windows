@@ -3,13 +3,14 @@
 // Ported from um/SrRestorePtApi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='RESTOREPOINTINFOW.xml' path='doc/member[@name="RESTOREPOINTINFOW"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct RESTOREPOINTINFOW
+public partial struct RESTOREPOINTINFOW
 {
     /// <include file='RESTOREPOINTINFOW.xml' path='doc/member[@name="RESTOREPOINTINFOW.dwEventType"]/*' />
     [NativeTypeName("DWORD")]
@@ -25,5 +26,13 @@ public unsafe partial struct RESTOREPOINTINFOW
 
     /// <include file='RESTOREPOINTINFOW.xml' path='doc/member[@name="RESTOREPOINTINFOW.szDescription"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed char szDescription[256];
+    public _szDescription_e__FixedBuffer szDescription;
+
+    /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(256)]
+    public partial struct _szDescription_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

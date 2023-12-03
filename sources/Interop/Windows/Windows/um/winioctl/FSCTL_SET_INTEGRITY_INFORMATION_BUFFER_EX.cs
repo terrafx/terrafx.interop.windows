@@ -3,10 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX.xml' path='doc/member[@name="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX"]/*' />
-public unsafe partial struct FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX
+public partial struct FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX
 {
     /// <include file='FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX.xml' path='doc/member[@name="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX.EnableIntegrity"]/*' />
     public byte EnableIntegrity;
@@ -27,5 +29,12 @@ public unsafe partial struct FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX
 
     /// <include file='FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX.xml' path='doc/member[@name="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX.Reserved2"]/*' />
     [NativeTypeName("BYTE[7]")]
-    public fixed byte Reserved2[7];
+    public _Reserved2_e__FixedBuffer Reserved2;
+
+    /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*' />
+    [InlineArray(7)]
+    public partial struct _Reserved2_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

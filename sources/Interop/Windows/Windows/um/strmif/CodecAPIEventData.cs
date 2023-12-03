@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CodecAPIEventData.xml' path='doc/member[@name="CodecAPIEventData"]/*' />
-public unsafe partial struct CodecAPIEventData
+public partial struct CodecAPIEventData
 {
     /// <include file='CodecAPIEventData.xml' path='doc/member[@name="CodecAPIEventData.guid"]/*' />
     public Guid guid;
@@ -19,5 +20,12 @@ public unsafe partial struct CodecAPIEventData
 
     /// <include file='CodecAPIEventData.xml' path='doc/member[@name="CodecAPIEventData.reserved"]/*' />
     [NativeTypeName("DWORD[3]")]
-    public fixed uint reserved[3];
+    public _reserved_e__FixedBuffer reserved;
+
+    /// <include file='_reserved_e__FixedBuffer.xml' path='doc/member[@name="_reserved_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _reserved_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

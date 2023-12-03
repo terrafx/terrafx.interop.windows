@@ -24,7 +24,7 @@ public unsafe partial struct TEB
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved3"]/*' />
     [NativeTypeName("BYTE[1952]")]
-    public fixed byte Reserved3[1952];
+    public _Reserved3_e__FixedBuffer Reserved3;
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.TlsSlots"]/*' />
     [NativeTypeName("PVOID[64]")]
@@ -32,7 +32,7 @@ public unsafe partial struct TEB
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved4"]/*' />
     [NativeTypeName("BYTE[8]")]
-    public fixed byte Reserved4[8];
+    public _Reserved4_e__FixedBuffer Reserved4;
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved5"]/*' />
     [NativeTypeName("PVOID[26]")]
@@ -495,6 +495,13 @@ public unsafe partial struct TEB
         }
     }
 
+    /// <include file='_Reserved3_e__FixedBuffer.xml' path='doc/member[@name="_Reserved3_e__FixedBuffer"]/*' />
+    [InlineArray(1952)]
+    public partial struct _Reserved3_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
     /// <include file='_TlsSlots_e__FixedBuffer.xml' path='doc/member[@name="_TlsSlots_e__FixedBuffer"]/*' />
     public unsafe partial struct _TlsSlots_e__FixedBuffer
     {
@@ -574,6 +581,13 @@ public unsafe partial struct TEB
                 }
             }
         }
+    }
+
+    /// <include file='_Reserved4_e__FixedBuffer.xml' path='doc/member[@name="_Reserved4_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _Reserved4_e__FixedBuffer
+    {
+        public byte e0;
     }
 
     /// <include file='_Reserved5_e__FixedBuffer.xml' path='doc/member[@name="_Reserved5_e__FixedBuffer"]/*' />

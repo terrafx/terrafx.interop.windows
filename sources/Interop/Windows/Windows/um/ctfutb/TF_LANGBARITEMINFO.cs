@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='TF_LANGBARITEMINFO.xml' path='doc/member[@name="TF_LANGBARITEMINFO"]/*' />
-public unsafe partial struct TF_LANGBARITEMINFO
+public partial struct TF_LANGBARITEMINFO
 {
     /// <include file='TF_LANGBARITEMINFO.xml' path='doc/member[@name="TF_LANGBARITEMINFO.clsidService"]/*' />
     [NativeTypeName("CLSID")]
@@ -27,5 +28,12 @@ public unsafe partial struct TF_LANGBARITEMINFO
 
     /// <include file='TF_LANGBARITEMINFO.xml' path='doc/member[@name="TF_LANGBARITEMINFO.szDescription"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed char szDescription[32];
+    public _szDescription_e__FixedBuffer szDescription;
+
+    /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _szDescription_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

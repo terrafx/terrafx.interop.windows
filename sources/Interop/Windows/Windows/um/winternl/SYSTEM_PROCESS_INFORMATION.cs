@@ -20,7 +20,7 @@ public unsafe partial struct SYSTEM_PROCESS_INFORMATION
 
     /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.Reserved1"]/*' />
     [NativeTypeName("BYTE[48]")]
-    public fixed byte Reserved1[48];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.ImageName"]/*' />
     public UNICODE_STRING ImageName;
@@ -99,6 +99,13 @@ public unsafe partial struct SYSTEM_PROCESS_INFORMATION
     /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.Reserved7"]/*' />
     [NativeTypeName("LARGE_INTEGER[6]")]
     public _Reserved7_e__FixedBuffer Reserved7;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(48)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public byte e0;
+    }
 
     /// <include file='_Reserved7_e__FixedBuffer.xml' path='doc/member[@name="_Reserved7_e__FixedBuffer"]/*' />
     [InlineArray(6)]

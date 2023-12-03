@@ -3,13 +3,14 @@
 // Ported from um/ShlObj.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SHCOLUMNINFO.xml' path='doc/member[@name="SHCOLUMNINFO"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct SHCOLUMNINFO
+public partial struct SHCOLUMNINFO
 {
     /// <include file='SHCOLUMNINFO.xml' path='doc/member[@name="SHCOLUMNINFO.scid"]/*' />
     [NativeTypeName("SHCOLUMNID")]
@@ -32,9 +33,25 @@ public unsafe partial struct SHCOLUMNINFO
 
     /// <include file='SHCOLUMNINFO.xml' path='doc/member[@name="SHCOLUMNINFO.wszTitle"]/*' />
     [NativeTypeName("WCHAR[80]")]
-    public fixed char wszTitle[80];
+    public _wszTitle_e__FixedBuffer wszTitle;
 
     /// <include file='SHCOLUMNINFO.xml' path='doc/member[@name="SHCOLUMNINFO.wszDescription"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed char wszDescription[128];
+    public _wszDescription_e__FixedBuffer wszDescription;
+
+    /// <include file='_wszTitle_e__FixedBuffer.xml' path='doc/member[@name="_wszTitle_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(80)]
+    public partial struct _wszTitle_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_wszDescription_e__FixedBuffer.xml' path='doc/member[@name="_wszDescription_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(128)]
+    public partial struct _wszDescription_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

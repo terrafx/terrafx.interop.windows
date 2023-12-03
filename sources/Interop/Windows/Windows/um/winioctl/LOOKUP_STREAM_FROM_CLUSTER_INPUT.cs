@@ -36,7 +36,7 @@ public partial struct LOOKUP_STREAM_FROM_CLUSTER_INPUT
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

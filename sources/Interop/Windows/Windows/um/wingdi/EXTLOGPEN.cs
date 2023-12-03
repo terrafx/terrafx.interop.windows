@@ -3,10 +3,15 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='EXTLOGPEN.xml' path='doc/member[@name="EXTLOGPEN"]/*' />
-public unsafe partial struct EXTLOGPEN
+public partial struct EXTLOGPEN
 {
     /// <include file='EXTLOGPEN.xml' path='doc/member[@name="EXTLOGPEN.elpPenStyle"]/*' />
     [NativeTypeName("DWORD")]
@@ -32,5 +37,25 @@ public unsafe partial struct EXTLOGPEN
 
     /// <include file='EXTLOGPEN.xml' path='doc/member[@name="EXTLOGPEN.elpStyleEntry"]/*' />
     [NativeTypeName("DWORD[1]")]
-    public fixed uint elpStyleEntry[1];
+    public _elpStyleEntry_e__FixedBuffer elpStyleEntry;
+
+    /// <include file='_elpStyleEntry_e__FixedBuffer.xml' path='doc/member[@name="_elpStyleEntry_e__FixedBuffer"]/*' />
+    public partial struct _elpStyleEntry_e__FixedBuffer
+    {
+        public uint e0;
+
+        [UnscopedRef]
+        public ref uint this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<uint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

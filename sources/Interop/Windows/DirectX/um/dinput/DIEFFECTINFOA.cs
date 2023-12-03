@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIEFFECTINFOA.xml' path='doc/member[@name="DIEFFECTINFOA"]/*' />
-public unsafe partial struct DIEFFECTINFOA
+public partial struct DIEFFECTINFOA
 {
     /// <include file='DIEFFECTINFOA.xml' path='doc/member[@name="DIEFFECTINFOA.dwSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -31,5 +32,12 @@ public unsafe partial struct DIEFFECTINFOA
 
     /// <include file='DIEFFECTINFOA.xml' path='doc/member[@name="DIEFFECTINFOA.tszName"]/*' />
     [NativeTypeName("CHAR[260]")]
-    public fixed sbyte tszName[260];
+    public _tszName_e__FixedBuffer tszName;
+
+    /// <include file='_tszName_e__FixedBuffer.xml' path='doc/member[@name="_tszName_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _tszName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

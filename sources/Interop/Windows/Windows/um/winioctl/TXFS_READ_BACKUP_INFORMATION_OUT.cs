@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT"]/*' />
-public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
+public partial struct TXFS_READ_BACKUP_INFORMATION_OUT
 {
     /// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_winioctl_L13483_C5")]
@@ -35,13 +35,13 @@ public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.Buffer[0], 1);
+            return Anonymous.Buffer.AsSpan((int)(BufferLength));
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferLength"]/*' />
         [FieldOffset(0)]
@@ -51,6 +51,26 @@ public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE[1]")]
-        public fixed byte Buffer[1];
+        public _Buffer_e__FixedBuffer Buffer;
+
+        /// <include file='_Buffer_e__FixedBuffer.xml' path='doc/member[@name="_Buffer_e__FixedBuffer"]/*' />
+        public partial struct _Buffer_e__FixedBuffer
+        {
+            public byte e0;
+
+            [UnscopedRef]
+            public ref byte this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref Unsafe.Add(ref e0, index);
+                }
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
+            public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+        }
     }
 }

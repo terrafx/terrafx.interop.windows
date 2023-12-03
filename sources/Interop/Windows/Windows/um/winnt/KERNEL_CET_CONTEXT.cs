@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT"]/*' />
-public unsafe partial struct KERNEL_CET_CONTEXT
+public partial struct KERNEL_CET_CONTEXT
 {
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Ssp"]/*' />
     [NativeTypeName("DWORD64")]
@@ -30,7 +30,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
 
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Fill"]/*' />
     [NativeTypeName("WORD[2]")]
-    public fixed ushort Fill[2];
+    public _Fill_e__FixedBuffer Fill;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AllFlags"]/*' />
     [UnscopedRef]
@@ -161,5 +161,12 @@ public unsafe partial struct KERNEL_CET_CONTEXT
                 }
             }
         }
+    }
+
+    /// <include file='_Fill_e__FixedBuffer.xml' path='doc/member[@name="_Fill_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Fill_e__FixedBuffer
+    {
+        public ushort e0;
     }
 }

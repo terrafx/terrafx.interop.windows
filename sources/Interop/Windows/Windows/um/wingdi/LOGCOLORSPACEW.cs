@@ -3,10 +3,12 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='LOGCOLORSPACEW.xml' path='doc/member[@name="LOGCOLORSPACEW"]/*' />
-public unsafe partial struct LOGCOLORSPACEW
+public partial struct LOGCOLORSPACEW
 {
     /// <include file='LOGCOLORSPACEW.xml' path='doc/member[@name="LOGCOLORSPACEW.lcsSignature"]/*' />
     [NativeTypeName("DWORD")]
@@ -45,5 +47,12 @@ public unsafe partial struct LOGCOLORSPACEW
 
     /// <include file='LOGCOLORSPACEW.xml' path='doc/member[@name="LOGCOLORSPACEW.lcsFilename"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed char lcsFilename[260];
+    public _lcsFilename_e__FixedBuffer lcsFilename;
+
+    /// <include file='_lcsFilename_e__FixedBuffer.xml' path='doc/member[@name="_lcsFilename_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _lcsFilename_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

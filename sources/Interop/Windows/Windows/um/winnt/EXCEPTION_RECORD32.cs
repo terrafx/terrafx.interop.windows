@@ -3,10 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='EXCEPTION_RECORD32.xml' path='doc/member[@name="EXCEPTION_RECORD32"]/*' />
-public unsafe partial struct EXCEPTION_RECORD32
+public partial struct EXCEPTION_RECORD32
 {
     /// <include file='EXCEPTION_RECORD32.xml' path='doc/member[@name="EXCEPTION_RECORD32.ExceptionCode"]/*' />
     [NativeTypeName("DWORD")]
@@ -30,5 +32,12 @@ public unsafe partial struct EXCEPTION_RECORD32
 
     /// <include file='EXCEPTION_RECORD32.xml' path='doc/member[@name="EXCEPTION_RECORD32.ExceptionInformation"]/*' />
     [NativeTypeName("DWORD[15]")]
-    public fixed uint ExceptionInformation[15];
+    public _ExceptionInformation_e__FixedBuffer ExceptionInformation;
+
+    /// <include file='_ExceptionInformation_e__FixedBuffer.xml' path='doc/member[@name="_ExceptionInformation_e__FixedBuffer"]/*' />
+    [InlineArray(15)]
+    public partial struct _ExceptionInformation_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='KCRM_TRANSACTION_BLOB.xml' path='doc/member[@name="KCRM_TRANSACTION_BLOB"]/*' />
-public unsafe partial struct KCRM_TRANSACTION_BLOB
+public partial struct KCRM_TRANSACTION_BLOB
 {
     /// <include file='KCRM_TRANSACTION_BLOB.xml' path='doc/member[@name="KCRM_TRANSACTION_BLOB.UOW"]/*' />
     [NativeTypeName("UOW")]
@@ -31,5 +32,12 @@ public unsafe partial struct KCRM_TRANSACTION_BLOB
 
     /// <include file='KCRM_TRANSACTION_BLOB.xml' path='doc/member[@name="KCRM_TRANSACTION_BLOB.Description"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed char Description[64];
+    public _Description_e__FixedBuffer Description;
+
+    /// <include file='_Description_e__FixedBuffer.xml' path='doc/member[@name="_Description_e__FixedBuffer"]/*' />
+    [InlineArray(64)]
+    public partial struct _Description_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

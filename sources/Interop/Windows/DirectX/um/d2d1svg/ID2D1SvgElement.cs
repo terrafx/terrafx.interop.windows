@@ -24,12 +24,12 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
 
     public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, float value)
     {
-        return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT, &value, sizeof(float));
+        return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT, &value, (uint)(sizeof(float)));
     }
 
     public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, float* value)
     {
-        return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT, value, sizeof(float));
+        return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT, value, (uint)(sizeof(float)));
     }
 
     public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* value)

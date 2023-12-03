@@ -3,10 +3,12 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MFFOLDDOWN_MATRIX.xml' path='doc/member[@name="MFFOLDDOWN_MATRIX"]/*' />
-public unsafe partial struct MFFOLDDOWN_MATRIX
+public partial struct MFFOLDDOWN_MATRIX
 {
     /// <include file='MFFOLDDOWN_MATRIX.xml' path='doc/member[@name="MFFOLDDOWN_MATRIX.cbSize"]/*' />
     [NativeTypeName("UINT32")]
@@ -26,5 +28,12 @@ public unsafe partial struct MFFOLDDOWN_MATRIX
 
     /// <include file='MFFOLDDOWN_MATRIX.xml' path='doc/member[@name="MFFOLDDOWN_MATRIX.Coeff"]/*' />
     [NativeTypeName("LONG[64]")]
-    public fixed int Coeff[64];
+    public _Coeff_e__FixedBuffer Coeff;
+
+    /// <include file='_Coeff_e__FixedBuffer.xml' path='doc/member[@name="_Coeff_e__FixedBuffer"]/*' />
+    [InlineArray(64)]
+    public partial struct _Coeff_e__FixedBuffer
+    {
+        public int e0;
+    }
 }

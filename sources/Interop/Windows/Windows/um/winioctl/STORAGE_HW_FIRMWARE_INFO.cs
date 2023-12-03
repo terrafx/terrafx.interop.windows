@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO"]/*' />
-public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
+public partial struct STORAGE_HW_FIRMWARE_INFO
 {
     /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -72,7 +72,7 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
 
     /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Reserved"]/*' />
     [NativeTypeName("BYTE[3]")]
-    public fixed byte Reserved[3];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.ImagePayloadAlignment"]/*' />
     [NativeTypeName("DWORD")]
@@ -86,6 +86,13 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
     [NativeTypeName("STORAGE_HW_FIRMWARE_SLOT_INFO[1]")]
     public _Slot_e__FixedBuffer Slot;
 
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
     /// <include file='_Slot_e__FixedBuffer.xml' path='doc/member[@name="_Slot_e__FixedBuffer"]/*' />
     public partial struct _Slot_e__FixedBuffer
     {
@@ -97,7 +104,7 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

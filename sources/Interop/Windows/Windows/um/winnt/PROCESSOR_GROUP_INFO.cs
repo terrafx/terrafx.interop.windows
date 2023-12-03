@@ -3,10 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO"]/*' />
-public unsafe partial struct PROCESSOR_GROUP_INFO
+public partial struct PROCESSOR_GROUP_INFO
 {
     /// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO.MaximumProcessorCount"]/*' />
     public byte MaximumProcessorCount;
@@ -16,9 +18,16 @@ public unsafe partial struct PROCESSOR_GROUP_INFO
 
     /// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO.Reserved"]/*' />
     [NativeTypeName("BYTE[38]")]
-    public fixed byte Reserved[38];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO.ActiveProcessorMask"]/*' />
     [NativeTypeName("KAFFINITY")]
     public nuint ActiveProcessorMask;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(38)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

@@ -55,7 +55,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.PhysicalAddress"]/*' />
     [NativeTypeName("BYTE[8]")]
-    public fixed byte PhysicalAddress[8];
+    public _PhysicalAddress_e__FixedBuffer PhysicalAddress;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.PhysicalAddressLength"]/*' />
     [NativeTypeName("ULONG")]
@@ -82,7 +82,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.ZoneIndices"]/*' />
     [NativeTypeName("ULONG[16]")]
-    public fixed uint ZoneIndices[16];
+    public _ZoneIndices_e__FixedBuffer ZoneIndices;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.FirstPrefix"]/*' />
     [NativeTypeName("PIP_ADAPTER_PREFIX_XP")]
@@ -138,7 +138,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Dhcpv6ClientDuid"]/*' />
     [NativeTypeName("BYTE[130]")]
-    public fixed byte Dhcpv6ClientDuid[130];
+    public _Dhcpv6ClientDuid_e__FixedBuffer Dhcpv6ClientDuid;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Dhcpv6ClientDuidLength"]/*' />
     [NativeTypeName("ULONG")]
@@ -572,5 +572,26 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
                 }
             }
         }
+    }
+
+    /// <include file='_PhysicalAddress_e__FixedBuffer.xml' path='doc/member[@name="_PhysicalAddress_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _PhysicalAddress_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_ZoneIndices_e__FixedBuffer.xml' path='doc/member[@name="_ZoneIndices_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ZoneIndices_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_Dhcpv6ClientDuid_e__FixedBuffer.xml' path='doc/member[@name="_Dhcpv6ClientDuid_e__FixedBuffer"]/*' />
+    [InlineArray(130)]
+    public partial struct _Dhcpv6ClientDuid_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

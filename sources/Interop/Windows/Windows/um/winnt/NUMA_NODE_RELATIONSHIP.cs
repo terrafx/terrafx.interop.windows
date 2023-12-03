@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='NUMA_NODE_RELATIONSHIP.xml' path='doc/member[@name="NUMA_NODE_RELATIONSHIP"]/*' />
-public unsafe partial struct NUMA_NODE_RELATIONSHIP
+public partial struct NUMA_NODE_RELATIONSHIP
 {
     /// <include file='NUMA_NODE_RELATIONSHIP.xml' path='doc/member[@name="NUMA_NODE_RELATIONSHIP.NodeNumber"]/*' />
     [NativeTypeName("DWORD")]
@@ -19,7 +19,7 @@ public unsafe partial struct NUMA_NODE_RELATIONSHIP
 
     /// <include file='NUMA_NODE_RELATIONSHIP.xml' path='doc/member[@name="NUMA_NODE_RELATIONSHIP.Reserved"]/*' />
     [NativeTypeName("BYTE[18]")]
-    public fixed byte Reserved[18];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='NUMA_NODE_RELATIONSHIP.xml' path='doc/member[@name="NUMA_NODE_RELATIONSHIP.GroupCount"]/*' />
     [NativeTypeName("WORD")]
@@ -64,7 +64,7 @@ public unsafe partial struct NUMA_NODE_RELATIONSHIP
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    return ref AsSpan(int.MaxValue)[index];
+                    return ref Unsafe.Add(ref e0, index);
                 }
             }
 
@@ -72,5 +72,12 @@ public unsafe partial struct NUMA_NODE_RELATIONSHIP
             [UnscopedRef]
             public Span<GROUP_AFFINITY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
+    }
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(18)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

@@ -10,11 +10,11 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVMODEW.xml' path='doc/member[@name="DEVMODEW"]/*' />
-public unsafe partial struct DEVMODEW
+public partial struct DEVMODEW
 {
     /// <include file='DEVMODEW.xml' path='doc/member[@name="DEVMODEW.dmDeviceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed char dmDeviceName[32];
+    public _dmDeviceName_e__FixedBuffer dmDeviceName;
 
     /// <include file='DEVMODEW.xml' path='doc/member[@name="DEVMODEW.dmSpecVersion"]/*' />
     [NativeTypeName("WORD")]
@@ -57,7 +57,7 @@ public unsafe partial struct DEVMODEW
 
     /// <include file='DEVMODEW.xml' path='doc/member[@name="DEVMODEW.dmFormName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed char dmFormName[32];
+    public _dmFormName_e__FixedBuffer dmFormName;
 
     /// <include file='DEVMODEW.xml' path='doc/member[@name="DEVMODEW.dmLogPixels"]/*' />
     [NativeTypeName("WORD")]
@@ -329,5 +329,19 @@ public unsafe partial struct DEVMODEW
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dmNup;
+    }
+
+    /// <include file='_dmDeviceName_e__FixedBuffer.xml' path='doc/member[@name="_dmDeviceName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _dmDeviceName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_dmFormName_e__FixedBuffer.xml' path='doc/member[@name="_dmFormName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _dmFormName_e__FixedBuffer
+    {
+        public char e0;
     }
 }

@@ -3,6 +3,8 @@
 // Ported from um/icm.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ENUMTYPEW.xml' path='doc/member[@name="ENUMTYPEW"]/*' />
@@ -34,7 +36,7 @@ public unsafe partial struct ENUMTYPEW
 
     /// <include file='ENUMTYPEW.xml' path='doc/member[@name="ENUMTYPEW.dwResolution"]/*' />
     [NativeTypeName("DWORD[2]")]
-    public fixed uint dwResolution[2];
+    public _dwResolution_e__FixedBuffer dwResolution;
 
     /// <include file='ENUMTYPEW.xml' path='doc/member[@name="ENUMTYPEW.dwCMMType"]/*' />
     [NativeTypeName("DWORD")]
@@ -74,7 +76,7 @@ public unsafe partial struct ENUMTYPEW
 
     /// <include file='ENUMTYPEW.xml' path='doc/member[@name="ENUMTYPEW.dwAttributes"]/*' />
     [NativeTypeName("DWORD[2]")]
-    public fixed uint dwAttributes[2];
+    public _dwAttributes_e__FixedBuffer dwAttributes;
 
     /// <include file='ENUMTYPEW.xml' path='doc/member[@name="ENUMTYPEW.dwRenderingIntent"]/*' />
     [NativeTypeName("DWORD")]
@@ -87,4 +89,18 @@ public unsafe partial struct ENUMTYPEW
     /// <include file='ENUMTYPEW.xml' path='doc/member[@name="ENUMTYPEW.dwDeviceClass"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDeviceClass;
+
+    /// <include file='_dwResolution_e__FixedBuffer.xml' path='doc/member[@name="_dwResolution_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _dwResolution_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_dwAttributes_e__FixedBuffer.xml' path='doc/member[@name="_dwAttributes_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _dwAttributes_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

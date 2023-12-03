@@ -3,14 +3,16 @@
 // Ported from shared/tcpmib.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID"]/*' />
-public unsafe partial struct MIB_TCP6ROW_OWNER_PID
+public partial struct MIB_TCP6ROW_OWNER_PID
 {
     /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.ucLocalAddr"]/*' />
     [NativeTypeName("UCHAR[16]")]
-    public fixed byte ucLocalAddr[16];
+    public _ucLocalAddr_e__FixedBuffer ucLocalAddr;
 
     /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwLocalScopeId"]/*' />
     [NativeTypeName("DWORD")]
@@ -22,7 +24,7 @@ public unsafe partial struct MIB_TCP6ROW_OWNER_PID
 
     /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.ucRemoteAddr"]/*' />
     [NativeTypeName("UCHAR[16]")]
-    public fixed byte ucRemoteAddr[16];
+    public _ucRemoteAddr_e__FixedBuffer ucRemoteAddr;
 
     /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwRemoteScopeId"]/*' />
     [NativeTypeName("DWORD")]
@@ -39,4 +41,18 @@ public unsafe partial struct MIB_TCP6ROW_OWNER_PID
     /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwOwningPid"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOwningPid;
+
+    /// <include file='_ucLocalAddr_e__FixedBuffer.xml' path='doc/member[@name="_ucLocalAddr_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ucLocalAddr_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_ucRemoteAddr_e__FixedBuffer.xml' path='doc/member[@name="_ucRemoteAddr_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ucRemoteAddr_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

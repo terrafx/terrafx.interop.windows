@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR"]/*' />
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
+public partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
 {
     /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -126,7 +126,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
 
     /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Reserved1"]/*' />
     [NativeTypeName("BYTE[7]")]
-    public fixed byte Reserved1[7];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.OptimalUnmapGranularity"]/*' />
     [NativeTypeName("DWORDLONG")]
@@ -143,4 +143,11 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.MaxUnmapBlockDescriptorCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxUnmapBlockDescriptorCount;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(7)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

@@ -3,10 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.xml' path='doc/member[@name="STORAGE_PROTOCOL_SPECIFIC_DATA_EXT"]/*' />
-public unsafe partial struct STORAGE_PROTOCOL_SPECIFIC_DATA_EXT
+public partial struct STORAGE_PROTOCOL_SPECIFIC_DATA_EXT
 {
     /// <include file='STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.xml' path='doc/member[@name="STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.ProtocolType"]/*' />
     public STORAGE_PROTOCOL_TYPE ProtocolType;
@@ -53,5 +55,12 @@ public unsafe partial struct STORAGE_PROTOCOL_SPECIFIC_DATA_EXT
 
     /// <include file='STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.xml' path='doc/member[@name="STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.Reserved"]/*' />
     [NativeTypeName("DWORD[5]")]
-    public fixed uint Reserved[5];
+    public _Reserved_e__FixedBuffer Reserved;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(5)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

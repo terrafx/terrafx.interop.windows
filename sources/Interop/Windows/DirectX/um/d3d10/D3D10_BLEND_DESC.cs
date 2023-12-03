@@ -9,7 +9,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D10_BLEND_DESC.xml' path='doc/member[@name="D3D10_BLEND_DESC"]/*' />
-public unsafe partial struct D3D10_BLEND_DESC
+public partial struct D3D10_BLEND_DESC
 {
     /// <include file='D3D10_BLEND_DESC.xml' path='doc/member[@name="D3D10_BLEND_DESC.AlphaToCoverageEnable"]/*' />
     public BOOL AlphaToCoverageEnable;
@@ -38,12 +38,19 @@ public unsafe partial struct D3D10_BLEND_DESC
 
     /// <include file='D3D10_BLEND_DESC.xml' path='doc/member[@name="D3D10_BLEND_DESC.RenderTargetWriteMask"]/*' />
     [NativeTypeName("UINT8[8]")]
-    public fixed byte RenderTargetWriteMask[8];
+    public _RenderTargetWriteMask_e__FixedBuffer RenderTargetWriteMask;
 
     /// <include file='_BlendEnable_e__FixedBuffer.xml' path='doc/member[@name="_BlendEnable_e__FixedBuffer"]/*' />
     [InlineArray(8)]
     public partial struct _BlendEnable_e__FixedBuffer
     {
         public BOOL e0;
+    }
+
+    /// <include file='_RenderTargetWriteMask_e__FixedBuffer.xml' path='doc/member[@name="_RenderTargetWriteMask_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _RenderTargetWriteMask_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

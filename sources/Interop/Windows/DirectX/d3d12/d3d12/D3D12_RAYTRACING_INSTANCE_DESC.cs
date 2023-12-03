@@ -8,11 +8,11 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC"]/*' />
-public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
+public partial struct D3D12_RAYTRACING_INSTANCE_DESC
 {
     /// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC.Transform"]/*' />
     [NativeTypeName("FLOAT[3][4]")]
-    public fixed float Transform[3 * 4];
+    public _Transform_e__FixedBuffer Transform;
 
     public uint _bitfield1;
 
@@ -89,4 +89,11 @@ public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
     /// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC.AccelerationStructure"]/*' />
     [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
     public ulong AccelerationStructure;
+
+    /// <include file='_Transform_e__FixedBuffer.xml' path='doc/member[@name="_Transform_e__FixedBuffer"]/*' />
+    [InlineArray(3 * 4)]
+    public partial struct _Transform_e__FixedBuffer
+    {
+        public float e0_0;
+    }
 }

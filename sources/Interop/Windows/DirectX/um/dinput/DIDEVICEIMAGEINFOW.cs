@@ -9,11 +9,11 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIDEVICEIMAGEINFOW.xml' path='doc/member[@name="DIDEVICEIMAGEINFOW"]/*' />
-public unsafe partial struct DIDEVICEIMAGEINFOW
+public partial struct DIDEVICEIMAGEINFOW
 {
     /// <include file='DIDEVICEIMAGEINFOW.xml' path='doc/member[@name="DIDEVICEIMAGEINFOW.tszImagePath"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed char tszImagePath[260];
+    public _tszImagePath_e__FixedBuffer tszImagePath;
 
     /// <include file='DIDEVICEIMAGEINFOW.xml' path='doc/member[@name="DIDEVICEIMAGEINFOW.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
@@ -44,6 +44,13 @@ public unsafe partial struct DIDEVICEIMAGEINFOW
     /// <include file='DIDEVICEIMAGEINFOW.xml' path='doc/member[@name="DIDEVICEIMAGEINFOW.dwTextAlign"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTextAlign;
+
+    /// <include file='_tszImagePath_e__FixedBuffer.xml' path='doc/member[@name="_tszImagePath_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _tszImagePath_e__FixedBuffer
+    {
+        public char e0;
+    }
 
     /// <include file='_rgptCalloutLine_e__FixedBuffer.xml' path='doc/member[@name="_rgptCalloutLine_e__FixedBuffer"]/*' />
     [InlineArray(5)]

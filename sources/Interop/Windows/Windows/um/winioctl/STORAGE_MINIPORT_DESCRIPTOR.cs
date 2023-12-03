@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR"]/*' />
-public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
+public partial struct STORAGE_MINIPORT_DESCRIPTOR
 {
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -44,7 +44,7 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Reserved0"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte Reserved0[2];
+    public _Reserved0_e__FixedBuffer Reserved0;
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Reserved1"]/*' />
     [NativeTypeName("DWORD")]
@@ -134,5 +134,12 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
                 }
             }
         }
+    }
+
+    /// <include file='_Reserved0_e__FixedBuffer.xml' path='doc/member[@name="_Reserved0_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved0_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

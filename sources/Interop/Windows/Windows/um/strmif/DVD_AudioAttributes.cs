@@ -3,10 +3,12 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DVD_AudioAttributes.xml' path='doc/member[@name="DVD_AudioAttributes"]/*' />
-public unsafe partial struct DVD_AudioAttributes
+public partial struct DVD_AudioAttributes
 {
     /// <include file='DVD_AudioAttributes.xml' path='doc/member[@name="DVD_AudioAttributes.AppMode"]/*' />
     public DVD_AUDIO_APPMODE AppMode;
@@ -39,5 +41,12 @@ public unsafe partial struct DVD_AudioAttributes
 
     /// <include file='DVD_AudioAttributes.xml' path='doc/member[@name="DVD_AudioAttributes.dwReserved"]/*' />
     [NativeTypeName("DWORD[2]")]
-    public fixed uint dwReserved[2];
+    public _dwReserved_e__FixedBuffer dwReserved;
+
+    /// <include file='_dwReserved_e__FixedBuffer.xml' path='doc/member[@name="_dwReserved_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _dwReserved_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

@@ -3,10 +3,12 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='VMRMONITORINFO.xml' path='doc/member[@name="VMRMONITORINFO"]/*' />
-public unsafe partial struct VMRMONITORINFO
+public partial struct VMRMONITORINFO
 {
     /// <include file='VMRMONITORINFO.xml' path='doc/member[@name="VMRMONITORINFO.guid"]/*' />
     public VMRGUID guid;
@@ -23,11 +25,11 @@ public unsafe partial struct VMRMONITORINFO
 
     /// <include file='VMRMONITORINFO.xml' path='doc/member[@name="VMRMONITORINFO.szDevice"]/*' />
     [NativeTypeName("wchar_t[32]")]
-    public fixed char szDevice[32];
+    public _szDevice_e__FixedBuffer szDevice;
 
     /// <include file='VMRMONITORINFO.xml' path='doc/member[@name="VMRMONITORINFO.szDescription"]/*' />
     [NativeTypeName("wchar_t[256]")]
-    public fixed char szDescription[256];
+    public _szDescription_e__FixedBuffer szDescription;
 
     /// <include file='VMRMONITORINFO.xml' path='doc/member[@name="VMRMONITORINFO.liDriverVersion"]/*' />
     public LARGE_INTEGER liDriverVersion;
@@ -47,4 +49,18 @@ public unsafe partial struct VMRMONITORINFO
     /// <include file='VMRMONITORINFO.xml' path='doc/member[@name="VMRMONITORINFO.dwRevision"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRevision;
+
+    /// <include file='_szDevice_e__FixedBuffer.xml' path='doc/member[@name="_szDevice_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _szDevice_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _szDescription_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

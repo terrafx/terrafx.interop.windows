@@ -3,13 +3,14 @@
 // Ported from um/mfidl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA"]/*' />
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA
+public partial struct MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA
 {
     /// <include file='MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.PrivateDataByteCount"]/*' />
     [NativeTypeName("DWORD")]
@@ -36,5 +37,12 @@ public unsafe partial struct MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA
 
     /// <include file='MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.OutputData"]/*' />
     [NativeTypeName("BYTE[4]")]
-    public fixed byte OutputData[4];
+    public _OutputData_e__FixedBuffer OutputData;
+
+    /// <include file='_OutputData_e__FixedBuffer.xml' path='doc/member[@name="_OutputData_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _OutputData_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

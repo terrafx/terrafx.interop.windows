@@ -3,10 +3,12 @@
 // Ported from um/dinput.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIMOUSESTATE.xml' path='doc/member[@name="DIMOUSESTATE"]/*' />
-public unsafe partial struct DIMOUSESTATE
+public partial struct DIMOUSESTATE
 {
     /// <include file='DIMOUSESTATE.xml' path='doc/member[@name="DIMOUSESTATE.lX"]/*' />
     [NativeTypeName("LONG")]
@@ -22,5 +24,12 @@ public unsafe partial struct DIMOUSESTATE
 
     /// <include file='DIMOUSESTATE.xml' path='doc/member[@name="DIMOUSESTATE.rgbButtons"]/*' />
     [NativeTypeName("BYTE[4]")]
-    public fixed byte rgbButtons[4];
+    public _rgbButtons_e__FixedBuffer rgbButtons;
+
+    /// <include file='_rgbButtons_e__FixedBuffer.xml' path='doc/member[@name="_rgbButtons_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _rgbButtons_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

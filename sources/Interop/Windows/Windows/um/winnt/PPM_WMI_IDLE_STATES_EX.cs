@@ -48,7 +48,7 @@ public unsafe partial struct PPM_WMI_IDLE_STATES_EX
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

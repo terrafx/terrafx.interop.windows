@@ -3,10 +3,12 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='KDHELP.xml' path='doc/member[@name="KDHELP"]/*' />
-public unsafe partial struct KDHELP
+public partial struct KDHELP
 {
     /// <include file='KDHELP.xml' path='doc/member[@name="KDHELP.Thread"]/*' />
     [NativeTypeName("DWORD")]
@@ -54,5 +56,12 @@ public unsafe partial struct KDHELP
 
     /// <include file='KDHELP.xml' path='doc/member[@name="KDHELP.Reserved"]/*' />
     [NativeTypeName("DWORD[5]")]
-    public fixed uint Reserved[5];
+    public _Reserved_e__FixedBuffer Reserved;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(5)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

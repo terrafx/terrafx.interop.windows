@@ -3,10 +3,15 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='userBITMAP.xml' path='doc/member[@name="userBITMAP"]/*' />
-public unsafe partial struct userBITMAP
+public partial struct userBITMAP
 {
     /// <include file='userBITMAP.xml' path='doc/member[@name="userBITMAP.bmType"]/*' />
     [NativeTypeName("LONG")]
@@ -38,5 +43,25 @@ public unsafe partial struct userBITMAP
 
     /// <include file='userBITMAP.xml' path='doc/member[@name="userBITMAP.pBuffer"]/*' />
     [NativeTypeName("byte[1]")]
-    public fixed byte pBuffer[1];
+    public _pBuffer_e__FixedBuffer pBuffer;
+
+    /// <include file='_pBuffer_e__FixedBuffer.xml' path='doc/member[@name="_pBuffer_e__FixedBuffer"]/*' />
+    public partial struct _pBuffer_e__FixedBuffer
+    {
+        public byte e0;
+
+        [UnscopedRef]
+        public ref byte this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

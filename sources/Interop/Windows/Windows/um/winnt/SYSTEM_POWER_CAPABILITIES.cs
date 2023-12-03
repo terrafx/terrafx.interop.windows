@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SYSTEM_POWER_CAPABILITIES.xml' path='doc/member[@name="SYSTEM_POWER_CAPABILITIES"]/*' />
-public unsafe partial struct SYSTEM_POWER_CAPABILITIES
+public partial struct SYSTEM_POWER_CAPABILITIES
 {
     /// <include file='SYSTEM_POWER_CAPABILITIES.xml' path='doc/member[@name="SYSTEM_POWER_CAPABILITIES.PowerButtonPresent"]/*' />
     [NativeTypeName("BOOLEAN")]
@@ -105,7 +105,7 @@ public unsafe partial struct SYSTEM_POWER_CAPABILITIES
 
     /// <include file='SYSTEM_POWER_CAPABILITIES.xml' path='doc/member[@name="SYSTEM_POWER_CAPABILITIES.spare3"]/*' />
     [NativeTypeName("BYTE[6]")]
-    public fixed byte spare3[6];
+    public _spare3_e__FixedBuffer spare3;
 
     /// <include file='SYSTEM_POWER_CAPABILITIES.xml' path='doc/member[@name="SYSTEM_POWER_CAPABILITIES.SystemBatteriesPresent"]/*' />
     [NativeTypeName("BOOLEAN")]
@@ -133,6 +133,13 @@ public unsafe partial struct SYSTEM_POWER_CAPABILITIES
 
     /// <include file='SYSTEM_POWER_CAPABILITIES.xml' path='doc/member[@name="SYSTEM_POWER_CAPABILITIES.DefaultLowLatencyWake"]/*' />
     public SYSTEM_POWER_STATE DefaultLowLatencyWake;
+
+    /// <include file='_spare3_e__FixedBuffer.xml' path='doc/member[@name="_spare3_e__FixedBuffer"]/*' />
+    [InlineArray(6)]
+    public partial struct _spare3_e__FixedBuffer
+    {
+        public byte e0;
+    }
 
     /// <include file='_BatteryScale_e__FixedBuffer.xml' path='doc/member[@name="_BatteryScale_e__FixedBuffer"]/*' />
     [InlineArray(3)]

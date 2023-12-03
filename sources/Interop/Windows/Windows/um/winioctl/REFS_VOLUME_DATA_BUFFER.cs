@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='REFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="REFS_VOLUME_DATA_BUFFER"]/*' />
-public unsafe partial struct REFS_VOLUME_DATA_BUFFER
+public partial struct REFS_VOLUME_DATA_BUFFER
 {
     /// <include file='REFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="REFS_VOLUME_DATA_BUFFER.ByteCount"]/*' />
     [NativeTypeName("DWORD")]
@@ -70,11 +70,18 @@ public unsafe partial struct REFS_VOLUME_DATA_BUFFER
 
     /// <include file='REFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="REFS_VOLUME_DATA_BUFFER.Reserved0"]/*' />
     [NativeTypeName("BYTE[6]")]
-    public fixed byte Reserved0[6];
+    public _Reserved0_e__FixedBuffer Reserved0;
 
     /// <include file='REFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="REFS_VOLUME_DATA_BUFFER.Reserved"]/*' />
     [NativeTypeName("LARGE_INTEGER[8]")]
     public _Reserved_e__FixedBuffer Reserved;
+
+    /// <include file='_Reserved0_e__FixedBuffer.xml' path='doc/member[@name="_Reserved0_e__FixedBuffer"]/*' />
+    [InlineArray(6)]
+    public partial struct _Reserved0_e__FixedBuffer
+    {
+        public byte e0;
+    }
 
     /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
     [InlineArray(8)]

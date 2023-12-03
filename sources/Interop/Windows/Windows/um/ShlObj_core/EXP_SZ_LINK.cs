@@ -3,13 +3,14 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='EXP_SZ_LINK.xml' path='doc/member[@name="EXP_SZ_LINK"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct EXP_SZ_LINK
+public partial struct EXP_SZ_LINK
 {
     /// <include file='EXP_SZ_LINK.xml' path='doc/member[@name="EXP_SZ_LINK.cbSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -21,9 +22,25 @@ public unsafe partial struct EXP_SZ_LINK
 
     /// <include file='EXP_SZ_LINK.xml' path='doc/member[@name="EXP_SZ_LINK.szTarget"]/*' />
     [NativeTypeName("CHAR[260]")]
-    public fixed sbyte szTarget[260];
+    public _szTarget_e__FixedBuffer szTarget;
 
     /// <include file='EXP_SZ_LINK.xml' path='doc/member[@name="EXP_SZ_LINK.swzTarget"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed char swzTarget[260];
+    public _swzTarget_e__FixedBuffer swzTarget;
+
+    /// <include file='_szTarget_e__FixedBuffer.xml' path='doc/member[@name="_szTarget_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(260)]
+    public partial struct _szTarget_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_swzTarget_e__FixedBuffer.xml' path='doc/member[@name="_swzTarget_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(260)]
+    public partial struct _swzTarget_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

@@ -3,16 +3,17 @@
 // Ported from shared/dxgi1_6.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1"]/*' />
-public unsafe partial struct DXGI_OUTPUT_DESC1
+public partial struct DXGI_OUTPUT_DESC1
 {
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.DeviceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed char DeviceName[32];
+    public _DeviceName_e__FixedBuffer DeviceName;
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.DesktopCoordinates"]/*' />
     public RECT DesktopCoordinates;
@@ -34,19 +35,19 @@ public unsafe partial struct DXGI_OUTPUT_DESC1
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.RedPrimary"]/*' />
     [NativeTypeName("FLOAT[2]")]
-    public fixed float RedPrimary[2];
+    public _RedPrimary_e__FixedBuffer RedPrimary;
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.GreenPrimary"]/*' />
     [NativeTypeName("FLOAT[2]")]
-    public fixed float GreenPrimary[2];
+    public _GreenPrimary_e__FixedBuffer GreenPrimary;
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.BluePrimary"]/*' />
     [NativeTypeName("FLOAT[2]")]
-    public fixed float BluePrimary[2];
+    public _BluePrimary_e__FixedBuffer BluePrimary;
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.WhitePoint"]/*' />
     [NativeTypeName("FLOAT[2]")]
-    public fixed float WhitePoint[2];
+    public _WhitePoint_e__FixedBuffer WhitePoint;
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.MinLuminance"]/*' />
     public float MinLuminance;
@@ -56,4 +57,39 @@ public unsafe partial struct DXGI_OUTPUT_DESC1
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.MaxFullFrameLuminance"]/*' />
     public float MaxFullFrameLuminance;
+
+    /// <include file='_DeviceName_e__FixedBuffer.xml' path='doc/member[@name="_DeviceName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _DeviceName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_RedPrimary_e__FixedBuffer.xml' path='doc/member[@name="_RedPrimary_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _RedPrimary_e__FixedBuffer
+    {
+        public float e0;
+    }
+
+    /// <include file='_GreenPrimary_e__FixedBuffer.xml' path='doc/member[@name="_GreenPrimary_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _GreenPrimary_e__FixedBuffer
+    {
+        public float e0;
+    }
+
+    /// <include file='_BluePrimary_e__FixedBuffer.xml' path='doc/member[@name="_BluePrimary_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _BluePrimary_e__FixedBuffer
+    {
+        public float e0;
+    }
+
+    /// <include file='_WhitePoint_e__FixedBuffer.xml' path='doc/member[@name="_WhitePoint_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _WhitePoint_e__FixedBuffer
+    {
+        public float e0;
+    }
 }

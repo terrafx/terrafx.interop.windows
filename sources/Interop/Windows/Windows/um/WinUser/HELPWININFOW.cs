@@ -3,10 +3,12 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='HELPWININFOW.xml' path='doc/member[@name="HELPWININFOW"]/*' />
-public unsafe partial struct HELPWININFOW
+public partial struct HELPWININFOW
 {
     /// <include file='HELPWININFOW.xml' path='doc/member[@name="HELPWININFOW.wStructSize"]/*' />
     public int wStructSize;
@@ -28,5 +30,12 @@ public unsafe partial struct HELPWININFOW
 
     /// <include file='HELPWININFOW.xml' path='doc/member[@name="HELPWININFOW.rgchMember"]/*' />
     [NativeTypeName("WCHAR[2]")]
-    public fixed char rgchMember[2];
+    public _rgchMember_e__FixedBuffer rgchMember;
+
+    /// <include file='_rgchMember_e__FixedBuffer.xml' path='doc/member[@name="_rgchMember_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _rgchMember_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

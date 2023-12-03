@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT"]/*' />
-public unsafe partial struct INPUTCONTEXT
+public partial struct INPUTCONTEXT
 {
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.hWnd"]/*' />
     public HWND hWnd;
@@ -67,7 +67,7 @@ public unsafe partial struct INPUTCONTEXT
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.dwReserve"]/*' />
     [NativeTypeName("DWORD[3]")]
-    public fixed uint dwReserve[3];
+    public _dwReserve_e__FixedBuffer dwReserve;
 
     /// <include file='_lfFont_e__Union.xml' path='doc/member[@name="_lfFont_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
@@ -87,5 +87,12 @@ public unsafe partial struct INPUTCONTEXT
     public partial struct _cfCandForm_e__FixedBuffer
     {
         public CANDIDATEFORM e0;
+    }
+
+    /// <include file='_dwReserve_e__FixedBuffer.xml' path='doc/member[@name="_dwReserve_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _dwReserve_e__FixedBuffer
+    {
+        public uint e0;
     }
 }

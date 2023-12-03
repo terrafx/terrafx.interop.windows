@@ -3,10 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PHYSICAL_ELEMENT_STATUS_REQUEST.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_REQUEST"]/*' />
-public unsafe partial struct PHYSICAL_ELEMENT_STATUS_REQUEST
+public partial struct PHYSICAL_ELEMENT_STATUS_REQUEST
 {
     /// <include file='PHYSICAL_ELEMENT_STATUS_REQUEST.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_REQUEST.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -28,5 +30,12 @@ public unsafe partial struct PHYSICAL_ELEMENT_STATUS_REQUEST
 
     /// <include file='PHYSICAL_ELEMENT_STATUS_REQUEST.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_REQUEST.Reserved"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte Reserved[2];
+    public _Reserved_e__FixedBuffer Reserved;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

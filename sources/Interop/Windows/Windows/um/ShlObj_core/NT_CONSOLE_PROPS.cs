@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct NT_CONSOLE_PROPS
+public partial struct NT_CONSOLE_PROPS
 {
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.dbh"]/*' />
     public DATABLOCK_HEADER dbh;
@@ -51,7 +51,7 @@ public unsafe partial struct NT_CONSOLE_PROPS
 
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.FaceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed char FaceName[32];
+    public _FaceName_e__FixedBuffer FaceName;
 
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.uCursorSize"]/*' />
     public uint uCursorSize;
@@ -80,6 +80,14 @@ public unsafe partial struct NT_CONSOLE_PROPS
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.ColorTable"]/*' />
     [NativeTypeName("COLORREF[16]")]
     public _ColorTable_e__FixedBuffer ColorTable;
+
+    /// <include file='_FaceName_e__FixedBuffer.xml' path='doc/member[@name="_FaceName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(32)]
+    public partial struct _FaceName_e__FixedBuffer
+    {
+        public char e0;
+    }
 
     /// <include file='_ColorTable_e__FixedBuffer.xml' path='doc/member[@name="_ColorTable_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]

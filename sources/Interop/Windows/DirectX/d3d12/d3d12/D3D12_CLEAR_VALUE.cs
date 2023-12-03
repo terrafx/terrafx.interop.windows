@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D12_CLEAR_VALUE.xml' path='doc/member[@name="D3D12_CLEAR_VALUE"]/*' />
-public unsafe partial struct D3D12_CLEAR_VALUE
+public partial struct D3D12_CLEAR_VALUE
 {
     /// <include file='D3D12_CLEAR_VALUE.xml' path='doc/member[@name="D3D12_CLEAR_VALUE.Format"]/*' />
     public DXGI_FORMAT Format;
@@ -27,7 +27,7 @@ public unsafe partial struct D3D12_CLEAR_VALUE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.Color[0], 4);
+            return Anonymous.Color;
         }
     }
 
@@ -44,15 +44,22 @@ public unsafe partial struct D3D12_CLEAR_VALUE
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Color"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("FLOAT[4]")]
-        public fixed float Color[4];
+        public _Color_e__FixedBuffer Color;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.DepthStencil"]/*' />
         [FieldOffset(0)]
         public D3D12_DEPTH_STENCIL_VALUE DepthStencil;
+
+        /// <include file='_Color_e__FixedBuffer.xml' path='doc/member[@name="_Color_e__FixedBuffer"]/*' />
+        [InlineArray(4)]
+        public partial struct _Color_e__FixedBuffer
+        {
+            public float e0;
+        }
     }
 }

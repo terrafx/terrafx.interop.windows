@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -105,7 +106,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
         }
 
         /// <include file='_PR_OUT_e__Struct.xml' path='doc/member[@name="_PR_OUT_e__Struct"]/*' />
-        public unsafe partial struct _PR_OUT_e__Struct
+        public partial struct _PR_OUT_e__Struct
         {
             public byte _bitfield1;
 
@@ -181,7 +182,27 @@ public partial struct PERSISTENT_RESERVE_COMMAND
 
             /// <include file='_PR_OUT_e__Struct.xml' path='doc/member[@name="_PR_OUT_e__Struct.ParameterList"]/*' />
             [NativeTypeName("BYTE[0]")]
-            public fixed byte ParameterList[1];
+            public _ParameterList_e__FixedBuffer ParameterList;
+
+            /// <include file='_ParameterList_e__FixedBuffer.xml' path='doc/member[@name="_ParameterList_e__FixedBuffer"]/*' />
+            public partial struct _ParameterList_e__FixedBuffer
+            {
+                public byte e0;
+
+                [UnscopedRef]
+                public ref byte this[int index]
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return ref Unsafe.Add(ref e0, index);
+                    }
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                [UnscopedRef]
+                public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            }
         }
     }
 }

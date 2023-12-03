@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS"]/*' />
-public unsafe partial struct HIDP_BUTTON_CAPS
+public partial struct HIDP_BUTTON_CAPS
 {
     /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.UsagePage"]/*' />
     [NativeTypeName("USAGE")]
@@ -62,7 +62,7 @@ public unsafe partial struct HIDP_BUTTON_CAPS
 
     /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.Reserved"]/*' />
     [NativeTypeName("ULONG[9]")]
-    public fixed uint Reserved[9];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_hidpi_L90_C5")]
@@ -163,5 +163,12 @@ public unsafe partial struct HIDP_BUTTON_CAPS
             /// <include file='_NotRange_e__Struct.xml' path='doc/member[@name="_NotRange_e__Struct.Reserved4"]/*' />
             public ushort Reserved4;
         }
+    }
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(9)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public uint e0;
     }
 }

@@ -3,16 +3,17 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER"]/*' />
-public unsafe partial struct IMAGE_SECTION_HEADER
+public partial struct IMAGE_SECTION_HEADER
 {
     /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER.Name"]/*' />
     [NativeTypeName("BYTE[8]")]
-    public fixed byte Name[8];
+    public _Name_e__FixedBuffer Name;
 
     /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER.Misc"]/*' />
     [NativeTypeName("__AnonymousRecord_winnt_L18686_C5")]
@@ -63,5 +64,12 @@ public unsafe partial struct IMAGE_SECTION_HEADER
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint VirtualSize;
+    }
+
+    /// <include file='_Name_e__FixedBuffer.xml' path='doc/member[@name="_Name_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _Name_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

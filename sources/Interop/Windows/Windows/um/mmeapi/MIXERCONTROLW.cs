@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct MIXERCONTROLW
+public partial struct MIXERCONTROLW
 {
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
@@ -35,11 +35,11 @@ public unsafe partial struct MIXERCONTROLW
 
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.szShortName"]/*' />
     [NativeTypeName("WCHAR[16]")]
-    public fixed char szShortName[16];
+    public _szShortName_e__FixedBuffer szShortName;
 
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.szName"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed char szName[64];
+    public _szName_e__FixedBuffer szName;
 
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.Bounds"]/*' />
     [NativeTypeName("__AnonymousRecord_mmeapi_L2081_C5")]
@@ -51,7 +51,7 @@ public unsafe partial struct MIXERCONTROLW
 
     /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit, Pack = 1)]
-    public unsafe partial struct _Bounds_e__Union
+    public partial struct _Bounds_e__Union
     {
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
@@ -66,7 +66,7 @@ public unsafe partial struct MIXERCONTROLW
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.dwReserved"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD[6]")]
-        public fixed uint dwReserved[6];
+        public _dwReserved_e__FixedBuffer dwReserved;
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.lMinimum"]/*' />
         [UnscopedRef]
@@ -137,11 +137,19 @@ public unsafe partial struct MIXERCONTROLW
             [NativeTypeName("DWORD")]
             public uint dwMaximum;
         }
+
+        /// <include file='_dwReserved_e__FixedBuffer.xml' path='doc/member[@name="_dwReserved_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        [InlineArray(6)]
+        public partial struct _dwReserved_e__FixedBuffer
+        {
+            public uint e0;
+        }
     }
 
     /// <include file='_Metrics_e__Union.xml' path='doc/member[@name="_Metrics_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit, Pack = 1)]
-    public unsafe partial struct _Metrics_e__Union
+    public partial struct _Metrics_e__Union
     {
         /// <include file='_Metrics_e__Union.xml' path='doc/member[@name="_Metrics_e__Union.cSteps"]/*' />
         [FieldOffset(0)]
@@ -156,6 +164,30 @@ public unsafe partial struct MIXERCONTROLW
         /// <include file='_Metrics_e__Union.xml' path='doc/member[@name="_Metrics_e__Union.dwReserved"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD[6]")]
-        public fixed uint dwReserved[6];
+        public _dwReserved_e__FixedBuffer dwReserved;
+
+        /// <include file='_dwReserved_e__FixedBuffer.xml' path='doc/member[@name="_dwReserved_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        [InlineArray(6)]
+        public partial struct _dwReserved_e__FixedBuffer
+        {
+            public uint e0;
+        }
+    }
+
+    /// <include file='_szShortName_e__FixedBuffer.xml' path='doc/member[@name="_szShortName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(16)]
+    public partial struct _szShortName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(64)]
+    public partial struct _szName_e__FixedBuffer
+    {
+        public char e0;
     }
 }

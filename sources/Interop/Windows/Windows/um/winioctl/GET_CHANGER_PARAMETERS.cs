@@ -3,10 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='GET_CHANGER_PARAMETERS.xml' path='doc/member[@name="GET_CHANGER_PARAMETERS"]/*' />
-public unsafe partial struct GET_CHANGER_PARAMETERS
+public partial struct GET_CHANGER_PARAMETERS
 {
     /// <include file='GET_CHANGER_PARAMETERS.xml' path='doc/member[@name="GET_CHANGER_PARAMETERS.Size"]/*' />
     [NativeTypeName("DWORD")]
@@ -104,9 +106,23 @@ public unsafe partial struct GET_CHANGER_PARAMETERS
 
     /// <include file='GET_CHANGER_PARAMETERS.xml' path='doc/member[@name="GET_CHANGER_PARAMETERS.Reserved1"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte Reserved1[2];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='GET_CHANGER_PARAMETERS.xml' path='doc/member[@name="GET_CHANGER_PARAMETERS.Reserved2"]/*' />
     [NativeTypeName("DWORD[2]")]
-    public fixed uint Reserved2[2];
+    public _Reserved2_e__FixedBuffer Reserved2;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved2_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

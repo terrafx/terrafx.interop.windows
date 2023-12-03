@@ -36,7 +36,7 @@ public partial struct SUBSCRIBE_GENERIC_TLS_EXTENSION
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

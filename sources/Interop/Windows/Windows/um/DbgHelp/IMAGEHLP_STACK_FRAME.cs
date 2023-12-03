@@ -3,10 +3,12 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGEHLP_STACK_FRAME.xml' path='doc/member[@name="IMAGEHLP_STACK_FRAME"]/*' />
-public unsafe partial struct IMAGEHLP_STACK_FRAME
+public partial struct IMAGEHLP_STACK_FRAME
 {
     /// <include file='IMAGEHLP_STACK_FRAME.xml' path='doc/member[@name="IMAGEHLP_STACK_FRAME.InstructionOffset"]/*' />
     [NativeTypeName("ULONG64")]
@@ -34,11 +36,11 @@ public unsafe partial struct IMAGEHLP_STACK_FRAME
 
     /// <include file='IMAGEHLP_STACK_FRAME.xml' path='doc/member[@name="IMAGEHLP_STACK_FRAME.Params"]/*' />
     [NativeTypeName("ULONG64[4]")]
-    public fixed ulong Params[4];
+    public _Params_e__FixedBuffer Params;
 
     /// <include file='IMAGEHLP_STACK_FRAME.xml' path='doc/member[@name="IMAGEHLP_STACK_FRAME.Reserved"]/*' />
     [NativeTypeName("ULONG64[5]")]
-    public fixed ulong Reserved[5];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='IMAGEHLP_STACK_FRAME.xml' path='doc/member[@name="IMAGEHLP_STACK_FRAME.Virtual"]/*' />
     public BOOL Virtual;
@@ -46,4 +48,18 @@ public unsafe partial struct IMAGEHLP_STACK_FRAME
     /// <include file='IMAGEHLP_STACK_FRAME.xml' path='doc/member[@name="IMAGEHLP_STACK_FRAME.Reserved2"]/*' />
     [NativeTypeName("ULONG")]
     public uint Reserved2;
+
+    /// <include file='_Params_e__FixedBuffer.xml' path='doc/member[@name="_Params_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _Params_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(5)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public ulong e0;
+    }
 }

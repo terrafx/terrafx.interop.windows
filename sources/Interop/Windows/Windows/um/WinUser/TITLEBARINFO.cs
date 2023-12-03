@@ -3,10 +3,12 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='TITLEBARINFO.xml' path='doc/member[@name="TITLEBARINFO"]/*' />
-public unsafe partial struct TITLEBARINFO
+public partial struct TITLEBARINFO
 {
     /// <include file='TITLEBARINFO.xml' path='doc/member[@name="TITLEBARINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -17,5 +19,12 @@ public unsafe partial struct TITLEBARINFO
 
     /// <include file='TITLEBARINFO.xml' path='doc/member[@name="TITLEBARINFO.rgstate"]/*' />
     [NativeTypeName("DWORD[6]")]
-    public fixed uint rgstate[6];
+    public _rgstate_e__FixedBuffer rgstate;
+
+    /// <include file='_rgstate_e__FixedBuffer.xml' path='doc/member[@name="_rgstate_e__FixedBuffer"]/*' />
+    [InlineArray(6)]
+    public partial struct _rgstate_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

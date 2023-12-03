@@ -3,12 +3,21 @@
 // Ported from um/IPTypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IP_MASK_STRING.xml' path='doc/member[@name="IP_MASK_STRING"]/*' />
-public unsafe partial struct IP_MASK_STRING
+public partial struct IP_MASK_STRING
 {
     /// <include file='IP_MASK_STRING.xml' path='doc/member[@name="IP_MASK_STRING.String"]/*' />
     [NativeTypeName("char[16]")]
-    public fixed sbyte String[16];
+    public _String_e__FixedBuffer String;
+
+    /// <include file='_String_e__FixedBuffer.xml' path='doc/member[@name="_String_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _String_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

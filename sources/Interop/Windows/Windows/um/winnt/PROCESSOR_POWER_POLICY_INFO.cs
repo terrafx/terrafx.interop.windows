@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO"]/*' />
-public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
+public partial struct PROCESSOR_POWER_POLICY_INFO
 {
     /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.TimeCheck"]/*' />
     [NativeTypeName("DWORD")]
@@ -30,7 +30,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
 
     /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.Spare"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte Spare[2];
+    public _Spare_e__FixedBuffer Spare;
 
     public uint _bitfield;
 
@@ -83,5 +83,12 @@ public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
         {
             _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);
         }
+    }
+
+    /// <include file='_Spare_e__FixedBuffer.xml' path='doc/member[@name="_Spare_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Spare_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

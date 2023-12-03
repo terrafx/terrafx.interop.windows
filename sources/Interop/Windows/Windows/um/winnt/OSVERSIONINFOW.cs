@@ -3,10 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='OSVERSIONINFOW.xml' path='doc/member[@name="OSVERSIONINFOW"]/*' />
-public unsafe partial struct OSVERSIONINFOW
+public partial struct OSVERSIONINFOW
 {
     /// <include file='OSVERSIONINFOW.xml' path='doc/member[@name="OSVERSIONINFOW.dwOSVersionInfoSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -30,5 +32,12 @@ public unsafe partial struct OSVERSIONINFOW
 
     /// <include file='OSVERSIONINFOW.xml' path='doc/member[@name="OSVERSIONINFOW.szCSDVersion"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed char szCSDVersion[128];
+    public _szCSDVersion_e__FixedBuffer szCSDVersion;
+
+    /// <include file='_szCSDVersion_e__FixedBuffer.xml' path='doc/member[@name="_szCSDVersion_e__FixedBuffer"]/*' />
+    [InlineArray(128)]
+    public partial struct _szCSDVersion_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

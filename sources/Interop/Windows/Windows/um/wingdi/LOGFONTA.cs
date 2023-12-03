@@ -3,10 +3,12 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='LOGFONTA.xml' path='doc/member[@name="LOGFONTA"]/*' />
-public unsafe partial struct LOGFONTA
+public partial struct LOGFONTA
 {
     /// <include file='LOGFONTA.xml' path='doc/member[@name="LOGFONTA.lfHeight"]/*' />
     [NativeTypeName("LONG")]
@@ -54,5 +56,12 @@ public unsafe partial struct LOGFONTA
 
     /// <include file='LOGFONTA.xml' path='doc/member[@name="LOGFONTA.lfFaceName"]/*' />
     [NativeTypeName("CHAR[32]")]
-    public fixed sbyte lfFaceName[32];
+    public _lfFaceName_e__FixedBuffer lfFaceName;
+
+    /// <include file='_lfFaceName_e__FixedBuffer.xml' path='doc/member[@name="_lfFaceName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _lfFaceName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

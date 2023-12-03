@@ -3,6 +3,11 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FILE_PREFETCH_EX.xml' path='doc/member[@name="FILE_PREFETCH_EX"]/*' />
@@ -22,5 +27,25 @@ public unsafe partial struct FILE_PREFETCH_EX
 
     /// <include file='FILE_PREFETCH_EX.xml' path='doc/member[@name="FILE_PREFETCH_EX.Prefetch"]/*' />
     [NativeTypeName("DWORDLONG[1]")]
-    public fixed ulong Prefetch[1];
+    public _Prefetch_e__FixedBuffer Prefetch;
+
+    /// <include file='_Prefetch_e__FixedBuffer.xml' path='doc/member[@name="_Prefetch_e__FixedBuffer"]/*' />
+    public partial struct _Prefetch_e__FixedBuffer
+    {
+        public ulong e0;
+
+        [UnscopedRef]
+        public ref ulong this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<ulong> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

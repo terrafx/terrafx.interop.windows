@@ -11,14 +11,14 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGE_POLICY_METADATA.xml' path='doc/member[@name="IMAGE_POLICY_METADATA"]/*' />
-public unsafe partial struct IMAGE_POLICY_METADATA
+public partial struct IMAGE_POLICY_METADATA
 {
     /// <include file='IMAGE_POLICY_METADATA.xml' path='doc/member[@name="IMAGE_POLICY_METADATA.Version"]/*' />
     public byte Version;
 
     /// <include file='IMAGE_POLICY_METADATA.xml' path='doc/member[@name="IMAGE_POLICY_METADATA.Reserved0"]/*' />
     [NativeTypeName("BYTE[7]")]
-    public fixed byte Reserved0[7];
+    public _Reserved0_e__FixedBuffer Reserved0;
 
     /// <include file='IMAGE_POLICY_METADATA.xml' path='doc/member[@name="IMAGE_POLICY_METADATA.ApplicationId"]/*' />
     [NativeTypeName("ULONGLONG")]
@@ -27,6 +27,13 @@ public unsafe partial struct IMAGE_POLICY_METADATA
     /// <include file='IMAGE_POLICY_METADATA.xml' path='doc/member[@name="IMAGE_POLICY_METADATA.Policies"]/*' />
     [NativeTypeName("IMAGE_POLICY_ENTRY[]")]
     public _Policies_e__FixedBuffer Policies;
+
+    /// <include file='_Reserved0_e__FixedBuffer.xml' path='doc/member[@name="_Reserved0_e__FixedBuffer"]/*' />
+    [InlineArray(7)]
+    public partial struct _Reserved0_e__FixedBuffer
+    {
+        public byte e0;
+    }
 
     /// <include file='_Policies_e__FixedBuffer.xml' path='doc/member[@name="_Policies_e__FixedBuffer"]/*' />
     public partial struct _Policies_e__FixedBuffer
@@ -39,7 +46,7 @@ public unsafe partial struct IMAGE_POLICY_METADATA
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SYSTEM_LOGICAL_PROCESSOR_INFORMATION.xml' path='doc/member[@name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION"]/*' />
-public unsafe partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
+public partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
 {
     /// <include file='SYSTEM_LOGICAL_PROCESSOR_INFORMATION.xml' path='doc/member[@name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.ProcessorMask"]/*' />
     [NativeTypeName("ULONG_PTR")]
@@ -64,13 +64,13 @@ public unsafe partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.Reserved[0], 2);
+            return Anonymous.Reserved;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ProcessorCore"]/*' />
         [FieldOffset(0)]
@@ -89,7 +89,7 @@ public unsafe partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Reserved"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONGLONG[2]")]
-        public fixed ulong Reserved[2];
+        public _Reserved_e__FixedBuffer Reserved;
 
         /// <include file='_ProcessorCore_e__Struct.xml' path='doc/member[@name="_ProcessorCore_e__Struct"]/*' />
         public partial struct _ProcessorCore_e__Struct
@@ -104,6 +104,13 @@ public unsafe partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
             /// <include file='_NumaNode_e__Struct.xml' path='doc/member[@name="_NumaNode_e__Struct.NodeNumber"]/*' />
             [NativeTypeName("DWORD")]
             public uint NodeNumber;
+        }
+
+        /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+        [InlineArray(2)]
+        public partial struct _Reserved_e__FixedBuffer
+        {
+            public ulong e0;
         }
     }
 }

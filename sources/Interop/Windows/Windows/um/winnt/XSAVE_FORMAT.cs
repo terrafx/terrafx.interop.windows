@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='XSAVE_FORMAT.xml' path='doc/member[@name="XSAVE_FORMAT"]/*' />
-public unsafe partial struct XSAVE_FORMAT
+public partial struct XSAVE_FORMAT
 {
     /// <include file='XSAVE_FORMAT.xml' path='doc/member[@name="XSAVE_FORMAT.ControlWord"]/*' />
     [NativeTypeName("WORD")]
@@ -70,7 +70,7 @@ public unsafe partial struct XSAVE_FORMAT
 
     /// <include file='XSAVE_FORMAT.xml' path='doc/member[@name="XSAVE_FORMAT.Reserved4"]/*' />
     [NativeTypeName("BYTE[96]")]
-    public fixed byte Reserved4[96];
+    public _Reserved4_e__FixedBuffer Reserved4;
 
     /// <include file='_FloatRegisters_e__FixedBuffer.xml' path='doc/member[@name="_FloatRegisters_e__FixedBuffer"]/*' />
     [InlineArray(8)]
@@ -84,5 +84,12 @@ public unsafe partial struct XSAVE_FORMAT
     public partial struct _XmmRegisters_e__FixedBuffer
     {
         public M128A e0;
+    }
+
+    /// <include file='_Reserved4_e__FixedBuffer.xml' path='doc/member[@name="_Reserved4_e__FixedBuffer"]/*' />
+    [InlineArray(96)]
+    public partial struct _Reserved4_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX"]/*' />
 [StructLayout(LayoutKind.Explicit)]
-public unsafe partial struct IMAGE_AUX_SYMBOL_EX
+public partial struct IMAGE_AUX_SYMBOL_EX
 {
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.Sym"]/*' />
     [FieldOffset(0)]
@@ -57,13 +57,13 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.rgbReserved[0], 2);
+            return Anonymous.rgbReserved;
         }
     }
 
     /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public unsafe partial struct _Sym_e__Struct
+    public partial struct _Sym_e__Struct
     {
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.WeakDefaultSymIndex"]/*' />
         [NativeTypeName("DWORD")]
@@ -75,20 +75,35 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.rgbReserved"]/*' />
         [NativeTypeName("BYTE[12]")]
-        public fixed byte rgbReserved[12];
+        public _rgbReserved_e__FixedBuffer rgbReserved;
+
+        /// <include file='_rgbReserved_e__FixedBuffer.xml' path='doc/member[@name="_rgbReserved_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
+        [InlineArray(12)]
+        public partial struct _rgbReserved_e__FixedBuffer
+        {
+            public byte e0;
+        }
     }
 
     /// <include file='_File_e__Struct.xml' path='doc/member[@name="_File_e__Struct"]/*' />
-    public unsafe partial struct _File_e__Struct
+    public partial struct _File_e__Struct
     {
         /// <include file='_File_e__Struct.xml' path='doc/member[@name="_File_e__Struct.Name"]/*' />
         [NativeTypeName("BYTE[20]")]
-        public fixed byte Name[20];
+        public _Name_e__FixedBuffer Name;
+
+        /// <include file='_Name_e__FixedBuffer.xml' path='doc/member[@name="_Name_e__FixedBuffer"]/*' />
+        [InlineArray(20)]
+        public partial struct _Name_e__FixedBuffer
+        {
+            public byte e0;
+        }
     }
 
     /// <include file='_Section_e__Struct.xml' path='doc/member[@name="_Section_e__Struct"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public unsafe partial struct _Section_e__Struct
+    public partial struct _Section_e__Struct
     {
         /// <include file='_Section_e__Struct.xml' path='doc/member[@name="_Section_e__Struct.Length"]/*' />
         [NativeTypeName("DWORD")]
@@ -120,23 +135,38 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
 
         /// <include file='_Section_e__Struct.xml' path='doc/member[@name="_Section_e__Struct.rgbReserved"]/*' />
         [NativeTypeName("BYTE[2]")]
-        public fixed byte rgbReserved[2];
+        public _rgbReserved_e__FixedBuffer rgbReserved;
+
+        /// <include file='_rgbReserved_e__FixedBuffer.xml' path='doc/member[@name="_rgbReserved_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
+        [InlineArray(2)]
+        public partial struct _rgbReserved_e__FixedBuffer
+        {
+            public byte e0;
+        }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
-    public unsafe partial struct _Anonymous_e__Struct
+    public partial struct _Anonymous_e__Struct
     {
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.TokenDef"]/*' />
         public IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.rgbReserved"]/*' />
         [NativeTypeName("BYTE[2]")]
-        public fixed byte rgbReserved[2];
+        public _rgbReserved_e__FixedBuffer rgbReserved;
+
+        /// <include file='_rgbReserved_e__FixedBuffer.xml' path='doc/member[@name="_rgbReserved_e__FixedBuffer"]/*' />
+        [InlineArray(2)]
+        public partial struct _rgbReserved_e__FixedBuffer
+        {
+            public byte e0;
+        }
     }
 
     /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public unsafe partial struct _CRC_e__Struct
+    public partial struct _CRC_e__Struct
     {
         /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct.crc"]/*' />
         [NativeTypeName("DWORD")]
@@ -144,6 +174,14 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
 
         /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct.rgbReserved"]/*' />
         [NativeTypeName("BYTE[16]")]
-        public fixed byte rgbReserved[16];
+        public _rgbReserved_e__FixedBuffer rgbReserved;
+
+        /// <include file='_rgbReserved_e__FixedBuffer.xml' path='doc/member[@name="_rgbReserved_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
+        [InlineArray(16)]
+        public partial struct _rgbReserved_e__FixedBuffer
+        {
+            public byte e0;
+        }
     }
 }

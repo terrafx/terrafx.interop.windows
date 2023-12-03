@@ -3,15 +3,24 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DISPLAYCONFIG_SOURCE_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_SOURCE_DEVICE_NAME"]/*' />
-public unsafe partial struct DISPLAYCONFIG_SOURCE_DEVICE_NAME
+public partial struct DISPLAYCONFIG_SOURCE_DEVICE_NAME
 {
     /// <include file='DISPLAYCONFIG_SOURCE_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_SOURCE_DEVICE_NAME.header"]/*' />
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_SOURCE_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_SOURCE_DEVICE_NAME.viewGdiDeviceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed char viewGdiDeviceName[32];
+    public _viewGdiDeviceName_e__FixedBuffer viewGdiDeviceName;
+
+    /// <include file='_viewGdiDeviceName_e__FixedBuffer.xml' path='doc/member[@name="_viewGdiDeviceName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _viewGdiDeviceName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

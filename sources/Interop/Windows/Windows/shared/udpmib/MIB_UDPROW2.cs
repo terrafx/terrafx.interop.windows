@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2"]/*' />
-public unsafe partial struct MIB_UDPROW2
+public partial struct MIB_UDPROW2
 {
     /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.dwLocalAddr"]/*' />
     [NativeTypeName("DWORD")]
@@ -33,7 +33,7 @@ public unsafe partial struct MIB_UDPROW2
 
     /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.OwningModuleInfo"]/*' />
     [NativeTypeName("ULONGLONG[16]")]
-    public fixed ulong OwningModuleInfo[16];
+    public _OwningModuleInfo_e__FixedBuffer OwningModuleInfo;
 
     /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.dwRemoteAddr"]/*' />
     [NativeTypeName("DWORD")]
@@ -105,5 +105,12 @@ public unsafe partial struct MIB_UDPROW2
                 }
             }
         }
+    }
+
+    /// <include file='_OwningModuleInfo_e__FixedBuffer.xml' path='doc/member[@name="_OwningModuleInfo_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _OwningModuleInfo_e__FixedBuffer
+    {
+        public ulong e0;
     }
 }

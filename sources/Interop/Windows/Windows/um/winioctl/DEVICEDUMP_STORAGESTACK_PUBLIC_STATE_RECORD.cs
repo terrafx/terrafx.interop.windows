@@ -3,21 +3,22 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
+public partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
 {
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.Cdb"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte Cdb[16];
+    public _Cdb_e__FixedBuffer Cdb;
 
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.Command"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte Command[16];
+    public _Command_e__FixedBuffer Command;
 
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.StartTime"]/*' />
     [NativeTypeName("DWORDLONG")]
@@ -84,5 +85,21 @@ public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
             [NativeTypeName("DWORD")]
             public uint SrbTag;
         }
+    }
+
+    /// <include file='_Cdb_e__FixedBuffer.xml' path='doc/member[@name="_Cdb_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(16)]
+    public partial struct _Cdb_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_Command_e__FixedBuffer.xml' path='doc/member[@name="_Command_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(16)]
+    public partial struct _Command_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

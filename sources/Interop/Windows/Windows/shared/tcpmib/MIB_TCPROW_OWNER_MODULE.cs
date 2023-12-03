@@ -3,10 +3,12 @@
 // Ported from shared/tcpmib.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIB_TCPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCPROW_OWNER_MODULE"]/*' />
-public unsafe partial struct MIB_TCPROW_OWNER_MODULE
+public partial struct MIB_TCPROW_OWNER_MODULE
 {
     /// <include file='MIB_TCPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCPROW_OWNER_MODULE.dwState"]/*' />
     [NativeTypeName("DWORD")]
@@ -37,5 +39,12 @@ public unsafe partial struct MIB_TCPROW_OWNER_MODULE
 
     /// <include file='MIB_TCPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCPROW_OWNER_MODULE.OwningModuleInfo"]/*' />
     [NativeTypeName("ULONGLONG[16]")]
-    public fixed ulong OwningModuleInfo[16];
+    public _OwningModuleInfo_e__FixedBuffer OwningModuleInfo;
+
+    /// <include file='_OwningModuleInfo_e__FixedBuffer.xml' path='doc/member[@name="_OwningModuleInfo_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _OwningModuleInfo_e__FixedBuffer
+    {
+        public ulong e0;
+    }
 }

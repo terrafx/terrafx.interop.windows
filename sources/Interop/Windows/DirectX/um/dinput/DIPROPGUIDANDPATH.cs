@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIPROPGUIDANDPATH.xml' path='doc/member[@name="DIPROPGUIDANDPATH"]/*' />
-public unsafe partial struct DIPROPGUIDANDPATH
+public partial struct DIPROPGUIDANDPATH
 {
     /// <include file='DIPROPGUIDANDPATH.xml' path='doc/member[@name="DIPROPGUIDANDPATH.diph"]/*' />
     public DIPROPHEADER diph;
@@ -18,5 +19,12 @@ public unsafe partial struct DIPROPGUIDANDPATH
 
     /// <include file='DIPROPGUIDANDPATH.xml' path='doc/member[@name="DIPROPGUIDANDPATH.wszPath"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed char wszPath[260];
+    public _wszPath_e__FixedBuffer wszPath;
+
+    /// <include file='_wszPath_e__FixedBuffer.xml' path='doc/member[@name="_wszPath_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _wszPath_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

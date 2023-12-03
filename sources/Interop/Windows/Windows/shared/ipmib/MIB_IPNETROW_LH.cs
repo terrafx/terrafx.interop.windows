@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIB_IPNETROW_LH.xml' path='doc/member[@name="MIB_IPNETROW_LH"]/*' />
-public unsafe partial struct MIB_IPNETROW_LH
+public partial struct MIB_IPNETROW_LH
 {
     /// <include file='MIB_IPNETROW_LH.xml' path='doc/member[@name="MIB_IPNETROW_LH.dwIndex"]/*' />
     [NativeTypeName("IF_INDEX")]
@@ -22,7 +22,7 @@ public unsafe partial struct MIB_IPNETROW_LH
 
     /// <include file='MIB_IPNETROW_LH.xml' path='doc/member[@name="MIB_IPNETROW_LH.bPhysAddr"]/*' />
     [NativeTypeName("UCHAR[8]")]
-    public fixed byte bPhysAddr[8];
+    public _bPhysAddr_e__FixedBuffer bPhysAddr;
 
     /// <include file='MIB_IPNETROW_LH.xml' path='doc/member[@name="MIB_IPNETROW_LH.dwAddr"]/*' />
     [NativeTypeName("DWORD")]
@@ -66,5 +66,12 @@ public unsafe partial struct MIB_IPNETROW_LH
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Type"]/*' />
         [FieldOffset(0)]
         public MIB_IPNET_TYPE Type;
+    }
+
+    /// <include file='_bPhysAddr_e__FixedBuffer.xml' path='doc/member[@name="_bPhysAddr_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _bPhysAddr_e__FixedBuffer
+    {
+        public byte e0;
     }
 }
