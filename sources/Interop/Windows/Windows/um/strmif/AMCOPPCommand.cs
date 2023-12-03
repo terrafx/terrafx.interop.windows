@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='AMCOPPCommand.xml' path='doc/member[@name="AMCOPPCommand"]/*' />
-public unsafe partial struct AMCOPPCommand
+public partial struct AMCOPPCommand
 {
     /// <include file='AMCOPPCommand.xml' path='doc/member[@name="AMCOPPCommand.macKDI"]/*' />
     public Guid macKDI;
@@ -26,5 +27,12 @@ public unsafe partial struct AMCOPPCommand
 
     /// <include file='AMCOPPCommand.xml' path='doc/member[@name="AMCOPPCommand.CommandData"]/*' />
     [NativeTypeName("BYTE[4056]")]
-    public fixed byte CommandData[4056];
+    public _CommandData_e__FixedBuffer CommandData;
+
+    /// <include file='_CommandData_e__FixedBuffer.xml' path='doc/member[@name="_CommandData_e__FixedBuffer"]/*' />
+    [InlineArray(4056)]
+    public partial struct _CommandData_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

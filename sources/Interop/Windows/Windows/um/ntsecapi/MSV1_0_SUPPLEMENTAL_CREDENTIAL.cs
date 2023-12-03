@@ -3,10 +3,12 @@
 // Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MSV1_0_SUPPLEMENTAL_CREDENTIAL.xml' path='doc/member[@name="MSV1_0_SUPPLEMENTAL_CREDENTIAL"]/*' />
-public unsafe partial struct MSV1_0_SUPPLEMENTAL_CREDENTIAL
+public partial struct MSV1_0_SUPPLEMENTAL_CREDENTIAL
 {
     /// <include file='MSV1_0_SUPPLEMENTAL_CREDENTIAL.xml' path='doc/member[@name="MSV1_0_SUPPLEMENTAL_CREDENTIAL.Version"]/*' />
     [NativeTypeName("ULONG")]
@@ -18,9 +20,23 @@ public unsafe partial struct MSV1_0_SUPPLEMENTAL_CREDENTIAL
 
     /// <include file='MSV1_0_SUPPLEMENTAL_CREDENTIAL.xml' path='doc/member[@name="MSV1_0_SUPPLEMENTAL_CREDENTIAL.LmPassword"]/*' />
     [NativeTypeName("UCHAR[16]")]
-    public fixed byte LmPassword[16];
+    public _LmPassword_e__FixedBuffer LmPassword;
 
     /// <include file='MSV1_0_SUPPLEMENTAL_CREDENTIAL.xml' path='doc/member[@name="MSV1_0_SUPPLEMENTAL_CREDENTIAL.NtPassword"]/*' />
     [NativeTypeName("UCHAR[16]")]
-    public fixed byte NtPassword[16];
+    public _NtPassword_e__FixedBuffer NtPassword;
+
+    /// <include file='_LmPassword_e__FixedBuffer.xml' path='doc/member[@name="_LmPassword_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _LmPassword_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_NtPassword_e__FixedBuffer.xml' path='doc/member[@name="_NtPassword_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _NtPassword_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

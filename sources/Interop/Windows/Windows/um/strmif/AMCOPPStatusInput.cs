@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='AMCOPPStatusInput.xml' path='doc/member[@name="AMCOPPStatusInput"]/*' />
-public unsafe partial struct AMCOPPStatusInput
+public partial struct AMCOPPStatusInput
 {
     /// <include file='AMCOPPStatusInput.xml' path='doc/member[@name="AMCOPPStatusInput.rApp"]/*' />
     public Guid rApp;
@@ -26,5 +27,12 @@ public unsafe partial struct AMCOPPStatusInput
 
     /// <include file='AMCOPPStatusInput.xml' path='doc/member[@name="AMCOPPStatusInput.StatusData"]/*' />
     [NativeTypeName("BYTE[4056]")]
-    public fixed byte StatusData[4056];
+    public _StatusData_e__FixedBuffer StatusData;
+
+    /// <include file='_StatusData_e__FixedBuffer.xml' path='doc/member[@name="_StatusData_e__FixedBuffer"]/*' />
+    [InlineArray(4056)]
+    public partial struct _StatusData_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

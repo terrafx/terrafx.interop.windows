@@ -3,10 +3,12 @@
 // Ported from um/icm.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PROFILEHEADER.xml' path='doc/member[@name="PROFILEHEADER"]/*' />
-public unsafe partial struct PROFILEHEADER
+public partial struct PROFILEHEADER
 {
     /// <include file='PROFILEHEADER.xml' path='doc/member[@name="PROFILEHEADER.phSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -34,7 +36,7 @@ public unsafe partial struct PROFILEHEADER
 
     /// <include file='PROFILEHEADER.xml' path='doc/member[@name="PROFILEHEADER.phDateTime"]/*' />
     [NativeTypeName("DWORD[3]")]
-    public fixed uint phDateTime[3];
+    public _phDateTime_e__FixedBuffer phDateTime;
 
     /// <include file='PROFILEHEADER.xml' path='doc/member[@name="PROFILEHEADER.phSignature"]/*' />
     [NativeTypeName("DWORD")]
@@ -58,7 +60,7 @@ public unsafe partial struct PROFILEHEADER
 
     /// <include file='PROFILEHEADER.xml' path='doc/member[@name="PROFILEHEADER.phAttributes"]/*' />
     [NativeTypeName("DWORD[2]")]
-    public fixed uint phAttributes[2];
+    public _phAttributes_e__FixedBuffer phAttributes;
 
     /// <include file='PROFILEHEADER.xml' path='doc/member[@name="PROFILEHEADER.phRenderingIntent"]/*' />
     [NativeTypeName("DWORD")]
@@ -73,5 +75,26 @@ public unsafe partial struct PROFILEHEADER
 
     /// <include file='PROFILEHEADER.xml' path='doc/member[@name="PROFILEHEADER.phReserved"]/*' />
     [NativeTypeName("BYTE[44]")]
-    public fixed byte phReserved[44];
+    public _phReserved_e__FixedBuffer phReserved;
+
+    /// <include file='_phDateTime_e__FixedBuffer.xml' path='doc/member[@name="_phDateTime_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _phDateTime_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_phAttributes_e__FixedBuffer.xml' path='doc/member[@name="_phAttributes_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _phAttributes_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_phReserved_e__FixedBuffer.xml' path='doc/member[@name="_phReserved_e__FixedBuffer"]/*' />
+    [InlineArray(44)]
+    public partial struct _phReserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

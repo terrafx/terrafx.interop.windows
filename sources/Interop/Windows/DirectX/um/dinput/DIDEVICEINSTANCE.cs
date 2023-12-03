@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIDEVICEINSTANCE.xml' path='doc/member[@name="DIDEVICEINSTANCE"]/*' />
-public unsafe partial struct DIDEVICEINSTANCE
+public partial struct DIDEVICEINSTANCE
 {
     /// <include file='DIDEVICEINSTANCE.xml' path='doc/member[@name="DIDEVICEINSTANCE.dwSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -26,11 +27,11 @@ public unsafe partial struct DIDEVICEINSTANCE
 
     /// <include file='DIDEVICEINSTANCE.xml' path='doc/member[@name="DIDEVICEINSTANCE.tszInstanceName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed char tszInstanceName[260];
+    public _tszInstanceName_e__FixedBuffer tszInstanceName;
 
     /// <include file='DIDEVICEINSTANCE.xml' path='doc/member[@name="DIDEVICEINSTANCE.tszProductName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed char tszProductName[260];
+    public _tszProductName_e__FixedBuffer tszProductName;
 
     /// <include file='DIDEVICEINSTANCE.xml' path='doc/member[@name="DIDEVICEINSTANCE.guidFFDriver"]/*' />
     public Guid guidFFDriver;
@@ -42,4 +43,18 @@ public unsafe partial struct DIDEVICEINSTANCE
     /// <include file='DIDEVICEINSTANCE.xml' path='doc/member[@name="DIDEVICEINSTANCE.wUsage"]/*' />
     [NativeTypeName("WORD")]
     public ushort wUsage;
+
+    /// <include file='_tszInstanceName_e__FixedBuffer.xml' path='doc/member[@name="_tszInstanceName_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _tszInstanceName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_tszProductName_e__FixedBuffer.xml' path='doc/member[@name="_tszProductName_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _tszProductName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

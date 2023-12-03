@@ -34,7 +34,7 @@ public partial struct KERB_EXTERNAL_NAME
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

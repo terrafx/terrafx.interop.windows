@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT"]/*' />
-public unsafe partial struct ARM64_NT_CONTEXT
+public partial struct ARM64_NT_CONTEXT
 {
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.ContextFlags"]/*' />
     [NativeTypeName("DWORD")]
@@ -47,19 +47,19 @@ public unsafe partial struct ARM64_NT_CONTEXT
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Bcr"]/*' />
     [NativeTypeName("DWORD[8]")]
-    public fixed uint Bcr[8];
+    public _Bcr_e__FixedBuffer Bcr;
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Bvr"]/*' />
     [NativeTypeName("DWORD64[8]")]
-    public fixed ulong Bvr[8];
+    public _Bvr_e__FixedBuffer Bvr;
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Wcr"]/*' />
     [NativeTypeName("DWORD[2]")]
-    public fixed uint Wcr[2];
+    public _Wcr_e__FixedBuffer Wcr;
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Wvr"]/*' />
     [NativeTypeName("DWORD64[2]")]
-    public fixed ulong Wvr[2];
+    public _Wvr_e__FixedBuffer Wvr;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X0"]/*' />
     [UnscopedRef]
@@ -409,13 +409,13 @@ public unsafe partial struct ARM64_NT_CONTEXT
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.X[0], 31);
+            return Anonymous.X;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
@@ -425,7 +425,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.X"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD64[31]")]
-        public fixed ulong X[31];
+        public _X_e__FixedBuffer X;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
@@ -554,6 +554,13 @@ public unsafe partial struct ARM64_NT_CONTEXT
             [NativeTypeName("DWORD64")]
             public ulong Lr;
         }
+
+        /// <include file='_X_e__FixedBuffer.xml' path='doc/member[@name="_X_e__FixedBuffer"]/*' />
+        [InlineArray(31)]
+        public partial struct _X_e__FixedBuffer
+        {
+            public ulong e0;
+        }
     }
 
     /// <include file='_V_e__FixedBuffer.xml' path='doc/member[@name="_V_e__FixedBuffer"]/*' />
@@ -561,5 +568,33 @@ public unsafe partial struct ARM64_NT_CONTEXT
     public partial struct _V_e__FixedBuffer
     {
         public ARM64_NT_NEON128 e0;
+    }
+
+    /// <include file='_Bcr_e__FixedBuffer.xml' path='doc/member[@name="_Bcr_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _Bcr_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_Bvr_e__FixedBuffer.xml' path='doc/member[@name="_Bvr_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _Bvr_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_Wcr_e__FixedBuffer.xml' path='doc/member[@name="_Wcr_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Wcr_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_Wvr_e__FixedBuffer.xml' path='doc/member[@name="_Wvr_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Wvr_e__FixedBuffer
+    {
+        public ulong e0;
     }
 }

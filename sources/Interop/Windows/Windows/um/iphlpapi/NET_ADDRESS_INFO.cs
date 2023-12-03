@@ -85,15 +85,29 @@ public partial struct NET_ADDRESS_INFO
         public SOCKADDR IpAddress;
 
         /// <include file='_NamedAddress_e__Struct.xml' path='doc/member[@name="_NamedAddress_e__Struct"]/*' />
-        public unsafe partial struct _NamedAddress_e__Struct
+        public partial struct _NamedAddress_e__Struct
         {
             /// <include file='_NamedAddress_e__Struct.xml' path='doc/member[@name="_NamedAddress_e__Struct.Address"]/*' />
             [NativeTypeName("WCHAR[256]")]
-            public fixed char Address[256];
+            public _Address_e__FixedBuffer Address;
 
             /// <include file='_NamedAddress_e__Struct.xml' path='doc/member[@name="_NamedAddress_e__Struct.Port"]/*' />
             [NativeTypeName("WCHAR[6]")]
-            public fixed char Port[6];
+            public _Port_e__FixedBuffer Port;
+
+            /// <include file='_Address_e__FixedBuffer.xml' path='doc/member[@name="_Address_e__FixedBuffer"]/*' />
+            [InlineArray(256)]
+            public partial struct _Address_e__FixedBuffer
+            {
+                public char e0;
+            }
+
+            /// <include file='_Port_e__FixedBuffer.xml' path='doc/member[@name="_Port_e__FixedBuffer"]/*' />
+            [InlineArray(6)]
+            public partial struct _Port_e__FixedBuffer
+            {
+                public char e0;
+            }
         }
     }
 }

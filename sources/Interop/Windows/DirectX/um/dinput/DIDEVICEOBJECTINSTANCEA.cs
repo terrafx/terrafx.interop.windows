@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIDEVICEOBJECTINSTANCEA.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCEA"]/*' />
-public unsafe partial struct DIDEVICEOBJECTINSTANCEA
+public partial struct DIDEVICEOBJECTINSTANCEA
 {
     /// <include file='DIDEVICEOBJECTINSTANCEA.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCEA.dwSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -31,7 +32,7 @@ public unsafe partial struct DIDEVICEOBJECTINSTANCEA
 
     /// <include file='DIDEVICEOBJECTINSTANCEA.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCEA.tszName"]/*' />
     [NativeTypeName("CHAR[260]")]
-    public fixed sbyte tszName[260];
+    public _tszName_e__FixedBuffer tszName;
 
     /// <include file='DIDEVICEOBJECTINSTANCEA.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCEA.dwFFMaxForce"]/*' />
     [NativeTypeName("DWORD")]
@@ -68,4 +69,11 @@ public unsafe partial struct DIDEVICEOBJECTINSTANCEA
     /// <include file='DIDEVICEOBJECTINSTANCEA.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCEA.wReportId"]/*' />
     [NativeTypeName("WORD")]
     public ushort wReportId;
+
+    /// <include file='_tszName_e__FixedBuffer.xml' path='doc/member[@name="_tszName_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _tszName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

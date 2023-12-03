@@ -3,13 +3,17 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_PROTOCOL_COMMAND.xml' path='doc/member[@name="STORAGE_PROTOCOL_COMMAND"]/*' />
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct STORAGE_PROTOCOL_COMMAND
+public partial struct STORAGE_PROTOCOL_COMMAND
 {
     /// <include file='STORAGE_PROTOCOL_COMMAND.xml' path='doc/member[@name="STORAGE_PROTOCOL_COMMAND.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -80,9 +84,36 @@ public unsafe partial struct STORAGE_PROTOCOL_COMMAND
 
     /// <include file='STORAGE_PROTOCOL_COMMAND.xml' path='doc/member[@name="STORAGE_PROTOCOL_COMMAND.Reserved1"]/*' />
     [NativeTypeName("DWORD[3]")]
-    public fixed uint Reserved1[3];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='STORAGE_PROTOCOL_COMMAND.xml' path='doc/member[@name="STORAGE_PROTOCOL_COMMAND.Command"]/*' />
     [NativeTypeName("BYTE[1]")]
-    public fixed byte Command[1];
+    public _Command_e__FixedBuffer Command;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_Command_e__FixedBuffer.xml' path='doc/member[@name="_Command_e__FixedBuffer"]/*' />
+    public partial struct _Command_e__FixedBuffer
+    {
+        public byte e0;
+
+        [UnscopedRef]
+        public ref byte this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

@@ -3,10 +3,12 @@
 // Ported from um/TlHelp32.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PROCESSENTRY32.xml' path='doc/member[@name="PROCESSENTRY32"]/*' />
-public unsafe partial struct PROCESSENTRY32
+public partial struct PROCESSENTRY32
 {
     /// <include file='PROCESSENTRY32.xml' path='doc/member[@name="PROCESSENTRY32.dwSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -46,5 +48,12 @@ public unsafe partial struct PROCESSENTRY32
 
     /// <include file='PROCESSENTRY32.xml' path='doc/member[@name="PROCESSENTRY32.szExeFile"]/*' />
     [NativeTypeName("CHAR[260]")]
-    public fixed sbyte szExeFile[260];
+    public _szExeFile_e__FixedBuffer szExeFile;
+
+    /// <include file='_szExeFile_e__FixedBuffer.xml' path='doc/member[@name="_szExeFile_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _szExeFile_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -110,21 +111,35 @@ public partial struct IMAGE_AUX_SYMBOL
             }
 
             /// <include file='_Array_e__Struct.xml' path='doc/member[@name="_Array_e__Struct"]/*' />
-            public unsafe partial struct _Array_e__Struct
+            public partial struct _Array_e__Struct
             {
                 /// <include file='_Array_e__Struct.xml' path='doc/member[@name="_Array_e__Struct.Dimension"]/*' />
                 [NativeTypeName("WORD[4]")]
-                public fixed ushort Dimension[4];
+                public _Dimension_e__FixedBuffer Dimension;
+
+                /// <include file='_Dimension_e__FixedBuffer.xml' path='doc/member[@name="_Dimension_e__FixedBuffer"]/*' />
+                [InlineArray(4)]
+                public partial struct _Dimension_e__FixedBuffer
+                {
+                    public ushort e0;
+                }
             }
         }
     }
 
     /// <include file='_File_e__Struct.xml' path='doc/member[@name="_File_e__Struct"]/*' />
-    public unsafe partial struct _File_e__Struct
+    public partial struct _File_e__Struct
     {
         /// <include file='_File_e__Struct.xml' path='doc/member[@name="_File_e__Struct.Name"]/*' />
         [NativeTypeName("BYTE[18]")]
-        public fixed byte Name[18];
+        public _Name_e__FixedBuffer Name;
+
+        /// <include file='_Name_e__FixedBuffer.xml' path='doc/member[@name="_Name_e__FixedBuffer"]/*' />
+        [InlineArray(18)]
+        public partial struct _Name_e__FixedBuffer
+        {
+            public byte e0;
+        }
     }
 
     /// <include file='_Section_e__Struct.xml' path='doc/member[@name="_Section_e__Struct"]/*' />
@@ -162,7 +177,7 @@ public partial struct IMAGE_AUX_SYMBOL
 
     /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public unsafe partial struct _CRC_e__Struct
+    public partial struct _CRC_e__Struct
     {
         /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct.crc"]/*' />
         [NativeTypeName("DWORD")]
@@ -170,6 +185,14 @@ public partial struct IMAGE_AUX_SYMBOL
 
         /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct.rgbReserved"]/*' />
         [NativeTypeName("BYTE[14]")]
-        public fixed byte rgbReserved[14];
+        public _rgbReserved_e__FixedBuffer rgbReserved;
+
+        /// <include file='_rgbReserved_e__FixedBuffer.xml' path='doc/member[@name="_rgbReserved_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
+        [InlineArray(14)]
+        public partial struct _rgbReserved_e__FixedBuffer
+        {
+            public byte e0;
+        }
     }
 }

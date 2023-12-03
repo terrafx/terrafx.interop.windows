@@ -45,7 +45,7 @@ public partial struct SCM_PD_FIRMWARE_INFO
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

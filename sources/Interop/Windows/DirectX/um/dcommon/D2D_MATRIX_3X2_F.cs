@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D_MATRIX_3X2_F.xml' path='doc/member[@name="D2D_MATRIX_3X2_F"]/*' />
-public unsafe partial struct D2D_MATRIX_3X2_F
+public partial struct D2D_MATRIX_3X2_F
 {
     /// <include file='D2D_MATRIX_3X2_F.xml' path='doc/member[@name="D2D_MATRIX_3X2_F.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_dcommon_L285_C5")]
@@ -156,13 +156,13 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.m[0], 3);
+            return Anonymous.m;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
@@ -177,7 +177,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("FLOAT[3][2]")]
-        public fixed float m[3 * 2];
+        public _m_e__FixedBuffer m;
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />
         public partial struct _Anonymous1_e__Struct
@@ -221,6 +221,13 @@ public unsafe partial struct D2D_MATRIX_3X2_F
 
             /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._32"]/*' />
             public float _32;
+        }
+
+        /// <include file='_m_e__FixedBuffer.xml' path='doc/member[@name="_m_e__FixedBuffer"]/*' />
+        [InlineArray(3 * 2)]
+        public partial struct _m_e__FixedBuffer
+        {
+            public float e0_0;
         }
     }
 }

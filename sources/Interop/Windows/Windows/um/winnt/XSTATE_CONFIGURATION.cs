@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION"]/*' />
-public unsafe partial struct XSTATE_CONFIGURATION
+public partial struct XSTATE_CONFIGURATION
 {
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.EnabledFeatures"]/*' />
     [NativeTypeName("DWORD64")]
@@ -46,7 +46,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.AllFeatures"]/*' />
     [NativeTypeName("DWORD[64]")]
-    public fixed uint AllFeatures[64];
+    public _AllFeatures_e__FixedBuffer AllFeatures;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.EnabledUserVisibleSupervisorFeatures"]/*' />
     [NativeTypeName("DWORD64")]
@@ -200,5 +200,12 @@ public unsafe partial struct XSTATE_CONFIGURATION
     public partial struct _Features_e__FixedBuffer
     {
         public XSTATE_FEATURE e0;
+    }
+
+    /// <include file='_AllFeatures_e__FixedBuffer.xml' path='doc/member[@name="_AllFeatures_e__FixedBuffer"]/*' />
+    [InlineArray(64)]
+    public partial struct _AllFeatures_e__FixedBuffer
+    {
+        public uint e0;
     }
 }

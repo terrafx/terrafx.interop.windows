@@ -3,18 +3,19 @@
 // Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE"]/*' />
 [StructLayout(LayoutKind.Explicit)]
-public unsafe partial struct DWRITE_PANOSE
+public partial struct DWRITE_PANOSE
 {
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.values"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("UINT8[10]")]
-    public fixed byte values[10];
+    public _values_e__FixedBuffer values;
 
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.familyKind"]/*' />
     [FieldOffset(0)]
@@ -215,5 +216,12 @@ public unsafe partial struct DWRITE_PANOSE
         /// <include file='_symbol_e__Struct.xml' path='doc/member[@name="_symbol_e__Struct.aspectRatio211"]/*' />
         [NativeTypeName("UINT8")]
         public byte aspectRatio211;
+    }
+
+    /// <include file='_values_e__FixedBuffer.xml' path='doc/member[@name="_values_e__FixedBuffer"]/*' />
+    [InlineArray(10)]
+    public partial struct _values_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

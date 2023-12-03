@@ -72,7 +72,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    return ref AsSpan(int.MaxValue)[index];
+                    return ref Unsafe.Add(ref e0, index);
                 }
             }
 
@@ -92,7 +92,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    return ref AsSpan(int.MaxValue)[index];
+                    return ref Unsafe.Add(ref e0, index);
                 }
             }
 

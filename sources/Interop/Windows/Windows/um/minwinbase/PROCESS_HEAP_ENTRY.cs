@@ -71,14 +71,21 @@ public unsafe partial struct PROCESS_HEAP_ENTRY
         public _Region_e__Struct Region;
 
         /// <include file='_Block_e__Struct.xml' path='doc/member[@name="_Block_e__Struct"]/*' />
-        public unsafe partial struct _Block_e__Struct
+        public partial struct _Block_e__Struct
         {
             /// <include file='_Block_e__Struct.xml' path='doc/member[@name="_Block_e__Struct.hMem"]/*' />
             public HANDLE hMem;
 
             /// <include file='_Block_e__Struct.xml' path='doc/member[@name="_Block_e__Struct.dwReserved"]/*' />
             [NativeTypeName("DWORD[3]")]
-            public fixed uint dwReserved[3];
+            public _dwReserved_e__FixedBuffer dwReserved;
+
+            /// <include file='_dwReserved_e__FixedBuffer.xml' path='doc/member[@name="_dwReserved_e__FixedBuffer"]/*' />
+            [InlineArray(3)]
+            public partial struct _dwReserved_e__FixedBuffer
+            {
+                public uint e0;
+            }
         }
 
         /// <include file='_Region_e__Struct.xml' path='doc/member[@name="_Region_e__Struct"]/*' />

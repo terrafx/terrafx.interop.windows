@@ -36,7 +36,7 @@ public unsafe partial struct LDR_DATA_TABLE_ENTRY
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.Reserved4"]/*' />
     [NativeTypeName("BYTE[8]")]
-    public fixed byte Reserved4[8];
+    public _Reserved4_e__FixedBuffer Reserved4;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.Reserved5"]/*' />
     [NativeTypeName("PVOID[3]")]
@@ -142,6 +142,13 @@ public unsafe partial struct LDR_DATA_TABLE_ENTRY
                 }
             }
         }
+    }
+
+    /// <include file='_Reserved4_e__FixedBuffer.xml' path='doc/member[@name="_Reserved4_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _Reserved4_e__FixedBuffer
+    {
+        public byte e0;
     }
 
     /// <include file='_Reserved5_e__FixedBuffer.xml' path='doc/member[@name="_Reserved5_e__FixedBuffer"]/*' />

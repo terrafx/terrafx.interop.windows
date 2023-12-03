@@ -3,13 +3,14 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_ADAPTER_SERIAL_NUMBER.xml' path='doc/member[@name="STORAGE_ADAPTER_SERIAL_NUMBER"]/*' />
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct STORAGE_ADAPTER_SERIAL_NUMBER
+public partial struct STORAGE_ADAPTER_SERIAL_NUMBER
 {
     /// <include file='STORAGE_ADAPTER_SERIAL_NUMBER.xml' path='doc/member[@name="STORAGE_ADAPTER_SERIAL_NUMBER.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -21,5 +22,12 @@ public unsafe partial struct STORAGE_ADAPTER_SERIAL_NUMBER
 
     /// <include file='STORAGE_ADAPTER_SERIAL_NUMBER.xml' path='doc/member[@name="STORAGE_ADAPTER_SERIAL_NUMBER.SerialNumber"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed char SerialNumber[128];
+    public _SerialNumber_e__FixedBuffer SerialNumber;
+
+    /// <include file='_SerialNumber_e__FixedBuffer.xml' path='doc/member[@name="_SerialNumber_e__FixedBuffer"]/*' />
+    [InlineArray(128)]
+    public partial struct _SerialNumber_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

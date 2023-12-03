@@ -52,7 +52,7 @@ public partial struct SCOPE_TABLE_ARM64
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

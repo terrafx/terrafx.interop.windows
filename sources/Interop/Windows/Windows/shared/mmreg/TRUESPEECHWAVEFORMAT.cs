@@ -3,13 +3,14 @@
 // Ported from shared/mmreg.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='TRUESPEECHWAVEFORMAT.xml' path='doc/member[@name="TRUESPEECHWAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct TRUESPEECHWAVEFORMAT
+public partial struct TRUESPEECHWAVEFORMAT
 {
     /// <include file='TRUESPEECHWAVEFORMAT.xml' path='doc/member[@name="TRUESPEECHWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
@@ -24,5 +25,13 @@ public unsafe partial struct TRUESPEECHWAVEFORMAT
 
     /// <include file='TRUESPEECHWAVEFORMAT.xml' path='doc/member[@name="TRUESPEECHWAVEFORMAT.abReserved"]/*' />
     [NativeTypeName("BYTE[28]")]
-    public fixed byte abReserved[28];
+    public _abReserved_e__FixedBuffer abReserved;
+
+    /// <include file='_abReserved_e__FixedBuffer.xml' path='doc/member[@name="_abReserved_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(28)]
+    public partial struct _abReserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

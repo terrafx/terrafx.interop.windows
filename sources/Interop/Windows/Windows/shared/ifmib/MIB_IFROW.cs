@@ -3,14 +3,16 @@
 // Ported from shared/ifmib.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW"]/*' />
-public unsafe partial struct MIB_IFROW
+public partial struct MIB_IFROW
 {
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.wszName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed char wszName[256];
+    public _wszName_e__FixedBuffer wszName;
 
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.dwIndex"]/*' />
     [NativeTypeName("IF_INDEX")]
@@ -34,7 +36,7 @@ public unsafe partial struct MIB_IFROW
 
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.bPhysAddr"]/*' />
     [NativeTypeName("UCHAR[8]")]
-    public fixed byte bPhysAddr[8];
+    public _bPhysAddr_e__FixedBuffer bPhysAddr;
 
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.dwAdminStatus"]/*' />
     [NativeTypeName("DWORD")]
@@ -101,5 +103,26 @@ public unsafe partial struct MIB_IFROW
 
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.bDescr"]/*' />
     [NativeTypeName("UCHAR[256]")]
-    public fixed byte bDescr[256];
+    public _bDescr_e__FixedBuffer bDescr;
+
+    /// <include file='_wszName_e__FixedBuffer.xml' path='doc/member[@name="_wszName_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _wszName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_bPhysAddr_e__FixedBuffer.xml' path='doc/member[@name="_bPhysAddr_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _bPhysAddr_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_bDescr_e__FixedBuffer.xml' path='doc/member[@name="_bDescr_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _bDescr_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

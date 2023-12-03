@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64"]/*' />
-public unsafe partial struct IMAGEHLP_MODULEW64
+public partial struct IMAGEHLP_MODULEW64
 {
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.SizeOfStruct"]/*' />
     [NativeTypeName("DWORD")]
@@ -39,19 +40,19 @@ public unsafe partial struct IMAGEHLP_MODULEW64
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.ModuleName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed char ModuleName[32];
+    public _ModuleName_e__FixedBuffer ModuleName;
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.ImageName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed char ImageName[256];
+    public _ImageName_e__FixedBuffer ImageName;
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.LoadedImageName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed char LoadedImageName[256];
+    public _LoadedImageName_e__FixedBuffer LoadedImageName;
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.LoadedPdbName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed char LoadedPdbName[256];
+    public _LoadedPdbName_e__FixedBuffer LoadedPdbName;
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.CVSig"]/*' />
     [NativeTypeName("DWORD")]
@@ -59,7 +60,7 @@ public unsafe partial struct IMAGEHLP_MODULEW64
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.CVData"]/*' />
     [NativeTypeName("WCHAR[780]")]
-    public fixed char CVData[780];
+    public _CVData_e__FixedBuffer CVData;
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.PdbSig"]/*' />
     [NativeTypeName("DWORD")]
@@ -100,4 +101,39 @@ public unsafe partial struct IMAGEHLP_MODULEW64
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
+
+    /// <include file='_ModuleName_e__FixedBuffer.xml' path='doc/member[@name="_ModuleName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _ModuleName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_ImageName_e__FixedBuffer.xml' path='doc/member[@name="_ImageName_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _ImageName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_LoadedImageName_e__FixedBuffer.xml' path='doc/member[@name="_LoadedImageName_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _LoadedImageName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_LoadedPdbName_e__FixedBuffer.xml' path='doc/member[@name="_LoadedPdbName_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _LoadedPdbName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_CVData_e__FixedBuffer.xml' path='doc/member[@name="_CVData_e__FixedBuffer"]/*' />
+    [InlineArray(780)]
+    public partial struct _CVData_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

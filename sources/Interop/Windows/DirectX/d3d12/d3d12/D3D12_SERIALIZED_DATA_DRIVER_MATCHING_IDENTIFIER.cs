@@ -4,16 +4,24 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER.xml' path='doc/member[@name="D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER"]/*' />
-public unsafe partial struct D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER
+public partial struct D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER
 {
     /// <include file='D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER.xml' path='doc/member[@name="D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER.DriverOpaqueGUID"]/*' />
     public Guid DriverOpaqueGUID;
 
     /// <include file='D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER.xml' path='doc/member[@name="D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER.DriverOpaqueVersioningData"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte DriverOpaqueVersioningData[16];
+    public _DriverOpaqueVersioningData_e__FixedBuffer DriverOpaqueVersioningData;
+
+    /// <include file='_DriverOpaqueVersioningData_e__FixedBuffer.xml' path='doc/member[@name="_DriverOpaqueVersioningData_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _DriverOpaqueVersioningData_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

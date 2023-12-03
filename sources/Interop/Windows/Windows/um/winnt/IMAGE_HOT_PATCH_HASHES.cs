@@ -3,16 +3,32 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGE_HOT_PATCH_HASHES.xml' path='doc/member[@name="IMAGE_HOT_PATCH_HASHES"]/*' />
-public unsafe partial struct IMAGE_HOT_PATCH_HASHES
+public partial struct IMAGE_HOT_PATCH_HASHES
 {
     /// <include file='IMAGE_HOT_PATCH_HASHES.xml' path='doc/member[@name="IMAGE_HOT_PATCH_HASHES.SHA256"]/*' />
     [NativeTypeName("BYTE[32]")]
-    public fixed byte SHA256[32];
+    public _SHA256_e__FixedBuffer SHA256;
 
     /// <include file='IMAGE_HOT_PATCH_HASHES.xml' path='doc/member[@name="IMAGE_HOT_PATCH_HASHES.SHA1"]/*' />
     [NativeTypeName("BYTE[20]")]
-    public fixed byte SHA1[20];
+    public _SHA1_e__FixedBuffer SHA1;
+
+    /// <include file='_SHA256_e__FixedBuffer.xml' path='doc/member[@name="_SHA256_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _SHA256_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_SHA1_e__FixedBuffer.xml' path='doc/member[@name="_SHA1_e__FixedBuffer"]/*' />
+    [InlineArray(20)]
+    public partial struct _SHA1_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

@@ -3,13 +3,14 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SHChangeUpdateImageIDList.xml' path='doc/member[@name="SHChangeUpdateImageIDList"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct SHChangeUpdateImageIDList
+public partial struct SHChangeUpdateImageIDList
 {
     /// <include file='SHChangeUpdateImageIDList.xml' path='doc/member[@name="SHChangeUpdateImageIDList.cb"]/*' />
     public ushort cb;
@@ -29,8 +30,16 @@ public unsafe partial struct SHChangeUpdateImageIDList
 
     /// <include file='SHChangeUpdateImageIDList.xml' path='doc/member[@name="SHChangeUpdateImageIDList.szName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed char szName[260];
+    public _szName_e__FixedBuffer szName;
 
     /// <include file='SHChangeUpdateImageIDList.xml' path='doc/member[@name="SHChangeUpdateImageIDList.cbZero"]/*' />
     public ushort cbZero;
+
+    /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(260)]
+    public partial struct _szName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

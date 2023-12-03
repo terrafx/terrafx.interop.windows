@@ -3,10 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WOW64_CONTEXT.xml' path='doc/member[@name="WOW64_CONTEXT"]/*' />
-public unsafe partial struct WOW64_CONTEXT
+public partial struct WOW64_CONTEXT
 {
     /// <include file='WOW64_CONTEXT.xml' path='doc/member[@name="WOW64_CONTEXT.ContextFlags"]/*' />
     [NativeTypeName("DWORD")]
@@ -105,5 +107,12 @@ public unsafe partial struct WOW64_CONTEXT
 
     /// <include file='WOW64_CONTEXT.xml' path='doc/member[@name="WOW64_CONTEXT.ExtendedRegisters"]/*' />
     [NativeTypeName("BYTE[512]")]
-    public fixed byte ExtendedRegisters[512];
+    public _ExtendedRegisters_e__FixedBuffer ExtendedRegisters;
+
+    /// <include file='_ExtendedRegisters_e__FixedBuffer.xml' path='doc/member[@name="_ExtendedRegisters_e__FixedBuffer"]/*' />
+    [InlineArray(512)]
+    public partial struct _ExtendedRegisters_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

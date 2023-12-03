@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct AUTO_SCROLL_DATA
+public partial struct AUTO_SCROLL_DATA
 {
     /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.iNextSample"]/*' />
     public int iNextSample;
@@ -28,7 +28,7 @@ public unsafe partial struct AUTO_SCROLL_DATA
 
     /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.dwTimes"]/*' />
     [NativeTypeName("DWORD[3]")]
-    public fixed uint dwTimes[3];
+    public _dwTimes_e__FixedBuffer dwTimes;
 
     /// <include file='_pts_e__FixedBuffer.xml' path='doc/member[@name="_pts_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -36,5 +36,13 @@ public unsafe partial struct AUTO_SCROLL_DATA
     public partial struct _pts_e__FixedBuffer
     {
         public POINT e0;
+    }
+
+    /// <include file='_dwTimes_e__FixedBuffer.xml' path='doc/member[@name="_dwTimes_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(3)]
+    public partial struct _dwTimes_e__FixedBuffer
+    {
+        public uint e0;
     }
 }

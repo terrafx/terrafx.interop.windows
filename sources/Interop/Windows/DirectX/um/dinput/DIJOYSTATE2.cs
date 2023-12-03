@@ -3,10 +3,12 @@
 // Ported from um/dinput.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2"]/*' />
-public unsafe partial struct DIJOYSTATE2
+public partial struct DIJOYSTATE2
 {
     /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2.lX"]/*' />
     [NativeTypeName("LONG")]
@@ -34,15 +36,15 @@ public unsafe partial struct DIJOYSTATE2
 
     /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2.rglSlider"]/*' />
     [NativeTypeName("LONG[2]")]
-    public fixed int rglSlider[2];
+    public _rglSlider_e__FixedBuffer rglSlider;
 
     /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2.rgdwPOV"]/*' />
     [NativeTypeName("DWORD[4]")]
-    public fixed uint rgdwPOV[4];
+    public _rgdwPOV_e__FixedBuffer rgdwPOV;
 
     /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2.rgbButtons"]/*' />
     [NativeTypeName("BYTE[128]")]
-    public fixed byte rgbButtons[128];
+    public _rgbButtons_e__FixedBuffer rgbButtons;
 
     /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2.lVX"]/*' />
     [NativeTypeName("LONG")]
@@ -70,7 +72,7 @@ public unsafe partial struct DIJOYSTATE2
 
     /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2.rglVSlider"]/*' />
     [NativeTypeName("LONG[2]")]
-    public fixed int rglVSlider[2];
+    public _rglVSlider_e__FixedBuffer rglVSlider;
 
     /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2.lAX"]/*' />
     [NativeTypeName("LONG")]
@@ -98,7 +100,7 @@ public unsafe partial struct DIJOYSTATE2
 
     /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2.rglASlider"]/*' />
     [NativeTypeName("LONG[2]")]
-    public fixed int rglASlider[2];
+    public _rglASlider_e__FixedBuffer rglASlider;
 
     /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2.lFX"]/*' />
     [NativeTypeName("LONG")]
@@ -126,5 +128,47 @@ public unsafe partial struct DIJOYSTATE2
 
     /// <include file='DIJOYSTATE2.xml' path='doc/member[@name="DIJOYSTATE2.rglFSlider"]/*' />
     [NativeTypeName("LONG[2]")]
-    public fixed int rglFSlider[2];
+    public _rglFSlider_e__FixedBuffer rglFSlider;
+
+    /// <include file='_rglSlider_e__FixedBuffer.xml' path='doc/member[@name="_rglSlider_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _rglSlider_e__FixedBuffer
+    {
+        public int e0;
+    }
+
+    /// <include file='_rgdwPOV_e__FixedBuffer.xml' path='doc/member[@name="_rgdwPOV_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _rgdwPOV_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_rgbButtons_e__FixedBuffer.xml' path='doc/member[@name="_rgbButtons_e__FixedBuffer"]/*' />
+    [InlineArray(128)]
+    public partial struct _rgbButtons_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_rglVSlider_e__FixedBuffer.xml' path='doc/member[@name="_rglVSlider_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _rglVSlider_e__FixedBuffer
+    {
+        public int e0;
+    }
+
+    /// <include file='_rglASlider_e__FixedBuffer.xml' path='doc/member[@name="_rglASlider_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _rglASlider_e__FixedBuffer
+    {
+        public int e0;
+    }
+
+    /// <include file='_rglFSlider_e__FixedBuffer.xml' path='doc/member[@name="_rglFSlider_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _rglFSlider_e__FixedBuffer
+    {
+        public int e0;
+    }
 }

@@ -4,11 +4,14 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SCM_PD_DEVICE_INFO.xml' path='doc/member[@name="SCM_PD_DEVICE_INFO"]/*' />
-public unsafe partial struct SCM_PD_DEVICE_INFO
+public partial struct SCM_PD_DEVICE_INFO
 {
     /// <include file='SCM_PD_DEVICE_INFO.xml' path='doc/member[@name="SCM_PD_DEVICE_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -54,7 +57,7 @@ public unsafe partial struct SCM_PD_DEVICE_INFO
 
     /// <include file='SCM_PD_DEVICE_INFO.xml' path='doc/member[@name="SCM_PD_DEVICE_INFO.FormatInterfaceCodes"]/*' />
     [NativeTypeName("WORD[8]")]
-    public fixed ushort FormatInterfaceCodes[8];
+    public _FormatInterfaceCodes_e__FixedBuffer FormatInterfaceCodes;
 
     /// <include file='SCM_PD_DEVICE_INFO.xml' path='doc/member[@name="SCM_PD_DEVICE_INFO.VendorId"]/*' />
     [NativeTypeName("DWORD")]
@@ -91,5 +94,32 @@ public unsafe partial struct SCM_PD_DEVICE_INFO
 
     /// <include file='SCM_PD_DEVICE_INFO.xml' path='doc/member[@name="SCM_PD_DEVICE_INFO.SerialNumber"]/*' />
     [NativeTypeName("CHAR[1]")]
-    public fixed sbyte SerialNumber[1];
+    public _SerialNumber_e__FixedBuffer SerialNumber;
+
+    /// <include file='_FormatInterfaceCodes_e__FixedBuffer.xml' path='doc/member[@name="_FormatInterfaceCodes_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _FormatInterfaceCodes_e__FixedBuffer
+    {
+        public ushort e0;
+    }
+
+    /// <include file='_SerialNumber_e__FixedBuffer.xml' path='doc/member[@name="_SerialNumber_e__FixedBuffer"]/*' />
+    public partial struct _SerialNumber_e__FixedBuffer
+    {
+        public sbyte e0;
+
+        [UnscopedRef]
+        public ref sbyte this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<sbyte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

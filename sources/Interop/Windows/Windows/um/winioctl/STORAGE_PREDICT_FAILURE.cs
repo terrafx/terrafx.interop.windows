@@ -3,10 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_PREDICT_FAILURE.xml' path='doc/member[@name="STORAGE_PREDICT_FAILURE"]/*' />
-public unsafe partial struct STORAGE_PREDICT_FAILURE
+public partial struct STORAGE_PREDICT_FAILURE
 {
     /// <include file='STORAGE_PREDICT_FAILURE.xml' path='doc/member[@name="STORAGE_PREDICT_FAILURE.PredictFailure"]/*' />
     [NativeTypeName("DWORD")]
@@ -14,5 +16,12 @@ public unsafe partial struct STORAGE_PREDICT_FAILURE
 
     /// <include file='STORAGE_PREDICT_FAILURE.xml' path='doc/member[@name="STORAGE_PREDICT_FAILURE.VendorSpecific"]/*' />
     [NativeTypeName("BYTE[512]")]
-    public fixed byte VendorSpecific[512];
+    public _VendorSpecific_e__FixedBuffer VendorSpecific;
+
+    /// <include file='_VendorSpecific_e__FixedBuffer.xml' path='doc/member[@name="_VendorSpecific_e__FixedBuffer"]/*' />
+    [InlineArray(512)]
+    public partial struct _VendorSpecific_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

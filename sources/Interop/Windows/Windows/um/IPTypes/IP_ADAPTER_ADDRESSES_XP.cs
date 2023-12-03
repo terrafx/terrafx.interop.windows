@@ -54,7 +54,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.PhysicalAddress"]/*' />
     [NativeTypeName("BYTE[8]")]
-    public fixed byte PhysicalAddress[8];
+    public _PhysicalAddress_e__FixedBuffer PhysicalAddress;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.PhysicalAddressLength"]/*' />
     [NativeTypeName("DWORD")]
@@ -81,7 +81,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.ZoneIndices"]/*' />
     [NativeTypeName("DWORD[16]")]
-    public fixed uint ZoneIndices[16];
+    public _ZoneIndices_e__FixedBuffer ZoneIndices;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.FirstPrefix"]/*' />
     [NativeTypeName("PIP_ADAPTER_PREFIX_XP")]
@@ -145,5 +145,19 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
             [NativeTypeName("DWORD")]
             public uint IfIndex;
         }
+    }
+
+    /// <include file='_PhysicalAddress_e__FixedBuffer.xml' path='doc/member[@name="_PhysicalAddress_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _PhysicalAddress_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_ZoneIndices_e__FixedBuffer.xml' path='doc/member[@name="_ZoneIndices_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ZoneIndices_e__FixedBuffer
+    {
+        public uint e0;
     }
 }

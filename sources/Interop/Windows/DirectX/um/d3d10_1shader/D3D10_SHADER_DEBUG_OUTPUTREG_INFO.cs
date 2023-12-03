@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D10_SHADER_DEBUG_OUTPUTREG_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTREG_INFO"]/*' />
-public unsafe partial struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO
+public partial struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO
 {
     /// <include file='D3D10_SHADER_DEBUG_OUTPUTREG_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTREG_INFO.OutputRegisterSet"]/*' />
     public D3D10_SHADER_DEBUG_REGTYPE OutputRegisterSet;
@@ -21,7 +21,7 @@ public unsafe partial struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO
 
     /// <include file='D3D10_SHADER_DEBUG_OUTPUTREG_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTREG_INFO.OutputComponents"]/*' />
     [NativeTypeName("UINT[4]")]
-    public fixed uint OutputComponents[4];
+    public _OutputComponents_e__FixedBuffer OutputComponents;
 
     /// <include file='D3D10_SHADER_DEBUG_OUTPUTREG_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTREG_INFO.OutputVars"]/*' />
     [NativeTypeName("D3D10_SHADER_DEBUG_OUTPUTVAR[4]")]
@@ -32,6 +32,13 @@ public unsafe partial struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO
 
     /// <include file='D3D10_SHADER_DEBUG_OUTPUTREG_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTREG_INFO.IndexComp"]/*' />
     public uint IndexComp;
+
+    /// <include file='_OutputComponents_e__FixedBuffer.xml' path='doc/member[@name="_OutputComponents_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _OutputComponents_e__FixedBuffer
+    {
+        public uint e0;
+    }
 
     /// <include file='_OutputVars_e__FixedBuffer.xml' path='doc/member[@name="_OutputVars_e__FixedBuffer"]/*' />
     [InlineArray(4)]

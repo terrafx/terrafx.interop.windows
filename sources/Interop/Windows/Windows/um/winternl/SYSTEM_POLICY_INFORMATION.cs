@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SYSTEM_POLICY_INFORMATION.xml' path='doc/member[@name="SYSTEM_POLICY_INFORMATION"]/*' />
-public unsafe partial struct SYSTEM_POLICY_INFORMATION
+public partial struct SYSTEM_POLICY_INFORMATION
 {
     /// <include file='SYSTEM_POLICY_INFORMATION.xml' path='doc/member[@name="SYSTEM_POLICY_INFORMATION.Reserved1"]/*' />
     [NativeTypeName("PVOID[2]")]
@@ -16,7 +16,7 @@ public unsafe partial struct SYSTEM_POLICY_INFORMATION
 
     /// <include file='SYSTEM_POLICY_INFORMATION.xml' path='doc/member[@name="SYSTEM_POLICY_INFORMATION.Reserved2"]/*' />
     [NativeTypeName("ULONG[3]")]
-    public fixed uint Reserved2[3];
+    public _Reserved2_e__FixedBuffer Reserved2;
 
     /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
     public unsafe partial struct _Reserved1_e__FixedBuffer
@@ -35,5 +35,12 @@ public unsafe partial struct SYSTEM_POLICY_INFORMATION
                 }
             }
         }
+    }
+
+    /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _Reserved2_e__FixedBuffer
+    {
+        public uint e0;
     }
 }

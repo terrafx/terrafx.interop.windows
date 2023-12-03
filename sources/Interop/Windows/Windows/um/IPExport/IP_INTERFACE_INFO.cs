@@ -32,7 +32,7 @@ public partial struct IP_INTERFACE_INFO
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

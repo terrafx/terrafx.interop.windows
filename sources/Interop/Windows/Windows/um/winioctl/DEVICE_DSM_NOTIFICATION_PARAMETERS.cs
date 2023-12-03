@@ -40,7 +40,7 @@ public partial struct DEVICE_DSM_NOTIFICATION_PARAMETERS
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

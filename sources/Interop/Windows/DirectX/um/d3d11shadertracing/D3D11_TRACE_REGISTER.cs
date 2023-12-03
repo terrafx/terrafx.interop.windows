@@ -13,7 +13,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_TRACE_REGISTER.xml' path='doc/member[@name="D3D11_TRACE_REGISTER"]/*' />
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct D3D11_TRACE_REGISTER
+public partial struct D3D11_TRACE_REGISTER
 {
     /// <include file='D3D11_TRACE_REGISTER.xml' path='doc/member[@name="D3D11_TRACE_REGISTER.RegType"]/*' />
     public D3D11_TRACE_REGISTER_TYPE RegType;
@@ -48,13 +48,13 @@ public unsafe partial struct D3D11_TRACE_REGISTER
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.Index2D[0], 2);
+            return Anonymous.Index2D;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Index1D"]/*' />
         [FieldOffset(0)]
@@ -64,6 +64,13 @@ public unsafe partial struct D3D11_TRACE_REGISTER
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Index2D"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UINT16[2]")]
-        public fixed ushort Index2D[2];
+        public _Index2D_e__FixedBuffer Index2D;
+
+        /// <include file='_Index2D_e__FixedBuffer.xml' path='doc/member[@name="_Index2D_e__FixedBuffer"]/*' />
+        [InlineArray(2)]
+        public partial struct _Index2D_e__FixedBuffer
+        {
+            public ushort e0;
+        }
     }
 }

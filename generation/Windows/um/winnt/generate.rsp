@@ -141,6 +141,7 @@ ISPTR
 IsReparseTagDirectory
 IsReparseTagMicrosoft
 IsReparseTagNameSurrogate
+IsReparseTagReserved
 ISTAG
 IsVirtualDiskFileShared
 IS_DISPATCHING

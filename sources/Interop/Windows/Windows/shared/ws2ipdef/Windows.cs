@@ -12,13 +12,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IN6_SET_ADDR_UNSPECIFIED"]/*' />
     public static void IN6_SET_ADDR_UNSPECIFIED([NativeTypeName("PIN6_ADDR")] IN6_ADDR* a)
     {
-        Unsafe.InitBlockUnaligned(a->u.Byte, 0, (uint)(sizeof(IN6_ADDR)));
+        Unsafe.InitBlockUnaligned(&a->u.Byte, 0, (uint)(sizeof(IN6_ADDR)));
     }
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IN6_SET_ADDR_LOOPBACK"]/*' />
     public static void IN6_SET_ADDR_LOOPBACK([NativeTypeName("PIN6_ADDR")] IN6_ADDR* a)
     {
-        Unsafe.InitBlockUnaligned(a->u.Byte, 0, (uint)(sizeof(IN6_ADDR)));
+        Unsafe.InitBlockUnaligned(&a->u.Byte, 0, (uint)(sizeof(IN6_ADDR)));
         a->u.Byte[15] = 1;
     }
 

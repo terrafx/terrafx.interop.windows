@@ -3,10 +3,12 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT"]/*' />
-public unsafe partial struct PAINTSTRUCT
+public partial struct PAINTSTRUCT
 {
     /// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT.hdc"]/*' />
     public HDC hdc;
@@ -25,5 +27,12 @@ public unsafe partial struct PAINTSTRUCT
 
     /// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT.rgbReserved"]/*' />
     [NativeTypeName("BYTE[32]")]
-    public fixed byte rgbReserved[32];
+    public _rgbReserved_e__FixedBuffer rgbReserved;
+
+    /// <include file='_rgbReserved_e__FixedBuffer.xml' path='doc/member[@name="_rgbReserved_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _rgbReserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

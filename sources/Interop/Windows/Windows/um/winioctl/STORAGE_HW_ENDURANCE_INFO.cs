@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO"]/*' />
-public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
+public partial struct STORAGE_HW_ENDURANCE_INFO
 {
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.ValidFields"]/*' />
     [NativeTypeName("DWORD")]
@@ -28,11 +28,11 @@ public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.BytesReadCount"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte BytesReadCount[16];
+    public _BytesReadCount_e__FixedBuffer BytesReadCount;
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.ByteWriteCount"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte ByteWriteCount[16];
+    public _ByteWriteCount_e__FixedBuffer ByteWriteCount;
 
     /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct"]/*' />
     public partial struct _Flags_e__Struct
@@ -72,5 +72,19 @@ public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
                 _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFFu) << 1);
             }
         }
+    }
+
+    /// <include file='_BytesReadCount_e__FixedBuffer.xml' path='doc/member[@name="_BytesReadCount_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _BytesReadCount_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_ByteWriteCount_e__FixedBuffer.xml' path='doc/member[@name="_ByteWriteCount_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ByteWriteCount_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

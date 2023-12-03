@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -61,17 +62,24 @@ public partial struct STORAGE_OPERATIONAL_REASON
         }
 
         /// <include file='_NVDIMM_N_e__Struct.xml' path='doc/member[@name="_NVDIMM_N_e__Struct"]/*' />
-        public unsafe partial struct _NVDIMM_N_e__Struct
+        public partial struct _NVDIMM_N_e__Struct
         {
             /// <include file='_NVDIMM_N_e__Struct.xml' path='doc/member[@name="_NVDIMM_N_e__Struct.CriticalHealth"]/*' />
             public byte CriticalHealth;
 
             /// <include file='_NVDIMM_N_e__Struct.xml' path='doc/member[@name="_NVDIMM_N_e__Struct.ModuleHealth"]/*' />
             [NativeTypeName("BYTE[2]")]
-            public fixed byte ModuleHealth[2];
+            public _ModuleHealth_e__FixedBuffer ModuleHealth;
 
             /// <include file='_NVDIMM_N_e__Struct.xml' path='doc/member[@name="_NVDIMM_N_e__Struct.ErrorThresholdStatus"]/*' />
             public byte ErrorThresholdStatus;
+
+            /// <include file='_ModuleHealth_e__FixedBuffer.xml' path='doc/member[@name="_ModuleHealth_e__FixedBuffer"]/*' />
+            [InlineArray(2)]
+            public partial struct _ModuleHealth_e__FixedBuffer
+            {
+                public byte e0;
+            }
         }
     }
 }

@@ -3,10 +3,12 @@
 // Ported from um/memoryapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WIN32_MEMORY_PARTITION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_PARTITION_INFORMATION"]/*' />
-public unsafe partial struct WIN32_MEMORY_PARTITION_INFORMATION
+public partial struct WIN32_MEMORY_PARTITION_INFORMATION
 {
     /// <include file='WIN32_MEMORY_PARTITION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_PARTITION_INFORMATION.Flags"]/*' />
     [NativeTypeName("ULONG")]
@@ -62,7 +64,7 @@ public unsafe partial struct WIN32_MEMORY_PARTITION_INFORMATION
 
     /// <include file='WIN32_MEMORY_PARTITION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_PARTITION_INFORMATION.Reserved"]/*' />
     [NativeTypeName("ULONG64[16]")]
-    public fixed ulong Reserved[16];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='WIN32_MEMORY_PARTITION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_PARTITION_INFORMATION.MaximumCommitLimit"]/*' />
     [NativeTypeName("ULONG64")]
@@ -75,4 +77,11 @@ public unsafe partial struct WIN32_MEMORY_PARTITION_INFORMATION
     /// <include file='WIN32_MEMORY_PARTITION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_PARTITION_INFORMATION.PartitionId"]/*' />
     [NativeTypeName("ULONG")]
     public uint PartitionId;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public ulong e0;
+    }
 }

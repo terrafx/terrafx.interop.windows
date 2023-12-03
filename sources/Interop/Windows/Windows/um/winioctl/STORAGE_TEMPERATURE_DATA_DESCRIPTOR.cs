@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR"]/*' />
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct STORAGE_TEMPERATURE_DATA_DESCRIPTOR
+public partial struct STORAGE_TEMPERATURE_DATA_DESCRIPTOR
 {
     /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -35,15 +35,29 @@ public unsafe partial struct STORAGE_TEMPERATURE_DATA_DESCRIPTOR
 
     /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Reserved0"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte Reserved0[2];
+    public _Reserved0_e__FixedBuffer Reserved0;
 
     /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Reserved1"]/*' />
     [NativeTypeName("DWORD[2]")]
-    public fixed uint Reserved1[2];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.TemperatureInfo"]/*' />
     [NativeTypeName("STORAGE_TEMPERATURE_INFO[1]")]
     public _TemperatureInfo_e__FixedBuffer TemperatureInfo;
+
+    /// <include file='_Reserved0_e__FixedBuffer.xml' path='doc/member[@name="_Reserved0_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved0_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public uint e0;
+    }
 
     /// <include file='_TemperatureInfo_e__FixedBuffer.xml' path='doc/member[@name="_TemperatureInfo_e__FixedBuffer"]/*' />
     public partial struct _TemperatureInfo_e__FixedBuffer
@@ -56,7 +70,7 @@ public unsafe partial struct STORAGE_TEMPERATURE_DATA_DESCRIPTOR
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

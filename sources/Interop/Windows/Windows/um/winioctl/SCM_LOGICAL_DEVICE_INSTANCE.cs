@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SCM_LOGICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_LOGICAL_DEVICE_INSTANCE"]/*' />
-public unsafe partial struct SCM_LOGICAL_DEVICE_INSTANCE
+public partial struct SCM_LOGICAL_DEVICE_INSTANCE
 {
     /// <include file='SCM_LOGICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_LOGICAL_DEVICE_INSTANCE.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -23,5 +24,12 @@ public unsafe partial struct SCM_LOGICAL_DEVICE_INSTANCE
 
     /// <include file='SCM_LOGICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_LOGICAL_DEVICE_INSTANCE.SymbolicLink"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed char SymbolicLink[256];
+    public _SymbolicLink_e__FixedBuffer SymbolicLink;
+
+    /// <include file='_SymbolicLink_e__FixedBuffer.xml' path='doc/member[@name="_SymbolicLink_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _SymbolicLink_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

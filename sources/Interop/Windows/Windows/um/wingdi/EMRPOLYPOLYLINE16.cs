@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16"]/*' />
-public unsafe partial struct EMRPOLYPOLYLINE16
+public partial struct EMRPOLYPOLYLINE16
 {
     /// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16.emr"]/*' />
     public EMR emr;
@@ -29,11 +29,31 @@ public unsafe partial struct EMRPOLYPOLYLINE16
 
     /// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16.aPolyCounts"]/*' />
     [NativeTypeName("DWORD[1]")]
-    public fixed uint aPolyCounts[1];
+    public _aPolyCounts_e__FixedBuffer aPolyCounts;
 
     /// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16.apts"]/*' />
     [NativeTypeName("POINTS[1]")]
     public _apts_e__FixedBuffer apts;
+
+    /// <include file='_aPolyCounts_e__FixedBuffer.xml' path='doc/member[@name="_aPolyCounts_e__FixedBuffer"]/*' />
+    public partial struct _aPolyCounts_e__FixedBuffer
+    {
+        public uint e0;
+
+        [UnscopedRef]
+        public ref uint this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<uint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 
     /// <include file='_apts_e__FixedBuffer.xml' path='doc/member[@name="_apts_e__FixedBuffer"]/*' />
     public partial struct _apts_e__FixedBuffer
@@ -46,7 +66,7 @@ public unsafe partial struct EMRPOLYPOLYLINE16
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

@@ -3,10 +3,12 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FILE_COMPRESSION_INFO.xml' path='doc/member[@name="FILE_COMPRESSION_INFO"]/*' />
-public unsafe partial struct FILE_COMPRESSION_INFO
+public partial struct FILE_COMPRESSION_INFO
 {
     /// <include file='FILE_COMPRESSION_INFO.xml' path='doc/member[@name="FILE_COMPRESSION_INFO.CompressedFileSize"]/*' />
     public LARGE_INTEGER CompressedFileSize;
@@ -29,5 +31,12 @@ public unsafe partial struct FILE_COMPRESSION_INFO
 
     /// <include file='FILE_COMPRESSION_INFO.xml' path='doc/member[@name="FILE_COMPRESSION_INFO.Reserved"]/*' />
     [NativeTypeName("UCHAR[3]")]
-    public fixed byte Reserved[3];
+    public _Reserved_e__FixedBuffer Reserved;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

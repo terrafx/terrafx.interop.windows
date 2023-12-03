@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE"]/*' />
-public unsafe partial struct EVENTSFORLOGFILE
+public partial struct EVENTSFORLOGFILE
 {
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.ulSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -19,7 +19,7 @@ public unsafe partial struct EVENTSFORLOGFILE
 
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.szLogicalLogFile"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed char szLogicalLogFile[256];
+    public _szLogicalLogFile_e__FixedBuffer szLogicalLogFile;
 
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.ulNumRecords"]/*' />
     [NativeTypeName("DWORD")]
@@ -28,6 +28,13 @@ public unsafe partial struct EVENTSFORLOGFILE
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.pEventLogRecords"]/*' />
     [NativeTypeName("EVENTLOGRECORD[]")]
     public _pEventLogRecords_e__FixedBuffer pEventLogRecords;
+
+    /// <include file='_szLogicalLogFile_e__FixedBuffer.xml' path='doc/member[@name="_szLogicalLogFile_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _szLogicalLogFile_e__FixedBuffer
+    {
+        public char e0;
+    }
 
     /// <include file='_pEventLogRecords_e__FixedBuffer.xml' path='doc/member[@name="_pEventLogRecords_e__FixedBuffer"]/*' />
     public partial struct _pEventLogRecords_e__FixedBuffer
@@ -40,7 +47,7 @@ public unsafe partial struct EVENTSFORLOGFILE
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

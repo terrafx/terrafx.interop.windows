@@ -3,13 +3,14 @@
 // Ported from shared/mmreg.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WAVEFILTER.xml' path='doc/member[@name="WAVEFILTER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct WAVEFILTER
+public partial struct WAVEFILTER
 {
     /// <include file='WAVEFILTER.xml' path='doc/member[@name="WAVEFILTER.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
@@ -25,5 +26,13 @@ public unsafe partial struct WAVEFILTER
 
     /// <include file='WAVEFILTER.xml' path='doc/member[@name="WAVEFILTER.dwReserved"]/*' />
     [NativeTypeName("DWORD[5]")]
-    public fixed uint dwReserved[5];
+    public _dwReserved_e__FixedBuffer dwReserved;
+
+    /// <include file='_dwReserved_e__FixedBuffer.xml' path='doc/member[@name="_dwReserved_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(5)]
+    public partial struct _dwReserved_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D12_SAMPLER_DESC2.xml' path='doc/member[@name="D3D12_SAMPLER_DESC2"]/*' />
-public unsafe partial struct D3D12_SAMPLER_DESC2
+public partial struct D3D12_SAMPLER_DESC2
 {
     /// <include file='D3D12_SAMPLER_DESC2.xml' path='doc/member[@name="D3D12_SAMPLER_DESC2.Filter"]/*' />
     public D3D12_FILTER Filter;
@@ -54,7 +54,7 @@ public unsafe partial struct D3D12_SAMPLER_DESC2
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.FloatBorderColor[0], 4);
+            return Anonymous.FloatBorderColor;
         }
     }
 
@@ -65,22 +65,36 @@ public unsafe partial struct D3D12_SAMPLER_DESC2
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.UintBorderColor[0], 4);
+            return Anonymous.UintBorderColor;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FloatBorderColor"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("FLOAT[4]")]
-        public fixed float FloatBorderColor[4];
+        public _FloatBorderColor_e__FixedBuffer FloatBorderColor;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UintBorderColor"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UINT[4]")]
-        public fixed uint UintBorderColor[4];
+        public _UintBorderColor_e__FixedBuffer UintBorderColor;
+
+        /// <include file='_FloatBorderColor_e__FixedBuffer.xml' path='doc/member[@name="_FloatBorderColor_e__FixedBuffer"]/*' />
+        [InlineArray(4)]
+        public partial struct _FloatBorderColor_e__FixedBuffer
+        {
+            public float e0;
+        }
+
+        /// <include file='_UintBorderColor_e__FixedBuffer.xml' path='doc/member[@name="_UintBorderColor_e__FixedBuffer"]/*' />
+        [InlineArray(4)]
+        public partial struct _UintBorderColor_e__FixedBuffer
+        {
+            public uint e0;
+        }
     }
 }

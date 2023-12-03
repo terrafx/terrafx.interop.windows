@@ -3,18 +3,19 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DML_SCALAR_UNION.xml' path='doc/member[@name="DML_SCALAR_UNION"]/*' />
 [StructLayout(LayoutKind.Explicit)]
-public unsafe partial struct DML_SCALAR_UNION
+public partial struct DML_SCALAR_UNION
 {
     /// <include file='DML_SCALAR_UNION.xml' path='doc/member[@name="DML_SCALAR_UNION.Bytes"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("BYTE[8]")]
-    public fixed byte Bytes[8];
+    public _Bytes_e__FixedBuffer Bytes;
 
     /// <include file='DML_SCALAR_UNION.xml' path='doc/member[@name="DML_SCALAR_UNION.Int8"]/*' />
     [FieldOffset(0)]
@@ -63,4 +64,11 @@ public unsafe partial struct DML_SCALAR_UNION
     /// <include file='DML_SCALAR_UNION.xml' path='doc/member[@name="DML_SCALAR_UNION.Float64"]/*' />
     [FieldOffset(0)]
     public double Float64;
+
+    /// <include file='_Bytes_e__FixedBuffer.xml' path='doc/member[@name="_Bytes_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _Bytes_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

@@ -3,10 +3,12 @@
 // Ported from um/winternl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PUBLIC_OBJECT_BASIC_INFORMATION.xml' path='doc/member[@name="PUBLIC_OBJECT_BASIC_INFORMATION"]/*' />
-public unsafe partial struct PUBLIC_OBJECT_BASIC_INFORMATION
+public partial struct PUBLIC_OBJECT_BASIC_INFORMATION
 {
     /// <include file='PUBLIC_OBJECT_BASIC_INFORMATION.xml' path='doc/member[@name="PUBLIC_OBJECT_BASIC_INFORMATION.Attributes"]/*' />
     [NativeTypeName("ULONG")]
@@ -26,5 +28,12 @@ public unsafe partial struct PUBLIC_OBJECT_BASIC_INFORMATION
 
     /// <include file='PUBLIC_OBJECT_BASIC_INFORMATION.xml' path='doc/member[@name="PUBLIC_OBJECT_BASIC_INFORMATION.Reserved"]/*' />
     [NativeTypeName("ULONG[10]")]
-    public fixed uint Reserved[10];
+    public _Reserved_e__FixedBuffer Reserved;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(10)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

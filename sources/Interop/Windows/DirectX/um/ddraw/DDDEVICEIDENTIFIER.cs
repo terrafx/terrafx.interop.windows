@@ -4,20 +4,21 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DDDEVICEIDENTIFIER.xml' path='doc/member[@name="DDDEVICEIDENTIFIER"]/*' />
-public unsafe partial struct DDDEVICEIDENTIFIER
+public partial struct DDDEVICEIDENTIFIER
 {
     /// <include file='DDDEVICEIDENTIFIER.xml' path='doc/member[@name="DDDEVICEIDENTIFIER.szDriver"]/*' />
     [NativeTypeName("char[512]")]
-    public fixed sbyte szDriver[512];
+    public _szDriver_e__FixedBuffer szDriver;
 
     /// <include file='DDDEVICEIDENTIFIER.xml' path='doc/member[@name="DDDEVICEIDENTIFIER.szDescription"]/*' />
     [NativeTypeName("char[512]")]
-    public fixed sbyte szDescription[512];
+    public _szDescription_e__FixedBuffer szDescription;
 
     /// <include file='DDDEVICEIDENTIFIER.xml' path='doc/member[@name="DDDEVICEIDENTIFIER.liDriverVersion"]/*' />
     public LARGE_INTEGER liDriverVersion;
@@ -40,4 +41,18 @@ public unsafe partial struct DDDEVICEIDENTIFIER
 
     /// <include file='DDDEVICEIDENTIFIER.xml' path='doc/member[@name="DDDEVICEIDENTIFIER.guidDeviceIdentifier"]/*' />
     public Guid guidDeviceIdentifier;
+
+    /// <include file='_szDriver_e__FixedBuffer.xml' path='doc/member[@name="_szDriver_e__FixedBuffer"]/*' />
+    [InlineArray(512)]
+    public partial struct _szDriver_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
+    [InlineArray(512)]
+    public partial struct _szDescription_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

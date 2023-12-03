@@ -3,6 +3,8 @@
 // Ported from um/UserEnv.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW"]/*' />
@@ -30,7 +32,7 @@ public unsafe partial struct GROUP_POLICY_OBJECTW
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.szGPOName"]/*' />
     [NativeTypeName("WCHAR[50]")]
-    public fixed char szGPOName[50];
+    public _szGPOName_e__FixedBuffer szGPOName;
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.GPOLink"]/*' />
     public GPO_LINK GPOLink;
@@ -56,4 +58,11 @@ public unsafe partial struct GROUP_POLICY_OBJECTW
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.lpLink"]/*' />
     [NativeTypeName("LPWSTR")]
     public char* lpLink;
+
+    /// <include file='_szGPOName_e__FixedBuffer.xml' path='doc/member[@name="_szGPOName_e__FixedBuffer"]/*' />
+    [InlineArray(50)]
+    public partial struct _szGPOName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

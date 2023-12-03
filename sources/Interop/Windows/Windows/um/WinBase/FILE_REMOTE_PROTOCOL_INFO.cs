@@ -3,6 +3,7 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -45,16 +46,23 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
     public _ProtocolSpecific_e__Union ProtocolSpecific;
 
     /// <include file='_GenericReserved_e__Struct.xml' path='doc/member[@name="_GenericReserved_e__Struct"]/*' />
-    public unsafe partial struct _GenericReserved_e__Struct
+    public partial struct _GenericReserved_e__Struct
     {
         /// <include file='_GenericReserved_e__Struct.xml' path='doc/member[@name="_GenericReserved_e__Struct.Reserved"]/*' />
         [NativeTypeName("ULONG[8]")]
-        public fixed uint Reserved[8];
+        public _Reserved_e__FixedBuffer Reserved;
+
+        /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+        [InlineArray(8)]
+        public partial struct _Reserved_e__FixedBuffer
+        {
+            public uint e0;
+        }
     }
 
     /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _ProtocolSpecific_e__Union
+    public partial struct _ProtocolSpecific_e__Union
     {
         /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union.Smb2"]/*' />
         [FieldOffset(0)]
@@ -64,7 +72,7 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
         /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union.Reserved"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONG[16]")]
-        public fixed uint Reserved[16];
+        public _Reserved_e__FixedBuffer Reserved;
 
         /// <include file='_Smb2_e__Struct.xml' path='doc/member[@name="_Smb2_e__Struct"]/*' />
         public partial struct _Smb2_e__Struct
@@ -96,6 +104,13 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
                 [NativeTypeName("ULONG")]
                 public uint ShareFlags;
             }
+        }
+
+        /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+        [InlineArray(16)]
+        public partial struct _Reserved_e__FixedBuffer
+        {
+            public uint e0;
         }
     }
 }

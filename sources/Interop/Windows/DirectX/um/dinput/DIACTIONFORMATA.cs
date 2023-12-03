@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
@@ -62,5 +63,12 @@ public unsafe partial struct DIACTIONFORMATA
 
     /// <include file='DIACTIONFORMATA.xml' path='doc/member[@name="DIACTIONFORMATA.tszActionMap"]/*' />
     [NativeTypeName("CHAR[260]")]
-    public fixed sbyte tszActionMap[260];
+    public _tszActionMap_e__FixedBuffer tszActionMap;
+
+    /// <include file='_tszActionMap_e__FixedBuffer.xml' path='doc/member[@name="_tszActionMap_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _tszActionMap_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

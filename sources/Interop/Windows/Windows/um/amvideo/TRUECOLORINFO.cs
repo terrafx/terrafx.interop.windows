@@ -8,15 +8,22 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='TRUECOLORINFO.xml' path='doc/member[@name="TRUECOLORINFO"]/*' />
-public unsafe partial struct TRUECOLORINFO
+public partial struct TRUECOLORINFO
 {
     /// <include file='TRUECOLORINFO.xml' path='doc/member[@name="TRUECOLORINFO.dwBitMasks"]/*' />
     [NativeTypeName("DWORD[3]")]
-    public fixed uint dwBitMasks[3];
+    public _dwBitMasks_e__FixedBuffer dwBitMasks;
 
     /// <include file='TRUECOLORINFO.xml' path='doc/member[@name="TRUECOLORINFO.bmiColors"]/*' />
     [NativeTypeName("RGBQUAD[256]")]
     public _bmiColors_e__FixedBuffer bmiColors;
+
+    /// <include file='_dwBitMasks_e__FixedBuffer.xml' path='doc/member[@name="_dwBitMasks_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _dwBitMasks_e__FixedBuffer
+    {
+        public uint e0;
+    }
 
     /// <include file='_bmiColors_e__FixedBuffer.xml' path='doc/member[@name="_bmiColors_e__FixedBuffer"]/*' />
     [InlineArray(256)]

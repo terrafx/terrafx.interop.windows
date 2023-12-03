@@ -3,6 +3,7 @@
 // Ported from um/mmsyscom.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -53,7 +54,7 @@ public partial struct MMTIME
         public _midi_e__Struct midi;
 
         /// <include file='_smpte_e__Struct.xml' path='doc/member[@name="_smpte_e__Struct"]/*' />
-        public unsafe partial struct _smpte_e__Struct
+        public partial struct _smpte_e__Struct
         {
             /// <include file='_smpte_e__Struct.xml' path='doc/member[@name="_smpte_e__Struct.hour"]/*' />
             public byte hour;
@@ -75,7 +76,14 @@ public partial struct MMTIME
 
             /// <include file='_smpte_e__Struct.xml' path='doc/member[@name="_smpte_e__Struct.pad"]/*' />
             [NativeTypeName("BYTE[2]")]
-            public fixed byte pad[2];
+            public _pad_e__FixedBuffer pad;
+
+            /// <include file='_pad_e__FixedBuffer.xml' path='doc/member[@name="_pad_e__FixedBuffer"]/*' />
+            [InlineArray(2)]
+            public partial struct _pad_e__FixedBuffer
+            {
+                public byte e0;
+            }
         }
 
         /// <include file='_midi_e__Struct.xml' path='doc/member[@name="_midi_e__Struct"]/*' />

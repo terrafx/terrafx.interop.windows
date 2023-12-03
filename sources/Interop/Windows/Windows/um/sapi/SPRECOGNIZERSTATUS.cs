@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SPRECOGNIZERSTATUS.xml' path='doc/member[@name="SPRECOGNIZERSTATUS"]/*' />
-public unsafe partial struct SPRECOGNIZERSTATUS
+public partial struct SPRECOGNIZERSTATUS
 {
     /// <include file='SPRECOGNIZERSTATUS.xml' path='doc/member[@name="SPRECOGNIZERSTATUS.AudioStatus"]/*' />
     public SPAUDIOSTATUS AudioStatus;
@@ -35,9 +36,16 @@ public unsafe partial struct SPRECOGNIZERSTATUS
 
     /// <include file='SPRECOGNIZERSTATUS.xml' path='doc/member[@name="SPRECOGNIZERSTATUS.aLangID"]/*' />
     [NativeTypeName("WORD[20]")]
-    public fixed ushort aLangID[20];
+    public _aLangID_e__FixedBuffer aLangID;
 
     /// <include file='SPRECOGNIZERSTATUS.xml' path='doc/member[@name="SPRECOGNIZERSTATUS.ullRecognitionStreamTime"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullRecognitionStreamTime;
+
+    /// <include file='_aLangID_e__FixedBuffer.xml' path='doc/member[@name="_aLangID_e__FixedBuffer"]/*' />
+    [InlineArray(20)]
+    public partial struct _aLangID_e__FixedBuffer
+    {
+        public ushort e0;
+    }
 }

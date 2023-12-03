@@ -3,10 +3,12 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION"]/*' />
-public unsafe partial struct DIBSECTION
+public partial struct DIBSECTION
 {
     /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dsBm"]/*' />
     public BITMAP dsBm;
@@ -16,7 +18,7 @@ public unsafe partial struct DIBSECTION
 
     /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dsBitfields"]/*' />
     [NativeTypeName("DWORD[3]")]
-    public fixed uint dsBitfields[3];
+    public _dsBitfields_e__FixedBuffer dsBitfields;
 
     /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dshSection"]/*' />
     public HANDLE dshSection;
@@ -24,4 +26,11 @@ public unsafe partial struct DIBSECTION
     /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dsOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint dsOffset;
+
+    /// <include file='_dsBitfields_e__FixedBuffer.xml' path='doc/member[@name="_dsBitfields_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _dsBitfields_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

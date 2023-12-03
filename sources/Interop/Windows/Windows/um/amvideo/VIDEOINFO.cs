@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO"]/*' />
-public unsafe partial struct VIDEOINFO
+public partial struct VIDEOINFO
 {
     /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO.rcSource"]/*' />
     public RECT rcSource;
@@ -56,7 +56,7 @@ public unsafe partial struct VIDEOINFO
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.dwBitMasks[0], 3);
+            return Anonymous.dwBitMasks;
         }
     }
 
@@ -73,7 +73,7 @@ public unsafe partial struct VIDEOINFO
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bmiColors"]/*' />
         [FieldOffset(0)]
@@ -83,7 +83,7 @@ public unsafe partial struct VIDEOINFO
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwBitMasks"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD[3]")]
-        public fixed uint dwBitMasks[3];
+        public _dwBitMasks_e__FixedBuffer dwBitMasks;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TrueColorInfo"]/*' />
         [FieldOffset(0)]
@@ -94,6 +94,13 @@ public unsafe partial struct VIDEOINFO
         public partial struct _bmiColors_e__FixedBuffer
         {
             public RGBQUAD e0;
+        }
+
+        /// <include file='_dwBitMasks_e__FixedBuffer.xml' path='doc/member[@name="_dwBitMasks_e__FixedBuffer"]/*' />
+        [InlineArray(3)]
+        public partial struct _dwBitMasks_e__FixedBuffer
+        {
+            public uint e0;
         }
     }
 }

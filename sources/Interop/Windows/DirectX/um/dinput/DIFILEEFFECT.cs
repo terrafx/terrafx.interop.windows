@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -23,5 +24,12 @@ public unsafe partial struct DIFILEEFFECT
 
     /// <include file='DIFILEEFFECT.xml' path='doc/member[@name="DIFILEEFFECT.szFriendlyName"]/*' />
     [NativeTypeName("CHAR[260]")]
-    public fixed sbyte szFriendlyName[260];
+    public _szFriendlyName_e__FixedBuffer szFriendlyName;
+
+    /// <include file='_szFriendlyName_e__FixedBuffer.xml' path='doc/member[@name="_szFriendlyName_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _szFriendlyName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

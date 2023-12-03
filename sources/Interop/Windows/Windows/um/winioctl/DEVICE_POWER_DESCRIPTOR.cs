@@ -3,13 +3,14 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVICE_POWER_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_POWER_DESCRIPTOR"]/*' />
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct DEVICE_POWER_DESCRIPTOR
+public partial struct DEVICE_POWER_DESCRIPTOR
 {
     /// <include file='DEVICE_POWER_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_POWER_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -45,9 +46,16 @@ public unsafe partial struct DEVICE_POWER_DESCRIPTOR
 
     /// <include file='DEVICE_POWER_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_POWER_DESCRIPTOR.Reserved"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte Reserved[2];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='DEVICE_POWER_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_POWER_DESCRIPTOR.IdleTimeoutInMS"]/*' />
     [NativeTypeName("DWORD")]
     public uint IdleTimeoutInMS;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

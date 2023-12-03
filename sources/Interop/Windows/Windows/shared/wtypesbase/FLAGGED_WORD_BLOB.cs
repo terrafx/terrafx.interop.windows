@@ -3,10 +3,15 @@
 // Ported from shared/wtypesbase.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FLAGGED_WORD_BLOB.xml' path='doc/member[@name="FLAGGED_WORD_BLOB"]/*' />
-public unsafe partial struct FLAGGED_WORD_BLOB
+public partial struct FLAGGED_WORD_BLOB
 {
     /// <include file='FLAGGED_WORD_BLOB.xml' path='doc/member[@name="FLAGGED_WORD_BLOB.fFlags"]/*' />
     [NativeTypeName("ULONG")]
@@ -18,5 +23,25 @@ public unsafe partial struct FLAGGED_WORD_BLOB
 
     /// <include file='FLAGGED_WORD_BLOB.xml' path='doc/member[@name="FLAGGED_WORD_BLOB.asData"]/*' />
     [NativeTypeName("unsigned short[1]")]
-    public fixed ushort asData[1];
+    public _asData_e__FixedBuffer asData;
+
+    /// <include file='_asData_e__FixedBuffer.xml' path='doc/member[@name="_asData_e__FixedBuffer"]/*' />
+    public partial struct _asData_e__FixedBuffer
+    {
+        public ushort e0;
+
+        [UnscopedRef]
+        public ref ushort this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<ushort> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

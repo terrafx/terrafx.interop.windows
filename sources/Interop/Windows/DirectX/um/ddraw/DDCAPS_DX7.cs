@@ -3,10 +3,12 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7"]/*' />
-public unsafe partial struct DDCAPS_DX7
+public partial struct DDCAPS_DX7
 {
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -110,7 +112,7 @@ public unsafe partial struct DDCAPS_DX7
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwRops"]/*' />
     [NativeTypeName("DWORD[8]")]
-    public fixed uint dwRops[8];
+    public _dwRops_e__FixedBuffer dwRops;
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.ddsOldCaps"]/*' />
     public DDSCAPS ddsOldCaps;
@@ -165,7 +167,7 @@ public unsafe partial struct DDCAPS_DX7
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwSVBRops"]/*' />
     [NativeTypeName("DWORD[8]")]
-    public fixed uint dwSVBRops[8];
+    public _dwSVBRops_e__FixedBuffer dwSVBRops;
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwVSBCaps"]/*' />
     [NativeTypeName("DWORD")]
@@ -181,7 +183,7 @@ public unsafe partial struct DDCAPS_DX7
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwVSBRops"]/*' />
     [NativeTypeName("DWORD[8]")]
-    public fixed uint dwVSBRops[8];
+    public _dwVSBRops_e__FixedBuffer dwVSBRops;
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwSSBCaps"]/*' />
     [NativeTypeName("DWORD")]
@@ -197,7 +199,7 @@ public unsafe partial struct DDCAPS_DX7
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwSSBRops"]/*' />
     [NativeTypeName("DWORD[8]")]
-    public fixed uint dwSSBRops[8];
+    public _dwSSBRops_e__FixedBuffer dwSSBRops;
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwMaxVideoPorts"]/*' />
     [NativeTypeName("DWORD")]
@@ -229,8 +231,43 @@ public unsafe partial struct DDCAPS_DX7
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwNLVBRops"]/*' />
     [NativeTypeName("DWORD[8]")]
-    public fixed uint dwNLVBRops[8];
+    public _dwNLVBRops_e__FixedBuffer dwNLVBRops;
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.ddsCaps"]/*' />
     public DDSCAPS2 ddsCaps;
+
+    /// <include file='_dwRops_e__FixedBuffer.xml' path='doc/member[@name="_dwRops_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _dwRops_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_dwSVBRops_e__FixedBuffer.xml' path='doc/member[@name="_dwSVBRops_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _dwSVBRops_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_dwVSBRops_e__FixedBuffer.xml' path='doc/member[@name="_dwVSBRops_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _dwVSBRops_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_dwSSBRops_e__FixedBuffer.xml' path='doc/member[@name="_dwSSBRops_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _dwSSBRops_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_dwNLVBRops_e__FixedBuffer.xml' path='doc/member[@name="_dwNLVBRops_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _dwNLVBRops_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

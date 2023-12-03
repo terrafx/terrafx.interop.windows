@@ -3,10 +3,12 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGEHLP_MODULE.xml' path='doc/member[@name="IMAGEHLP_MODULE"]/*' />
-public unsafe partial struct IMAGEHLP_MODULE
+public partial struct IMAGEHLP_MODULE
 {
     /// <include file='IMAGEHLP_MODULE.xml' path='doc/member[@name="IMAGEHLP_MODULE.SizeOfStruct"]/*' />
     [NativeTypeName("DWORD")]
@@ -37,13 +39,34 @@ public unsafe partial struct IMAGEHLP_MODULE
 
     /// <include file='IMAGEHLP_MODULE.xml' path='doc/member[@name="IMAGEHLP_MODULE.ModuleName"]/*' />
     [NativeTypeName("CHAR[32]")]
-    public fixed sbyte ModuleName[32];
+    public _ModuleName_e__FixedBuffer ModuleName;
 
     /// <include file='IMAGEHLP_MODULE.xml' path='doc/member[@name="IMAGEHLP_MODULE.ImageName"]/*' />
     [NativeTypeName("CHAR[256]")]
-    public fixed sbyte ImageName[256];
+    public _ImageName_e__FixedBuffer ImageName;
 
     /// <include file='IMAGEHLP_MODULE.xml' path='doc/member[@name="IMAGEHLP_MODULE.LoadedImageName"]/*' />
     [NativeTypeName("CHAR[256]")]
-    public fixed sbyte LoadedImageName[256];
+    public _LoadedImageName_e__FixedBuffer LoadedImageName;
+
+    /// <include file='_ModuleName_e__FixedBuffer.xml' path='doc/member[@name="_ModuleName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _ModuleName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_ImageName_e__FixedBuffer.xml' path='doc/member[@name="_ImageName_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _ImageName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_LoadedImageName_e__FixedBuffer.xml' path='doc/member[@name="_LoadedImageName_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _LoadedImageName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

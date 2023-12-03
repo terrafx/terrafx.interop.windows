@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='VIDEOPARAMETERS.xml' path='doc/member[@name="VIDEOPARAMETERS"]/*' />
-public unsafe partial struct VIDEOPARAMETERS
+public partial struct VIDEOPARAMETERS
 {
     /// <include file='VIDEOPARAMETERS.xml' path='doc/member[@name="VIDEOPARAMETERS.Guid"]/*' />
     public Guid Guid;
@@ -99,5 +100,12 @@ public unsafe partial struct VIDEOPARAMETERS
 
     /// <include file='VIDEOPARAMETERS.xml' path='doc/member[@name="VIDEOPARAMETERS.bOEMCopyProtection"]/*' />
     [NativeTypeName("UCHAR[256]")]
-    public fixed byte bOEMCopyProtection[256];
+    public _bOEMCopyProtection_e__FixedBuffer bOEMCopyProtection;
+
+    /// <include file='_bOEMCopyProtection_e__FixedBuffer.xml' path='doc/member[@name="_bOEMCopyProtection_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _bOEMCopyProtection_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

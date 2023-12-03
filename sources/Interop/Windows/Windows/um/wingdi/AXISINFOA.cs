@@ -3,10 +3,12 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='AXISINFOA.xml' path='doc/member[@name="AXISINFOA"]/*' />
-public unsafe partial struct AXISINFOA
+public partial struct AXISINFOA
 {
     /// <include file='AXISINFOA.xml' path='doc/member[@name="AXISINFOA.axMinValue"]/*' />
     [NativeTypeName("LONG")]
@@ -18,5 +20,12 @@ public unsafe partial struct AXISINFOA
 
     /// <include file='AXISINFOA.xml' path='doc/member[@name="AXISINFOA.axAxisName"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte axAxisName[16];
+    public _axAxisName_e__FixedBuffer axAxisName;
+
+    /// <include file='_axAxisName_e__FixedBuffer.xml' path='doc/member[@name="_axAxisName_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _axAxisName_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

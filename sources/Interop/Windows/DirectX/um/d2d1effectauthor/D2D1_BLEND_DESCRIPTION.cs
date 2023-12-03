@@ -3,10 +3,12 @@
 // Ported from um/d2d1effectauthor.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_BLEND_DESCRIPTION.xml' path='doc/member[@name="D2D1_BLEND_DESCRIPTION"]/*' />
-public unsafe partial struct D2D1_BLEND_DESCRIPTION
+public partial struct D2D1_BLEND_DESCRIPTION
 {
     /// <include file='D2D1_BLEND_DESCRIPTION.xml' path='doc/member[@name="D2D1_BLEND_DESCRIPTION.sourceBlend"]/*' />
     public D2D1_BLEND sourceBlend;
@@ -28,5 +30,12 @@ public unsafe partial struct D2D1_BLEND_DESCRIPTION
 
     /// <include file='D2D1_BLEND_DESCRIPTION.xml' path='doc/member[@name="D2D1_BLEND_DESCRIPTION.blendFactor"]/*' />
     [NativeTypeName("FLOAT[4]")]
-    public fixed float blendFactor[4];
+    public _blendFactor_e__FixedBuffer blendFactor;
+
+    /// <include file='_blendFactor_e__FixedBuffer.xml' path='doc/member[@name="_blendFactor_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _blendFactor_e__FixedBuffer
+    {
+        public float e0;
+    }
 }

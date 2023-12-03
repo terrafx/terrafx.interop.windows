@@ -55,7 +55,7 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
         public _SequentialPreferredZone_e__Struct SequentialPreferredZone;
 
         /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct"]/*' />
-        public unsafe partial struct _SequentialRequiredZone_e__Struct
+        public partial struct _SequentialRequiredZone_e__Struct
         {
             /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct.MaxOpenZoneCount"]/*' />
             [NativeTypeName("DWORD")]
@@ -67,7 +67,14 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
 
             /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct.Reserved"]/*' />
             [NativeTypeName("BYTE[3]")]
-            public fixed byte Reserved[3];
+            public _Reserved_e__FixedBuffer Reserved;
+
+            /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+            [InlineArray(3)]
+            public partial struct _Reserved_e__FixedBuffer
+            {
+                public byte e0;
+            }
         }
 
         /// <include file='_SequentialPreferredZone_e__Struct.xml' path='doc/member[@name="_SequentialPreferredZone_e__Struct"]/*' />
@@ -94,7 +101,7 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

@@ -3,6 +3,8 @@
 // Ported from um/d3d10effect.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D10_PASS_DESC.xml' path='doc/member[@name="D3D10_PASS_DESC"]/*' />
@@ -30,5 +32,12 @@ public unsafe partial struct D3D10_PASS_DESC
 
     /// <include file='D3D10_PASS_DESC.xml' path='doc/member[@name="D3D10_PASS_DESC.BlendFactor"]/*' />
     [NativeTypeName("FLOAT[4]")]
-    public fixed float BlendFactor[4];
+    public _BlendFactor_e__FixedBuffer BlendFactor;
+
+    /// <include file='_BlendFactor_e__FixedBuffer.xml' path='doc/member[@name="_BlendFactor_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _BlendFactor_e__FixedBuffer
+    {
+        public float e0;
+    }
 }

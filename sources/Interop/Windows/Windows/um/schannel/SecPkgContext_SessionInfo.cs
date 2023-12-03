@@ -3,10 +3,12 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SecPkgContext_SessionInfo.xml' path='doc/member[@name="SecPkgContext_SessionInfo"]/*' />
-public unsafe partial struct SecPkgContext_SessionInfo
+public partial struct SecPkgContext_SessionInfo
 {
     /// <include file='SecPkgContext_SessionInfo.xml' path='doc/member[@name="SecPkgContext_SessionInfo.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
@@ -18,5 +20,12 @@ public unsafe partial struct SecPkgContext_SessionInfo
 
     /// <include file='SecPkgContext_SessionInfo.xml' path='doc/member[@name="SecPkgContext_SessionInfo.rgbSessionId"]/*' />
     [NativeTypeName("BYTE[32]")]
-    public fixed byte rgbSessionId[32];
+    public _rgbSessionId_e__FixedBuffer rgbSessionId;
+
+    /// <include file='_rgbSessionId_e__FixedBuffer.xml' path='doc/member[@name="_rgbSessionId_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _rgbSessionId_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

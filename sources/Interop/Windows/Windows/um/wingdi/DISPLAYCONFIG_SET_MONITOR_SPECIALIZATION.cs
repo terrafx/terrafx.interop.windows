@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION"]/*' />
-public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
+public partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
 {
     /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.header"]/*' />
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
@@ -28,7 +28,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
 
     /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.specializationApplicationName"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed char specializationApplicationName[128];
+    public _specializationApplicationName_e__FixedBuffer specializationApplicationName;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.isSpecializationEnabled"]/*' />
     public uint isSpecializationEnabled
@@ -126,5 +126,12 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
                 }
             }
         }
+    }
+
+    /// <include file='_specializationApplicationName_e__FixedBuffer.xml' path='doc/member[@name="_specializationApplicationName_e__FixedBuffer"]/*' />
+    [InlineArray(128)]
+    public partial struct _specializationApplicationName_e__FixedBuffer
+    {
+        public char e0;
     }
 }

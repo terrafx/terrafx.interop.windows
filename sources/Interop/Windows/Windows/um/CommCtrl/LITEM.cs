@@ -3,10 +3,12 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='LITEM.xml' path='doc/member[@name="LITEM"]/*' />
-public unsafe partial struct LITEM
+public partial struct LITEM
 {
     /// <include file='LITEM.xml' path='doc/member[@name="LITEM.mask"]/*' />
     public uint mask;
@@ -22,9 +24,23 @@ public unsafe partial struct LITEM
 
     /// <include file='LITEM.xml' path='doc/member[@name="LITEM.szID"]/*' />
     [NativeTypeName("WCHAR[48]")]
-    public fixed char szID[48];
+    public _szID_e__FixedBuffer szID;
 
     /// <include file='LITEM.xml' path='doc/member[@name="LITEM.szUrl"]/*' />
     [NativeTypeName("WCHAR[2084]")]
-    public fixed char szUrl[2084];
+    public _szUrl_e__FixedBuffer szUrl;
+
+    /// <include file='_szID_e__FixedBuffer.xml' path='doc/member[@name="_szID_e__FixedBuffer"]/*' />
+    [InlineArray(48)]
+    public partial struct _szID_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_szUrl_e__FixedBuffer.xml' path='doc/member[@name="_szUrl_e__FixedBuffer"]/*' />
+    [InlineArray(2084)]
+    public partial struct _szUrl_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

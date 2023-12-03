@@ -3,10 +3,12 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DESIGNVECTOR.xml' path='doc/member[@name="DESIGNVECTOR"]/*' />
-public unsafe partial struct DESIGNVECTOR
+public partial struct DESIGNVECTOR
 {
     /// <include file='DESIGNVECTOR.xml' path='doc/member[@name="DESIGNVECTOR.dvReserved"]/*' />
     [NativeTypeName("DWORD")]
@@ -18,5 +20,12 @@ public unsafe partial struct DESIGNVECTOR
 
     /// <include file='DESIGNVECTOR.xml' path='doc/member[@name="DESIGNVECTOR.dvValues"]/*' />
     [NativeTypeName("LONG[16]")]
-    public fixed int dvValues[16];
+    public _dvValues_e__FixedBuffer dvValues;
+
+    /// <include file='_dvValues_e__FixedBuffer.xml' path='doc/member[@name="_dvValues_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _dvValues_e__FixedBuffer
+    {
+        public int e0;
+    }
 }

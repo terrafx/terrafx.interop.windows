@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='TITLEBARINFOEX.xml' path='doc/member[@name="TITLEBARINFOEX"]/*' />
-public unsafe partial struct TITLEBARINFOEX
+public partial struct TITLEBARINFOEX
 {
     /// <include file='TITLEBARINFOEX.xml' path='doc/member[@name="TITLEBARINFOEX.cbSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -19,11 +19,18 @@ public unsafe partial struct TITLEBARINFOEX
 
     /// <include file='TITLEBARINFOEX.xml' path='doc/member[@name="TITLEBARINFOEX.rgstate"]/*' />
     [NativeTypeName("DWORD[6]")]
-    public fixed uint rgstate[6];
+    public _rgstate_e__FixedBuffer rgstate;
 
     /// <include file='TITLEBARINFOEX.xml' path='doc/member[@name="TITLEBARINFOEX.rgrect"]/*' />
     [NativeTypeName("RECT[6]")]
     public _rgrect_e__FixedBuffer rgrect;
+
+    /// <include file='_rgstate_e__FixedBuffer.xml' path='doc/member[@name="_rgstate_e__FixedBuffer"]/*' />
+    [InlineArray(6)]
+    public partial struct _rgstate_e__FixedBuffer
+    {
+        public uint e0;
+    }
 
     /// <include file='_rgrect_e__FixedBuffer.xml' path='doc/member[@name="_rgrect_e__FixedBuffer"]/*' />
     [InlineArray(6)]

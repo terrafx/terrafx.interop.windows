@@ -3,10 +3,15 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_MEDIA_SERIAL_NUMBER_DATA.xml' path='doc/member[@name="STORAGE_MEDIA_SERIAL_NUMBER_DATA"]/*' />
-public unsafe partial struct STORAGE_MEDIA_SERIAL_NUMBER_DATA
+public partial struct STORAGE_MEDIA_SERIAL_NUMBER_DATA
 {
     /// <include file='STORAGE_MEDIA_SERIAL_NUMBER_DATA.xml' path='doc/member[@name="STORAGE_MEDIA_SERIAL_NUMBER_DATA.Reserved"]/*' />
     [NativeTypeName("WORD")]
@@ -18,5 +23,25 @@ public unsafe partial struct STORAGE_MEDIA_SERIAL_NUMBER_DATA
 
     /// <include file='STORAGE_MEDIA_SERIAL_NUMBER_DATA.xml' path='doc/member[@name="STORAGE_MEDIA_SERIAL_NUMBER_DATA.SerialNumber"]/*' />
     [NativeTypeName("BYTE[0]")]
-    public fixed byte SerialNumber[1];
+    public _SerialNumber_e__FixedBuffer SerialNumber;
+
+    /// <include file='_SerialNumber_e__FixedBuffer.xml' path='doc/member[@name="_SerialNumber_e__FixedBuffer"]/*' />
+    public partial struct _SerialNumber_e__FixedBuffer
+    {
+        public byte e0;
+
+        [UnscopedRef]
+        public ref byte this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

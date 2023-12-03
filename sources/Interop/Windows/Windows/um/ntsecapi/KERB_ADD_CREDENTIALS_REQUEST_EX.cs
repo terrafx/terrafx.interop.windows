@@ -35,7 +35,7 @@ public partial struct KERB_ADD_CREDENTIALS_REQUEST_EX
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

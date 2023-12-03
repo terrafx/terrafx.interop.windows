@@ -3,10 +3,12 @@
 // Ported from um/d3d10.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D10_SAMPLER_DESC.xml' path='doc/member[@name="D3D10_SAMPLER_DESC"]/*' />
-public unsafe partial struct D3D10_SAMPLER_DESC
+public partial struct D3D10_SAMPLER_DESC
 {
     /// <include file='D3D10_SAMPLER_DESC.xml' path='doc/member[@name="D3D10_SAMPLER_DESC.Filter"]/*' />
     public D3D10_FILTER Filter;
@@ -31,11 +33,18 @@ public unsafe partial struct D3D10_SAMPLER_DESC
 
     /// <include file='D3D10_SAMPLER_DESC.xml' path='doc/member[@name="D3D10_SAMPLER_DESC.BorderColor"]/*' />
     [NativeTypeName("FLOAT[4]")]
-    public fixed float BorderColor[4];
+    public _BorderColor_e__FixedBuffer BorderColor;
 
     /// <include file='D3D10_SAMPLER_DESC.xml' path='doc/member[@name="D3D10_SAMPLER_DESC.MinLOD"]/*' />
     public float MinLOD;
 
     /// <include file='D3D10_SAMPLER_DESC.xml' path='doc/member[@name="D3D10_SAMPLER_DESC.MaxLOD"]/*' />
     public float MaxLOD;
+
+    /// <include file='_BorderColor_e__FixedBuffer.xml' path='doc/member[@name="_BorderColor_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _BorderColor_e__FixedBuffer
+    {
+        public float e0;
+    }
 }

@@ -49,7 +49,7 @@ public unsafe partial struct STRRET
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.cStr[0], 260);
+            return Anonymous.cStr;
         }
     }
 
@@ -69,6 +69,13 @@ public unsafe partial struct STRRET
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cStr"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("char[260]")]
-        public fixed sbyte cStr[260];
+        public _cStr_e__FixedBuffer cStr;
+
+        /// <include file='_cStr_e__FixedBuffer.xml' path='doc/member[@name="_cStr_e__FixedBuffer"]/*' />
+        [InlineArray(260)]
+        public partial struct _cStr_e__FixedBuffer
+        {
+            public sbyte e0;
+        }
     }
 }

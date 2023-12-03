@@ -4,16 +4,24 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SHELL_ITEM_RESOURCE.xml' path='doc/member[@name="SHELL_ITEM_RESOURCE"]/*' />
-public unsafe partial struct SHELL_ITEM_RESOURCE
+public partial struct SHELL_ITEM_RESOURCE
 {
     /// <include file='SHELL_ITEM_RESOURCE.xml' path='doc/member[@name="SHELL_ITEM_RESOURCE.guidType"]/*' />
     public Guid guidType;
 
     /// <include file='SHELL_ITEM_RESOURCE.xml' path='doc/member[@name="SHELL_ITEM_RESOURCE.szName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed char szName[260];
+    public _szName_e__FixedBuffer szName;
+
+    /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _szName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

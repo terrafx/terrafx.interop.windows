@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIDEVICEOBJECTINSTANCE_DX3.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCE_DX3"]/*' />
-public unsafe partial struct DIDEVICEOBJECTINSTANCE_DX3
+public partial struct DIDEVICEOBJECTINSTANCE_DX3
 {
     /// <include file='DIDEVICEOBJECTINSTANCE_DX3.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCE_DX3.dwSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -31,5 +32,12 @@ public unsafe partial struct DIDEVICEOBJECTINSTANCE_DX3
 
     /// <include file='DIDEVICEOBJECTINSTANCE_DX3.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCE_DX3.tszName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed char tszName[260];
+    public _tszName_e__FixedBuffer tszName;
+
+    /// <include file='_tszName_e__FixedBuffer.xml' path='doc/member[@name="_tszName_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _tszName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

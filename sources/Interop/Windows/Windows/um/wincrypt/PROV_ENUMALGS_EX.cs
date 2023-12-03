@@ -3,10 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PROV_ENUMALGS_EX.xml' path='doc/member[@name="PROV_ENUMALGS_EX"]/*' />
-public unsafe partial struct PROV_ENUMALGS_EX
+public partial struct PROV_ENUMALGS_EX
 {
     /// <include file='PROV_ENUMALGS_EX.xml' path='doc/member[@name="PROV_ENUMALGS_EX.aiAlgid"]/*' />
     [NativeTypeName("ALG_ID")]
@@ -34,7 +36,7 @@ public unsafe partial struct PROV_ENUMALGS_EX
 
     /// <include file='PROV_ENUMALGS_EX.xml' path='doc/member[@name="PROV_ENUMALGS_EX.szName"]/*' />
     [NativeTypeName("CHAR[20]")]
-    public fixed sbyte szName[20];
+    public _szName_e__FixedBuffer szName;
 
     /// <include file='PROV_ENUMALGS_EX.xml' path='doc/member[@name="PROV_ENUMALGS_EX.dwLongNameLen"]/*' />
     [NativeTypeName("DWORD")]
@@ -42,5 +44,19 @@ public unsafe partial struct PROV_ENUMALGS_EX
 
     /// <include file='PROV_ENUMALGS_EX.xml' path='doc/member[@name="PROV_ENUMALGS_EX.szLongName"]/*' />
     [NativeTypeName("CHAR[40]")]
-    public fixed sbyte szLongName[40];
+    public _szLongName_e__FixedBuffer szLongName;
+
+    /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
+    [InlineArray(20)]
+    public partial struct _szName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_szLongName_e__FixedBuffer.xml' path='doc/member[@name="_szLongName_e__FixedBuffer"]/*' />
+    [InlineArray(40)]
+    public partial struct _szLongName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

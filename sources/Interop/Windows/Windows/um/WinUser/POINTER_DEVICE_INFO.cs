@@ -3,13 +3,14 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO"]/*' />
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct POINTER_DEVICE_INFO
+public partial struct POINTER_DEVICE_INFO
 {
     /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.displayOrientation"]/*' />
     [NativeTypeName("DWORD")]
@@ -33,5 +34,12 @@ public unsafe partial struct POINTER_DEVICE_INFO
 
     /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.productString"]/*' />
     [NativeTypeName("WCHAR[520]")]
-    public fixed char productString[520];
+    public _productString_e__FixedBuffer productString;
+
+    /// <include file='_productString_e__FixedBuffer.xml' path='doc/member[@name="_productString_e__FixedBuffer"]/*' />
+    [InlineArray(520)]
+    public partial struct _productString_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

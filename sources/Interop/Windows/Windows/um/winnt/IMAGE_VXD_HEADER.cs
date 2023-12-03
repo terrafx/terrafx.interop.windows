@@ -3,13 +3,14 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGE_VXD_HEADER.xml' path='doc/member[@name="IMAGE_VXD_HEADER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
-public unsafe partial struct IMAGE_VXD_HEADER
+public partial struct IMAGE_VXD_HEADER
 {
     /// <include file='IMAGE_VXD_HEADER.xml' path='doc/member[@name="IMAGE_VXD_HEADER.e32_magic"]/*' />
     [NativeTypeName("WORD")]
@@ -195,7 +196,7 @@ public unsafe partial struct IMAGE_VXD_HEADER
 
     /// <include file='IMAGE_VXD_HEADER.xml' path='doc/member[@name="IMAGE_VXD_HEADER.e32_res3"]/*' />
     [NativeTypeName("BYTE[12]")]
-    public fixed byte e32_res3[12];
+    public _e32_res3_e__FixedBuffer e32_res3;
 
     /// <include file='IMAGE_VXD_HEADER.xml' path='doc/member[@name="IMAGE_VXD_HEADER.e32_winresoff"]/*' />
     [NativeTypeName("DWORD")]
@@ -212,4 +213,12 @@ public unsafe partial struct IMAGE_VXD_HEADER
     /// <include file='IMAGE_VXD_HEADER.xml' path='doc/member[@name="IMAGE_VXD_HEADER.e32_ddkver"]/*' />
     [NativeTypeName("WORD")]
     public ushort e32_ddkver;
+
+    /// <include file='_e32_res3_e__FixedBuffer.xml' path='doc/member[@name="_e32_res3_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 2)]
+    [InlineArray(12)]
+    public partial struct _e32_res3_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

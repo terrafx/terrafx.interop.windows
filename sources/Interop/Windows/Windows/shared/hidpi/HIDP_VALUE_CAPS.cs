@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='HIDP_VALUE_CAPS.xml' path='doc/member[@name="HIDP_VALUE_CAPS"]/*' />
-public unsafe partial struct HIDP_VALUE_CAPS
+public partial struct HIDP_VALUE_CAPS
 {
     /// <include file='HIDP_VALUE_CAPS.xml' path='doc/member[@name="HIDP_VALUE_CAPS.UsagePage"]/*' />
     [NativeTypeName("USAGE")]
@@ -70,7 +70,7 @@ public unsafe partial struct HIDP_VALUE_CAPS
 
     /// <include file='HIDP_VALUE_CAPS.xml' path='doc/member[@name="HIDP_VALUE_CAPS.Reserved2"]/*' />
     [NativeTypeName("USHORT[5]")]
-    public fixed ushort Reserved2[5];
+    public _Reserved2_e__FixedBuffer Reserved2;
 
     /// <include file='HIDP_VALUE_CAPS.xml' path='doc/member[@name="HIDP_VALUE_CAPS.UnitsExp"]/*' />
     [NativeTypeName("ULONG")]
@@ -195,5 +195,12 @@ public unsafe partial struct HIDP_VALUE_CAPS
             /// <include file='_NotRange_e__Struct.xml' path='doc/member[@name="_NotRange_e__Struct.Reserved4"]/*' />
             public ushort Reserved4;
         }
+    }
+
+    /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*' />
+    [InlineArray(5)]
+    public partial struct _Reserved2_e__FixedBuffer
+    {
+        public ushort e0;
     }
 }

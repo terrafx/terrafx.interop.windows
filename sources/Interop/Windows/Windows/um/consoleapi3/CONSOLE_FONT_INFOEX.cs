@@ -3,10 +3,12 @@
 // Ported from um/consoleapi3.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX"]/*' />
-public unsafe partial struct CONSOLE_FONT_INFOEX
+public partial struct CONSOLE_FONT_INFOEX
 {
     /// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX.cbSize"]/*' />
     [NativeTypeName("ULONG")]
@@ -27,5 +29,12 @@ public unsafe partial struct CONSOLE_FONT_INFOEX
 
     /// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX.FaceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed char FaceName[32];
+    public _FaceName_e__FixedBuffer FaceName;
+
+    /// <include file='_FaceName_e__FixedBuffer.xml' path='doc/member[@name="_FaceName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _FaceName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }
