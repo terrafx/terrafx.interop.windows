@@ -6,8 +6,8 @@
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.DirectX.D3D12_TEXTURE_LAYOUT;
-using static TerraFX.Interop.DirectX.DirectX;
 using static TerraFX.Interop.DirectX.DXGI_FORMAT;
+using static TerraFX.Interop.DirectX.DirectX;
 
 namespace TerraFX.Interop.DirectX;
 

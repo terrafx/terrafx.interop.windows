@@ -5,7 +5,6 @@
 
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D3D12_FEATURE;
-using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 
 namespace TerraFX.Interop.DirectX;
 

@@ -159,6 +159,7 @@ DI=TerraFX.Interop.Windows
 DIF=TerraFX.Interop.Windows
 DIGCF=TerraFX.Interop.Windows
 DIRECTMANIPULATION=TerraFX.Interop.DirectX
+DirectX=TerraFX.Interop.DirectX
 DIRID=TerraFX.Interop.Windows
 DISP=TerraFX.Interop.Windows
 DISPID=TerraFX.Interop.Windows
