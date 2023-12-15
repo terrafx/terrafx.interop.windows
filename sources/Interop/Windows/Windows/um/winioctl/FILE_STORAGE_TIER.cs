@@ -38,7 +38,6 @@ public partial struct FILE_STORAGE_TIER
 
     /// <include file='_Name_e__FixedBuffer.xml' path='doc/member[@name="_Name_e__FixedBuffer"]/*' />
     [InlineArray(256)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Name_e__FixedBuffer
     {
         public char e0;
@@ -46,7 +45,6 @@ public partial struct FILE_STORAGE_TIER
 
     /// <include file='_Description_e__FixedBuffer.xml' path='doc/member[@name="_Description_e__FixedBuffer"]/*' />
     [InlineArray(256)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Description_e__FixedBuffer
     {
         public char e0;

@@ -22,7 +22,6 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_STRING
     public _NameString_e__FixedBuffer NameString;
 
     /// <include file='_NameString_e__FixedBuffer.xml' path='doc/member[@name="_NameString_e__FixedBuffer"]/*' />
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _NameString_e__FixedBuffer
     {
         public sbyte e0;

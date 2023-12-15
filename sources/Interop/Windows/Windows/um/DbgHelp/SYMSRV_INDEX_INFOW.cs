@@ -51,7 +51,6 @@ public partial struct SYMSRV_INDEX_INFOW
 
     /// <include file='_file_e__FixedBuffer.xml' path='doc/member[@name="_file_e__FixedBuffer"]/*' />
     [InlineArray(261)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _file_e__FixedBuffer
     {
         public char e0;
@@ -59,7 +58,6 @@ public partial struct SYMSRV_INDEX_INFOW
 
     /// <include file='_dbgfile_e__FixedBuffer.xml' path='doc/member[@name="_dbgfile_e__FixedBuffer"]/*' />
     [InlineArray(261)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _dbgfile_e__FixedBuffer
     {
         public char e0;
@@ -67,7 +65,6 @@ public partial struct SYMSRV_INDEX_INFOW
 
     /// <include file='_pdbfile_e__FixedBuffer.xml' path='doc/member[@name="_pdbfile_e__FixedBuffer"]/*' />
     [InlineArray(261)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _pdbfile_e__FixedBuffer
     {
         public char e0;

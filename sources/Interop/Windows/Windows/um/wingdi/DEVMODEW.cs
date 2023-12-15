@@ -3,7 +3,6 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -334,7 +333,6 @@ public partial struct DEVMODEW
 
     /// <include file='_dmDeviceName_e__FixedBuffer.xml' path='doc/member[@name="_dmDeviceName_e__FixedBuffer"]/*' />
     [InlineArray(32)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _dmDeviceName_e__FixedBuffer
     {
         public char e0;
@@ -342,7 +340,6 @@ public partial struct DEVMODEW
 
     /// <include file='_dmFormName_e__FixedBuffer.xml' path='doc/member[@name="_dmFormName_e__FixedBuffer"]/*' />
     [InlineArray(32)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _dmFormName_e__FixedBuffer
     {
         public char e0;

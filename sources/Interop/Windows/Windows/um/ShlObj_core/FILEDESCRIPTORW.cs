@@ -56,7 +56,6 @@ public partial struct FILEDESCRIPTORW
     /// <include file='_cFileName_e__FixedBuffer.xml' path='doc/member[@name="_cFileName_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(260)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _cFileName_e__FixedBuffer
     {
         public char e0;

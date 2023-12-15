@@ -3,7 +3,6 @@
 // Ported from um/timezoneapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
@@ -39,7 +38,6 @@ public partial struct TIME_ZONE_INFORMATION
 
     /// <include file='_StandardName_e__FixedBuffer.xml' path='doc/member[@name="_StandardName_e__FixedBuffer"]/*' />
     [InlineArray(32)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _StandardName_e__FixedBuffer
     {
         public char e0;
@@ -47,7 +45,6 @@ public partial struct TIME_ZONE_INFORMATION
 
     /// <include file='_DaylightName_e__FixedBuffer.xml' path='doc/member[@name="_DaylightName_e__FixedBuffer"]/*' />
     [InlineArray(32)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _DaylightName_e__FixedBuffer
     {
         public char e0;

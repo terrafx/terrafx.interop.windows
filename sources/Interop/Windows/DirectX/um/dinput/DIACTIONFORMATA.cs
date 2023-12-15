@@ -67,7 +67,6 @@ public unsafe partial struct DIACTIONFORMATA
 
     /// <include file='_tszActionMap_e__FixedBuffer.xml' path='doc/member[@name="_tszActionMap_e__FixedBuffer"]/*' />
     [InlineArray(260)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _tszActionMap_e__FixedBuffer
     {
         public sbyte e0;

@@ -81,7 +81,6 @@ public partial struct SYMBOL_INFOW
     }
 
     /// <include file='_Name_e__FixedBuffer.xml' path='doc/member[@name="_Name_e__FixedBuffer"]/*' />
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Name_e__FixedBuffer
     {
         public char e0;

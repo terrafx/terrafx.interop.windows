@@ -3,7 +3,6 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -44,7 +43,6 @@ public partial struct AUXCAPSW
     /// <include file='_szPname_e__FixedBuffer.xml' path='doc/member[@name="_szPname_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(32)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szPname_e__FixedBuffer
     {
         public char e0;

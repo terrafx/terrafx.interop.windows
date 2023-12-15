@@ -3,7 +3,6 @@
 // Ported from um/fileapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
@@ -20,7 +19,6 @@ public partial struct WIN32_FIND_STREAM_DATA
 
     /// <include file='_cStreamName_e__FixedBuffer.xml' path='doc/member[@name="_cStreamName_e__FixedBuffer"]/*' />
     [InlineArray(296)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _cStreamName_e__FixedBuffer
     {
         public char e0;

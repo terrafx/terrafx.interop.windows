@@ -3,7 +3,6 @@
 // Ported from um/IPTypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
@@ -76,7 +75,6 @@ public unsafe partial struct IP_ADAPTER_INFO
 
     /// <include file='_AdapterName_e__FixedBuffer.xml' path='doc/member[@name="_AdapterName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _AdapterName_e__FixedBuffer
     {
         public sbyte e0;
@@ -84,7 +82,6 @@ public unsafe partial struct IP_ADAPTER_INFO
 
     /// <include file='_Description_e__FixedBuffer.xml' path='doc/member[@name="_Description_e__FixedBuffer"]/*' />
     [InlineArray(132)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Description_e__FixedBuffer
     {
         public sbyte e0;

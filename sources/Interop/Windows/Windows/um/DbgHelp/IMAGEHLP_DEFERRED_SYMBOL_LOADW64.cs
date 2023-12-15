@@ -3,7 +3,6 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
@@ -44,7 +43,6 @@ public partial struct IMAGEHLP_DEFERRED_SYMBOL_LOADW64
 
     /// <include file='_FileName_e__FixedBuffer.xml' path='doc/member[@name="_FileName_e__FixedBuffer"]/*' />
     [InlineArray(261)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _FileName_e__FixedBuffer
     {
         public char e0;

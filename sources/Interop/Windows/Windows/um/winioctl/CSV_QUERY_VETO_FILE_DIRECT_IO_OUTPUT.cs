@@ -3,7 +3,6 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
@@ -25,7 +24,6 @@ public partial struct CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT
 
     /// <include file='_Reason_e__FixedBuffer.xml' path='doc/member[@name="_Reason_e__FixedBuffer"]/*' />
     [InlineArray(256)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Reason_e__FixedBuffer
     {
         public char e0;
