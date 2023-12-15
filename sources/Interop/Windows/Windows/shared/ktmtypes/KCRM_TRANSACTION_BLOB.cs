@@ -36,6 +36,7 @@ public partial struct KCRM_TRANSACTION_BLOB
 
     /// <include file='_Description_e__FixedBuffer.xml' path='doc/member[@name="_Description_e__FixedBuffer"]/*' />
     [InlineArray(64)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Description_e__FixedBuffer
     {
         public char e0;

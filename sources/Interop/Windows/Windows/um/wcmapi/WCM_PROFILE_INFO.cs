@@ -25,6 +25,7 @@ public partial struct WCM_PROFILE_INFO
 
     /// <include file='_strProfileName_e__FixedBuffer.xml' path='doc/member[@name="_strProfileName_e__FixedBuffer"]/*' />
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _strProfileName_e__FixedBuffer
     {
         public char e0;

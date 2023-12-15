@@ -3,6 +3,7 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
@@ -45,6 +46,7 @@ public partial struct ICONINFOEXW
 
     /// <include file='_szModName_e__FixedBuffer.xml' path='doc/member[@name="_szModName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szModName_e__FixedBuffer
     {
         public char e0;
@@ -52,6 +54,7 @@ public partial struct ICONINFOEXW
 
     /// <include file='_szResName_e__FixedBuffer.xml' path='doc/member[@name="_szResName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szResName_e__FixedBuffer
     {
         public char e0;

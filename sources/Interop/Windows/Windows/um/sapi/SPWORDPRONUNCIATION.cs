@@ -36,6 +36,7 @@ public unsafe partial struct SPWORDPRONUNCIATION
     public _szPronunciation_e__FixedBuffer szPronunciation;
 
     /// <include file='_szPronunciation_e__FixedBuffer.xml' path='doc/member[@name="_szPronunciation_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szPronunciation_e__FixedBuffer
     {
         public char e0;

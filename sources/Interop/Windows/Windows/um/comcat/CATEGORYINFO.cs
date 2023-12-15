@@ -25,6 +25,7 @@ public partial struct CATEGORYINFO
 
     /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
     [InlineArray(128)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDescription_e__FixedBuffer
     {
         public char e0;

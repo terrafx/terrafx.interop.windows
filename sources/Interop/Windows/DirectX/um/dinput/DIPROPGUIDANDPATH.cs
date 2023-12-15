@@ -23,6 +23,7 @@ public partial struct DIPROPGUIDANDPATH
 
     /// <include file='_wszPath_e__FixedBuffer.xml' path='doc/member[@name="_wszPath_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszPath_e__FixedBuffer
     {
         public char e0;

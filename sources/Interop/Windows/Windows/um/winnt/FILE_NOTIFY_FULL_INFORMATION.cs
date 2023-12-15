@@ -105,6 +105,7 @@ public partial struct FILE_NOTIFY_FULL_INFORMATION
     }
 
     /// <include file='_FileName_e__FixedBuffer.xml' path='doc/member[@name="_FileName_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _FileName_e__FixedBuffer
     {
         public char e0;

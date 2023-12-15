@@ -44,6 +44,7 @@ public partial struct DDDEVICEIDENTIFIER
 
     /// <include file='_szDriver_e__FixedBuffer.xml' path='doc/member[@name="_szDriver_e__FixedBuffer"]/*' />
     [InlineArray(512)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDriver_e__FixedBuffer
     {
         public sbyte e0;
@@ -51,6 +52,7 @@ public partial struct DDDEVICEIDENTIFIER
 
     /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
     [InlineArray(512)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDescription_e__FixedBuffer
     {
         public sbyte e0;

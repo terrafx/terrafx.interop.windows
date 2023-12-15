@@ -26,6 +26,7 @@ public partial struct RemSNB
     public _rgString_e__FixedBuffer rgString;
 
     /// <include file='_rgString_e__FixedBuffer.xml' path='doc/member[@name="_rgString_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _rgString_e__FixedBuffer
     {
         public char e0;

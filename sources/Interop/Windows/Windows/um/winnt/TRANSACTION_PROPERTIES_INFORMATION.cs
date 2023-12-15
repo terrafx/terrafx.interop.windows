@@ -37,6 +37,7 @@ public partial struct TRANSACTION_PROPERTIES_INFORMATION
     public _Description_e__FixedBuffer Description;
 
     /// <include file='_Description_e__FixedBuffer.xml' path='doc/member[@name="_Description_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Description_e__FixedBuffer
     {
         public char e0;

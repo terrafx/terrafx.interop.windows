@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
@@ -52,6 +53,7 @@ public partial struct FILE_QUERY_ON_DISK_VOL_INFO_BUFFER
 
     /// <include file='_FsFormatName_e__FixedBuffer.xml' path='doc/member[@name="_FsFormatName_e__FixedBuffer"]/*' />
     [InlineArray(12)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _FsFormatName_e__FixedBuffer
     {
         public char e0;
@@ -59,6 +61,7 @@ public partial struct FILE_QUERY_ON_DISK_VOL_INFO_BUFFER
 
     /// <include file='_CopyrightInfo_e__FixedBuffer.xml' path='doc/member[@name="_CopyrightInfo_e__FixedBuffer"]/*' />
     [InlineArray(34)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _CopyrightInfo_e__FixedBuffer
     {
         public char e0;
@@ -66,6 +69,7 @@ public partial struct FILE_QUERY_ON_DISK_VOL_INFO_BUFFER
 
     /// <include file='_AbstractInfo_e__FixedBuffer.xml' path='doc/member[@name="_AbstractInfo_e__FixedBuffer"]/*' />
     [InlineArray(34)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _AbstractInfo_e__FixedBuffer
     {
         public char e0;
@@ -73,6 +77,7 @@ public partial struct FILE_QUERY_ON_DISK_VOL_INFO_BUFFER
 
     /// <include file='_FormattingImplementationInfo_e__FixedBuffer.xml' path='doc/member[@name="_FormattingImplementationInfo_e__FixedBuffer"]/*' />
     [InlineArray(34)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _FormattingImplementationInfo_e__FixedBuffer
     {
         public char e0;
@@ -80,6 +85,7 @@ public partial struct FILE_QUERY_ON_DISK_VOL_INFO_BUFFER
 
     /// <include file='_LastModifyingImplementationInfo_e__FixedBuffer.xml' path='doc/member[@name="_LastModifyingImplementationInfo_e__FixedBuffer"]/*' />
     [InlineArray(34)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _LastModifyingImplementationInfo_e__FixedBuffer
     {
         public char e0;

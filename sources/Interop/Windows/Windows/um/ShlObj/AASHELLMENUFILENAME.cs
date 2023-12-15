@@ -32,6 +32,7 @@ public partial struct AASHELLMENUFILENAME
     }
 
     /// <include file='_szFileName_e__FixedBuffer.xml' path='doc/member[@name="_szFileName_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szFileName_e__FixedBuffer
     {
         public char e0;

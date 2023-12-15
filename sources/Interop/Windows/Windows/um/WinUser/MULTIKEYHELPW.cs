@@ -26,6 +26,7 @@ public partial struct MULTIKEYHELPW
     public _szKeyphrase_e__FixedBuffer szKeyphrase;
 
     /// <include file='_szKeyphrase_e__FixedBuffer.xml' path='doc/member[@name="_szKeyphrase_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szKeyphrase_e__FixedBuffer
     {
         public char e0;
