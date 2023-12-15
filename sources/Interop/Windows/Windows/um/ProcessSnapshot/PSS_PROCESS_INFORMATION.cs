@@ -3,7 +3,6 @@
 // Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
@@ -113,7 +112,6 @@ public unsafe partial struct PSS_PROCESS_INFORMATION
 
     /// <include file='_ImageFileName_e__FixedBuffer.xml' path='doc/member[@name="_ImageFileName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _ImageFileName_e__FixedBuffer
     {
         public char e0;

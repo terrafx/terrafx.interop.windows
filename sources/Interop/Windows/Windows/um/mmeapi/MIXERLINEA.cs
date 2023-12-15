@@ -3,7 +3,6 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -96,7 +95,6 @@ public partial struct MIXERLINEA
         /// <include file='_szPname_e__FixedBuffer.xml' path='doc/member[@name="_szPname_e__FixedBuffer"]/*' />
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         [InlineArray(32)]
-        [Obsolete("Possible string represented as a fixed-sized buffer.")]
         public partial struct _szPname_e__FixedBuffer
         {
             public sbyte e0;
@@ -106,7 +104,6 @@ public partial struct MIXERLINEA
     /// <include file='_szShortName_e__FixedBuffer.xml' path='doc/member[@name="_szShortName_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(16)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szShortName_e__FixedBuffer
     {
         public sbyte e0;
@@ -115,7 +112,6 @@ public partial struct MIXERLINEA
     /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(64)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szName_e__FixedBuffer
     {
         public sbyte e0;

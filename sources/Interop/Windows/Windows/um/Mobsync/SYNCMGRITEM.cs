@@ -38,7 +38,6 @@ public partial struct SYNCMGRITEM
 
     /// <include file='_wszItemName_e__FixedBuffer.xml' path='doc/member[@name="_wszItemName_e__FixedBuffer"]/*' />
     [InlineArray(128)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszItemName_e__FixedBuffer
     {
         public char e0;

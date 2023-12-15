@@ -104,7 +104,6 @@ public partial struct SCM_PD_DEVICE_INFO
     }
 
     /// <include file='_SerialNumber_e__FixedBuffer.xml' path='doc/member[@name="_SerialNumber_e__FixedBuffer"]/*' />
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _SerialNumber_e__FixedBuffer
     {
         public sbyte e0;

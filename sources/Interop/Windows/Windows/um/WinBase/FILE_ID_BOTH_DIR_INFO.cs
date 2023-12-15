@@ -68,14 +68,12 @@ public partial struct FILE_ID_BOTH_DIR_INFO
 
     /// <include file='_ShortName_e__FixedBuffer.xml' path='doc/member[@name="_ShortName_e__FixedBuffer"]/*' />
     [InlineArray(12)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _ShortName_e__FixedBuffer
     {
         public char e0;
     }
 
     /// <include file='_FileName_e__FixedBuffer.xml' path='doc/member[@name="_FileName_e__FixedBuffer"]/*' />
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _FileName_e__FixedBuffer
     {
         public char e0;

@@ -104,7 +104,6 @@ public partial struct IMAGEHLP_MODULEW64
 
     /// <include file='_ModuleName_e__FixedBuffer.xml' path='doc/member[@name="_ModuleName_e__FixedBuffer"]/*' />
     [InlineArray(32)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _ModuleName_e__FixedBuffer
     {
         public char e0;
@@ -112,7 +111,6 @@ public partial struct IMAGEHLP_MODULEW64
 
     /// <include file='_ImageName_e__FixedBuffer.xml' path='doc/member[@name="_ImageName_e__FixedBuffer"]/*' />
     [InlineArray(256)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _ImageName_e__FixedBuffer
     {
         public char e0;
@@ -120,7 +118,6 @@ public partial struct IMAGEHLP_MODULEW64
 
     /// <include file='_LoadedImageName_e__FixedBuffer.xml' path='doc/member[@name="_LoadedImageName_e__FixedBuffer"]/*' />
     [InlineArray(256)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _LoadedImageName_e__FixedBuffer
     {
         public char e0;
@@ -128,7 +125,6 @@ public partial struct IMAGEHLP_MODULEW64
 
     /// <include file='_LoadedPdbName_e__FixedBuffer.xml' path='doc/member[@name="_LoadedPdbName_e__FixedBuffer"]/*' />
     [InlineArray(256)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _LoadedPdbName_e__FixedBuffer
     {
         public char e0;
@@ -136,7 +132,6 @@ public partial struct IMAGEHLP_MODULEW64
 
     /// <include file='_CVData_e__FixedBuffer.xml' path='doc/member[@name="_CVData_e__FixedBuffer"]/*' />
     [InlineArray(780)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _CVData_e__FixedBuffer
     {
         public char e0;

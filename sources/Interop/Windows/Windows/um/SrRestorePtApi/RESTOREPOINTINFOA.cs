@@ -3,7 +3,6 @@
 // Ported from um/SrRestorePtApi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -32,7 +31,6 @@ public partial struct RESTOREPOINTINFOA
     /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(64)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDescription_e__FixedBuffer
     {
         public sbyte e0;

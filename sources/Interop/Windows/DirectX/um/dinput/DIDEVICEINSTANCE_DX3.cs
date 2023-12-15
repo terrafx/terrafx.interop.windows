@@ -35,7 +35,6 @@ public partial struct DIDEVICEINSTANCE_DX3
 
     /// <include file='_tszInstanceName_e__FixedBuffer.xml' path='doc/member[@name="_tszInstanceName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _tszInstanceName_e__FixedBuffer
     {
         public char e0;
@@ -43,7 +42,6 @@ public partial struct DIDEVICEINSTANCE_DX3
 
     /// <include file='_tszProductName_e__FixedBuffer.xml' path='doc/member[@name="_tszProductName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _tszProductName_e__FixedBuffer
     {
         public char e0;

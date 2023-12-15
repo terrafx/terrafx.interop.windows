@@ -3,7 +3,6 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
@@ -27,7 +26,6 @@ public partial struct STORAGE_ADAPTER_SERIAL_NUMBER
 
     /// <include file='_SerialNumber_e__FixedBuffer.xml' path='doc/member[@name="_SerialNumber_e__FixedBuffer"]/*' />
     [InlineArray(128)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _SerialNumber_e__FixedBuffer
     {
         public char e0;

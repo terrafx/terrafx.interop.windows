@@ -3,7 +3,6 @@
 // Ported from um/iphlpapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -98,7 +97,6 @@ public partial struct NET_ADDRESS_INFO
 
             /// <include file='_Address_e__FixedBuffer.xml' path='doc/member[@name="_Address_e__FixedBuffer"]/*' />
             [InlineArray(256)]
-            [Obsolete("Possible string represented as a fixed-sized buffer.")]
             public partial struct _Address_e__FixedBuffer
             {
                 public char e0;
@@ -106,7 +104,6 @@ public partial struct NET_ADDRESS_INFO
 
             /// <include file='_Port_e__FixedBuffer.xml' path='doc/member[@name="_Port_e__FixedBuffer"]/*' />
             [InlineArray(6)]
-            [Obsolete("Possible string represented as a fixed-sized buffer.")]
             public partial struct _Port_e__FixedBuffer
             {
                 public char e0;

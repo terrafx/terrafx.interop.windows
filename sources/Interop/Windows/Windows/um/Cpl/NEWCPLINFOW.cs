@@ -3,7 +3,6 @@
 // Ported from um/Cpl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -47,7 +46,6 @@ public partial struct NEWCPLINFOW
     /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(32)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szName_e__FixedBuffer
     {
         public char e0;
@@ -56,7 +54,6 @@ public partial struct NEWCPLINFOW
     /// <include file='_szInfo_e__FixedBuffer.xml' path='doc/member[@name="_szInfo_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(64)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szInfo_e__FixedBuffer
     {
         public char e0;
@@ -65,7 +62,6 @@ public partial struct NEWCPLINFOW
     /// <include file='_szHelpFile_e__FixedBuffer.xml' path='doc/member[@name="_szHelpFile_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(128)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szHelpFile_e__FixedBuffer
     {
         public char e0;

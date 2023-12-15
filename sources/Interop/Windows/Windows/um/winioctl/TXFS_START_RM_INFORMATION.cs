@@ -62,7 +62,6 @@ public partial struct TXFS_START_RM_INFORMATION
     public _LogPath_e__FixedBuffer LogPath;
 
     /// <include file='_LogPath_e__FixedBuffer.xml' path='doc/member[@name="_LogPath_e__FixedBuffer"]/*' />
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _LogPath_e__FixedBuffer
     {
         public char e0;

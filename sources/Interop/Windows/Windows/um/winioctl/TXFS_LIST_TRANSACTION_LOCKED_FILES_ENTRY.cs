@@ -42,7 +42,6 @@ public partial struct TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY
     public _FileName_e__FixedBuffer FileName;
 
     /// <include file='_FileName_e__FixedBuffer.xml' path='doc/member[@name="_FileName_e__FixedBuffer"]/*' />
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _FileName_e__FixedBuffer
     {
         public char e0;

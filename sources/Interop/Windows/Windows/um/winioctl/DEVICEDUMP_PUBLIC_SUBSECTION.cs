@@ -41,7 +41,6 @@ public partial struct DEVICEDUMP_PUBLIC_SUBSECTION
     /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(16)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDescription_e__FixedBuffer
     {
         public sbyte e0;

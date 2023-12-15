@@ -45,7 +45,6 @@ public partial struct COMMCONFIG
     public _wcProviderData_e__FixedBuffer wcProviderData;
 
     /// <include file='_wcProviderData_e__FixedBuffer.xml' path='doc/member[@name="_wcProviderData_e__FixedBuffer"]/*' />
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wcProviderData_e__FixedBuffer
     {
         public char e0;

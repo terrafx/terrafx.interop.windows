@@ -24,7 +24,6 @@ public partial struct EXTRASEARCH
 
     /// <include file='_wszFriendlyName_e__FixedBuffer.xml' path='doc/member[@name="_wszFriendlyName_e__FixedBuffer"]/*' />
     [InlineArray(80)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszFriendlyName_e__FixedBuffer
     {
         public char e0;
@@ -32,7 +31,6 @@ public partial struct EXTRASEARCH
 
     /// <include file='_wszUrl_e__FixedBuffer.xml' path='doc/member[@name="_wszUrl_e__FixedBuffer"]/*' />
     [InlineArray(2084)]
-    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszUrl_e__FixedBuffer
     {
         public char e0;
