@@ -43,6 +43,7 @@ public partial struct AUXCAPSA
     /// <include file='_szPname_e__FixedBuffer.xml' path='doc/member[@name="_szPname_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szPname_e__FixedBuffer
     {
         public sbyte e0;

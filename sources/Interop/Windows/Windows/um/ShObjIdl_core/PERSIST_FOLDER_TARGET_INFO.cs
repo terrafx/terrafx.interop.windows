@@ -31,6 +31,7 @@ public unsafe partial struct PERSIST_FOLDER_TARGET_INFO
 
     /// <include file='_szTargetParsingName_e__FixedBuffer.xml' path='doc/member[@name="_szTargetParsingName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szTargetParsingName_e__FixedBuffer
     {
         public char e0;
@@ -38,6 +39,7 @@ public unsafe partial struct PERSIST_FOLDER_TARGET_INFO
 
     /// <include file='_szNetworkProvider_e__FixedBuffer.xml' path='doc/member[@name="_szNetworkProvider_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szNetworkProvider_e__FixedBuffer
     {
         public char e0;

@@ -20,6 +20,7 @@ public partial struct SOCKADDR
 
     /// <include file='_sa_data_e__FixedBuffer.xml' path='doc/member[@name="_sa_data_e__FixedBuffer"]/*' />
     [InlineArray(14)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _sa_data_e__FixedBuffer
     {
         public sbyte e0;

@@ -41,6 +41,7 @@ public partial struct IMEMENUITEMINFOW
 
     /// <include file='_szString_e__FixedBuffer.xml' path='doc/member[@name="_szString_e__FixedBuffer"]/*' />
     [InlineArray(80)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szString_e__FixedBuffer
     {
         public char e0;

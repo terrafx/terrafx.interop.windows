@@ -26,6 +26,7 @@ public partial struct STORAGE_ADAPTER_SERIAL_NUMBER
 
     /// <include file='_SerialNumber_e__FixedBuffer.xml' path='doc/member[@name="_SerialNumber_e__FixedBuffer"]/*' />
     [InlineArray(128)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _SerialNumber_e__FixedBuffer
     {
         public char e0;

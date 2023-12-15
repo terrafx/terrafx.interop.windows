@@ -24,6 +24,7 @@ public partial struct CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT
 
     /// <include file='_Reason_e__FixedBuffer.xml' path='doc/member[@name="_Reason_e__FixedBuffer"]/*' />
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Reason_e__FixedBuffer
     {
         public char e0;

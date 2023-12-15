@@ -36,6 +36,7 @@ public partial struct OSVERSIONINFOW
 
     /// <include file='_szCSDVersion_e__FixedBuffer.xml' path='doc/member[@name="_szCSDVersion_e__FixedBuffer"]/*' />
     [InlineArray(128)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szCSDVersion_e__FixedBuffer
     {
         public char e0;

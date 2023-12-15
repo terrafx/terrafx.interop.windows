@@ -32,6 +32,7 @@ public partial struct FILE_STREAM_INFO
     public _StreamName_e__FixedBuffer StreamName;
 
     /// <include file='_StreamName_e__FixedBuffer.xml' path='doc/member[@name="_StreamName_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _StreamName_e__FixedBuffer
     {
         public char e0;

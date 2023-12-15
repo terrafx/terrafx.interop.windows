@@ -33,6 +33,7 @@ public partial struct WIN32_STREAM_ID
     public _cStreamName_e__FixedBuffer cStreamName;
 
     /// <include file='_cStreamName_e__FixedBuffer.xml' path='doc/member[@name="_cStreamName_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _cStreamName_e__FixedBuffer
     {
         public char e0;

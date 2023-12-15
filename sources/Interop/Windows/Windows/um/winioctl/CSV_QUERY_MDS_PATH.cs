@@ -30,6 +30,7 @@ public partial struct CSV_QUERY_MDS_PATH
     public _Path_e__FixedBuffer Path;
 
     /// <include file='_Path_e__FixedBuffer.xml' path='doc/member[@name="_Path_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Path_e__FixedBuffer
     {
         public char e0;

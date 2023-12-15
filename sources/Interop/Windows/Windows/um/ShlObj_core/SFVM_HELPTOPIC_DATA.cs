@@ -20,6 +20,7 @@ public partial struct SFVM_HELPTOPIC_DATA
 
     /// <include file='_wszHelpFile_e__FixedBuffer.xml' path='doc/member[@name="_wszHelpFile_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszHelpFile_e__FixedBuffer
     {
         public char e0;
@@ -27,6 +28,7 @@ public partial struct SFVM_HELPTOPIC_DATA
 
     /// <include file='_wszHelpTopic_e__FixedBuffer.xml' path='doc/member[@name="_wszHelpTopic_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszHelpTopic_e__FixedBuffer
     {
         public char e0;

@@ -44,6 +44,7 @@ public partial struct ZONEATTRIBUTES
 
     /// <include file='_szDisplayName_e__FixedBuffer.xml' path='doc/member[@name="_szDisplayName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDisplayName_e__FixedBuffer
     {
         public char e0;
@@ -51,6 +52,7 @@ public partial struct ZONEATTRIBUTES
 
     /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
     [InlineArray(200)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDescription_e__FixedBuffer
     {
         public char e0;
@@ -58,6 +60,7 @@ public partial struct ZONEATTRIBUTES
 
     /// <include file='_szIconPath_e__FixedBuffer.xml' path='doc/member[@name="_szIconPath_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szIconPath_e__FixedBuffer
     {
         public char e0;

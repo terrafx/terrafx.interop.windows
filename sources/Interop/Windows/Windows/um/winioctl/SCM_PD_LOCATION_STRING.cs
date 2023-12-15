@@ -26,6 +26,7 @@ public partial struct SCM_PD_LOCATION_STRING
     public _Location_e__FixedBuffer Location;
 
     /// <include file='_Location_e__FixedBuffer.xml' path='doc/member[@name="_Location_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Location_e__FixedBuffer
     {
         public char e0;

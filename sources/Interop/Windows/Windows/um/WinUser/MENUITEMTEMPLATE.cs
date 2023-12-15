@@ -26,6 +26,7 @@ public partial struct MENUITEMTEMPLATE
     public _mtString_e__FixedBuffer mtString;
 
     /// <include file='_mtString_e__FixedBuffer.xml' path='doc/member[@name="_mtString_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _mtString_e__FixedBuffer
     {
         public char e0;

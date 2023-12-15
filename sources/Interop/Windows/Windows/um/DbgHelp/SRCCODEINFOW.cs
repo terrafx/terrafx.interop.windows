@@ -40,6 +40,7 @@ public unsafe partial struct SRCCODEINFOW
 
     /// <include file='_Obj_e__FixedBuffer.xml' path='doc/member[@name="_Obj_e__FixedBuffer"]/*' />
     [InlineArray(261)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Obj_e__FixedBuffer
     {
         public char e0;
@@ -47,6 +48,7 @@ public unsafe partial struct SRCCODEINFOW
 
     /// <include file='_FileName_e__FixedBuffer.xml' path='doc/member[@name="_FileName_e__FixedBuffer"]/*' />
     [InlineArray(261)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _FileName_e__FixedBuffer
     {
         public char e0;

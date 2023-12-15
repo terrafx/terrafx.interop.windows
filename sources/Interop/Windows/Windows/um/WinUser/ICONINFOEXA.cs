@@ -45,6 +45,7 @@ public partial struct ICONINFOEXA
 
     /// <include file='_szModName_e__FixedBuffer.xml' path='doc/member[@name="_szModName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szModName_e__FixedBuffer
     {
         public sbyte e0;
@@ -52,6 +53,7 @@ public partial struct ICONINFOEXA
 
     /// <include file='_szResName_e__FixedBuffer.xml' path='doc/member[@name="_szResName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szResName_e__FixedBuffer
     {
         public sbyte e0;

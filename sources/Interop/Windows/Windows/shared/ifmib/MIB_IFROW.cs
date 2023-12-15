@@ -107,6 +107,7 @@ public partial struct MIB_IFROW
 
     /// <include file='_wszName_e__FixedBuffer.xml' path='doc/member[@name="_wszName_e__FixedBuffer"]/*' />
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszName_e__FixedBuffer
     {
         public char e0;

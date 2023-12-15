@@ -97,6 +97,7 @@ public partial struct NET_ADDRESS_INFO
 
             /// <include file='_Address_e__FixedBuffer.xml' path='doc/member[@name="_Address_e__FixedBuffer"]/*' />
             [InlineArray(256)]
+            [Obsolete("Possible string represented as a fixed-sized buffer.")]
             public partial struct _Address_e__FixedBuffer
             {
                 public char e0;
@@ -104,6 +105,7 @@ public partial struct NET_ADDRESS_INFO
 
             /// <include file='_Port_e__FixedBuffer.xml' path='doc/member[@name="_Port_e__FixedBuffer"]/*' />
             [InlineArray(6)]
+            [Obsolete("Possible string represented as a fixed-sized buffer.")]
             public partial struct _Port_e__FixedBuffer
             {
                 public char e0;

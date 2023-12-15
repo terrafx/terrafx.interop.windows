@@ -27,6 +27,7 @@ public partial struct SYNCMGRHANDLERINFO
 
     /// <include file='_wszHandlerName_e__FixedBuffer.xml' path='doc/member[@name="_wszHandlerName_e__FixedBuffer"]/*' />
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszHandlerName_e__FixedBuffer
     {
         public char e0;

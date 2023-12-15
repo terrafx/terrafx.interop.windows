@@ -50,6 +50,7 @@ public unsafe partial struct MODULEENTRY32
 
     /// <include file='_szModule_e__FixedBuffer.xml' path='doc/member[@name="_szModule_e__FixedBuffer"]/*' />
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szModule_e__FixedBuffer
     {
         public sbyte e0;
@@ -57,6 +58,7 @@ public unsafe partial struct MODULEENTRY32
 
     /// <include file='_szExePath_e__FixedBuffer.xml' path='doc/member[@name="_szExePath_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szExePath_e__FixedBuffer
     {
         public sbyte e0;

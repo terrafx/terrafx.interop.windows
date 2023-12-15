@@ -20,6 +20,7 @@ public unsafe partial struct IP_ADAPTER_DNS_SUFFIX
 
     /// <include file='_String_e__FixedBuffer.xml' path='doc/member[@name="_String_e__FixedBuffer"]/*' />
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _String_e__FixedBuffer
     {
         public char e0;

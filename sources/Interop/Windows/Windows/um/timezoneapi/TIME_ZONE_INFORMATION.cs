@@ -38,6 +38,7 @@ public partial struct TIME_ZONE_INFORMATION
 
     /// <include file='_StandardName_e__FixedBuffer.xml' path='doc/member[@name="_StandardName_e__FixedBuffer"]/*' />
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _StandardName_e__FixedBuffer
     {
         public char e0;
@@ -45,6 +46,7 @@ public partial struct TIME_ZONE_INFORMATION
 
     /// <include file='_DaylightName_e__FixedBuffer.xml' path='doc/member[@name="_DaylightName_e__FixedBuffer"]/*' />
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _DaylightName_e__FixedBuffer
     {
         public char e0;

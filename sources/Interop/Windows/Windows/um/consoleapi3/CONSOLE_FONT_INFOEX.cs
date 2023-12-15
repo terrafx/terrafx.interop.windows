@@ -33,6 +33,7 @@ public partial struct CONSOLE_FONT_INFOEX
 
     /// <include file='_FaceName_e__FixedBuffer.xml' path='doc/member[@name="_FaceName_e__FixedBuffer"]/*' />
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _FaceName_e__FixedBuffer
     {
         public char e0;

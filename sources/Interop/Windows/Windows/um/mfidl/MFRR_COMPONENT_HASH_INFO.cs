@@ -28,6 +28,7 @@ public partial struct MFRR_COMPONENT_HASH_INFO
 
     /// <include file='_rgHeaderHash_e__FixedBuffer.xml' path='doc/member[@name="_rgHeaderHash_e__FixedBuffer"]/*' />
     [InlineArray(43)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _rgHeaderHash_e__FixedBuffer
     {
         public char e0;
@@ -35,6 +36,7 @@ public partial struct MFRR_COMPONENT_HASH_INFO
 
     /// <include file='_rgPublicKeyHash_e__FixedBuffer.xml' path='doc/member[@name="_rgPublicKeyHash_e__FixedBuffer"]/*' />
     [InlineArray(43)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _rgPublicKeyHash_e__FixedBuffer
     {
         public char e0;
@@ -42,6 +44,7 @@ public partial struct MFRR_COMPONENT_HASH_INFO
 
     /// <include file='_wszName_e__FixedBuffer.xml' path='doc/member[@name="_wszName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszName_e__FixedBuffer
     {
         public char e0;

@@ -27,6 +27,7 @@ public partial struct SOCKADDR_STORAGE_XP
 
     /// <include file='___ss_pad1_e__FixedBuffer.xml' path='doc/member[@name="___ss_pad1_e__FixedBuffer"]/*' />
     [InlineArray(6)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct ___ss_pad1_e__FixedBuffer
     {
         public sbyte e0;
@@ -34,6 +35,7 @@ public partial struct SOCKADDR_STORAGE_XP
 
     /// <include file='___ss_pad2_e__FixedBuffer.xml' path='doc/member[@name="___ss_pad2_e__FixedBuffer"]/*' />
     [InlineArray(112)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct ___ss_pad2_e__FixedBuffer
     {
         public sbyte e0;

@@ -25,6 +25,7 @@ public partial struct SHChangeProductKeyAsIDList
     /// <include file='_wszProductKey_e__FixedBuffer.xml' path='doc/member[@name="_wszProductKey_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(39)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszProductKey_e__FixedBuffer
     {
         public char e0;

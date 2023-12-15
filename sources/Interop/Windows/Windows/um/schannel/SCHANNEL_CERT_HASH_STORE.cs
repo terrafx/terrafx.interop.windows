@@ -38,6 +38,7 @@ public partial struct SCHANNEL_CERT_HASH_STORE
 
     /// <include file='_pwszStoreName_e__FixedBuffer.xml' path='doc/member[@name="_pwszStoreName_e__FixedBuffer"]/*' />
     [InlineArray(128)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _pwszStoreName_e__FixedBuffer
     {
         public char e0;

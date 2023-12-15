@@ -31,6 +31,7 @@ public partial struct THUMBBUTTON
 
     /// <include file='_szTip_e__FixedBuffer.xml' path='doc/member[@name="_szTip_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szTip_e__FixedBuffer
     {
         public char e0;

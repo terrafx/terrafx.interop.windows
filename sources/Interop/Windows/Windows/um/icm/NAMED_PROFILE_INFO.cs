@@ -32,6 +32,7 @@ public partial struct NAMED_PROFILE_INFO
 
     /// <include file='_szPrefix_e__FixedBuffer.xml' path='doc/member[@name="_szPrefix_e__FixedBuffer"]/*' />
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szPrefix_e__FixedBuffer
     {
         public sbyte e0;
@@ -39,6 +40,7 @@ public partial struct NAMED_PROFILE_INFO
 
     /// <include file='_szSuffix_e__FixedBuffer.xml' path='doc/member[@name="_szSuffix_e__FixedBuffer"]/*' />
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szSuffix_e__FixedBuffer
     {
         public sbyte e0;

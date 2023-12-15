@@ -63,6 +63,7 @@ public partial struct PROPPRG
     /// <include file='_achTitle_e__FixedBuffer.xml' path='doc/member[@name="_achTitle_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(30)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _achTitle_e__FixedBuffer
     {
         public sbyte e0;
@@ -71,6 +72,7 @@ public partial struct PROPPRG
     /// <include file='_achCmdLine_e__FixedBuffer.xml' path='doc/member[@name="_achCmdLine_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(128)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _achCmdLine_e__FixedBuffer
     {
         public sbyte e0;
@@ -79,6 +81,7 @@ public partial struct PROPPRG
     /// <include file='_achWorkDir_e__FixedBuffer.xml' path='doc/member[@name="_achWorkDir_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(64)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _achWorkDir_e__FixedBuffer
     {
         public sbyte e0;
@@ -87,6 +90,7 @@ public partial struct PROPPRG
     /// <include file='_achIconFile_e__FixedBuffer.xml' path='doc/member[@name="_achIconFile_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(80)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _achIconFile_e__FixedBuffer
     {
         public sbyte e0;
@@ -95,6 +99,7 @@ public partial struct PROPPRG
     /// <include file='_achOtherFile_e__FixedBuffer.xml' path='doc/member[@name="_achOtherFile_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(80)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _achOtherFile_e__FixedBuffer
     {
         public sbyte e0;
@@ -103,6 +108,7 @@ public partial struct PROPPRG
     /// <include file='_achPIFFile_e__FixedBuffer.xml' path='doc/member[@name="_achPIFFile_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _achPIFFile_e__FixedBuffer
     {
         public sbyte e0;

@@ -53,6 +53,7 @@ public partial struct CCAB
 
     /// <include file='_szDisk_e__FixedBuffer.xml' path='doc/member[@name="_szDisk_e__FixedBuffer"]/*' />
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDisk_e__FixedBuffer
     {
         public sbyte e0;
@@ -60,6 +61,7 @@ public partial struct CCAB
 
     /// <include file='_szCab_e__FixedBuffer.xml' path='doc/member[@name="_szCab_e__FixedBuffer"]/*' />
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szCab_e__FixedBuffer
     {
         public sbyte e0;
@@ -67,6 +69,7 @@ public partial struct CCAB
 
     /// <include file='_szCabPath_e__FixedBuffer.xml' path='doc/member[@name="_szCabPath_e__FixedBuffer"]/*' />
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szCabPath_e__FixedBuffer
     {
         public sbyte e0;

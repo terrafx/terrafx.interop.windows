@@ -32,6 +32,7 @@ public partial struct LITEM
 
     /// <include file='_szID_e__FixedBuffer.xml' path='doc/member[@name="_szID_e__FixedBuffer"]/*' />
     [InlineArray(48)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szID_e__FixedBuffer
     {
         public char e0;
@@ -39,6 +40,7 @@ public partial struct LITEM
 
     /// <include file='_szUrl_e__FixedBuffer.xml' path='doc/member[@name="_szUrl_e__FixedBuffer"]/*' />
     [InlineArray(2084)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szUrl_e__FixedBuffer
     {
         public char e0;

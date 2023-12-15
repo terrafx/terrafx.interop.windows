@@ -31,6 +31,7 @@ public partial struct EVENTSFORLOGFILE
 
     /// <include file='_szLogicalLogFile_e__FixedBuffer.xml' path='doc/member[@name="_szLogicalLogFile_e__FixedBuffer"]/*' />
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szLogicalLogFile_e__FixedBuffer
     {
         public char e0;

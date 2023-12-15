@@ -19,6 +19,7 @@ public partial struct SYMBOL_INFO_PACKAGE
 
     /// <include file='_name_e__FixedBuffer.xml' path='doc/member[@name="_name_e__FixedBuffer"]/*' />
     [InlineArray(2001)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _name_e__FixedBuffer
     {
         public sbyte e0;

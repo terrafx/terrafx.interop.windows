@@ -24,6 +24,7 @@ public partial struct IMAGEHLP_SYMBOL_SRC
 
     /// <include file='_file_e__FixedBuffer.xml' path='doc/member[@name="_file_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _file_e__FixedBuffer
     {
         public sbyte e0;

@@ -37,6 +37,7 @@ public partial struct RM_PROCESS_INFO
 
     /// <include file='_strAppName_e__FixedBuffer.xml' path='doc/member[@name="_strAppName_e__FixedBuffer"]/*' />
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _strAppName_e__FixedBuffer
     {
         public char e0;
@@ -44,6 +45,7 @@ public partial struct RM_PROCESS_INFO
 
     /// <include file='_strServiceShortName_e__FixedBuffer.xml' path='doc/member[@name="_strServiceShortName_e__FixedBuffer"]/*' />
     [InlineArray(64)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _strServiceShortName_e__FixedBuffer
     {
         public char e0;

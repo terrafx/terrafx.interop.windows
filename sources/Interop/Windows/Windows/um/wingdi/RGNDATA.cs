@@ -21,6 +21,7 @@ public partial struct RGNDATA
     public _Buffer_e__FixedBuffer Buffer;
 
     /// <include file='_Buffer_e__FixedBuffer.xml' path='doc/member[@name="_Buffer_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Buffer_e__FixedBuffer
     {
         public sbyte e0;

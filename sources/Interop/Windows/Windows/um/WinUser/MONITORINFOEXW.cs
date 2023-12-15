@@ -20,6 +20,7 @@ public partial struct MONITORINFOEXW
 
     /// <include file='_szDevice_e__FixedBuffer.xml' path='doc/member[@name="_szDevice_e__FixedBuffer"]/*' />
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDevice_e__FixedBuffer
     {
         public char e0;

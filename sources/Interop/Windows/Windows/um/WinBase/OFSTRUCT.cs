@@ -34,6 +34,7 @@ public partial struct OFSTRUCT
 
     /// <include file='_szPathName_e__FixedBuffer.xml' path='doc/member[@name="_szPathName_e__FixedBuffer"]/*' />
     [InlineArray(128)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szPathName_e__FixedBuffer
     {
         public sbyte e0;

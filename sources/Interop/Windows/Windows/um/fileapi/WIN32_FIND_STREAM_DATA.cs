@@ -19,6 +19,7 @@ public partial struct WIN32_FIND_STREAM_DATA
 
     /// <include file='_cStreamName_e__FixedBuffer.xml' path='doc/member[@name="_cStreamName_e__FixedBuffer"]/*' />
     [InlineArray(296)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _cStreamName_e__FixedBuffer
     {
         public char e0;

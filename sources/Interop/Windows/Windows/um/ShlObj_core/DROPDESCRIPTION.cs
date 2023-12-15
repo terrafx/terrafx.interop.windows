@@ -26,6 +26,7 @@ public partial struct DROPDESCRIPTION
     /// <include file='_szMessage_e__FixedBuffer.xml' path='doc/member[@name="_szMessage_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szMessage_e__FixedBuffer
     {
         public char e0;
@@ -34,6 +35,7 @@ public partial struct DROPDESCRIPTION
     /// <include file='_szInsert_e__FixedBuffer.xml' path='doc/member[@name="_szInsert_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szInsert_e__FixedBuffer
     {
         public char e0;

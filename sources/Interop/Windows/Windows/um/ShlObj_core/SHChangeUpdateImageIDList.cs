@@ -38,6 +38,7 @@ public partial struct SHChangeUpdateImageIDList
     /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szName_e__FixedBuffer
     {
         public char e0;

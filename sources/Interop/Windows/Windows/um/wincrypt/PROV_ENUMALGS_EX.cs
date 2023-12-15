@@ -48,6 +48,7 @@ public partial struct PROV_ENUMALGS_EX
 
     /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
     [InlineArray(20)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szName_e__FixedBuffer
     {
         public sbyte e0;
@@ -55,6 +56,7 @@ public partial struct PROV_ENUMALGS_EX
 
     /// <include file='_szLongName_e__FixedBuffer.xml' path='doc/member[@name="_szLongName_e__FixedBuffer"]/*' />
     [InlineArray(40)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szLongName_e__FixedBuffer
     {
         public sbyte e0;

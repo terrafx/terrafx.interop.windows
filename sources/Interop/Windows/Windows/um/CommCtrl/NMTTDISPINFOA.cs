@@ -32,6 +32,7 @@ public unsafe partial struct NMTTDISPINFOA
 
     /// <include file='_szText_e__FixedBuffer.xml' path='doc/member[@name="_szText_e__FixedBuffer"]/*' />
     [InlineArray(80)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szText_e__FixedBuffer
     {
         public sbyte e0;

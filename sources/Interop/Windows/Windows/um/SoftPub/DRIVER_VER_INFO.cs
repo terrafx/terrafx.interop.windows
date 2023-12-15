@@ -58,6 +58,7 @@ public unsafe partial struct DRIVER_VER_INFO
 
     /// <include file='_wszVersion_e__FixedBuffer.xml' path='doc/member[@name="_wszVersion_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszVersion_e__FixedBuffer
     {
         public char e0;
@@ -65,6 +66,7 @@ public unsafe partial struct DRIVER_VER_INFO
 
     /// <include file='_wszSignedBy_e__FixedBuffer.xml' path='doc/member[@name="_wszSignedBy_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _wszSignedBy_e__FixedBuffer
     {
         public char e0;

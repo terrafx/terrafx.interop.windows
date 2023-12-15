@@ -38,6 +38,7 @@ public partial struct POINTER_DEVICE_INFO
 
     /// <include file='_productString_e__FixedBuffer.xml' path='doc/member[@name="_productString_e__FixedBuffer"]/*' />
     [InlineArray(520)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _productString_e__FixedBuffer
     {
         public char e0;

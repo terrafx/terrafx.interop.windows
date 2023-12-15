@@ -61,6 +61,7 @@ public unsafe partial struct GROUP_POLICY_OBJECTW
 
     /// <include file='_szGPOName_e__FixedBuffer.xml' path='doc/member[@name="_szGPOName_e__FixedBuffer"]/*' />
     [InlineArray(50)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szGPOName_e__FixedBuffer
     {
         public char e0;

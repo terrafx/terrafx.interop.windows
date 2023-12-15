@@ -51,6 +51,7 @@ public partial struct LOGCOLORSPACEW
 
     /// <include file='_lcsFilename_e__FixedBuffer.xml' path='doc/member[@name="_lcsFilename_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _lcsFilename_e__FixedBuffer
     {
         public char e0;

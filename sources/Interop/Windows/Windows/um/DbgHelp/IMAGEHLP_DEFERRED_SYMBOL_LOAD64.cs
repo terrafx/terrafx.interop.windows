@@ -43,6 +43,7 @@ public partial struct IMAGEHLP_DEFERRED_SYMBOL_LOAD64
 
     /// <include file='_FileName_e__FixedBuffer.xml' path='doc/member[@name="_FileName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _FileName_e__FixedBuffer
     {
         public sbyte e0;

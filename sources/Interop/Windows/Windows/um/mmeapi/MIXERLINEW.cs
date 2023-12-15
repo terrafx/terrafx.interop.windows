@@ -95,6 +95,7 @@ public partial struct MIXERLINEW
         /// <include file='_szPname_e__FixedBuffer.xml' path='doc/member[@name="_szPname_e__FixedBuffer"]/*' />
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         [InlineArray(32)]
+        [Obsolete("Possible string represented as a fixed-sized buffer.")]
         public partial struct _szPname_e__FixedBuffer
         {
             public char e0;
@@ -104,6 +105,7 @@ public partial struct MIXERLINEW
     /// <include file='_szShortName_e__FixedBuffer.xml' path='doc/member[@name="_szShortName_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(16)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szShortName_e__FixedBuffer
     {
         public char e0;
@@ -112,6 +114,7 @@ public partial struct MIXERLINEW
     /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(64)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szName_e__FixedBuffer
     {
         public char e0;

@@ -22,6 +22,7 @@ public partial struct GET_FILTER_FILE_IDENTIFIER_INPUT
     public _Altitude_e__FixedBuffer Altitude;
 
     /// <include file='_Altitude_e__FixedBuffer.xml' path='doc/member[@name="_Altitude_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Altitude_e__FixedBuffer
     {
         public char e0;

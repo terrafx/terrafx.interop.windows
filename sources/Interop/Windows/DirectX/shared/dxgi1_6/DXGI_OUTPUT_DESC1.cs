@@ -60,6 +60,7 @@ public partial struct DXGI_OUTPUT_DESC1
 
     /// <include file='_DeviceName_e__FixedBuffer.xml' path='doc/member[@name="_DeviceName_e__FixedBuffer"]/*' />
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _DeviceName_e__FixedBuffer
     {
         public char e0;

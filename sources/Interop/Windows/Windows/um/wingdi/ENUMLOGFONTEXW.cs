@@ -27,6 +27,7 @@ public partial struct ENUMLOGFONTEXW
 
     /// <include file='_elfFullName_e__FixedBuffer.xml' path='doc/member[@name="_elfFullName_e__FixedBuffer"]/*' />
     [InlineArray(64)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _elfFullName_e__FixedBuffer
     {
         public char e0;
@@ -34,6 +35,7 @@ public partial struct ENUMLOGFONTEXW
 
     /// <include file='_elfStyle_e__FixedBuffer.xml' path='doc/member[@name="_elfStyle_e__FixedBuffer"]/*' />
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _elfStyle_e__FixedBuffer
     {
         public char e0;
@@ -41,6 +43,7 @@ public partial struct ENUMLOGFONTEXW
 
     /// <include file='_elfScript_e__FixedBuffer.xml' path='doc/member[@name="_elfScript_e__FixedBuffer"]/*' />
     [InlineArray(32)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _elfScript_e__FixedBuffer
     {
         public char e0;

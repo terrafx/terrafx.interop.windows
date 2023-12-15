@@ -27,6 +27,7 @@ public partial struct SPRECOCONTEXTSTATUS
 
     /// <include file='_szRequestTypeOfUI_e__FixedBuffer.xml' path='doc/member[@name="_szRequestTypeOfUI_e__FixedBuffer"]/*' />
     [InlineArray(255)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szRequestTypeOfUI_e__FixedBuffer
     {
         public char e0;

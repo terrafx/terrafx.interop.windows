@@ -112,6 +112,7 @@ public unsafe partial struct PSS_PROCESS_INFORMATION
 
     /// <include file='_ImageFileName_e__FixedBuffer.xml' path='doc/member[@name="_ImageFileName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _ImageFileName_e__FixedBuffer
     {
         public char e0;

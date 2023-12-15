@@ -20,6 +20,7 @@ public partial struct CORRELATION_VECTOR
 
     /// <include file='_Vector_e__FixedBuffer.xml' path='doc/member[@name="_Vector_e__FixedBuffer"]/*' />
     [InlineArray(129)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Vector_e__FixedBuffer
     {
         public sbyte e0;

@@ -75,6 +75,7 @@ public unsafe partial struct IP_ADAPTER_INFO
 
     /// <include file='_AdapterName_e__FixedBuffer.xml' path='doc/member[@name="_AdapterName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _AdapterName_e__FixedBuffer
     {
         public sbyte e0;
@@ -82,6 +83,7 @@ public unsafe partial struct IP_ADAPTER_INFO
 
     /// <include file='_Description_e__FixedBuffer.xml' path='doc/member[@name="_Description_e__FixedBuffer"]/*' />
     [InlineArray(132)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _Description_e__FixedBuffer
     {
         public sbyte e0;

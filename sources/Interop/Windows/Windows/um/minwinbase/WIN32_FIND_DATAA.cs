@@ -49,6 +49,7 @@ public partial struct WIN32_FIND_DATAA
 
     /// <include file='_cFileName_e__FixedBuffer.xml' path='doc/member[@name="_cFileName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _cFileName_e__FixedBuffer
     {
         public sbyte e0;
@@ -56,6 +57,7 @@ public partial struct WIN32_FIND_DATAA
 
     /// <include file='_cAlternateFileName_e__FixedBuffer.xml' path='doc/member[@name="_cAlternateFileName_e__FixedBuffer"]/*' />
     [InlineArray(14)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _cAlternateFileName_e__FixedBuffer
     {
         public sbyte e0;

@@ -24,6 +24,7 @@ public partial struct HW_PROFILE_INFOA
 
     /// <include file='_szHwProfileGuid_e__FixedBuffer.xml' path='doc/member[@name="_szHwProfileGuid_e__FixedBuffer"]/*' />
     [InlineArray(39)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szHwProfileGuid_e__FixedBuffer
     {
         public sbyte e0;
@@ -31,6 +32,7 @@ public partial struct HW_PROFILE_INFOA
 
     /// <include file='_szHwProfileName_e__FixedBuffer.xml' path='doc/member[@name="_szHwProfileName_e__FixedBuffer"]/*' />
     [InlineArray(80)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szHwProfileName_e__FixedBuffer
     {
         public sbyte e0;

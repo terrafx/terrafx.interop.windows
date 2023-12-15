@@ -23,6 +23,7 @@ public partial struct NMLVEMPTYMARKUP
 
     /// <include file='_szMarkup_e__FixedBuffer.xml' path='doc/member[@name="_szMarkup_e__FixedBuffer"]/*' />
     [InlineArray(2084)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szMarkup_e__FixedBuffer
     {
         public char e0;

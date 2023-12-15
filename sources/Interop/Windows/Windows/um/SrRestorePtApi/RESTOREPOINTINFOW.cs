@@ -31,6 +31,7 @@ public partial struct RESTOREPOINTINFOW
     /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDescription_e__FixedBuffer
     {
         public char e0;

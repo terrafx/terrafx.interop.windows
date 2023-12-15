@@ -30,6 +30,7 @@ public unsafe partial struct NMDATETIMEFORMATA
 
     /// <include file='_szDisplay_e__FixedBuffer.xml' path='doc/member[@name="_szDisplay_e__FixedBuffer"]/*' />
     [InlineArray(64)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szDisplay_e__FixedBuffer
     {
         public sbyte e0;

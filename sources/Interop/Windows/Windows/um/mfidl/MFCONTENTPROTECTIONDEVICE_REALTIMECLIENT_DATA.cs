@@ -26,6 +26,7 @@ public partial struct MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA
 
     /// <include file='_ClassName_e__FixedBuffer.xml' path='doc/member[@name="_ClassName_e__FixedBuffer"]/*' />
     [InlineArray(260)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _ClassName_e__FixedBuffer
     {
         public char e0;

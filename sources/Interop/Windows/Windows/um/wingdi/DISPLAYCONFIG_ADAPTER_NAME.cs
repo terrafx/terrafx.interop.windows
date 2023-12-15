@@ -19,6 +19,7 @@ public partial struct DISPLAYCONFIG_ADAPTER_NAME
 
     /// <include file='_adapterDevicePath_e__FixedBuffer.xml' path='doc/member[@name="_adapterDevicePath_e__FixedBuffer"]/*' />
     [InlineArray(128)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _adapterDevicePath_e__FixedBuffer
     {
         public char e0;

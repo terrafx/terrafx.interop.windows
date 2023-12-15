@@ -20,6 +20,7 @@ public partial struct FDISPILLFILE
 
     /// <include file='_ach_e__FixedBuffer.xml' path='doc/member[@name="_ach_e__FixedBuffer"]/*' />
     [InlineArray(2)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _ach_e__FixedBuffer
     {
         public sbyte e0;

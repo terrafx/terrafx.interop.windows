@@ -56,6 +56,7 @@ public partial struct STREAM_LAYOUT_ENTRY
     public _StreamIdentifier_e__FixedBuffer StreamIdentifier;
 
     /// <include file='_StreamIdentifier_e__FixedBuffer.xml' path='doc/member[@name="_StreamIdentifier_e__FixedBuffer"]/*' />
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _StreamIdentifier_e__FixedBuffer
     {
         public char e0;

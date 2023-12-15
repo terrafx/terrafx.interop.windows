@@ -24,6 +24,7 @@ public partial struct SYMSRV_EXTENDED_OUTPUT_DATA
 
     /// <include file='_filePtrMsg_e__FixedBuffer.xml' path='doc/member[@name="_filePtrMsg_e__FixedBuffer"]/*' />
     [InlineArray(261)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _filePtrMsg_e__FixedBuffer
     {
         public char e0;

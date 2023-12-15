@@ -28,6 +28,7 @@ public partial struct PROV_ENUMALGS
 
     /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
     [InlineArray(20)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _szName_e__FixedBuffer
     {
         public sbyte e0;

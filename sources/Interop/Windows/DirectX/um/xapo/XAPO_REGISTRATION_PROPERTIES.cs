@@ -56,6 +56,7 @@ public partial struct XAPO_REGISTRATION_PROPERTIES
     /// <include file='_FriendlyName_e__FixedBuffer.xml' path='doc/member[@name="_FriendlyName_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _FriendlyName_e__FixedBuffer
     {
         public char e0;
@@ -64,6 +65,7 @@ public partial struct XAPO_REGISTRATION_PROPERTIES
     /// <include file='_CopyrightInfo_e__FixedBuffer.xml' path='doc/member[@name="_CopyrightInfo_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [InlineArray(256)]
+    [Obsolete("Possible string represented as a fixed-sized buffer.")]
     public partial struct _CopyrightInfo_e__FixedBuffer
     {
         public char e0;
