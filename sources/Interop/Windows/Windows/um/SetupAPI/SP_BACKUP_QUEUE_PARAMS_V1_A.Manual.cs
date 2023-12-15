@@ -52,18 +52,19 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V1_A
         }
     }
 
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
+    [UnscopedRef]
     public Span<sbyte> FullInfPath
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.FullInfPath[0], 260);
+                return _value32.FullInfPath;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.FullInfPath[0], 260);
+                return _value64.FullInfPath;
             }
         }
     }

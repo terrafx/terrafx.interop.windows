@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -49,4 +49,10 @@ public enum D3D12_VIDEO_ENCODER_SUPPORT_FLAGS
 
     /// <include file='D3D12_VIDEO_ENCODER_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_SUPPORT_FLAGS.D3D12_VIDEO_ENCODER_SUPPORT_FLAG_MOTION_ESTIMATION_PRECISION_MODE_LIMIT_AVAILABLE"]/*' />
     D3D12_VIDEO_ENCODER_SUPPORT_FLAG_MOTION_ESTIMATION_PRECISION_MODE_LIMIT_AVAILABLE = 0x1000,
+
+    /// <include file='D3D12_VIDEO_ENCODER_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_SUPPORT_FLAGS.D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_EXTENSION1_SUPPORT"]/*' />
+    D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_EXTENSION1_SUPPORT = 0x2000,
+
+    /// <include file='D3D12_VIDEO_ENCODER_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_SUPPORT_FLAGS.D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_QUALITY_VS_SPEED_AVAILABLE"]/*' />
+    D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_QUALITY_VS_SPEED_AVAILABLE = 0x4000,
 }

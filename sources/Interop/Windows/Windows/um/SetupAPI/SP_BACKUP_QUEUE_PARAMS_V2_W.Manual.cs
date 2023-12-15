@@ -52,20 +52,20 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_W
         }
     }
 
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     [UnscopedRef]
-    public Span<ushort> FullInfPath
+    public Span<char> FullInfPath
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.FullInfPath[0], 260);
+                return _value32.FullInfPath;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.FullInfPath[0], 260);
+                return _value64.FullInfPath;
             }
         }
     }
@@ -89,18 +89,18 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_W
 
     [NativeTypeName("WCHAR [260]")]
     [UnscopedRef]
-    public Span<ushort> ReinstallInstance
+    public Span<char> ReinstallInstance
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.ReinstallInstance[0], 260);
+                return _value32.ReinstallInstance;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.ReinstallInstance[0], 260);
+                return _value64.ReinstallInstance;
             }
         }
     }

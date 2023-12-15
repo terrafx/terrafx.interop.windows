@@ -103,20 +103,20 @@ public unsafe partial struct SHSTOCKICONINFO
         }
     }
 
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     [UnscopedRef]
-    public Span<ushort> szPath
+    public Span<char> szPath
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szPath[0], 260);
+                return _value32.szPath;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szPath[0], 260);
+                return _value64.szPath;
             }
         }
     }

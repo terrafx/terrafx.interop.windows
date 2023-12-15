@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -19,4 +19,7 @@ public enum D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE
 
     /// <include file='D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE.D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE_QUARTER_PIXEL"]/*' />
     D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE_QUARTER_PIXEL = 3,
+
+    /// <include file='D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE.D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE_EIGHTH_PIXEL"]/*' />
+    D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE_EIGHTH_PIXEL = 4,
 }

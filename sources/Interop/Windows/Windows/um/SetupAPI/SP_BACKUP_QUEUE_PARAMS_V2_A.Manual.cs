@@ -52,7 +52,7 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_A
         }
     }
 
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     [UnscopedRef]
     public Span<sbyte> FullInfPath
     {
@@ -61,11 +61,11 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.FullInfPath[0], 260);
+                return _value32.FullInfPath;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.FullInfPath[0], 260);
+                return _value64.FullInfPath;
             }
         }
     }
@@ -87,7 +87,7 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_A
         }
     }
 
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     [UnscopedRef]
     public Span<sbyte> ReinstallInstance
     {
@@ -96,11 +96,11 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.ReinstallInstance[0], 260);
+                return _value32.ReinstallInstance;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.ReinstallInstance[0], 260);
+                return _value64.ReinstallInstance;
             }
         }
     }

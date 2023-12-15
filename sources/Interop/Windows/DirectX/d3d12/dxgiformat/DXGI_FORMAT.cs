@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from dxgiformat.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from dxgiformat.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -370,6 +370,9 @@ public enum DXGI_FORMAT
 
     /// <include file='DXGI_FORMAT.xml' path='doc/member[@name="DXGI_FORMAT.DXGI_FORMAT_SAMPLER_FEEDBACK_MIP_REGION_USED_OPAQUE"]/*' />
     DXGI_FORMAT_SAMPLER_FEEDBACK_MIP_REGION_USED_OPAQUE = 190,
+
+    /// <include file='DXGI_FORMAT.xml' path='doc/member[@name="DXGI_FORMAT.DXGI_FORMAT_A4B4G4R4_UNORM"]/*' />
+    DXGI_FORMAT_A4B4G4R4_UNORM = 191,
 
     /// <include file='DXGI_FORMAT.xml' path='doc/member[@name="DXGI_FORMAT.DXGI_FORMAT_FORCE_UINT"]/*' />
     DXGI_FORMAT_FORCE_UINT = unchecked((int)(0xffffffff)),

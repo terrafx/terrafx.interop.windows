@@ -1,0 +1,24 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+CD3DX12_BARRIER_GROUP.Base
+CD3DX12_BARRIER_SUBRESOURCE_RANGE.Base
+CD3DX12_BUFFER_BARRIER.Base
+CD3DX12_GLOBAL_BARRIER.Base
+CD3DX12_RESOURCE_BARRIER.Base
+CD3DX12_RESOURCE_BARRIER.Aliasing(ID3D12Resource *, ID3D12Resource *):CD3DX12_RESOURCE_BARRIER
+CD3DX12_RESOURCE_BARRIER.Transition(ID3D12Resource *, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, UINT, D3D12_RESOURCE_BARRIER_FLAGS):CD3DX12_RESOURCE_BARRIER
+CD3DX12_RESOURCE_BARRIER.UAV(ID3D12Resource *):CD3DX12_RESOURCE_BARRIER
+CD3DX12_TEXTURE_BARRIER.Base
+--file
+d3dx12-d3dx12_barriers.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/d3dx12/d3dx12_barriers
+--test-output
+../../../../tests/Interop/Windows/DirectX/d3dx12/d3dx12_barriers
+--traverse
+../../../include/d3dx12/d3dx12_barriers.h

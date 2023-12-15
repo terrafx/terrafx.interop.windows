@@ -311,7 +311,7 @@ public unsafe class HelloTexture12 : HelloTriangle12
         var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
         rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 1, &sampler, D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
 
-        ThrowIfFailed(D3D12SerializeVersionedRootSignature(
+        ThrowIfFailed(D3DX12SerializeVersionedRootSignature(
             &rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
 
         ID3D12RootSignature* rootSignature;

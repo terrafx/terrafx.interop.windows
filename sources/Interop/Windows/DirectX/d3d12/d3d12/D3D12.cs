@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -856,8 +856,8 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_PIXEL_ADDRESS_RANGE_BIT_COUNT ( 15 )")]
     public const int D3D12_PIXEL_ADDRESS_RANGE_BIT_COUNT = (15);
 
-    [NativeTypeName("#define D3D12_PREVIEW_SDK_VERSION ( 706 )")]
-    public const int D3D12_PREVIEW_SDK_VERSION = (706);
+    [NativeTypeName("#define D3D12_PREVIEW_SDK_VERSION ( 712 )")]
+    public const int D3D12_PREVIEW_SDK_VERSION = (712);
 
     [NativeTypeName("#define D3D12_PRE_SCISSOR_PIXEL_ADDRESS_RANGE_BIT_COUNT ( 16 )")]
     public const int D3D12_PRE_SCISSOR_PIXEL_ADDRESS_RANGE_BIT_COUNT = (16);
@@ -1060,8 +1060,8 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT ( 2 )")]
     public const int D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT = (2);
 
-    [NativeTypeName("#define D3D12_SDK_VERSION ( 606 )")]
-    public const int D3D12_SDK_VERSION = (606);
+    [NativeTypeName("#define D3D12_SDK_VERSION ( 611 )")]
+    public const int D3D12_SDK_VERSION = (611);
 
     [NativeTypeName("#define D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES ( 32 )")]
     public const int D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES = (32);
@@ -1248,6 +1248,21 @@ public static partial class D3D12
 
     [NativeTypeName("#define D3D12_VIDEO_DECODE_STATUS_MACROBLOCKS_AFFECTED_UNKNOWN ( 0xffffffff )")]
     public const uint D3D12_VIDEO_DECODE_STATUS_MACROBLOCKS_AFFECTED_UNKNOWN = (0xffffffff);
+
+    [NativeTypeName("#define D3D12_VIDEO_ENCODER_AV1_INVALID_DPB_RESOURCE_INDEX ( 0xff )")]
+    public const int D3D12_VIDEO_ENCODER_AV1_INVALID_DPB_RESOURCE_INDEX = (0xff);
+
+    [NativeTypeName("#define D3D12_VIDEO_ENCODER_AV1_MAX_TILE_COLS ( 64 )")]
+    public const int D3D12_VIDEO_ENCODER_AV1_MAX_TILE_COLS = (64);
+
+    [NativeTypeName("#define D3D12_VIDEO_ENCODER_AV1_MAX_TILE_ROWS ( 64 )")]
+    public const int D3D12_VIDEO_ENCODER_AV1_MAX_TILE_ROWS = (64);
+
+    [NativeTypeName("#define D3D12_VIDEO_ENCODER_AV1_SUPERRES_DENOM_MIN ( 9 )")]
+    public const int D3D12_VIDEO_ENCODER_AV1_SUPERRES_DENOM_MIN = (9);
+
+    [NativeTypeName("#define D3D12_VIDEO_ENCODER_AV1_SUPERRES_NUM ( 8 )")]
+    public const int D3D12_VIDEO_ENCODER_AV1_SUPERRES_NUM = (8);
 
     [NativeTypeName("#define D3D12_VIDEO_PROCESS_MAX_FILTERS ( 32 )")]
     public const int D3D12_VIDEO_PROCESS_MAX_FILTERS = (32);

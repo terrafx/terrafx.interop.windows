@@ -25,8 +25,8 @@ public unsafe partial struct NOTIFYICONDATA64W
 
     public HICON hIcon;
 
-    [NativeTypeName("WCHAR [128]")]
-    public fixed ushort szTip[128];
+    [NativeTypeName("WCHAR[128]")]
+    public _szTip_e__FixedBuffer szTip;
 
     [NativeTypeName("DWORD")]
     public uint dwState;
@@ -34,14 +34,14 @@ public unsafe partial struct NOTIFYICONDATA64W
     [NativeTypeName("DWORD")]
     public uint dwStateMask;
 
-    [NativeTypeName("WCHAR [256]")]
-    public fixed ushort szInfo[256];
+    [NativeTypeName("WCHAR[256]")]
+    public _szInfo_e__FixedBuffer szInfo;
 
     [NativeTypeName("_NOTIFYICONDATAW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/shellapi.h:1057:5)")]
     public _Anonymous_e__Union Anonymous;
 
-    [NativeTypeName("WCHAR [64]")]
-    public fixed ushort szInfoTitle[64];
+    [NativeTypeName("WCHAR[64]")]
+    public _szInfoTitle_e__FixedBuffer szInfoTitle;
 
     [NativeTypeName("DWORD")]
     public uint dwInfoFlags;
@@ -70,6 +70,18 @@ public unsafe partial struct NOTIFYICONDATA64W
         }
     }
 
+    [InlineArray(128)]
+    public partial struct _szTip_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    [InlineArray(256)]
+    public partial struct _szInfo_e__FixedBuffer
+    {
+        public char e0;
+    }
+
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
@@ -80,5 +92,11 @@ public unsafe partial struct NOTIFYICONDATA64W
         [FieldOffset(0)]
         [NativeTypeName("UINT")]
         public uint uVersion;
+    }
+
+    [InlineArray(64)]
+    public partial struct _szInfoTitle_e__FixedBuffer
+    {
+        public char e0;
     }
 }

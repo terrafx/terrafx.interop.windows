@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -112,4 +112,28 @@ public enum D3D12_FEATURE
 
     /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS15"]/*' />
     D3D12_FEATURE_D3D12_OPTIONS15 = 44,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS16"]/*' />
+    D3D12_FEATURE_D3D12_OPTIONS16 = 45,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS17"]/*' />
+    D3D12_FEATURE_D3D12_OPTIONS17 = 46,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS18"]/*' />
+    D3D12_FEATURE_D3D12_OPTIONS18 = 47,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS19"]/*' />
+    D3D12_FEATURE_D3D12_OPTIONS19 = 48,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS20"]/*' />
+    D3D12_FEATURE_D3D12_OPTIONS20 = 49,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_PREDICATION"]/*' />
+    D3D12_FEATURE_PREDICATION = 50,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_PLACED_RESOURCE_SUPPORT_INFO"]/*' />
+    D3D12_FEATURE_PLACED_RESOURCE_SUPPORT_INFO = 51,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_HARDWARE_COPY"]/*' />
+    D3D12_FEATURE_HARDWARE_COPY = 52,
 }

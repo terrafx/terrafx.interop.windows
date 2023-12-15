@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12sdklayers.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12sdklayers.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -431,6 +431,31 @@ public static partial class IID
                 0xDE,
                 0x66,
                 0xEF
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12ManualWriteTrackingResource
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x85, 0x3B, 0xCA, 0x86,
+                0xAD, 0x49,
+                0x6E, 0x4B,
+                0xAE,
+                0xD5,
+                0xED,
+                0xDB,
+                0x18,
+                0x54,
+                0x0F,
+                0x41
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

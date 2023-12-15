@@ -1,0 +1,24 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+D3DX12ConditionallyExpandAPIDesc(D3D12_RESOURCE_DESC1 &, const D3D12_RESOURCE_DESC1 *):const CD3DX12_RESOURCE_DESC1 *
+D3DX12GetCopyableFootprints(const D3D12_RESOURCE_DESC &, UINT, UINT, UINT64, D3D12_PLACED_SUBRESOURCE_FOOTPRINT *, UINT *, UINT64 *, UINT64 *):bool 
+D3DX12GetCopyableFootprints(const D3D12_RESOURCE_DESC1 &, UINT, UINT, UINT64, D3D12_PLACED_SUBRESOURCE_FOOTPRINT *, UINT *, UINT64 *, UINT64 *):bool
+D3DX12ResourceDesc0ToDesc1(const D3D12_RESOURCE_DESC &):D3D12_RESOURCE_DESC1
+GetRequiredIntermediateSize(ID3D12Resource *, UINT, UINT):UINT64
+UpdateSubresources(ID3D12GraphicsCommandList *, ID3D12Resource *, ID3D12Resource *, UINT64, UINT, UINT, const D3D12_SUBRESOURCE_DATA *):UINT64
+UpdateSubresources(ID3D12GraphicsCommandList *, ID3D12Resource *, ID3D12Resource *, UINT64, UINT, UINT, const void *, const D3D12_SUBRESOURCE_INFO *):UINT64
+UpdateSubresources(ID3D12GraphicsCommandList *, ID3D12Resource *, ID3D12Resource *, UINT, UINT, UINT64, const D3D12_PLACED_SUBRESOURCE_FOOTPRINT *, const UINT *, const UINT64 *, const D3D12_SUBRESOURCE_DATA *):UINT64
+UpdateSubresources(ID3D12GraphicsCommandList *, ID3D12Resource *, ID3D12Resource *, UINT, UINT, UINT64, const D3D12_PLACED_SUBRESOURCE_FOOTPRINT *, const UINT *, const UINT64 *, const void *, const D3D12_SUBRESOURCE_INFO *):UINT64
+--file
+d3dx12-d3dx12_resource_helpers.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/d3dx12/d3dx12_resource_helpers
+--test-output
+../../../../tests/Interop/Windows/DirectX/d3dx12/d3dx12_resource_helpers
+--traverse
+../../../include/d3dx12/d3dx12_resource_helpers.h

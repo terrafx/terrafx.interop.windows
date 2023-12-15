@@ -22,6 +22,7 @@ SPEAKER_TOP_FRONT_CENTER
 SPEAKER_TOP_FRONT_LEFT
 SPEAKER_TOP_FRONT_RIGHT
 X3DAudioDefault_LinearCurve
+X3DAudioDefault_LinearCurvePoints
 X3DAUDIO_API_
 --file
 um-x3daudio.h

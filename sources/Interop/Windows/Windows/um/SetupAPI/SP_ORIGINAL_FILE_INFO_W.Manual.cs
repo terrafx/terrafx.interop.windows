@@ -52,34 +52,36 @@ public unsafe partial struct SP_ORIGINAL_FILE_INFO_W
         }
     }
 
-    [NativeTypeName("WCHAR [260]")]
-    public Span<ushort> OriginalInfName
+    [NativeTypeName("WCHAR[260]")]
+    [UnscopedRef]
+    public Span<char> OriginalInfName
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.OriginalInfName[0], 260);
+                return _value32.OriginalInfName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.OriginalInfName[0], 260);
+                return _value64.OriginalInfName;
             }
         }
     }
 
-    [NativeTypeName("WCHAR [260]")]
-    public Span<ushort> OriginalCatalogName
+    [NativeTypeName("WCHAR[260]")]
+    [UnscopedRef]
+    public Span<char> OriginalCatalogName
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.OriginalCatalogName[0], 260);
+                return _value32.OriginalCatalogName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.OriginalCatalogName[0], 260);
+                return _value64.OriginalCatalogName;
             }
         }
     }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION
     public uint DataSize;
 
     /// <include file='D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L6854_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L7443_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264Config"]/*' />
@@ -41,6 +41,17 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pAV1Config"]/*' />
+    [UnscopedRef]
+    public ref D3D12_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION* pAV1Config
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.pAV1Config;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
@@ -52,5 +63,9 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pHEVCConfig"]/*' />
         [FieldOffset(0)]
         public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC* pHEVCConfig;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pAV1Config"]/*' />
+        [FieldOffset(0)]
+        public D3D12_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION* pAV1Config;
     }
 }

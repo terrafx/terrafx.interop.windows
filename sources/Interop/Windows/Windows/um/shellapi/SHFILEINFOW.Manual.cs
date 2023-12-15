@@ -86,38 +86,38 @@ public unsafe partial struct SHFILEINFOW
         }
     }
 
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     [UnscopedRef]
-    public Span<ushort> szDisplayName
+    public Span<char> szDisplayName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szDisplayName[0], 260);
+                return _value32.szDisplayName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szDisplayName[0], 260);
+                return _value64.szDisplayName;
             }
         }
     }
 
-    [NativeTypeName("WCHAR [80]")]
+    [NativeTypeName("WCHAR[80]")]
     [UnscopedRef]
-    public Span<ushort> szTypeName
+    public Span<char> szTypeName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szTypeName[0], 80);
+                return _value32.szTypeName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szTypeName[0], 80);
+                return _value64.szTypeName;
             }
         }
     }

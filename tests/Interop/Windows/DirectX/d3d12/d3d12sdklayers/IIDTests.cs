@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12sdklayers.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12sdklayers.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -129,6 +129,13 @@ public static partial class IIDTests
     public static void IID_ID3D12SharingContractTest()
     {
         Assert.That(IID_ID3D12SharingContract, Is.EqualTo(new Guid(0x0adf7d52, 0x929c, 0x4e61, 0xad, 0xdb, 0xff, 0xed, 0x30, 0xde, 0x66, 0xef)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12ManualWriteTrackingResource" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12ManualWriteTrackingResourceTest()
+    {
+        Assert.That(IID_ID3D12ManualWriteTrackingResource, Is.EqualTo(new Guid(0x86ca3b85, 0x49ad, 0x4b6e, 0xae, 0xd5, 0xed, 0xdb, 0x18, 0x54, 0x0f, 0x41)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D12InfoQueue" /> property is correct.</summary>

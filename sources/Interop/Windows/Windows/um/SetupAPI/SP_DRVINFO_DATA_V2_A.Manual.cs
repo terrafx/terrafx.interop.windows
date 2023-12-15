@@ -88,50 +88,53 @@ public unsafe partial struct SP_DRVINFO_DATA_V2_A
         }
     }
 
-    [NativeTypeName("CHAR [256]")]
+    [NativeTypeName("CHAR[256]")]
+    [UnscopedRef]
     public Span<sbyte> Description
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.Description[0], 256);
+                return _value32.Description;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.Description[0], 256);
+                return _value64.Description;
             }
         }
     }
 
-    [NativeTypeName("CHAR [256]")]
+    [NativeTypeName("CHAR[256]")]
+    [UnscopedRef]
     public Span<sbyte> MfgName
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.MfgName[0], 256);
+                return _value32.MfgName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.MfgName[0], 256);
+                return _value64.MfgName;
             }
         }
     }
 
     [NativeTypeName("CHAR [256]")]
+    [UnscopedRef]
     public Span<sbyte> ProviderName
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.ProviderName[0], 256);
+                return _value32.ProviderName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.ProviderName[0], 256);
+                return _value64.ProviderName;
             }
         }
     }

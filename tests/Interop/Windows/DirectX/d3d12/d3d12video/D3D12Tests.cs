@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -94,6 +94,76 @@ public static partial class D3D12Tests
     public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10Test()
     {
         Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10, Is.EqualTo(new Guid(0x107af0e0, 0xef1a, 0x4d19, 0xab, 0xa8, 0x67, 0xa1, 0x63, 0x07, 0x3d, 0x13)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROMETest()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME, Is.EqualTo(new Guid(0x0685b993, 0x3d8c, 0x43a0, 0x8b, 0x28, 0xd7, 0x4c, 0x2d, 0x68, 0x99, 0xa4)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME10" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME10Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME10, Is.EqualTo(new Guid(0x142a1d0f, 0x69dd, 0x4ec9, 0x85, 0x91, 0xb1, 0x2f, 0xfc, 0xb9, 0x1a, 0x29)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12, Is.EqualTo(new Guid(0x1a72925f, 0x0c2c, 0x4f15, 0x96, 0xfb, 0xb1, 0x7d, 0x14, 0x73, 0x60, 0x3f)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_422" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_422Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_422, Is.EqualTo(new Guid(0x0bac4fe5, 0x1532, 0x4429, 0xa8, 0x54, 0xf8, 0x4d, 0xe0, 0x49, 0x53, 0xdb)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_422" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_422Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_422, Is.EqualTo(new Guid(0x55bcac81, 0xf311, 0x4093, 0xa7, 0xd0, 0x1c, 0xbc, 0x0b, 0x84, 0x9b, 0xee)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN_444" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN_444Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN_444, Is.EqualTo(new Guid(0x4008018f, 0xf537, 0x4b36, 0x98, 0xcf, 0x61, 0xaf, 0x8a, 0x2c, 0x1a, 0x33)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_EXT" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_EXTTest()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_EXT, Is.EqualTo(new Guid(0x9cc55490, 0xe37c, 0x4932, 0x86, 0x84, 0x49, 0x20, 0xf9, 0xf6, 0x40, 0x9c)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_444" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_444Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_444, Is.EqualTo(new Guid(0x0dabeffa, 0x4458, 0x4602, 0xbc, 0x03, 0x07, 0x95, 0x65, 0x9d, 0x61, 0x7c)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_444" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_444Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_444, Is.EqualTo(new Guid(0x9798634d, 0xfe9d, 0x48e5, 0xb4, 0xda, 0xdb, 0xec, 0x45, 0xb3, 0xdf, 0x01)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN16" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN16Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN16, Is.EqualTo(new Guid(0xa4fbdbb0, 0xa113, 0x482b, 0xa2, 0x32, 0x63, 0x5c, 0xc0, 0x69, 0x7f, 0x6d)));
     }
 
     /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_VP9" /> property is correct.</summary>

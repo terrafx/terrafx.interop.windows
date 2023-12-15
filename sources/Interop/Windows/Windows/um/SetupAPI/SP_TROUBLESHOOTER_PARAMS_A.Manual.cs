@@ -51,34 +51,36 @@ public unsafe partial struct SP_TROUBLESHOOTER_PARAMS_A
         }
     }
 
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
+    [UnscopedRef]
     public Span<sbyte> ChmFile
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.ChmFile[0], 260);
+                return _value32.ChmFile;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.ChmFile[0], 260);
+                return _value64.ChmFile;
             }
         }
     }
 
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
+    [UnscopedRef]
     public Span<sbyte> HtmlTroubleShooter
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.HtmlTroubleShooter[0], 260);
-            }
-            else
-            {
-                return MemoryMarshal.CreateSpan(ref _value64.HtmlTroubleShooter[0], 260);
+                return _value32.HtmlTroubleShooter;
+            }          
+            else       
+            {          
+                return _value64.HtmlTroubleShooter;
             }
         }
     }

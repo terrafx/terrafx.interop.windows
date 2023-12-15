@@ -3,6 +3,7 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -28,6 +29,12 @@ public unsafe partial struct FILE_IN_CABINET_INFO32_A
     [NativeTypeName("WORD")]
     public ushort DosAttribs;
 
-    [NativeTypeName("CHAR [260]")]
-    public fixed sbyte FullTargetName[260];
+    [NativeTypeName("CHAR[260]")]
+    public _FullTargetName_e__FixedBuffer FullTargetName;
+
+    [InlineArray(260)]
+    public partial struct _FullTargetName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

@@ -86,7 +86,7 @@ public unsafe partial struct SHFILEINFOA
         }
     }
 
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     [UnscopedRef]
     public Span<sbyte> szDisplayName
     {
@@ -95,16 +95,16 @@ public unsafe partial struct SHFILEINFOA
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szDisplayName[0], 260);
+                return _value32.szDisplayName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szDisplayName[0], 260);
+                return _value64.szDisplayName;
             }
         }
     }
 
-    [NativeTypeName("CHAR [80]")]
+    [NativeTypeName("CHAR[80]")]
     [UnscopedRef]
     public Span<sbyte> szTypeName
     {
@@ -113,11 +113,11 @@ public unsafe partial struct SHFILEINFOA
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szTypeName[0], 80);
+                return _value32.szTypeName;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szTypeName[0], 80);
+                return _value64.szTypeName;
             }
         }
     }

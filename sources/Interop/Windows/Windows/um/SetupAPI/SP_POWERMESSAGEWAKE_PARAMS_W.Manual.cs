@@ -53,18 +53,18 @@ public unsafe partial struct SP_POWERMESSAGEWAKE_PARAMS_W
 
     [NativeTypeName("WCHAR [512]")]
     [UnscopedRef]
-    public Span<ushort> PowerMessageWake
+    public Span<char> PowerMessageWake
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.PowerMessageWake[0], 512);
+                return _value32.PowerMessageWake;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.PowerMessageWake[0], 512);
+                return _value64.PowerMessageWake;
             }
         }
     }

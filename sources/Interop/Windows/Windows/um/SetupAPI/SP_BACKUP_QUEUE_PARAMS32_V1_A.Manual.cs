@@ -3,6 +3,7 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -13,8 +14,14 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS32_V1_A
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
-    [NativeTypeName("CHAR [260]")]
-    public fixed sbyte FullInfPath[260];
+    [NativeTypeName("CHAR[260]")]
+    public _FullInfPath_e__FixedBuffer FullInfPath;
 
     public int FilenameOffset;
+
+    [InlineArray(260)]
+    public partial struct _FullInfPath_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

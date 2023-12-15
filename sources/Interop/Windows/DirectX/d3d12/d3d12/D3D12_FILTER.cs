@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -32,6 +32,9 @@ public enum D3D12_FILTER
     /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_LINEAR"]/*' />
     D3D12_FILTER_MIN_MAG_MIP_LINEAR = 0x15,
 
+    /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_MIN_MAG_ANISOTROPIC_MIP_POINT"]/*' />
+    D3D12_FILTER_MIN_MAG_ANISOTROPIC_MIP_POINT = 0x54,
+
     /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_ANISOTROPIC"]/*' />
     D3D12_FILTER_ANISOTROPIC = 0x55,
 
@@ -58,6 +61,9 @@ public enum D3D12_FILTER
 
     /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_COMPARISON_MIN_MAG_MIP_LINEAR"]/*' />
     D3D12_FILTER_COMPARISON_MIN_MAG_MIP_LINEAR = 0x95,
+
+    /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_COMPARISON_MIN_MAG_ANISOTROPIC_MIP_POINT"]/*' />
+    D3D12_FILTER_COMPARISON_MIN_MAG_ANISOTROPIC_MIP_POINT = 0xd4,
 
     /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_COMPARISON_ANISOTROPIC"]/*' />
     D3D12_FILTER_COMPARISON_ANISOTROPIC = 0xd5,
@@ -86,6 +92,9 @@ public enum D3D12_FILTER
     /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_MINIMUM_MIN_MAG_MIP_LINEAR"]/*' />
     D3D12_FILTER_MINIMUM_MIN_MAG_MIP_LINEAR = 0x115,
 
+    /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_MINIMUM_MIN_MAG_ANISOTROPIC_MIP_POINT"]/*' />
+    D3D12_FILTER_MINIMUM_MIN_MAG_ANISOTROPIC_MIP_POINT = 0x154,
+
     /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_MINIMUM_ANISOTROPIC"]/*' />
     D3D12_FILTER_MINIMUM_ANISOTROPIC = 0x155,
 
@@ -112,6 +121,9 @@ public enum D3D12_FILTER
 
     /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_MAXIMUM_MIN_MAG_MIP_LINEAR"]/*' />
     D3D12_FILTER_MAXIMUM_MIN_MAG_MIP_LINEAR = 0x195,
+
+    /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_MAXIMUM_MIN_MAG_ANISOTROPIC_MIP_POINT"]/*' />
+    D3D12_FILTER_MAXIMUM_MIN_MAG_ANISOTROPIC_MIP_POINT = 0x1d4,
 
     /// <include file='D3D12_FILTER.xml' path='doc/member[@name="D3D12_FILTER.D3D12_FILTER_MAXIMUM_ANISOTROPIC"]/*' />
     D3D12_FILTER_MAXIMUM_ANISOTROPIC = 0x1d5,

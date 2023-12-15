@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -61,6 +61,21 @@ public enum D3D12_RESOURCE_STATES
 
     /// <include file='D3D12_RESOURCE_STATES.xml' path='doc/member[@name="D3D12_RESOURCE_STATES.D3D12_RESOURCE_STATE_SHADING_RATE_SOURCE"]/*' />
     D3D12_RESOURCE_STATE_SHADING_RATE_SOURCE = 0x1000000,
+
+    /// <include file='D3D12_RESOURCE_STATES.xml' path='doc/member[@name="D3D12_RESOURCE_STATES.D3D12_RESOURCE_STATE_RESERVED_INTERNAL_8000"]/*' />
+    D3D12_RESOURCE_STATE_RESERVED_INTERNAL_8000 = 0x8000,
+
+    /// <include file='D3D12_RESOURCE_STATES.xml' path='doc/member[@name="D3D12_RESOURCE_STATES.D3D12_RESOURCE_STATE_RESERVED_INTERNAL_4000"]/*' />
+    D3D12_RESOURCE_STATE_RESERVED_INTERNAL_4000 = 0x4000,
+
+    /// <include file='D3D12_RESOURCE_STATES.xml' path='doc/member[@name="D3D12_RESOURCE_STATES.D3D12_RESOURCE_STATE_RESERVED_INTERNAL_100000"]/*' />
+    D3D12_RESOURCE_STATE_RESERVED_INTERNAL_100000 = 0x100000,
+
+    /// <include file='D3D12_RESOURCE_STATES.xml' path='doc/member[@name="D3D12_RESOURCE_STATES.D3D12_RESOURCE_STATE_RESERVED_INTERNAL_40000000"]/*' />
+    D3D12_RESOURCE_STATE_RESERVED_INTERNAL_40000000 = 0x40000000,
+
+    /// <include file='D3D12_RESOURCE_STATES.xml' path='doc/member[@name="D3D12_RESOURCE_STATES.D3D12_RESOURCE_STATE_RESERVED_INTERNAL_80000000"]/*' />
+    D3D12_RESOURCE_STATE_RESERVED_INTERNAL_80000000 = unchecked((int)(0x80000000)),
 
     /// <include file='D3D12_RESOURCE_STATES.xml' path='doc/member[@name="D3D12_RESOURCE_STATES.D3D12_RESOURCE_STATE_GENERIC_READ"]/*' />
     D3D12_RESOURCE_STATE_GENERIC_READ = (((((0x1 | 0x2) | 0x40) | 0x80) | 0x200) | 0x800),

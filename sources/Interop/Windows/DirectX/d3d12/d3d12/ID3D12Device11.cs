@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -634,7 +634,7 @@ public unsafe partial struct ID3D12Device11 : ID3D12Device11.Interface, INativeG
     /// <inheritdoc cref="ID3D12Device10.CreateCommittedResource3" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(76)]
-    public HRESULT CreateCommittedResource3([NativeTypeName("const D3D12_HEAP_PROPERTIES *")] D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, [NativeTypeName("const D3D12_RESOURCE_DESC1 *")] D3D12_RESOURCE_DESC1* pDesc, D3D12_BARRIER_LAYOUT InitialLayout, [NativeTypeName("const D3D12_CLEAR_VALUE *")] D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, [NativeTypeName("UINT32")] uint NumCastableFormats, DXGI_FORMAT* pCastableFormats, [NativeTypeName("const IID &")] Guid* riidResource, void** ppvResource)
+    public HRESULT CreateCommittedResource3([NativeTypeName("const D3D12_HEAP_PROPERTIES *")] D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, [NativeTypeName("const D3D12_RESOURCE_DESC1 *")] D3D12_RESOURCE_DESC1* pDesc, D3D12_BARRIER_LAYOUT InitialLayout, [NativeTypeName("const D3D12_CLEAR_VALUE *")] D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, [NativeTypeName("UINT32")] uint NumCastableFormats, [NativeTypeName("const DXGI_FORMAT *")] DXGI_FORMAT* pCastableFormats, [NativeTypeName("const IID &")] Guid* riidResource, void** ppvResource)
     {
         return ((delegate* unmanaged[MemberFunction]<ID3D12Device11*, D3D12_HEAP_PROPERTIES*, D3D12_HEAP_FLAGS, D3D12_RESOURCE_DESC1*, D3D12_BARRIER_LAYOUT, D3D12_CLEAR_VALUE*, ID3D12ProtectedResourceSession*, uint, DXGI_FORMAT*, Guid*, void**, int>)(lpVtbl[76]))((ID3D12Device11*)Unsafe.AsPointer(ref this), pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, riidResource, ppvResource);
     }
@@ -642,7 +642,7 @@ public unsafe partial struct ID3D12Device11 : ID3D12Device11.Interface, INativeG
     /// <inheritdoc cref="ID3D12Device10.CreatePlacedResource2" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(77)]
-    public HRESULT CreatePlacedResource2(ID3D12Heap* pHeap, [NativeTypeName("UINT64")] ulong HeapOffset, [NativeTypeName("const D3D12_RESOURCE_DESC1 *")] D3D12_RESOURCE_DESC1* pDesc, D3D12_BARRIER_LAYOUT InitialLayout, [NativeTypeName("const D3D12_CLEAR_VALUE *")] D3D12_CLEAR_VALUE* pOptimizedClearValue, [NativeTypeName("UINT32")] uint NumCastableFormats, DXGI_FORMAT* pCastableFormats, [NativeTypeName("const IID &")] Guid* riid, void** ppvResource)
+    public HRESULT CreatePlacedResource2(ID3D12Heap* pHeap, [NativeTypeName("UINT64")] ulong HeapOffset, [NativeTypeName("const D3D12_RESOURCE_DESC1 *")] D3D12_RESOURCE_DESC1* pDesc, D3D12_BARRIER_LAYOUT InitialLayout, [NativeTypeName("const D3D12_CLEAR_VALUE *")] D3D12_CLEAR_VALUE* pOptimizedClearValue, [NativeTypeName("UINT32")] uint NumCastableFormats, [NativeTypeName("const DXGI_FORMAT *")] DXGI_FORMAT* pCastableFormats, [NativeTypeName("const IID &")] Guid* riid, void** ppvResource)
     {
         return ((delegate* unmanaged[MemberFunction]<ID3D12Device11*, ID3D12Heap*, ulong, D3D12_RESOURCE_DESC1*, D3D12_BARRIER_LAYOUT, D3D12_CLEAR_VALUE*, uint, DXGI_FORMAT*, Guid*, void**, int>)(lpVtbl[77]))((ID3D12Device11*)Unsafe.AsPointer(ref this), pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, pCastableFormats, riid, ppvResource);
     }
@@ -650,7 +650,7 @@ public unsafe partial struct ID3D12Device11 : ID3D12Device11.Interface, INativeG
     /// <inheritdoc cref="ID3D12Device10.CreateReservedResource2" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(78)]
-    public HRESULT CreateReservedResource2([NativeTypeName("const D3D12_RESOURCE_DESC *")] D3D12_RESOURCE_DESC* pDesc, D3D12_BARRIER_LAYOUT InitialLayout, [NativeTypeName("const D3D12_CLEAR_VALUE *")] D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, [NativeTypeName("UINT32")] uint NumCastableFormats, DXGI_FORMAT* pCastableFormats, [NativeTypeName("const IID &")] Guid* riid, void** ppvResource)
+    public HRESULT CreateReservedResource2([NativeTypeName("const D3D12_RESOURCE_DESC *")] D3D12_RESOURCE_DESC* pDesc, D3D12_BARRIER_LAYOUT InitialLayout, [NativeTypeName("const D3D12_CLEAR_VALUE *")] D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, [NativeTypeName("UINT32")] uint NumCastableFormats, [NativeTypeName("const DXGI_FORMAT *")] DXGI_FORMAT* pCastableFormats, [NativeTypeName("const IID &")] Guid* riid, void** ppvResource)
     {
         return ((delegate* unmanaged[MemberFunction]<ID3D12Device11*, D3D12_RESOURCE_DESC*, D3D12_BARRIER_LAYOUT, D3D12_CLEAR_VALUE*, ID3D12ProtectedResourceSession*, uint, DXGI_FORMAT*, Guid*, void**, int>)(lpVtbl[78]))((ID3D12Device11*)Unsafe.AsPointer(ref this), pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, riid, ppvResource);
     }
@@ -900,13 +900,13 @@ public unsafe partial struct ID3D12Device11 : ID3D12Device11.Interface, INativeG
         [NativeTypeName("HRESULT (const D3D12_COMMAND_QUEUE_DESC *, const IID &, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_COMMAND_QUEUE_DESC*, Guid*, Guid*, void**, int> CreateCommandQueue1;
 
-        [NativeTypeName("HRESULT (const D3D12_HEAP_PROPERTIES *, D3D12_HEAP_FLAGS, const D3D12_RESOURCE_DESC1 *, D3D12_BARRIER_LAYOUT, const D3D12_CLEAR_VALUE *, ID3D12ProtectedResourceSession *, UINT32, DXGI_FORMAT *, const IID &, void **) __attribute__((stdcall))")]
+        [NativeTypeName("HRESULT (const D3D12_HEAP_PROPERTIES *, D3D12_HEAP_FLAGS, const D3D12_RESOURCE_DESC1 *, D3D12_BARRIER_LAYOUT, const D3D12_CLEAR_VALUE *, ID3D12ProtectedResourceSession *, UINT32, const DXGI_FORMAT *, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_HEAP_PROPERTIES*, D3D12_HEAP_FLAGS, D3D12_RESOURCE_DESC1*, D3D12_BARRIER_LAYOUT, D3D12_CLEAR_VALUE*, ID3D12ProtectedResourceSession*, uint, DXGI_FORMAT*, Guid*, void**, int> CreateCommittedResource3;
 
-        [NativeTypeName("HRESULT (ID3D12Heap *, UINT64, const D3D12_RESOURCE_DESC1 *, D3D12_BARRIER_LAYOUT, const D3D12_CLEAR_VALUE *, UINT32, DXGI_FORMAT *, const IID &, void **) __attribute__((stdcall))")]
+        [NativeTypeName("HRESULT (ID3D12Heap *, UINT64, const D3D12_RESOURCE_DESC1 *, D3D12_BARRIER_LAYOUT, const D3D12_CLEAR_VALUE *, UINT32, const DXGI_FORMAT *, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Heap*, ulong, D3D12_RESOURCE_DESC1*, D3D12_BARRIER_LAYOUT, D3D12_CLEAR_VALUE*, uint, DXGI_FORMAT*, Guid*, void**, int> CreatePlacedResource2;
 
-        [NativeTypeName("HRESULT (const D3D12_RESOURCE_DESC *, D3D12_BARRIER_LAYOUT, const D3D12_CLEAR_VALUE *, ID3D12ProtectedResourceSession *, UINT32, DXGI_FORMAT *, const IID &, void **) __attribute__((stdcall))")]
+        [NativeTypeName("HRESULT (const D3D12_RESOURCE_DESC *, D3D12_BARRIER_LAYOUT, const D3D12_CLEAR_VALUE *, ID3D12ProtectedResourceSession *, UINT32, const DXGI_FORMAT *, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_RESOURCE_DESC*, D3D12_BARRIER_LAYOUT, D3D12_CLEAR_VALUE*, ID3D12ProtectedResourceSession*, uint, DXGI_FORMAT*, Guid*, void**, int> CreateReservedResource2;
 
         [NativeTypeName("void (const D3D12_SAMPLER_DESC2 *, D3D12_CPU_DESCRIPTOR_HANDLE) __attribute__((stdcall))")]

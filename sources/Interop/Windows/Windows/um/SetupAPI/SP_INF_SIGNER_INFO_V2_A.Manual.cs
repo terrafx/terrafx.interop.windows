@@ -52,50 +52,53 @@ public unsafe partial struct SP_INF_SIGNER_INFO_V2_A
         }
     }
 
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
+    [UnscopedRef]
     public Span<sbyte> CatalogFile
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.CatalogFile[0], 260);
+                return _value32.CatalogFile;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.CatalogFile[0], 260);
+                return _value64.CatalogFile;
             }
         }
     }
 
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
+    [UnscopedRef]
     public Span<sbyte> DigitalSigner
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.DigitalSigner[0], 260);
+                return _value32.DigitalSigner;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.DigitalSigner[0], 260);
+                return _value64.DigitalSigner;
             }
         }
     }
 
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
+    [UnscopedRef]
     public Span<sbyte> DigitalSignerVersion
     {
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.DigitalSignerVersion[0], 260);
+                return _value32.DigitalSignerVersion;
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.DigitalSignerVersion[0], 260);
+                return _value64.DigitalSignerVersion;
             }
         }
     }

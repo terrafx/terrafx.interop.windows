@@ -217,7 +217,7 @@ public unsafe class HelloConstBuffer12 : HelloTriangle12
         var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
         rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 0, null, rootSignatureFlags);
 
-        ThrowIfFailed(D3D12SerializeVersionedRootSignature(&rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
+        ThrowIfFailed(D3DX12SerializeVersionedRootSignature(&rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
 
         ID3D12RootSignature* rootSignature;
         ThrowIfFailed(D3DDevice->CreateRootSignature(0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), __uuidof<ID3D12RootSignature>(), (void**)&rootSignature));
