@@ -16,16 +16,8 @@ public static unsafe partial class Windows
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            if (sizeof(nint) == 4)
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA32A tmp);
-                return (uint)(&tmp.szTip) - (uint)(&tmp);
-            }
-            else
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA64A tmp);
-                return (uint)(&tmp.szTip) - (uint)(&tmp);
-            }
+            Unsafe.SkipInit(out NOTIFYICONDATAA tmp);
+            return (uint)(&tmp.szTip) - (uint)(&tmp);
         }
     }
 
@@ -34,16 +26,8 @@ public static unsafe partial class Windows
     {
         get
         {
-            if (sizeof(nint) == 4)
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA32W tmp);
-                return (uint)(&tmp.szTip) - (uint)(&tmp);
-            }
-            else
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA64W tmp);
-                return (uint)(&tmp.szTip) - (uint)(&tmp);
-            }
+            Unsafe.SkipInit(out NOTIFYICONDATAW tmp);
+            return (uint)(&tmp.szTip) - (uint)(&tmp);
         }
     }
 
@@ -55,16 +39,8 @@ public static unsafe partial class Windows
     {
         get
         {
-            if (sizeof(nint) == 4)
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA32A tmp);
-                return (uint)(&tmp.guidItem) - (uint)(&tmp);
-            }
-            else
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA64A tmp);
-                return (uint)(&tmp.guidItem) - (uint)(&tmp);
-            }
+            Unsafe.SkipInit(out NOTIFYICONDATAA tmp);
+            return (uint)(&tmp.guidItem) - (uint)(&tmp);
         }
     }
 
@@ -73,16 +49,8 @@ public static unsafe partial class Windows
     {
         get
         {
-            if (sizeof(nint) == 4)
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA32W tmp);
-                return (uint)(&tmp.guidItem) - (uint)(&tmp);
-            }
-            else
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA64W tmp);
-                return (uint)(&tmp.guidItem) - (uint)(&tmp);
-            }
+            Unsafe.SkipInit(out NOTIFYICONDATAW tmp);
+            return (uint)(&tmp.guidItem) - (uint)(&tmp);
         }
     }
 
@@ -94,16 +62,8 @@ public static unsafe partial class Windows
     {
         get
         {
-            if (sizeof(nint) == 4)
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA32A tmp);
-                return (uint)(&tmp.hBalloonIcon) - (uint)(&tmp);
-            }
-            else
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA64A tmp);
-                return (uint)(&tmp.hBalloonIcon) - (uint)(&tmp);
-            }
+            Unsafe.SkipInit(out NOTIFYICONDATAA tmp);
+            return (uint)(&tmp.hBalloonIcon) - (uint)(&tmp);
         }
     }
 
@@ -112,16 +72,8 @@ public static unsafe partial class Windows
     {
         get
         {
-            if (sizeof(nint) == 4)
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA32W tmp);
-                return (uint)(&tmp.hBalloonIcon) - (uint)(&tmp);
-            }
-            else
-            {
-                Unsafe.SkipInit(out NOTIFYICONDATA64W tmp);
-                return (uint)(&tmp.hBalloonIcon) - (uint)(&tmp);
-            }
+            Unsafe.SkipInit(out NOTIFYICONDATAW tmp);
+            return (uint)(&tmp.hBalloonIcon) - (uint)(&tmp);
         }
     }
 

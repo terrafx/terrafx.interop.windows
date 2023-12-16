@@ -161,9 +161,9 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.SetToolbarItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT SetToolbarItems([NativeTypeName("LPTBBUTTONSB")] void* lpButtons, uint nButtons, uint uFlags)
+    public HRESULT SetToolbarItems([NativeTypeName("LPTBBUTTONSB")] TBBUTTON* lpButtons, uint nButtons, uint uFlags)
     {
-        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, void*, uint, uint, int>)(lpVtbl[17]))((IShellBrowser*)Unsafe.AsPointer(ref this), lpButtons, nButtons, uFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, TBBUTTON*, uint, uint, int>)(lpVtbl[17]))((IShellBrowser*)Unsafe.AsPointer(ref this), lpButtons, nButtons, uFlags);
     }
 
     public interface Interface : IOleWindow.Interface
@@ -205,7 +205,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
         HRESULT OnViewWindowActive(IShellView* pshv);
 
         [VtblIndex(17)]
-        HRESULT SetToolbarItems([NativeTypeName("LPTBBUTTONSB")] void* lpButtons, uint nButtons, uint uFlags);
+        HRESULT SetToolbarItems([NativeTypeName("LPTBBUTTONSB")] TBBUTTON* lpButtons, uint nButtons, uint uFlags);
     }
 
     public partial struct Vtbl<TSelf>
@@ -263,6 +263,6 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, IShellView*, int> OnViewWindowActive;
 
         [NativeTypeName("HRESULT (LPTBBUTTONSB, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, uint, int> SetToolbarItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TBBUTTON*, uint, uint, int> SetToolbarItems;
     }
 }
