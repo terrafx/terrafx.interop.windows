@@ -12,7 +12,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SerialDisplayAdvancedSettings"]/*' />
     [DllImport("msports", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
-    public static extern int SerialDisplayAdvancedSettings(HWND ParentHwnd, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+    public static extern int SerialDisplayAdvancedSettings(HWND ParentHwnd, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ComDBOpen"]/*' />
     [DllImport("msports", ExactSpelling = true)]

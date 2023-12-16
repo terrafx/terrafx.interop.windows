@@ -350,10 +350,6 @@ TabCtrl_SetMinTabWidth
 TabCtrl_SetPadding
 TabCtrl_SetToolTips
 TabCtrl_SetUnicodeFormat
-tagNMTBRESTORE
-tagNMTBSAVE
-tagNMTOOLBARA
-tagNMTOOLBARW
 THIRD_IPADDRESS
 TreeView_CreateDragImage
 TreeView_DeleteAllItems
@@ -439,7 +435,6 @@ TVI_FIRST
 TVI_LAST
 TVI_ROOT
 TVI_SORT
-_TBBUTTON
 --file
 um-CommCtrl.h
 --methodClassName

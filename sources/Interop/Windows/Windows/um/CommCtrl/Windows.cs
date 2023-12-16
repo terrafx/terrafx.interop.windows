@@ -175,7 +175,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateToolbarEx"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HWND CreateToolbarEx(HWND hwnd, [NativeTypeName("DWORD")] uint ws, uint wID, int nBitmaps, HINSTANCE hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] void* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, uint uStructSize);
+    public static extern HWND CreateToolbarEx(HWND hwnd, [NativeTypeName("DWORD")] uint ws, uint wID, int nBitmaps, HINSTANCE hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, uint uStructSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMappedBitmap"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]

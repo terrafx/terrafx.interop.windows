@@ -49,15 +49,15 @@ public unsafe partial struct IShellExecuteHookA : IShellExecuteHookA.Interface, 
     /// <include file='IShellExecuteHookA.xml' path='doc/member[@name="IShellExecuteHookA.Execute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOA")] void* pei)
+    public HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOA")] SHELLEXECUTEINFOA* pei)
     {
-        return ((delegate* unmanaged[MemberFunction]<IShellExecuteHookA*, void*, int>)(lpVtbl[3]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this), pei);
+        return ((delegate* unmanaged[MemberFunction]<IShellExecuteHookA*, SHELLEXECUTEINFOA*, int>)(lpVtbl[3]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this), pei);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOA")] void* pei);
+        HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOA")] SHELLEXECUTEINFOA* pei);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IShellExecuteHookA : IShellExecuteHookA.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPSHELLEXECUTEINFOA) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, void*, int> Execute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SHELLEXECUTEINFOA*, int> Execute;
     }
 }
