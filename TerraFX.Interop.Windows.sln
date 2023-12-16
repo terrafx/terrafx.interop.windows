@@ -3180,6 +3180,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dx12_state_object", "d3dx
 		generation\DirectX\d3dx12\d3dx12_state_object\header.txt = generation\DirectX\d3dx12\d3dx12_state_object\header.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d9", "d3d9", "{7C6D428E-BCEA-4E3E-8B1D-708DF46493CD}"
+	ProjectSection(SolutionItems) = preProject
+		generation\DirectX\shared\d3d9\generate.rsp = generation\DirectX\shared\d3d9\generate.rsp
+		generation\DirectX\shared\d3d9\header.txt = generation\DirectX\shared\d3d9\header.txt
+		generation\DirectX\shared\d3d9\shared-d3d9.h = generation\DirectX\shared\d3d9\shared-d3d9.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d9types", "d3d9types", "{02E82ECB-A7AD-4AC8-85A2-48B3967DC6E3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\DirectX\shared\d3d9types\generate.rsp = generation\DirectX\shared\d3d9types\generate.rsp
+		generation\DirectX\shared\d3d9types\header.txt = generation\DirectX\shared\d3d9types\header.txt
+		generation\DirectX\shared\d3d9types\shared-d3d9types.h = generation\DirectX\shared\d3d9types\shared-d3d9types.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d9caps", "d3d9caps", "{6DE29036-2A24-476F-8C1A-23FD05A2EC34}"
+	ProjectSection(SolutionItems) = preProject
+		generation\DirectX\shared\d3d9caps\generate.rsp = generation\DirectX\shared\d3d9caps\generate.rsp
+		generation\DirectX\shared\d3d9caps\header.txt = generation\DirectX\shared\d3d9caps\header.txt
+		generation\DirectX\shared\d3d9caps\shared-d3d9caps.h = generation\DirectX\shared\d3d9caps\shared-d3d9caps.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3669,6 +3690,9 @@ Global
 		{59AB4021-599B-403A-882A-519E7A765364} = {51E29A76-D972-44B2-996E-369591A1C4F3}
 		{5364C61B-AFBB-4D56-8F85-6A5CC1F87FAA} = {51E29A76-D972-44B2-996E-369591A1C4F3}
 		{2A4E142B-A45D-41A9-A863-F39D42D903B2} = {51E29A76-D972-44B2-996E-369591A1C4F3}
+		{7C6D428E-BCEA-4E3E-8B1D-708DF46493CD} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{02E82ECB-A7AD-4AC8-85A2-48B3967DC6E3} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{6DE29036-2A24-476F-8C1A-23FD05A2EC34} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

@@ -1,8 +1,9 @@
 --with-type
 COLOR=struct
+D3DOVERLAYCAPS=struct
 DDBLTFX=struct
-DDSCAPS=struct
 DDSCAPS2=struct
+DDSCAPS=struct
 EMR=struct
 FXEcho=struct
 FXEQ=struct
