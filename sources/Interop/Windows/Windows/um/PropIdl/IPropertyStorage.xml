@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyStorage.Commit">
+    <summary>The <b>IPropertyStorage.Commit</b> method saves changes made to a property storage object to the parent storage object.</summary>
+    <param name="grfCommitFlags">The flags that specify the conditions under which the commit is to be performed. For more information about specific flags and their meanings, see the Remarks section.</param>
+    <returns>This method supports the standard return value E_UNEXPECTED, as well as the following:</returns>
+  </member>
+  <member name="IPropertyStorage.DeleteMultiple">
+    <summary>The <b>DeleteMultiple</b> method deletes as many of the indicated properties as exist in this property set.</summary>
+    <param name="cpspec">The numerical count of properties to be deleted. The value of this parameter can legally be set to zero, however that defeats the purpose of the method as no properties are thereby deleted, regardless of the value set in <i>rgpspec</i>.</param>
+    <param name="rgpspec">Properties to be deleted. A mixture of property identifiers and string-named properties is permitted. There may be duplicates, and there is no requirement that properties be specified in any order.</param>
+    <returns>This method supports the standard return value E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="IPropertyStorage.DeletePropertyNames">
+    <summary>The <b>DeletePropertyNames</b> method deletes specified string names from the current property set.</summary>
+    <param name="cpropid">The size on input of the array <i>rgpropid</i>. If 0, no property names are deleted.</param>
+    <param name="rgpropid">Property identifiers for which string names are to be deleted.</param>
+    <returns>This method supports the standard return value E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="IPropertyStorage.Enum">
+    <summary>The <b>Enum</b> method creates an enumerator object designed to enumerate data of type<see cref="STATPROPSTG" />, which contains information on the current property set. On return, this method supplies a pointer to the<see cref="IEnumSTATPROPSTG" /> pointer on this object.</summary>
+    <param name="ppenum">Pointer to<see cref="IEnumSTATPROPSTG" /> pointer variable that receives the interface pointer to the new enumerator object.</param>
+    <returns>This method supports the standard return value E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="IPropertyStorage.ReadMultiple">
+    <summary>The<b>ReadMultiple</b> method reads specified properties from the current property set.</summary>
+    <param name="cpspec">The numeric count of properties to be specified in the <i>rgpspec</i> array. The value of this parameter can be set to zero; however, that defeats the purpose of the method as no properties are thereby read, regardless of the values set in <i>rgpspec</i>.</param>
+    <param name="rgpspec">An array of<see cref="PROPSPEC" /> structures specifies which properties are read. Properties can be specified either by a property ID or by an optional string name. It is not necessary to specify properties in any particular order in the array. The array can contain duplicate properties, resulting in duplicate property values on return for simple properties. Nonsimple properties should return access denied on an attempt to open them a second time. The array can contain a mixture of property IDs and string IDs.</param>
+    <param name="rgpropvar">Caller-allocated array of a<see cref="PROPVARIANT" /> structure that, on return, contains the values of the properties specified by the corresponding elements in the <i>rgpspec</i> array. The array must be at least large enough to hold values of the <i>cpspec</i> parameter of the<b>PROPVARIANT</b> structure. The <i>cpspec</i> parameter specifies the number of properties set in the array. The caller is not required to initialize these<b>PROPVARIANT</b> structure values in any specific order. However, the implementation must fill all members correctly on return. If there is no other appropriate value, the implementation must set the <b>vt</b> member of each<b>PROPVARIANT</b> structure to <b>VT_EMPTY</b>.</param>
+    <returns>
+      <para>This method supports the standard return value <b>E_UNEXPECTED</b>, as well as the following:</para>
+      <para>This function can also return any file system errors or Win32 errors wrapped in an <b>HRESULT</b> data type. For more information, see<a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a>.</para>
+      <para>For more information, see<a href="https://docs.microsoft.com//windows/desktop/Stg/property-storage-considerations">Property Storage Considerations</a>.</para>
+    </returns>
+  </member>
+  <member name="IPropertyStorage.ReadPropertyNames">
+    <summary>The <b>ReadPropertyNames</b> method retrieves any existing string names for the specified property IDs.</summary>
+    <param name="cpropid">The number of elements on input of the array <i>rgpropid</i>. The value of this parameter can be set to zero, however that defeats the purpose of this method as no property names are thereby read.</param>
+    <param name="rgpropid">An array of property IDs for which names are to be retrieved.</param>
+    <param name="rglpwstrName">
+      <para>A caller-allocated array of size <i>cpropid</i> of <b>LPWSTR</b> members. On return, the implementation fills in this array. A given entry contains either the corresponding string name of a property ID or it can be empty if the property ID has no string names.</para>
+      <para>Each <b>LPWSTR</b> member of the array should be freed using the<see cref="CoTaskMemFree" /> function.</para>
+    </param>
+    <returns>This method supports the standard return value E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="IPropertyStorage.Revert">
+    <summary>The <b>Revert</b> method discards all changes to the named property set since it was last opened or discards changes that were last committed to the property set. This method has no effect on a direct-mode property set.</summary>
+    <returns>This method supports the standard return value E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="IPropertyStorage.SetClass">
+    <summary>The <b>SetClass</b> method assigns a new CLSID to the current property storage object, and persistently stores the CLSID with the object.</summary>
+    <param name="clsid">New CLSID to be associated with the property set.</param>
+    <returns>This method supports the standard return value E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="IPropertyStorage.SetTimes">
+    <summary>The <b>SetTimes</b> method sets the modification, access, and creation times of this property set, if supported by the implementation. Not all implementations support all these time values.</summary>
+    <param name="pctime">Pointer to the new creation time for the property set. May be <b>NULL</b>, indicating that this time is not to be modified by this call.</param>
+    <param name="patime">Pointer to the new access time for the property set. May be <b>NULL</b>, indicating that this time is not to be modified by this call.</param>
+    <param name="pmtime">Pointer to the new modification time for the property set. May be <b>NULL</b>, indicating that this time is not to be modified by this call.</param>
+    <returns>This method supports the standard return value E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="IPropertyStorage.Stat">
+    <summary>The <b>Stat</b> method retrieves information about the current open property set.</summary>
+    <param name="pstatpsstg">Pointer to a<see cref="STATPROPSETSTG" /> structure, which contains statistics about the current open property set.</param>
+    <returns>This method supports the standard return value E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="IPropertyStorage.WriteMultiple">
+    <summary>The<b>WriteMultiple</b> method writes a specified group of properties to the current property set. If a property with a specified name or property identifier already exists, it is replaced, even when the old and new types for the property value are different. If a property of a given name or property ID does not exist, it is created.</summary>
+    <param name="cpspec">The number of properties set. The value of this parameter can be set to zero; however, this defeats the purpose of the method as no properties are then written.</param>
+    <param name="rgpspec">An array of the property IDs (<see cref="PROPSPEC" />) to which properties are set. These need not be in any particular order, and may contain duplicates, however the last specified property ID is the one that takes effect. A mixture of property IDs and string names is permitted.</param>
+    <param name="rgpropvar">An array (of size <i>cpspec</i>) of<see cref="PROPVARIANT" /> structures that contain the property values to be written. The array must be the size specified by <i>cpspec</i>.</param>
+    <param name="propidNameFirst">The minimum value for the property IDs that the method must assign if the <i>rgpspec</i> parameter specifies string-named properties for which no property IDs currently exist. If all string-named properties specified already exist in this set, and thus already have property IDs, this value is ignored. When not ignored, this value must be greater than, or equal to, two and less than 0x80000000. Property IDs 0 and 1 and greater than 0x80000000 are reserved for special use.</param>
+    <returns>
+      <para>This method supports the standard return value E_UNEXPECTED, in addition to the following:</para>
+      <para>This function can also return any file system errors or Win32 errors wrapped in an <b>HRESULT</b> data type. For more information, see<a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a>.</para>
+    </returns>
+  </member>
+  <member name="IPropertyStorage.WritePropertyNames">
+    <summary>The<b>WritePropertyNames</b> method assigns string <see cref="IPropertyStorage" /> names to a specified array of property IDs in the current property set.</summary>
+    <param name="cpropid">The size on input of the array <i>rgpropid</i>. Can be zero. However, making it zero causes this method to become non-operational.</param>
+    <param name="rgpropid">An array of the property IDs for which names are to be set.</param>
+    <param name="rglpwstrName">An array of new names to be assigned to the corresponding property IDs in the <i>rgpropid</i> array. These names may not exceed 255 characters (not including the <b>NULL</b> terminator).</param>
+    <returns>This method supports the standard return value <b>E_UNEXPECTED</b>, in addition to the following:</returns>
+  </member>
+  <member name="IPropertyStorage">
+    <summary>
+      <para>The <b>IPropertyStorage</b> interface manages the persistent properties of a single property set. Persistent properties consist of information that can be stored persistently in a property set, such as the summary information associated with a file. This contrasts with run-time properties associated with Controls and Automation, which can be used to affect system behavior. Use the methods of the<see cref="IPropertySetStorage" /> interface to create or open a persistent property set. An instance of the<b>IPropertySetStorage</b> interface can manage zero or more<b>IPropertyStorage</b> instances.</para>
+      <para>Each property within a property set is identified by a property identifier (ID), a four-byte <b>ULONG</b> value unique to that set. You can also assign a string name to a property through the<b>IPropertyStorage</b> interface.</para>
+      <para>Property IDs differ from the dispatch IDs used in Automation <b>dispid</b> property name tags. One difference is that the general-purpose use of property ID values zero and one is prohibited in<b>IPropertyStorage</b>, while no such restriction exists in <b>IDispatch</b>. In addition, while there is significant overlap among the data types for property values that may be used in<b>IPropertyStorage</b> and <b>IDispatch</b>, the property sets are not identical. Persistent property data types used in<b>IPropertyStorage</b> methods are defined in the<see cref="PROPVARIANT" /> structure.</para>
+      <para>The<b>IPropertyStorage</b> interface can be used to access both simple and nonsimple property sets. Nonsimple property sets can hold several complex property types that cannot be held in a simple property set. For more information see<a href="https://docs.microsoft.com//windows/desktop/Stg/storage-vs--stream-for-a-property-set">Storage and Stream Objects for a Property Set</a>.</para>
+    </summary>
+  </member>
+</doc>

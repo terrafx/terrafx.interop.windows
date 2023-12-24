@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumSTATPROPSETSTG.Clone">
+    <summary>The <b>Clone</b> method creates an enumerator that contains the same enumeration state as the current <see cref="STATPROPSETSTG" /> structure enumerator. Using this method, a client can record a particular point in the enumeration sequence and then return to that point later. The new enumerator supports the same <see cref="IEnumSTATPROPSETSTG" /> interface.</summary>
+    <param name="ppenum">
+      <code>A pointer to the variable that receives the &lt;a href="/windows/desktop/api/propidl/nn-propidl-ienumstatpropsetstg"&gt;IEnumSTATPROPSETSTG&lt;/a&gt; interface pointer.</code>
+      <para>If the method does not succeed, the value of the <i>ppenum</i> parameter is undefined.</para>
+    </param>
+    <returns>
+      <para>This method supports return values listed in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>ppenum</i> parameter is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An unexpected exception occurred.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IEnumSTATPROPSETSTG.Next">
+    <summary>The <b>Next</b> method retrieves a specified number of <see cref="STATPROPSETSTG" /> structures that follow subsequently in the enumeration sequence. If fewer than the requested number of <see cref="STATPROPSETSTG" /> structures exist in the enumeration sequence, it retrieves the remaining <b>STATPROPSETSTG</b> structures.</summary>
+    <param name="celt">The number of <see cref="STATPROPSETSTG" /> structures requested.</param>
+    <param name="rgelt">An array of <see cref="STATPROPSETSTG" /> structures returned.</param>
+    <param name="pceltFetched">The number of <see cref="STATPROPSETSTG" /> structures retrieved in the <i>rgelt</i> parameter.</param>
+    <returns>
+      <para>This method supports the following return values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The number of <see cref="STATPROPSETSTG" /> structures returned equals the number specified in the <i>celt</i> parameter.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The number of <see cref="STATPROPSETSTG" /> structures returned is less than the number specified in the <i>celt</i> parameter.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IEnumSTATPROPSETSTG.Reset">
+    <summary>The <b>Reset</b> method resets the enumeration sequence to the beginning of the <see cref="STATPROPSETSTG" /> structure array.</summary>
+    <returns>
+      <para>This method supports the S_OK return value.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The enumeration sequence was successfully reset to the beginning of the enumeration.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IEnumSTATPROPSETSTG.Skip">
+    <summary>The <b>Skip</b> method skips a specified number of <see cref="STATPROPSETSTG" /> structures in the enumeration sequence.</summary>
+    <param name="celt">The number of <see cref="STATPROPSETSTG" /> structures to skip.</param>
+    <returns>This method supports the following return values:</returns>
+  </member>
+  <member name="IEnumSTATPROPSETSTG">
+    <summary>
+      <para>The<b>IEnumSTATPROPSETSTG</b> interface iterates through an array of<see cref="STATPROPSETSTG" /> structures. The <b>STATPROPSETSTG</b> structures contain statistical data about the property sets managed by the current <see cref="IPropertySetStorage" /> instance. <b>IEnumSTATPROPSETSTG</b> has the same methods as all enumerator interfaces: <see cref="Next" />, <see cref="Skip" />, <see cref="Reset" />, and<see cref="Clone" />.</para>
+      <para>The implementation defines the order in which the property sets are enumerated. Property sets that are present when the enumerator is created, and are not removed during the enumeration, will be enumerated only once. Property sets added or deleted while the enumeration is in progress may or may not be enumerated, but, if enumerated, will not be enumerated more than once.</para>
+      <para>For more information about how the COM compound document implementation of <see cref="IEnumSTATPROPSETSTG.Next" /> supplies members of the<see cref="STATPROPSETSTG" /> structure, see <a href="https://docs.microsoft.com//windows/desktop/Stg/ienumstatpropsetstg-compound-file-implementation">IEnumSTATPROPSETSTG--Compound File Implementation</a>.</para>
+    </summary>
+  </member>
+</doc>

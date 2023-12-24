@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.FreePropVariantArray">
+    <summary>Frees the memory and references used by an array of <see cref="PROPVARIANT" /> structures.</summary>
+    <param name="cVariants">The number of elements in the array specified by <i>rgvars</i>.</param>
+    <param name="rgvars">Array of <see cref="PROPVARIANT" /> structures to free. When this function successfully returns, the <b>PROPVARIANT</b> structures in the array are zeroed and their type is set to VT_EMPTY.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantClear">
+    <summary>Clears a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="pvar">Pointer to the <see cref="PROPVARIANT" /> structure to clear. When this function successfully returns, the <b>PROPVARIANT</b> is zeroed and the type is set to VT_EMPTY.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantCopy">
+    <summary>Creates a copy of a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="pvarDest">Pointer to the destination <see cref="PROPVARIANT" /> structure that receives the copy.</param>
+    <param name="pvarSrc">Pointer to the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantInit">
+    <summary>
+      <para>The <b>PropVariantInit</b> function initializes a<see cref="PROPVARIANT" /> structure.</para>
+      <div>
+        <b>Note</b>  This function is implemented as a macro, available by including the provided ole2.h header file. This function is not exported from any system-provided DLL.</div>
+    </summary>
+    <param name="pvar">Pointer to an uninitialized<see cref="PROPVARIANT" /> structure that is initialized.</param>
+  </member>
+  <member name="Windows.StgConvertPropertyToVariant">
+    <summary>The <b>StgConvertPropertyToVariant</b> function converts a <b>SERIALIZEDPROPERTYVALUE</b> data type to a <b>PROPVARIANT</b> data type.</summary>
+    <param name="pprop">A pointer to <b>SERIALIZEDPROPERTYVALUE</b>.</param>
+    <param name="CodePage">A property set codepage.</param>
+    <param name="pvar">A pointer to <b>PROPVARIANT</b>.</param>
+    <param name="pma">A pointer to a class that implements the <a href="https://docs.microsoft.com//windows/desktop/Stg/imemoryallocator">IMemoryAllocator</a> abstract class.</param>
+    <returns>Returns <b>TRUE</b> is the property converted was an indirect type (<b>VT_STREAM</b> or <b>VT_STREAMED_OBJECT</b>); otherwise <b>FALSE</b>.</returns>
+  </member>
+  <member name="Windows.StgConvertVariantToProperty">
+    <summary>The <b>StgConvertVariantToProperty</b> function converts a <b>PROPVARIANT</b> data type to a <b>SERIALIZEDPROPERTYVALUE</b> data type.</summary>
+    <param name="pvar">A pointer to <b>PROPVARIANT</b>.</param>
+    <param name="CodePage">A property set codepage.</param>
+    <param name="pprop">Optional. A pointer to <b>SERIALIZEDPROPERTYVALUE</b>.</param>
+    <param name="pcb">A pointer to the remaining stream length, updated to the actual property size on return.</param>
+    <param name="pid">The propid (used if indirect).</param>
+    <param name="fReserved">Reserver. The value must be <b>FALSE</b>.</param>
+    <param name="pcIndirect">Optional. A pointer to the indirect property count.</param>
+    <returns>Returns a pointer to <b>SERIALIZEDPROPERTYVALUE</b>.</returns>
+  </member>
+</doc>
