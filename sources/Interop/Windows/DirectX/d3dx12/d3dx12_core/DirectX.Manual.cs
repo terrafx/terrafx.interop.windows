@@ -11,6 +11,12 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    public static ID3D12CommandList** CommandListCast<t_CommandListType>(t_CommandListType** pp)
+        where t_CommandListType : unmanaged, ID3D12CommandList.Interface
+    {
+        return (ID3D12CommandList**)(pp);
+    }
+
     [return: NativeTypeName("const CD3DX12_RESOURCE_DESC1 *")]
     public static ref readonly D3D12_RESOURCE_DESC1 D3DX12ConditionallyExpandAPIDesc([NativeTypeName("CD3DX12_RESOURCE_DESC1 &")] ref D3D12_RESOURCE_DESC1 LclDesc, [NativeTypeName("const CD3DX12_RESOURCE_DESC1 *")] in D3D12_RESOURCE_DESC1 pDesc)
     {

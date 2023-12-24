@@ -58,29 +58,24 @@ public unsafe partial struct D3D12_DEPTH_STENCIL_DESC1
         DepthBoundsTestEnable = 0;
     }
 
-    public static explicit operator D3D12_DEPTH_STENCIL_DESC(D3D12_DEPTH_STENCIL_DESC1 value)
-    {
-        D3D12_DEPTH_STENCIL_DESC D = new D3D12_DEPTH_STENCIL_DESC {
-            DepthEnable = value.DepthEnable,
-            DepthWriteMask = value.DepthWriteMask,
-            DepthFunc = value.DepthFunc,
-            StencilEnable = value.StencilEnable,
-            StencilReadMask = value.StencilReadMask,
-            StencilWriteMask = value.StencilWriteMask,
-            FrontFace = new D3D12_DEPTH_STENCILOP_DESC {
-                StencilFailOp = value.FrontFace.StencilFailOp,
-                StencilDepthFailOp = value.FrontFace.StencilDepthFailOp,
-                StencilPassOp = value.FrontFace.StencilPassOp,
-                StencilFunc = value.FrontFace.StencilFunc,
-            },
-            BackFace = new D3D12_DEPTH_STENCILOP_DESC {
-                StencilFailOp = value.BackFace.StencilFailOp,
-                StencilDepthFailOp = value.BackFace.StencilDepthFailOp,
-                StencilPassOp = value.BackFace.StencilPassOp,
-                StencilFunc = value.BackFace.StencilFunc,
-            },
-        };
-
-        return D;
-    }
+    public static explicit operator D3D12_DEPTH_STENCIL_DESC(D3D12_DEPTH_STENCIL_DESC1 value) => new D3D12_DEPTH_STENCIL_DESC {
+        DepthEnable = value.DepthEnable,
+        DepthWriteMask = value.DepthWriteMask,
+        DepthFunc = value.DepthFunc,
+        StencilEnable = value.StencilEnable,
+        StencilReadMask = value.StencilReadMask,
+        StencilWriteMask = value.StencilWriteMask,
+        FrontFace = new D3D12_DEPTH_STENCILOP_DESC {
+            StencilFailOp = value.FrontFace.StencilFailOp,
+            StencilDepthFailOp = value.FrontFace.StencilDepthFailOp,
+            StencilPassOp = value.FrontFace.StencilPassOp,
+            StencilFunc = value.FrontFace.StencilFunc,
+        },
+        BackFace = new D3D12_DEPTH_STENCILOP_DESC {
+            StencilFailOp = value.BackFace.StencilFailOp,
+            StencilDepthFailOp = value.BackFace.StencilDepthFailOp,
+            StencilPassOp = value.BackFace.StencilPassOp,
+            StencilFunc = value.BackFace.StencilFunc,
+        },
+    };
 }

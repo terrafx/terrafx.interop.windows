@@ -12,6 +12,21 @@ namespace TerraFX.Interop.DirectX;
 
 public unsafe partial struct D3D12_RASTERIZER_DESC1
 {
+    public D3D12_RASTERIZER_DESC1([NativeTypeName("const D3D12_RASTERIZER_DESC &")] in D3D12_RASTERIZER_DESC o)
+    {
+        FillMode = o.FillMode;
+        CullMode = o.CullMode;
+        FrontCounterClockwise = o.FrontCounterClockwise;
+        DepthBias = (float)(o.DepthBias);
+        DepthBiasClamp = o.DepthBiasClamp;
+        SlopeScaledDepthBias = o.SlopeScaledDepthBias;
+        DepthClipEnable = o.DepthClipEnable;
+        MultisampleEnable = o.MultisampleEnable;
+        AntialiasedLineEnable = o.AntialiasedLineEnable;
+        ForcedSampleCount = o.ForcedSampleCount;
+        ConservativeRaster = o.ConservativeRaster;
+    }
+
     public static ref readonly D3D12_RASTERIZER_DESC1 DEFAULT
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
