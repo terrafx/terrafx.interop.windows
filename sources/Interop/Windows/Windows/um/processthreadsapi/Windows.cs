@@ -19,6 +19,8 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.QueueUserAPC2"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern BOOL QueueUserAPC2([NativeTypeName("PAPCFUNC")] delegate* unmanaged<nuint, void> ApcRoutine, HANDLE Thread, [NativeTypeName("ULONG_PTR")] nuint Data, QUEUE_USER_APC_FLAGS Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcessTimes"]/*' />
@@ -250,10 +252,13 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessDynamicEHContinuationTargets"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SetProcessDynamicEHContinuationTargets(HANDLE Process, ushort NumberOfTargets, [NativeTypeName("PPROCESS_DYNAMIC_EH_CONTINUATION_TARGET")] PROCESS_DYNAMIC_EH_CONTINUATION_TARGET* Targets);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessDynamicEnforcedCetCompatibleRanges"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern BOOL SetProcessDynamicEnforcedCetCompatibleRanges(HANDLE Process, ushort NumberOfRanges, [NativeTypeName("PPROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE")] PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE* Ranges);
 
@@ -449,24 +454,29 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcessDefaultCpuSetMasks"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern BOOL GetProcessDefaultCpuSetMasks(HANDLE Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessDefaultCpuSetMasks"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern BOOL SetProcessDefaultCpuSetMasks(HANDLE Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThreadSelectedCpuSetMasks"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern BOOL GetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadSelectedCpuSetMasks"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern BOOL SetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMachineTypeAttributes"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     [SupportedOSPlatform("windows10.0.22621.0")]
     public static extern HRESULT GetMachineTypeAttributes(ushort Machine, MACHINE_ATTRIBUTES* MachineTypeAttributes);
 

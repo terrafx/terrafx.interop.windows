@@ -20,3 +20,7 @@ RoFreeParameterizedTypeExtra=combase
 RoParameterizedTypeExtraGetTypeSignature=combase
 --with-librarypath
 RoGetParameterizedTypeInstanceIID=api-ms-win-core-winrt-roparameterizediid-l1-1-0
+--with-attribute
+RoFreeParameterizedTypeExtra=SupportedOSPlatform("windows6.2")
+RoGetParameterizedTypeInstanceIID=SupportedOSPlatform("windows6.2")
+RoParameterizedTypeExtraGetTypeSignature=SupportedOSPlatform("windows6.2")

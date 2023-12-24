@@ -13,9 +13,14 @@ TerraFX.Interop.DirectX
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dcomp.h
 --with-attribute
+DCompositionBoostCompositorClock=SupportedOSPlatform("windows10.0.22000.0")
 DCompositionCreateDevice2=SupportedOSPlatform("windows6.3")
 DCompositionCreateDevice=SupportedOSPlatform("windows6.2")
 DCompositionCreateSurfaceHandle=SupportedOSPlatform("windows6.2")
+DCompositionGetFrameId=SupportedOSPlatform("windows10.0.22000.0")
+DCompositionGetStatistics=SupportedOSPlatform("windows10.0.22000.0")
+DCompositionGetTargetStatistics=SupportedOSPlatform("windows10.0.22000.0")
+DCompositionWaitForCompositorClock=SupportedOSPlatform("windows10.0.22000.0")
 IDCompositionClip=SupportedOSPlatform("windows6.2")
 IDCompositionDesktopDevice=SupportedOSPlatform("windows6.3")
 IDCompositionDevice2=SupportedOSPlatform("windows6.3")

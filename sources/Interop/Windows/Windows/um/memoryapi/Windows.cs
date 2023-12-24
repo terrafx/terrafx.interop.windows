@@ -334,6 +334,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFileMapping2"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HANDLE CreateFileMapping2(HANDLE File, SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG")] uint AllocationAttributes, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] char* Name, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
     [NativeTypeName("#define CreateFileMapping CreateFileMappingW")]

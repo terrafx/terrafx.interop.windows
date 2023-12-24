@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
@@ -17,6 +18,7 @@ public static unsafe partial class DirectX
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateA"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HRESULT DirectDrawEnumerateA([NativeTypeName("LPDDENUMCALLBACKA")] delegate* unmanaged<Guid*, sbyte*, sbyte*, void*, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateExW"]/*' />
@@ -61,6 +63,7 @@ public static unsafe partial class DirectX
     public const uint FOURCC_DXT5 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('5')) << 24)));
 
     [NativeTypeName("#define DirectDrawEnumerate DirectDrawEnumerateW")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static delegate*<delegate* unmanaged<Guid*, char*, char*, void*, BOOL>, void*, HRESULT> DirectDrawEnumerate => &DirectDrawEnumerateW;
 
     [NativeTypeName("#define DirectDrawEnumerateEx DirectDrawEnumerateExW")]

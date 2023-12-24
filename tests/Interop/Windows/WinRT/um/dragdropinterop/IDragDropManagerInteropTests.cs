@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IDragDropManagerInterop" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.22000.0")]
 public static unsafe partial class IDragDropManagerInteropTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDragDropManagerInterop" /> struct is correct.</summary>

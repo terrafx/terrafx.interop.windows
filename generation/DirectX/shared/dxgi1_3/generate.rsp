@@ -15,6 +15,10 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/dxgi1_3.h
 --with-attribute
 CreateDXGIFactory2=SupportedOSPlatform("windows6.3")
 DXGIGetDebugInterface1=SupportedOSPlatform("windows6.3")
+DXGI_MATRIX_3X2_F=SupportedOSPlatform("windows6.3")
+DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS=Flags
+DXGI_OVERLAY_SUPPORT_FLAG=Flags
+DXGI_OVERLAY_SUPPORT_FLAG=SupportedOSPlatform("windows6.3")
 IDXGIDecodeSwapChain=SupportedOSPlatform("windows6.3")
 IDXGIDevice3=SupportedOSPlatform("windows6.3")
 IDXGIFactory3=SupportedOSPlatform("windows6.3")
@@ -23,10 +27,6 @@ IDXGIOutput2=SupportedOSPlatform("windows6.3")
 IDXGIOutput3=SupportedOSPlatform("windows6.3")
 IDXGISwapChain2=SupportedOSPlatform("windows6.3")
 IDXGISwapChainMedia=SupportedOSPlatform("windows6.3")
-DXGI_MATRIX_3X2_F=SupportedOSPlatform("windows6.3")
-DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS=Flags
-DXGI_OVERLAY_SUPPORT_FLAG=Flags
-DXGI_OVERLAY_SUPPORT_FLAG=SupportedOSPlatform("windows6.3")
 --with-librarypath
 CreateDXGIFactory2=dxgi
 DXGIGetDebugInterface1=dxgi

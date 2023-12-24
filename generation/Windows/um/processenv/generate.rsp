@@ -66,3 +66,7 @@ SetEnvironmentVariableW
 SetStdHandle
 --with-suppressgctransition
 GetStdHandle
+--with-attribute
+SetEnvironmentStrings=SupportedOSPlatform("windows10.0.19043.0")
+SetEnvironmentStringsW=SupportedOSPlatform("windows10.0.19043.0")
+SetStdHandleEx=SupportedOSPlatform("windows10.0.19043.0")

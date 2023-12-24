@@ -21,8 +21,8 @@ AudioExtensionParams=SupportedOSPlatform("windows6.2")
 AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE=SupportedOSPlatform("windows10.0.22621.0")
 IActivateAudioInterfaceAsyncOperation=SupportedOSPlatform("windows6.2")
 IActivateAudioInterfaceCompletionHandler=SupportedOSPlatform("windows6.2")
-IAudioSystemEffectsPropertyChangeNotificationClient=SupportedOSPlatform("windows10.0.22621.0")
-IAudioSystemEffectsPropertyStore=SupportedOSPlatform("windows10.0.22621.0")
+IAudioSystemEffectsPropertyChangeNotificationClient=SupportedOSPlatform("windows10.0.22000.0")
+IAudioSystemEffectsPropertyStore=SupportedOSPlatform("windows10.0.22000.0")
 __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002=SupportedOSPlatform("windows10.0.22621.0")
 --with-librarypath
 ActivateAudioInterfaceAsync=mmdevapi

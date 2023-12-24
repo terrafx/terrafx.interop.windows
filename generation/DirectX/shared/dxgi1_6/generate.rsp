@@ -15,11 +15,11 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/dxgi1_6.h
 --with-attribute
 DXGIDeclareAdapterRemovalSupport=SupportedOSPlatform("windows10.0.17134.0")
 DXGIDisableVBlankVirtualization=SupportedOSPlatform("windows10.0.22621.0")
+DXGI_ADAPTER_FLAG3=Flags
+DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS=Flags
 IDXGIFactory6=SupportedOSPlatform("windows10.0.17134.0")
 IDXGIFactory7=SupportedOSPlatform("windows10.0.17763.0")
 IDXGIOutput6=SupportedOSPlatform("windows10.0")
-DXGI_ADAPTER_FLAG3=Flags
-DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS=Flags
 --with-librarypath
 DXGIDeclareAdapterRemovalSupport=dxgi
 DXGIDisableVBlankVirtualization=dxgi

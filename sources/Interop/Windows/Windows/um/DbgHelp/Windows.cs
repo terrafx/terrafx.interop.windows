@@ -269,11 +269,13 @@ public static unsafe partial class Windows
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.19043.0")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SymMatchString([NativeTypeName("PCSTR")] sbyte* @string, [NativeTypeName("PCSTR")] sbyte* expression, BOOL fCase);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymMatchStringA"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SymMatchStringA([NativeTypeName("PCSTR")] sbyte* @string, [NativeTypeName("PCSTR")] sbyte* expression, BOOL fCase);
 
@@ -877,11 +879,13 @@ public static unsafe partial class Windows
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.19043.0")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SymAddSourceStream(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* StreamFile, [NativeTypeName("PBYTE")] byte* Buffer, [NativeTypeName("size_t")] nuint Size);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymAddSourceStreamA"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SymAddSourceStreamA(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* StreamFile, [NativeTypeName("PBYTE")] byte* Buffer, [NativeTypeName("size_t")] nuint Size);
 

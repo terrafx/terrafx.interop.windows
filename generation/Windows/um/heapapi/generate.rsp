@@ -45,3 +45,5 @@ HeapSize
 HeapUnlock
 HeapValidate
 HeapWalk
+--with-attribute
+HeapSummary=SupportedOSPlatform("windows10.0.19043.0")

@@ -12,3 +12,6 @@ TerraFX.Interop.Windows
 ../../../../tests/Interop/Windows/Windows/um/wcsplugin
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wcsplugin.h
+--with-setlasterror
+IDeviceModelPlugIn.ColorimetricToDeviceColorsWithBlack
+IDeviceModelPlugIn.DeviceToColorimetricColors

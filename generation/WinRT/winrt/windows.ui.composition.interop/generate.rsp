@@ -12,3 +12,5 @@ TerraFX.Interop.WinRT
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.composition.interop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.composition.interop.h
+--with-attribute
+ICompositionDrawingSurfaceInterop2=SupportedOSPlatform("windows10.0.19041.0")

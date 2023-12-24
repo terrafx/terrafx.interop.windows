@@ -382,3 +382,6 @@ DirectDrawEnumerateEx=ddraw
 DirectDrawEnumerateExA=ddraw
 DirectDrawEnumerateExW=ddraw
 DirectDrawEnumerateW=ddraw
+--with-attribute
+DirectDrawEnumerate=SupportedOSPlatform("windows10.0.19043.0")
+DirectDrawEnumerateA=SupportedOSPlatform("windows10.0.19043.0")

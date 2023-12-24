@@ -3,11 +3,13 @@
 // Ported from shared/dcomptypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='COMPOSITION_TARGET_ID.xml' path='doc/member[@name="COMPOSITION_TARGET_ID"]/*' />
+[SupportedOSPlatform("windows10.0.22000.0")]
 public partial struct COMPOSITION_TARGET_ID
 {
     /// <include file='COMPOSITION_TARGET_ID.xml' path='doc/member[@name="COMPOSITION_TARGET_ID.displayAdapterLuid"]/*' />

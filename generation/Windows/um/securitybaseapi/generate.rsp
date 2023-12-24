@@ -22,6 +22,8 @@ AddScopedPolicyIDAce=SupportedOSPlatform("windows6.2")
 CheckTokenCapability=SupportedOSPlatform("windows6.2")
 CheckTokenMembershipEx=SupportedOSPlatform("windows6.2")
 CveEventWrite=SupportedOSPlatform("windows10.0")
+GetCachedSigningLevel=SupportedOSPlatform("windows6.2")
+SetCachedSigningLevel=SupportedOSPlatform("windows6.2")
 --with-librarypath
 AccessCheck=advapi32
 AccessCheckAndAuditAlarmW=advapi32
@@ -187,6 +189,8 @@ EqualSid
 FindFirstFreeAce
 GetAce
 GetAclInformation
+GetAppContainerAce
+GetCachedSigningLevel
 GetFileSecurity
 GetFileSecurityW
 GetKernelObjectSecurity
@@ -226,6 +230,7 @@ PrivilegedServiceAuditAlarm
 PrivilegedServiceAuditAlarmW
 RevertToSelf
 SetAclInformation
+SetCachedSigningLevel
 SetFileSecurity
 SetFileSecurityW
 SetKernelObjectSecurity

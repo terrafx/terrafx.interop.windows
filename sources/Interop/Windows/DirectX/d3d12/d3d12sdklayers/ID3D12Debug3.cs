@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("5CF4E58F-F671-4FF1-A542-3686E3D153D1")]
 [NativeTypeName("struct ID3D12Debug3 : ID3D12Debug")]
 [NativeInheritance("ID3D12Debug")]
+[SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct ID3D12Debug3 : ID3D12Debug3.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12Debug3));

@@ -1097,19 +1097,23 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptCreateAsyncHandle"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL CryptCreateAsyncHandle([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHCRYPTASYNC")] HANDLE* phAsync);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSetAsyncParam"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     [SupportedOSPlatform("windows10.0.20348.0")]
     public static extern BOOL CryptSetAsyncParam(HCRYPTASYNC hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID")] void* pvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC")] delegate* unmanaged<sbyte*, void*, void> pfnFree);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptGetAsyncParam"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL CryptGetAsyncParam(HCRYPTASYNC hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID *")] void** ppvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC *")] delegate* unmanaged<sbyte*, void*, void>* ppfnFree);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptCloseAsyncHandle"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL CryptCloseAsyncHandle(HCRYPTASYNC hAsync);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptRetrieveObjectByUrlA"]/*' />

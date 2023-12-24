@@ -13,10 +13,6 @@ TerraFX.Interop.WinRT
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/winstring.h
 --with-librarypath
-HSTRING_UserFree=combase
-HSTRING_UserMarshal=combase
-HSTRING_UserSize=combase
-HSTRING_UserUnmarshal=combase
 WindowsCompareStringOrdinal=combase
 WindowsConcatString=combase
 WindowsCreateString=combase
@@ -37,3 +33,24 @@ WindowsSubstring=combase
 WindowsSubstringWithSpecifiedLength=combase
 WindowsTrimStringEnd=combase
 WindowsTrimStringStart=combase
+--with-attribute
+WindowsCompareStringOrdinal=SupportedOSPlatform("windows6.2")
+WindowsConcatString=SupportedOSPlatform("windows6.2")
+WindowsCreateString=SupportedOSPlatform("windows6.2")
+WindowsCreateStringReference=SupportedOSPlatform("windows6.2")
+WindowsDeleteString=SupportedOSPlatform("windows6.2")
+WindowsDeleteStringBuffer=SupportedOSPlatform("windows6.2")
+WindowsDuplicateString=SupportedOSPlatform("windows6.2")
+WindowsGetStringLen=SupportedOSPlatform("windows6.2")
+WindowsGetStringRawBuffer=SupportedOSPlatform("windows6.2")
+WindowsInspectString2=SupportedOSPlatform("windows6.2")
+WindowsInspectString=SupportedOSPlatform("windows6.2")
+WindowsIsStringEmpty=SupportedOSPlatform("windows6.2")
+WindowsPreallocateStringBuffer=SupportedOSPlatform("windows6.2")
+WindowsPromoteStringBuffer=SupportedOSPlatform("windows6.2")
+WindowsReplaceString=SupportedOSPlatform("windows6.2")
+WindowsStringHasEmbeddedNull=SupportedOSPlatform("windows6.2")
+WindowsSubstring=SupportedOSPlatform("windows6.2")
+WindowsSubstringWithSpecifiedLength=SupportedOSPlatform("windows6.2")
+WindowsTrimStringEnd=SupportedOSPlatform("windows6.2")
+WindowsTrimStringStart=SupportedOSPlatform("windows6.2")

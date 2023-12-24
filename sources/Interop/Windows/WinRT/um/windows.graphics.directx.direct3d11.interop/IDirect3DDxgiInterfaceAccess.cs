@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -50,6 +51,7 @@ public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfa
     /// <include file='IDirect3DDxgiInterfaceAccess.xml' path='doc/member[@name="IDirect3DDxgiInterfaceAccess.GetInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public HRESULT GetInterface([NativeTypeName("const IID &")] Guid* iid, void** p)
     {
         return ((delegate* unmanaged[MemberFunction]<IDirect3DDxgiInterfaceAccess*, Guid*, void**, int>)(lpVtbl[3]))((IDirect3DDxgiInterfaceAccess*)Unsafe.AsPointer(ref this), iid, p);
@@ -58,6 +60,7 @@ public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfa
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
+        [SupportedOSPlatform("windows10.0.19043.0")]
         HRESULT GetInterface([NativeTypeName("const IID &")] Guid* iid, void** p);
     }
 
@@ -74,6 +77,7 @@ public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfa
         public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        [SupportedOSPlatform("windows10.0.19043.0")]
         public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetInterface;
     }
 }

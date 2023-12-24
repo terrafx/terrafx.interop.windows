@@ -101,3 +101,6 @@ LoadResource
 RemoveDllDirectory
 SetDefaultDllDirectories
 SizeofResource
+--with-attribute
+EnumResourceNames=SupportedOSPlatform("windows10.0.19043.0")
+EnumResourceNamesA=SupportedOSPlatform("windows10.0.19043.0")

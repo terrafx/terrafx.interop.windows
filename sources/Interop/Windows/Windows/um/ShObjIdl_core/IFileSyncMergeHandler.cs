@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
@@ -14,6 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("D97B5AAC-C792-433C-975D-35C4EADC7A9D")]
 [NativeTypeName("struct IFileSyncMergeHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFileSyncMergeHandler));

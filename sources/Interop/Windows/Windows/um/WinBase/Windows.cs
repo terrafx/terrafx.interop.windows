@@ -382,6 +382,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetHandleCount"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern uint SetHandleCount(uint uNumber);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RequestDeviceWakeup"]/*' />
@@ -2292,6 +2293,8 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InitializeContext2"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL InitializeContext2([NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT *")] void** Context, [NativeTypeName("PDWORD")] uint* ContextLength, [NativeTypeName("ULONG64")] ulong XStateCompactionMask);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnabledXStateFeatures"]/*' />
@@ -2315,10 +2318,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThreadEnabledXStateFeatures"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD64")]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern ulong GetThreadEnabledXStateFeatures();
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnableProcessOptionalXStateFeatures"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern BOOL EnableProcessOptionalXStateFeatures([NativeTypeName("DWORD64")] ulong Features);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnableThreadProfiling"]/*' />

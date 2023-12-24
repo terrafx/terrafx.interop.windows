@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
@@ -171,6 +172,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceNamesA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL EnumResourceNamesA(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("ENUMRESNAMEPROCA")] delegate* unmanaged<HMODULE, sbyte*, sbyte*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
     [NativeTypeName("#define FIND_RESOURCE_DIRECTORY_TYPES (0x0100)")]
@@ -222,5 +224,6 @@ public static unsafe partial class Windows
     public static delegate*<char*, HMODULE> LoadLibrary => &LoadLibraryW;
 
     [NativeTypeName("#define EnumResourceNames EnumResourceNamesW")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static delegate*<HMODULE, char*, delegate* unmanaged<HMODULE, char*, char*, nint, BOOL>, nint, BOOL> EnumResourceNames => &EnumResourceNamesW;
 }

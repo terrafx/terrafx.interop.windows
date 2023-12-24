@@ -19,10 +19,10 @@ TerraFX.Interop.Windows
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/urlmon.h
 --with-attribute
 AUTHENTICATEF=Flags
-BINDF=Flags
 BINDF2=Flags
-BINDINFO_OPTIONS=Flags
+BINDF=Flags
 BINDINFOF=Flags
+BINDINFO_OPTIONS=Flags
 BSCF=Flags
 PUAF=Flags
 PUAFOUT=Flags

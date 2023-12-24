@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IBufferByteAccess" /> struct.</summary>
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class IBufferByteAccessTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBufferByteAccess" /> struct is correct.</summary>

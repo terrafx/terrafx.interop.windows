@@ -13,9 +13,9 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/iphlpapi.h
 --with-attribute
-CaptureInterfaceHardwareCrossTimestamp=SupportedOSPlatform("windows10.0.22621.0")
-GetInterfaceActiveTimestampCapabilities=SupportedOSPlatform("windows10.0.22621.0")
-GetInterfaceSupportedTimestampCapabilities=SupportedOSPlatform("windows10.0.22621.0")
+CaptureInterfaceHardwareCrossTimestamp=SupportedOSPlatform("windows10.0.22000.0")
+GetInterfaceActiveTimestampCapabilities=SupportedOSPlatform("windows10.0.19043.0")
+GetInterfaceSupportedTimestampCapabilities=SupportedOSPlatform("windows10.0.19043.0")
 GetTcpStatisticsEx2=SupportedOSPlatform("windows10.0.16299.0")
 GetUdpStatisticsEx2=SupportedOSPlatform("windows10.0.16299.0")
 INTERFACE_HARDWARE_CROSSTIMESTAMP=SupportedOSPlatform("windows10.0.22621.0")
@@ -23,8 +23,8 @@ INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES=SupportedOSPlatform("windows10.0.22621
 INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES=SupportedOSPlatform("windows10.0.22621.0")
 INTERFACE_TIMESTAMP_CAPABILITIES=SupportedOSPlatform("windows10.0.22621.0")
 INTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK=SupportedOSPlatform("windows10.0.22621.0")
-RegisterInterfaceTimestampConfigChange=SupportedOSPlatform("windows10.0.22621.0")
-UnregisterInterfaceTimestampConfigChange=SupportedOSPlatform("windows10.0.22621.0")
+RegisterInterfaceTimestampConfigChange=SupportedOSPlatform("windows10.0.19043.0")
+UnregisterInterfaceTimestampConfigChange=SupportedOSPlatform("windows10.0.19043.0")
 --with-librarypath
 AddIPAddress=iphlpapi
 AllocateAndGetTcpExTableFromStack=iphlpapi

@@ -20,6 +20,10 @@ GetSystemWow64Directory2A=SupportedOSPlatform("windows10.0.10586.0")
 GetSystemWow64Directory2W=SupportedOSPlatform("windows10.0.10586.0")
 IsWow64GuestMachineSupported=SupportedOSPlatform("windows10.0.16299.0")
 IsWow64Process2=SupportedOSPlatform("windows10.0.10586.0")
+IsWow64Process2=SupportedOSPlatform("windows10.0.16299.0")
+Wow64GetThreadContext=SupportedOSPlatform("windows10.0.18362.0")
+Wow64SetThreadContext=SupportedOSPlatform("windows10.0.18362.0")
+Wow64SetThreadDefaultGuestMachine=SupportedOSPlatform("windows10.0.22000.0")
 --with-librarypath
 GetSystemWow64Directory2=kernelbase
 GetSystemWow64Directory2A=kernelbase

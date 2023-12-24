@@ -3,6 +3,7 @@
 // Ported from winrt/roapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 using static TerraFX.Interop.Windows.Windows;
@@ -11,6 +12,7 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    [SupportedOSPlatform("windows6.2")]
     public static HRESULT ActivateInstance<T>(HSTRING activatableClassId, T** instance)
         where T : unmanaged, IUnknown.Interface
     {
@@ -35,6 +37,7 @@ public static unsafe partial class WinRT
         return hr;
     }
 
+    [SupportedOSPlatform("windows6.2")]
     public static HRESULT GetActivationFactory<T>(HSTRING activatableClassId, T** factory)
         where T : unmanaged, IUnknown.Interface
     {

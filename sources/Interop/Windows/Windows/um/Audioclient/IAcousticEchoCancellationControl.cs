@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
@@ -14,6 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("F4AE25B5-AAA3-437D-B6B3-DBBE2D0E9549")]
 [NativeTypeName("struct IAcousticEchoCancellationControl : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.22621.0")]
 public unsafe partial struct IAcousticEchoCancellationControl : IAcousticEchoCancellationControl.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAcousticEchoCancellationControl));

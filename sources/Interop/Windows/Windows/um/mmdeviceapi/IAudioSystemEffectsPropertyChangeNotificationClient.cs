@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("20049D40-56D5-400E-A2EF-385599FEED49")]
 [NativeTypeName("struct IAudioSystemEffectsPropertyChangeNotificationClient : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows10.0.22621.0")]
+[SupportedOSPlatform("windows10.0.22000.0")]
 public unsafe partial struct IAudioSystemEffectsPropertyChangeNotificationClient : IAudioSystemEffectsPropertyChangeNotificationClient.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioSystemEffectsPropertyChangeNotificationClient));

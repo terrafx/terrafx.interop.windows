@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
@@ -14,6 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("E5AA01F7-1FB8-4830-8720-4E6734CBD5F3")]
 [NativeTypeName("struct ILaunchSourceViewSizePreference : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceViewSizePreference.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ILaunchSourceViewSizePreference));

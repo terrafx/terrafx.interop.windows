@@ -22,7 +22,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgConvertPropertyToVariant"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
     [return: NativeTypeName("BOOLEAN")]
-    public static extern byte StgConvertPropertyToVariant([NativeTypeName("const SERIALIZEDPROPERTYVALUE *")] SERIALIZEDPROPERTYVALUE* pprop, ushort CodePage, PROPVARIANT* pvar, void* pma);
+    public static extern byte StgConvertPropertyToVariant([NativeTypeName("const SERIALIZEDPROPERTYVALUE *")] SERIALIZEDPROPERTYVALUE* pprop, ushort CodePage, PROPVARIANT* pvar, [NativeTypeName("PMemoryAllocator*")] void* pma);
 
     [NativeTypeName("#define PIDDI_THUMBNAIL 0x00000002L")]
     public const int PIDDI_THUMBNAIL = 0x00000002;

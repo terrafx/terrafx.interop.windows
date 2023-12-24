@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
@@ -23,6 +24,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventSetInformation"]/*' />
     [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern uint EventSetInformation([NativeTypeName("REGHANDLE")] ulong RegHandle, EVENT_INFO_CLASS InformationClass, [NativeTypeName("PVOID")] void* EventInformation, [NativeTypeName("ULONG")] uint InformationLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventEnabled"]/*' />

@@ -44,6 +44,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.10586.0")]
+    [SupportedOSPlatform("windows10.0.16299.0")]
     public static extern BOOL IsWow64Process2(HANDLE hProcess, ushort* pProcessMachine, ushort* pNativeMachine);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemWow64Directory2A"]/*' />
@@ -66,10 +67,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.Wow64GetThreadContext"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.18362.0")]
     public static extern BOOL Wow64GetThreadContext(HANDLE hThread, [NativeTypeName("PWOW64_CONTEXT")] WOW64_CONTEXT* lpContext);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.Wow64SetThreadContext"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.18362.0")]
     public static extern BOOL Wow64SetThreadContext(HANDLE hThread, [NativeTypeName("const WOW64_CONTEXT *")] WOW64_CONTEXT* lpContext);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.Wow64SuspendThread"]/*' />

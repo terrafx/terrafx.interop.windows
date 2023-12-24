@@ -81,6 +81,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadErrorMode"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SuppressGCTransition]
     public static extern BOOL SetThreadErrorMode([NativeTypeName("DWORD")] uint dwNewMode, [NativeTypeName("LPDWORD")] uint* lpOldMode);
 

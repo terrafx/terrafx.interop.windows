@@ -23,8 +23,8 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ntsecapi.h
 --with-attribute
-LsaLookupSids2=SupportedOSPlatform("windows6.2")
 LsaLookupNames2=SupportedOSPlatform("windows6.2")
+LsaLookupSids2=SupportedOSPlatform("windows6.2")
 --with-librarypath
 AuditComputeEffectivePolicyBySid=advapi32
 AuditComputeEffectivePolicyByToken=advapi32
@@ -107,15 +107,19 @@ AuditEnumeratePerUserPolicy
 AuditEnumerateSubCategories
 AuditLookupCategoryGuidFromCategoryId
 AuditLookupCategoryIdFromCategoryGuid
+AuditLookupCategoryName
 AuditLookupCategoryNameA
 AuditLookupCategoryNameW
+AuditLookupSubCategoryName
 AuditLookupSubCategoryNameA
 AuditLookupSubCategoryNameW
+AuditQueryGlobalSacl
 AuditQueryGlobalSaclA
 AuditQueryGlobalSaclW
 AuditQueryPerUserPolicy
 AuditQuerySecurity
 AuditQuerySystemPolicy
+AuditSetGlobalSacl
 AuditSetGlobalSaclA
 AuditSetGlobalSaclW
 AuditSetPerUserPolicy

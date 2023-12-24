@@ -13,5 +13,5 @@ TerraFX.Interop.WinRT
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/efswrtinterop.h
 --with-attribute
-IProtectionPolicyManagerInterop=SupportedOSPlatform("windows10.0")
 IProtectionPolicyManagerInterop2=SupportedOSPlatform("windows10.0")
+IProtectionPolicyManagerInterop=SupportedOSPlatform("windows10.0")

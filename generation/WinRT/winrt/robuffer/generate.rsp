@@ -14,3 +14,6 @@ TerraFX.Interop.WinRT
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/robuffer.h
 --with-librarypath
 RoGetBufferMarshaler=wintypes
+--with-attribute
+IBufferByteAccess=SupportedOSPlatform("windows6.2")
+RoGetBufferMarshaler=SupportedOSPlatform("windows6.2")

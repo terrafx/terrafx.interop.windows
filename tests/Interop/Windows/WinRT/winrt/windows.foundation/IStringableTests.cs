@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IStringable" /> struct.</summary>
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class IStringableTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IStringable" /> struct is correct.</summary>

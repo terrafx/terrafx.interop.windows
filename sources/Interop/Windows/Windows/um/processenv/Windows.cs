@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
@@ -11,6 +12,7 @@ public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetEnvironmentStringsW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SetEnvironmentStringsW([NativeTypeName("LPWCH")] char* NewEnvironment);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStdHandle"]/*' />
@@ -26,6 +28,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetStdHandleEx"]/*' />
     [DllImport("api-ms-win-core-processenvironment-l1-1-0", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL SetStdHandleEx([NativeTypeName("DWORD")] uint nStdHandle, HANDLE hHandle, [NativeTypeName("PHANDLE")] HANDLE* phPrevValue);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCommandLineA"]/*' />
@@ -131,6 +134,7 @@ public static unsafe partial class Windows
     public static extern BOOL NeedCurrentDirectoryForExePathW([NativeTypeName("LPCWSTR")] char* ExeName);
 
     [NativeTypeName("#define SetEnvironmentStrings SetEnvironmentStringsW")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static delegate*<char*, BOOL> SetEnvironmentStrings => &SetEnvironmentStringsW;
 
     [NativeTypeName("#define GetCommandLine GetCommandLineW")]

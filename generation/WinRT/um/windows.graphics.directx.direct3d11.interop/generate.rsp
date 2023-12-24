@@ -19,3 +19,5 @@ interop::CreateDirect3DDevice=d3d11
 interop::CreateDirect3DSurface=d3d11
 interop::GetDXGIInterface=d3d11
 interop::GetDXGIInterfaceFromObject=d3d11
+--with-attribute
+GetInterface=SupportedOSPlatform("windows10.0.19043.0")

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("3FD03D36-4EB1-424A-A582-494ECB8BA813")]
 [NativeTypeName("struct ID3D12LifetimeTracker : ID3D12DeviceChild")]
 [NativeInheritance("ID3D12DeviceChild")]
+[SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct ID3D12LifetimeTracker : ID3D12LifetimeTracker.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12LifetimeTracker));

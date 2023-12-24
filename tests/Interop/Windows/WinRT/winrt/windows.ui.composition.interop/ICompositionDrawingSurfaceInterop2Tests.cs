@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT.UnitTests;
 
 /// <summary>Provides validation of the <see cref="ICompositionDrawingSurfaceInterop2" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.19041.0")]
 public static unsafe partial class ICompositionDrawingSurfaceInterop2Tests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICompositionDrawingSurfaceInterop2" /> struct is correct.</summary>

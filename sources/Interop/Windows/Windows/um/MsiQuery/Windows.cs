@@ -11,10 +11,12 @@ public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseOpenViewA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern uint MsiDatabaseOpenViewA(MSIHANDLE hDatabase, [NativeTypeName("LPCSTR")] sbyte* szQuery, MSIHANDLE* phView);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseOpenViewW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern uint MsiDatabaseOpenViewW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] char* szQuery, MSIHANDLE* phView);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiViewGetErrorA"]/*' />

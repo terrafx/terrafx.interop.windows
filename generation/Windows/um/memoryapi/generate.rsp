@@ -19,6 +19,7 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/memoryapi.h
 --with-attribute
+CreateFileMapping2=SupportedOSPlatform("windows10.0.19043.0")
 CreateFileMappingFromApp=SupportedOSPlatform("windows6.2")
 DiscardVirtualMemory=SupportedOSPlatform("windows6.3")
 GetMemoryErrorHandlingCapabilities=SupportedOSPlatform("windows6.2")

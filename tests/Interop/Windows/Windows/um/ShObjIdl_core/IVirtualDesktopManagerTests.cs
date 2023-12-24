@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IVirtualDesktopManager" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
 public static unsafe partial class IVirtualDesktopManagerTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IVirtualDesktopManager" /> struct is correct.</summary>
