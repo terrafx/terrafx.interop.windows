@@ -1,8 +1,49 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, HSTRING> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, IInspectable *> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, HSTRING> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, IInspectable *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, HSTRING__ *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, IInspectable *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, HSTRING__ *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, IInspectable *>
+ABI::Windows::Foundation::Collections::IMapChangedEventArgs<HSTRING__ *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, HSTRING__ *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, IInspectable *>
+ABI::Windows::Foundation::Collections::IObservableMap<HSTRING__ *, HSTRING__ *>
+ABI::Windows::Foundation::Collections::IObservableMap<HSTRING__ *, IInspectable *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry *>
+ABI::Windows::Foundation::Collections::MapChangedEventHandler<HSTRING__ *, HSTRING__ *>
+ABI::Windows::Foundation::Collections::MapChangedEventHandler<HSTRING__ *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Foundation::IMemoryBufferReference *, IInspectable *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
+IID_IAsyncAction
+IID_IAsyncActionCompletedHandler
+IID_IClosable
+IID_IDeferral
+IID_IDeferralCompletedHandler
+IID_IDeferralFactory
+IID_IGetActivationFactory
+IID_IGuidHelperStatics
+IID_IMemoryBuffer
+IID_IMemoryBufferFactory
+IID_IMemoryBufferReference
+IID_IPropertySet
+IID_IPropertyValue
+IID_IPropertyValueStatics
+IID_IStringable
+IID_IUriEscapeStatics
+IID_IUriRuntimeClass
+IID_IUriRuntimeClassFactory
+IID_IUriRuntimeClassWithAbsoluteCanonicalUri
+IID_IWwwFormUrlDecoderEntry
+IID_IWwwFormUrlDecoderRuntimeClass
+IID_IWwwFormUrlDecoderRuntimeClassFactory
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file
